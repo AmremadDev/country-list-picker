@@ -1,27 +1,28 @@
 library country_list_picker;
 
 import 'package:flutter/material.dart';
-import 'selection_list.dart';
-import 'support/country.dart';
-import 'dialog_theme.dart';
-import 'picker_theme.dart';
-import 'support/countries_codes_en.dart';
-import 'support/countries_codes_local.dart';
-export 'support/country.dart';
+import './selection_list.dart';
+import './support/country.dart';
+import './dialog_theme.dart';
+import './picker_theme.dart';
+import './support/countries_codes_en.dart';
+import './support/countries_codes_local.dart';
+export './support/country.dart';
 
 class CountryListPicker extends StatefulWidget {
-  const CountryListPicker(
-      {super.key,
-      this.onChanged,
-      this.initialSelection,
-      this.appBar,
-      this.pickerBuilder,
-      this.countryBuilder,
-      this.pickerTheme,
-      this.dialogTheme,
-      this.width,
-      this.useUiOverlay = true,
-      this.useSafeArea = false});
+  const CountryListPicker({
+    super.key,
+    this.onChanged,
+    this.initialSelection,
+    this.appBar,
+    this.pickerBuilder,
+    this.countryBuilder,
+    this.pickerTheme,
+    this.dialogTheme,
+    this.width,
+    this.useUiOverlay = true,
+    this.useSafeArea = false,
+  });
 
   final String? initialSelection;
   final ValueChanged<Country?>? onChanged;
@@ -44,11 +45,11 @@ class CountryListPickerState extends State<CountryListPicker> {
   Country? selectedItem;
   List<Country> elements = [];
 
-  CountryListPickerState();
+  // CountryListPickerState();
 
   @override
   void initState() {
-    List<Country> elements = (widget.pickerTheme?.showEnglishName ?? true ? countriesEnglish : codes)
+     elements = (widget.pickerTheme?.showEnglishName ?? true ? countriesEnglish : codes)
         .map((s) => Country(
               name: s['name'],
               code: s['code'],
@@ -60,9 +61,7 @@ class CountryListPickerState extends State<CountryListPicker> {
 
     if (widget.initialSelection != null) {
       selectedItem = elements.firstWhere(
-          (e) =>
-              (e.code!.toUpperCase() == widget.initialSelection!.toUpperCase()) ||
-              (e.dialCode == widget.initialSelection),
+          (e) => (e.code!.toUpperCase() == widget.initialSelection!.toUpperCase()) || (e.dialCode == widget.initialSelection),
           orElse: () => elements[0]);
     } else {
       selectedItem = elements[0];
@@ -71,8 +70,7 @@ class CountryListPickerState extends State<CountryListPicker> {
     super.initState();
   }
 
-  void _awaitFromSelectScreen(
-      BuildContext context, PreferredSizeWidget? appBar, XPickerTheme? pickerTheme, XDialogTheme? dialogTheme) async {
+  void _awaitFromSelectScreen(BuildContext context, PreferredSizeWidget? appBar, XPickerTheme? pickerTheme, XDialogTheme? dialogTheme) async {
     final result = await Navigator.push(
         context,
         MaterialPageRoute(

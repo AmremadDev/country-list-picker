@@ -19,7 +19,7 @@ class XPickerTheme {
   final Color? alphabetTextColor;
   final Color? alphabetSelectedTextColor;
 
-  final String? initialSelection;
+
   final bool? showEnglishName;
   final Color? labelColor;
 
@@ -51,7 +51,6 @@ class XPickerTheme {
     this.isShowFlag,
     this.isShowCode,
     this.isDownIcon,
-    this.initialSelection,
     this.showEnglishName,
     this.codeTextStyle,
     this.padding,
