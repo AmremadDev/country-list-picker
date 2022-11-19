@@ -107,16 +107,6 @@ class _HomePageState extends State<HomePage> {
           initialSelection: _code,
           useUiOverlay: false,
           onChanged: (Country? code) {
-            // print(code!.name);
-            // print(code.code);
-            // print(code.dialCode);
-            // print(code.flagUri);
-
-            // String localeName = Platform.localHostname;
-
-           
-
-   
 
           },
         ),
