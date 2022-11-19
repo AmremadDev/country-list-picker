@@ -294,7 +294,7 @@ List<Map> countriesEnglish = [
     "Length": "12",
   },
   {
-    "name": "Congo, The Democratic Republic\n of the Congo",
+    "name": "Congo, The Democratic Republic of the Congo",
     "dial_code": "+243",
     "code": "CD",
     "Length": "12",
@@ -672,7 +672,7 @@ List<Map> countriesEnglish = [
     "Length": "12",
   },
   {
-    "name": "Korea, Democratic People's\nRepublic of Korea",
+    "name": "Korea, Democratic People's Republic of Korea",
     "dial_code": "+850",
     "code": "KP",
     "Length": "12",

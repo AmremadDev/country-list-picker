@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 class XDialogTheme {
 
   final bool isShowCode;
-  
+  final TextStyle? titlesStyle;
+  final Color? titlesBackground;
+
+
   // Search Area Area
   final bool isShowSearch;
   final String? searchText;
@@ -24,12 +27,14 @@ class XDialogTheme {
   final TextStyle? alphabetSelectedTextStyle;
 
   XDialogTheme({
+    this.titlesStyle,
+    this.titlesBackground  ,
     this.isShowCode = true,
     this.isShowSearch = true,
     this.searchText,
     this.searchHintText,
     this.isShowCurrentLocation = true,
-    this.isShowLastPickCountry = false,
+    this.isShowLastPickCountry = true,
     this.lastPickText,
     this.alphabetBackgroundColor,
     this.alphabetSelectedBackgroundColor,

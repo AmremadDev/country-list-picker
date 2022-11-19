@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class XPickerTheme {
   // General Settings for Picked Dialog
   // Search Area
-  final bool isShowSearch;
   final String? searchText;
   final String? searchHintText;
 
@@ -37,7 +36,6 @@ class XPickerTheme {
 
   // XSelectionList Themes
   XPickerTheme({
-    this.isShowSearch = true,
     this.isShowCurrentLocation = true,
     this.isShowLastPickCountry = false,
     this.labelColor,

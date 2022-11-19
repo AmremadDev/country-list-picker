@@ -1,6 +1,6 @@
 import 'package:country_list_picker/country_list_picker.dart';
+import 'package:country_list_picker/dialog_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:country_list_picker/picker_theme.dart';
 
 void main() {
   runApp(const CountryListPickerApp());
@@ -88,7 +88,12 @@ class _HomePageState extends State<HomePage> {
           //   color: Colors.amber,
           //   isShowSearch: true,
           // ),
-
+          dialogTheme: XDialogTheme(
+            titlesStyle: TextStyle(color: Colors.red),
+            // titlesBackground: Colors.red,
+            isShowCurrentLocation: true,
+            isShowSearch: true,
+          ),
           initialSelection: _code,
           useUiOverlay: false,
           onChanged: (Country? code) {},

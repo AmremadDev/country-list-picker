@@ -82,8 +82,8 @@ class SelectionListState extends State<SelectionList> {
         color: const Color(0xfff4f4f4),
         child: LayoutBuilder(builder: (context, contrainsts) {
           diff = height - contrainsts.biggest.height;
-          _heightscroller =  (contrainsts.biggest.height) / _alphabet.length;
-          _sizeheightcontainer =(contrainsts.biggest.height);
+          _heightscroller = (contrainsts.biggest.height) / _alphabet.length;
+          _sizeheightcontainer = (contrainsts.biggest.height);
           return Stack(
             children: <Widget>[
               CustomScrollView(
@@ -98,11 +98,13 @@ class SelectionListState extends State<SelectionList> {
                         _buildCurrentLocationBox(countries),
                         Container(
                           width: double.infinity,
-                          // color: Colors.red,
+                          color: (widget.dialogTheme != null) ? widget.dialogTheme!.titlesBackground : null,
                           padding: const EdgeInsets.all(15.0),
                           child: Text(
-                            widget.pickerTheme?.lastPickText ?? 'LAST PICK',
-                            style: TextStyle(color: widget.pickerTheme?.labelColor ?? Colors.black),
+                            widget.pickerTheme?.lastPickText ?? 'Last Pick',
+                            style: (widget.dialogTheme != null)
+                                ? widget.dialogTheme!.titlesStyle
+                                : Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                           ),
                         ),
                         Container(
@@ -165,11 +167,14 @@ class SelectionListState extends State<SelectionList> {
   Widget _buildSearchBox() {
     List<Widget> list = [
       Container(
+        color: (widget.dialogTheme != null) ? widget.dialogTheme!.titlesBackground : null,
         padding: const EdgeInsets.all(15.0),
         width: double.infinity,
         child: Text(
-          widget.pickerTheme?.searchText ?? 'SEARCH',
-          style: TextStyle(color: widget.pickerTheme?.labelColor ?? Colors.black),
+          widget.dialogTheme?.searchText ?? 'Search',
+          style: (widget.dialogTheme != null)
+              ? widget.dialogTheme!.titlesStyle
+              : Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
         ),
       ),
       Container(
@@ -183,25 +188,30 @@ class SelectionListState extends State<SelectionList> {
             errorBorder: InputBorder.none,
             disabledBorder: InputBorder.none,
             contentPadding: const EdgeInsets.only(left: 15, bottom: 0, top: 0, right: 15),
-            hintText: widget.pickerTheme?.searchHintText ?? "Search...",
+            hintText: widget.dialogTheme?.searchHintText ?? "Search...",
           ),
           onChanged: _filterElements,
         ),
       ),
     ];
-
-    return (widget.pickerTheme != null && widget.pickerTheme!.isShowSearch == true) ? Column(children: list) : const SizedBox.shrink();
+    return (widget.dialogTheme != null)
+        ? (widget.dialogTheme!.isShowSearch == true)
+            ? Column(children: list)
+            : const SizedBox.shrink()
+        : Column(children: list);
   }
 
   Widget _buildCurrentLocationBox(List<Country> countires) {
     List<Widget> list = [
       Container(
         width: double.infinity,
-        // color: Colors.red,
+        color: (widget.dialogTheme != null) ? widget.dialogTheme!.titlesBackground : null,
         padding: const EdgeInsets.all(15.0),
         child: Text(
           'Current Location',
-          style: TextStyle(color: widget.pickerTheme?.labelColor ?? Colors.black),
+          style: (widget.dialogTheme != null && widget.dialogTheme!.titlesStyle != null)
+              ? widget.dialogTheme!.titlesStyle
+              : Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
         ),
       ),
       Container(
@@ -227,31 +237,35 @@ class SelectionListState extends State<SelectionList> {
       ),
     ];
 
-    return (widget.pickerTheme != null && widget.pickerTheme!.isShowCurrentLocation == true) ? Column(children: list) : const SizedBox.shrink();
+    return (widget.dialogTheme != null)
+        ? (widget.dialogTheme!.isShowCurrentLocation == true)
+            ? Column(children: list)
+            : const SizedBox.shrink()
+        : Column(children: list);
   }
 
   Widget _buildListCountry(Country e) {
-    return Container(
-      height: 50,
-      color: Colors.white,
-      child: Material(
-        color: Colors.transparent,
-        child: ListTile(
-          leading: Image.asset(
-            e.flagUri!,
-            package: 'country_list_picker',
-            width: 30.0,
-          ),
-          title: Stack(children: [
-            Text(
-              "${e.name}",
-            ),
-            Positioned(right: 25, child: Text("${e.dialCode}"))
-          ]),
-          onTap: () {
-            _sendDataBack(context, e);
-          },
+    return Material(
+      // color: Colors.white,
+      child: ListTile(
+        leading: Image.asset(
+          e.flagUri!,
+          package: 'country_list_picker',
+          width: 30.0,
         ),
+        title: Text(
+          overflow: TextOverflow.ellipsis,
+          maxLines: 1,
+          softWrap: false,
+          "${e.name}",
+        ),
+        trailing: Padding(
+          padding: const EdgeInsets.only(right: 20.0),
+          child: Text("${e.dialCode}"),
+        ),
+        onTap: () {
+          _sendDataBack(context, e);
+        },
       ),
     );
   }
@@ -261,12 +275,12 @@ class SelectionListState extends State<SelectionList> {
       child: InkWell(
         onTap: () {
           setState(() {
-            posSelected = index;
-            _text = _alphabet[posSelected];
+            // posSelected = index;
+            _text = _alphabet[index];
             if (_text != _oldtext) {
               for (var i = 0; i < countries.length; i++) {
                 if (_text.toString().compareTo(countries[i].name.toString().toUpperCase()[0]) == 0) {
-                  _controllerScroll!.jumpTo((i * _itemsizeheight) +110);
+                  _controllerScroll!.jumpTo((i * _itemsizeheight) + 110);
                   break;
                 }
               }
