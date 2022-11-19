@@ -32,8 +32,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # country_list_picker:
-  #   path: ../
+  country_list_picker:
+    path: ../
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -43,8 +43,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
     
-  country_list_picker:
-    path: ../
+  # country_list_picker:
+  #   path: ../
   # country_list_picker:
   #   path: ../lib/country_list_picker
   # The "flutter_lints" package below contains a set of recommended lints to

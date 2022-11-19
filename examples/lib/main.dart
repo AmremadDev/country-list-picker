@@ -1,6 +1,6 @@
-import 'package:country_list_picker/xPickerTheme.dart';
-import 'package:flutter/material.dart';
 import 'package:country_list_picker/country_list_picker.dart';
+import 'package:flutter/material.dart';
+import 'package:country_list_picker/picker_theme.dart';
 void main() {
   runApp(const CountryListPickerApp());
 }
@@ -33,11 +33,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
- 
-   String? _code = "IN";
-
-
-
+  final String _code = "IN";
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done

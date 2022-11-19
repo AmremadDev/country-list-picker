@@ -1,7 +1,7 @@
 mixin ToAlias {}
 
-@deprecated
-class CElement = Country with ToAlias;
+// @deprecated
+// class CElement = Country with ToAlias;
 
 /// Country element. This is the element that contains all the information
 class Country {
@@ -17,9 +17,9 @@ class Country {
   /// the dial code (+39,+93..)
   String? dialCode;
 
-  String? Length;
+  int? length;
 
-  Country({this.name, this.flagUri, this.code, this.dialCode, this.Length});
+  Country({this.name, this.flagUri, this.code, this.dialCode, this.length});
 
   @override
   String toString() => "$dialCode";

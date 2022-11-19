@@ -1,15 +1,13 @@
-library x_country_list_picker;
-
+library country_list_picker;
 
 import 'package:flutter/material.dart';
-import './xSelectionList.dart';
-import './support/code_country.dart';
-import './xDialogTheme.dart';
-import './xPickerTheme.dart';
-import './support/code_countries_en.dart';
-import './support/code_countrys.dart';
-export './support/code_country.dart';
-
+import 'selection_list.dart';
+import 'support/country.dart';
+import 'dialog_theme.dart';
+import 'picker_theme.dart';
+import 'support/countries_codes_en.dart';
+import 'support/countries_codes_local.dart';
+export 'support/country.dart';
 
 class CountryListPicker extends StatefulWidget {
   const CountryListPicker(
@@ -36,33 +34,30 @@ class CountryListPicker extends StatefulWidget {
   final bool useSafeArea;
   final double? width;
 
+  @override
+  CountryListPickerState createState() {
+    return CountryListPickerState();
+  }
+}
+
+class CountryListPickerState extends State<CountryListPicker> {
+  Country? selectedItem;
+  List<Country> elements = [];
+
+  CountryListPickerState();
 
   @override
-  // ignore: no_logic_in_create_state, library_private_types_in_public_api
-  _CountryListPickerState createState() {
-    List<Map> jsonList = pickerTheme?.showEnglishName ?? true ? countriesEnglish : codes;
-
-    List<Country> elements = jsonList
+  void initState() {
+    List<Country> elements = (widget.pickerTheme?.showEnglishName ?? true ? countriesEnglish : codes)
         .map((s) => Country(
               name: s['name'],
               code: s['code'],
               dialCode: s['dial_code'],
-              Length: s['length'],
+              length: s['length'],
               flagUri: 'flags/${s['code'].toLowerCase()}.png',
             ))
         .toList();
-    return _CountryListPickerState(elements);
-  }
-}
 
-class _CountryListPickerState extends State<CountryListPicker> {
-  Country? selectedItem;
-  List<Country> elements = [];
-
-  _CountryListPickerState(this.elements);
-
-  @override
-  void initState() {
     if (widget.initialSelection != null) {
       selectedItem = elements.firstWhere(
           (e) =>
@@ -76,7 +71,8 @@ class _CountryListPickerState extends State<CountryListPicker> {
     super.initState();
   }
 
-  void _awaitFromSelectScreen(BuildContext context, PreferredSizeWidget? appBar, XPickerTheme? pickerTheme,XDialogTheme? dialogTheme) async {
+  void _awaitFromSelectScreen(
+      BuildContext context, PreferredSizeWidget? appBar, XPickerTheme? pickerTheme, XDialogTheme? dialogTheme) async {
     final result = await Navigator.push(
         context,
         MaterialPageRoute(
@@ -105,12 +101,11 @@ class _CountryListPickerState extends State<CountryListPicker> {
   @override
   Widget build(BuildContext context) {
     return Container(
-          
-        decoration: BoxDecoration(
-          // color: widget.pickerTheme!.color,
-          // border: widget.pickerTheme!.border,
-          
-        ),
+        decoration: const BoxDecoration(
+            // color: widget.pickerTheme!.color,
+            // border: widget.pickerTheme!.border,
+
+            ),
         width: widget.width,
         // padding: widget.pickerTheme!.padding,
         child: TextField(
@@ -139,11 +134,7 @@ class _CountryListPickerState extends State<CountryListPicker> {
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: Image.asset(
-                        
-                        selectedItem!.flagUri!, 
-                        package: "country_list_picker",
-                        width: 32.0),
+                      child: Image.asset(selectedItem!.flagUri!, package: "country_list_picker", width: 32.0),
                     ),
                   ),
                 if (widget.pickerTheme?.isShowCode ?? true == true)
@@ -172,6 +163,3 @@ class _CountryListPickerState extends State<CountryListPicker> {
     );
   }
 }
-
-
-

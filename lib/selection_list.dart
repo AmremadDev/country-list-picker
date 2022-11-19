@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import './country_list_picker.dart';
-import './xPickerTheme.dart';
-import './xDialogTheme.dart';
+import 'country_list_picker.dart';
+import 'picker_theme.dart';
+import 'dialog_theme.dart';
 
 class SelectionList extends StatefulWidget {
   const SelectionList(
@@ -28,10 +28,10 @@ class SelectionList extends StatefulWidget {
   final bool useSafeArea;
 
   @override
-  _SelectionListState createState() => _SelectionListState();
+  SelectionListState createState() => SelectionListState();
 }
 
-class _SelectionListState extends State<SelectionList> {
+class SelectionListState extends State<SelectionList> {
   late List<Country> countries;
   final TextEditingController _controller = TextEditingController();
   ScrollController? _controllerScroll;
