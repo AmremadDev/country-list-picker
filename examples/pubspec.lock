@@ -39,8 +39,8 @@ packages:
   country_list_picker:
     dependency: "direct main"
     description:
-      path: "D:\\Flutter\\runApps\\packages\\country_list_picker"
-      relative: false
+      path: ".."
+      relative: true
     source: path
     version: "0.0.1"
   cupertino_icons:

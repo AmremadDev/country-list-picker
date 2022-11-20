@@ -75,8 +75,9 @@ class CountryListPickerState extends State<CountryListPicker> {
         context,
         MaterialPageRoute(
           builder: (context) => SelectionList(
-            elements,
+          elements,
             selectedItem,
+            
             appBar: widget.appBar ??
                 AppBar(
                   backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
@@ -100,9 +101,8 @@ class CountryListPickerState extends State<CountryListPicker> {
   Widget build(BuildContext context) {
     return Container(
         decoration: const BoxDecoration(
-            // color: widget.pickerTheme!.color,
+             color: Colors.greenAccent,
             // border: widget.pickerTheme!.border,
-
             ),
         width: widget.width,
         // padding: widget.pickerTheme!.padding,
@@ -149,7 +149,11 @@ class CountryListPickerState extends State<CountryListPicker> {
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: Text(selectedItem!.toCountryStringOnly()),
+                      child: Text(
+                        selectedItem!.toCountryStringOnly(),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        ),
                     ),
                   ),
                 if (widget.pickerTheme?.isDownIcon ?? true == true)

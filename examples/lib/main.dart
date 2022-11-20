@@ -13,7 +13,7 @@ class CountryListPickerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Country List Picker Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -30,7 +30,6 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
-
 class _HomePageState extends State<HomePage> {
   final String _code = "eg";
   @override
@@ -41,7 +40,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: CountryListPicker(
-          width: 300,
+          
           appBar: AppBar(
             elevation: 0,
             title: const Text('Pick your country'),
@@ -89,10 +88,12 @@ class _HomePageState extends State<HomePage> {
           //   isShowSearch: true,
           // ),
           dialogTheme: XDialogTheme(
-            titlesStyle: TextStyle(color: Colors.red),
+            // titlesStyle: TextStyle(color: Colors.red),
             // titlesBackground: Colors.red,
+            
             isShowCurrentLocation: true,
             isShowSearch: true,
+            
           ),
           initialSelection: _code,
           useUiOverlay: false,
