@@ -2,12 +2,12 @@ library country_list_picker;
 
 import 'package:flutter/material.dart';
 import './selection_list.dart';
-import './support/country.dart';
-import './dialog_theme.dart';
-import './picker_theme.dart';
+import 'models/country.dart';
 import './support/countries_codes_en.dart';
 import './support/countries_codes_local.dart';
-export './support/country.dart';
+import './models/dialog_theme.dart';
+import './models/picker_theme.dart';
+export './models/country.dart';
 
 class CountryListPicker extends StatefulWidget {
   const CountryListPicker({

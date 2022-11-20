@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'country_list_picker.dart';
-import './picker_theme.dart';
-import './dialog_theme.dart';
+import './country_list_picker.dart';
+import './models/picker_theme.dart';
+import './models/dialog_theme.dart';
 
 class SelectionList extends StatefulWidget {
-  SelectionList(
+  const SelectionList(
     this.elements,
     this.initialSelection, {
     Key? key,
@@ -49,7 +49,7 @@ class SelectionListState extends State<SelectionList> {
 
   @override
   void initState() {
-    countries = widget.elements!;
+    countries = widget.elements;
     countries.sort((a, b) {
       return a.name.toString().compareTo(b.name.toString());
     });
@@ -181,12 +181,10 @@ class SelectionListState extends State<SelectionList> {
         width: double.infinity,
         color: (widget.dialogTheme != null) ? widget.dialogTheme!.titlesBackground : null,
         padding: const EdgeInsets.all(15.0),
-        child: Text(
-          'Current Location',
-          style: (widget.dialogTheme != null && widget.dialogTheme!.titlesStyle != null)
-              ? widget.dialogTheme!.titlesStyle
-              : Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
-        ),
+        child: Text('Current Location',
+            style: (widget.dialogTheme != null && widget.dialogTheme!.titlesStyle != null)
+                ? widget.dialogTheme!.titlesStyle
+                : Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold)),
       ),
       Container(
         color: Colors.white,
@@ -204,7 +202,8 @@ class SelectionListState extends State<SelectionList> {
               ),
               Positioned(
                   right: 25,
-                  child: Text("${widget.elements.singleWhere((element) => element.code == WidgetsBinding.instance.window.locale.countryCode).dialCode}"))
+                  child: Text(
+                      "${widget.elements.singleWhere((element) => element.code == WidgetsBinding.instance.window.locale.countryCode).dialCode}"))
             ]),
           ),
         ),
@@ -261,27 +260,13 @@ class SelectionListState extends State<SelectionList> {
   Widget _buildListCountry(Country e) {
     return Material(
       // color: Colors.white,
-
       child: ListTile(
-        leading: Image.asset(
-          e.flagUri!,
-          package: 'country_list_picker',
-          width: 30.0,
-        ),
-        title: Text(
-          overflow: TextOverflow.ellipsis,
-          maxLines: 1,
-          softWrap: false,
-          "${e.name}",
-        ),
-        trailing: Padding(
-          padding: const EdgeInsets.only(right: 20.0),
-          child: Text("${e.dialCode}"),
-        ),
-        onTap: () {
-          Navigator.pop(context, e);
-        },
-      ),
+          leading: Image.asset(e.flagUri!, package: 'country_list_picker', width: 30.0),
+          title: Text(overflow: TextOverflow.ellipsis, maxLines: 1, softWrap: false, "${e.name}"),
+          trailing: Padding(padding: const EdgeInsets.only(right: 20.0), child: Text("${e.dialCode}")),
+          onTap: () {
+            Navigator.pop(context, e);
+          }),
     );
   }
 
@@ -301,7 +286,7 @@ class SelectionListState extends State<SelectionList> {
         },
         child: Container(
           width: 50,
-          height: 20,
+          height: 50,
           alignment: Alignment.center,
           decoration: BoxDecoration(
             color: index == posSelected
@@ -348,7 +333,7 @@ class SelectionListState extends State<SelectionList> {
   }
 
   _scrollListener() {
-    print(_controllerScroll!.position.pixels);
+    // print(_controllerScroll!.position.pixels);
     int scrollPosition = (_controllerScroll!.position.pixels / _itemsizeheight).round();
     if (scrollPosition < countries.length) {
       String? countryName = countries.elementAt(scrollPosition).name;
