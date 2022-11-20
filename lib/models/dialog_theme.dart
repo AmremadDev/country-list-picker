@@ -1,45 +1,46 @@
 import 'package:flutter/material.dart';
 
 class XDialogTheme {
-
   final bool isShowCode;
-  final TextStyle? titlesStyle;
-  final Color? titlesBackground;
-
-
+  final TextStyle titlesStyle;
+  final Color titlesBackground;
+  final Color backgroundColor;
   // Search Area Area
   final bool isShowSearch;
-  final String? searchText;
-  final String? searchHintText;
+  final String searchText;
+  final String searchHintText;
 
   // Current Location Area
   final bool isShowCurrentLocation;
+  final String currentLocationText;
 
   //Last Picked Country Area
   final bool isShowLastPickCountry;
-  final String? lastPickText;
-  final Icon? checkIcon;
+  final String lastPickText;
+  final Icon checkIcon;
 
   // alphabet Area
-  final TextStyle? alphabetBackgroundColor;
-  final TextStyle? alphabetTextStyle;
-  final TextStyle? alphabetSelectedBackgroundColor;
-  final TextStyle? alphabetSelectedTextStyle;
+  final Color alphabetBackgroundColor;
+  final TextStyle alphabetTextStyle;
+  final Color alphabetSelectedBackgroundColor;
+  final TextStyle alphabetSelectedTextStyle;
 
-  XDialogTheme({
-    this.titlesStyle,
-    this.titlesBackground  ,
+  const XDialogTheme({
+    this.backgroundColor =  Colors.white,
+    this.currentLocationText = "Current Location",
+    this.titlesStyle =  const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+    this.titlesBackground = const Color(0xfff4f4f4),
     this.isShowCode = true,
     this.isShowSearch = true,
-    this.searchText,
-    this.searchHintText,
+    this.searchText = "Search",
+    this.searchHintText = "Search...",
     this.isShowCurrentLocation = true,
     this.isShowLastPickCountry = true,
-    this.lastPickText,
-    this.alphabetBackgroundColor,
-    this.alphabetSelectedBackgroundColor,
-    this.alphabetTextStyle,
-    this.alphabetSelectedTextStyle,
+    this.lastPickText = "Last Pick",
+    this.alphabetBackgroundColor = Colors.transparent,
+    this.alphabetSelectedBackgroundColor = Colors.transparent,
+    this.alphabetTextStyle = const TextStyle(),
+    this.alphabetSelectedTextStyle = const TextStyle(),
     this.checkIcon = const Icon(Icons.check, color: Colors.green),
   });
 }

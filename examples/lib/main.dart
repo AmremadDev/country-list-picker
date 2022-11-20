@@ -1,5 +1,4 @@
 import 'package:country_list_picker/country_list_picker.dart';
-import 'package:country_list_picker/models/dialog_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,6 +13,7 @@ class CountryListPickerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Country List Picker Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -30,6 +30,7 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
+
 class _HomePageState extends State<HomePage> {
   final String _code = "eg";
   @override
@@ -40,63 +41,28 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: CountryListPicker(
-          
-          appBar: AppBar(
-            elevation: 0,
-            title: const Text('Pick your country'),
-          ),
+          // dialogTheme: XDialogTheme(
+          //   // titlesStyle: TextStyle(color: Colors.red),
+          //   // titlesBackground: Colors.red,
 
-          // countryBuilder: (context, countryCode) {
-          //   return Material(
-          //     color: Colors.white,
+          //   isShowCurrentLocation: true,
+          //   isShowSearch: true,
+          //   titlesStyle: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.black),
+          //   // titlesBackground: Colors.grey
+          // ),
+
+          // countryBuilder: (context, country) {
+          //   return SizedBox(
+          //     height: 50,
           //     child: ListTile(
-          //       selectedColor: Colors.white,
-          //       leading: Image.asset("${countryCode.flagUri}", package: 'country_list_pick', scale: 10),
-          //       title: Stack(children: [
-          //         Text("${countryCode.name}"),
-          //         Positioned(right: 25, child: Text("${countryCode.dialCode}"))
-          //       ]),
-          //       onTap: () {
-          //         _code = countryCode.code;
-          //         print(_code);
-          //         Navigator.pop(context);
-
-          //         setState(() {});
-          //       },
+          //       title: Text(country.name!),
           //     ),
           //   );
           // },
 
-          // pickerBuilder: (context, countryCode) {
-          //   return null;
-          // },
-          // dialogTheme: XDialogTheme(checkIcon: Icon(Icons.person)),
-          // pickerTheme: XPickerTheme(
-          //   isShowFlag: true,
-          //   isShowTitle: false,
-          //   isShowCode: true,
-          //   codeTextStyle: const TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
-          //   numberTextStyle: const TextStyle(color: Colors.grey, fontSize: 25, fontWeight: FontWeight.bold),
-          //   isDownIcon: false,
-          //   showEnglishName: true,
-          //   alphabetSelectedBackgroundColor: Colors.transparent,
-          //   alphabetSelectedTextColor: Colors.blue,
-          //   lastPickText: "Last Picked Country",
-          //   labelColor: Colors.black,
-          //   searchText: "Search",
-          //   color: Colors.amber,
-          //   isShowSearch: true,
-          // ),
-          dialogTheme: XDialogTheme(
-            // titlesStyle: TextStyle(color: Colors.red),
-            // titlesBackground: Colors.red,
-            
-            isShowCurrentLocation: true,
-            isShowSearch: true,
-            
-          ),
+        
           initialSelection: _code,
-          useUiOverlay: false,
+          useUiOverlay: true,
           onChanged: (Country? code) {},
         ),
       ),

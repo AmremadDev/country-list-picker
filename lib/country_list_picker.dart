@@ -2,7 +2,7 @@ library country_list_picker;
 
 import 'package:flutter/material.dart';
 import './selection_list.dart';
-import 'models/country.dart';
+import './models/country.dart';
 import './support/countries_codes_en.dart';
 import './support/countries_codes_local.dart';
 import './models/dialog_theme.dart';
@@ -18,7 +18,7 @@ class CountryListPicker extends StatefulWidget {
     this.pickerBuilder,
     this.countryBuilder,
     this.pickerTheme,
-    this.dialogTheme,
+    this.dialogTheme = const XDialogTheme(),
     this.width,
     this.useUiOverlay = true,
     this.useSafeArea = false,
@@ -29,7 +29,7 @@ class CountryListPicker extends StatefulWidget {
   final PreferredSizeWidget? appBar;
   final Widget Function(BuildContext context, Country? countryCode)? pickerBuilder;
   final XPickerTheme? pickerTheme;
-  final XDialogTheme? dialogTheme;
+  final XDialogTheme dialogTheme;
   final Widget Function(BuildContext context, Country countryCode)? countryBuilder;
   final bool useUiOverlay;
   final bool useSafeArea;
@@ -44,12 +44,9 @@ class CountryListPicker extends StatefulWidget {
 class CountryListPickerState extends State<CountryListPicker> {
   Country? selectedItem;
   List<Country> elements = [];
-
-  // CountryListPickerState();
-
   @override
   void initState() {
-     elements = (widget.pickerTheme?.showEnglishName ?? true ? countriesEnglish : codes)
+    elements = (widget.pickerTheme?.showEnglishName ?? true ? countriesEnglish : codes)
         .map((s) => Country(
               name: s['name'],
               code: s['code'],
@@ -70,14 +67,13 @@ class CountryListPickerState extends State<CountryListPicker> {
     super.initState();
   }
 
-  void _awaitFromSelectScreen(BuildContext context, PreferredSizeWidget? appBar, XPickerTheme? pickerTheme, XDialogTheme? dialogTheme) async {
+  void _awaitFromSelectScreen(BuildContext context, PreferredSizeWidget? appBar, XPickerTheme? pickerTheme, XDialogTheme dialogTheme) async {
     final result = await Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => SelectionList(
-          elements,
-            selectedItem,
-            
+            elements,
+            initialSelection: selectedItem,
             appBar: widget.appBar ??
                 AppBar(
                   backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
@@ -101,9 +97,9 @@ class CountryListPickerState extends State<CountryListPicker> {
   Widget build(BuildContext context) {
     return Container(
         decoration: const BoxDecoration(
-             color: Colors.greenAccent,
-            // border: widget.pickerTheme!.border,
-            ),
+          color: Colors.greenAccent,
+          // border: widget.pickerTheme!.border,
+        ),
         width: widget.width,
         // padding: widget.pickerTheme!.padding,
         child: TextField(
@@ -153,7 +149,7 @@ class CountryListPickerState extends State<CountryListPicker> {
                         selectedItem!.toCountryStringOnly(),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        ),
+                      ),
                     ),
                   ),
                 if (widget.pickerTheme?.isDownIcon ?? true == true)
