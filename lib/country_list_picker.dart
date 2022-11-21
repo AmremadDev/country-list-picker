@@ -18,7 +18,7 @@ class CountryListPicker extends StatefulWidget {
     this.pickerBuilder,
     this.countryBuilder,
     this.pickerTheme,
-    this.dialogTheme = const XDialogTheme(),
+    this.dialogTheme = const CDialogTheme(),
     this.width,
     this.useUiOverlay = true,
     this.useSafeArea = false,
@@ -28,8 +28,8 @@ class CountryListPicker extends StatefulWidget {
   final ValueChanged<Country?>? onChanged;
   final PreferredSizeWidget? appBar;
   final Widget Function(BuildContext context, Country? countryCode)? pickerBuilder;
-  final XPickerTheme? pickerTheme;
-  final XDialogTheme dialogTheme;
+  final CPickerTheme? pickerTheme;
+  final CDialogTheme dialogTheme;
   final Widget Function(BuildContext context, Country countryCode)? countryBuilder;
   final bool useUiOverlay;
   final bool useSafeArea;
@@ -58,7 +58,9 @@ class CountryListPickerState extends State<CountryListPicker> {
 
     if (widget.initialSelection != null) {
       selectedItem = elements.firstWhere(
-          (e) => (e.code!.toUpperCase() == widget.initialSelection!.toUpperCase()) || (e.dialCode == widget.initialSelection),
+          (e) =>
+              (e.code!.toUpperCase() == widget.initialSelection!.toUpperCase()) ||
+              (e.dialCode == widget.initialSelection),
           orElse: () => elements[0]);
     } else {
       selectedItem = elements[0];
@@ -67,7 +69,8 @@ class CountryListPickerState extends State<CountryListPicker> {
     super.initState();
   }
 
-  void _awaitFromSelectScreen(BuildContext context, PreferredSizeWidget? appBar, XPickerTheme? pickerTheme, XDialogTheme dialogTheme) async {
+  void _awaitFromSelectScreen(
+      BuildContext context, PreferredSizeWidget? appBar, CPickerTheme? pickerTheme, CDialogTheme dialogTheme) async {
     final result = await Navigator.push(
         context,
         MaterialPageRoute(

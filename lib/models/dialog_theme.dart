@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class XDialogTheme {
+class CDialogTheme {
   final bool isShowCode;
   final TextStyle titlesStyle;
   final Color titlesBackground;
@@ -24,8 +24,10 @@ class XDialogTheme {
   final TextStyle alphabetTextStyle;
   final Color alphabetSelectedBackgroundColor;
   final TextStyle alphabetSelectedTextStyle;
+  final bool isShowAphabetScroll ;
 
-  const XDialogTheme({
+  const CDialogTheme({
+    this.isShowAphabetScroll = true,
     this.backgroundColor =  Colors.white,
     this.currentLocationText = "Current Location",
     this.titlesStyle =  const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -39,8 +41,8 @@ class XDialogTheme {
     this.lastPickText = "Last Pick",
     this.alphabetBackgroundColor = Colors.transparent,
     this.alphabetSelectedBackgroundColor = Colors.transparent,
-    this.alphabetTextStyle = const TextStyle(),
-    this.alphabetSelectedTextStyle = const TextStyle(),
+    this.alphabetTextStyle = const TextStyle(fontSize: 12,  fontWeight: FontWeight.w400, color: Colors.black),
+    this.alphabetSelectedTextStyle = const TextStyle(fontSize: 18,  fontWeight: FontWeight.bold, color: Colors.blue),
     this.checkIcon = const Icon(Icons.check, color: Colors.green),
   });
 }

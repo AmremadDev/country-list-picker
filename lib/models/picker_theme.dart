@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class XPickerTheme {
+class CPickerTheme {
   // General Settings for Picked Dialog
   // Search Area
   final String? searchText;
@@ -35,7 +35,7 @@ class XPickerTheme {
   final Border? border;
 
   // XSelectionList Themes
-  XPickerTheme({
+  CPickerTheme({
     this.isShowCurrentLocation = true,
     this.isShowLastPickCountry = false,
     this.labelColor,
