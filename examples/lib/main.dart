@@ -1,4 +1,5 @@
 import 'package:country_list_picker/country_list_picker.dart';
+import 'package:country_list_picker/models/dialog_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class CountryListPickerApp extends StatelessWidget {
       title: 'Country List Picker Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       home: const HomePage(title: 'Country List Picker Demo'),
     );
@@ -41,29 +42,37 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: CountryListPicker(
-          // dialogTheme: XDialogTheme(
-          //   // titlesStyle: TextStyle(color: Colors.red),
-          //   // titlesBackground: Colors.red,
-
-          //   isShowCurrentLocation: true,
-          //   isShowSearch: true,
-          //   titlesStyle: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.black),
-          //   // titlesBackground: Colors.grey
-          // ),
-
-          // countryBuilder: (context, country) {
-          //   return SizedBox(
-          //     height: 50,
-          //     child: ListTile(
-          //       title: Text(country.name!),
-          //     ),
-          //   );
-          // },
-
-        
           initialSelection: _code,
           useUiOverlay: true,
+          // useSafeArea: true,
           onChanged: (Country? code) {},
+          dialogTheme: CDialogTheme(
+            
+            appBar: AppBar(
+              title: const Text("Select Country"),
+              actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.flag_outlined))],
+            ),
+            isShowSearch: true,
+            isShowCurrentLocation: true,
+            isShowLastPickCountry: true,
+            isShowDialCode: true,
+            isShowFlage: true,
+            isShowAphabetScroll: true,
+            isShowFloatButton: true,
+
+            // alphabetBackgroundColor: ,
+            // alphabetSelectedBackgroundColor: ,
+            // alphabetSelectedTextStyle: ,
+            // alphabetTextStyle: ,
+            // backgroundColor: ,
+            // checkIcon: ,
+            // currentLocationText: ,
+            // lastPickText: ,
+            // searchHintText: ,
+            // searchText: ,
+            // titlesBackground: ,
+            // titlesStyle: ,
+          ),
         ),
       ),
       // Center is a layout widget. It takes a single child and positions it

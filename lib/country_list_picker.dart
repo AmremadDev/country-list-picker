@@ -20,7 +20,7 @@ class CountryListPicker extends StatefulWidget {
     this.pickerTheme,
     this.dialogTheme = const CDialogTheme(),
     this.width,
-    this.useUiOverlay = true,
+    this.useUiOverlay = false,
     this.useSafeArea = false,
   });
 
@@ -30,7 +30,7 @@ class CountryListPicker extends StatefulWidget {
   final Widget Function(BuildContext context, Country? countryCode)? pickerBuilder;
   final CPickerTheme? pickerTheme;
   final CDialogTheme dialogTheme;
-  final Widget Function(BuildContext context, Country countryCode)? countryBuilder;
+  final Widget Function(BuildContext context, Country? country)? countryBuilder;
   final bool useUiOverlay;
   final bool useSafeArea;
   final double? width;
@@ -71,28 +71,28 @@ class CountryListPickerState extends State<CountryListPicker> {
 
   void _awaitFromSelectScreen(
       BuildContext context, PreferredSizeWidget? appBar, CPickerTheme? pickerTheme, CDialogTheme dialogTheme) async {
-    final result = await Navigator.push(
+    final Country? result = await Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => SelectionList(
             elements,
             initialSelection: selectedItem,
-            appBar: widget.appBar ??
+            appBar: widget.dialogTheme.appBar ??
                 AppBar(
                   backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-                  title: const Text("Select Country"),
+                  title: const Text("Select your country"),
                 ),
             pickerTheme: pickerTheme,
             dialogTheme: dialogTheme,
-            countryBuilder: widget.countryBuilder,
+            dialogBuilder: widget.countryBuilder,
             useUiOverlay: widget.useUiOverlay,
             useSafeArea: widget.useSafeArea,
           ),
         ));
 
     setState(() {
-      selectedItem = result ?? selectedItem;
-      widget.onChanged!(result ?? selectedItem);
+      selectedItem = result ?? selectedItem ;
+      widget.onChanged!(result);
     });
   }
 

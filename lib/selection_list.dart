@@ -1,11 +1,10 @@
-import 'dart:developer';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import './country_list_picker.dart';
 import './models/picker_theme.dart';
 import './models/dialog_theme.dart';
+
+// need to use statment managment
 
 class SelectionList extends StatefulWidget {
   const SelectionList(
@@ -15,7 +14,7 @@ class SelectionList extends StatefulWidget {
     this.appBar,
     this.pickerTheme,
     this.dialogTheme = const CDialogTheme(),
-    this.countryBuilder,
+    this.dialogBuilder,
     this.useUiOverlay = true,
     this.useSafeArea = false,
   }) : super(key: key);
@@ -25,7 +24,7 @@ class SelectionList extends StatefulWidget {
   final Country? initialSelection;
   final CPickerTheme? pickerTheme;
   final CDialogTheme dialogTheme;
-  final Widget Function(BuildContext context, Country)? countryBuilder;
+  final Widget Function(BuildContext context, Country? country)? dialogBuilder;
   final bool useUiOverlay;
   final bool useSafeArea;
 
@@ -39,7 +38,7 @@ class SelectionListState extends State<SelectionList> {
   final ScrollController _controllerScroll = ScrollController();
 
   int posSelected = -1;
-  late double diff ;
+  late double diff;
   late double _sizeheightcontainer;
   late double _heightscroller;
   String? _oldtext;
@@ -47,16 +46,14 @@ class SelectionListState extends State<SelectionList> {
   double _offsetContainer = 0.0;
   List<String>? _alphabet;
 
-
   late int boxes;
   bool _floatbutton = false;
 
   @override
   void initState() {
     countries = widget.elements;
-    
-    _alphabet = countries.map((e) => e.name![0]).toSet().toList();
     countries.sort((a, b) => a.name.toString().compareTo(b.name.toString()));
+    _alphabet = countries.map((e) => e.name![0]).toSet().toList();
     _controllerScroll.addListener(_scrollListener);
 
     boxes = 0;
@@ -69,21 +66,25 @@ class SelectionListState extends State<SelectionList> {
 
   @override
   Widget build(BuildContext context) {
-
     if (widget.useUiOverlay) {
-      SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-        statusBarColor: Colors.white,
-        statusBarIconBrightness: Brightness.dark,
-        systemNavigationBarColor: Colors.white,
-        systemNavigationBarIconBrightness: Brightness.dark,
-        statusBarBrightness: !kIsWeb ? Brightness.dark : Brightness.light,
+      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor: Theme.of(context).primaryColor,
+        statusBarIconBrightness: Brightness.light,
+        systemNavigationBarColor: Theme.of(context).primaryColor,
+        systemNavigationBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.light,
+        // systemNavigationBarDividerColor: Colors.blue,
+        // systemStatusBarContrastEnforced: true,
+        // systemNavigationBarContrastEnforced: true
       ));
     }
 
-   
     Widget scaffold = Scaffold(
-      floatingActionButton: (_floatbutton)
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+      floatingActionButton: (widget.dialogTheme.isShowFloatButton && _floatbutton)
           ? FloatingActionButton(
+              backgroundColor: Theme.of(context).primaryColor,
+              elevation: 0,
               mini: true,
               child: const Icon(Icons.arrow_upward),
               onPressed: () {
@@ -95,9 +96,11 @@ class SelectionListState extends State<SelectionList> {
       body: Container(
         color: widget.dialogTheme.backgroundColor,
         child: LayoutBuilder(builder: (context, contrainsts) {
-          diff = MediaQuery.of(context).size.height - contrainsts.biggest.height;
-          _heightscroller = (contrainsts.biggest.height) / _alphabet!.length;
-          _sizeheightcontainer = (contrainsts.biggest.height);
+          if (widget.dialogTheme.isShowAphabetScroll == true) {
+            diff = MediaQuery.of(context).size.height - contrainsts.biggest.height;
+            _heightscroller = (contrainsts.biggest.height) / _alphabet!.length;
+            _sizeheightcontainer = (contrainsts.biggest.height);
+          }
           return Stack(
             children: <Widget>[
               CustomScrollView(
@@ -106,20 +109,17 @@ class SelectionListState extends State<SelectionList> {
                 slivers: [
                   SliverToBoxAdapter(
                     child: Column(children: [
-                      _buildSearchBox(),
-                      _buildCurrentLocationBox(),
-                      _buildLastPickCountryBox(),
-                      Container(
-                        height: 10,
-                        color: widget.dialogTheme.titlesBackground,
-                      )
+                      (widget.dialogTheme.isShowSearch) ? _buildSearchBox() : const SizedBox.shrink(),
+                      (widget.dialogTheme.isShowCurrentLocation) ? _buildCurrentLocationBox() : const SizedBox.shrink(),
+                      (widget.dialogTheme.isShowLastPickCountry) ? _buildLastPickCountryBox() : const SizedBox.shrink(),
+                      (boxes == 0) ? const SizedBox.shrink() : Container(height: 10, color: widget.dialogTheme.titlesBackground)
                     ]),
                   ),
                   SliverList(
                     delegate: SliverChildBuilderDelegate((context, index) {
-                      return widget.countryBuilder != null
-                          ? widget.countryBuilder!(context, countries.elementAt(index))
-                          : _buildListCountry(index + 1, countries.elementAt(index));
+                      return widget.dialogBuilder != null
+                          ? widget.dialogBuilder!(context, countries.elementAt(index))
+                          : _buildCountryListTile(countries.elementAt(index));
                     }, childCount: countries.length),
                   )
                 ],
@@ -148,7 +148,6 @@ class SelectionListState extends State<SelectionList> {
     );
     return widget.useSafeArea ? SafeArea(child: scaffold) : scaffold;
   }
-
   Container _buildTitle(String title) {
     return Container(
       color: widget.dialogTheme.titlesBackground,
@@ -159,8 +158,8 @@ class SelectionListState extends State<SelectionList> {
     );
   }
 
-  Widget _buildSearchBox() {
-    List<Widget> list = [
+  Column _buildSearchBox() {
+    return Column(children: [
       _buildTitle(widget.dialogTheme.searchText),
       Container(
         color: Colors.white,
@@ -174,123 +173,93 @@ class SelectionListState extends State<SelectionList> {
           onChanged: ((value) {
             String s = value.toUpperCase();
             setState(() {
-              countries = widget.elements
-                  .where((e) => e.dialCode!.startsWith(s) || e.name!.toUpperCase().startsWith(s))
-                  .toList();
-              // this line to minmize alphabet to filter counteries
-              // _alphabet = countries.map((e) => e.name![0]).toSet().toList();
+              countries = widget.elements.where((e) => e.dialCode!.startsWith(s) || e.name!.toUpperCase().startsWith(s)).toList();
             });
           }),
         ),
       ),
-    ];
-    return (widget.dialogTheme.isShowSearch == true) ? Column(children: list) : const SizedBox.shrink();
+    ]);
   }
 
-  Widget _buildCurrentLocationBox() {
-    List<Widget> list = [
+  Column _buildCurrentLocationBox() {
+    Country country = widget.elements.singleWhere((element) => element.code == WidgetsBinding.instance.window.locale.countryCode);
+    return Column(children: [
       _buildTitle(widget.dialogTheme.currentLocationText),
-      Container(
-        color: Colors.white,
-        height: itemsizeheight,
-        child: Material(
-          color: Colors.transparent,
-          child: ListTile(
-            leading: Image.asset(
-              'flags/${WidgetsBinding.instance.window.locale.countryCode!.toLowerCase()}.png',
-              package: 'country_list_picker',
-              width: 32.0,
-            ),
-            title: Stack(children: [
-              Text(
-                "${widget.elements.singleWhere((element) => element.code == WidgetsBinding.instance.window.locale.countryCode).name}",
-              ),
-              Positioned(
-                  right: 25,
-                  child: Text(
-                      "${widget.elements.singleWhere((element) => element.code == WidgetsBinding.instance.window.locale.countryCode).dialCode}"))
-            ]),
-          ),
-        ),
-      ),
-    ];
-    return (widget.dialogTheme.isShowCurrentLocation == true) ? Column(children: list) : const SizedBox.shrink();
+      _buildCountryListTile(country),
+    ]);
   }
 
-  Widget _buildLastPickCountryBox() {
-    List<Widget> list = [
+  Column _buildLastPickCountryBox() {
+    return Column(children: [
       _buildTitle(widget.dialogTheme.lastPickText),
-      Container(
-        color: Colors.white,
-        height: itemsizeheight,
-        child: Material(
-          color: Colors.transparent,
-          child: ListTile(
-            leading: Image.asset(widget.initialSelection!.flagUri!, package: 'country_list_picker', width: 32.0),
-            title: Text(widget.initialSelection!.name!),
-            trailing: Padding(padding: const EdgeInsets.only(right: 20.0), child: widget.dialogTheme.checkIcon),
-          ),
-        ),
-      ),
-    ];
-    return (widget.dialogTheme.isShowLastPickCountry == true) ? Column(children: list) : const SizedBox.shrink();
+      _buildCountryListTile(widget.initialSelection!, true),
+    ]);
   }
 
-  Widget _buildListCountry(int index, Country country) {
+  SizedBox _buildCountryListTile(Country country, [bool lastpick = false]) {
     return SizedBox(
       height: itemsizeheight,
       child: ListTile(
-          leading: Image.asset(country.flagUri!, package: 'country_list_picker', width: 30.0),
-          title: Text(overflow: TextOverflow.ellipsis, maxLines: 1, softWrap: false, "${index + 5}. ${country.name}"),
-          trailing: Padding(padding: const EdgeInsets.only(right: 20.0), child: Text("${country.dialCode}")),
+          leading: (widget.dialogTheme.isShowFlage) ? Image.asset(country.flagUri!, package: 'country_list_picker', width: 30.0) : null,
+          title: Text(overflow: TextOverflow.ellipsis, maxLines: 1, softWrap: false, country.name!),
+          trailing: Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: lastpick
+                ? Icon(
+                    widget.dialogTheme.lastPickIcon,
+                    color: Theme.of(context).primaryColor,
+                  )
+                : (widget.dialogTheme.isShowDialCode)
+                    ? Text(country.dialCode!)
+                    : null,
+          ),
           onTap: () {
             Navigator.pop(context, country);
           }),
     );
   }
 
- Widget _buildAlphabetItem(int index) {
+  Expanded _buildAlphabetItem(int index) {
+     
     return Expanded(
       child: InkWell(
-        //(countries.indexWhere((c) => c.name!.toUpperCase().startsWith("Y"))  == 0 )
         onTap: () {
-          // if (_controllerScroll.position.pixels >= _controllerScroll.position.maxScrollExtent) return;
-          posSelected = index;
           if (_alphabet![index] != _oldtext) {
             int pos = countries.indexWhere((c) => c.name!.toUpperCase().startsWith(_alphabet![index]));
+
             (itemsizeheight * (pos + boxes) + 10 <= _controllerScroll.position.maxScrollExtent)
                 ? _controllerScroll.jumpTo(itemsizeheight * (pos + boxes) + 10)
                 : _controllerScroll.jumpTo(_controllerScroll.position.maxScrollExtent);
             _oldtext = _alphabet![index];
+            posSelected = index;
           }
           setState(() {});
         },
         child: Container(
-          width: 50,
-          height: itemsizeheight,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: index == posSelected
-                ? widget.dialogTheme.alphabetSelectedBackgroundColor
-                : widget.dialogTheme.alphabetBackgroundColor,
-            shape: BoxShape.circle,
-          ),
-          child: Text(
-            _alphabet![index],
-            textAlign: TextAlign.center,
-            style: (index == posSelected)
-                ? widget.dialogTheme.alphabetSelectedTextStyle
-                : widget.dialogTheme.alphabetTextStyle
-              
-          ),
-        ),
+            width: 50,
+            height: itemsizeheight,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: index == posSelected ? widget.dialogTheme.alphabetSelectedBackgroundColor : widget.dialogTheme.alphabetBackgroundColor,
+              shape: BoxShape.circle,
+            ),
+            child: Text(
+              _alphabet![index],
+              textAlign: TextAlign.center,
+              style: (index == posSelected)
+                  ? (widget.dialogTheme.alphabetSelectedTextStyle) ??
+                      TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor)
+                  : (widget.dialogTheme.alphabetTextStyle) ?? const TextStyle(fontSize: 12),
+            )
+            // style: (index == posSelected) ? widget.dialogTheme.alphabetSelectedTextStyle: widget.dialogTheme.alphabetTextStyle),
+            ),
       ),
     );
   }
 
   void _onVerticalDragUpdate(DragUpdateDetails details) {
-    if ((_offsetContainer + details.delta.dy) >= 0 &&
-        (_offsetContainer + details.delta.dy) <= (_sizeheightcontainer - _heightscroller)) {
+    // need to be fast
+    if ((_offsetContainer + details.delta.dy) >= 0 && (_offsetContainer + details.delta.dy) <= (_sizeheightcontainer - _heightscroller)) {
       _offsetContainer += details.delta.dy;
       posSelected = ((_offsetContainer / _heightscroller) % _alphabet!.length).round();
       if (_alphabet![posSelected] != _oldtext) {
@@ -301,6 +270,7 @@ class SelectionListState extends State<SelectionList> {
         _oldtext = _alphabet![posSelected];
       }
     }
+
     setState(() {});
   }
 
@@ -309,14 +279,18 @@ class SelectionListState extends State<SelectionList> {
   }
 
   void _scrollListener() {
+   
     _floatbutton = (_controllerScroll.position.pixels != 0);
+    int newPos;
     int scrollPosition = ((_controllerScroll.position.pixels) / itemsizeheight).round();
     if (scrollPosition < boxes) {
       posSelected = -1;
     } else if (scrollPosition >= boxes && scrollPosition <= countries.length) {
-      posSelected =
-          countries.elementAt(scrollPosition - boxes).name![0].toUpperCase().codeUnitAt(0) - 'A'.codeUnitAt(0);
+      newPos = countries.elementAt(scrollPosition - boxes).name![0].toUpperCase().codeUnitAt(0) - 'A'.codeUnitAt(0);
+      if (newPos != posSelected) {
+        posSelected = newPos;
+        setState(() {});
+      }
     }
-    setState(() {});
   }
 }
