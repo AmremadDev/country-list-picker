@@ -11,7 +11,6 @@ import './models/dialog_theme.dart';
 import './models/picker_theme.dart';
 export './models/country.dart';
 
-
 class CountryListPicker extends StatefulWidget {
   const CountryListPicker({
     super.key,
@@ -94,15 +93,15 @@ class CountryListPickerState extends State<CountryListPicker> {
         ));
 
     setState(() {
-      selectedItem = result ?? selectedItem ;
+      selectedItem = result ?? selectedItem;
       widget.onChanged!(result);
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(create:  (context) => InfoModel(),
-    child: Container(
+
+    return Container(child: ChangeNotifierProvider<InfoModel>(create: (context) =>InfoModel() ,builder: (context, child) =>  Container(
         decoration: const BoxDecoration(
           color: Colors.greenAccent,
           // border: widget.pickerTheme!.border,
@@ -117,11 +116,9 @@ class CountryListPickerState extends State<CountryListPicker> {
             prefixIcon: _buildCountryCodeSelector(context),
             border: const OutlineInputBorder(borderSide: BorderSide.none),
           ),
-        )),
-    )
-    
-    
-    ;
+        ),
+      ),),);
+ 
   }
 
   TextButton _buildCountryCodeSelector(BuildContext context) {
