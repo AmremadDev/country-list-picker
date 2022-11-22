@@ -29,7 +29,7 @@ class SelectionList extends StatelessWidget {
   final bool useUiOverlay;
   final bool useSafeArea;
 
-  late List<Country> countries;
+  // late List<Country> countries;
   final TextEditingController _controller = TextEditingController();
   final ScrollController _controllerScroll = ScrollController();
 
@@ -76,19 +76,21 @@ class SelectionList extends StatelessWidget {
                 slivers: [
                   SliverToBoxAdapter(
                     child: Column(children: [
-                      (dialogTheme.isShowSearch) ? _buildSearchBox() : const SizedBox.shrink(),
+                      (dialogTheme.isShowSearch) ? _buildSearchBox(context) : const SizedBox.shrink(),
                       (dialogTheme.isShowCurrentLocation) ? _buildCurrentLocationBox(context) : const SizedBox.shrink(),
                       (dialogTheme.isShowLastPickCountry) ? _buildLastPickCountryBox(context) : const SizedBox.shrink(),
                       (boxes == 0) ? const SizedBox.shrink() : Container(height: 10, color: dialogTheme.titlesBackground)
                     ]),
                   ),
-                  SliverList(
+                   Consumer<CSettings>(builder: (context, value, child) => SliverList(
                     delegate: SliverChildBuilderDelegate((context, index) {
                       return dialogBuilder != null
-                          ? dialogBuilder!(context, countries.elementAt(index))
-                          : _buildCountryListTile(context, countries.elementAt(index));
-                    }, childCount: countries.length),
-                  ),
+                          ? dialogBuilder!(context,  value.countries.elementAt(index))
+                          : _buildCountryListTile(context, value.countries.elementAt(index));
+                    }, childCount: value.countries.length),
+                  ),)
+                  
+                  
                  
                 ],
               ),
@@ -103,6 +105,7 @@ class SelectionList extends StatelessWidget {
   }
 
   void _intialValues(BuildContext context) {
+ 
     boxes = 0;
     if (dialogTheme.isShowSearch == true) boxes += 2;
     if (dialogTheme.isShowCurrentLocation == true) boxes += 2;
@@ -119,23 +122,22 @@ class SelectionList extends StatelessWidget {
           systemStatusBarContrastEnforced: true,
           systemNavigationBarContrastEnforced: true));
     }
-    countries = elements;
-    countries.sort((a, b) => a.name.toString().compareTo(b.name.toString()));
-    _alphabet = countries.map((e) => e.name![0]).toSet().toList();
+    // context.read<CSettings>().changeCountries(elements) ;
+    _alphabet = elements.map((e) => e.name![0]).toSet().toList();
+
     _controllerScroll.addListener(() {
       context.read<CSettings>().changeIsShowFloatButton(_controllerScroll.position.pixels != 0);
       int scrollPosition = ((_controllerScroll.position.pixels) / itemsizeheight).round();
       if (scrollPosition < boxes) {
         context.read<CSettings>().changeSelectedPosition(-1);
-      } else if (scrollPosition >= boxes && scrollPosition <= countries.length) {
-        int newPos = countries.elementAt(scrollPosition - boxes).name![0].toUpperCase().codeUnitAt(0) - 'A'.codeUnitAt(0);
+      } else if (scrollPosition >= boxes && scrollPosition <= context.read<CSettings>().countries.length) {
+        int newPos = context.read<CSettings>().countries.elementAt(scrollPosition - boxes).name![0].toUpperCase().codeUnitAt(0) - 'A'.codeUnitAt(0);
         if (newPos != context.read<CSettings>().posSelected) context.read<CSettings>().changeSelectedPosition(newPos);
       }
     });
   }
 
   Widget _buildAlphabetItems(BuildContext context) {
-    
     return (dialogTheme.isShowAphabetScroll == true)
         ? Align(
             alignment: Alignment.centerRight,
@@ -147,7 +149,7 @@ class SelectionList extends StatelessWidget {
                   context.read<CSettings>().posSelected = ((_offsetContainer / _heightscroller) % _alphabet!.length).round();
 
                   if (_alphabet![context.read<CSettings>().posSelected] != _oldtext) {
-                    int pos = countries.indexWhere((c) => c.name!.toUpperCase().startsWith(_alphabet![context.read<CSettings>().posSelected]));
+                    int pos = context.read<CSettings>().countries.indexWhere((c) => c.name!.toUpperCase().startsWith(_alphabet![context.read<CSettings>().posSelected]));
                     ((pos + boxes) * itemsizeheight <= _controllerScroll.position.maxScrollExtent)
                         ? _controllerScroll.jumpTo((pos + boxes) * itemsizeheight)
                         : _controllerScroll.jumpTo(_controllerScroll.position.maxScrollExtent);
@@ -173,7 +175,7 @@ class SelectionList extends StatelessWidget {
         : const SizedBox.shrink();
   }
 
-  Column _buildSearchBox() {
+  Column _buildSearchBox(BuildContext context) {
     return Column(children: [
       CTitle(title: dialogTheme.searchText, background: dialogTheme.titlesBackground, titlesStyle: dialogTheme.titlesStyle, height: 50),
       Container(
@@ -187,8 +189,7 @@ class SelectionList extends StatelessWidget {
               hintText: dialogTheme.searchHintText),
           onChanged: ((value) {
             String s = value.toUpperCase();
-
-            countries = elements.where((e) => e.dialCode!.startsWith(s) || e.name!.toUpperCase().startsWith(s)).toList();
+             context.read<CSettings>().changeCountries(elements.where((e) => e.dialCode!.startsWith(s) || e.name!.toUpperCase().startsWith(s)).toList());
           }),
         ),
       ),
@@ -238,7 +239,7 @@ class SelectionList extends StatelessWidget {
         child: InkWell(
             onTap: () {
               if (_alphabet![index] != _oldtext) {
-                int pos = countries.indexWhere((c) => c.name!.toUpperCase().startsWith(_alphabet![index]));
+                int pos = context.read<CSettings>().countries.indexWhere((c) => c.name!.toUpperCase().startsWith(_alphabet![index]));
 
                 (itemsizeheight * (pos + boxes) + 10 <= _controllerScroll.position.maxScrollExtent)
                     ? _controllerScroll.jumpTo(itemsizeheight * (pos + boxes) + 10)
