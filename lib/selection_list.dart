@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import './models/picker_theme.dart';
 import './models/dialog_theme.dart';
-import 'models/csettings.dart';
+import './models/csettings.dart';
 import './models/country.dart';
-import 'widget/ctitle.dart';
+import './widget/ctitle.dart';
 
 class SelectionList extends StatelessWidget {
   SelectionList(
@@ -36,10 +36,10 @@ class SelectionList extends StatelessWidget {
   late double diff;
   late double _sizeheightcontainer;
   late double _heightscroller;
-  String? _oldtext;
+   String? _oldtext;
   final double itemsizeheight = 50.0;
-  double _offsetContainer = 0.0;
-  List<String>? _alphabet;
+  late double _offsetContainer = 0.0;
+   List<String>? _alphabet;
 
   late int boxes;
 
@@ -48,14 +48,14 @@ class SelectionList extends StatelessWidget {
     _intialValues(context);
     Widget scaffold = Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-      floatingActionButton: (dialogTheme.isShowFloatButton && context.read<CSettings>().floatbutton)
+      floatingActionButton: (dialogTheme.isShowFloatButton && context.watch<CSettings>().floatbutton)
           ? FloatingActionButton(
               backgroundColor: Theme.of(context).primaryColor,
               elevation: 0,
               mini: true,
               child: const Icon(Icons.arrow_upward),
-              onPressed: () async {
-                await _controllerScroll.animateTo(0,duration: const Duration(milliseconds: 500),curve: Curves.bounceInOut);
+              onPressed: ()  {
+                 _controllerScroll.jumpTo(0);
               },
             )
           : null,
@@ -124,17 +124,15 @@ class SelectionList extends StatelessWidget {
     _alphabet = countries.map((e) => e.name![0]).toSet().toList();
     _controllerScroll.addListener(() {
       context.read<CSettings>().changeIsShowFloatButton(_controllerScroll.position.pixels != 0);
-      int newPos;
       int scrollPosition = ((_controllerScroll.position.pixels) / itemsizeheight).round();
       if (scrollPosition < boxes) {
         context.read<CSettings>().changeSelectedPosition(-1);
       } else if (scrollPosition >= boxes && scrollPosition <= countries.length) {
-        newPos = countries.elementAt(scrollPosition - boxes).name![0].toUpperCase().codeUnitAt(0) - 'A'.codeUnitAt(0);
+        int newPos = countries.elementAt(scrollPosition - boxes).name![0].toUpperCase().codeUnitAt(0) - 'A'.codeUnitAt(0);
         if (newPos != context.read<CSettings>().posSelected) context.read<CSettings>().changeSelectedPosition(newPos);
       }
     });
   }
-
 
   Widget _buildAlphabetItems(BuildContext context) {
     
