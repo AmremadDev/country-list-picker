@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import './country_list_picker.dart';
 import './models/picker_theme.dart';
 import './models/dialog_theme.dart';
+import 'controller.dart';
 
 // need to use statment managment
 
@@ -172,9 +174,9 @@ class SelectionListState extends State<SelectionList> {
               hintText: widget.dialogTheme.searchHintText),
           onChanged: ((value) {
             String s = value.toUpperCase();
-            setState(() {
+            
               countries = widget.elements.where((e) => e.dialCode!.startsWith(s) || e.name!.toUpperCase().startsWith(s)).toList();
-            });
+          //  setState(() { });
           }),
         ),
       ),
@@ -231,9 +233,9 @@ class SelectionListState extends State<SelectionList> {
                 ? _controllerScroll.jumpTo(itemsizeheight * (pos + boxes) + 10)
                 : _controllerScroll.jumpTo(_controllerScroll.position.maxScrollExtent);
             _oldtext = _alphabet![index];
-            posSelected = index;
+            posSelected = index ;
           }
-          setState(() {});
+          // setState(() {});
         },
         child: Container(
             width: 50,
@@ -261,9 +263,11 @@ class SelectionListState extends State<SelectionList> {
     // need to be fast
     if ((_offsetContainer + details.delta.dy) >= 0 && (_offsetContainer + details.delta.dy) <= (_sizeheightcontainer - _heightscroller)) {
       _offsetContainer += details.delta.dy;
+
       posSelected = ((_offsetContainer / _heightscroller) % _alphabet!.length).round();
+    
       if (_alphabet![posSelected] != _oldtext) {
-        int pos = countries.indexWhere((c) => c.name!.toUpperCase().startsWith(_alphabet![posSelected]));
+        int pos = countries.indexWhere((c) => c.name!.toUpperCase().startsWith(_alphabet![context.read<InfoModel>().posSelected]));
         ((pos + boxes) * itemsizeheight <= _controllerScroll.position.maxScrollExtent)
             ? _controllerScroll.jumpTo((pos + boxes) * itemsizeheight)
             : _controllerScroll.jumpTo(_controllerScroll.position.maxScrollExtent);
@@ -271,7 +275,7 @@ class SelectionListState extends State<SelectionList> {
       }
     }
 
-    setState(() {});
+    // setState(() {});
   }
 
   void _onVerticalDragStart(DragStartDetails details) {
@@ -284,12 +288,12 @@ class SelectionListState extends State<SelectionList> {
     int newPos;
     int scrollPosition = ((_controllerScroll.position.pixels) / itemsizeheight).round();
     if (scrollPosition < boxes) {
-      posSelected = -1;
+      posSelected =-1;
     } else if (scrollPosition >= boxes && scrollPosition <= countries.length) {
       newPos = countries.elementAt(scrollPosition - boxes).name![0].toUpperCase().codeUnitAt(0) - 'A'.codeUnitAt(0);
       if (newPos != posSelected) {
-        posSelected = newPos;
-        setState(() {});
+        posSelected = newPos ;
+        // setState(() {});
       }
     }
   }

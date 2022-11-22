@@ -1,6 +1,8 @@
 library country_list_picker;
 
+import 'package:country_list_picker/controller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import './selection_list.dart';
 import './models/country.dart';
 import './support/countries_codes_en.dart';
@@ -8,6 +10,7 @@ import './support/countries_codes_local.dart';
 import './models/dialog_theme.dart';
 import './models/picker_theme.dart';
 export './models/country.dart';
+
 
 class CountryListPicker extends StatefulWidget {
   const CountryListPicker({
@@ -98,7 +101,8 @@ class CountryListPickerState extends State<CountryListPicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ChangeNotifierProvider(create:  (context) => InfoModel(),
+    child: Container(
         decoration: const BoxDecoration(
           color: Colors.greenAccent,
           // border: widget.pickerTheme!.border,
@@ -113,7 +117,11 @@ class CountryListPickerState extends State<CountryListPicker> {
             prefixIcon: _buildCountryCodeSelector(context),
             border: const OutlineInputBorder(borderSide: BorderSide.none),
           ),
-        ));
+        )),
+    )
+    
+    
+    ;
   }
 
   TextButton _buildCountryCodeSelector(BuildContext context) {
