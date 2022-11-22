@@ -1,6 +1,6 @@
 library country_list_picker;
 
-import 'package:country_list_picker/controller.dart';
+import 'package:country_list_picker/models/csettings.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import './selection_list.dart';
@@ -9,7 +9,6 @@ import './support/countries_codes_en.dart';
 import './support/countries_codes_local.dart';
 import './models/dialog_theme.dart';
 import './models/picker_theme.dart';
-export './models/country.dart';
 
 class CountryListPicker extends StatefulWidget {
   const CountryListPicker({
@@ -60,9 +59,7 @@ class CountryListPickerState extends State<CountryListPicker> {
 
     if (widget.initialSelection != null) {
       selectedItem = elements.firstWhere(
-          (e) =>
-              (e.code!.toUpperCase() == widget.initialSelection!.toUpperCase()) ||
-              (e.dialCode == widget.initialSelection),
+          (e) => (e.code!.toUpperCase() == widget.initialSelection!.toUpperCase()) || (e.dialCode == widget.initialSelection),
           orElse: () => elements[0]);
     } else {
       selectedItem = elements[0];
@@ -71,24 +68,26 @@ class CountryListPickerState extends State<CountryListPicker> {
     super.initState();
   }
 
-  void _awaitFromSelectScreen(
-      BuildContext context, PreferredSizeWidget? appBar, CPickerTheme? pickerTheme, CDialogTheme dialogTheme) async {
+  void _awaitFromSelectScreen() async {
     final Country? result = await Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => SelectionList(
-            elements,
-            initialSelection: selectedItem,
-            appBar: widget.dialogTheme.appBar ??
-                AppBar(
-                  backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-                  title: const Text("Select your country"),
-                ),
-            pickerTheme: pickerTheme,
-            dialogTheme: dialogTheme,
-            dialogBuilder: widget.countryBuilder,
-            useUiOverlay: widget.useUiOverlay,
-            useSafeArea: widget.useSafeArea,
+          builder: (context) => ChangeNotifierProvider<CSettings>(
+            create: (context) => CSettings(),
+            child: SelectionList(
+              elements,
+              initialSelection: selectedItem,
+              appBar: widget.dialogTheme.appBar ??
+                  AppBar(
+                    backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+                    title: const Text("Select your country"),
+                  ),
+              pickerTheme: widget.pickerTheme,
+              dialogTheme: widget.dialogTheme,
+              dialogBuilder: widget.countryBuilder,
+              useUiOverlay: widget.useUiOverlay,
+              useSafeArea: widget.useSafeArea,
+            ),
           ),
         ));
 
@@ -100,31 +99,24 @@ class CountryListPickerState extends State<CountryListPicker> {
 
   @override
   Widget build(BuildContext context) {
-
-    return Container(child: ChangeNotifierProvider<InfoModel>(create: (context) =>InfoModel() ,builder: (context, child) =>  Container(
-        decoration: const BoxDecoration(
-          color: Colors.greenAccent,
-          // border: widget.pickerTheme!.border,
-        ),
-        width: widget.width,
-        // padding: widget.pickerTheme!.padding,
-        child: TextField(
-          autofocus: true,
-          // style: widget.pickerTheme!.codeTextStyle,
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.zero,
-            prefixIcon: _buildCountryCodeSelector(context),
-            border: const OutlineInputBorder(borderSide: BorderSide.none),
-          ),
-        ),
-      ),),);
- 
+    return Container(
+      decoration: const BoxDecoration(color: Colors.greenAccent),
+      width: widget.width,
+      child: TextField(
+      autofocus: true,
+      decoration: InputDecoration(
+        contentPadding: EdgeInsets.zero,
+        prefixIcon: _buildCountryCodeSelector(),
+        border: const OutlineInputBorder(borderSide: BorderSide.none),
+      ),
+      ),
+    );
   }
 
-  TextButton _buildCountryCodeSelector(BuildContext context) {
+  TextButton _buildCountryCodeSelector() {
     return TextButton(
       onPressed: () {
-        _awaitFromSelectScreen(context, widget.appBar, widget.pickerTheme, widget.dialogTheme);
+        _awaitFromSelectScreen();
       },
       child: widget.pickerBuilder != null
           ? widget.pickerBuilder!(context, selectedItem)

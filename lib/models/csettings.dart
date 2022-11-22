@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class InfoModel extends ChangeNotifier {
+class CSettings extends ChangeNotifier {
   int posSelected = -1;
   bool floatbutton = false;
 
@@ -14,4 +14,6 @@ class InfoModel extends ChangeNotifier {
 
     notifyListeners();
   }
+
+  
 }

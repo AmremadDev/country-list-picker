@@ -1,4 +1,5 @@
 import 'package:country_list_picker/country_list_picker.dart';
+import 'package:country_list_picker/models/country.dart';
 import 'package:country_list_picker/models/dialog_theme.dart';
 import 'package:flutter/material.dart';
 
