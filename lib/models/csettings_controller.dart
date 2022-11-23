@@ -10,7 +10,7 @@ class CSettings extends ChangeNotifier {
   CSettings() {
     countries = countriesEnglish
         .map((s) => Country(
-              englishName: s['name'],
+              englishName: s['english_name'],
               code: s['code'],
               dialCode: s['dial_code'],
               length: s['length'],

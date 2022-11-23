@@ -1,14 +1,20 @@
 library country_list_picker;
 
-import 'package:country_list_picker/models/csettings_controller.dart';
+// imports
+import 'package:xcountry/models/csettings_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import './selection_list.dart';
-import './models/country.dart';
+import './xselection_list.dart';
 import './support/countries_codes_en.dart';
 import './support/countries_codes_local.dart';
 import './models/dialog_theme.dart';
 import './models/picker_theme.dart';
+import './models/country.dart';
+
+// exports
+export './country_list_picker.dart';
+export './models/country.dart';
+export './models/dialog_theme.dart';
 
 class CountryListPicker extends StatefulWidget {
   const CountryListPicker({
@@ -49,7 +55,7 @@ class CountryListPickerState extends State<CountryListPicker> {
   void initState() {
     elements = (widget.pickerTheme?.showEnglishName ?? true ? countriesEnglish : codes)
         .map((s) => Country(
-              englishName: s['name'],
+              englishName: s['english_name'],
               code: s['code'],
               dialCode: s['dial_code'],
               length: s['length'],
@@ -59,14 +65,11 @@ class CountryListPickerState extends State<CountryListPicker> {
 
     if (widget.initialSelection != null) {
       selectedItem = elements.firstWhere(
-          (e) =>
-              (e.code!.toUpperCase() == widget.initialSelection!.toUpperCase()) ||
-              (e.dialCode == widget.initialSelection),
+          (e) => (e.code!.toUpperCase() == widget.initialSelection!.toUpperCase()) || (e.dialCode == widget.initialSelection),
           orElse: () => elements[0]);
     } else {
       selectedItem = elements[0];
     }
-
     super.initState();
   }
 
@@ -76,13 +79,11 @@ class CountryListPickerState extends State<CountryListPicker> {
         MaterialPageRoute(
           builder: (context) => ChangeNotifierProvider<CSettings>(
             create: (context) => CSettings(),
-            child: SelectionList(
+            child: XSelectionList(
               elements,
-              initialSelection: selectedItem,
+              initialCountry: selectedItem,
               appBar: widget.dialogTheme.appBar ??
-                  AppBar(
-                      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-                      title: const Text("Select your country")),
+                  AppBar(backgroundColor: Theme.of(context).appBarTheme.backgroundColor, title: const Text("Select your country")),
               pickerTheme: widget.pickerTheme,
               dialogTheme: widget.dialogTheme,
               dialogBuilder: widget.countryBuilder,
@@ -129,7 +130,7 @@ class CountryListPickerState extends State<CountryListPicker> {
                   Flexible(
                     child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                        child: Image.asset(selectedItem!.flagUri!, package: "country_list_picker", width: 32.0)),
+                        child: Image.asset(selectedItem!.flagUri!, package: "xcountry", width: 32.0)),
                   ),
                 if (widget.pickerTheme?.isShowCode ?? true == true)
                   Flexible(

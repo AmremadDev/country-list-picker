@@ -534,7 +534,6 @@ List<Map<String, String>> codes = [
     "code": "IL",
     "dial_code": "+972",
   },
-  
   {
     "name": "Italia",
     "code": "IT",

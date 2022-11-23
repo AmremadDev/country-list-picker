@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CTitle extends StatelessWidget {
-  const CTitle({
+class XTitle extends StatelessWidget {
+  const XTitle({
     Key? key,
     required this.title,
     required this.background,

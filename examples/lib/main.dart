@@ -1,7 +1,6 @@
-import 'package:country_list_picker/country_list_picker.dart';
-import 'package:country_list_picker/models/country.dart';
-import 'package:country_list_picker/models/dialog_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:xcountry/country_list_picker.dart';
+
 
 void main() {
   runApp(const CountryListPickerApp());
