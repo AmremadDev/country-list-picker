@@ -5,31 +5,40 @@ import './country.dart';
 class CSettings extends ChangeNotifier {
   int posSelected = -1;
   bool floatbutton = false;
-  List<Country> countries =countriesEnglish
+  List<Country> countries = [];
+
+  CSettings() {
+    countries = countriesEnglish
         .map((s) => Country(
-              name: s['name'],
+              englishName: s['name'],
               code: s['code'],
               dialCode: s['dial_code'],
               length: s['length'],
               flagUri: 'flags/${s['code'].toLowerCase()}.png',
             ))
         .toList();
+    countries.sort((a, b) => a.englishName.toString().compareTo(b.englishName.toString()));
+
+    // print("CSettings Constructor");
+  }
 
   void changeSelectedPosition(int index) {
-    posSelected = index;
-    notifyListeners();
+        if (posSelected != index) {
+      posSelected = index;
+      notifyListeners();
+    }
+
   }
 
   void changeIsShowFloatButton(bool value) {
-    floatbutton = value;
-
-    notifyListeners();
+    if (floatbutton != value) {
+      floatbutton = value;
+      notifyListeners();
+    }
   }
+
   void changeCountries(List<Country> list) {
-    list.sort((a, b) => a.name.toString().compareTo(b.name.toString()));
     countries = list;
     notifyListeners();
-
   }
-  
 }

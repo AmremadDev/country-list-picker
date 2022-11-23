@@ -1,28 +1,19 @@
 mixin ToAlias {}
 
-// @deprecated
-// class CElement = Country with ToAlias;
-
-/// Country element. This is the element that contains all the information
 class Country {
-  /// the name of the country
-  String? name;
+  final String? localName;
+  final String? englishName;
+  final String? flagUri;
+  final String? code;
+  final String? dialCode;
+  final int? length;
 
-  /// the flag of the country
-  String? flagUri;
-
-  /// the country code (IT,AF..)
-  String? code;
-
-  /// the dial code (+39,+93..)
-  String? dialCode;
-
-  int? length;
-
-  Country({this.name, this.flagUri, this.code, this.dialCode, this.length});
+  Country({
+    this.localName,
+    this.englishName, this.flagUri, this.code, this.dialCode, this.length});
 
   @override
   String toString() => "$dialCode";
-  String toLongString() => "$dialCode $name";
-  String toCountryStringOnly() => '$name';
+  String toLongString() => "$dialCode $englishName";
+  String toCountryStringOnly() => '$englishName';
 }

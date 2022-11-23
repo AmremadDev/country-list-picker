@@ -1,6 +1,6 @@
 library country_list_picker;
 
-import 'package:country_list_picker/models/csettings.dart';
+import 'package:country_list_picker/models/csettings_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import './selection_list.dart';
@@ -49,7 +49,7 @@ class CountryListPickerState extends State<CountryListPicker> {
   void initState() {
     elements = (widget.pickerTheme?.showEnglishName ?? true ? countriesEnglish : codes)
         .map((s) => Country(
-              name: s['name'],
+              englishName: s['name'],
               code: s['code'],
               dialCode: s['dial_code'],
               length: s['length'],
@@ -59,7 +59,9 @@ class CountryListPickerState extends State<CountryListPicker> {
 
     if (widget.initialSelection != null) {
       selectedItem = elements.firstWhere(
-          (e) => (e.code!.toUpperCase() == widget.initialSelection!.toUpperCase()) || (e.dialCode == widget.initialSelection),
+          (e) =>
+              (e.code!.toUpperCase() == widget.initialSelection!.toUpperCase()) ||
+              (e.dialCode == widget.initialSelection),
           orElse: () => elements[0]);
     } else {
       selectedItem = elements[0];
@@ -79,9 +81,8 @@ class CountryListPickerState extends State<CountryListPicker> {
               initialSelection: selectedItem,
               appBar: widget.dialogTheme.appBar ??
                   AppBar(
-                    backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-                    title: const Text("Select your country"),
-                  ),
+                      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+                      title: const Text("Select your country")),
               pickerTheme: widget.pickerTheme,
               dialogTheme: widget.dialogTheme,
               dialogBuilder: widget.countryBuilder,
@@ -103,12 +104,12 @@ class CountryListPickerState extends State<CountryListPicker> {
       decoration: const BoxDecoration(color: Colors.greenAccent),
       width: widget.width,
       child: TextField(
-      autofocus: true,
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.zero,
-        prefixIcon: _buildCountryCodeSelector(),
-        border: const OutlineInputBorder(borderSide: BorderSide.none),
-      ),
+        autofocus: true,
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.zero,
+          prefixIcon: _buildCountryCodeSelector(),
+          border: const OutlineInputBorder(borderSide: BorderSide.none),
+        ),
       ),
     );
   }
@@ -127,30 +128,21 @@ class CountryListPickerState extends State<CountryListPicker> {
                 if (widget.pickerTheme?.isShowFlag ?? true == true)
                   Flexible(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: Image.asset(selectedItem!.flagUri!, package: "country_list_picker", width: 32.0),
-                    ),
+                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                        child: Image.asset(selectedItem!.flagUri!, package: "country_list_picker", width: 32.0)),
                   ),
                 if (widget.pickerTheme?.isShowCode ?? true == true)
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: Text(
-                        selectedItem.toString(),
-                        style: widget.pickerTheme?.codeTextStyle,
-                      ),
+                      child: Text(selectedItem.toString(), style: widget.pickerTheme?.codeTextStyle),
                     ),
                   ),
                 if (widget.pickerTheme?.isShowTitle ?? true == true)
                   Flexible(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: Text(
-                        selectedItem!.toCountryStringOnly(),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
+                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                        child: Text(selectedItem!.toCountryStringOnly(), maxLines: 1, overflow: TextOverflow.ellipsis)),
                   ),
                 if (widget.pickerTheme?.isDownIcon ?? true == true)
                   const Flexible(
