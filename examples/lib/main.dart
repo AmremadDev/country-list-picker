@@ -1,12 +1,19 @@
 import 'dart:convert';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:xcountry/country_list_picker.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 void main() {
   runApp(const CountryListPickerApp());
 }
+
+Future readJsonFile(String filePath) async {
+  var jsonText = await rootBundle.loadString('jsons/countries.json');
+
+  // var input = await File(filePath).readAsString();
+  var map = jsonDecode(jsonText);
+  return map["countries"];
+}
+
 
 class CountryListPickerApp extends StatelessWidget {
   const CountryListPickerApp({super.key});
@@ -37,12 +44,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final String _code = "eg";
 
-  Future<List<Map>> readJsonFile(String filePath) async {
-    var input = await File(filePath).readAsString();
-    var map = jsonDecode(input);
-    return map['users'];
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,11 +54,12 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: ElevatedButton(child: const Text("Json File"), onPressed: ()async {
-
-            var list = await readJsonFile ("jsons/countries.json");
-            print(list);
-            }),
+            child: ElevatedButton(
+                child: const Text("Json File"),
+                onPressed: () async {
+                  Map<String, dynamic> list = await readJsonFile("jsons/countries.json");
+                  print(list.entries.toList()[200]);
+                }),
           ),
           // Center(
           //   child: CountryListPicker(
