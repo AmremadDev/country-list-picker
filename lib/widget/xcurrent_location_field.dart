@@ -8,12 +8,12 @@ class XCurrentLocationField extends StatelessWidget {
   const XCurrentLocationField({
     Key? key,
     required this.dialogTheme,
-    this.height = 50.0,
+
     required this.countries
   }) : super(key: key);
 
   final CDialogTheme dialogTheme;
-  final double height;
+
   final List<Country> countries;
 
   @override
@@ -24,7 +24,7 @@ class XCurrentLocationField extends StatelessWidget {
           title: dialogTheme.currentLocationText,
           background: dialogTheme.titlesBackground,
           titlesStyle: dialogTheme.titlesStyle,
-          height: height),
+          height: dialogTheme.rowHeight),
       CountryListTile(country: country, dialogTheme: dialogTheme),
     ]);
   }

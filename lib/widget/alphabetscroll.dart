@@ -13,14 +13,14 @@ class XAlphabetScroll extends StatelessWidget {
     required this.dialogTheme,
     required this.alphabet,
     required this.countries,
-    this.unitHeight = 50.0,
+    // this.unitHeight = 50.0,
     this.unitsCanceled = 6,
   }) : super(key: key);
   final ScrollController scrollController;
   final CDialogTheme dialogTheme;
   final List<String>? alphabet;
   final List<Country> countries;
-  final double unitHeight;
+  // final double unitHeight;
   final int unitsCanceled;
   String? _oldtext;
 
@@ -79,10 +79,11 @@ class XAlphabetScroll extends StatelessWidget {
                         child: InkWell(
                           onTap: () {
                             if (alphabet![index] != _oldtext) {
-                              int pos = countries.indexWhere((c) => c.englishName!.toUpperCase().startsWith(alphabet![index]));
+                              int pos = countries
+                                  .indexWhere((c) => c.englishName!.toUpperCase().startsWith(alphabet![index]));
 
-                              (unitHeight * (pos + unitsCanceled) + 10 <= scrollController.position.maxScrollExtent)
-                                  ? scrollController.jumpTo(unitHeight * (pos + unitsCanceled) + 10)
+                              (dialogTheme.rowHeight * (pos + unitsCanceled) + 10 <= scrollController.position.maxScrollExtent)
+                                  ? scrollController.jumpTo(dialogTheme.rowHeight * (pos + unitsCanceled) + 10)
                                   : scrollController.jumpTo(scrollController.position.maxScrollExtent);
                               _oldtext = alphabet![index];
                               value.changeSelectedPosition(index);
@@ -90,20 +91,24 @@ class XAlphabetScroll extends StatelessWidget {
                           },
                           child: Container(
                             width: 40,
-                            height: unitHeight,
+                            height: dialogTheme.rowHeight,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: index == value.posSelected ? dialogTheme.alphabetSelectedBackgroundColor : dialogTheme.alphabetBackgroundColor,
+                              color: index == value.posSelected
+                                  ? dialogTheme.alphabetSelectedBackgroundColor
+                                  : dialogTheme.alphabetBackgroundColor,
                               shape: BoxShape.circle,
                             ),
-                            child: Text(
-                              alphabet![index],
-                              textAlign: TextAlign.center,
-                              style: (index == value.posSelected)
-                                  ? (dialogTheme.alphabetSelectedTextStyle) ??
-                                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor)
-                                  : (dialogTheme.alphabetTextStyle) ?? const TextStyle(fontSize: 12),
-                            ),
+                            child: Text(alphabet![index],
+                                textAlign: TextAlign.center,
+                                style: (index == value.posSelected)
+                                    ? dialogTheme.alphabetSelectedTextStyle.copyWith(
+                                        fontSize: dialogTheme.alphabetSelectedTextStyle.fontSize ?? 18,
+                                        fontWeight: dialogTheme.alphabetSelectedTextStyle.fontWeight ?? FontWeight.bold,
+                                        color: dialogTheme.alphabetSelectedTextStyle.color ??
+                                            Theme.of(context).primaryColor)
+                                    : dialogTheme.alphabetTextStyle
+                                        .copyWith(fontSize: (dialogTheme.alphabetTextStyle.fontSize) ?? 12)),
                           ),
                         ),
                       ))

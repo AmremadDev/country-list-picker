@@ -8,7 +8,8 @@ class CDialogTheme {
   final TextStyle titlesStyle;
   final Color titlesBackground;
   final Color backgroundColor;
-
+  final TextStyle textStyle;
+  final double rowHeight;
   // Search Area Area
   final bool isShowSearch;
   final String searchText;
@@ -21,13 +22,13 @@ class CDialogTheme {
   //Last Picked Country Area
   final bool isShowLastPickCountry;
   final String lastPickText;
-  final IconData lastPickIcon;
+  final Icon lastPickIcon;
 
   // alphabet Area
   final Color alphabetBackgroundColor;
-  final TextStyle? alphabetTextStyle;
+  final TextStyle alphabetTextStyle;
   final Color alphabetSelectedBackgroundColor;
-  final TextStyle? alphabetSelectedTextStyle;
+  final TextStyle alphabetSelectedTextStyle;
   final bool isShowAphabetScroll;
 
   const CDialogTheme({
@@ -35,7 +36,7 @@ class CDialogTheme {
     this.isShowFlage = true,
     this.isShowFloatButton = true,
     this.isShowAphabetScroll = true,
-    this.backgroundColor = Colors.white,
+    this.backgroundColor = Colors.transparent,
     this.currentLocationText = "Current Location",
     this.titlesStyle = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
     this.titlesBackground = const Color(0xfff4f4f4),
@@ -48,8 +49,10 @@ class CDialogTheme {
     this.lastPickText = "Last Pick",
     this.alphabetBackgroundColor = Colors.transparent,
     this.alphabetSelectedBackgroundColor = Colors.transparent,
-    this.alphabetTextStyle, //= const TextStyle(fontSize: 12,  fontWeight: FontWeight.w400, color: Colors.black),
-    this.alphabetSelectedTextStyle, // = const TextStyle(fontSize: 18,  fontWeight: FontWeight.bold),
-    this.lastPickIcon = Icons.check,
+    this.alphabetTextStyle = const TextStyle(fontSize: 12),
+    this.alphabetSelectedTextStyle = const TextStyle(fontSize: 18,  fontWeight: FontWeight.bold),
+    this.lastPickIcon = const Icon(Icons.check),
+    this.textStyle = const TextStyle(fontSize: 16),
+    this.rowHeight = 50.0
   });
 }

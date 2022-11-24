@@ -19,8 +19,8 @@ export './models/dialog_theme.dart';
 class CountryListPicker extends StatefulWidget {
   const CountryListPicker({
     super.key,
-    this.onChanged,
-    this.initialSelection,
+    required this.onChanged,
+    required this.initialSelection,
     this.appBar,
     this.pickerBuilder,
     this.countryBuilder,
@@ -32,7 +32,7 @@ class CountryListPicker extends StatefulWidget {
   });
 
   final String? initialSelection;
-  final ValueChanged<Country?>? onChanged;
+  final ValueChanged<Country?> onChanged;
   final PreferredSizeWidget? appBar;
   final Widget Function(BuildContext context, Country? countryCode)? pickerBuilder;
   final CPickerTheme? pickerTheme;
@@ -59,7 +59,7 @@ class CountryListPickerState extends State<CountryListPicker> {
               code: s['code'],
               dialCode: s['dial_code'],
               length: s['length'],
-              flagUri: 'flags/${s['code'].toLowerCase()}.png',
+              flagUri: 'assets/flags/${s['code'].toLowerCase()}.png',
             ))
         .toList();
 
@@ -95,7 +95,7 @@ class CountryListPickerState extends State<CountryListPicker> {
 
     setState(() {
       selectedItem = result ?? selectedItem;
-      widget.onChanged!(result);
+      widget.onChanged(result);
     });
   }
 

@@ -1,6 +1,8 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:xcountry/country_list_picker.dart';
-
 
 void main() {
   runApp(const CountryListPickerApp());
@@ -34,46 +36,65 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final String _code = "eg";
+
+  Future<List<Map>> readJsonFile(String filePath) async {
+    var input = await File(filePath).readAsString();
+    var map = jsonDecode(input);
+    return map['users'];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: CountryListPicker(
-          initialSelection: _code,
-          useUiOverlay: true,
-          // useSafeArea: true,
-          onChanged: (Country? code) {},
-          dialogTheme: CDialogTheme(
-            
-            appBar: AppBar(
-              title: const Text("Select Country"),
-              actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.flag_outlined))],
-            ),
-            isShowSearch: true,
-            isShowCurrentLocation: true,
-            isShowLastPickCountry: true,
-            isShowDialCode: true,
-            isShowFlage: true,
-            isShowAphabetScroll: true,
-            isShowFloatButton: true,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: ElevatedButton(child: const Text("Json File"), onPressed: ()async {
 
-            // alphabetBackgroundColor: ,
-            // alphabetSelectedBackgroundColor: ,
-            // alphabetSelectedTextStyle: ,
-            // alphabetTextStyle: ,
-            // backgroundColor: ,
-            // checkIcon: ,
-            // currentLocationText: ,
-            // lastPickText: ,
-            // searchHintText: ,
-            // searchText: ,
-            // titlesBackground: ,
-            // titlesStyle: ,
+            var list = await readJsonFile ("jsons/countries.json");
+            print(list);
+            }),
           ),
-        ),
+          // Center(
+          //   child: CountryListPicker(
+          //     initialSelection: _code,
+          //     useUiOverlay: true,
+          //     // useSafeArea: true,
+          //     onChanged: (Country? code) {},
+          //     //   dialogTheme: CDialogTheme(
+          //     //     // appBar: AppBar(
+          //     //     //   title: const Text("Select Country"),
+          //     //     //   actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.flag_outlined))],
+          //     //     // ),
+          //     //     // isShowSearch: false,
+          //     //     // isShowCurrentLocation: false,
+          //     //     // isShowLastPickCountry: false,
+          //     //     // isShowDialCode: false,
+          //     //     // isShowFlage: true,
+          //     //     // isShowAphabetScroll: true,
+          //     //     // isShowFloatButton: false,
+          //     //     // alphabetBackgroundColor: Colors.black ,
+          //     //     // alphabetTextStyle: const TextStyle(color: Colors.red) ,
+          //     //     // alphabetSelectedBackgroundColor: Colors.grey,
+          //     //     // alphabetSelectedTextStyle: const TextStyle(color: Colors.green, fontSize: 16) ,
+          //     //     //  titlesBackground: Colors.green,
+          //     //     //  backgroundColor: Colors.red ,
+          //     //     //  lastPickIcon: const Icon(Icons.safety_check,size: 30, color: Colors.amber,),
+          //     //     // currentLocationText: "local Country",
+          //     //     // lastPickText: "last selection" ,
+          //     //     // searchHintText:  "hint search by dial/name",
+          //     //     // searchText: "Search Here" ,
+          //     //     // rowHeight: 50,
+          //     //     // textStyle: TextStyle(fontSize: 11, color: Colors.green),
+          //     //     // titlesStyle: TextStyle(color: Colors.amber) ,
+          //     //   ),
+          //   ),
+          // ),
+        ],
       ),
       // Center is a layout widget. It takes a single child and positions it
 // This trailing comma makes auto-formatting nicer for build methods.

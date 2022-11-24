@@ -14,7 +14,7 @@ class CSettings extends ChangeNotifier {
               code: s['code'],
               dialCode: s['dial_code'],
               length: s['length'],
-              flagUri: 'flags/${s['code'].toLowerCase()}.png',
+              flagUri: 'assets/flags/${s['code'].toLowerCase()}.png',
             ))
         .toList();
     countries.sort((a, b) => a.englishName.toString().compareTo(b.englishName.toString()));

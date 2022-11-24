@@ -12,6 +12,7 @@ import './widget/country_listtile.dart';
 import './widget/xtitle.dart';
 import './widget/xsearch_field.dart';
 
+// ignore: must_be_immutable
 class XSelectionList extends StatelessWidget {
   XSelectionList(
     this.elements, {
@@ -34,7 +35,6 @@ class XSelectionList extends StatelessWidget {
   final bool useUiOverlay;
   final bool useSafeArea;
 
-  final double itemsizeheight = 50.0;
   final TextEditingController _controller = TextEditingController();
   final ScrollController _controllerScroll = ScrollController();
 
@@ -79,7 +79,7 @@ class XSelectionList extends StatelessWidget {
                                   title: dialogTheme.lastPickText,
                                   background: dialogTheme.titlesBackground,
                                   titlesStyle: dialogTheme.titlesStyle,
-                                  height: itemsizeheight,
+                                  height: dialogTheme.rowHeight,
                                 ),
                                 CountryListTile(
                                   country: initialCountry!,
@@ -143,7 +143,7 @@ class XSelectionList extends StatelessWidget {
       CSettings settings = context.read<CSettings>();
       settings.changeIsShowFloatButton(_controllerScroll.position.pixels != 0);
 
-      int scrollPosition = ((_controllerScroll.position.pixels) / itemsizeheight).round();
+      int scrollPosition = ((_controllerScroll.position.pixels) / dialogTheme.rowHeight).round();
 
       if (scrollPosition < _boxes) {
         settings.changeSelectedPosition(-1);

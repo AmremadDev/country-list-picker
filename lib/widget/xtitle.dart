@@ -19,7 +19,10 @@ class XTitle extends StatelessWidget {
       padding: const EdgeInsets.all(15.0),
       width: double.infinity,
       height: height,
-      child: Text(title, style: titlesStyle),
+      child: Text(title, 
+      style: titlesStyle.copyWith(fontSize: titlesStyle.fontSize??16),
+      
+      ),
     );
     
   }
