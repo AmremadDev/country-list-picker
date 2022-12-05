@@ -56,14 +56,12 @@ Future getdata() async {
   log(GetWorld().Currencies.length.toString());
 }
 
-
-
 class CountryListPickerState extends State<CountryListPicker> {
   Country? selectedItem;
   List<Country> elements = [];
   @override
   void initState() {
-    getdata();
+    // getdata();
     elements = (widget.pickerTheme?.showEnglishName ?? true ? countriesEnglish : codes)
         .map((s) => Country(
               englishName: s['english_name'],
@@ -76,14 +74,14 @@ class CountryListPickerState extends State<CountryListPicker> {
 
     if (widget.initialSelection != null) {
       selectedItem = elements.firstWhere(
-          (e) =>
-              (e.code!.toUpperCase() == widget.initialSelection!.toUpperCase()) ||
-              (e.dialCode == widget.initialSelection),
+          (e) => (e.code!.toUpperCase() == widget.initialSelection!.toUpperCase()) || (e.dialCode == widget.initialSelection),
           orElse: () => elements[0]);
     } else {
       selectedItem = elements[0];
     }
     super.initState();
+
+    print(GetWorld().Countries.length);
   }
 
   void _awaitFromSelectScreen() async {
@@ -96,9 +94,7 @@ class CountryListPickerState extends State<CountryListPicker> {
               elements,
               initialCountry: selectedItem,
               appBar: widget.dialogTheme.appBar ??
-                  AppBar(
-                      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-                      title: const Text("Select your country")),
+                  AppBar(backgroundColor: Theme.of(context).appBarTheme.backgroundColor, title: const Text("Select your country")),
               pickerTheme: widget.pickerTheme,
               dialogTheme: widget.dialogTheme,
               dialogBuilder: widget.countryBuilder,
@@ -116,17 +112,31 @@ class CountryListPickerState extends State<CountryListPicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(color: Colors.greenAccent),
-      width: widget.width,
-      child: TextField(
-        autofocus: true,
-        decoration: InputDecoration(
-          contentPadding: EdgeInsets.zero,
-          prefixIcon: _buildCountryCodeSelector(),
-          border: const OutlineInputBorder(borderSide: BorderSide.none),
-        ),
-      ),
+    return FutureBuilder<void>(
+      future: GetWorld().initialize(),
+      // initialData: InitialData,
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        return Container(
+          decoration: const BoxDecoration(color: Colors.greenAccent),
+          // width: widget.width,
+          child: ListView.builder(
+            itemCount: GetWorld().Countries.length,
+            itemBuilder: (BuildContext context, int index) {
+              return ListTile(title: Text(GetWorld().Countries[index].name.official),) ;
+            },
+          ),
+          
+          
+          // TextField(
+          //   autofocus: true,
+          //   decoration: InputDecoration(
+          //     contentPadding: EdgeInsets.zero,
+          //     prefixIcon: _buildCountryCodeSelector(),
+          //     border: const OutlineInputBorder(borderSide: BorderSide.none),
+          //   ),
+          // ),
+        );
+      },
     );
   }
 
