@@ -10,6 +10,7 @@ import './support/countries_codes_local.dart';
 import './models/dialog_theme.dart';
 import './models/picker_theme.dart';
 import './models/country.dart';
+import 'package:getworld/getworld.dart';
 
 // exports
 export './country_list_picker.dart';
@@ -53,6 +54,11 @@ class CountryListPickerState extends State<CountryListPicker> {
   List<Country> elements = [];
   @override
   void initState() {
+      ()async{
+        await GetWorld().initialize();
+        print(GetWorld().Currencies.length);
+      };
+    
     elements = (widget.pickerTheme?.showEnglishName ?? true ? countriesEnglish : codes)
         .map((s) => Country(
               englishName: s['english_name'],
