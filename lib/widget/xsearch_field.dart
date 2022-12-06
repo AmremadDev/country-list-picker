@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:getworld/scr/country.dart';
 import 'package:provider/provider.dart';
-
-import '../models/country.dart';
 import '../models/csettings_controller.dart';
 import '../models/dialog_theme.dart';
 import './xtitle.dart';
@@ -47,7 +46,7 @@ class XSearchField extends StatelessWidget {
             String s = value.toUpperCase();
             context
                 .read<CSettings>()
-                .changeCountries(elements.where((e) => e.dialCode!.startsWith(s) || e.englishName!.toUpperCase().startsWith(s)).toList());
+                .changeCountries(elements.where((e) => e.dialling!.calling_code.startsWith(s) || e.name.common.toUpperCase().startsWith(s)).toList());
           }),
         ),
       ),

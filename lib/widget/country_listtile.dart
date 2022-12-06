@@ -1,4 +1,4 @@
-import 'package:xcountry/models/country.dart';
+import 'package:getworld/scr/country.dart';
 import 'package:flutter/material.dart';
 import '../models/dialog_theme.dart';
 
@@ -18,9 +18,9 @@ class CountryListTile extends StatelessWidget {
     return SizedBox(
       height: dialogTheme.rowHeight,
       child: ListTile(
-          leading: (dialogTheme.isShowFlage) ? Image.asset(country.flagUri!, package: 'xcountry', width: 30.0) : null,
+          leading: (dialogTheme.isShowFlage) ? Image.asset("assets/flags/${country.iso_3166_1_alpha2.toLowerCase()}.png", package: 'xcountry', width: 30.0) : null,
           title: Text(
-            country.englishName!,
+            country.name.common,
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
             softWrap: false,
@@ -35,7 +35,7 @@ class CountryListTile extends StatelessWidget {
                     size: dialogTheme.lastPickIcon.size,
                   )
                 : (dialogTheme.isShowDialCode)
-                    ? Text(country.dialCode!,
+                    ? Text(country.dialling!.calling_code,
                         style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
                     : null,
           ),

@@ -1,16 +1,10 @@
 import 'dart:convert';
-import 'dart:io';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as material;
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:xcountry/country_list_picker.dart';
 
 void main() {
-  runApp(const CountryListPickerApp());
-
-  
-    Directory current = Directory.current;
-
-    print(current.uri.path);
+  material.runApp(const CountryListPickerApp());
 }
 
 Future readJsonFile(String filePath) async {
@@ -21,44 +15,43 @@ Future readJsonFile(String filePath) async {
   return map["countries"];
 }
 
-
-class CountryListPickerApp extends StatelessWidget {
+class CountryListPickerApp extends material.StatelessWidget {
   const CountryListPickerApp({super.key});
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  material.Widget build(material.BuildContext context) {
+    return material.MaterialApp(
       title: 'Country List Picker Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
+      theme: material.ThemeData(
+        primarySwatch: material.Colors.purple,
       ),
       home: const HomePage(title: 'Country List Picker Demo'),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
+class HomePage extends material.StatefulWidget {
   const HomePage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  material.State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends material.State<HomePage> {
   final String _code = "eg";
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+  material.Widget build(material.BuildContext context) {
+    return material.Scaffold(
+      appBar: material.AppBar(
+        title: material.Text(widget.title),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: material.Column(
+        mainAxisAlignment: material.MainAxisAlignment.center,
         children: [
           // Center(
           //   child: ElevatedButton(
@@ -68,7 +61,7 @@ class _HomePageState extends State<HomePage> {
           //         print(list.entries.toList()[200]);
           //       }),
           // ),
-          Center(
+          material.Center(
             child: CountryListPicker(
               initialSelection: _code,
               useUiOverlay: true,

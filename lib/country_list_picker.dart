@@ -1,19 +1,18 @@
 library country_list_picker;
 
 // imports
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:getworld/getworld.dart' as getworld;
+import 'package:getworld/scr/country.dart';
 import 'package:xcountry/models/csettings_controller.dart';
 import 'package:provider/provider.dart';
 import './xselection_list.dart';
-import './support/countries_codes_en.dart';
-import './support/countries_codes_local.dart';
+
 import './models/dialog_theme.dart';
 import './models/picker_theme.dart';
-import './models/country.dart';
 
+export 'package:getworld/getworld.dart';
 
 // exports
 export './country_list_picker.dart';
@@ -52,30 +51,45 @@ class CountryListPicker extends StatefulWidget {
   }
 }
 
-Future getdata() async {
-  // await GetWorld().initialize();
-  // log(GetWorld().Currencies.length.toString());
-}
+// Future getdata() async {
+//   // await GetWorld().initialize();
+//   // log(GetWorld().Currencies.length.toString());
+// }
 
 class CountryListPickerState extends State<CountryListPicker> {
   Country? selectedItem;
   List<Country> elements = [];
   @override
   void initState() {
-    getdata();
-    elements = (widget.pickerTheme?.showEnglishName ?? true ? countriesEnglish : codes)
-        .map((s) => Country(
-              englishName: s['english_name'],
-              code: s['code'],
-              dialCode: s['dial_code'],
-              length: s['length'],
-              flagUri: 'assets/flags/${s['code'].toLowerCase()}.png',
-            ))
-        .toList();
+    // getdata();
+    // elements = (widget.pickerTheme?.showEnglishName ?? true ? countriesEnglish : codes)
+    //     .map((s) => Country(
+    //           englishName: s['english_name'],
+    //           code: s['code'],
+    //           dialCode: s['dial_code'],
+    //           length: s['length'],
+    //           flagUri: 'assets/flags/${s['code'].toLowerCase()}.png',
+    //         ))
+    //     .toList();
+    getworld.GetWorld().initialize(
+        // languages: false,
+        // currencies: false,
+        // geographical: false,
+        // extra: false,
+        // states: false,
+        // population: false,
+        // alt_spellings: false,
+        // cities: false
 
+        );
+        
+    elements = getworld.Countries.map((e) => e).toList();
+    elements.sort((a, b) => a.name.common.toString().compareTo(b.name.common.toString()));
     if (widget.initialSelection != null) {
       selectedItem = elements.firstWhere(
-          (e) => (e.code!.toUpperCase() == widget.initialSelection!.toUpperCase()) || (e.dialCode == widget.initialSelection),
+          (e) =>
+              (e.iso_3166_1_alpha3.toUpperCase() == widget.initialSelection!.toUpperCase()) ||
+              (e.dialling!.calling_code == widget.initialSelection),
           orElse: () => elements[0]);
     } else {
       selectedItem = elements[0];
@@ -84,7 +98,7 @@ class CountryListPickerState extends State<CountryListPicker> {
 
     // print(GetWorld().Countries.length);
 
-    getworld.GetWorld().initialize();
+    // getworld.GetWorld().initialize();
   }
 
   void _awaitFromSelectScreen() async {
@@ -97,7 +111,9 @@ class CountryListPickerState extends State<CountryListPicker> {
               elements,
               initialCountry: selectedItem,
               appBar: widget.dialogTheme.appBar ??
-                  AppBar(backgroundColor: Theme.of(context).appBarTheme.backgroundColor, title: const Text("Select your country")),
+                  AppBar(
+                      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+                      title: const Text("Select your country")),
               pickerTheme: widget.pickerTheme,
               dialogTheme: widget.dialogTheme,
               dialogBuilder: widget.countryBuilder,
@@ -115,35 +131,31 @@ class CountryListPickerState extends State<CountryListPicker> {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    // 
-    // FutureBuilder<void>(
-    //   future: GetWorld().initialize(),
-    //   // initialData: InitialData,
-    //   builder: (BuildContext context, AsyncSnapshot snapshot) {
-    //     return Container(
-    //       decoration: const BoxDecoration(color: Colors.greenAccent),
-    //       // width: widget.width,
-    //       child: ListView.builder(
-    //         itemCount: GetWorld().Countries.length,
-    //         itemBuilder: (BuildContext context, int index) {
-    //           return ListTile(title: Text(GetWorld().Countries[index].name.official),) ;
-    //         },
-    //       ),
-          
-          
-          TextField(
-            autofocus: true,
-            decoration: InputDecoration(
-              contentPadding: EdgeInsets.zero,
-              prefixIcon: _buildCountryCodeSelector(),
-              border: const OutlineInputBorder(borderSide: BorderSide.none),
-            ),
-          );
-      
-      }
-   
+    return
+        //
+        // FutureBuilder<void>(
+        //   future: GetWorld().initialize(),
+        //   // initialData: InitialData,
+        //   builder: (BuildContext context, AsyncSnapshot snapshot) {
+        //     return Container(
+        //       decoration: const BoxDecoration(color: Colors.greenAccent),
+        //       // width: widget.width,
+        //       child: ListView.builder(
+        //         itemCount: GetWorld().Countries.length,
+        //         itemBuilder: (BuildContext context, int index) {
+        //           return ListTile(title: Text(GetWorld().Countries[index].name.official),) ;
+        //         },
+        //       ),
 
+        TextField(
+      autofocus: true,
+      decoration: InputDecoration(
+        contentPadding: EdgeInsets.zero,
+        prefixIcon: _buildCountryCodeSelector(),
+        border: const OutlineInputBorder(borderSide: BorderSide.none),
+      ),
+    );
+  }
 
   TextButton _buildCountryCodeSelector() {
     return TextButton(
@@ -160,22 +172,27 @@ class CountryListPickerState extends State<CountryListPicker> {
                   Flexible(
                     child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                        child: Image.asset(selectedItem!.flagUri!, package: "xcountry", width: 32.0)),
+                        child: Image.asset(
+                            "assets/flags/${selectedItem!.iso_3166_1_alpha2.toLowerCase()}.png",
+                            package: "xcountry",
+                            width: 32.0)),
                   ),
                 if (widget.pickerTheme?.isShowCode ?? true == true)
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: Text(selectedItem.toString(), style: widget.pickerTheme?.codeTextStyle),
+                      child: Text(selectedItem!.dialling!.calling_code.toString(),
+                          style: widget.pickerTheme?.codeTextStyle),
                     ),
                   ),
-                if (widget.pickerTheme?.isShowTitle ?? true == true)
+                if (widget.pickerTheme?.isShowTitle ?? true)
                   Flexible(
                     child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                        child: Text(selectedItem!.toCountryStringOnly(), maxLines: 1, overflow: TextOverflow.ellipsis)),
+                        child: Text(selectedItem!.name.common,
+                            maxLines: 1, overflow: TextOverflow.ellipsis)),
                   ),
-                if (widget.pickerTheme?.isDownIcon ?? true == true)
+                if (widget.pickerTheme?.isDownIcon ?? true)
                   const Flexible(
                     child: Icon(Icons.keyboard_arrow_down),
                   )

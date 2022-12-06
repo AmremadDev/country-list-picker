@@ -77,7 +77,7 @@ packages:
   getworld:
     dependency: transitive
     description:
-      path: "D:/Flutter/getworld"
+      path: "D:/Flutter/runApps/getworld"
       relative: false
     source: path
     version: "1.0.1"
