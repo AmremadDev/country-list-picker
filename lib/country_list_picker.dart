@@ -3,8 +3,9 @@ library country_list_picker;
 // imports
 import 'dart:developer';
 
-import 'package:xcountry/models/csettings_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:getworld/getworld.dart' as getworld;
+import 'package:xcountry/models/csettings_controller.dart';
 import 'package:provider/provider.dart';
 import './xselection_list.dart';
 import './support/countries_codes_en.dart';
@@ -12,7 +13,7 @@ import './support/countries_codes_local.dart';
 import './models/dialog_theme.dart';
 import './models/picker_theme.dart';
 import './models/country.dart';
-import 'package:getworld/getworld.dart';
+
 
 // exports
 export './country_list_picker.dart';
@@ -52,8 +53,8 @@ class CountryListPicker extends StatefulWidget {
 }
 
 Future getdata() async {
-  await GetWorld().initialize();
-  log(GetWorld().Currencies.length.toString());
+  // await GetWorld().initialize();
+  // log(GetWorld().Currencies.length.toString());
 }
 
 class CountryListPickerState extends State<CountryListPicker> {
@@ -61,7 +62,7 @@ class CountryListPickerState extends State<CountryListPicker> {
   List<Country> elements = [];
   @override
   void initState() {
-    // getdata();
+    getdata();
     elements = (widget.pickerTheme?.showEnglishName ?? true ? countriesEnglish : codes)
         .map((s) => Country(
               englishName: s['english_name'],
@@ -81,7 +82,9 @@ class CountryListPickerState extends State<CountryListPicker> {
     }
     super.initState();
 
-    print(GetWorld().Countries.length);
+    // print(GetWorld().Countries.length);
+
+    getworld.GetWorld().initialize();
   }
 
   void _awaitFromSelectScreen() async {
@@ -112,33 +115,35 @@ class CountryListPickerState extends State<CountryListPicker> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<void>(
-      future: GetWorld().initialize(),
-      // initialData: InitialData,
-      builder: (BuildContext context, AsyncSnapshot snapshot) {
-        return Container(
-          decoration: const BoxDecoration(color: Colors.greenAccent),
-          // width: widget.width,
-          child: ListView.builder(
-            itemCount: GetWorld().Countries.length,
-            itemBuilder: (BuildContext context, int index) {
-              return ListTile(title: Text(GetWorld().Countries[index].name.official),) ;
-            },
-          ),
+    return 
+    // 
+    // FutureBuilder<void>(
+    //   future: GetWorld().initialize(),
+    //   // initialData: InitialData,
+    //   builder: (BuildContext context, AsyncSnapshot snapshot) {
+    //     return Container(
+    //       decoration: const BoxDecoration(color: Colors.greenAccent),
+    //       // width: widget.width,
+    //       child: ListView.builder(
+    //         itemCount: GetWorld().Countries.length,
+    //         itemBuilder: (BuildContext context, int index) {
+    //           return ListTile(title: Text(GetWorld().Countries[index].name.official),) ;
+    //         },
+    //       ),
           
           
-          // TextField(
-          //   autofocus: true,
-          //   decoration: InputDecoration(
-          //     contentPadding: EdgeInsets.zero,
-          //     prefixIcon: _buildCountryCodeSelector(),
-          //     border: const OutlineInputBorder(borderSide: BorderSide.none),
-          //   ),
-          // ),
-        );
-      },
-    );
-  }
+          TextField(
+            autofocus: true,
+            decoration: InputDecoration(
+              contentPadding: EdgeInsets.zero,
+              prefixIcon: _buildCountryCodeSelector(),
+              border: const OutlineInputBorder(borderSide: BorderSide.none),
+            ),
+          );
+      
+      }
+   
+
 
   TextButton _buildCountryCodeSelector() {
     return TextButton(

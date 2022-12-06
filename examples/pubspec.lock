@@ -77,10 +77,10 @@ packages:
   getworld:
     dependency: transitive
     description:
-      name: getworld
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.0"
+      path: "D:/Flutter/getworld"
+      relative: false
+    source: path
+    version: "1.0.1"
   http:
     dependency: transitive
     description:

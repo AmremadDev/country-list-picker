@@ -1,10 +1,16 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:xcountry/country_list_picker.dart';
 
 void main() {
   runApp(const CountryListPickerApp());
+
+  
+    Directory current = Directory.current;
+
+    print(current.uri.path);
 }
 
 Future readJsonFile(String filePath) async {

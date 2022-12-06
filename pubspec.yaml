@@ -2,6 +2,7 @@ name: xcountry
 description: Flutter plugin project to pick country code, will show code country, dial code, flag country, and name country.
 version: 0.0.1
 homepage: https://github.com/AmremadDev/country-list-picker.git
+publish_to: none
 
 environment:
   sdk: '>=2.18.4 <3.0.0'
@@ -11,9 +12,10 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.6.5
-  getworld: ^1.0.0
   http: ^0.13.5
   provider: ^6.0.4
+  getworld:
+    path: D:/Flutter/getworld
 
 dev_dependencies:
   flutter_test:
