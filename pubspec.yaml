@@ -12,10 +12,13 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.6.5
+  getworld: ^1.0.1
   http: ^0.13.5
   provider: ^6.0.4
-  getworld:
-    path: D:/Flutter/getworld
+ 
+ 
+  # getworld:
+  #   path: D:/Flutter/runApps/getworld
 
 dev_dependencies:
   flutter_test:

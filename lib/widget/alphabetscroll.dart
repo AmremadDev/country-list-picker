@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:getworld/scr/country.dart';
 import 'package:provider/provider.dart';
 import '../models/dialog_theme.dart';
-import '../models/country.dart';
+
 import '../models/csettings_controller.dart';
 
 // note that need to active GestureDetector ,  must study Drag events
@@ -80,7 +81,7 @@ class XAlphabetScroll extends StatelessWidget {
                           onTap: () {
                             if (alphabet![index] != _oldtext) {
                               int pos = countries
-                                  .indexWhere((c) => c.englishName!.toUpperCase().startsWith(alphabet![index]));
+                                  .indexWhere((c) => c.name.common.toUpperCase().startsWith(alphabet![index]));
 
                               (dialogTheme.rowHeight * (pos + unitsCanceled) + 10 <= scrollController.position.maxScrollExtent)
                                   ? scrollController.jumpTo(dialogTheme.rowHeight * (pos + unitsCanceled) + 10)

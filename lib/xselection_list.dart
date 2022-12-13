@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:getworld/scr/country.dart';
 import 'package:provider/provider.dart';
 import 'package:xcountry/widget/xcurrent_location_field.dart';
 
@@ -7,7 +8,7 @@ import './widget/alphabetscroll.dart';
 import './models/picker_theme.dart';
 import './models/dialog_theme.dart';
 import './models/csettings_controller.dart';
-import './models/country.dart';
+
 import './widget/country_listtile.dart';
 import './widget/xtitle.dart';
 import './widget/xsearch_field.dart';
@@ -111,7 +112,7 @@ class XSelectionList extends StatelessWidget {
                     : XAlphabetScroll(
                         scrollController: _controllerScroll,
                         dialogTheme: dialogTheme,
-                        alphabet: elements.map((e) => e.englishName![0]).toSet().toList(),
+                        alphabet: elements.map((e) => e.name.common[0]).toSet().toList(),
                         countries: elements,
                         unitsCanceled: _boxes,
                       )
@@ -148,7 +149,7 @@ class XSelectionList extends StatelessWidget {
       if (scrollPosition < _boxes) {
         settings.changeSelectedPosition(-1);
       } else if (scrollPosition >= _boxes && scrollPosition <= settings.countries.length) {
-        int newPos = settings.countries.elementAt(scrollPosition - _boxes).englishName![0].toUpperCase().codeUnitAt(0) - 'A'.codeUnitAt(0);
+        int newPos = settings.countries.elementAt(scrollPosition - _boxes).name.common[0].toUpperCase().codeUnitAt(0) - 'A'.codeUnitAt(0);
         if (newPos != settings.posSelected) settings.changeSelectedPosition(newPos);
       }
     });
