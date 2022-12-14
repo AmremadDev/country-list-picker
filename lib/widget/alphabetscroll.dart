@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:getworld/scr/country.dart';
 import 'package:provider/provider.dart';
-import '../models/dialog_theme.dart';
-
+import '../models/country.dart';
 import '../models/csettings_controller.dart';
+import '../models/dialog_theme.dart';
 
 // note that need to active GestureDetector ,  must study Drag events
 // ignore: must_be_immutable
 class XAlphabetScroll extends StatelessWidget {
-  XAlphabetScroll({
+   XAlphabetScroll({
     Key? key,
     required this.scrollController,
-    required this.dialogTheme,
+     this.dialogTheme = const CDialogTheme(),
     required this.alphabet,
     required this.countries,
     // this.unitHeight = 50.0,
@@ -35,39 +34,7 @@ class XAlphabetScroll extends StatelessWidget {
     return Consumer<CSettings>(
       builder: (context, value, child) => Align(
         alignment: Alignment.centerRight,
-        child:
-
-            // LayoutBuilder(
-            //   builder: (BuildContext context, BoxConstraints constraints) {
-
-            //         diff = MediaQuery.of(context).size.height - constraints.biggest.height;
-            //         _heightscroller = (constraints.biggest.height) / alphabet!.length;
-            //         _sizeheightcontainer = (constraints.biggest.height);
-            //     return GestureDetector(
-
-            //   onVerticalDragUpdate: (details) {
-            //     scrollController.jumpTo(details.localPosition.dy*5);
-            //     if ((_offsetContainer + details.delta.dy) >= 0 &&
-            //         (_offsetContainer + details.delta.dy) <= (_sizeheightcontainer - _heightscroller)) {
-            //       _offsetContainer += details.delta.dy;
-
-            //     value.posSelected = ((_offsetContainer / _heightscroller) % alphabet!.length).round();
-
-            //     if (alphabet![value.posSelected] != _oldtext) {
-            //       int pos = value.countries.indexWhere((c) => c.englishName!.toUpperCase().startsWith(alphabet![value.posSelected]));
-            //       ((pos + unitsCanceled) * unitHeight <= scrollController.position.maxScrollExtent)
-            //           ? scrollController.jumpTo((pos + unitsCanceled) * unitHeight)
-            //           : scrollController.jumpTo(scrollController.position.maxScrollExtent);
-            //       _oldtext = alphabet![value.posSelected];
-            //     }}
-            //   },
-            //   onVerticalDragStart: (details) {
-            //     _offsetContainer = details.globalPosition.dy - diff;
-            //   },
-
-            // child:
-
-            Container(
+        child: Container(
           height: MediaQuery.of(context).size.height * 0.8,
           color: Colors.transparent,
           child: Column(
@@ -81,9 +48,10 @@ class XAlphabetScroll extends StatelessWidget {
                           onTap: () {
                             if (alphabet![index] != _oldtext) {
                               int pos = countries
-                                  .indexWhere((c) => c.name.common.toUpperCase().startsWith(alphabet![index]));
+                                  .indexWhere((c) => c.englishName.common.toUpperCase().startsWith(alphabet![index]));
 
-                              (dialogTheme.rowHeight * (pos + unitsCanceled) + 10 <= scrollController.position.maxScrollExtent)
+                              (dialogTheme.rowHeight * (pos + unitsCanceled) + 10 <=
+                                      scrollController.position.maxScrollExtent)
                                   ? scrollController.jumpTo(dialogTheme.rowHeight * (pos + unitsCanceled) + 10)
                                   : scrollController.jumpTo(scrollController.position.maxScrollExtent);
                               _oldtext = alphabet![index];
@@ -96,20 +64,20 @@ class XAlphabetScroll extends StatelessWidget {
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               color: index == value.posSelected
-                                  ? dialogTheme.alphabetSelectedBackgroundColor
-                                  : dialogTheme.alphabetBackgroundColor,
+                                  ? dialogTheme.alphabetsBar.selectedBackgroundColor
+                                  : dialogTheme.alphabetsBar.backgroundColor,
                               shape: BoxShape.circle,
                             ),
                             child: Text(alphabet![index],
                                 textAlign: TextAlign.center,
                                 style: (index == value.posSelected)
-                                    ? dialogTheme.alphabetSelectedTextStyle.copyWith(
-                                        fontSize: dialogTheme.alphabetSelectedTextStyle.fontSize ?? 18,
-                                        fontWeight: dialogTheme.alphabetSelectedTextStyle.fontWeight ?? FontWeight.bold,
-                                        color: dialogTheme.alphabetSelectedTextStyle.color ??
+                                    ? dialogTheme.alphabetsBar.textStyle.copyWith(
+                                        fontSize: dialogTheme.alphabetsBar.textStyle.fontSize ?? 18,
+                                        fontWeight: dialogTheme.alphabetsBar.textStyle.fontWeight ?? FontWeight.bold,
+                                        color: dialogTheme.alphabetsBar.textStyle.color ??
                                             Theme.of(context).primaryColor)
-                                    : dialogTheme.alphabetTextStyle
-                                        .copyWith(fontSize: (dialogTheme.alphabetTextStyle.fontSize) ?? 12)),
+                                    : dialogTheme.alphabetsBar.textStyle
+                                        .copyWith(fontSize: (dialogTheme.alphabetsBar.textStyle.fontSize) ?? 12)),
                           ),
                         ),
                       ))

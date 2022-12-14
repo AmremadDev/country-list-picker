@@ -1,57 +1,49 @@
-import 'dart:convert';
-import 'package:flutter/material.dart' as material;
-import 'package:flutter/services.dart' show rootBundle;
+
+import 'package:flutter/material.dart';
 import 'package:xcountry/country_list_picker.dart';
+import 'package:xcountry/models/country.dart';
 
 void main() {
-  material.runApp(const CountryListPickerApp());
+  runApp(const CountryListPickerApp());
 }
 
-Future readJsonFile(String filePath) async {
-  var jsonText = await rootBundle.loadString('jsons/countries.json');
-
-  // var input = await File(filePath).readAsString();
-  var map = jsonDecode(jsonText);
-  return map["countries"];
-}
-
-class CountryListPickerApp extends material.StatelessWidget {
+class CountryListPickerApp extends StatelessWidget {
   const CountryListPickerApp({super.key});
 
   // This widget is the root of your application.
   @override
-  material.Widget build(material.BuildContext context) {
-    return material.MaterialApp(
+  Widget build(BuildContext context) {
+    return MaterialApp(
       title: 'Country List Picker Demo',
       debugShowCheckedModeBanner: false,
-      theme: material.ThemeData(
-        primarySwatch: material.Colors.purple,
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
       ),
       home: const HomePage(title: 'Country List Picker Demo'),
     );
   }
 }
 
-class HomePage extends material.StatefulWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
 
   final String title;
 
   @override
-  material.State<HomePage> createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends material.State<HomePage> {
+class _HomePageState extends State<HomePage> {
   final String _code = "eg";
 
   @override
-  material.Widget build(material.BuildContext context) {
-    return material.Scaffold(
-      appBar: material.AppBar(
-        title: material.Text(widget.title),
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
-      body: material.Column(
-        mainAxisAlignment: material.MainAxisAlignment.center,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Center(
           //   child: ElevatedButton(
@@ -61,12 +53,13 @@ class _HomePageState extends material.State<HomePage> {
           //         print(list.entries.toList()[200]);
           //       }),
           // ),
-          material.Center(
+          Center(
             child: CountryListPicker(
               initialSelection: _code,
               useUiOverlay: true,
               // useSafeArea: true,
-              onChanged: (Country? code) {},
+              onChanged: (Country? code) {}, 
+              // dialogTheme: null,
               //   dialogTheme: CDialogTheme(
               //     // appBar: AppBar(
               //     //   title: const Text("Select Country"),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:getworld/scr/country.dart';
 import 'package:provider/provider.dart';
+import '../models/country.dart';
 import '../models/csettings_controller.dart';
 import '../models/dialog_theme.dart';
 import './xtitle.dart';
@@ -21,7 +21,7 @@ class XSearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       XTitle(
-        title: dialogTheme.searchText,
+        title: dialogTheme.searchTile.title,
         background: dialogTheme.titlesBackground,
         titlesStyle: dialogTheme.titlesStyle,
         height: dialogTheme.rowHeight,
@@ -38,7 +38,7 @@ class XSearchField extends StatelessWidget {
           
               border: InputBorder.none,
               contentPadding: const EdgeInsets.only(left: 15, bottom: 0, top: 0, right: 15),
-              hintText: dialogTheme.searchHintText,
+              hintText: dialogTheme.searchTile.hint,
               hintStyle:dialogTheme.textStyle.copyWith(color: Colors.grey[500])
               ),
               
@@ -46,7 +46,7 @@ class XSearchField extends StatelessWidget {
             String s = value.toUpperCase();
             context
                 .read<CSettings>()
-                .changeCountries(elements.where((e) => e.dialling!.calling_code.startsWith(s) || e.name.common.toUpperCase().startsWith(s)).toList());
+                .changeCountries(elements.where((e) => e.callingCode.startsWith(s) || e.englishName.common.toUpperCase().startsWith(s)).toList());
           }),
         ),
       ),

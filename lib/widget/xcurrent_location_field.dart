@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getworld/scr/country.dart';
+import '../models/country.dart';
 import '../widget/xtitle.dart';
 import '../models/dialog_theme.dart';
 import './country_listtile.dart';
@@ -18,10 +18,10 @@ class XCurrentLocationField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Country country = countries.singleWhere((element) => element.iso_3166_1_alpha2 == WidgetsBinding.instance.window.locale.countryCode);
+    Country country = countries.singleWhere((element) => element.alpha2 == WidgetsBinding.instance.window.locale.countryCode);
     return Column(children: [
       XTitle(
-          title: dialogTheme.currentLocationText,
+          title: dialogTheme.currentLocationTile.title,
           background: dialogTheme.titlesBackground,
           titlesStyle: dialogTheme.titlesStyle,
           height: dialogTheme.rowHeight),

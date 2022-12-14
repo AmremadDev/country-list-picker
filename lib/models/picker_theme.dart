@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 class CPickerTheme {
   // General Settings for Picked Dialog
   // Search Area
-  final String? searchText;
-  final String? searchHintText;
+  // final String? searchText;
+  // final String? searchHintText;
 
-  // Current Location
-  final bool isShowCurrentLocation;
+  // // Current Location
+  // final bool isShowCurrentLocation;
 
-  //Last Picked Country
-  final bool isShowLastPickCountry;
-  final String? lastPickText;
+  // //Last Picked Country
+  // final bool isShowLastPickCountry;
+  // final String? lastPickText;
 
-  // alphabet Area
-  final Color? alphabetSelectedBackgroundColor;
-  final Color? alphabetTextColor;
-  final Color? alphabetSelectedTextColor;
+  // // alphabet Area
+  // final Color? alphabetSelectedBackgroundColor;
+  // final Color? alphabetTextColor;
+  // final Color? alphabetSelectedTextColor;
 
 
   final bool? showEnglishName;
@@ -36,15 +36,15 @@ class CPickerTheme {
 
   // XSelectionList Themes
   CPickerTheme({
-    this.isShowCurrentLocation = true,
-    this.isShowLastPickCountry = false,
+    // this.isShowCurrentLocation = true,
+    // this.isShowLastPickCountry = false,
     this.labelColor,
-    this.searchText,
-    this.searchHintText,
-    this.lastPickText,
-    this.alphabetSelectedBackgroundColor,
-    this.alphabetTextColor,
-    this.alphabetSelectedTextColor,
+    // this.searchText,
+    // this.searchHintText,
+    // this.lastPickText,
+    // this.alphabetSelectedBackgroundColor,
+    // this.alphabetTextColor,
+    // this.alphabetSelectedTextColor,
     this.isShowTitle,
     this.isShowFlag,
     this.isShowCode,

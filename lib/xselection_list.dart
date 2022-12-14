@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:getworld/scr/country.dart';
 import 'package:provider/provider.dart';
 import 'package:xcountry/widget/xcurrent_location_field.dart';
 
@@ -12,16 +11,17 @@ import './models/csettings_controller.dart';
 import './widget/country_listtile.dart';
 import './widget/xtitle.dart';
 import './widget/xsearch_field.dart';
+import 'models/country.dart';
 
 // ignore: must_be_immutable
 class XSelectionList extends StatelessWidget {
-  XSelectionList(
+   XSelectionList(
     this.elements, {
     Key? key,
     this.initialCountry,
     this.appBar,
     this.pickerTheme,
-    this.dialogTheme = const CDialogTheme(),
+    this.dialogTheme =  const CDialogTheme() ,
     this.dialogBuilder,
     this.useUiOverlay = true,
     this.useSafeArea = false,
@@ -30,8 +30,8 @@ class XSelectionList extends StatelessWidget {
   final PreferredSizeWidget? appBar;
   final List<Country> elements;
   final Country? initialCountry;
-  final CPickerTheme? pickerTheme;
-  final CDialogTheme dialogTheme;
+   CPickerTheme? pickerTheme;
+  final CDialogTheme dialogTheme ;
   final Widget Function(BuildContext context, Country? country)? dialogBuilder;
   final bool useUiOverlay;
   final bool useSafeArea;
@@ -68,16 +68,16 @@ class XSelectionList extends StatelessWidget {
                   slivers: [
                     SliverToBoxAdapter(
                       child: Column(children: [
-                        (dialogTheme.isShowSearch)
+                        (dialogTheme.searchTile.visible)
                             ? XSearchField(dialogTheme: dialogTheme, controller: _controller, elements: elements)
                             : const SizedBox.shrink(),
-                        (dialogTheme.isShowCurrentLocation)
+                        (dialogTheme.currentLocationTile.visible)
                             ? XCurrentLocationField(dialogTheme: dialogTheme, countries: elements)
                             : const SizedBox.shrink(),
-                        (dialogTheme.isShowLastPickCountry)
+                        (dialogTheme.lastPickTile.visible)
                             ? Column(children: [
                                 XTitle(
-                                  title: dialogTheme.lastPickText,
+                                  title: dialogTheme.lastPickTile.title,
                                   background: dialogTheme.titlesBackground,
                                   titlesStyle: dialogTheme.titlesStyle,
                                   height: dialogTheme.rowHeight,
@@ -95,7 +95,10 @@ class XSelectionList extends StatelessWidget {
                     Selector<CSettings, List<Country>>(
                       selector: (context, model) => model.countries,
                       builder: (context, value, child) => SliverList(
-                        delegate: SliverChildBuilderDelegate((context, index) {
+                        
+                        delegate: SliverChildBuilderDelegate(
+                          (context, index) {
+
                           return dialogBuilder != null
                               ? dialogBuilder!(context, value.elementAt(index))
                               : CountryListTile(
@@ -104,19 +107,23 @@ class XSelectionList extends StatelessWidget {
                                 );
                         }, childCount: value.length),
                       ),
-                    )
+                    ),
+               
+                  
                   ],
                 ),
-                (dialogTheme.isShowAphabetScroll == false)
+               
+                (dialogTheme.alphabetsBar.visible == false)
                     ? const SizedBox.shrink()
                     : XAlphabetScroll(
                         scrollController: _controllerScroll,
                         dialogTheme: dialogTheme,
-                        alphabet: elements.map((e) => e.name.common[0]).toSet().toList(),
+                        alphabet: elements.map((e) => e.englishName.common[0]).toSet().toList(),
                         countries: elements,
                         unitsCanceled: _boxes,
                       )
               ],
+
             )));
 
     return useSafeArea ? SafeArea(child: scaffold) : scaffold;
@@ -124,9 +131,9 @@ class XSelectionList extends StatelessWidget {
 
   void _intialValues(BuildContext context) {
     _boxes = 0;
-    if (dialogTheme.isShowSearch == true) _boxes += 2;
-    if (dialogTheme.isShowCurrentLocation == true) _boxes += 2;
-    if (dialogTheme.isShowLastPickCountry == true) _boxes += 2;
+    if (dialogTheme.alphabetsBar.visible == true) _boxes += 2;
+    if (dialogTheme.currentLocationTile.visible == true) _boxes += 2;
+    if (dialogTheme.lastPickTile.visible == true) _boxes += 2;
 
     if (useUiOverlay) {
       SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -149,7 +156,7 @@ class XSelectionList extends StatelessWidget {
       if (scrollPosition < _boxes) {
         settings.changeSelectedPosition(-1);
       } else if (scrollPosition >= _boxes && scrollPosition <= settings.countries.length) {
-        int newPos = settings.countries.elementAt(scrollPosition - _boxes).name.common[0].toUpperCase().codeUnitAt(0) - 'A'.codeUnitAt(0);
+        int newPos = settings.countries.elementAt(scrollPosition - _boxes).englishName.common[0].toUpperCase().codeUnitAt(0) - 'A'.codeUnitAt(0);
         if (newPos != settings.posSelected) settings.changeSelectedPosition(newPos);
       }
     });
