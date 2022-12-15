@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:xcountry/widget/xcurrent_location_field.dart';
 
-import './widget/alphabetscroll.dart';
-import './models/picker_theme.dart';
-import './models/dialog_theme.dart';
-import './models/csettings_controller.dart';
+import '../widget/alphabetscroll.dart';
+import '../models/picker_theme.dart';
+import '../models/dialog_theme.dart';
+import '../models/csettings_controller.dart';
 
-import './widget/country_listtile.dart';
-import './widget/xtitle.dart';
-import './widget/xsearch_field.dart';
-import 'models/country.dart';
+import '../widget/country_listtile.dart';
+import 'widget/ctitle.dart';
+
+import '../models/country.dart';
+import '../widget/current_location_tile.dart';
+import '../widget/search_tile.dart';
 
 // ignore: must_be_immutable
-class XSelectionList extends StatelessWidget {
-   XSelectionList(
+class SelectionList extends StatelessWidget {
+  SelectionList(
     this.elements, {
     Key? key,
     this.initialCountry,
     this.appBar,
     this.pickerTheme,
-    this.dialogTheme =  const CDialogTheme() ,
+    this.dialogTheme = const CDialogTheme(),
     this.dialogBuilder,
     this.useUiOverlay = true,
     this.useSafeArea = false,
@@ -30,8 +31,8 @@ class XSelectionList extends StatelessWidget {
   final PreferredSizeWidget? appBar;
   final List<Country> elements;
   final Country? initialCountry;
-   CPickerTheme? pickerTheme;
-  final CDialogTheme dialogTheme ;
+  final CPickerTheme? pickerTheme;
+  final CDialogTheme dialogTheme;
   final Widget Function(BuildContext context, Country? country)? dialogBuilder;
   final bool useUiOverlay;
   final bool useSafeArea;
@@ -69,18 +70,18 @@ class XSelectionList extends StatelessWidget {
                     SliverToBoxAdapter(
                       child: Column(children: [
                         (dialogTheme.searchTile.visible)
-                            ? XSearchField(dialogTheme: dialogTheme, controller: _controller, elements: elements)
+                            ? SearchTile(dialogTheme: dialogTheme, controller: _controller, elements: elements)
                             : const SizedBox.shrink(),
                         (dialogTheme.currentLocationTile.visible)
-                            ? XCurrentLocationField(dialogTheme: dialogTheme, countries: elements)
+                            ? CurrentLocationTile(dialogTheme: dialogTheme, countries: elements)
                             : const SizedBox.shrink(),
                         (dialogTheme.lastPickTile.visible)
                             ? Column(children: [
-                                XTitle(
+                                CTitle(
                                   title: dialogTheme.lastPickTile.title,
                                   background: dialogTheme.titlesBackground,
                                   titlesStyle: dialogTheme.titlesStyle,
-                                  height: dialogTheme.rowHeight,
+                                  height: dialogTheme.tileHeight,
                                 ),
                                 CountryListTile(
                                   country: initialCountry!,
@@ -89,16 +90,15 @@ class XSelectionList extends StatelessWidget {
                                 ),
                               ])
                             : const SizedBox.shrink(),
-                        (_boxes == 0) ? const SizedBox.shrink() : Container(height: 10, color: dialogTheme.titlesBackground)
+                        (_boxes == 0)
+                            ? const SizedBox.shrink()
+                            : Container(height: 10, color: dialogTheme.titlesBackground)
                       ]),
                     ),
                     Selector<CSettings, List<Country>>(
                       selector: (context, model) => model.countries,
                       builder: (context, value, child) => SliverList(
-                        
-                        delegate: SliverChildBuilderDelegate(
-                          (context, index) {
-
+                        delegate: SliverChildBuilderDelegate((context, index) {
                           return dialogBuilder != null
                               ? dialogBuilder!(context, value.elementAt(index))
                               : CountryListTile(
@@ -108,14 +108,11 @@ class XSelectionList extends StatelessWidget {
                         }, childCount: value.length),
                       ),
                     ),
-               
-                  
                   ],
                 ),
-               
                 (dialogTheme.alphabetsBar.visible == false)
                     ? const SizedBox.shrink()
-                    : XAlphabetScroll(
+                    : AlphabetScroll(
                         scrollController: _controllerScroll,
                         dialogTheme: dialogTheme,
                         alphabet: elements.map((e) => e.englishName.common[0]).toSet().toList(),
@@ -123,7 +120,6 @@ class XSelectionList extends StatelessWidget {
                         unitsCanceled: _boxes,
                       )
               ],
-
             )));
 
     return useSafeArea ? SafeArea(child: scaffold) : scaffold;
@@ -151,12 +147,14 @@ class XSelectionList extends StatelessWidget {
       CSettings settings = context.read<CSettings>();
       settings.changeIsShowFloatButton(_controllerScroll.position.pixels != 0);
 
-      int scrollPosition = ((_controllerScroll.position.pixels) / dialogTheme.rowHeight).round();
+      int scrollPosition = ((_controllerScroll.position.pixels) / dialogTheme.tileHeight).round();
 
       if (scrollPosition < _boxes) {
         settings.changeSelectedPosition(-1);
       } else if (scrollPosition >= _boxes && scrollPosition <= settings.countries.length) {
-        int newPos = settings.countries.elementAt(scrollPosition - _boxes).englishName.common[0].toUpperCase().codeUnitAt(0) - 'A'.codeUnitAt(0);
+        int newPos =
+            settings.countries.elementAt(scrollPosition - _boxes).englishName.common[0].toUpperCase().codeUnitAt(0) -
+                'A'.codeUnitAt(0);
         if (newPos != settings.posSelected) settings.changeSelectedPosition(newPos);
       }
     });

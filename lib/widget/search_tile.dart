@@ -3,10 +3,10 @@ import 'package:provider/provider.dart';
 import '../models/country.dart';
 import '../models/csettings_controller.dart';
 import '../models/dialog_theme.dart';
-import './xtitle.dart';
+import '../widget/ctitle.dart';
 
-class XSearchField extends StatelessWidget {
-  const XSearchField({
+class SearchTile extends StatelessWidget {
+  const SearchTile({
     Key? key,
     required this.dialogTheme,
     required this.controller,
@@ -20,16 +20,16 @@ class XSearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      XTitle(
+      CTitle(
         title: dialogTheme.searchTile.title,
         background: dialogTheme.titlesBackground,
         titlesStyle: dialogTheme.titlesStyle,
-        height: dialogTheme.rowHeight,
+        height: dialogTheme.tileHeight,
       ),
       Container(
         
         color: dialogTheme.backgroundColor,
-        height: dialogTheme.rowHeight,
+        height: dialogTheme.tileHeight,
         child: TextField(
           style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16),
           

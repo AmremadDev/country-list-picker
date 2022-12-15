@@ -3,16 +3,16 @@ library country_list_picker;
 // imports
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import './/support/countries_codes.dart';
-import './xselection_list.dart';
-import './models/picker_theme.dart';
-import './models/country.dart';
-import './models/csettings_controller.dart';
-import 'models/dialog_theme.dart';
+import '../support/countries_codes.dart';
+import '../selection_list.dart';
+import '../models/picker_theme.dart';
+import '../models/country.dart';
+import '../models/csettings_controller.dart';
+import '../models/dialog_theme.dart';
 
 // exports
-export './country_list_picker.dart';
-export './models/dialog_theme.dart';
+export '../country_list_picker.dart';
+export '../models/dialog_theme.dart';
 
 class CountryListPicker extends StatefulWidget {
   const CountryListPicker({
@@ -78,12 +78,12 @@ class CountryListPickerState extends State<CountryListPicker> {
   }
 
   void _awaitFromSelectScreen() async {
-    final Country result = await Navigator.push(
+    final Country? result = await Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => ChangeNotifierProvider<CSettings>(
             create: (context) => CSettings(countries),
-            child: XSelectionList(
+            child: SelectionList(
               countries,
               initialCountry: selectedItem,
               appBar: widget.dialogTheme.appBar ??
@@ -100,7 +100,7 @@ class CountryListPickerState extends State<CountryListPicker> {
         ));
 
     setState(() {
-      selectedItem = result; //?? selectedItem;
+      selectedItem = result ?? selectedItem;
       widget.onChanged(result);
     });
   }

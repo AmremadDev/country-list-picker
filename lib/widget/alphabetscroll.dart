@@ -6,8 +6,8 @@ import '../models/dialog_theme.dart';
 
 // note that need to active GestureDetector ,  must study Drag events
 // ignore: must_be_immutable
-class XAlphabetScroll extends StatelessWidget {
-   XAlphabetScroll({
+class AlphabetScroll extends StatelessWidget {
+   AlphabetScroll({
     Key? key,
     required this.scrollController,
      this.dialogTheme = const CDialogTheme(),
@@ -20,15 +20,8 @@ class XAlphabetScroll extends StatelessWidget {
   final CDialogTheme dialogTheme;
   final List<String>? alphabet;
   final List<Country> countries;
-  // final double unitHeight;
   final int unitsCanceled;
   String? _oldtext;
-
-  // late double _offsetContainer = 0.0;
-  // late double diff;
-  // late double _heightscroller;
-  // late double _sizeheightcontainer;
-
   @override
   Widget build(BuildContext context) {
     return Consumer<CSettings>(
@@ -50,9 +43,9 @@ class XAlphabetScroll extends StatelessWidget {
                               int pos = countries
                                   .indexWhere((c) => c.englishName.common.toUpperCase().startsWith(alphabet![index]));
 
-                              (dialogTheme.rowHeight * (pos + unitsCanceled) + 10 <=
+                              (dialogTheme.tileHeight * (pos + unitsCanceled) + 10 <=
                                       scrollController.position.maxScrollExtent)
-                                  ? scrollController.jumpTo(dialogTheme.rowHeight * (pos + unitsCanceled) + 10)
+                                  ? scrollController.jumpTo(dialogTheme.tileHeight * (pos + unitsCanceled) + 10)
                                   : scrollController.jumpTo(scrollController.position.maxScrollExtent);
                               _oldtext = alphabet![index];
                               value.changeSelectedPosition(index);
@@ -60,7 +53,7 @@ class XAlphabetScroll extends StatelessWidget {
                           },
                           child: Container(
                             width: 40,
-                            height: dialogTheme.rowHeight,
+                            height: dialogTheme.tileHeight,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               color: index == value.posSelected

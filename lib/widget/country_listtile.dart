@@ -16,7 +16,7 @@ class CountryListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: dialogTheme.rowHeight,
+      height: dialogTheme.tileHeight,
       child: ListTile(
           leading: (dialogTheme.isShowFlage)
               ? Image.asset("assets/flags/${country.alpha2.toLowerCase()}.png", package: 'xcountry', width: 30.0)
