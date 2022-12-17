@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-
+import '../widget/lastpick_tile.dart';
 import '../widget/alphabetscroll.dart';
-import '../models/picker_theme.dart';
-import '../models/dialog_theme.dart';
+import '../themes/country_list_picker_theme.dart';
+import '../themes/country_list_dialog_theme.dart';
 import '../models/csettings_controller.dart';
-
 import '../widget/country_listtile.dart';
-import 'widget/ctitle.dart';
-
 import '../models/country.dart';
 import '../widget/current_location_tile.dart';
 import '../widget/search_tile.dart';
@@ -19,10 +16,10 @@ class SelectionList extends StatelessWidget {
   SelectionList(
     this.elements, {
     Key? key,
-    this.initialCountry,
+    required this.initialCountry,
     this.appBar,
-    this.pickerTheme,
-    this.dialogTheme = const CDialogTheme(),
+    // this.pickerTheme,
+    this.dialogTheme = const CountryListDialogTheme(),
     this.dialogBuilder,
     this.useUiOverlay = true,
     this.useSafeArea = false,
@@ -30,9 +27,9 @@ class SelectionList extends StatelessWidget {
 
   final PreferredSizeWidget? appBar;
   final List<Country> elements;
-  final Country? initialCountry;
-  final CPickerTheme? pickerTheme;
-  final CDialogTheme dialogTheme;
+  final Country initialCountry;
+  // final CountryListPickerTheme? pickerTheme;
+  final CountryListDialogTheme dialogTheme;
   final Widget Function(BuildContext context, Country? country)? dialogBuilder;
   final bool useUiOverlay;
   final bool useSafeArea;
@@ -69,30 +66,11 @@ class SelectionList extends StatelessWidget {
                   slivers: [
                     SliverToBoxAdapter(
                       child: Column(children: [
-                        (dialogTheme.searchTile.visible)
-                            ? SearchTile(dialogTheme: dialogTheme, controller: _controller, elements: elements)
-                            : const SizedBox.shrink(),
-                        (dialogTheme.currentLocationTile.visible)
-                            ? CurrentLocationTile(dialogTheme: dialogTheme, countries: elements)
-                            : const SizedBox.shrink(),
-                        (dialogTheme.lastPickTile.visible)
-                            ? Column(children: [
-                                CTitle(
-                                  title: dialogTheme.lastPickTile.title,
-                                  background: dialogTheme.titlesBackground,
-                                  titlesStyle: dialogTheme.titlesStyle,
-                                  height: dialogTheme.tileHeight,
-                                ),
-                                CountryListTile(
-                                  country: initialCountry!,
-                                  dialogTheme: dialogTheme,
-                                  isLastpick: true,
-                                ),
-                              ])
-                            : const SizedBox.shrink(),
-                        (_boxes == 0)
-                            ? const SizedBox.shrink()
-                            : Container(height: 10, color: dialogTheme.titlesBackground)
+                        if (dialogTheme.searchTile.visible)
+                          SearchTile(dialogTheme: dialogTheme, controller: _controller, elements: elements),
+                        if (dialogTheme.currentLocationTile.visible) CurrentLocationTile(dialogTheme: dialogTheme, countries: elements),
+                        if (dialogTheme.lastPickTile.visible) LastPickTile(dialogTheme: dialogTheme, country: initialCountry),
+                        (_boxes == 0) ? const SizedBox.shrink() : Container(height: 10, color: dialogTheme.titlesBackground)
                       ]),
                     ),
                     Selector<CSettings, List<Country>>(
@@ -153,8 +131,7 @@ class SelectionList extends StatelessWidget {
         settings.changeSelectedPosition(-1);
       } else if (scrollPosition >= _boxes && scrollPosition <= settings.countries.length) {
         int newPos =
-            settings.countries.elementAt(scrollPosition - _boxes).englishName.common[0].toUpperCase().codeUnitAt(0) -
-                'A'.codeUnitAt(0);
+            settings.countries.elementAt(scrollPosition - _boxes).englishName.common[0].toUpperCase().codeUnitAt(0) - 'A'.codeUnitAt(0);
         if (newPos != settings.posSelected) settings.changeSelectedPosition(newPos);
       }
     });

@@ -1,4 +1,4 @@
-name: xcountry
+name: country_list_picker
 description: Flutter plugin project to pick country code, will show code country, dial code, flag country, and name country.
 version: 0.0.1
 homepage: https://github.com/AmremadDev/country-list-picker.git
@@ -33,7 +33,6 @@ flutter:
   # To add assets to your package, add an assets section, like this:
   assets:
     - assets/flags/
-    - assets/jsons/countries.json
   #   - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see

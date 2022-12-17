@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-
 import './country.dart';
-
-// import '../support/countries_codes_en.dart';
-// import './country.dart';
 
 class CSettings extends ChangeNotifier {
   int posSelected = -1;

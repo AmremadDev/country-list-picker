@@ -1,6 +1,5 @@
+import 'package:country_list_picker/country_list_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:xcountry/country_list_picker.dart';
-import 'package:xcountry/models/country.dart';
 
 void main() {
   runApp(const CountryListPickerApp());
@@ -33,8 +32,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final String _code = "eg";
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,16 +41,45 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(
-            child: CountryListPicker(
-              initialSelection: _code,
-              useUiOverlay: true,
-              onChanged: (Country? code) {},
+          CountryListPicker(
+            //intial value
+            initialCountry: Countries.Oman,
+            isShowFlag: true,
+            isDownIcon: true,
+            isShowCode: true,
+            isShowTitle: true,
+            useUiOverlay: true,
+            onChanged: (Country? code) {},
+            dialogTheme: const CountryListDialogTheme(
+                // //appBar
+                // appBar: AppBar(title: const Text("new appbar title"), backgroundColor: Colors.pink),
 
-              dialogTheme: const CDialogTheme(
-                alphabetsBar: AlphabetsBar(backgroundColor: Colors.red , visible: false),
-              ),
-            ),
+                // //AlphabetsBarThemes
+                // alphabetsBar: const AlphabetsBarThemes(backgroundColor: Colors.transparent, visible: true),
+
+                // //LastPickTileTheme
+                // lastPickTile: const LastPickTileTheme(visible: true, title: "last country picked", icon: Icon(Icons.check)),
+
+                // //CurrentLocationTileTheme
+                // currentLocationTile: const CurrentLocationTileTheme(visible: true, title: "current country"),
+
+                // //SearchTileTheme
+                // searchTile: const SearchTileTheme(visible: true, title: "my search", hint: "by code/name"),
+
+                // //show/hide options
+                // isShowDialCode: true,
+                // isShowFlage: true,
+                // isShowFloatButton: false,
+
+                // //Styles and colors
+                // backgroundColor: Colors.white,
+                // titlesBackground: Colors.pink,
+                // titlesStyle: const TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
+                // textStyle: const TextStyle(color: Colors.pink),
+
+                // //Tile height
+                // tileHeight: 50,
+                ),
           ),
         ],
       ),

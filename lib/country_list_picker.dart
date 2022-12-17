@@ -1,45 +1,57 @@
 library country_list_picker;
 
 // imports
+import 'package:country_list_picker/models/countries.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../support/countries_codes.dart';
+import 'contollers/countries_codes.dart';
 import '../selection_list.dart';
-import '../models/picker_theme.dart';
 import '../models/country.dart';
 import '../models/csettings_controller.dart';
-import '../models/dialog_theme.dart';
+import '../themes/country_list_dialog_theme.dart';
 
 // exports
 export '../country_list_picker.dart';
-export '../models/dialog_theme.dart';
+export '../themes/country_list_picker_theme.dart';
+export '../themes/country_list_dialog_theme.dart';
+export '../models/country.dart';
+export '../models/countries.dart';
 
 class CountryListPicker extends StatefulWidget {
-  const CountryListPicker({
+  CountryListPicker({
     super.key,
-    required this.onChanged,
-    required this.initialSelection,
-    this.appBar,
+    this.initialCountry = Countries.Egypt,
+    this.isShowTitle = true,
+    this.isShowFlag = true,
+    this.isShowCode = true,
+    this.isDownIcon = true,
+    this.onChanged,
     this.pickerBuilder,
-    this.countryBuilder,
-    this.pickerTheme,
-    this.dialogTheme = const CDialogTheme(),
-    this.width,
+    this.dialogBuilder,
+    this.width = double.infinity,
     this.useUiOverlay = false,
     this.useSafeArea = false,
-  });
+    this.dialogTheme = const CountryListDialogTheme(),
+  }) : assert(dialogTheme.tileHeight >= 50.0, "tileheight must be greater than 50.0");
 
-  final String? initialSelection;
-  final ValueChanged<Country?> onChanged;
-  final PreferredSizeWidget? appBar;
+  final Countries initialCountry;
+
+  final bool? isShowFlag;
+  final bool? isShowTitle;
+  final bool? isShowCode;
+  final bool? isDownIcon;
+
+  final ValueChanged<Country>? onChanged;
+
   final Widget Function(BuildContext context, Country? countryCode)? pickerBuilder;
-  final CPickerTheme? pickerTheme;
-  final CDialogTheme  dialogTheme;
-  final Widget Function(BuildContext context, Country? country)? countryBuilder;
+  // final CountryListPickerTheme? pickerTheme;
+
+  final Widget Function(BuildContext context, Country? country)? dialogBuilder;
   final bool useUiOverlay;
   final bool useSafeArea;
   final double? width;
 
+  final CountryListDialogTheme dialogTheme;
   @override
   CountryListPickerState createState() {
     return CountryListPickerState();
@@ -64,16 +76,8 @@ class CountryListPickerState extends State<CountryListPicker> {
         .toList();
 
     countries.sort((a, b) => a.englishName.common.compareTo(b.englishName.common));
-
-    if (widget.initialSelection != null) {
-      selectedItem = countries.firstWhere(
-          (Country e) =>
-              (e.alpha3.toUpperCase() == widget.initialSelection!.toUpperCase()) ||
-              (e.callingCode == widget.initialSelection),
-          orElse: () => countries[0]);
-    } else {
-      selectedItem = countries[0];
-    }
+    selectedItem = countries.firstWhere((Country e) => (e.alpha3.toUpperCase() == widget.initialCountry.alpha3.toUpperCase()),
+        orElse: () => countries[0]);
     super.initState();
   }
 
@@ -87,12 +91,8 @@ class CountryListPickerState extends State<CountryListPicker> {
               countries,
               initialCountry: selectedItem,
               appBar: widget.dialogTheme.appBar ??
-                  AppBar(
-                      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-                      title: const Text("Select your country")),
-              pickerTheme: widget.pickerTheme,
+                  AppBar(backgroundColor: Theme.of(context).appBarTheme.backgroundColor, title: const Text("Select your country2")),
               dialogTheme: widget.dialogTheme,
-              // dialogBuilder: widget.countryBuilder,
               useUiOverlay: widget.useUiOverlay,
               useSafeArea: widget.useSafeArea,
             ),
@@ -101,59 +101,58 @@ class CountryListPickerState extends State<CountryListPicker> {
 
     setState(() {
       selectedItem = result ?? selectedItem;
-      widget.onChanged(result);
+      widget.onChanged ?? (selectedItem);
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      autofocus: true,
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.zero,
-        prefixIcon: _buildCountryCodeSelector(),
-        border: const OutlineInputBorder(borderSide: BorderSide.none),
-      ),
-    );
-  }
-
-  TextButton _buildCountryCodeSelector() {
-    return TextButton(
-      onPressed: () {
-        _awaitFromSelectScreen();
-      },
-      child: widget.pickerBuilder != null
-          ? widget.pickerBuilder!(context, selectedItem)
-          : Flex(
+    return Flex(
+      direction: Axis.horizontal,
+      children: [
+        InkWell(
+            onTap: () {
+              _awaitFromSelectScreen();
+            },
+            child: Flex(
               direction: Axis.horizontal,
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                if (widget.pickerTheme?.isShowFlag ?? true == true)
+              children: [
+                if (widget.isShowFlag == true)
                   Flexible(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                        child: Image.asset("assets/flags/${selectedItem.alpha2.toLowerCase()}.png",
-                            package: "xcountry", width: 32.0)),
-                  ),
-                if (widget.pickerTheme?.isShowCode ?? true == true)
-                  Flexible(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: Text(selectedItem.callingCode.toString(), style: widget.pickerTheme?.codeTextStyle),
+                      child: Image.asset("assets/flags/${selectedItem.alpha2.toLowerCase()}.png",
+                          package: "country_list_picker", width: 40.0)),
+                if (widget.isShowCode == true)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Text(
+                      selectedItem.callingCode.toString(),
+                      style: DefaultTextStyle.of(context).style.copyWith(fontSize: 16),
                     ),
                   ),
-                if (widget.pickerTheme?.isShowTitle ?? true)
-                  Flexible(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                        child: Text(selectedItem.englishName.common, maxLines: 1, overflow: TextOverflow.ellipsis)),
+                if (widget.isShowTitle == true)
+                  SizedBox(
+                    width: 100,
+                    child: Text(
+                      selectedItem.englishName.common,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: DefaultTextStyle.of(context).style.copyWith(fontSize: 16),
+                    ),
                   ),
-                if (widget.pickerTheme?.isDownIcon ?? true)
-                  const Flexible(
+                if (widget.isDownIcon == true)
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
                     child: Icon(Icons.keyboard_arrow_down),
-                  )
+                  ),
               ],
-            ),
+            )),
+        Flexible(
+          child: TextField(
+              style: DefaultTextStyle.of(context).style.copyWith(fontSize: 16),
+              decoration: const InputDecoration(border: InputBorder.none)),
+        ),
+      ],
     );
   }
 }

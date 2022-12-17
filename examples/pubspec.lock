@@ -36,6 +36,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.16.0"
+  country_list_picker:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "0.0.1"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -74,13 +81,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.6.5"
-  getworld:
-    dependency: transitive
-    description:
-      name: getworld
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.1"
   http:
     dependency: transitive
     description:
@@ -205,13 +205,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
-  xcountry:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.0.1"
 sdks:
-  dart: ">=2.18.5 <3.0.0"
+  dart: ">=2.18.4 <3.0.0"
   flutter: ">=1.17.0"
