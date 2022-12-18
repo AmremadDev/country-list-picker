@@ -16,7 +16,10 @@ export '../themes/country_list_dialog_theme.dart';
 export '../models/country.dart';
 export '../models/countries.dart';
 
-class CountryListPicker extends StatefulWidget {
+class CountryListPicker extends StatelessWidget {
+  late Country selectedItem;
+  late List<Country> countries = [];
+
   CountryListPicker({
     super.key,
     this.initialCountry = Countries.Egypt,
@@ -43,7 +46,6 @@ class CountryListPicker extends StatefulWidget {
             "Both isShowFlag and isShowCode can't be false");
 
   final Countries initialCountry;
-
   final bool isShowFlag;
   final bool isShowTitle;
   final bool isShowCode;
@@ -52,30 +54,17 @@ class CountryListPicker extends StatefulWidget {
   final EdgeInsets margin;
   final EdgeInsets padding;
   final BoxBorder? border;
-
   final TextStyle codeTextStyle;
   final TextStyle textFieldTextStyle;
   final TextStyle countryNameTextStyle;
   final ValueChanged<Country>? onChanged;
-
   final Widget Function(BuildContext context, Country? countryCode)? pickerBuilder;
-
   final Widget Function(BuildContext context, Country? country)? dialogBuilder;
   final bool useUiOverlay;
   final bool useSafeArea;
   final double? width;
-
   final CountryListDialogTheme dialogTheme;
-  @override
-  CountryListPickerState createState() {
-    return CountryListPickerState();
-  }
-}
 
-class CountryListPickerState extends State<CountryListPicker> {
-  late Country selectedItem;
-  List<Country> countries = [];
-  @override
   void initState() {
     countries = countriesList
         .map((s) => Country(
@@ -93,84 +82,89 @@ class CountryListPickerState extends State<CountryListPicker> {
 
     countries.sort((a, b) => a.englishName.common.compareTo(b.englishName.common));
     selectedItem = countries.firstWhere(
-        (Country e) => (e.alpha3.toUpperCase() == widget.initialCountry.alpha3.toUpperCase()),
+        (Country e) => (e.alpha3.toUpperCase() == initialCountry.alpha3.toUpperCase()),
         orElse: () => countries[0]);
-    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: widget.margin,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            padding: EdgeInsets.only(
-              top: widget.padding.top,
-              right: widget.padding.right + 5.0,
-              bottom: widget.padding.bottom,
-              left: widget.padding.left + 5.0,
-            ),
-            decoration: BoxDecoration(
-              // need to fix
-              border: widget.border ?? Border.all(width: 1, color: Theme.of(context).primaryColor),
-            ),
-            child: Row(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  _buildClickableCountryArea(),
-                  if (widget.isShowTextField == true)
-                    Flexible(
-                      child: TextField(
-                        style: widget.textFieldTextStyle.copyWith(
-                          fontSize: widget.textFieldTextStyle.fontSize ?? 16,
-                        ),
-                        maxLength: 15,
-                        decoration:
-                            const InputDecoration(border: InputBorder.none, counterText: ""),
-                      ),
-                    )
-                ]),
+    initState();
+    return ChangeNotifierProvider<CSettings>(
+      create: (context) => CSettings(countries),
+      builder: (context, child) {
+        return Container(
+          margin: margin,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: EdgeInsets.only(
+                  top: padding.top,
+                  right: padding.right + 5.0,
+                  bottom: padding.bottom,
+                  left: padding.left + 5.0,
+                ),
+                decoration: BoxDecoration(
+                  // need to fix
+                  border: border ?? Border.all(width: 1, color: Theme.of(context).primaryColor),
+                ),
+                child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      _buildClickableCountryArea(context),
+                      if (isShowTextField == true)
+                        Flexible(
+                          child: TextField(
+                            style: textFieldTextStyle.copyWith(
+                              fontSize: textFieldTextStyle.fontSize ?? 16,
+                            ),
+                            maxLength: 15,
+                            decoration:
+                                const InputDecoration(border: InputBorder.none, counterText: ""),
+                          ),
+                        )
+                    ]),
+              ),
+              if (isShowTitle == true)
+                Text(
+                  selectedItem.englishName.common,
+                  style: countryNameTextStyle.copyWith(
+                      fontSize: countryNameTextStyle.fontSize ?? 15,
+                      color: countryNameTextStyle.color ?? Colors.grey),
+                ),
+            ],
           ),
-          if (widget.isShowTitle == true)
-            Text(
-              selectedItem.englishName.common,
-              style: widget.countryNameTextStyle.copyWith(
-                  fontSize: widget.countryNameTextStyle.fontSize ?? 15,
-                  color: widget.countryNameTextStyle.color ?? Colors.grey),
-            ),
-        ],
-      ),
+        );
+      },
     );
   }
 
-  Widget _buildClickableCountryArea() {
+  Widget _buildClickableCountryArea(BuildContext context) {
     return InkWell(
-      onTap: (widget.onChanged == null) ? null : () => _selectionListScreen(),
+      onTap: (onChanged == null) ? null : () => _selectionListScreen(context),
       child: Row(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             //flage
-            if (widget.isShowFlag == true)
+            if (isShowFlag == true)
               Flexible(
                   child: Image.asset("assets/flags/${selectedItem.alpha2.toLowerCase()}.png",
                       package: "country_list_picker", width: 40.0)),
             //code
-            if (widget.isShowCode == true)
+            if (isShowCode == true)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 2.5),
                 child: Text(
                   selectedItem.callingCode.toString(),
-                  style: widget.codeTextStyle.copyWith(
-                      fontSize: widget.codeTextStyle.fontSize ?? 16,
-                      fontWeight: widget.codeTextStyle.fontWeight ?? FontWeight.bold),
+                  style: codeTextStyle.copyWith(
+                      fontSize: codeTextStyle.fontSize ?? 16,
+                      fontWeight: codeTextStyle.fontWeight ?? FontWeight.bold),
                 ),
               ),
             //down icon
-            if (widget.isDownIcon == true)
+            if (isDownIcon == true)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 2.5),
                 child: Icon(
@@ -182,29 +176,26 @@ class CountryListPickerState extends State<CountryListPicker> {
     );
   }
 
-  void _selectionListScreen() async {
+  void _selectionListScreen(BuildContext context) async {
     final Country? result = await Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => ChangeNotifierProvider<CSettings>(
-            create: (context) => CSettings(countries),
-            child: SelectionList(
-              countries,
-              initialCountry: selectedItem,
-              appBar: widget.dialogTheme.appBar ??
-                  AppBar(
-                      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-                      title: const Text("Select your country")),
-              dialogTheme: widget.dialogTheme,
-              useUiOverlay: widget.useUiOverlay,
-              useSafeArea: widget.useSafeArea,
-            ),
+          builder: (context) => SelectionList(
+            countries,
+            initialCountry: selectedItem,
+            appBar: dialogTheme.appBar ??
+                AppBar(
+                    backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+                    title: const Text("Select your country")),
+            dialogTheme: dialogTheme,
+            useUiOverlay: useUiOverlay,
+            useSafeArea: useSafeArea,
           ),
         ));
 
-    setState(() {
-      selectedItem = result ?? selectedItem;
-      if (widget.onChanged != null) widget.onChanged!(selectedItem);
-    });
+    // setState(() {
+    //   selectedItem = result ?? selectedItem;
+    //   if (onChanged != null) onChanged!(selectedItem);
+    // });
   }
 }
