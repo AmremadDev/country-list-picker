@@ -39,15 +39,23 @@ class _HomePageState extends State<HomePage> {
         title: Text(widget.title),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          CountryListPicker(
+            codeTextStyle: const TextStyle(color: Colors.blue, fontSize: 16),
+            textFieldTextStyle: const TextStyle(fontSize: 16),
+            countryNameTextStyle: const TextStyle(color: Colors.amber),
+          ),
           CountryListPicker(
             //intial value
             initialCountry: Countries.Oman,
             isShowFlag: true,
             isDownIcon: true,
             isShowCode: true,
-            isShowTitle: true,
+            isShowTitle: false,
+            isShowTextField: false,
+
             useUiOverlay: true,
             onChanged: (Country? code) {},
             dialogTheme: const CountryListDialogTheme(

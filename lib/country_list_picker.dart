@@ -25,6 +25,14 @@ class CountryListPicker extends StatefulWidget {
     this.isShowFlag = true,
     this.isShowCode = true,
     this.isDownIcon = true,
+    this.isShowTextField = true,
+    this.margin = const EdgeInsets.all(5.0),
+    this.padding = const EdgeInsets.all(0.0),
+    // this.border = const Border.all(width: 1),
+
+    this.codeTextStyle = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+    this.textFieldTextStyle = const TextStyle(fontSize: 16),
+    this.countryNameTextStyle = const TextStyle(fontSize: 15, color: Colors.grey),
     this.onChanged,
     this.pickerBuilder,
     this.dialogBuilder,
@@ -36,11 +44,18 @@ class CountryListPicker extends StatefulWidget {
 
   final Countries initialCountry;
 
-  final bool? isShowFlag;
-  final bool? isShowTitle;
-  final bool? isShowCode;
-  final bool? isDownIcon;
+  final bool isShowFlag;
+  final bool isShowTitle;
+  final bool isShowCode;
+  final bool isDownIcon;
+  final bool isShowTextField;
+  final EdgeInsets margin;
+  final EdgeInsets padding;
+  // final Border border;
 
+  final TextStyle codeTextStyle;
+  final TextStyle textFieldTextStyle;
+  final TextStyle countryNameTextStyle;
   final ValueChanged<Country>? onChanged;
 
   final Widget Function(BuildContext context, Country? countryCode)? pickerBuilder;
@@ -76,9 +91,88 @@ class CountryListPickerState extends State<CountryListPicker> {
         .toList();
 
     countries.sort((a, b) => a.englishName.common.compareTo(b.englishName.common));
-    selectedItem = countries.firstWhere((Country e) => (e.alpha3.toUpperCase() == widget.initialCountry.alpha3.toUpperCase()),
+    selectedItem = countries.firstWhere(
+        (Country e) => (e.alpha3.toUpperCase() == widget.initialCountry.alpha3.toUpperCase()),
         orElse: () => countries[0]);
     super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: widget.margin,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: EdgeInsets.only(
+              top: widget.padding.top,
+              right: widget.padding.right + 5.0,
+              bottom: widget.padding.bottom,
+              left: widget.padding.left + 5.0,
+            ),
+            decoration: BoxDecoration(
+              // need to fix
+              border: Border.all(width: 1, color: Theme.of(context).primaryColor),
+            ),
+            child: InkWell(
+              onTap: () {
+                _awaitFromSelectScreen();
+              },
+              child: Flex(
+                  direction: Axis.horizontal,
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    if (widget.isShowFlag == true)
+                      Flexible(
+                          child: Image.asset("assets/flags/${selectedItem.alpha2.toLowerCase()}.png",
+                              package: "country_list_picker", width: 40.0)),
+                    if (widget.isShowCode == true)
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 2.5),
+                        child: Text(
+                          selectedItem.callingCode.toString(),
+                          style: widget.codeTextStyle.copyWith(
+                              fontSize: widget.codeTextStyle.fontSize ?? 16,
+                              fontWeight: widget.codeTextStyle.fontWeight ?? FontWeight.bold),
+                        ),
+                      ),
+                    if (widget.isDownIcon == true)
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 2.5),
+                        child: Icon(
+                          Icons.keyboard_arrow_down,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ),
+                    if (widget.isShowTextField == true)
+                      Flexible(
+                        flex: 1,
+                        child: TextField(
+                          style: widget.textFieldTextStyle.copyWith(
+                            fontSize: widget.textFieldTextStyle.fontSize ?? 16,
+                          ),
+                          maxLength: 15,
+                          decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            counterText: "",
+                          ),
+                        ),
+                      )
+                  ]),
+            ),
+          ),
+          if (widget.isShowTitle == true)
+            Text(
+              selectedItem.englishName.common,
+              style: widget.countryNameTextStyle.copyWith(
+                  fontSize: widget.countryNameTextStyle.fontSize ?? 15,
+                  color: widget.countryNameTextStyle.color ?? Colors.grey),
+            ),
+        ],
+      ),
+    );
   }
 
   void _awaitFromSelectScreen() async {
@@ -91,7 +185,9 @@ class CountryListPickerState extends State<CountryListPicker> {
               countries,
               initialCountry: selectedItem,
               appBar: widget.dialogTheme.appBar ??
-                  AppBar(backgroundColor: Theme.of(context).appBarTheme.backgroundColor, title: const Text("Select your country2")),
+                  AppBar(
+                      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+                      title: const Text("Select your country")),
               dialogTheme: widget.dialogTheme,
               useUiOverlay: widget.useUiOverlay,
               useSafeArea: widget.useSafeArea,
@@ -103,56 +199,5 @@ class CountryListPickerState extends State<CountryListPicker> {
       selectedItem = result ?? selectedItem;
       widget.onChanged ?? (selectedItem);
     });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Flex(
-      direction: Axis.horizontal,
-      children: [
-        InkWell(
-            onTap: () {
-              _awaitFromSelectScreen();
-            },
-            child: Flex(
-              direction: Axis.horizontal,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (widget.isShowFlag == true)
-                  Flexible(
-                      child: Image.asset("assets/flags/${selectedItem.alpha2.toLowerCase()}.png",
-                          package: "country_list_picker", width: 40.0)),
-                if (widget.isShowCode == true)
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Text(
-                      selectedItem.callingCode.toString(),
-                      style: DefaultTextStyle.of(context).style.copyWith(fontSize: 16),
-                    ),
-                  ),
-                if (widget.isShowTitle == true)
-                  SizedBox(
-                    width: 100,
-                    child: Text(
-                      selectedItem.englishName.common,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: DefaultTextStyle.of(context).style.copyWith(fontSize: 16),
-                    ),
-                  ),
-                if (widget.isDownIcon == true)
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Icon(Icons.keyboard_arrow_down),
-                  ),
-              ],
-            )),
-        Flexible(
-          child: TextField(
-              style: DefaultTextStyle.of(context).style.copyWith(fontSize: 16),
-              decoration: const InputDecoration(border: InputBorder.none)),
-        ),
-      ],
-    );
   }
 }
