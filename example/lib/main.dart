@@ -34,7 +34,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    print("Build");
     return Scaffold(
+      backgroundColor: Colors.grey,
       appBar: AppBar(
         title: Text(widget.title),
       ),
@@ -42,6 +44,19 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          CountryListPicker(
+            border: Border.all(width: 2, style: BorderStyle.none),
+            onChanged: (value) => print(value.englishName.official),
+          ),
+          CountryListPicker(
+            isShowTextField: false,
+            isDownIcon: false,
+            isShowCode: true,
+            isShowFlag: true,
+            isShowTitle: true,
+            border: Border.all(width: 2, color: Colors.red),
+          ),
+          Divider(),
           CountryListPicker(
             codeTextStyle: const TextStyle(color: Colors.blue, fontSize: 16),
             textFieldTextStyle: const TextStyle(fontSize: 16),
