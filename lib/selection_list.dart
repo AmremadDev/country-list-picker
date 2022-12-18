@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../widget/lastpick_tile.dart';
 import '../widget/alphabetscroll.dart';
-import '../themes/country_list_picker_theme.dart';
 import '../themes/country_list_dialog_theme.dart';
 import '../models/csettings_controller.dart';
 import '../widget/country_listtile.dart';
@@ -18,7 +17,6 @@ class SelectionList extends StatelessWidget {
     Key? key,
     required this.initialCountry,
     this.appBar,
-    // this.pickerTheme,
     this.dialogTheme = const CountryListDialogTheme(),
     this.dialogBuilder,
     this.useUiOverlay = true,
@@ -28,7 +26,6 @@ class SelectionList extends StatelessWidget {
   final PreferredSizeWidget? appBar;
   final List<Country> elements;
   final Country initialCountry;
-  // final CountryListPickerTheme? pickerTheme;
   final CountryListDialogTheme dialogTheme;
   final Widget Function(BuildContext context, Country? country)? dialogBuilder;
   final bool useUiOverlay;
@@ -44,17 +41,18 @@ class SelectionList extends StatelessWidget {
     _intialValues(context);
     Widget scaffold = Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-        floatingActionButton: (dialogTheme.isShowFloatButton && context.watch<CSettings>().floatbutton)
-            ? FloatingActionButton(
-                backgroundColor: Theme.of(context).primaryColor,
-                elevation: 0,
-                mini: true,
-                child: const Icon(Icons.arrow_upward),
-                onPressed: () {
-                  _controllerScroll.jumpTo(0);
-                },
-              )
-            : null,
+        floatingActionButton:
+            (dialogTheme.isShowFloatButton && context.watch<CSettings>().floatbutton)
+                ? FloatingActionButton(
+                    backgroundColor: Theme.of(context).primaryColor,
+                    elevation: 0,
+                    mini: true,
+                    child: const Icon(Icons.arrow_upward),
+                    onPressed: () {
+                      _controllerScroll.jumpTo(0);
+                    },
+                  )
+                : null,
         appBar: appBar,
         body: Container(
             color: dialogTheme.backgroundColor,
@@ -67,10 +65,17 @@ class SelectionList extends StatelessWidget {
                     SliverToBoxAdapter(
                       child: Column(children: [
                         if (dialogTheme.searchTile.visible)
-                          SearchTile(dialogTheme: dialogTheme, controller: _controller, elements: elements),
-                        if (dialogTheme.currentLocationTile.visible) CurrentLocationTile(dialogTheme: dialogTheme, countries: elements),
-                        if (dialogTheme.lastPickTile.visible) LastPickTile(dialogTheme: dialogTheme, country: initialCountry),
-                        (_boxes == 0) ? const SizedBox.shrink() : Container(height: 10, color: dialogTheme.titlesBackground)
+                          SearchTile(
+                              dialogTheme: dialogTheme,
+                              controller: _controller,
+                              elements: elements),
+                        if (dialogTheme.currentLocationTile.visible)
+                          CurrentLocationTile(dialogTheme: dialogTheme, countries: elements),
+                        if (dialogTheme.lastPickTile.visible)
+                          LastPickTile(dialogTheme: dialogTheme, country: initialCountry),
+                        (_boxes == 0)
+                            ? const SizedBox.shrink()
+                            : Container(height: 10, color: dialogTheme.titlesBackground)
                       ]),
                     ),
                     Selector<CSettings, List<Country>>(
@@ -130,8 +135,13 @@ class SelectionList extends StatelessWidget {
       if (scrollPosition < _boxes) {
         settings.changeSelectedPosition(-1);
       } else if (scrollPosition >= _boxes && scrollPosition <= settings.countries.length) {
-        int newPos =
-            settings.countries.elementAt(scrollPosition - _boxes).englishName.common[0].toUpperCase().codeUnitAt(0) - 'A'.codeUnitAt(0);
+        int newPos = settings.countries
+                .elementAt(scrollPosition - _boxes)
+                .englishName
+                .common[0]
+                .toUpperCase()
+                .codeUnitAt(0) -
+            'A'.codeUnitAt(0);
         if (newPos != settings.posSelected) settings.changeSelectedPosition(newPos);
       }
     });
