@@ -11,20 +11,109 @@ export './last_pick_tile_theme.dart';
 export './search_tile_theme.dart';
 
 class CountryListDialogTheme {
+  ///An app bar to display at the top of country list dialog.
   final PreferredSizeWidget? appBar;
+
+  ///if true float button will be appear.
   final bool isShowFloatButton;
+
+  ///if true country dial code will be appear.
   final bool isShowDialCode;
+
+  ///if true country flag will be appear.
   final bool isShowFlage;
 
+  ///Titles text style
   final TextStyle titlesStyle;
+
+  ///Titles background
   final Color titlesBackground;
+
+  ///Country dialog background color.
   final Color backgroundColor;
+
+  ///Country text style.
   final TextStyle textStyle;
+
+  ///Height of the tile.
+  ///[tileheight] must be greater than 50.0
   final double tileHeight;
 
+  ///Alphabets bar Theme.
+  ///
+  ///Example:
+  ///```dart
+  /// dialogTheme: const CountryListDialogTheme(
+  ///   alphabetsBar: AlphabetsBarThemes(
+  ///     backgroundColor: Colors.transparent,
+  ///     textStyle: TextStyle(color: Colors.black),
+  ///     selectedBackgroundColor: Colors.redAccent,
+  ///     selectedTextStyle: TextStyle(color: Colors.white),
+  ///   ),
+  /// )
+  ///```
+  ///or to hide Alphabets bar
+  ///```dart
+  /// dialogTheme: const CountryListDialogTheme(
+  ///   alphabetsBar: AlphabetsBarThemes(visible: false),)
+  ///```
   final AlphabetsBarThemes alphabetsBar;
+
+  ///Current Location Tile Theme.
+  ///
+  ///Example:
+  ///```dart
+  /// dialogTheme: const CountryListDialogTheme(
+  ///   currentLocationTile: CurrentLocationTileTheme(
+  ///     visible: true,
+  ///     title: "Current Location",
+  ///   ),
+  /// )
+  ///```
+  ///or to hide Current Location Tile
+  ///```dart
+  /// dialogTheme: const CountryListDialogTheme(
+  ///   currentLocationTile: CurrentLocationTileTheme(visible: false),)
+  ///```
   final CurrentLocationTileTheme currentLocationTile;
+
+  ///LastPick Tile Theme.
+  ///
+  ///Example:
+  ///```dart
+  /// dialogTheme: const CountryListDialogTheme(
+  ///   lastPickTile: LastPickTileTheme(
+  ///     title: "Last Pick",
+  ///     icon: Icon(Icons.check_circle_outline_outlined),
+  ///   ),
+  /// )
+  ///```
+  ///or to hide LastPick Tile
+  ///```dart
+  /// dialogTheme: const CountryListDialogTheme(
+  ///   lastPickTile: LastPickTileTheme(visible: false),
+  /// )
+  ///```
   final LastPickTileTheme lastPickTile;
+
+  ///Search Tile Theme.
+  ///
+  ///Example:
+  ///```dart
+  /// dialogTheme: const CountryListDialogTheme(
+  ///   searchTile: SearchTileTheme(
+  ///     visible: true,
+  ///     title: "Search",
+  ///     hint: "type code/name",
+  ///   ),
+  /// )
+  ///```
+  ///Or to hide Search Tile
+  ///```dart
+  /// dialogTheme: const CountryListDialogTheme(
+  ///   searchTile: SearchTileTheme(visible: false),
+  /// )
+  ///```
   final SearchTileTheme searchTile;
 
   const CountryListDialogTheme({

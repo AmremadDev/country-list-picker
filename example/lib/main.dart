@@ -34,7 +34,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    print("Build");
     return Scaffold(
       // backgroundColor: Colors.blue,
       appBar: AppBar(
@@ -45,65 +44,44 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CountryListPicker(
-            // border: Border.all(width: 2, style: BorderStyle.none),
-            onChanged: (value) => print(value.englishName.official),
+            border: Border.all(style: BorderStyle.none),
+            isShowTitle: false,
+            onChanged: (value) {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text(value.englishName.official),
+                duration: const Duration(seconds: 1),
+                backgroundColor: Theme.of(context).primaryColor,
+              ));
+            },
+            dialogTheme: const CountryListDialogTheme(
+              alphabetsBar: AlphabetsBarThemes(
+                visible: true,
+                backgroundColor: Colors.transparent,
+                textStyle: TextStyle(color: Colors.black),
+                selectedBackgroundColor: Colors.redAccent,
+                selectedTextStyle: TextStyle(color: Colors.white),
+              ),
+
+              //LastPickTileTheme
+              lastPickTile: LastPickTileTheme(
+                title: "Last Pick",
+                icon: Icon(Icons.check_circle_outline_outlined),
+              ),
+
+              //CurrentLocationTileTheme
+              currentLocationTile: CurrentLocationTileTheme(
+                visible: true,
+                title: "Current Location",
+              ),
+
+              //SearchTileTheme
+              searchTile: SearchTileTheme(
+                visible: true,
+                title: "my search",
+                hint: "by code/name",
+              ),
+            ),
           ),
-          // CountryListPicker(
-          //   isShowTextField: false,
-          //   isDownIcon: false,
-          //   isShowCode: true,
-          //   isShowFlag: true,
-          //   isShowTitle: true,
-          //   border: Border.all(width: 2, color: Colors.red),
-          // ),
-          // Divider(),
-          // CountryListPicker(
-          //   codeTextStyle: const TextStyle(color: Colors.blue, fontSize: 16),
-          //   textFieldTextStyle: const TextStyle(fontSize: 16),
-          //   countryNameTextStyle: const TextStyle(color: Colors.amber),
-          // ),
-          // CountryListPicker(
-          //   //intial value
-          //   initialCountry: Countries.Oman,
-          //   isShowFlag: true,
-          //   isDownIcon: true,
-          //   isShowCode: true,
-          //   isShowTitle: false,
-          //   isShowTextField: false,
-
-          //   useUiOverlay: true,
-          //   onChanged: (Country? code) {},
-          //   dialogTheme: const CountryListDialogTheme(
-          //       // //appBar
-          //       // appBar: AppBar(title: const Text("new appbar title"), backgroundColor: Colors.pink),
-
-          //       // //AlphabetsBarThemes
-          //       // alphabetsBar: const AlphabetsBarThemes(backgroundColor: Colors.transparent, visible: true),
-
-          //       // //LastPickTileTheme
-          //       // lastPickTile: const LastPickTileTheme(visible: true, title: "last country picked", icon: Icon(Icons.check)),
-
-          //       // //CurrentLocationTileTheme
-          //       // currentLocationTile: const CurrentLocationTileTheme(visible: true, title: "current country"),
-
-          //       // //SearchTileTheme
-          //       // searchTile: const SearchTileTheme(visible: true, title: "my search", hint: "by code/name"),
-
-          //       // //show/hide options
-          //       // isShowDialCode: true,
-          //       // isShowFlage: true,
-          //       // isShowFloatButton: false,
-
-          //       // //Styles and colors
-          //       // backgroundColor: Colors.white,
-          //       // titlesBackground: Colors.pink,
-          //       // titlesStyle: const TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
-          //       // textStyle: const TextStyle(color: Colors.pink),
-
-          //       // //Tile height
-          //       // tileHeight: 50,
-          //       ),
-          // ),
         ],
       ),
     );

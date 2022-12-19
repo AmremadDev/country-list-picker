@@ -21,7 +21,8 @@ class LastPickTile extends StatelessWidget {
           height: dialogTheme.tileHeight,
           child: Text(
             dialogTheme.lastPickTile.title,
-            style: dialogTheme.titlesStyle.copyWith(fontSize: dialogTheme.titlesStyle.fontSize ?? 16),
+            style:
+                dialogTheme.titlesStyle.copyWith(fontSize: dialogTheme.titlesStyle.fontSize ?? 16),
           )),
       SizedBox(
         height: dialogTheme.tileHeight,

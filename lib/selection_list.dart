@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import '../widget/lastpick_tile.dart';
 import '../widget/alphabetscroll.dart';
 import '../themes/country_list_dialog_theme.dart';
-import '../supports/csettings_controller.dart';
+import 'contollers/countrylistPicker_controller.dart';
 import '../widget/country_listtile.dart';
 import '../models/country.dart';
 import '../widget/current_location_tile.dart';
@@ -28,6 +28,7 @@ class SelectionList extends StatelessWidget {
   final Country initialCountry;
   final CountryListDialogTheme dialogTheme;
   final Widget Function(BuildContext context, Country? country)? dialogBuilder;
+
   final bool useUiOverlay;
   final bool useSafeArea;
 
@@ -41,7 +42,8 @@ class SelectionList extends StatelessWidget {
     _intialValues(context);
     Widget scaffold = Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-        floatingActionButton: (dialogTheme.isShowFloatButton && context.watch<CSettings>().floatbutton)
+        floatingActionButton: (dialogTheme.isShowFloatButton &&
+                context.watch<CountryListPickerController>().floatbutton)
             ? FloatingActionButton(
                 backgroundColor: Theme.of(context).primaryColor,
                 elevation: 0,
@@ -61,7 +63,10 @@ class SelectionList extends StatelessWidget {
                     SliverToBoxAdapter(
                       child: Column(children: [
                         if (dialogTheme.searchTile.visible)
-                          SearchTile(dialogTheme: dialogTheme, controller: _controller, elements: elements),
+                          SearchTile(
+                              dialogTheme: dialogTheme,
+                              controller: _controller,
+                              elements: elements),
                         if (dialogTheme.currentLocationTile.visible)
                           CurrentLocationTile(dialogTheme: dialogTheme, countries: elements),
                         if (dialogTheme.lastPickTile.visible)
@@ -71,7 +76,7 @@ class SelectionList extends StatelessWidget {
                             : Container(height: 10, color: dialogTheme.titlesBackground)
                       ]),
                     ),
-                    Selector<CSettings, List<Country>>(
+                    Selector<CountryListPickerController, List<Country>>(
                       selector: (context, model) => model.countries,
                       builder: (context, value, child) => SliverList(
                         delegate: SliverChildBuilderDelegate((context, index) {
@@ -119,7 +124,7 @@ class SelectionList extends StatelessWidget {
     }
 
     _controllerScroll.addListener(() {
-      CSettings settings = context.read<CSettings>();
+      CountryListPickerController settings = context.read<CountryListPickerController>();
       settings.changeIsShowFloatButton(_controllerScroll.position.pixels != 0);
 
       int scrollPosition = ((_controllerScroll.position.pixels) / dialogTheme.tileHeight).round();
@@ -127,9 +132,13 @@ class SelectionList extends StatelessWidget {
       if (scrollPosition < _boxes) {
         settings.changeSelectedPosition(-1);
       } else if (scrollPosition >= _boxes && scrollPosition <= settings.countries.length) {
-        int newPos =
-            settings.countries.elementAt(scrollPosition - _boxes).englishName.common[0].toUpperCase().codeUnitAt(0) -
-                'A'.codeUnitAt(0);
+        int newPos = settings.countries
+                .elementAt(scrollPosition - _boxes)
+                .englishName
+                .common[0]
+                .toUpperCase()
+                .codeUnitAt(0) -
+            'A'.codeUnitAt(0);
         if (newPos != settings.posSelected) settings.changeSelectedPosition(newPos);
       }
     });

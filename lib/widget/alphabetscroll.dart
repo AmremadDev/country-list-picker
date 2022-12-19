@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/country.dart';
-import '../supports/csettings_controller.dart';
+import '../contollers/countrylistPicker_controller.dart';
 import '../themes/country_list_dialog_theme.dart';
 
 // note that need to active GestureDetector ,  must study Drag events
@@ -24,7 +24,7 @@ class AlphabetScroll extends StatelessWidget {
   String? _oldtext;
   @override
   Widget build(BuildContext context) {
-    return Consumer<CSettings>(
+    return Consumer<CountryListPickerController>(
       builder: (context, value, child) => Align(
         alignment: Alignment.centerRight,
         child: Container(
@@ -40,11 +40,15 @@ class AlphabetScroll extends StatelessWidget {
                         child: InkWell(
                           onTap: () {
                             if (alphabet![index] != _oldtext) {
-                              int pos = countries.indexWhere((c) => c.englishName.common.toUpperCase().startsWith(alphabet![index]));
+                              int pos = countries.indexWhere((c) =>
+                                  c.englishName.common.toUpperCase().startsWith(alphabet![index]));
 
-                              (dialogTheme.tileHeight * (pos + unitsCanceled) + 10 <= scrollController.position.maxScrollExtent)
-                                  ? scrollController.jumpTo(dialogTheme.tileHeight * (pos + unitsCanceled) + 10)
-                                  : scrollController.jumpTo(scrollController.position.maxScrollExtent);
+                              (dialogTheme.tileHeight * (pos + unitsCanceled) + 10 <=
+                                      scrollController.position.maxScrollExtent)
+                                  ? scrollController
+                                      .jumpTo(dialogTheme.tileHeight * (pos + unitsCanceled) + 10)
+                                  : scrollController
+                                      .jumpTo(scrollController.position.maxScrollExtent);
                               _oldtext = alphabet![index];
                               value.changeSelectedPosition(index);
                             }
@@ -63,11 +67,17 @@ class AlphabetScroll extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 style: (index == value.posSelected)
                                     ? dialogTheme.alphabetsBar.selectedTextStyle.copyWith(
-                                        fontSize: dialogTheme.alphabetsBar.selectedTextStyle.fontSize ?? 18,
-                                        fontWeight: dialogTheme.alphabetsBar.selectedTextStyle.fontWeight ?? FontWeight.bold,
-                                        color: dialogTheme.alphabetsBar.selectedTextStyle.color ?? Theme.of(context).primaryColor)
-                                    : dialogTheme.alphabetsBar.textStyle
-                                        .copyWith(fontSize: (dialogTheme.alphabetsBar.textStyle.fontSize) ?? 12)),
+                                        fontSize:
+                                            dialogTheme.alphabetsBar.selectedTextStyle.fontSize ??
+                                                18,
+                                        fontWeight:
+                                            dialogTheme.alphabetsBar.selectedTextStyle.fontWeight ??
+                                                FontWeight.bold,
+                                        color: dialogTheme.alphabetsBar.selectedTextStyle.color ??
+                                            Theme.of(context).primaryColor)
+                                    : dialogTheme.alphabetsBar.textStyle.copyWith(
+                                        fontSize:
+                                            (dialogTheme.alphabetsBar.textStyle.fontSize) ?? 12)),
                           ),
                         ),
                       ))

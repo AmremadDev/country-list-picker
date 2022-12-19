@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/country.dart';
-import '../supports/csettings_controller.dart';
+import '../contollers/countrylistPicker_controller.dart';
 import '../themes/country_list_dialog_theme.dart';
 
 class SearchTile extends StatelessWidget {
@@ -26,7 +26,8 @@ class SearchTile extends StatelessWidget {
           height: dialogTheme.tileHeight,
           child: Text(
             dialogTheme.searchTile.title,
-            style: dialogTheme.titlesStyle.copyWith(fontSize: dialogTheme.titlesStyle.fontSize ?? 16),
+            style:
+                dialogTheme.titlesStyle.copyWith(fontSize: dialogTheme.titlesStyle.fontSize ?? 16),
           )),
       Container(
         color: dialogTheme.backgroundColor,
@@ -41,8 +42,10 @@ class SearchTile extends StatelessWidget {
               hintStyle: dialogTheme.textStyle.copyWith(color: Colors.grey[500])),
           onChanged: ((value) {
             String s = value.toUpperCase();
-            context.read<CSettings>().changeCountries(
-                elements.where((e) => e.callingCode.startsWith(s) || e.englishName.common.toUpperCase().startsWith(s)).toList());
+            context.read<CountryListPickerController>().changeCountries(elements
+                .where((e) =>
+                    e.callingCode.startsWith(s) || e.englishName.common.toUpperCase().startsWith(s))
+                .toList());
           }),
         ),
       ),
