@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/country.dart';
-import '../models/csettings_controller.dart';
+import '../supports/csettings_controller.dart';
 import '../themes/country_list_dialog_theme.dart';
 
 class SearchTile extends StatelessWidget {

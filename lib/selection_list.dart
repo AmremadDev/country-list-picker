@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import '../widget/lastpick_tile.dart';
 import '../widget/alphabetscroll.dart';
 import '../themes/country_list_dialog_theme.dart';
-import '../models/csettings_controller.dart';
+import '../supports/csettings_controller.dart';
 import '../widget/country_listtile.dart';
 import '../models/country.dart';
 import '../widget/current_location_tile.dart';

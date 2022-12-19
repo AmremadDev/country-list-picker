@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import 'contollers/countries_codes.dart';
 import '../selection_list.dart';
 import '../models/country.dart';
-import '../models/csettings_controller.dart';
+import '../supports/csettings_controller.dart';
 import '../themes/country_list_dialog_theme.dart';
 
 // exports
@@ -98,11 +98,7 @@ class CountryListPicker extends StatelessWidget {
                     BoxDecoration(border: border ?? Border.all(width: 1, color: Theme.of(context).primaryColor)),
                 child: Row(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.center, children: [
                   InkWell(
-                    onTap: (onChanged == null)
-                        ? null
-                        : () async {
-                            await _onChangeEvent(context, countries, selectedItem);
-                          },
+                    onTap: (onChanged == null) ? null : () => _onChangeEvent(context, countries, selectedItem),
                     child: _buildMainPart(),
                   ),
                   if (isShowTextField == true)
@@ -156,31 +152,30 @@ class CountryListPicker extends StatelessWidget {
     if (onChanged != null) onChanged!(selectedItem);
   }
 
-  Consumer<CSettings> _buildMainPart() {
-    return Consumer<CSettings>(
-      builder: (context, value, child) {
-        return Row(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.center, children: [
-          //flage
-          if (isShowFlag == true)
-            Flexible(
-                child: Image.asset("assets/flags/${value.selectedItem.alpha2.toLowerCase()}.png",
-                    package: "country_list_picker", width: 40.0)),
-          //code
-          if (isShowCode == true)
-            Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 2.5),
-                child: Text(value.selectedItem.callingCode.toString(),
-                    style: codeTextStyle.copyWith(
-                        fontSize: codeTextStyle.fontSize ?? 16,
-                        fontWeight: codeTextStyle.fontWeight ?? FontWeight.bold))),
-          //down icon
-          if (isDownIcon == true)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2.5),
-              child: Icon(Icons.keyboard_arrow_down, color: Theme.of(context).primaryColor),
-            ),
-        ]);
-      },
-    );
+  Selector<CSettings, Country> _buildMainPart() {
+    return Selector<CSettings, Country>(
+        selector: (context, model) => model.selectedItem,
+        builder: (context, value, child) =>
+            Row(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.center, children: [
+              //flage
+              if (isShowFlag == true)
+                Flexible(
+                    child: Image.asset("assets/flags/${value.alpha2.toLowerCase()}.png",
+                        package: "country_list_picker", width: 40.0)),
+              //code
+              if (isShowCode == true)
+                Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 2.5),
+                    child: Text(value.callingCode.toString(),
+                        style: codeTextStyle.copyWith(
+                            fontSize: codeTextStyle.fontSize ?? 16,
+                            fontWeight: codeTextStyle.fontWeight ?? FontWeight.bold))),
+              //down icon
+              if (isDownIcon == true)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 2.5),
+                  child: Icon(Icons.keyboard_arrow_down, color: Theme.of(context).primaryColor),
+                ),
+            ]));
   }
 }
