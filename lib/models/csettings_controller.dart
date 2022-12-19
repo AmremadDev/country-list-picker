@@ -4,12 +4,20 @@ import './country.dart';
 class CSettings extends ChangeNotifier {
   int posSelected = -1;
   bool floatbutton = false;
+
+  late Country selectedItem;
+
   List<Country> countries = [];
 
-  CSettings(List<Country> list) {
-    countries = list;
+  CSettings({required this.countries, required this.selectedItem}) ;
+ 
+  
+  void changeselectedItem(Country country){
+        if (selectedItem != country) {
+      selectedItem = country;
+      notifyListeners();
+    }
   }
-
   void changeSelectedPosition(int index) {
     if (posSelected != index) {
       posSelected = index;

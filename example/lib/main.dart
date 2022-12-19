@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     print("Build");
     return Scaffold(
-      backgroundColor: Colors.grey,
+      // backgroundColor: Colors.blue,
       appBar: AppBar(
         title: Text(widget.title),
       ),
@@ -45,65 +45,65 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CountryListPicker(
-            border: Border.all(width: 2, style: BorderStyle.none),
+            // border: Border.all(width: 2, style: BorderStyle.none),
             onChanged: (value) => print(value.englishName.official),
           ),
-          CountryListPicker(
-            isShowTextField: false,
-            isDownIcon: false,
-            isShowCode: true,
-            isShowFlag: true,
-            isShowTitle: true,
-            border: Border.all(width: 2, color: Colors.red),
-          ),
-          Divider(),
-          CountryListPicker(
-            codeTextStyle: const TextStyle(color: Colors.blue, fontSize: 16),
-            textFieldTextStyle: const TextStyle(fontSize: 16),
-            countryNameTextStyle: const TextStyle(color: Colors.amber),
-          ),
-          CountryListPicker(
-            //intial value
-            initialCountry: Countries.Oman,
-            isShowFlag: true,
-            isDownIcon: true,
-            isShowCode: true,
-            isShowTitle: false,
-            isShowTextField: false,
+          // CountryListPicker(
+          //   isShowTextField: false,
+          //   isDownIcon: false,
+          //   isShowCode: true,
+          //   isShowFlag: true,
+          //   isShowTitle: true,
+          //   border: Border.all(width: 2, color: Colors.red),
+          // ),
+          // Divider(),
+          // CountryListPicker(
+          //   codeTextStyle: const TextStyle(color: Colors.blue, fontSize: 16),
+          //   textFieldTextStyle: const TextStyle(fontSize: 16),
+          //   countryNameTextStyle: const TextStyle(color: Colors.amber),
+          // ),
+          // CountryListPicker(
+          //   //intial value
+          //   initialCountry: Countries.Oman,
+          //   isShowFlag: true,
+          //   isDownIcon: true,
+          //   isShowCode: true,
+          //   isShowTitle: false,
+          //   isShowTextField: false,
 
-            useUiOverlay: true,
-            onChanged: (Country? code) {},
-            dialogTheme: const CountryListDialogTheme(
-                // //appBar
-                // appBar: AppBar(title: const Text("new appbar title"), backgroundColor: Colors.pink),
+          //   useUiOverlay: true,
+          //   onChanged: (Country? code) {},
+          //   dialogTheme: const CountryListDialogTheme(
+          //       // //appBar
+          //       // appBar: AppBar(title: const Text("new appbar title"), backgroundColor: Colors.pink),
 
-                // //AlphabetsBarThemes
-                // alphabetsBar: const AlphabetsBarThemes(backgroundColor: Colors.transparent, visible: true),
+          //       // //AlphabetsBarThemes
+          //       // alphabetsBar: const AlphabetsBarThemes(backgroundColor: Colors.transparent, visible: true),
 
-                // //LastPickTileTheme
-                // lastPickTile: const LastPickTileTheme(visible: true, title: "last country picked", icon: Icon(Icons.check)),
+          //       // //LastPickTileTheme
+          //       // lastPickTile: const LastPickTileTheme(visible: true, title: "last country picked", icon: Icon(Icons.check)),
 
-                // //CurrentLocationTileTheme
-                // currentLocationTile: const CurrentLocationTileTheme(visible: true, title: "current country"),
+          //       // //CurrentLocationTileTheme
+          //       // currentLocationTile: const CurrentLocationTileTheme(visible: true, title: "current country"),
 
-                // //SearchTileTheme
-                // searchTile: const SearchTileTheme(visible: true, title: "my search", hint: "by code/name"),
+          //       // //SearchTileTheme
+          //       // searchTile: const SearchTileTheme(visible: true, title: "my search", hint: "by code/name"),
 
-                // //show/hide options
-                // isShowDialCode: true,
-                // isShowFlage: true,
-                // isShowFloatButton: false,
+          //       // //show/hide options
+          //       // isShowDialCode: true,
+          //       // isShowFlage: true,
+          //       // isShowFloatButton: false,
 
-                // //Styles and colors
-                // backgroundColor: Colors.white,
-                // titlesBackground: Colors.pink,
-                // titlesStyle: const TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
-                // textStyle: const TextStyle(color: Colors.pink),
+          //       // //Styles and colors
+          //       // backgroundColor: Colors.white,
+          //       // titlesBackground: Colors.pink,
+          //       // titlesStyle: const TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
+          //       // textStyle: const TextStyle(color: Colors.pink),
 
-                // //Tile height
-                // tileHeight: 50,
-                ),
-          ),
+          //       // //Tile height
+          //       // tileHeight: 50,
+          //       ),
+          // ),
         ],
       ),
     );

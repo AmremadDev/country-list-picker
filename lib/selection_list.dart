@@ -41,18 +41,14 @@ class SelectionList extends StatelessWidget {
     _intialValues(context);
     Widget scaffold = Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-        floatingActionButton:
-            (dialogTheme.isShowFloatButton && context.watch<CSettings>().floatbutton)
-                ? FloatingActionButton(
-                    backgroundColor: Theme.of(context).primaryColor,
-                    elevation: 0,
-                    mini: true,
-                    child: const Icon(Icons.arrow_upward),
-                    onPressed: () {
-                      _controllerScroll.jumpTo(0);
-                    },
-                  )
-                : null,
+        floatingActionButton: (dialogTheme.isShowFloatButton && context.watch<CSettings>().floatbutton)
+            ? FloatingActionButton(
+                backgroundColor: Theme.of(context).primaryColor,
+                elevation: 0,
+                mini: true,
+                child: const Icon(Icons.arrow_upward),
+                onPressed: () => _controllerScroll.jumpTo(0))
+            : null,
         appBar: appBar,
         body: Container(
             color: dialogTheme.backgroundColor,
@@ -65,10 +61,7 @@ class SelectionList extends StatelessWidget {
                     SliverToBoxAdapter(
                       child: Column(children: [
                         if (dialogTheme.searchTile.visible)
-                          SearchTile(
-                              dialogTheme: dialogTheme,
-                              controller: _controller,
-                              elements: elements),
+                          SearchTile(dialogTheme: dialogTheme, controller: _controller, elements: elements),
                         if (dialogTheme.currentLocationTile.visible)
                           CurrentLocationTile(dialogTheme: dialogTheme, countries: elements),
                         if (dialogTheme.lastPickTile.visible)
@@ -104,7 +97,6 @@ class SelectionList extends StatelessWidget {
                       )
               ],
             )));
-
     return useSafeArea ? SafeArea(child: scaffold) : scaffold;
   }
 
@@ -135,13 +127,9 @@ class SelectionList extends StatelessWidget {
       if (scrollPosition < _boxes) {
         settings.changeSelectedPosition(-1);
       } else if (scrollPosition >= _boxes && scrollPosition <= settings.countries.length) {
-        int newPos = settings.countries
-                .elementAt(scrollPosition - _boxes)
-                .englishName
-                .common[0]
-                .toUpperCase()
-                .codeUnitAt(0) -
-            'A'.codeUnitAt(0);
+        int newPos =
+            settings.countries.elementAt(scrollPosition - _boxes).englishName.common[0].toUpperCase().codeUnitAt(0) -
+                'A'.codeUnitAt(0);
         if (newPos != settings.posSelected) settings.changeSelectedPosition(newPos);
       }
     });
