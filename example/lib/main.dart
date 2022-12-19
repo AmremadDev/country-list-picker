@@ -48,7 +48,10 @@ class _HomePageState extends State<HomePage> {
             isShowTitle: false,
             onChanged: (value) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: Text(value.englishName.official),
+                content: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [Text(value.englishName.official), Text(value.callingCode)],
+                ),
                 duration: const Duration(seconds: 1),
                 backgroundColor: Theme.of(context).primaryColor,
               ));

@@ -141,10 +141,9 @@ class CountryListPicker extends StatelessWidget {
                       InkWell(
                         onTap: (onChanged == null)
                             ? null
-                            : () => _onChangeEvent(
-                                context,
-                                context.read<CountryListPickerController>().countries,
-                                context.read<CountryListPickerController>().selectedItem),
+                            : () async => await _onChangeEvent(
+                                  context,
+                                ),
                         child: _buildMainPart(),
                       ),
                       if (isShowTextField == true)
@@ -175,8 +174,7 @@ class CountryListPicker extends StatelessWidget {
     );
   }
 
-  Future<void> _onChangeEvent(
-      BuildContext context, List<Country> countries, Country selectedItem) async {
+  Future<void> _onChangeEvent(BuildContext context) async {
     CountryListPickerController controller = context.read<CountryListPickerController>();
     final Country? result = await Navigator.push(
         context,
@@ -185,7 +183,7 @@ class CountryListPicker extends StatelessWidget {
                   create: (context) => CountryListPickerController(initialCountry: Countries.Egypt),
                   builder: (context, child) {
                     return SelectionList(
-                      countries,
+                      controller.countries,
                       initialCountry: controller.selectedItem,
                       appBar: dialogTheme.appBar ??
                           AppBar(
@@ -197,8 +195,8 @@ class CountryListPicker extends StatelessWidget {
                     );
                   },
                 )));
-    controller.changeselectedItem(result ?? selectedItem);
-    if (onChanged != null) onChanged!(selectedItem);
+    controller.changeselectedItem(result ?? controller.selectedItem);
+    if (onChanged != null) onChanged!(controller.selectedItem);
   }
 
   Selector<CountryListPickerController, Country> _buildMainPart() {
