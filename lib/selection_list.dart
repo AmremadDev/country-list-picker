@@ -124,22 +124,22 @@ class SelectionList extends StatelessWidget {
     }
 
     _controllerScroll.addListener(() {
-      CountryListPickerController settings = context.read<CountryListPickerController>();
-      settings.changeIsShowFloatButton(_controllerScroll.position.pixels != 0);
+      CountryListPickerController controller = context.read<CountryListPickerController>();
+      controller.changeIsShowFloatButton(_controllerScroll.position.pixels != 0);
 
       int scrollPosition = ((_controllerScroll.position.pixels) / dialogTheme.tileHeight).round();
 
       if (scrollPosition < _boxes) {
-        settings.changeSelectedPosition(-1);
-      } else if (scrollPosition >= _boxes && scrollPosition <= settings.countries.length) {
-        int newPos = settings.countries
+        controller.changeSelectedPosition(-1);
+      } else if (scrollPosition >= _boxes && scrollPosition <= controller.countries.length) {
+        int newPos = controller.countries
                 .elementAt(scrollPosition - _boxes)
                 .englishName
                 .common[0]
                 .toUpperCase()
                 .codeUnitAt(0) -
             'A'.codeUnitAt(0);
-        if (newPos != settings.posSelected) settings.changeSelectedPosition(newPos);
+        if (newPos != controller.posSelected) controller.changeSelectedPosition(newPos);
       }
     });
   }

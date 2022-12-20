@@ -44,7 +44,9 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CountryListPicker(
-            border: Border.all(style: BorderStyle.none),
+            border: const Border(
+              left: BorderSide(),
+              bottom: BorderSide(width: 1)),
             isShowTitle: false,
             onChanged: (value) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(

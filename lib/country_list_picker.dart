@@ -40,8 +40,7 @@ class CountryListPicker extends StatelessWidget {
     this.useSafeArea = false,
     this.dialogTheme = const CountryListDialogTheme(),
   })  : assert(dialogTheme.tileHeight >= 50.0, "tileheight must be greater than 50.0"),
-        assert(isShowFlag == true || isShowCode == true,
-            "Both isShowFlag and isShowCode can't be false");
+        assert(isShowFlag == true || isShowCode == true, "Both isShowFlag and isShowCode can't be false");
 
   ///Use with the [Countries] Enumration Type to show specific contry. countries are identified by their name as listed below, e.g. [Countries.Egypt].
   final Countries initialCountry;
@@ -74,16 +73,9 @@ class CountryListPicker extends StatelessWidget {
   final EdgeInsets padding;
 
   /// A border to draw above the background [color], [gradient], or [image].
-  ///
-  /// Follows the [shape] and [borderRadius].
-  ///
   /// Use [Border] objects to describe borders that do not depend on the reading
   /// direction.
-  ///
-  /// Use [BoxBorder] objects to describe borders that should flip their left
-  /// and right edges based on whether the text is being read left-to-right or
-  /// right-to-left.
-  final BoxBorder? border;
+  final Border? border;
 
   ///Country dial Code Text Style.
   final TextStyle dialCodeTextStyle;
@@ -128,35 +120,62 @@ class CountryListPicker extends StatelessWidget {
             children: [
               Container(
                 padding: EdgeInsets.only(
-                    top: padding.top,
-                    right: padding.right + 5.0,
-                    bottom: padding.bottom,
-                    left: padding.left + 5.0),
+                  top: padding.top,
+                  right: padding.right + 5.0,
+                  bottom: padding.bottom,
+                  left: padding.left + 5.0,
+                ),
                 decoration: BoxDecoration(
-                    border: border ?? Border.all(width: 1, color: Theme.of(context).primaryColor)),
-                child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: (onChanged == null)
-                            ? null
-                            : () async => await _onChangeEvent(
-                                  context,
-                                ),
-                        child: _buildMainPart(),
+                  border: Border(
+                    top: BorderSide(
+                      color: border != null ? border!.top.color : Theme.of(context).primaryColor,
+                      strokeAlign: border != null ? border!.top.strokeAlign : StrokeAlign.inside,
+                      style: border != null ? border!.top.style : BorderStyle.solid,
+                      width: border != null ? border!.top.width : 1,
+                    ),
+                    right: BorderSide(
+                      color: border != null ? border!.right.color : Theme.of(context).primaryColor,
+                      strokeAlign: border != null ? border!.right.strokeAlign : StrokeAlign.inside,
+                      style: border != null ? border!.right.style : BorderStyle.solid,
+                      width: border != null ? border!.right.width : 1,
+                    ),
+                    bottom: BorderSide(
+                      color: border != null ? border!.bottom.color : Theme.of(context).primaryColor,
+                      strokeAlign: border != null ? border!.bottom.strokeAlign : StrokeAlign.inside,
+                      style: border != null ? border!.bottom.style : BorderStyle.solid,
+                      width: border != null ? border!.bottom.width : 1,
+                    ),
+                    left: BorderSide(
+                      color: border != null ? border!.left.color : Theme.of(context).primaryColor,
+                      strokeAlign: border != null ? border!.left.strokeAlign : StrokeAlign.inside,
+                      style: border != null ? border!.left.style : BorderStyle.solid,
+                      width: border != null ? border!.left.width : 4,
+                    ),
+                    // left: Border.all().copyWith(
+                    //   color: border!.left.color?? Theme.of(context).primaryColor
+                    // )
+                  ),
+                ),
+
+                //  Border.all(width: 1, color: Theme.of(context).primaryColor)),
+                child: Row(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                  InkWell(
+                    onTap: (onChanged == null)
+                        ? null
+                        : () async => await _onChangeEvent(
+                              context,
+                            ),
+                    child: _buildMainPart(),
+                  ),
+                  if (isShowTextField == true)
+                    Flexible(
+                      child: TextField(
+                        style: textFieldTextStyle.copyWith(fontSize: textFieldTextStyle.fontSize ?? 16),
+                        maxLength: 15,
+                        decoration: const InputDecoration(border: InputBorder.none, counterText: ""),
                       ),
-                      if (isShowTextField == true)
-                        Flexible(
-                          child: TextField(
-                            style: textFieldTextStyle.copyWith(
-                                fontSize: textFieldTextStyle.fontSize ?? 16),
-                            maxLength: 15,
-                            decoration:
-                                const InputDecoration(border: InputBorder.none, counterText: ""),
-                          ),
-                        )
-                    ]),
+                    )
+                ]),
               ),
               if (isShowTitle == true)
                 Selector<CountryListPickerController, Country>(
@@ -164,8 +183,7 @@ class CountryListPicker extends StatelessWidget {
                     builder: (context, value, child) => Text(
                           value.englishName.common,
                           style: titleTextStyle.copyWith(
-                              fontSize: titleTextStyle.fontSize ?? 15,
-                              color: titleTextStyle.color ?? Colors.grey),
+                              fontSize: titleTextStyle.fontSize ?? 15, color: titleTextStyle.color ?? Colors.grey),
                         )),
             ],
           ),
@@ -202,29 +220,56 @@ class CountryListPicker extends StatelessWidget {
   Selector<CountryListPickerController, Country> _buildMainPart() {
     return Selector<CountryListPickerController, Country>(
         selector: (context, model) => model.selectedItem,
-        builder: (context, value, child) => Row(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  //flage
-                  if (isShowFlag == true)
-                    Flexible(
-                        child: Image.asset("assets/flags/${value.alpha2.toLowerCase()}.png",
-                            package: "country_list_picker", width: 40.0)),
-                  //code
-                  if (isShowCode == true)
-                    Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2.5),
-                        child: Text(value.callingCode.toString(),
-                            style: dialCodeTextStyle.copyWith(
-                                fontSize: dialCodeTextStyle.fontSize ?? 16,
-                                fontWeight: dialCodeTextStyle.fontWeight ?? FontWeight.bold))),
-                  //down icon
-                  if (isDownIcon == true)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 2.5),
-                      child: Icon(Icons.keyboard_arrow_down, color: Theme.of(context).primaryColor),
-                    ),
-                ]));
+        builder: (context, value, child) =>
+            Row(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.center, children: [
+              //flage
+              if (isShowFlag == true)
+                Flexible(
+                    child: Image.asset("assets/flags/${value.alpha2.toLowerCase()}.png",
+                        package: "country_list_picker", width: 40.0)),
+              //code
+              if (isShowCode == true)
+                Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 2.5),
+                    child: Text(value.callingCode.toString(),
+                        style: dialCodeTextStyle.copyWith(
+                            fontSize: dialCodeTextStyle.fontSize ?? 16,
+                            fontWeight: dialCodeTextStyle.fontWeight ?? FontWeight.bold))),
+              //down icon
+              if (isDownIcon == true)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 2.5),
+                  child: Icon(Icons.keyboard_arrow_down, color: Theme.of(context).primaryColor),
+                ),
+            ]));
   }
+}
+
+class CountryListPickerBorder {
+  final BorderSide? top;
+  final BorderSide? right;
+  final BorderSide? bottom;
+  final BorderSide? left;
+
+  const CountryListPickerBorder({
+    this.top = BorderSide.none,
+    this.right = BorderSide.none,
+    this.bottom = BorderSide.none,
+    this.left = BorderSide.none,
+  });
+}
+
+class CountryListPickerBorderSide {
+  final Color? color;
+  final double? width;
+  final BorderStyle? style;
+  final StrokeAlign? strokeAlign;
+  const CountryListPickerBorderSide({
+    this.color = const Color(0xFF000000),
+    this.width = 1.0,
+    this.style = BorderStyle.solid,
+    this.strokeAlign = StrokeAlign.inside,
+  })  : assert(color != null),
+        assert(width != null && width >= 0.0),
+        assert(style != null);
 }
