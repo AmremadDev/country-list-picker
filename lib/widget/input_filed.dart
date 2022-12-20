@@ -18,6 +18,7 @@ class InputField extends StatelessWidget {
     this.obscureText = false,
     this.autovalidateMode,
     this.validator,
+    this.focusNode,
   }) : super(key: key);
 
   final InputTheme inputTheme;
@@ -32,10 +33,12 @@ class InputField extends StatelessWidget {
   final bool obscureText;
   final AutovalidateMode? autovalidateMode;
   final FormFieldValidator<String>? validator;
+  final FocusNode? focusNode;
   @override
   Widget build(BuildContext context) {
     return Flexible(
       child: TextFormField(
+        focusNode: focusNode,
         autovalidateMode: autovalidateMode,
         validator: validator,
         obscureText: obscureText,
