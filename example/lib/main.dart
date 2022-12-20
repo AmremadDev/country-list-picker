@@ -1,5 +1,8 @@
 import 'package:country_list_picker/country_list_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_libphonenumber/flutter_libphonenumber.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 void main() {
   runApp(const CountryListPickerApp());
@@ -43,10 +46,21 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // TextFormField(
+          //   inputFormatters: [
+          //     MaskTextInputFormatter(mask: "### #### ####", filter: {"#": RegExp(r'[0-9]')}),
+          //   ],
+          //   onChanged: (value) => print(value),
+          // ),
           CountryListPicker(
-            border: const Border(
-              left: BorderSide(),
-              bottom: BorderSide(width: 1)),
+            // textFieldTextStyle: TextStyle(color: Colors.red),
+            border: Border.all(width: 2, color: Theme.of(context).primaryColor),
+            inputTheme: const InputTheme(border: OutlineInputBorder()),
+          ),
+          CountryListPicker(
+            // border: const Border(
+            //   left: BorderSide(),
+            //   bottom: BorderSide(width: 1)),
             isShowTitle: false,
             onChanged: (value) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(

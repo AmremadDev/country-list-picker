@@ -130,5 +130,5 @@ class CountryListDialogTheme {
     this.isShowDialCode = true,
     this.textStyle = const TextStyle(fontSize: 16),
     this.tileHeight = 50.0,
-  });
+  }) : assert(tileHeight >= 50.0, "tileheight must be greater than 50.0");
 }
