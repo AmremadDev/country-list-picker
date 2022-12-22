@@ -9,6 +9,12 @@ class InputTheme {
   final TextStyle style;
   // final int? maxLength;
 
+  ///
+  ///Defualt value
+  ///
+  ///```dart
+  /// mask: MaskTextInputFormatter(mask: "### #### ###", filter: {"#": RegExp(r'[0-9]')})
+  ///```
   final MaskTextInputFormatter? mask;
 
   const InputTheme({
@@ -19,10 +25,6 @@ class InputTheme {
     this.style = const TextStyle(fontSize: 16),
     // this.maxLength = 15,
 
-    ///
-    ///Defualt value
-    ///
-    ///MaskTextInputFormatter(mask: "### #### ###", filter: {"#": RegExp(r'[0-9]')})
     this.mask,
   });
 }

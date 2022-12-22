@@ -33,15 +33,12 @@ class CountryListPicker extends StatelessWidget {
       this.margin = const EdgeInsets.all(5.0),
       this.padding = const EdgeInsets.all(0.0),
       this.border, //const Border(bottom: BorderSide(width: 1)),
-      this.inputBorder = InputBorder.none,
+      // this.inputBorder = InputBorder.none,
       this.dialCodeTextStyle = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-      this.textFieldTextStyle = const TextStyle(fontSize: 16),
       this.titleTextStyle = const TextStyle(fontSize: 15, color: Colors.grey),
       this.onChanged,
-      this.pickerBuilder,
-      this.dialogBuilder,
-      this.useUiOverlay = false,
-      this.useSafeArea = false,
+      // this.pickerBuilder,
+      // this.dialogBuilder,
       this.dialogTheme = const CountryListDialogTheme(),
       this.inputTheme = const InputTheme()})
       : assert(isShowFlag == true || isShowCode == true,
@@ -84,13 +81,10 @@ class CountryListPicker extends StatelessWidget {
   /// direction.
   final BoxBorder? border;
 
-  final InputBorder inputBorder;
+  // final InputBorder inputBorder;
 
   ///Country dial Code Text Style.
   final TextStyle dialCodeTextStyle;
-
-  ///Phone TextFiled Text Style.
-  final TextStyle textFieldTextStyle;
 
   ///Country title Text Style.
   final TextStyle titleTextStyle;
@@ -101,17 +95,11 @@ class CountryListPicker extends StatelessWidget {
   /// If the [onChanged] callback is null then clickable part will be disabled.
   final ValueChanged<Country>? onChanged;
 
-  ///
-  final Widget Function(BuildContext context, Country? countryCode)? pickerBuilder;
+  // ///
+  // final Widget Function(BuildContext context, Country? countryCode)? pickerBuilder;
 
-  ///
-  final Widget Function(BuildContext context, Country? country)? dialogBuilder;
-
-  ///Whether to allow the widget to set a custom UI overlay
-  final bool useUiOverlay;
-
-  ///Whether the country list picker should be wrapped in a SafeArea
-  final bool useSafeArea;
+  // ///
+  // final Widget Function(BuildContext context, Country? country)? dialogBuilder;
 
   ///
   ///[tileheight] must be greater than 50.0
@@ -122,7 +110,7 @@ class CountryListPicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<CountryListPickerController>(
-      create: (context) => CountryListPickerController(initialCountry: Countries.Egypt),
+      create: (context) => CountryListPickerController(initialCountry: initialCountry),
       builder: (context, child) {
         return Container(
           margin: margin,
@@ -153,7 +141,22 @@ class CountryListPicker extends StatelessWidget {
                         child: _buildMainPart(),
                       ),
                       if (isShowTextField == true)
-                        InputField(inputTheme: inputTheme, textFieldTextStyle: textFieldTextStyle),
+                        InputField(
+                          inputTheme: inputTheme,
+
+                          textFieldTextStyle: inputTheme.style,
+                          // autovalidateMode: AutovalidateMode.always,
+
+                          // validator: (value) {
+                          //   if (value == "")
+                          //   return "Error";
+                          //   if (value!.length <
+                          //       context
+                          //           .read<CountryListPickerController>()
+                          //           .selectedItem
+                          //           .numberlength) return null;
+                          // },
+                        ),
                     ]),
               ),
               if (isShowTitle == true)
@@ -164,7 +167,7 @@ class CountryListPicker extends StatelessWidget {
                           style: titleTextStyle.copyWith(
                               fontSize: titleTextStyle.fontSize ?? 15,
                               color: titleTextStyle.color ?? Colors.grey),
-                        )),
+                        ))
             ],
           ),
         );
@@ -188,8 +191,6 @@ class CountryListPicker extends StatelessWidget {
                               backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
                               title: const Text("Select your country")),
                       dialogTheme: dialogTheme,
-                      useUiOverlay: useUiOverlay,
-                      useSafeArea: useSafeArea,
                     );
                   },
                 )));
@@ -225,4 +226,4 @@ class CountryListPicker extends StatelessWidget {
                     ),
                 ]));
   }
- }
+}

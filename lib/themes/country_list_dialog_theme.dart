@@ -116,6 +116,12 @@ class CountryListDialogTheme {
   ///```
   final SearchTileTheme searchTile;
 
+  ///Whether to allow the widget to set a custom UI overlay
+  final bool useUiOverlay;
+
+  ///Whether the country list picker should be wrapped in a SafeArea
+  final bool useSafeArea;
+
   const CountryListDialogTheme({
     this.alphabetsBar = const AlphabetsBarThemes(),
     this.currentLocationTile = const CurrentLocationTileTheme(),
@@ -130,5 +136,7 @@ class CountryListDialogTheme {
     this.isShowDialCode = true,
     this.textStyle = const TextStyle(fontSize: 16),
     this.tileHeight = 50.0,
+    this.useUiOverlay = false,
+    this.useSafeArea = false,
   }) : assert(tileHeight >= 50.0, "tileheight must be greater than 50.0");
 }

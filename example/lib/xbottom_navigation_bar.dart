@@ -50,9 +50,18 @@ class _XBottomNavigationBarState extends State<XBottomNavigationBar> {
             activeIcon: Icon(Icons.text_fields_outlined),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt_outlined),
-            label: "Dialog",
-            activeIcon: Icon(Icons.list_alt),
+              icon: Icon(Icons.list_alt_outlined),
+              label: "Dialog",
+              activeIcon: Icon(Icons.list_alt)),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info),
+            label: "About",
+            activeIcon: Icon(Icons.info),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info),
+            label: "About",
+            activeIcon: Icon(Icons.info),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.info),

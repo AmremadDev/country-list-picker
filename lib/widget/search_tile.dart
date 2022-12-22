@@ -33,6 +33,7 @@ class SearchTile extends StatelessWidget {
         color: dialogTheme.backgroundColor,
         height: dialogTheme.tileHeight,
         child: TextField(
+          textInputAction: TextInputAction.search,
           style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16),
           controller: controller,
           decoration: InputDecoration(
