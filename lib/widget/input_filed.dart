@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 import '../themes/input_theme.dart';
@@ -49,16 +48,20 @@ class InputField extends StatelessWidget {
         controller: controller,
         enabled: enabled,
         onSaved: onSaved,
-        onChanged: (String? value) {
-          // // action UnmaskText
-          // MaskTextInputFormatter(
-          //     mask: "### #### ###4",
-          //     initialText: value,
-          //     filter: {"#": RegExp(r'[0-9]')}).getUnmaskedText();
-        },
+        onChanged: onChanged,
+
+        // (String? value) {
+        //   // action UnmaskText
+        //   MaskTextInputFormatter(
+        //       mask: "### #### ###4",
+        //       initialText: value,
+        //       filter: {"#": RegExp(r'[0-9]')}).getUnmaskedText();
+        // },
         keyboardType: TextInputType.phone,
 
-        style: textFieldTextStyle.copyWith(fontSize: textFieldTextStyle.fontSize ?? 16),
+        style: textFieldTextStyle.copyWith(
+            color: textFieldTextStyle.color ?? Theme.of(context).inputDecorationTheme.focusColor,
+            fontSize: textFieldTextStyle.fontSize ?? 16),
 
         inputFormatters: [
           inputTheme.mask ??
@@ -70,7 +73,9 @@ class InputField extends StatelessWidget {
         decoration: InputDecoration(
             contentPadding: inputTheme.contentPadding,
             hintText: inputTheme.hintText,
-            hintStyle: inputTheme.hintStyle,
+            hintStyle: inputTheme.hintStyle.copyWith(
+              color: textFieldTextStyle.color ?? Theme.of(context).hintColor,
+            ),
             border: inputTheme.border,
             counterText: ""),
       ),

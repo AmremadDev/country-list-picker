@@ -9,6 +9,7 @@ class XColorPickerDialog extends StatelessWidget {
       : super(key: key);
 
   final Map<ColorSwatch<Object>, String> customSwatches = <ColorSwatch<Object>, String>{
+    ColorTools.createPrimarySwatch(Colors.white): 'White',
     ColorTools.createPrimarySwatch(Colors.black): 'Black',
     ColorTools.createPrimarySwatch(Colors.red): 'Red',
     ColorTools.createPrimarySwatch(Colors.pink): 'Pink',
@@ -16,12 +17,12 @@ class XColorPickerDialog extends StatelessWidget {
     ColorTools.createPrimarySwatch(Colors.blue): 'Blue',
     ColorTools.createPrimarySwatch(Colors.cyan): 'Cyan',
     ColorTools.createPrimarySwatch(Colors.green): 'Green',
-    ColorTools.createPrimarySwatch(Colors.yellow): 'Yellow',
     ColorTools.createPrimarySwatch(Colors.orange): 'Orange',
   };
   @override
   Widget build(BuildContext context) {
     return ColorPicker(
+      elevation: 5,
       color: value!,
       enableShadesSelection: false,
       onColorChanged: onColorChanged,

@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CLPProvider extends ChangeNotifier {
+  BuildContext context;
+  CLPProvider({required this.context});
+
+  bool _isDarkMode = false;
+  bool get isDarkMode => _isDarkMode;
+  set isDarkMode(bool value) {
+    _isDarkMode = value;
+    notifyListeners();
+  }
+
   bool _isShowFlag = true;
   bool get isShowFlag => _isShowFlag;
   set isShowFlag(bool value) {
@@ -54,15 +64,23 @@ class CLPProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Color _pickerTextColor = Colors.black;
-  Color get pickerTextColor => _pickerTextColor;
+  // Color _pickerTextColor = Colors.black;
+  // Color get pickerTextColor => _pickerTextColor;
+  // set pickerTextColor(Color value) {
+  //   _pickerTextColor = value;
+  //   notifyListeners();
+  // }
+
+  Color? _pickerTextColor;
+  Color get pickerTextColor =>
+      _pickerTextColor ?? (isDarkMode == true ? Colors.white : Colors.black);
   set pickerTextColor(Color value) {
     _pickerTextColor = value;
     notifyListeners();
   }
 
-  Color _inputTextColor = Colors.black;
-  Color get inputTextColor => _inputTextColor;
+  Color? _inputTextColor;
+  Color get inputTextColor => _inputTextColor ?? (isDarkMode == true ? Colors.white : Colors.black);
   set inputTextColor(Color value) {
     _inputTextColor = value;
     notifyListeners();

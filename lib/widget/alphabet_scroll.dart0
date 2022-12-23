@@ -24,7 +24,7 @@ class AlphabetScroll extends StatelessWidget {
   String? _oldtext;
   @override
   Widget build(BuildContext context) {
-    return Consumer<CountryListPickerController>(
+    return Consumer<CLPProvider>(
       builder: (context, value, child) => Align(
         alignment: Alignment.centerRight,
         child: Container(

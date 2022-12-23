@@ -1,8 +1,8 @@
-import 'package:country_list_picker_example/xcolor_picker.dart';
+import 'package:country_list_picker_example/widget/xcolor_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../clp_provider.dart';
+import '../controller/clp_provider.dart';
 import 'xswitch_list_tile.dart';
 
 class PickerProperties extends StatelessWidget {
@@ -12,7 +12,7 @@ class PickerProperties extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<CLPProvider>(
       builder: (context, provider, child) {
-        return ListView(
+        return Column(
           children: [
             // show/hide properties
             XListTile(

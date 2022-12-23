@@ -109,8 +109,8 @@ class CountryListPicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<CountryListPickerController>(
-      create: (context) => CountryListPickerController(initialCountry: initialCountry),
+    return ChangeNotifierProvider<CLPProvider>(
+      create: (context) => CLPProvider(initialCountry: initialCountry),
       builder: (context, child) {
         return Container(
           margin: margin,
@@ -160,7 +160,7 @@ class CountryListPicker extends StatelessWidget {
                     ]),
               ),
               if (isShowTitle == true)
-                Selector<CountryListPickerController, Country>(
+                Selector<CLPProvider, Country>(
                     selector: (context, model) => model.selectedItem,
                     builder: (context, value, child) => Text(
                           value.englishName.common,
@@ -176,12 +176,12 @@ class CountryListPicker extends StatelessWidget {
   }
 
   Future<void> _onChangeEvent(BuildContext context) async {
-    CountryListPickerController controller = context.read<CountryListPickerController>();
+    CLPProvider controller = context.read<CLPProvider>();
     final Country? result = await Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) => ChangeNotifierProvider<CountryListPickerController>(
-                  create: (context) => CountryListPickerController(initialCountry: Countries.Egypt),
+            builder: (context) => ChangeNotifierProvider<CLPProvider>(
+                  create: (context) => CLPProvider(initialCountry: Countries.Egypt),
                   builder: (context, child) {
                     return SelectionList(
                       controller.countries,
@@ -198,8 +198,8 @@ class CountryListPicker extends StatelessWidget {
     if (onChanged != null) onChanged!(controller.selectedItem);
   }
 
-  Selector<CountryListPickerController, Country> _buildMainPart() {
-    return Selector<CountryListPickerController, Country>(
+  Selector<CLPProvider, Country> _buildMainPart() {
+    return Selector<CLPProvider, Country>(
         selector: (context, model) => model.selectedItem,
         builder: (context, value, child) => Row(
                 mainAxisSize: MainAxisSize.min,
@@ -216,6 +216,8 @@ class CountryListPicker extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 2.5),
                         child: Text(value.callingCode.toString(),
                             style: dialCodeTextStyle.copyWith(
+                                color: dialCodeTextStyle.color ??
+                                    Theme.of(context).textTheme.titleLarge?.color,
                                 fontSize: dialCodeTextStyle.fontSize ?? 16,
                                 fontWeight: dialCodeTextStyle.fontWeight ?? FontWeight.bold))),
                   //down icon

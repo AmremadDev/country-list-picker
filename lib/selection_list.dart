@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../widget/lastpick_tile.dart';
-import 'widget/alphabet_scroll.dart0';
+import '../widget/alphabet_scroll.dart0';
 import '../themes/country_list_dialog_theme.dart';
-import 'contollers/country_list_picker_controller.dart';
-import 'widget/country_list_tile.dart';
+import '../contollers/country_list_picker_controller.dart';
+import '../widget/country_list_tile.dart';
 import '../models/country.dart';
 import '../widget/current_location_tile.dart';
 import '../widget/search_tile.dart';
@@ -42,15 +42,15 @@ class SelectionList extends StatelessWidget {
     _intialValues(context);
     Widget scaffold = Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-        floatingActionButton: (dialogTheme.isShowFloatButton &&
-                context.watch<CountryListPickerController>().floatbutton)
-            ? FloatingActionButton(
-                backgroundColor: Theme.of(context).primaryColor,
-                elevation: 0,
-                mini: true,
-                child: const Icon(Icons.arrow_upward),
-                onPressed: () => _controllerScroll.jumpTo(0))
-            : null,
+        floatingActionButton:
+            (dialogTheme.isShowFloatButton && context.watch<CLPProvider>().floatbutton)
+                ? FloatingActionButton(
+                    backgroundColor: Theme.of(context).primaryColor,
+                    elevation: 0,
+                    mini: true,
+                    child: const Icon(Icons.arrow_upward),
+                    onPressed: () => _controllerScroll.jumpTo(0))
+                : null,
         appBar: appBar,
         body: Container(
             color: dialogTheme.backgroundColor,
@@ -76,7 +76,7 @@ class SelectionList extends StatelessWidget {
                             : Container(height: 10, color: dialogTheme.titlesBackground)
                       ]),
                     ),
-                    Selector<CountryListPickerController, List<Country>>(
+                    Selector<CLPProvider, List<Country>>(
                       selector: (context, model) => model.countries,
                       builder: (context, value, child) => SliverList(
                         delegate: SliverChildBuilderDelegate((context, index) {
@@ -124,7 +124,7 @@ class SelectionList extends StatelessWidget {
     }
 
     _controllerScroll.addListener(() {
-      CountryListPickerController controller = context.read<CountryListPickerController>();
+      CLPProvider controller = context.read<CLPProvider>();
       controller.changeIsShowFloatButton(_controllerScroll.position.pixels != 0);
 
       int scrollPosition = ((_controllerScroll.position.pixels) / dialogTheme.tileHeight).round();

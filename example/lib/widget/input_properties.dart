@@ -1,18 +1,18 @@
-import 'package:country_list_picker_example/xcolor_picker.dart';
+import 'package:country_list_picker_example/widget/xcolor_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../clp_provider.dart';
-import 'xswitch_list_tile.dart';
+import '../controller/clp_provider.dart';
+import '../widget/xswitch_list_tile.dart';
 
 class InputProperties extends StatelessWidget {
-  InputProperties({super.key});
+  const InputProperties({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Consumer<CLPProvider>(
       builder: (context, provider, child) {
-        return ListView(
+        return Column(
           children: [
             XListTile(
               title: 'Input field',
@@ -31,7 +31,9 @@ class InputProperties extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 10),
                 child: XColorPickerDialog(
                     value: provider.inputTextColor,
-                    onColorChanged: (Color color) => provider.inputTextColor = color),
+                    onColorChanged: (Color color) {
+                      provider.inputTextColor = color;
+                    }),
               ),
             ),
             XListTile(
@@ -48,24 +50,20 @@ class InputProperties extends StatelessWidget {
               title: 'Font Bold',
               toggle: Switch(
                 value: provider.inputFontBold,
-                onChanged: (bool value) {
-                  provider.inputFontBold = value;
-                  provider.inputFontBold = value;
-                },
+                onChanged: (bool value) => provider.inputFontBold = value,
               ),
             ),
             XListTile(
               title: 'Mask format',
-              subtitle: TextField(
-                onChanged: ((value) {
-                  provider.inputMask = value;
-                }),
+              subtitle: TextFormField(
+                initialValue: provider.inputMask,
+                onChanged: ((value) => provider.inputMask = value),
               ),
             ),
             XListTile(
               title: "Input Hint",
-              subtitle: TextField(
-                controller: TextEditingController()..text = provider.inputHintString,
+              subtitle: TextFormField(
+                initialValue: provider.inputHintString,
                 onChanged: ((value) => provider.inputHintString = value),
               ),
             ),

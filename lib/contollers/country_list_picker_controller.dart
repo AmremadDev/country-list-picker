@@ -3,7 +3,7 @@ import '../models/countries.dart';
 import '../models/country.dart';
 import '../support/countries_codes.dart';
 
-class CountryListPickerController extends ChangeNotifier {
+class CLPProvider extends ChangeNotifier {
   int posSelected = -1;
   bool floatbutton = false;
   late Country selectedItem;
@@ -11,7 +11,7 @@ class CountryListPickerController extends ChangeNotifier {
 
   final Countries initialCountry;
 
-  CountryListPickerController({this.initialCountry = Countries.Egypt}) {
+  CLPProvider({this.initialCountry = Countries.Egypt}) {
     countries = countriesList
         .map((s) => Country(
               alpha2: s['iso_3166_1_alpha2'],

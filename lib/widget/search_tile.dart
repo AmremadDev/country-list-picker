@@ -43,7 +43,7 @@ class SearchTile extends StatelessWidget {
               hintStyle: dialogTheme.textStyle.copyWith(color: Colors.grey[500])),
           onChanged: ((value) {
             String s = value.toUpperCase();
-            context.read<CountryListPickerController>().changeCountries(elements
+            context.read<CLPProvider>().changeCountries(elements
                 .where((e) =>
                     e.callingCode.startsWith(s) || e.englishName.common.toUpperCase().startsWith(s))
                 .toList());
