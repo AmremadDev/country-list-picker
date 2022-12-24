@@ -45,7 +45,7 @@ class SelectionList extends StatelessWidget {
         floatingActionButton:
             (dialogTheme.isShowFloatButton && context.watch<CLPProvider>().floatbutton)
                 ? FloatingActionButton(
-                    backgroundColor: Theme.of(context).primaryColor,
+                    backgroundColor: Theme.of(context).colorScheme.primary,
                     elevation: 0,
                     mini: true,
                     child: const Icon(Icons.arrow_upward),
@@ -113,9 +113,9 @@ class SelectionList extends StatelessWidget {
 
     if (useUiOverlay) {
       SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-          statusBarColor: Theme.of(context).primaryColor,
+          statusBarColor: Theme.of(context).colorScheme.primary,
           statusBarIconBrightness: Brightness.light,
-          systemNavigationBarColor: Theme.of(context).primaryColor,
+          systemNavigationBarColor: Theme.of(context).colorScheme.primary,
           systemNavigationBarIconBrightness: Brightness.light,
           statusBarBrightness: Brightness.light,
           systemNavigationBarDividerColor: Colors.blue,

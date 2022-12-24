@@ -1,33 +1,29 @@
-import 'package:country_list_picker_example/widget/xcolor_picker.dart';
+import 'package:country_list_picker_example/controller/input_provider.dart';
+import 'package:country_list_picker_example/widget/color_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../list_tile.dart';
 
-import '../controller/clp_provider.dart';
-import '../widget/xswitch_list_tile.dart';
-
-class InputProperties extends StatelessWidget {
-  const InputProperties({super.key});
+class InputArguments extends StatelessWidget {
+  const InputArguments({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<CLPProvider>(
+    return Consumer<InputProvider>(
       builder: (context, provider, child) {
         return Column(
           children: [
             XListTile(
-              title: 'Input field',
-              subtitle: Text("isShowTextField = ${provider.isShowTextField}"),
+              titleAsString: 'Input field',
+              subtitleASString: "isShowTextField = ${provider.isShowTextField}",
               toggle: Switch(
                 value: provider.isShowTextField,
-                onChanged: (bool value) {
-                  provider.isShowTextField = value;
-                  provider.isShowTextField = value;
-                },
+                onChanged: (bool value) => provider.isShowTextField = value,
               ),
             ),
             XListTile(
-              title: "Text Color",
-              subtitle: Padding(
+              titleAsString: "Text Color",
+              subtitleASWidge: Padding(
                 padding: const EdgeInsets.only(top: 10),
                 child: XColorPickerDialog(
                     value: provider.inputTextColor,
@@ -37,8 +33,8 @@ class InputProperties extends StatelessWidget {
               ),
             ),
             XListTile(
-              title: "Font size",
-              subtitle: Slider(
+              titleAsString: "Font size",
+              subtitleASWidge: Slider(
                   divisions: 18,
                   min: 12,
                   max: 30,
@@ -47,22 +43,22 @@ class InputProperties extends StatelessWidget {
                   onChanged: (value) => provider.inputFontSize = value),
             ),
             XListTile(
-              title: 'Font Bold',
+              titleAsString: 'Font Bold',
               toggle: Switch(
                 value: provider.inputFontBold,
                 onChanged: (bool value) => provider.inputFontBold = value,
               ),
             ),
             XListTile(
-              title: 'Mask format',
-              subtitle: TextFormField(
+              titleAsString: 'Mask format',
+              subtitleASWidge: TextFormField(
                 initialValue: provider.inputMask,
                 onChanged: ((value) => provider.inputMask = value),
               ),
             ),
             XListTile(
-              title: "Input Hint",
-              subtitle: TextFormField(
+              titleAsString: "Input Hint",
+              subtitleASWidge: TextFormField(
                 initialValue: provider.inputHintString,
                 onChanged: ((value) => provider.inputHintString = value),
               ),

@@ -25,26 +25,26 @@ class CountryListPicker extends StatelessWidget {
   const CountryListPicker(
       {super.key,
       this.initialCountry = Countries.Egypt,
-      this.isShowTitle = true,
+      this.isShowCountryTitle = true,
       this.isShowFlag = true,
+      this.flagSize = const Size(40.0, 40.0),
       this.isShowCode = true,
+      this.iconDown = const Icon(
+        Icons.keyboard_arrow_down,
+        size: 24,
+      ),
       this.isDownIcon = true,
       this.isShowTextField = true,
       this.margin = const EdgeInsets.all(5.0),
       this.padding = const EdgeInsets.all(0.0),
-      this.border, //const Border(bottom: BorderSide(width: 1)),
-      // this.inputBorder = InputBorder.none,
+      this.border,
       this.dialCodeTextStyle = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-      this.titleTextStyle = const TextStyle(fontSize: 15, color: Colors.grey),
+      this.countryNameTextStyle = const TextStyle(fontSize: 15, color: Colors.grey),
       this.onChanged,
-      // this.pickerBuilder,
-      // this.dialogBuilder,
       this.dialogTheme = const CountryListDialogTheme(),
       this.inputTheme = const InputTheme()})
       : assert(isShowFlag == true || isShowCode == true,
             "Both isShowFlag and isShowCode can't be false");
-
-  // assert(dialogTheme.tileHeight >= 50.0, "tileheight must be greater than 50.0"),
 
   ///Use with the [Countries] Enumration Type to show specific contry. countries are identified by their name as listed below, e.g. [Countries.Egypt].
   final Countries initialCountry;
@@ -53,12 +53,16 @@ class CountryListPicker extends StatelessWidget {
   /// Both [isShowFlag] and [isShowCode] can't be false
   final bool isShowFlag;
 
+  final Size flagSize;
+
   /// If true country title will be appear at left bottom.
   /// Both [isShowFlag] and [isShowCode] can't be false
-  final bool isShowTitle;
+  final bool isShowCountryTitle;
 
   /// If true country dial code will be appear.
   final bool isShowCode;
+
+  final Icon iconDown;
 
   /// If true country flag down icon be appear.
   final bool isDownIcon;
@@ -87,7 +91,7 @@ class CountryListPicker extends StatelessWidget {
   final TextStyle dialCodeTextStyle;
 
   ///Country title Text Style.
-  final TextStyle titleTextStyle;
+  final TextStyle countryNameTextStyle;
 
   /// {@template country_list_picker.onChanged}
   /// Called when the user selects an item.
@@ -128,7 +132,8 @@ class CountryListPicker extends StatelessWidget {
                   border: inputTheme.border == null || inputTheme.border == InputBorder.none
                       ? border ??
                           Border(
-                              bottom: BorderSide(color: Theme.of(context).primaryColor, width: 2))
+                              bottom: BorderSide(
+                                  color: Theme.of(context).colorScheme.primary, width: 2))
                       : null,
                 ),
                 child: Row(
@@ -159,14 +164,16 @@ class CountryListPicker extends StatelessWidget {
                         ),
                     ]),
               ),
-              if (isShowTitle == true)
+              if (isShowCountryTitle == true)
                 Selector<CLPProvider, Country>(
                     selector: (context, model) => model.selectedItem,
                     builder: (context, value, child) => Text(
                           value.englishName.common,
-                          style: titleTextStyle.copyWith(
-                              fontSize: titleTextStyle.fontSize ?? 15,
-                              color: titleTextStyle.color ?? Colors.grey),
+                          style: countryNameTextStyle.copyWith(
+                              fontWeight: countryNameTextStyle.fontWeight,
+                              fontSize: countryNameTextStyle.fontSize ?? 15,
+                              color: countryNameTextStyle.color ?? Colors.grey,
+                              overflow: TextOverflow.ellipsis),
                         ))
             ],
           ),
@@ -209,7 +216,10 @@ class CountryListPicker extends StatelessWidget {
                   if (isShowFlag == true)
                     Flexible(
                         child: Image.asset("assets/flags/${value.alpha2.toLowerCase()}.png",
-                            package: "country_list_picker", width: 40.0)),
+                            package: "country_list_picker",
+                            fit: BoxFit.fill,
+                            height: flagSize.height,
+                            width: flagSize.width)),
                   //code
                   if (isShowCode == true)
                     Padding(
@@ -220,12 +230,27 @@ class CountryListPicker extends StatelessWidget {
                                     Theme.of(context).textTheme.titleLarge?.color,
                                 fontSize: dialCodeTextStyle.fontSize ?? 16,
                                 fontWeight: dialCodeTextStyle.fontWeight ?? FontWeight.bold))),
+
                   //down icon
                   if (isDownIcon == true)
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 2.5),
-                      child: Icon(Icons.keyboard_arrow_down, color: Theme.of(context).primaryColor),
-                    ),
+                        padding: const EdgeInsets.symmetric(horizontal: 2.5),
+                        child: Icon(
+                          iconDown.icon,
+                          size: iconDown.size,
+                          color: (iconDown.color) ??
+                              // (Theme.of(context).brightness == Brightness.light
+                              // ?
+                              Theme.of(context).colorScheme.primary,
+                          // : Theme.of(context).primaryColorDark),
+                          semanticLabel: iconDown.semanticLabel,
+                          textDirection: iconDown.textDirection,
+                          shadows: iconDown.shadows,
+                          key: iconDown.key,
+                        )
+
+                        // Icon(Icons.keyboard_arrow_down, color: Theme.of(context).primaryColor),
+                        ),
                 ]));
   }
 }

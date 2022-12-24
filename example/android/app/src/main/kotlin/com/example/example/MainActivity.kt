@@ -1,4 +1,4 @@
-package com.example.country_list_picker_example
+package com.example.example
 
 import io.flutter.embedding.android.FlutterActivity
 

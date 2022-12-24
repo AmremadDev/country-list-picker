@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 class XColorPickerDialog extends StatelessWidget {
   final ValueChanged<Color> onColorChanged;
   final Color? value;
+  final bool enabled;
 
-  XColorPickerDialog({required this.onColorChanged, this.value = Colors.black, Key? key})
+  XColorPickerDialog(
+      {required this.onColorChanged, this.enabled = true, this.value = Colors.black, Key? key})
       : super(key: key);
 
   final Map<ColorSwatch<Object>, String> customSwatches = <ColorSwatch<Object>, String>{
@@ -21,25 +23,28 @@ class XColorPickerDialog extends StatelessWidget {
   };
   @override
   Widget build(BuildContext context) {
-    return ColorPicker(
-      elevation: 5,
-      color: value!,
-      enableShadesSelection: false,
-      onColorChanged: onColorChanged,
-      width: 30,
-      height: 30,
-      borderRadius: 20,
-      spacing: 10,
-      padding: const EdgeInsets.all(0),
-      pickersEnabled: const <ColorPickerType, bool>{
-        ColorPickerType.both: false,
-        ColorPickerType.primary: false,
-        ColorPickerType.accent: false,
-        ColorPickerType.bw: false,
-        ColorPickerType.custom: true,
-        ColorPickerType.wheel: false,
-      },
-      customColorSwatchesAndNames: customSwatches,
+    return IgnorePointer(
+      ignoring: !enabled,
+      child: ColorPicker(
+        elevation: 5,
+        color: value!,
+        enableShadesSelection: false,
+        onColorChanged: onColorChanged,
+        width: 25,
+        height: 25,
+        borderRadius: 20,
+        spacing: 10,
+        padding: const EdgeInsets.all(15),
+        pickersEnabled: const <ColorPickerType, bool>{
+          ColorPickerType.both: false,
+          ColorPickerType.primary: false,
+          ColorPickerType.accent: false,
+          ColorPickerType.bw: false,
+          ColorPickerType.custom: true,
+          ColorPickerType.wheel: false,
+        },
+        customColorSwatchesAndNames: customSwatches,
+      ),
     );
   }
 }
