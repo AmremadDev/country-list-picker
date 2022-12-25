@@ -23,10 +23,11 @@ class CountryNameArguments extends StatelessWidget {
               enabled: picker.isShowCountryName,
               titleAsString: 'Font Bold',
               toggle: Switch(
-                  value: picker.countryNameTextStyle.fontWeight == FontWeight.normal,
+                  value: picker.countryNameTextStyle.fontWeight == FontWeight.bold,
                   onChanged: picker.isShowCountryName
                       ? (bool value) => picker.countryNameTextStyle = picker.countryNameTextStyle
-                          .copyWith(fontWeight: value == true ? FontWeight.normal : FontWeight.bold)
+                          .copyWith(
+                              fontWeight: value == false ? FontWeight.normal : FontWeight.bold)
                       : null),
             ),
             XListTile(

@@ -63,21 +63,22 @@ class AlphabetScroll extends StatelessWidget {
                                   : dialogTheme.alphabetsBar.backgroundColor,
                               shape: BoxShape.circle,
                             ),
-                            child: Text(alphabet![index],
-                                textAlign: TextAlign.center,
-                                style: (index == value.posSelected)
-                                    ? dialogTheme.alphabetsBar.selectedTextStyle.copyWith(
-                                        fontSize:
-                                            dialogTheme.alphabetsBar.selectedTextStyle.fontSize ??
-                                                18,
-                                        fontWeight:
-                                            dialogTheme.alphabetsBar.selectedTextStyle.fontWeight ??
-                                                FontWeight.bold,
-                                        color: dialogTheme.alphabetsBar.selectedTextStyle.color ??
-                                            Theme.of(context).primaryColor)
-                                    : dialogTheme.alphabetsBar.textStyle.copyWith(
-                                        fontSize:
-                                            (dialogTheme.alphabetsBar.textStyle.fontSize) ?? 12)),
+                            child: Text(
+                              alphabet![index],
+                              textAlign: TextAlign.center,
+                              style: (index == value.posSelected)
+                                  ? dialogTheme.alphabetsBar.selectedTextStyle.copyWith(
+                                      fontSize:
+                                          dialogTheme.alphabetsBar.selectedTextStyle.fontSize ?? 18,
+                                      fontWeight:
+                                          dialogTheme.alphabetsBar.selectedTextStyle.fontWeight ??
+                                              FontWeight.bold,
+                                      color: dialogTheme.alphabetsBar.selectedTextStyle.color ??
+                                          Theme.of(context).colorScheme.primary)
+                                  : dialogTheme.alphabetsBar.textStyle.copyWith(
+                                      fontSize:
+                                          (dialogTheme.alphabetsBar.textStyle.fontSize) ?? 12),
+                            ),
                           ),
                         ),
                       ))

@@ -1,15 +1,31 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'settings_provider.dart';
 
 class DialogProvider extends ChangeNotifier {
   SettingsProvider _settings = SettingsProvider();
 
-  SettingsProvider get settings => _settings;
-  set settings(SettingsProvider value) {
-    _settings = value;
+  void update(SettingsProvider settings) {
+    _settings = settings;
     notifyListeners();
   }
 
+  // ****************************************************************************************************
+  String _dialogAppBarTitle = "Select your country";
+  String get dialogAppBarTitle => _dialogAppBarTitle;
+  set dialogAppBarTitle(String value) {
+    _dialogAppBarTitle = value;
+    notifyListeners();
+  }
+
+  Color? _backgroundColor; // =  const Colors.red;
+  Color get backgroundColor =>
+      _backgroundColor ?? (_settings.isDarkMode == true ? Color(0xff2196f3) : Colors.white);
+  set backgroundColor(Color value) {
+    _backgroundColor = value;
+    notifyListeners();
+  }
+
+  // ****************************************************************************************************
   bool _searchTile = true;
   bool get searchTile => _searchTile;
   set searchTile(bool value) {

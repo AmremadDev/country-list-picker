@@ -149,7 +149,6 @@ class CountryListPicker extends StatelessWidget {
                         InputField(
                           inputTheme: inputTheme,
 
-                          textFieldTextStyle: inputTheme.style,
                           // autovalidateMode: AutovalidateMode.always,
 
                           // validator: (value) {

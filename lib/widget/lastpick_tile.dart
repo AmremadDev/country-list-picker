@@ -45,7 +45,8 @@ class LastPickTile extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 20.0),
                 child: Icon(
                   dialogTheme.lastPickTile.icon.icon,
-                  color: (dialogTheme.lastPickTile.icon.color) ?? Theme.of(context).primaryColor,
+                  color: (dialogTheme.lastPickTile.icon.color) ??
+                      Theme.of(context).colorScheme.primary,
                   size: dialogTheme.lastPickTile.icon.size ?? dialogTheme.tileHeight * .6,
                 )),
             onTap: null),

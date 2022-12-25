@@ -1,17 +1,12 @@
-import 'package:country_list_picker_example/const.dart';
-import 'package:country_list_picker_example/widget/about/about_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../widget/dialog/dialog_screen.dart';
-import '../widget/input/input_screen.dart';
-import '../widget/bottom_part.dart';
 import '../widget/top_part.dart';
 import '../controller/settings_provider.dart';
-import 'widget/bottom_navigation_bar.dart';
+import '../widget/bottom_navigation_bar.dart';
 import '../controller/dialog_provider.dart';
 import '../controller/input_provider.dart';
 import '../controller/picker_provider.dart';
-import '../widget/picker/picker_screen.dart';
+import '../const.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -32,7 +27,7 @@ void main() {
       // dialog Provider
       ChangeNotifierProxyProvider<SettingsProvider, DialogProvider>(
           create: (context) => DialogProvider(),
-          update: (ctx, settings, dialog) => dialog!..settings = settings),
+          update: (ctx, settings, dialog) => dialog!..update(settings)),
     ],
     child: const CountryListPickerExample(),
   ));
@@ -42,6 +37,7 @@ class CountryListPickerExample extends StatelessWidget {
   const CountryListPickerExample({super.key});
   @override
   Widget build(BuildContext context) {
+    print(Theme.of(context).primaryColor);
     return Consumer<SettingsProvider>(
       builder: (context, settings, child) {
         return MaterialApp(
@@ -71,16 +67,20 @@ class CountryListPickerExample extends StatelessWidget {
             ),
           ),
           home: Scaffold(
+            // backgroundColor: Colors.green,
             appBar: AppBar(
               title: const Text("Country List Picker Demo"),
               actions: [
                 IconButton(
                   onPressed: () => settings.isDarkMode = !settings.isDarkMode,
                   icon: settings.isDarkMode
-                      ? const Icon(Icons.dark_mode)
-                      : const Icon(
+                      ? const Icon(
                           Icons.sunny,
                           color: Colors.yellow,
+                        )
+                      : const Icon(
+                          Icons.dark_mode,
+                          color: Colors.white,
                         ),
                 )
               ],
@@ -98,7 +98,7 @@ class CountryListPickerExample extends StatelessWidget {
                 ),
                 Expanded(
                     child: Stack(
-                  children: _screens
+                  children: screensList
                       .asMap()
                       .map((index, screen) => MapEntry(index,
                           Offstage(offstage: settings.selectedScreen != index, child: screen)))
@@ -113,10 +113,3 @@ class CountryListPickerExample extends StatelessWidget {
     );
   }
 }
-
-final _screens = [
-  const PickerScreen(),
-  const InputScreen(),
-  const DialogScreen(),
-  const AboutScreen()
-];

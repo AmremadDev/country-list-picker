@@ -16,20 +16,22 @@ class DialCodeArguments extends StatelessWidget {
             XListTile(
               titleAsString: 'Show/Hide',
               toggle: Switch(
-                  value: picker.isShowCode, onChanged: (bool value) => picker.isShowCode = value),
+                  value: picker.isShowDialCode,
+                  onChanged: (bool value) => picker.isShowDialCode = value),
             ),
             XListTile(
-              enabled: picker.isShowCode,
+              enabled: picker.isShowDialCode,
               titleAsString: 'Font Bold',
               toggle: Switch(
-                  value: picker.dialCodeTextStyle.fontWeight == FontWeight.normal,
-                  onChanged: picker.isShowCode
+                  value: picker.dialCodeTextStyle.fontWeight == FontWeight.bold,
+                  onChanged: picker.isShowDialCode
                       ? (bool value) => picker.dialCodeTextStyle = picker.dialCodeTextStyle
-                          .copyWith(fontWeight: value == true ? FontWeight.normal : FontWeight.bold)
+                          .copyWith(
+                              fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold)
                       : null),
             ),
             XListTile(
-              enabled: picker.isShowCode,
+              enabled: picker.isShowDialCode,
               titleAsString: 'Font Size',
               subtitleASWidge: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,7 +42,7 @@ class DialCodeArguments extends StatelessWidget {
                     max: 30,
                     label: picker.dialCodeTextStyle.fontSize?.toInt().toString(),
                     value: picker.dialCodeTextStyle.fontSize!,
-                    onChanged: picker.isShowCode == true
+                    onChanged: picker.isShowDialCode == true
                         ? (value) => picker.dialCodeTextStyle =
                             picker.dialCodeTextStyle.copyWith(fontSize: value)
                         : null,
@@ -48,16 +50,14 @@ class DialCodeArguments extends StatelessWidget {
                 ],
               ),
             ),
-
-            // Color
             XListTile(
-              enabled: picker.isShowCode,
+              enabled: picker.isShowDialCode,
               titleAsString: "Font Color",
               subtitleASWidge: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   XColorPickerDialog(
-                      enabled: picker.isShowCode,
+                      enabled: picker.isShowDialCode,
                       value: picker.dialCodeTextStyle.color,
                       onColorChanged: (Color color) => picker.dialCodeTextStyle =
                           picker.dialCodeTextStyle.copyWith(color: color)),

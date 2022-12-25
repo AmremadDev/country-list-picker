@@ -13,7 +13,7 @@ class PickerProvider extends ChangeNotifier {
   bool get isShowFlag => _isShowFlag;
   set isShowFlag(bool value) {
     _isShowFlag = value;
-    if (_isShowCode == false && value == false) isShowCode = true;
+    if (_isShowDialCode == false && value == false) isShowDialCode = true;
     notifyListeners();
   }
 
@@ -25,10 +25,10 @@ class PickerProvider extends ChangeNotifier {
   }
 
 // ****************************************************************************************************
-  bool _isShowCode = true;
-  bool get isShowCode => _isShowCode;
-  set isShowCode(bool value) {
-    _isShowCode = value;
+  bool _isShowDialCode = true;
+  bool get isShowDialCode => _isShowDialCode;
+  set isShowDialCode(bool value) {
+    _isShowDialCode = value;
     if (_isShowFlag == false && value == false) isShowFlag = true;
     notifyListeners();
   }
@@ -59,7 +59,7 @@ class PickerProvider extends ChangeNotifier {
   }
 
   TextStyle _countryNameTextStyle =
-      const TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.grey);
+      const TextStyle(fontWeight: FontWeight.normal, fontSize: 15, color: Colors.grey);
 
   TextStyle get countryNameTextStyle => _countryNameTextStyle;
   set countryNameTextStyle(TextStyle value) {

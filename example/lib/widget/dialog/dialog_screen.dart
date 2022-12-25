@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../const.dart';
 import '../expansion_tile.dart';
-import './dialog_arguments.dart';
+import 'general_arguments.dart';
 
 class DialogScreen extends StatelessWidget {
   const DialogScreen({super.key});
@@ -20,6 +20,8 @@ class DialogScreen extends StatelessWidget {
         return Card(
           elevation: 5,
           child: XExpansionTile(
+            // subtitle: Text(""),
+            // childrenPadding: const EdgeInsets.only(top: 0, bottom: 0),
             initiallyExpanded: selectedIndex == index,
             key: tileKey,
             // leading: Icon(categories.values.elementAt(index).keys.elementAt(0)),
@@ -40,5 +42,11 @@ class DialogScreen extends StatelessWidget {
 }
 
 Map<String, Map<IconData, Widget>> categories = {
-  "Dialog": {Icons.flag: const DialogArguments()},
+  "General": {Icons.flag: const GeneralArguments()},
+  "Title": {Icons.flag: const GeneralArguments()},
+  "Text": {Icons.flag: const GeneralArguments()},
+  "Search Tile": {Icons.flag: const GeneralArguments()},
+  "Current Location Tile": {Icons.flag: const GeneralArguments()},
+  "Last Pick Tile": {Icons.flag: const GeneralArguments()},
+  "Alphabets Bar": {Icons.flag: const GeneralArguments()},
 };

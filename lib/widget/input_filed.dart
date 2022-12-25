@@ -7,7 +7,6 @@ class InputField extends StatelessWidget {
   const InputField({
     Key? key,
     required this.inputTheme,
-    required this.textFieldTextStyle,
     this.onChanged,
     this.onSaved,
     this.controller,
@@ -22,7 +21,6 @@ class InputField extends StatelessWidget {
   }) : super(key: key);
 
   final InputTheme inputTheme;
-  final TextStyle textFieldTextStyle;
   final ValueChanged<String>? onChanged;
   final FormFieldSetter<String>? onSaved;
   final TextEditingController? controller;
@@ -59,9 +57,9 @@ class InputField extends StatelessWidget {
         // },
         keyboardType: TextInputType.phone,
 
-        style: textFieldTextStyle.copyWith(
-            color: textFieldTextStyle.color ?? Theme.of(context).inputDecorationTheme.focusColor,
-            fontSize: textFieldTextStyle.fontSize ?? 16),
+        style: inputTheme.style.copyWith(
+            color: inputTheme.style.color ?? Theme.of(context).inputDecorationTheme.focusColor,
+            fontSize: inputTheme.style.fontSize ?? 16),
 
         inputFormatters: [
           inputTheme.mask ??
@@ -74,7 +72,7 @@ class InputField extends StatelessWidget {
             contentPadding: inputTheme.contentPadding,
             hintText: inputTheme.hintText,
             hintStyle: inputTheme.hintStyle.copyWith(
-              color: textFieldTextStyle.color ?? Theme.of(context).hintColor,
+              color: inputTheme.hintStyle.color ?? Theme.of(context).hintColor,
             ),
             border: inputTheme.border,
             counterText: ""),

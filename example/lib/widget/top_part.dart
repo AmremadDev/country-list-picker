@@ -18,7 +18,7 @@ class TopPart extends StatelessWidget {
           countryNameTextStyle: picker.countryNameTextStyle,
           isShowFlag: picker.isShowFlag,
           flagSize: picker.flagSize,
-          isShowCode: picker.isShowCode,
+          isShowCode: picker.isShowDialCode,
           isDownIcon: picker.isDownIcon,
           isShowCountryTitle: picker.isShowCountryName,
           isShowTextField: input.isShowTextField,
@@ -28,19 +28,11 @@ class TopPart extends StatelessWidget {
             color: picker.downIcon.color,
           ),
           dialCodeTextStyle: picker.dialCodeTextStyle,
-
-          // TextStyle(
-          //     color: picker.pickerTextColor,
-          //     fontSize: picker.pickerDialCodeFontSize,
-          //     fontWeight: (picker.pickerDialCodeFontBold) ? FontWeight.bold : FontWeight.normal),
-
           border: (picker.pickerBorder == true) ? null : const Border(bottom: BorderSide.none),
           inputTheme: InputTheme(
-            style: TextStyle(
-                color: input.inputTextColor,
-                fontSize: input.inputFontSize,
-                fontWeight: (input.inputFontBold) ? FontWeight.bold : FontWeight.normal),
+            style: input.inputTextStyle,
             hintText: input.inputHintString,
+            hintStyle: input.hintTextStyle,
             border: (input.inputBorder == true)
                 ? const OutlineInputBorder(borderSide: BorderSide(width: 1))
                 : InputBorder.none,
@@ -51,10 +43,20 @@ class TopPart extends StatelessWidget {
             isShowFlage: dialog.countryFlag,
             isShowDialCode: dialog.countryDialCode,
             isShowFloatButton: dialog.upActionbutton,
+
+            appBar: AppBar(
+              title: Text(dialog.dialogAppBarTitle),
+            ),
+            // backgroundColor: dialog.ba ckgroundColor,
+            // textStyle: ,
+            // tileHeight: ,
+            // titlesBackground: ,
+            // titlesStyle: ,
+            // useSafeArea: ,
+            // useUiOverlay: ,
+
             alphabetsBar: AlphabetsBarThemes(
               visible: dialog.alphabetBar,
-              // backgroundColor: Colors.transparent,
-              // selectedBackgroundColor: Colors.purple,
             ),
             searchTile: SearchTileTheme(
               visible: dialog.searchTile,
