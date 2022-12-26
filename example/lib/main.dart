@@ -37,7 +37,6 @@ class CountryListPickerExample extends StatelessWidget {
   const CountryListPickerExample({super.key});
   @override
   Widget build(BuildContext context) {
-    print(Theme.of(context).primaryColor);
     return Consumer<SettingsProvider>(
       builder: (context, settings, child) {
         return MaterialApp(
@@ -98,10 +97,12 @@ class CountryListPickerExample extends StatelessWidget {
                 ),
                 Expanded(
                     child: Stack(
-                  children: screensList
+                  children: screens
                       .asMap()
-                      .map((index, screen) => MapEntry(index,
-                          Offstage(offstage: settings.selectedScreen != index, child: screen)))
+                      .map((index, screen) => MapEntry(
+                          index,
+                          Offstage(
+                              offstage: settings.selectedScreen != index, child: screen.child)))
                       .values
                       .toList(),
                 )),

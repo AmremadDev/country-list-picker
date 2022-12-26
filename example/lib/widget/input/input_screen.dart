@@ -21,10 +21,9 @@ class InputScreen extends StatelessWidget {
           child: XExpansionTile(
             initiallyExpanded: selectedIndex == index,
             key: tileKey,
-            // leading: Icon(categories.values.elementAt(index).keys.elementAt(0)),
             title: Text(inputCategoriesList.keys.elementAt(index),
                 style: const TextStyle(fontSize: titlesFontSize, fontWeight: FontWeight.bold)),
-            children: [inputCategoriesList.values.elementAt(index).values.elementAt(0)],
+            children: [inputCategoriesList.values.elementAt(index)],
             onExpansionChanged: (value) {
               if (value && index != selectedIndex) {
                 tileKeys[selectedIndex].currentState.closeExpansion();

@@ -19,7 +19,7 @@ class DialogProvider extends ChangeNotifier {
 
   Color? _backgroundColor; // =  const Colors.red;
   Color get backgroundColor =>
-      _backgroundColor ?? (_settings.isDarkMode == true ? Color(0xff2196f3) : Colors.white);
+      _backgroundColor ?? (_settings.isDarkMode == true ? const Color(0xff2196f3) : Colors.white);
   set backgroundColor(Color value) {
     _backgroundColor = value;
     notifyListeners();

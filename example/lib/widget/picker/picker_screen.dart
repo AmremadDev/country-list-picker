@@ -25,7 +25,7 @@ class PickerScreen extends StatelessWidget {
             // leading: Icon(categories.values.elementAt(index).keys.elementAt(0)),
             title: Text(pickerCategoriesList.keys.elementAt(index),
                 style: const TextStyle(fontSize: titlesFontSize, fontWeight: FontWeight.bold)),
-            children: [pickerCategoriesList.values.elementAt(index).values.elementAt(0)],
+            children: [pickerCategoriesList.values.elementAt(index)],
             onExpansionChanged: (value) {
               if (value && index != selectedIndex) {
                 tileKeys[selectedIndex].currentState.closeExpansion();

@@ -1,12 +1,15 @@
-import 'package:country_list_picker_example/model/category.dart';
-import 'package:country_list_picker_example/widget/expansion_tile.dart';
+import 'package:flutter/material.dart';
 
 class Screen {
   final String title;
-  final List<Category>? categories;
+  final Widget child;
+  final IconData activeIcon;
+  final IconData inactiveIcon;
 
-  Screen({
+  const Screen({
     required this.title,
-    this.categories,
+    required this.activeIcon,
+    required this.inactiveIcon,
+    required this.child,
   });
 }
