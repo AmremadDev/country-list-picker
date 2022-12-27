@@ -17,29 +17,71 @@ const double titlesFontSize = 18;
 const Color lightprimarySwatch = Colors.purple;
 const Color darkprimarySwatch = Colors.red;
 
-const List<Screen> screens = [
+List<Screen> screens = [
   Screen(
     title: "Picker",
     activeIcon: Icons.home,
     inactiveIcon: Icons.home_outlined,
-    child: PickerScreen(),
+    child: const PickerScreen(),
+    arguments: pickerArguments,
   ),
   Screen(
-      title: "Input",
-      activeIcon: Icons.text_fields,
-      inactiveIcon: Icons.text_fields_outlined,
-      child: InputScreen()),
+    title: "Input",
+    activeIcon: Icons.text_fields,
+    inactiveIcon: Icons.text_fields_outlined,
+    child: const InputScreen(),
+    arguments: pickerArguments,
+  ),
   Screen(
-      title: "Dialog",
-      activeIcon: Icons.list_alt,
-      inactiveIcon: Icons.list_alt_outlined,
-      child: DialogScreen()),
+    title: "Dialog",
+    activeIcon: Icons.list_alt,
+    inactiveIcon: Icons.list_alt_outlined,
+    child: const DialogScreen(),
+    arguments: pickerArguments,
+  ),
   Screen(
-      title: "About",
-      activeIcon: Icons.info,
-      inactiveIcon: Icons.info_outline,
-      child: AboutScreen()),
+    title: "About",
+    activeIcon: Icons.info,
+    inactiveIcon: Icons.info_outline,
+    child: const AboutScreen(),
+    arguments: pickerArguments,
+  ),
 ];
+
+List<Argument> pickerArguments = [
+  Argument( title: "Flag", child: const FlagArguments()),
+  Argument( title: "Dial Code", child: const DialCodeArguments()),
+  Argument( title: "Down Icon", child: const DownIconArguments()),
+  Argument( title: "Country Name", child: const CountryNameArguments()),
+  Argument(
+  
+      title: "Border",
+      child: const SizedBox(
+          height: 200,
+          child: Center(child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25))))),
+];
+
+// List<Argument> inputArguments = [
+//   Argument(key: GlobalKey(), title: "Input", child: const InputArguments()),
+//   Argument(key: GlobalKey(), title: "hint", child: const HintArguments()),
+//   Argument(
+//       key: GlobalKey(),
+//       title: "Border",
+//       child: const SizedBox(
+//           height: 200,
+//           child: Center(child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)))))
+// ];
+// List<Argument> dialogArguments = [
+//   Argument(key: GlobalKey(), title: "General", child: const InputArguments()),
+//   Argument(key: GlobalKey(), title: "Title", child: const HintArguments()),
+//   Argument(key: GlobalKey(), title: "Text", child: const HintArguments()),
+//   Argument(key: GlobalKey(), title: "Search Tile", child: const HintArguments()),
+//   Argument(key: GlobalKey(), title: "Current Location Tile", child: const HintArguments()),
+//   Argument(key: GlobalKey(), title: "Last Pick Tile", child: const HintArguments()),
+//   Argument(key: GlobalKey(), title: "Alphabets Bar", child: const HintArguments()),
+// ];
+
+
 
 final Map<String, Widget> pickerCategoriesList = {
   "Flag": const FlagArguments(),
@@ -47,18 +89,14 @@ final Map<String, Widget> pickerCategoriesList = {
   "Down Icon": const DownIconArguments(),
   "Country Name": const CountryNameArguments(),
   "Border": const SizedBox(
-      height: 200,
-      child: Center(
-          child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)))),
+      height: 200, child: Center(child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)))),
 };
 
 final Map<String, Widget> inputCategoriesList = {
   "Input": const InputArguments(),
   "hint": const HintArguments(),
   "Border": const SizedBox(
-      height: 200,
-      child: Center(
-          child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)))),
+      height: 200, child: Center(child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)))),
 };
 
 final Map<String, Widget> dialogCategoriesList = {

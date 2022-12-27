@@ -1,3 +1,6 @@
+import 'package:country_list_picker_example/model/screen.dart';
+import 'package:country_list_picker_example/widget/picker/bottompart_sample.dart';
+import 'package:country_list_picker_example/widget/screen_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../widget/top_part.dart';
@@ -7,6 +10,7 @@ import '../controller/dialog_provider.dart';
 import '../controller/input_provider.dart';
 import '../controller/picker_provider.dart';
 import '../const.dart';
+import 'ex.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -16,18 +20,15 @@ void main() {
 
       // Picker Provider
       ChangeNotifierProxyProvider<SettingsProvider, PickerProvider>(
-          create: (context) => PickerProvider(),
-          update: (ctx, settings, picker) => picker!..update(settings)),
+          create: (context) => PickerProvider(), update: (ctx, settings, picker) => picker!..update(settings)),
 
       // Input Provider
       ChangeNotifierProxyProvider<SettingsProvider, InputProvider>(
-          create: (context) => InputProvider(),
-          update: (ctx, settings, input) => input!..update(settings)),
+          create: (context) => InputProvider(), update: (ctx, settings, input) => input!..update(settings)),
 
       // dialog Provider
       ChangeNotifierProxyProvider<SettingsProvider, DialogProvider>(
-          create: (context) => DialogProvider(),
-          update: (ctx, settings, dialog) => dialog!..update(settings)),
+          create: (context) => DialogProvider(), update: (ctx, settings, dialog) => dialog!..update(settings)),
     ],
     child: const CountryListPickerExample(),
   ));
@@ -58,57 +59,60 @@ class CountryListPickerExample extends StatelessWidget {
             fontFamily: "Quicksand",
             primarySwatch: lightprimarySwatch as MaterialColor,
             expansionTileTheme: ExpansionTileThemeData(
-                backgroundColor: Colors.purple.shade50,
-                collapsedBackgroundColor: Colors.purple.shade100),
+                backgroundColor: Colors.purple.shade50, collapsedBackgroundColor: Colors.purple.shade100),
             bottomNavigationBarTheme: const BottomNavigationBarThemeData(
               unselectedItemColor: Colors.black38,
               selectedItemColor: lightprimarySwatch,
             ),
           ),
           home: Scaffold(
-            // backgroundColor: Colors.green,
-            appBar: AppBar(
-              title: const Text("Country List Picker Demo"),
-              actions: [
-                IconButton(
-                  onPressed: () => settings.isDarkMode = !settings.isDarkMode,
-                  icon: settings.isDarkMode
-                      ? const Icon(
-                          Icons.sunny,
-                          color: Colors.yellow,
-                        )
-                      : const Icon(
-                          Icons.dark_mode,
-                          color: Colors.white,
-                        ),
-                )
-              ],
-            ),
-            bottomNavigationBar: XBottomNavigationBar(
-                currentIndex: settings.selectedScreen,
-                onTap: (index) => settings.selectedScreen = index),
-            body: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Container(
-                  height: 130,
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: const Card(elevation: 2, child: TopPart()),
-                ),
-                Expanded(
-                    child: Stack(
-                  children: screens
-                      .asMap()
-                      .map((index, screen) => MapEntry(
-                          index,
-                          Offstage(
-                              offstage: settings.selectedScreen != index, child: screen.child)))
-                      .values
-                      .toList(),
-                )),
-              ],
-            ),
-          ),
+              // backgroundColor: Colors.green,
+              appBar: AppBar(
+                title: const Text("Country List Picker Demo"),
+                actions: [
+                  IconButton(
+                    onPressed: () => settings.isDarkMode = !settings.isDarkMode,
+                    icon: settings.isDarkMode
+                        ? const Icon(
+                            Icons.sunny,
+                            color: Colors.yellow,
+                          )
+                        : const Icon(
+                            Icons.dark_mode,
+                            color: Colors.white,
+                          ),
+                  )
+                ],
+              ),
+              bottomNavigationBar: XBottomNavigationBar(
+                  currentIndex: settings.selectedScreen, onTap: (index) => settings.selectedScreen = index),
+              body: SingleChildScrollView(
+                child: 
+              
+
+              // const MyStatefulWidget()
+
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                    height: 130,
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: const Card(elevation: 2, child: TopPart()),
+                  ),
+                  Expanded(
+                      child: Stack(
+                    children: screens
+                        .asMap()
+                        .map((index, screen) => MapEntry(index,
+                            Offstage(offstage: settings.selectedScreen != index, child: BottomPartSample(screen: screen))))
+                        .values
+                        .toList(),
+                  )),
+                ],
+              ),
+
+              ),)
         );
       },
     );
