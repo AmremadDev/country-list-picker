@@ -6,12 +6,13 @@ class XColorPickerDialog extends StatelessWidget {
   final Color? value;
   final bool enabled;
 
-  XColorPickerDialog(
-      {required this.onColorChanged, this.enabled = true, this.value = Colors.black, Key? key})
+  XColorPickerDialog({required this.onColorChanged, this.enabled = true, this.value = Colors.black, Key? key})
       : super(key: key);
 
   final Map<ColorSwatch<Object>, String> customSwatches = <ColorSwatch<Object>, String>{
     ColorTools.createPrimarySwatch(Colors.white): 'White',
+    ColorTools.createPrimarySwatch(const Color(0xFF424242)): '1',
+    ColorTools.createPrimarySwatch(const Color(0xFF313030)): '2',
     ColorTools.createPrimarySwatch(Colors.black): 'Black',
     ColorTools.createPrimarySwatch(Colors.red): 'Red',
     ColorTools.createPrimarySwatch(Colors.pink): 'Pink',
@@ -30,10 +31,10 @@ class XColorPickerDialog extends StatelessWidget {
         color: value!,
         enableShadesSelection: false,
         onColorChanged: onColorChanged,
-        width: 25,
-        height: 25,
+        width: 23.5,
+        height: 23.5,
         borderRadius: 20,
-        spacing: 10,
+        spacing: 5,
         padding: const EdgeInsets.all(15),
         pickersEnabled: const <ColorPickerType, bool>{
           ColorPickerType.both: false,

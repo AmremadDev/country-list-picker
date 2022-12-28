@@ -132,7 +132,7 @@ class CountryListDialogTheme {
     this.isShowFloatButton = true,
     this.backgroundColor = Colors.transparent,
     this.titlesStyle = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-    this.titlesBackground = const Color(0x6CDDDDDD),
+    this.titlesBackground =const  Color(0xFFE9E9E9), //const Color(0x6CDDDDDD),
     this.isShowDialCode = true,
     this.textStyle = const TextStyle(fontSize: 16),
     this.tileHeight = 50.0,

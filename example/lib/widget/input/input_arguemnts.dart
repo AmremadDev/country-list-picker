@@ -14,7 +14,7 @@ class InputArguments extends StatelessWidget {
         return Column(
           children: [
             XListTile(
-              titleAsString: 'Hide/Show',
+              titleAsString: 'Visible',
               toggle: Switch(
                 value: input.isShowTextField,
                 onChanged: (bool value) => input.isShowTextField = value,

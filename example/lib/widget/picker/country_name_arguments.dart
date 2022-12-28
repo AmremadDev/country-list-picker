@@ -14,7 +14,7 @@ class CountryNameArguments extends StatelessWidget {
         return Column(
           children: [
             XListTile(
-              titleAsString: 'Show/Hide',
+              titleAsString: 'Visible',
               toggle: Switch(
                   value: picker.isShowCountryName,
                   onChanged: (bool value) => picker.isShowCountryName = value),

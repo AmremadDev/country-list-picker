@@ -13,7 +13,7 @@ class FlagArguments extends StatelessWidget {
         return Column(
           children: [
             XListTile(
-              titleAsString: 'Show/Hide',
+              titleAsString: 'Visible',
               // subtitleASString: "isShowFlag = ${picker.isShowFlag}",
               toggle: Switch(
                 value: picker.isShowFlag,

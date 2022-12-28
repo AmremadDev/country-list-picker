@@ -1,3 +1,9 @@
+import 'package:country_list_picker_example/widget/dialog/alphabets_bar_arguments.dart';
+import 'package:country_list_picker_example/widget/dialog/current_location_tile_arguments.dart';
+import 'package:country_list_picker_example/widget/dialog/last_pick_tile_arguments.dart';
+import 'package:country_list_picker_example/widget/dialog/search_tile_arguments.dart';
+import 'package:country_list_picker_example/widget/dialog/textStyle_argement.dart';
+import 'package:country_list_picker_example/widget/dialog/title_textStyle_argements.dart';
 import 'package:flutter/material.dart';
 
 import '../model/screen.dart';
@@ -67,36 +73,11 @@ List<Argument> inputArguments = [
 ];
 List<Argument> dialogArguments = [
   Argument(title: "General", child: const GeneralArguments()),
-  Argument(title: "Title", child: const HintArguments()),
-  Argument(title: "Text", child: const HintArguments()),
-  Argument(title: "Search Tile", child: const HintArguments()),
-  Argument(title: "Current Location Tile", child: const HintArguments()),
-  Argument(title: "Last Pick Tile", child: const HintArguments()),
-  Argument(title: "Alphabets Bar", child: const HintArguments()),
+  Argument(title: "Title TextStyle", child: const TitleTextStyleArguments()),
+  Argument(title: "TextStyle", child: const TextStyleArguments()),
+  Argument(title: "Search Tile", child: const SearchTileArguments()),
+  Argument(title: "Current Location Tile", child: const CurrentLocationTileArguments()),
+  Argument(title: "Last Pick Tile", child: const LastPickTileArguments()),
+  Argument(title: "Alphabets Bar", child: const AlphabetsBarArguments()),
 ];
 
-final Map<String, Widget> pickerCategoriesList = {
-  "Flag": const FlagArguments(),
-  "Dial Code": const DialCodeArguments(),
-  "Down Icon": const DownIconArguments(),
-  "Country Name": const CountryNameArguments(),
-  "Border": const SizedBox(
-      height: 200, child: Center(child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)))),
-};
-
-final Map<String, Widget> inputCategoriesList = {
-  "Input": const InputArguments(),
-  "hint": const HintArguments(),
-  "Border": const SizedBox(
-      height: 200, child: Center(child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)))),
-};
-
-final Map<String, Widget> dialogCategoriesList = {
-  "General": const GeneralArguments(),
-  "Title": const GeneralArguments(),
-  "Text": const GeneralArguments(),
-  "Search Tile": const GeneralArguments(),
-  "Current Location Tile": const GeneralArguments(),
-  "Last Pick Tile": const GeneralArguments(),
-  "Alphabets Bar": const GeneralArguments(),
-};

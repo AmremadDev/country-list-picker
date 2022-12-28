@@ -4,7 +4,7 @@ class Argument {
 
   final String title;
   final Widget child;
-  var key;
+  dynamic key;
   Argument({
     required this.title,
     required this.child,

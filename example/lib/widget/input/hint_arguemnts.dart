@@ -49,7 +49,7 @@ class HintArguments extends StatelessWidget {
                     value: input.hintTextStyle.fontSize!,
                     onChanged: input.isShowTextField == true
                         ? (value) => input.hintTextStyle =
-                            input.hintTextStyle.copyWith(fontSize: value, color: Colors.red)
+                            input.hintTextStyle.copyWith(fontSize: value, color: input.hintTextStyle.color)
                         : null,
                   )
                 ],

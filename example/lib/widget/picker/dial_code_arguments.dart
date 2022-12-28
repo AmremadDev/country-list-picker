@@ -14,7 +14,7 @@ class DialCodeArguments extends StatelessWidget {
         return Column(
           children: [
             XListTile(
-              titleAsString: 'Show/Hide',
+              titleAsString: 'Visible',
               toggle: Switch(
                   value: picker.isShowDialCode,
                   onChanged: (bool value) => picker.isShowDialCode = value),

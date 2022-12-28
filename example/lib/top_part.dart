@@ -43,10 +43,8 @@ class TopPart extends StatelessWidget {
             appBar: AppBar(
               title: Text(dialog.dialogAppBarTitle),
             ),
-            // backgroundColor: dialog.ba ckgroundColor,
             // textStyle: ,
             // tileHeight: ,
-            // titlesBackground: ,
             // titlesStyle: ,
             // useSafeArea: ,
             // useUiOverlay: ,
@@ -67,8 +65,10 @@ class TopPart extends StatelessWidget {
               visible: dialog.lastPicktile,
               title: "Last Pick",
             ),
-            // backgroundColor: Colors.red,
-            // titlesBackground: Colors.purple,
+           backgroundColor:dialog.backgroundColor,
+           titlesBackground: dialog.titlesBackgroundColor,
+           textStyle: dialog.textStyle ,
+           titlesStyle: dialog.titleTextStyle,
           ),
         );
       },

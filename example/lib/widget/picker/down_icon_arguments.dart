@@ -15,7 +15,7 @@ class DownIconArguments extends StatelessWidget {
         return Column(
           children: [
             XListTile(
-              titleAsString: 'Show/Hide',
+              titleAsString: 'Visible',
               // subtitleASString: "isShowCode = ${picker.isShowCode}",
               toggle: Switch(
                   value: picker.isDownIcon, onChanged: (bool value) => picker.isDownIcon = value),

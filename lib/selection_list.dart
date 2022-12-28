@@ -107,7 +107,7 @@ class SelectionList extends StatelessWidget {
 
   void _intialValues(BuildContext context) {
     _boxes = 0;
-    if (dialogTheme.alphabetsBar.visible == true) _boxes += 2;
+    if (dialogTheme.searchTile.visible == true) _boxes += 2;
     if (dialogTheme.currentLocationTile.visible == true) _boxes += 2;
     if (dialogTheme.lastPickTile.visible == true) _boxes += 2;
 

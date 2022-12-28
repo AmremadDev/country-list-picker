@@ -42,9 +42,9 @@ class InputProvider extends ChangeNotifier {
   }
 
   TextStyle _hintTextStyle =
-      TextStyle(fontWeight: FontWeight.normal, fontSize: 16, color: Colors.red.shade300);
+     const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, color:  Color(0xFF424242));
   TextStyle get hintTextStyle => _hintTextStyle.copyWith(
-      color: _inputTextStyle.color ?? (_settings.isDarkMode == true ? Colors.white : Colors.black));
+      color: _hintTextStyle.color ?? (_settings.isDarkMode == true ? const Color(0xFF424242): Colors.black));
   set hintTextStyle(TextStyle value) {
     _hintTextStyle = value;
     notifyListeners();
