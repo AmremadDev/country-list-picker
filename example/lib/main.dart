@@ -1,16 +1,15 @@
-import 'package:country_list_picker_example/model/screen.dart';
-import 'package:country_list_picker_example/widget/picker/bottompart_sample.dart';
-import 'package:country_list_picker_example/widget/screen_widget.dart';
+
+import 'package:country_list_picker_example/bottom_part.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../widget/top_part.dart';
 import '../controller/settings_provider.dart';
 import '../widget/bottom_navigation_bar.dart';
 import '../controller/dialog_provider.dart';
 import '../controller/input_provider.dart';
 import '../controller/picker_provider.dart';
-import '../const.dart';
-import 'ex.dart';
+import '../screens_data.dart';
+import '../top_part.dart';
+
 
 void main() {
   runApp(MultiProvider(
@@ -86,13 +85,7 @@ class CountryListPickerExample extends StatelessWidget {
               ),
               bottomNavigationBar: XBottomNavigationBar(
                   currentIndex: settings.selectedScreen, onTap: (index) => settings.selectedScreen = index),
-              body: SingleChildScrollView(
-                child: 
-              
-
-              // const MyStatefulWidget()
-
-              Column(
+              body: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Container(
@@ -105,13 +98,12 @@ class CountryListPickerExample extends StatelessWidget {
                     children: screens
                         .asMap()
                         .map((index, screen) => MapEntry(index,
-                            Offstage(offstage: settings.selectedScreen != index, child: BottomPartSample(screen: screen))))
+                            Offstage(offstage: settings.selectedScreen != index, 
+                            child: BottomPart(screen: screen))))
                         .values
                         .toList(),
                   )),
                 ],
-              ),
-
               ),)
         );
       },

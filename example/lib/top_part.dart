@@ -1,14 +1,14 @@
-import 'package:country_list_picker/country_list_picker.dart';
-import 'package:country_list_picker_example/controller/dialog_provider.dart';
-import 'package:country_list_picker_example/controller/input_provider.dart';
-import 'package:country_list_picker_example/controller/picker_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
+import 'package:country_list_picker/country_list_picker.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import '../controller/dialog_provider.dart';
+import '../controller/input_provider.dart';
+import '../controller/picker_provider.dart';
+
 
 class TopPart extends StatelessWidget {
   const TopPart({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Consumer3<PickerProvider, InputProvider, DialogProvider>(
@@ -22,11 +22,7 @@ class TopPart extends StatelessWidget {
           isDownIcon: picker.isDownIcon,
           isShowCountryTitle: picker.isShowCountryName,
           isShowTextField: input.isShowTextField,
-          iconDown: Icon(
-            picker.downIcon.icon,
-            size: picker.downIcon.size,
-            color: picker.downIcon.color,
-          ),
+          iconDown: Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),
           dialCodeTextStyle: picker.dialCodeTextStyle,
           border: (picker.pickerBorder == true) ? null : const Border(bottom: BorderSide.none),
           inputTheme: InputTheme(

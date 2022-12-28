@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class SettingsProvider extends ChangeNotifier {
   int _selectedScreen = 2;

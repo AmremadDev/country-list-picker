@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'settings_provider.dart';
+import '../controller/settings_provider.dart';
 
 class DialogProvider extends ChangeNotifier {
   SettingsProvider _settings = SettingsProvider();

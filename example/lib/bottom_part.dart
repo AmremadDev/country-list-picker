@@ -1,35 +1,32 @@
 import 'package:flutter/material.dart';
-import '../../const.dart';
-import '../expansion_tile.dart';
+import '../screens_data.dart';
+import '../model/screen.dart';
+import '../widget/expansion_tile.dart';
 
-class PickerScreen extends StatelessWidget {
-  const PickerScreen({super.key});
+class BottomPart extends StatelessWidget {
+  final Screen screen;
+  const BottomPart({super.key, required this.screen});
 
   @override
   Widget build(BuildContext context) {
-    final tileKeys = [];
+    if (screen.arguments.isEmpty) return screen.child!;
     int selectedIndex = 0;
     return ListView.separated(
       padding: const EdgeInsets.symmetric(horizontal: 5).copyWith(top: 0),
       separatorBuilder: (context, index) => const SizedBox(height: 2.5),
-      itemCount: pickerCategoriesList.length,
+      itemCount: screen.arguments.length,
       itemBuilder: (context, index) {
-        final tileKey = GlobalKey();
-        tileKeys.add(tileKey);
-
+        screen.arguments[index].key = GlobalKey<State<StatefulWidget>>();
         return Card(
           elevation: 5,
           child: XExpansionTile(
             initiallyExpanded: selectedIndex == index,
-            key: tileKey,
-            // leading: Icon(categories.values.elementAt(index).keys.elementAt(0)),
-            title: Text(pickerCategoriesList.keys.elementAt(index),
+            key: screen.arguments[index].key,
+            title: Text(screen.arguments[index].title,
                 style: const TextStyle(fontSize: titlesFontSize, fontWeight: FontWeight.bold)),
-            children: [pickerCategoriesList.values.elementAt(index)],
+            children: [screen.arguments[index].child],
             onExpansionChanged: (value) {
-              if (value && index != selectedIndex) {
-                tileKeys[selectedIndex].currentState.closeExpansion();
-              }
+              if (value && index != selectedIndex) screen.arguments[selectedIndex].key!.currentState.closeExpansion();
               selectedIndex = index;
             },
           ),
