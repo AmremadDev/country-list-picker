@@ -25,27 +25,23 @@ class XListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ListTile(
-          enabled: (toggle != null) ? toggle!.value : true,
-          title: titleAsWidget ??
-              ((titleAsString != null)
-                  ? Text(titleAsString!,
-                      style: TextStyle(
-                          color: enabled == true ? null : Theme.of(context).disabledColor,
-                          fontWeight: FontWeight.bold))
-                  : null),
-          style: ListTileStyle.list,
-          subtitle: subtitleASWidge ??
-              ((subtitleASString != null)
-                  ? Text(subtitleASString!, style: const TextStyle(fontWeight: FontWeight.bold))
-                  : null),
-          leading: leading != null ? Icon(leading!) : null,
-          trailing: toggle,
-          onTap: onTap,
-        ),
-      ],
+    return ListTile(
+      enabled: (toggle != null) ? toggle!.value : true,
+      title: titleAsWidget ??
+          ((titleAsString != null)
+              ? Text(titleAsString!,
+                  style: TextStyle(
+                      color: enabled == true ? null : Theme.of(context).disabledColor,
+                      fontWeight: FontWeight.bold))
+              : null),
+      style: ListTileStyle.list,
+      subtitle: subtitleASWidge ??
+          ((subtitleASString != null)
+              ? Text(subtitleASString!, style: const TextStyle(fontWeight: FontWeight.bold))
+              : null),
+      leading: leading != null ? Icon(leading!) : null,
+      trailing: toggle,
+      onTap: onTap,
     );
   }
 }

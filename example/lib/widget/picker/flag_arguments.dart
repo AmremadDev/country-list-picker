@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/picker_provider.dart';
+import '../custom_list_tile.dart';
 import '../list_tile.dart';
 
 class FlagArguments extends StatelessWidget {
@@ -12,13 +13,26 @@ class FlagArguments extends StatelessWidget {
       builder: (context, picker, child) {
         return Column(
           children: [
+            CustomListTile<Switch, bool>(
+              value: picker.isShowFlag,
+              enabled: true,
+              title: "Visible -> New ListTile",
+              onChanged: (bool value) => picker.isShowFlag = value,
+            ),
             XListTile(
               titleAsString: 'Visible',
-              // subtitleASString: "isShowFlag = ${picker.isShowFlag}",
               toggle: Switch(
                 value: picker.isShowFlag,
                 onChanged: (bool value) => picker.isShowFlag = value,
               ),
+            ),
+            CustomListTile<Slider, double>(
+              value: picker.flagSize.width,
+              enabled: true,
+              min: 10,
+              max: 100,
+              title: "Visible  -> New ListTile",
+              onChanged: (value) => picker.flagSize = Size(value, picker.flagSize.height),
             ),
             XListTile(
               enabled: picker.isShowFlag,
