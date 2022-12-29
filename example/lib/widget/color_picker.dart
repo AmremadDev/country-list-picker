@@ -1,14 +1,19 @@
-import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flex_color_picker/flex_color_picker.dart';
 
 export 'package:flex_color_picker/flex_color_picker.dart';
+
 class XColorPickerDialog extends StatelessWidget {
   final ValueChanged<Color> onColorChanged;
   final Color? value;
   final bool enabled;
 
-  XColorPickerDialog({required this.onColorChanged, this.enabled = true, this.value = Colors.black, Key? key})
-      : super(key: key);
+  XColorPickerDialog({
+    required this.onColorChanged,
+    this.enabled = true,
+    this.value = Colors.black,
+    Key? key,
+  }) : super(key: key);
 
   final Map<ColorSwatch<Object>, String> customSwatches = <ColorSwatch<Object>, String>{
     ColorTools.createPrimarySwatch(Colors.white): 'White',
@@ -24,8 +29,9 @@ class XColorPickerDialog extends StatelessWidget {
   };
   @override
   Widget build(BuildContext context) {
-   double w = MediaQuery.of(context).size.width -40 *2 ;
-   double size = (w - 9*5)  /10;
+    double w = MediaQuery.of(context).size.width - (40 * 2);
+
+    double size = ((w - (customSwatches.length - 1) * 5)) / customSwatches.length;
 
     return IgnorePointer(
       ignoring: !enabled,
@@ -38,8 +44,7 @@ class XColorPickerDialog extends StatelessWidget {
           width: size,
           height: size,
           borderRadius: 50,
-          spacing: 5,
-          padding: const EdgeInsets.all(15),
+          spacing: size / 6,
           pickersEnabled: const <ColorPickerType, bool>{
             ColorPickerType.both: false,
             ColorPickerType.primary: false,

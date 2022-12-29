@@ -46,7 +46,7 @@ class TopPart extends StatelessWidget {
             appBar: AppBar(
               title: Text(dialog.appBarTitle),
             ),
-            // tileHeight: ,
+             tileHeight: dialog.tileHeight ,
             // useSafeArea: ,
             // useUiOverlay: ,
 

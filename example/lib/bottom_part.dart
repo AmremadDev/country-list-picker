@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../screens_data.dart';
+import '../app_data.dart';
 import '../model/screen.dart';
 import '../widget/expansion_tile.dart';
 
@@ -10,7 +10,7 @@ class BottomPart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (screen.arguments.isEmpty) return screen.child!;
-    int selectedIndex =6;
+    int selectedIndex =0;
     return ListView.separated(
       padding: const EdgeInsets.symmetric(horizontal: 5).copyWith(top: 0),
       separatorBuilder: (context, index) => const SizedBox(height: 2.5),

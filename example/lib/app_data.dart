@@ -1,22 +1,25 @@
-import 'package:country_list_picker_example/widget/dialog/alphabets_bar_arguments.dart';
-import 'package:country_list_picker_example/widget/dialog/current_location_tile_arguments.dart';
-import 'package:country_list_picker_example/widget/dialog/last_pick_tile_arguments.dart';
-import 'package:country_list_picker_example/widget/dialog/search_tile_arguments.dart';
-import 'package:country_list_picker_example/widget/dialog/textstyle_argement.dart';
-import 'package:country_list_picker_example/widget/dialog/title_textstyle_argements.dart';
-import 'package:flutter/material.dart';
 
+
+import 'package:flutter/material.dart';
 import '../model/screen.dart';
-import '../model/argument.dart';
 
 import '../widget/picker/down_icon_arguments.dart';
 import '../widget/picker/flag_arguments.dart';
 import '../widget/picker/dial_code_arguments.dart';
 import '../widget/picker/country_name_arguments.dart';
+
 import '../widget/input/input_arguemnts.dart';
 import '../widget/input/hint_arguemnts.dart';
-import '../widget/about/about_screen.dart';
+
 import '../widget/dialog/general_arguments.dart';
+import '../widget/dialog/search_tile_arguments.dart';
+import '../widget/dialog/textstyle_argement.dart';
+import '../widget/dialog/title_textstyle_argements.dart';
+import '../widget/dialog/alphabets_bar_arguments.dart';
+import '../widget/dialog/current_location_tile_arguments.dart';
+import '../widget/dialog/last_pick_tile_arguments.dart';
+
+import '../widget/about/about_screen.dart';
 
 const double titlesFontSize = 18;
 const Color lightprimarySwatch = Colors.purple;
@@ -71,6 +74,7 @@ List<Argument> inputArguments = [
           height: 200,
           child: Center(child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)))))
 ];
+
 List<Argument> dialogArguments = [
   Argument(title: "General", child: const GeneralArguments()),
   Argument(title: "Title TextStyle", child: const TitleTextStyleArguments()),

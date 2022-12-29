@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/argument.dart';
+export  '../model/argument.dart';
 
 class Screen {
   final String title;

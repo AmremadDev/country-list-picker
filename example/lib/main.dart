@@ -6,7 +6,7 @@ import '../widget/bottom_navigation_bar.dart';
 import '../controller/dialog_provider.dart';
 import '../controller/input_provider.dart';
 import '../controller/picker_provider.dart';
-import '../screens_data.dart';
+import 'app_data.dart';
 import '../top_part.dart';
 
 

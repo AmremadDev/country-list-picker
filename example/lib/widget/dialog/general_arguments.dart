@@ -12,7 +12,7 @@ class GeneralArguments extends StatelessWidget {
       builder: (context, dialog, child) {
         return Column(
           children: [
-                        CustomListTile<TextFormField, String>(
+            CustomListTile<TextFormField, String>(
               title: "App Bar Title",
               value: dialog.appBarTitle,
               onChanged: (String value) => dialog.appBarTitle = value,
@@ -31,6 +31,15 @@ class GeneralArguments extends StatelessWidget {
               title: "Up action button",
               value: dialog.upActionbutton,
               onChanged: (bool value) => dialog.upActionbutton = value,
+            ),
+            CustomListTile<Slider, double>(
+              title: "Tile Hight",
+              min: 50,
+              max: 100,
+              divisions: 5,
+              value: dialog.tileHeight,
+              sliderLabel: dialog.tileHeight.toInt().toString(),
+              onChanged: (value) => dialog.tileHeight =value,
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Background Color",
