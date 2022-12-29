@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SettingsProvider extends ChangeNotifier {
-  int _selectedScreen = 0;
+  int _selectedScreen = 2;
   int get selectedScreen => _selectedScreen;
   set selectedScreen(int value) {
     _selectedScreen = value;

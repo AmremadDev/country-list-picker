@@ -17,44 +17,44 @@ class InputProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  TextStyle _inputTextStyle = const TextStyle(fontWeight: FontWeight.normal, fontSize: 16);
-  TextStyle get inputTextStyle => _inputTextStyle.copyWith(
-      color: _inputTextStyle.color ?? (_settings.isDarkMode == true ? Colors.white : Colors.black));
-  set inputTextStyle(TextStyle value) {
-    _inputTextStyle = value;
+  TextStyle _textStyle = const TextStyle(fontWeight: FontWeight.normal, fontSize: 16);
+  TextStyle get textStyle => _textStyle.copyWith(
+      color: _textStyle.color ?? (_settings.isDarkMode == true ? Colors.white : Colors.black));
+  set textStyle(TextStyle value) {
+    _textStyle = value;
     notifyListeners();
   }
 
-  String _inputMask = "(###) #### ###";
-  String get inputMask => _inputMask;
-  set inputMask(String value) {
-    _inputMask = value;
+  String _mask = "(###) #### ###";
+  String get mask => _mask;
+  set mask(String value) {
+    _mask = value;
 
     notifyListeners();
   }
 
 // ****************************************************************************************************
-  String _inputHintString = "Enger your Phone number";
-  String get inputHintString => _inputHintString;
-  set inputHintString(String value) {
-    _inputHintString = value;
+  String _hintString = "Enger your Phone number";
+  String get ihintString => _hintString;
+  set ihintString(String value) {
+    _hintString = value;
     notifyListeners();
   }
 
   TextStyle _hintTextStyle =
-     const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, color:  Color(0xFF424242));
-  TextStyle get hintTextStyle => _hintTextStyle.copyWith(
-      color: _hintTextStyle.color ?? (_settings.isDarkMode == true ? const Color(0xFF424242): Colors.black));
+     const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, color:  Colors.grey);
+  TextStyle get hintTextStyle =>_hintTextStyle;
+  
   set hintTextStyle(TextStyle value) {
     _hintTextStyle = value;
     notifyListeners();
   }
 // ****************************************************************************************************
 
-  bool _inputBorder = false;
-  bool get inputBorder => _inputBorder;
-  set inputBorder(bool value) {
-    _inputBorder = value;
+  bool _border = false;
+  bool get border => _border;
+  set border(bool value) {
+    _border = value;
     notifyListeners();
   }
   // ****************************************************************************************************

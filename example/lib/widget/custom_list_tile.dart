@@ -1,6 +1,7 @@
-import 'package:flex_color_picker/flex_color_picker.dart';
+
 import 'package:flutter/material.dart';
 import 'color_picker.dart';
+export 'color_picker.dart';
 
 class CustomListTile<Object, T> extends StatelessWidget {
   final bool enabled;
@@ -8,8 +9,12 @@ class CustomListTile<Object, T> extends StatelessWidget {
   final String? subTitle;
   final T value;
   final ValueChanged<T>? onChanged;
+
+  //Slider arguments
   final double min;
   final double max;
+  final String? sliderLabel;
+  final int? divisions;
   const CustomListTile(
       {super.key,
       required this.title,
@@ -18,7 +23,11 @@ class CustomListTile<Object, T> extends StatelessWidget {
       required this.value,
       this.onChanged,
       this.min = 1,
-      this.max = 100});
+      this.max = 100,
+      this.sliderLabel,
+      this.divisions,
+      
+      });
   @override
   Widget build(BuildContext context) {
     switch (Object) {
@@ -44,6 +53,7 @@ class CustomListTile<Object, T> extends StatelessWidget {
               fontWeight: FontWeight.bold)),
       style: ListTileStyle.list,
       subtitle: XColorPickerDialog(
+        enabled: enabled,
         value: value as Color,
         onColorChanged: onChanged as ValueChanged<Color>,
       ),
@@ -59,6 +69,8 @@ class CustomListTile<Object, T> extends StatelessWidget {
               fontWeight: FontWeight.bold)),
       style: ListTileStyle.list,
       subtitle: Slider(
+        divisions: divisions ,
+        label: sliderLabel,
         min: min,
         max: max,
         value: value as double,

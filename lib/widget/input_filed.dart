@@ -20,7 +20,7 @@ class InputField extends StatelessWidget {
     this.focusNode,
   }) : super(key: key);
 
-  final InputTheme inputTheme;
+  final InputThemeData inputTheme;
   final ValueChanged<String>? onChanged;
   final FormFieldSetter<String>? onSaved;
   final TextEditingController? controller;

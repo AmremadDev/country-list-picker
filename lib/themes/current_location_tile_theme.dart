@@ -1,7 +1,7 @@
-class CurrentLocationTileTheme {
+class CurrentLocationTileThemeData {
   final bool visible;
   final String title;
-  const CurrentLocationTileTheme({
+  const CurrentLocationTileThemeData({
     this.visible = false,
     this.title = "Current Location",
   });

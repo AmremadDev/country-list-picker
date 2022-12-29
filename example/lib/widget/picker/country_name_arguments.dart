@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/picker_provider.dart';
-import '../color_picker.dart';
-import '../list_tile.dart';
+import '../custom_list_tile.dart';
 
 class CountryNameArguments extends StatelessWidget {
   const CountryNameArguments({super.key});
@@ -13,58 +12,34 @@ class CountryNameArguments extends StatelessWidget {
       builder: (context, picker, child) {
         return Column(
           children: [
-            XListTile(
-              titleAsString: 'Visible',
-              toggle: Switch(
-                  value: picker.isShowCountryName,
-                  onChanged: (bool value) => picker.isShowCountryName = value),
+            CustomListTile<Switch, bool>(
+              title: "Visible",
+              value: picker.isShowCountryName,
+              onChanged: (bool value) => picker.isShowCountryName = value,
             ),
-            XListTile(
+            CustomListTile<Switch, bool>(
+              title: "Font Bold",
               enabled: picker.isShowCountryName,
-              titleAsString: 'Font Bold',
-              toggle: Switch(
-                  value: picker.countryNameTextStyle.fontWeight == FontWeight.bold,
-                  onChanged: picker.isShowCountryName
-                      ? (bool value) => picker.countryNameTextStyle = picker.countryNameTextStyle
-                          .copyWith(
-                              fontWeight: value == false ? FontWeight.normal : FontWeight.bold)
-                      : null),
+              value: picker.countryNameTextStyle.fontWeight == FontWeight.bold,
+              onChanged: (bool value) => picker.countryNameTextStyle = picker.countryNameTextStyle
+                  .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
             ),
-            XListTile(
+            CustomListTile<Slider, double>(
+              title: "Font Size",
               enabled: picker.isShowCountryName,
-              titleAsString: 'Font Size',
-              subtitleASWidge: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Slider(
-                    divisions: 18,
-                    min: 12,
-                    max: 30,
-                    label: picker.countryNameTextStyle.fontSize?.toInt().toString(),
-                    value: picker.countryNameTextStyle.fontSize!,
-                    onChanged: picker.isShowCountryName == true
-                        ? (value) => picker.countryNameTextStyle =
-                            picker.countryNameTextStyle.copyWith(fontSize: value)
-                        : null,
-                  )
-                ],
-              ),
+              min: 12,
+              max: 30,
+              divisions: 18,
+              value: picker.countryNameTextStyle.fontSize!,
+              sliderLabel: picker.countryNameTextStyle.fontSize?.toInt().toString(),
+              onChanged: (value) => picker.countryNameTextStyle = picker.countryNameTextStyle.copyWith(fontSize: value),
             ),
-
-            // Color
-            XListTile(
+            CustomListTile<ColorPicker, Color>(
+              title: "Font Color",
               enabled: picker.isShowCountryName,
-              titleAsString: "Font Color",
-              subtitleASWidge: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  XColorPickerDialog(
-                      enabled: picker.isShowCountryName,
-                      value: picker.countryNameTextStyle.color,
-                      onColorChanged: (Color color) => picker.countryNameTextStyle =
-                          picker.countryNameTextStyle.copyWith(color: color)),
-                ],
-              ),
+              value: picker.countryNameTextStyle.color!,
+              onChanged: (Color color) =>
+                  picker.countryNameTextStyle = picker.countryNameTextStyle.copyWith(color: color),
             ),
           ],
         );

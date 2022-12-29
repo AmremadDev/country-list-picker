@@ -41,7 +41,7 @@ class SearchTile extends StatelessWidget {
               border: InputBorder.none,
               contentPadding: const EdgeInsets.only(left: 15, bottom: 0, top: 0, right: 15),
               hintText: dialogTheme.searchTile.hint,
-              hintStyle: dialogTheme.textStyle.copyWith(color: Colors.grey[500])),
+              hintStyle: dialogTheme.searchTile.hintTextStyle),
           onChanged: ((value) {
             String s = value.toUpperCase();
             context.read<CLPProvider>().changeCountries(elements

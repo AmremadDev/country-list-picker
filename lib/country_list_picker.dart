@@ -42,7 +42,7 @@ class CountryListPicker extends StatelessWidget {
       this.countryNameTextStyle = const TextStyle(fontSize: 15, color: Colors.grey),
       this.onChanged,
       this.dialogTheme = const CountryListDialogTheme(),
-      this.inputTheme = const InputTheme()})
+      this.inputTheme = const InputThemeData()})
       : assert(isShowFlag == true || isShowCode == true,
             "Both isShowFlag and isShowCode can't be false");
 
@@ -109,7 +109,7 @@ class CountryListPicker extends StatelessWidget {
   ///[tileheight] must be greater than 50.0
   final CountryListDialogTheme dialogTheme;
 
-  final InputTheme inputTheme;
+  final InputThemeData inputTheme;
 
   @override
   Widget build(BuildContext context) {

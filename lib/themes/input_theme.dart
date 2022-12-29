@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-class InputTheme {
+class InputThemeData {
   final EdgeInsets contentPadding;
   final InputBorder? border;
   final String? hintText;
@@ -17,7 +17,7 @@ class InputTheme {
   ///```
   final MaskTextInputFormatter? mask;
 
-  const InputTheme({
+  const InputThemeData({
     this.contentPadding = const EdgeInsets.only(left: 12),
     this.border = InputBorder.none,
     this.hintStyle = const TextStyle(fontSize: 16, color: Color(0xFF9E9E9E)),

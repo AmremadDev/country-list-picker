@@ -1,8 +1,7 @@
-import 'package:country_list_picker_example/controller/dialog_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../color_picker.dart';
-import '../list_tile.dart';
+import '../../controller/dialog_provider.dart';
+import '../custom_list_tile.dart';
 
 class GeneralArguments extends StatelessWidget {
   const GeneralArguments({super.key});
@@ -13,51 +12,36 @@ class GeneralArguments extends StatelessWidget {
       builder: (context, dialog, child) {
         return Column(
           children: [
-            XListTile(
-                titleAsString: 'Country Flag',
-                toggle: Switch(
-                    value: dialog.countryFlag,
-                    onChanged: (bool value) {
-                      dialog.countryFlag = value;
-                    })),
-            XListTile(
-                titleAsString: 'Country dial codes',
-                toggle: Switch(
-                    value: dialog.countryDialCode,
-                    onChanged: (bool value) {
-                      dialog.countryDialCode = value;
-                    })),
-            XListTile(
-                titleAsString: 'App action button',
-                toggle: Switch(
-                    value: dialog.upActionbutton,
-                    onChanged: (bool value) {
-                      dialog.upActionbutton = value;
-                    })),
-            XListTile(
-              titleAsString: "Background Color",
-              subtitleASWidge: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  XColorPickerDialog(
-                    value: dialog.backgroundColor,
-                    onColorChanged: (Color color) => dialog.backgroundColor = color,
-                  ),
-                ],
-              ),
+                        CustomListTile<TextFormField, String>(
+              title: "App Bar Title",
+              value: dialog.appBarTitle,
+              onChanged: (String value) => dialog.appBarTitle = value,
             ),
-            XListTile(
-              titleAsString: "Titles Background Color",
-              subtitleASWidge: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  XColorPickerDialog(
-                    value: dialog.titlesBackgroundColor,
-                    onColorChanged: (Color color) => dialog.titlesBackgroundColor = color,
-                  ),
-                ],
-              ),
-            )
+            CustomListTile<Switch, bool>(
+              title: "Country Flag",
+              value: dialog.countryFlag,
+              onChanged: (bool value) => dialog.countryFlag = value,
+            ),
+            CustomListTile<Switch, bool>(
+              title: "Country dial code",
+              value: dialog.countryDialCode,
+              onChanged: (bool value) => dialog.countryDialCode = value,
+            ),
+            CustomListTile<Switch, bool>(
+              title: "Up action button",
+              value: dialog.upActionbutton,
+              onChanged: (bool value) => dialog.upActionbutton = value,
+            ),
+            CustomListTile<ColorPicker, Color>(
+              title: "Background Color",
+              value: dialog.backgroundColor,
+              onChanged: (Color color) => dialog.backgroundColor = color,
+            ),
+            CustomListTile<ColorPicker, Color>(
+              title: "Titles Background Color",
+              value: dialog.titlesBackgroundColor,
+              onChanged: (Color color) => dialog.titlesBackgroundColor = color,
+            ),
           ],
         );
       },

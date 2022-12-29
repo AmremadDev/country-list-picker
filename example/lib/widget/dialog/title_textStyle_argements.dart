@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/dialog_provider.dart';
-import '../color_picker.dart';
-import '../list_tile.dart';
+import '../custom_list_tile.dart';
 
 class TitleTextStyleArguments extends StatelessWidget {
   const TitleTextStyleArguments({super.key});
@@ -13,40 +12,26 @@ class TitleTextStyleArguments extends StatelessWidget {
       builder: (context, dialog, child) {
         return Column(
           children: [
-            XListTile(
-              titleAsString: 'Font Bold',
-              toggle: Switch(
-                  value: dialog.titleTextStyle.fontWeight == FontWeight.bold,
-                  onChanged: (bool value) => dialog.titleTextStyle = dialog.titleTextStyle
-                      .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold)),
+            CustomListTile<Switch, bool>(
+              title: "Font Bold",
+              value: dialog.titleTextStyle.fontWeight == FontWeight.bold,
+              onChanged: (bool value) => dialog.titleTextStyle =
+                  dialog.titleTextStyle.copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
             ),
-            XListTile(
-              titleAsString: 'Font Size',
-              subtitleASWidge: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Slider(
-                    divisions: 18,
-                    min: 12,
-                    max: 30,
-                    label: dialog.titleTextStyle.fontSize?.toInt().toString(),
-                    value: dialog.titleTextStyle.fontSize!,
-                    onChanged: (value) => dialog.titleTextStyle = dialog.titleTextStyle.copyWith(fontSize: value),
-                  )
-                ],
-              ),
+            CustomListTile<Slider, double>(
+              title: "Font Size",
+              min: 12,
+              max: 30,
+              divisions: 18,
+              value: dialog.titleTextStyle.fontSize!,
+              sliderLabel: dialog.titleTextStyle.fontSize?.toInt().toString(),
+              onChanged: (value) => dialog.titleTextStyle =
+                  dialog.titleTextStyle.copyWith(fontSize: value, color: dialog.titleTextStyle.color),
             ),
-            XListTile(
-              titleAsString: "Font Color",
-              subtitleASWidge: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  XColorPickerDialog(
-                      value: dialog.titleTextStyle.color,
-                      onColorChanged: (Color color) =>
-                          dialog.titleTextStyle = dialog.titleTextStyle.copyWith(color: color)),
-                ],
-              ),
+            CustomListTile<ColorPicker, Color>(
+              title: "Font Color",
+              value: dialog.titleTextStyle.color!,
+              onChanged: (Color color) => dialog.titleTextStyle = dialog.titleTextStyle.copyWith(color: color),
             ),
           ],
         );

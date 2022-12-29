@@ -10,7 +10,7 @@ class BottomPart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (screen.arguments.isEmpty) return screen.child!;
-    int selectedIndex = 0;
+    int selectedIndex =6;
     return ListView.separated(
       padding: const EdgeInsets.symmetric(horizontal: 5).copyWith(top: 0),
       separatorBuilder: (context, index) => const SizedBox(height: 2.5),
@@ -26,8 +26,9 @@ class BottomPart extends StatelessWidget {
                 style: const TextStyle(fontSize: titlesFontSize, fontWeight: FontWeight.bold)),
             children: [screen.arguments[index].child],
             onExpansionChanged: (value) {
-              if (value && index != selectedIndex)
+              if (value && index != selectedIndex) {
                 screen.arguments[selectedIndex].key!.currentState.closeExpansion();
+              }
               selectedIndex = index;
             },
           ),

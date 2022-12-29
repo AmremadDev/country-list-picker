@@ -2,8 +2,8 @@ import 'package:country_list_picker_example/widget/dialog/alphabets_bar_argument
 import 'package:country_list_picker_example/widget/dialog/current_location_tile_arguments.dart';
 import 'package:country_list_picker_example/widget/dialog/last_pick_tile_arguments.dart';
 import 'package:country_list_picker_example/widget/dialog/search_tile_arguments.dart';
-import 'package:country_list_picker_example/widget/dialog/textStyle_argement.dart';
-import 'package:country_list_picker_example/widget/dialog/title_textStyle_argements.dart';
+import 'package:country_list_picker_example/widget/dialog/textstyle_argement.dart';
+import 'package:country_list_picker_example/widget/dialog/title_textstyle_argements.dart';
 import 'package:flutter/material.dart';
 
 import '../model/screen.dart';

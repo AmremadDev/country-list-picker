@@ -1,9 +1,7 @@
-import 'package:country_list_picker_example/controller/dialog_provider.dart';
-import 'package:country_list_picker_example/controller/input_provider.dart';
-import 'package:country_list_picker_example/widget/color_picker.dart';
+import '../../controller/dialog_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../list_tile.dart';
+import '../custom_list_tile.dart';
 
 class SearchTileArguments extends StatelessWidget {
   const SearchTileArguments({super.key});
@@ -14,62 +12,42 @@ class SearchTileArguments extends StatelessWidget {
       builder: (context, dialog, child) {
         return Column(
           children: [
-            XListTile(
-              titleAsString: 'Visible',
-              toggle: Switch(
-                value: dialog.searchTile,
-                onChanged: (bool value) => dialog.searchTile = value,
-              ),
+            CustomListTile<Switch, bool>(
+              title: "Visible",
+              value: dialog.searchTile,
+              onChanged: (bool value) => dialog.searchTile = value,
             ),
-            XListTile(
-              titleAsString: "Tile Label",
-              subtitleASWidge: TextFormField(
-                initialValue: dialog.hintString,
-                onChanged: ((value) => dialog.hintString = value),
-              ),
+            CustomListTile<TextFormField, String>(
+              title: "Title String",
+              value: dialog.searchTileTitle,
+              onChanged: (String value) => dialog.searchTileTitle = value,
             ),
-            XListTile(
-              titleAsString: "Search Hint",
-              subtitleASWidge: TextFormField(
-                initialValue: dialog.hintString,
-                onChanged: ((value) => dialog.hintString = value),
-              ),
+            CustomListTile<TextFormField, String>(
+              title: "Hint String",
+              value: dialog.searchTileHintString,
+              onChanged: (String value) => dialog.searchTileHintString = value,
             ),
-            XListTile(
-              titleAsString: "Font Color",
-              subtitleASWidge: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  XColorPickerDialog(
-                      value: dialog.hintTextStyle.color,
-                      onColorChanged: (Color color) =>
-                          dialog.hintTextStyle = dialog.hintTextStyle.copyWith(color: color)),
-                ],
-              ),
+            CustomListTile<Switch, bool>(
+              title: "Font Bold",
+              value: dialog.searchTileHintTextStyle.fontWeight == FontWeight.bold,
+              onChanged: (bool value) => dialog.searchTileHintTextStyle = dialog.searchTileHintTextStyle
+                  .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
             ),
-            XListTile(
-              titleAsString: 'Font Size',
-              subtitleASWidge: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Slider(
-                    divisions: 18,
-                    min: 12,
-                    max: 30,
-                    label: dialog.hintTextStyle.fontSize?.toInt().toString(),
-                    value: dialog.hintTextStyle.fontSize!,
-                    onChanged: (value) => dialog.hintTextStyle =
-                        dialog.hintTextStyle.copyWith(fontSize: value, color: dialog.hintTextStyle.color),
-                  )
-                ],
-              ),
+            CustomListTile<Slider, double>(
+              title: "Font Size",
+              min: 12,
+              max: 30,
+              divisions: 18,
+              value: dialog.searchTileHintTextStyle.fontSize!,
+              sliderLabel: dialog.searchTileHintTextStyle.fontSize?.toInt().toString(),
+              onChanged: (value) => dialog.searchTileHintTextStyle =
+                  dialog.searchTileHintTextStyle.copyWith(fontSize: value, color: dialog.searchTileHintTextStyle.color),
             ),
-            XListTile(
-              titleAsString: 'Font Bold',
-              toggle: Switch(
-                  value: dialog.hintTextStyle.fontWeight == FontWeight.bold,
-                  onChanged: (bool value) => dialog.hintTextStyle = dialog.hintTextStyle
-                      .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold)),
+            CustomListTile<ColorPicker, Color>(
+              title: "Font Color",
+              value: dialog.searchTileHintTextStyle.color!,
+              onChanged: (Color color) =>
+                  dialog.searchTileHintTextStyle = dialog.searchTileHintTextStyle.copyWith(color: color),
             ),
           ],
         );

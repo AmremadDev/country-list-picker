@@ -1,7 +1,7 @@
-import 'package:country_list_picker_example/controller/dialog_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../list_tile.dart';
+import '../../controller/dialog_provider.dart';
+import '../custom_list_tile.dart';
 
 class CurrentLocationTileArguments extends StatelessWidget {
   const CurrentLocationTileArguments({super.key});
@@ -9,16 +9,20 @@ class CurrentLocationTileArguments extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<DialogProvider>(
-      builder: (context, provider, child) {
+      builder: (context, dialog, child) {
         return Column(
           children: [
-            XListTile(
-                titleAsString: 'Visible',
-                toggle: Switch(
-                    value: provider.currentLocationTile,
-                    onChanged: (bool value) {
-                      provider.currentLocationTile = value;
-                    })),
+            CustomListTile<Switch, bool>(
+              title: "Visible",
+              value: dialog.currentLocationTile,
+              onChanged: (bool value) => dialog.currentLocationTile = value,
+            ),
+                                    CustomListTile<TextFormField, String>(
+              title: "Title String",
+              value: dialog.currentLocationTileTitle,
+              onChanged: (String value) => dialog.currentLocationTileTitle = value,
+            ),
+           const SizedBox(height: 20,),
           ],
         );
       },

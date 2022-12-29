@@ -1,8 +1,7 @@
-import 'package:country_list_picker_example/controller/input_provider.dart';
-import 'package:country_list_picker_example/widget/color_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../list_tile.dart';
+import '../../controller/input_provider.dart';
+import '../../widget/custom_list_tile.dart';
 
 class HintArguments extends StatelessWidget {
   const HintArguments({super.key});
@@ -13,60 +12,34 @@ class HintArguments extends StatelessWidget {
       builder: (context, input, child) {
         return Column(
           children: [
-            XListTile(
-              titleAsString: "Input Hint",
-              subtitleASWidge: TextFormField(
+            CustomListTile<TextFormField, String>(
+                title: "Input Hint",
                 enabled: input.isShowTextField,
-                initialValue: input.inputHintString,
-                onChanged: ((value) => input.inputHintString = value),
-              ),
-            ),
-            XListTile(
+                value: input.ihintString,
+                onChanged: (value) => input.ihintString = value),
+            CustomListTile<Switch, bool>(
+              title: "Font Bold",
               enabled: input.isShowTextField,
-              titleAsString: "Font Color",
-              subtitleASWidge: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  XColorPickerDialog(
-                      enabled: input.isShowTextField,
-                      value: input.hintTextStyle.color,
-                      onColorChanged: (Color color) =>
-                          input.hintTextStyle = input.hintTextStyle.copyWith(color: color)),
-                ],
-              ),
+              value: input.hintTextStyle.fontWeight == FontWeight.bold,
+              onChanged: (bool value) => input.hintTextStyle =
+                  input.hintTextStyle.copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
             ),
-            XListTile(
+            CustomListTile<Slider, double>(
+              title: "Font Size",
               enabled: input.isShowTextField,
-              titleAsString: 'Font Size',
-              subtitleASWidge: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Slider(
-                    divisions: 18,
-                    min: 12,
-                    max: 30,
-                    label: input.hintTextStyle.fontSize?.toInt().toString(),
-                    value: input.hintTextStyle.fontSize!,
-                    onChanged: input.isShowTextField == true
-                        ? (value) => input.hintTextStyle =
-                            input.hintTextStyle.copyWith(fontSize: value, color: input.hintTextStyle.color)
-                        : null,
-                  )
-                ],
-              ),
+              min: 12,
+              max: 30,
+              divisions: 18,
+              value: input.hintTextStyle.fontSize!,
+              sliderLabel: input.hintTextStyle.fontSize?.toInt().toString(),
+              onChanged: (value) =>
+                  input.hintTextStyle = input.hintTextStyle.copyWith(fontSize: value, color: input.hintTextStyle.color),
             ),
-            XListTile(
+                        CustomListTile<ColorPicker, Color>(
+              title: "Font Color",
               enabled: input.isShowTextField,
-              titleAsString: 'Font Bold',
-              toggle: Switch(
-                  value: input.hintTextStyle.fontWeight == FontWeight.bold,
-                  onChanged: input.isShowTextField
-                      ? (bool value) => input.hintTextStyle = input.hintTextStyle.copyWith(
-                          fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold)
-                      : null),
-            ),
-            const SizedBox(
-              height: 20,
+              value: input.hintTextStyle.color!,
+              onChanged: (Color color) => input.hintTextStyle = input.hintTextStyle.copyWith(color: color),
             ),
           ],
         );

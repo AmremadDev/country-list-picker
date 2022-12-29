@@ -6,7 +6,6 @@ import '../controller/dialog_provider.dart';
 import '../controller/input_provider.dart';
 import '../controller/picker_provider.dart';
 
-
 class TopPart extends StatelessWidget {
   const TopPart({super.key});
   @override
@@ -24,15 +23,15 @@ class TopPart extends StatelessWidget {
           isShowTextField: input.isShowTextField,
           iconDown: Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),
           dialCodeTextStyle: picker.dialCodeTextStyle,
-          border: (picker.pickerBorder == true) ? null : const Border(bottom: BorderSide.none),
-          inputTheme: InputTheme(
-            style: input.inputTextStyle,
-            hintText: input.inputHintString,
+          border: (picker.border == true) ? null : const Border(bottom: BorderSide.none),
+          inputTheme: InputThemeData(
+            style: input.textStyle,
+            hintText: input.ihintString,
             hintStyle: input.hintTextStyle,
-            border: (input.inputBorder == true)
+            border: (input.border == true)
                 ? const OutlineInputBorder(borderSide: BorderSide(width: 1))
                 : InputBorder.none,
-            mask: MaskTextInputFormatter(mask: input.inputMask, filter: {"#": RegExp(r'[0-9]')}),
+            mask: MaskTextInputFormatter(mask: input.mask, filter: {"#": RegExp(r'[0-9]')}),
           ),
           onChanged: ((value) {}),
           dialogTheme: CountryListDialogTheme(
@@ -40,35 +39,41 @@ class TopPart extends StatelessWidget {
             isShowDialCode: dialog.countryDialCode,
             isShowFloatButton: dialog.upActionbutton,
 
+            backgroundColor: dialog.backgroundColor,
+            titlesBackground: dialog.titlesBackgroundColor,
+            textStyle: dialog.textStyle,
+            titlesStyle: dialog.titleTextStyle,
             appBar: AppBar(
-              title: Text(dialog.dialogAppBarTitle),
+              title: Text(dialog.appBarTitle),
             ),
-            // textStyle: ,
             // tileHeight: ,
-            // titlesStyle: ,
             // useSafeArea: ,
             // useUiOverlay: ,
 
-            alphabetsBar: AlphabetsBarThemes(
+            alphabetsBar: AlphabetsBarThemeData(
               visible: dialog.alphabetBar,
+
+               backgroundColor: dialog.alphabetUnSelectedBackgroundColor ,
+              selectedBackgroundColor: dialog.alphabetSelectedBackgroundColor ,
+             textStyle: dialog.alphabetUnSelectedTextStyle ,
+              selectedTextStyle: dialog.alphabetSelectedTextStyle ,
+
             ),
-            searchTile: SearchTileTheme(
+            searchTile: SearchTileThemeData(
               visible: dialog.searchTile,
-              hint: "",
-              title: "Search",
+              title: dialog.searchTileTitle,
+              hint: dialog.searchTileHintString,
+              hintTextStyle: dialog.searchTileHintTextStyle,
             ),
-            currentLocationTile: CurrentLocationTileTheme(
+            currentLocationTile: CurrentLocationTileThemeData(
               visible: dialog.currentLocationTile,
-              title: "Current Location",
+              title: dialog.currentLocationTileTitle,
             ),
             lastPickTile: LastPickTileTheme(
-              visible: dialog.lastPicktile,
-              title: "Last Pick",
+              visible: dialog.lastPickTile,
+              title: dialog.lastPickTileTitle,
             ),
-           backgroundColor:dialog.backgroundColor,
-           titlesBackground: dialog.titlesBackgroundColor,
-           textStyle: dialog.textStyle ,
-           titlesStyle: dialog.titleTextStyle,
+
           ),
         );
       },

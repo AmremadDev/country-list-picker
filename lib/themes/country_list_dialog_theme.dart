@@ -57,7 +57,7 @@ class CountryListDialogTheme {
   /// dialogTheme: const CountryListDialogTheme(
   ///   alphabetsBar: AlphabetsBarThemes(visible: false),)
   ///```
-  final AlphabetsBarThemes alphabetsBar;
+  final AlphabetsBarThemeData alphabetsBar;
 
   ///Current Location Tile Theme.
   ///
@@ -75,7 +75,7 @@ class CountryListDialogTheme {
   /// dialogTheme: const CountryListDialogTheme(
   ///   currentLocationTile: CurrentLocationTileTheme(visible: false),)
   ///```
-  final CurrentLocationTileTheme currentLocationTile;
+  final CurrentLocationTileThemeData currentLocationTile;
 
   ///LastPick Tile Theme.
   ///
@@ -114,7 +114,7 @@ class CountryListDialogTheme {
   ///   searchTile: SearchTileTheme(visible: false),
   /// )
   ///```
-  final SearchTileTheme searchTile;
+  final SearchTileThemeData searchTile;
 
   ///Whether to allow the widget to set a custom UI overlay
   final bool useUiOverlay;
@@ -123,10 +123,10 @@ class CountryListDialogTheme {
   final bool useSafeArea;
 
   const CountryListDialogTheme({
-    this.alphabetsBar = const AlphabetsBarThemes(),
-    this.currentLocationTile = const CurrentLocationTileTheme(),
+    this.alphabetsBar = const AlphabetsBarThemeData(),
+    this.currentLocationTile = const CurrentLocationTileThemeData(),
     this.lastPickTile = const LastPickTileTheme(),
-    this.searchTile = const SearchTileTheme(),
+    this.searchTile = const SearchTileThemeData(),
     this.appBar,
     this.isShowFlage = true,
     this.isShowFloatButton = true,

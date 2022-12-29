@@ -84,18 +84,12 @@ class PickerProvider extends ChangeNotifier {
 
 // ****************************************************************************************************
 
-  bool _borderBorder = true;
-  bool get pickerBorder => _borderBorder;
-  set pickerBorder(bool value) {
-    _borderBorder = value;
+  bool _border = true;
+  bool get border => _border;
+  set border(bool value) {
+    _border = value;
     notifyListeners();
   }
 
-  Color? _pickerTextColor;
-  Color get pickerTextColor =>
-      _pickerTextColor ?? (_settings.isDarkMode == true ? Colors.white : Colors.black);
-  set pickerTextColor(Color value) {
-    _pickerTextColor = value;
-    notifyListeners();
-  }
+
 }

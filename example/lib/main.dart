@@ -1,5 +1,4 @@
 import 'package:country_list_picker_example/bottom_part.dart';
-import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../controller/settings_provider.dart';
@@ -9,7 +8,7 @@ import '../controller/input_provider.dart';
 import '../controller/picker_provider.dart';
 import '../screens_data.dart';
 import '../top_part.dart';
-import 'widget/custom_list_tile.dart';
+
 
 void main() {
   runApp(MultiProvider(

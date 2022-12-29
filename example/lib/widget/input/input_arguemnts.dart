@@ -1,8 +1,7 @@
-import 'package:country_list_picker_example/controller/input_provider.dart';
-import 'package:country_list_picker_example/widget/color_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../list_tile.dart';
+import '../../controller/input_provider.dart';
+import '../custom_list_tile.dart';
 
 class InputArguments extends StatelessWidget {
   const InputArguments({super.key});
@@ -13,68 +12,39 @@ class InputArguments extends StatelessWidget {
       builder: (context, input, child) {
         return Column(
           children: [
-            XListTile(
-              titleAsString: 'Visible',
-              toggle: Switch(
-                value: input.isShowTextField,
-                onChanged: (bool value) => input.isShowTextField = value,
-              ),
+            CustomListTile<Switch, bool>(
+              title: "Visible",
+              value: input.isShowTextField,
+              onChanged: (bool value) => input.isShowTextField = value,
             ),
-            XListTile(
+            CustomListTile<TextFormField, String>(
+              title: "Mask format",
               enabled: input.isShowTextField,
-              titleAsString: 'Mask format',
-              subtitleASWidge: TextFormField(
-                enabled: input.isShowTextField,
-                initialValue: input.inputMask,
-                onChanged: ((value) => input.inputMask = value),
-              ),
+              value: input.mask,
+              onChanged: (value) => input.mask = value,
             ),
-            XListTile(
+            CustomListTile<Switch, bool>(
+              title: "Font Bold",
               enabled: input.isShowTextField,
-              titleAsString: "Font Color",
-              subtitleASWidge: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  XColorPickerDialog(
-                      enabled: input.isShowTextField,
-                      value: input.inputTextStyle.color,
-                      onColorChanged: (Color color) =>
-                          input.inputTextStyle = input.inputTextStyle.copyWith(color: color)),
-                ],
-              ),
+              value: input.textStyle.fontWeight == FontWeight.bold,
+              onChanged: (bool value) => input.textStyle =
+                  input.textStyle.copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
             ),
-            XListTile(
+            CustomListTile<Slider, double>(
+              title: "Font Size",
               enabled: input.isShowTextField,
-              titleAsString: 'Font Size',
-              subtitleASWidge: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Slider(
-                    divisions: 18,
-                    min: 12,
-                    max: 30,
-                    label: input.inputTextStyle.fontSize?.toInt().toString(),
-                    value: input.inputTextStyle.fontSize!,
-                    onChanged: input.isShowTextField == true
-                        ? (value) =>
-                            input.inputTextStyle = input.inputTextStyle.copyWith(fontSize: value)
-                        : null,
-                  )
-                ],
-              ),
+              min: 12,
+              max: 30,
+              divisions: 18,
+              value: input.textStyle.fontSize!,
+              sliderLabel: input.textStyle.fontSize?.toInt().toString(),
+              onChanged: (value) => input.textStyle = input.textStyle.copyWith(fontSize: value),
             ),
-            XListTile(
+            CustomListTile<ColorPicker, Color>(
+              title: "Font Color",
               enabled: input.isShowTextField,
-              titleAsString: 'Font Bold',
-              toggle: Switch(
-                  value: input.inputTextStyle.fontWeight == FontWeight.bold,
-                  onChanged: input.isShowTextField
-                      ? (bool value) => input.inputTextStyle = input.inputTextStyle.copyWith(
-                          fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold)
-                      : null),
-            ),
-            const SizedBox(
-              height: 20,
+              value: input.textStyle.color!,
+              onChanged: (Color color) => input.textStyle = input.textStyle.copyWith(color: color),
             ),
           ],
         );

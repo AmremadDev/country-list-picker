@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AlphabetsBarThemes {
+class AlphabetsBarThemeData {
   final bool visible;
   final Color backgroundColor;
   final Color selectedBackgroundColor;
   final TextStyle textStyle;
   final TextStyle selectedTextStyle;
 
-  const AlphabetsBarThemes({
+  const AlphabetsBarThemeData({
     this.visible = true,
     this.backgroundColor = Colors.transparent,
     this.selectedBackgroundColor = Colors.transparent,
