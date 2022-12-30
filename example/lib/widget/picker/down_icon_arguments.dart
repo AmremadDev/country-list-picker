@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../controller/picker_provider.dart';
 import '../custom_list_tile.dart';
-
+import '../color_picker.dart';
 
 class DownIconArguments extends StatelessWidget {
   const DownIconArguments({super.key});
@@ -12,6 +12,7 @@ class DownIconArguments extends StatelessWidget {
     return Consumer<PickerProvider>(
       builder: (context, picker, child) {
         return Column(
+          // mainAxisSize: MainAxisSize.min,
           children: [
             CustomListTile<Switch, bool>(
               title: "Visible",
@@ -26,11 +27,11 @@ class DownIconArguments extends StatelessWidget {
                 divisions: 5,
                 value: picker.downIcon.size!,
                 sliderLabel: picker.downIcon.size!.toInt().toString(),
-                onChanged: (value) => picker.downIcon =
-                    picker.downIcon = Icon(picker.downIcon.icon, color: picker.downIcon.color, size: value)),
+                onChanged: (value) => picker.downIcon = picker.downIcon =
+                    Icon(picker.downIcon.icon, color: picker.downIcon.color, size: value)),
             CustomListTile<ColorPicker, Color>(
               title: "Icon Color",
-               enabled: picker.isDownIcon,
+              enabled: picker.isDownIcon,
               value: picker.downIcon.color ?? Theme.of(context).primaryColor,
               onChanged: (Color color) => picker.downIcon = Icon(
                 picker.downIcon.icon,

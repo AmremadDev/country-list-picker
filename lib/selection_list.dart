@@ -62,14 +62,14 @@ class SelectionList extends StatelessWidget {
                   slivers: [
                     SliverToBoxAdapter(
                       child: Column(children: [
-                        if (dialogTheme.searchTile.visible)
+                        if (dialogTheme.searchTileTheme.visible)
                           SearchTile(
                               dialogTheme: dialogTheme,
                               controller: _controller,
                               elements: elements),
-                        if (dialogTheme.currentLocationTile.visible)
+                        if (dialogTheme.currentLocationTileTheme.visible)
                           CurrentLocationTile(dialogTheme: dialogTheme, countries: elements),
-                        if (dialogTheme.lastPickTile.visible)
+                        if (dialogTheme.lastPickTileTheme.visible)
                           LastPickTile(dialogTheme: dialogTheme, country: initialCountry),
                         (_boxes == 0)
                             ? const SizedBox.shrink()
@@ -91,7 +91,7 @@ class SelectionList extends StatelessWidget {
                     ),
                   ],
                 ),
-                (dialogTheme.alphabetsBar.visible == false)
+                (dialogTheme.alphabetsBarTheme.visible == false)
                     ? const SizedBox.shrink()
                     : AlphabetScroll(
                         scrollController: _controllerScroll,
@@ -107,9 +107,9 @@ class SelectionList extends StatelessWidget {
 
   void _intialValues(BuildContext context) {
     _boxes = 0;
-    if (dialogTheme.searchTile.visible == true) _boxes += 2;
-    if (dialogTheme.currentLocationTile.visible == true) _boxes += 2;
-    if (dialogTheme.lastPickTile.visible == true) _boxes += 2;
+    if (dialogTheme.searchTileTheme.visible == true) _boxes += 2;
+    if (dialogTheme.currentLocationTileTheme.visible == true) _boxes += 2;
+    if (dialogTheme.lastPickTileTheme.visible == true) _boxes += 2;
 
     if (useUiOverlay) {
       SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(

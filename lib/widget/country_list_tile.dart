@@ -31,12 +31,13 @@ class CountryListTile extends StatelessWidget {
             style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16),
           ),
           trailing: Padding(
-            padding:  EdgeInsets.only(
-              right: (dialogTheme.alphabetsBar.visible == true) ? 20.0 : 0.0,
+            padding: EdgeInsets.only(
+              right: (dialogTheme.alphabetsBarTheme.visible == true) ? 20.0 : 0.0,
             ),
             child: (dialogTheme.isShowDialCode)
                 ? Text(country.callingCode,
-                    style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
+                    style: dialogTheme.textStyle
+                        .copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
                 : null,
           ),
           onTap: () {

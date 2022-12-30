@@ -1,3 +1,4 @@
+import 'package:country_list_picker_example/widget/color_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/picker_provider.dart';
@@ -32,7 +33,8 @@ class CountryNameArguments extends StatelessWidget {
               divisions: 18,
               value: picker.countryNameTextStyle.fontSize!,
               sliderLabel: picker.countryNameTextStyle.fontSize?.toInt().toString(),
-              onChanged: (value) => picker.countryNameTextStyle = picker.countryNameTextStyle.copyWith(fontSize: value),
+              onChanged: (value) => picker.countryNameTextStyle =
+                  picker.countryNameTextStyle.copyWith(fontSize: value),
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Font Color",

@@ -1,61 +1,79 @@
 import 'package:flutter/material.dart';
-import 'package:flex_color_picker/flex_color_picker.dart';
 
-export 'package:flex_color_picker/flex_color_picker.dart';
-
-class XColorPickerDialog extends StatelessWidget {
-  final ValueChanged<Color> onColorChanged;
-  final Color? value;
+// ignore: must_be_immutable
+class ColorPicker extends StatefulWidget {
+  final List<Color> colors;
+  final ValueChanged<Color>? onColorChanged;
+  final Color value;
   final bool enabled;
-
-  XColorPickerDialog({
-    required this.onColorChanged,
-    this.enabled = true,
+  const ColorPicker({
+    this.colors = const [
+      Colors.transparent,
+      Colors.white,
+      Colors.grey,
+      Color(0xFF424242),
+      Color(0xFF313030),
+      Colors.black,
+      Colors.red,
+      Colors.purple,
+      Colors.blue,
+      Colors.green,
+      Colors.orange,
+    ],
     this.value = Colors.black,
-    Key? key,
-  }) : super(key: key);
+    this.onColorChanged,
+    this.enabled = true,
+    super.key,
+  });
 
-  final Map<ColorSwatch<Object>, String> customSwatches = <ColorSwatch<Object>, String>{
-    ColorTools.createPrimarySwatch(Colors.white): 'White',
-    ColorTools.createPrimarySwatch(Colors.grey): 'Grey',
-    ColorTools.createPrimarySwatch(const Color(0xFF424242)): 'Grey-1',
-    ColorTools.createPrimarySwatch(const Color(0xFF313030)): 'Grey-2',
-    ColorTools.createPrimarySwatch(Colors.black): 'Black',
-    ColorTools.createPrimarySwatch(Colors.red): 'Red',
-    ColorTools.createPrimarySwatch(Colors.purple): 'purple',
-    ColorTools.createPrimarySwatch(Colors.blue): 'Blue',
-    ColorTools.createPrimarySwatch(Colors.green): 'Green',
-    ColorTools.createPrimarySwatch(Colors.orange): 'Orange',
-  };
+  @override
+  State<ColorPicker> createState() => _ColorPickerState();
+}
+
+class _ColorPickerState extends State<ColorPicker> {
+  int selectedIndex = 0;
+  List<Color> colorList = [];
+  @override
+  void initState() {
+    colorList = widget.colors;
+    selectedIndex = colorList.indexOf(widget.value);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    double w = MediaQuery.of(context).size.width - (40 * 2);
-
-    double size = ((w - (customSwatches.length - 1) * 5)) / customSwatches.length;
-
-    return IgnorePointer(
-      ignoring: !enabled,
-      child: Center(
-        child: ColorPicker(
-          elevation: 5,
-          color: value!,
-          enableShadesSelection: false,
-          onColorChanged: onColorChanged,
-          width: size,
-          height: size,
-          borderRadius: 50,
-          spacing: size / 6,
-          pickersEnabled: const <ColorPickerType, bool>{
-            ColorPickerType.both: false,
-            ColorPickerType.primary: false,
-            ColorPickerType.accent: false,
-            ColorPickerType.bw: false,
-            ColorPickerType.custom: true,
-            ColorPickerType.wheel: false,
+    return Column(mainAxisSize: MainAxisSize.min, children: [
+      Flexible(
+        child: GridView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+          shrinkWrap: true,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: widget.colors.length, crossAxisSpacing: 5),
+          itemCount: colorList.length,
+          itemBuilder: (BuildContext context, int index) {
+            return FloatingActionButton(
+              heroTag: null,
+              elevation: 5,
+              backgroundColor: colorList[index],
+              onPressed: () {
+                setState(() => selectedIndex = index);
+                if (widget.onColorChanged != null) widget.onColorChanged!(colorList[index]);
+              },
+              child: (selectedIndex == index)
+                  ? Center(
+                      child: Icon(Icons.check,
+                          size: 15,
+                          color:
+                              (colorList[index].value >= 4294961979 || colorList[index].value == 0)
+                                  ? Colors.black
+                                  : Colors.white),
+                    )
+                  : null,
+            );
           },
-          customColorSwatchesAndNames: customSwatches,
         ),
       ),
-    );
+    ]);
   }
 }

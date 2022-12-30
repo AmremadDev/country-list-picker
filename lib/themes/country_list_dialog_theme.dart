@@ -57,7 +57,7 @@ class CountryListDialogTheme {
   /// dialogTheme: const CountryListDialogTheme(
   ///   alphabetsBar: AlphabetsBarThemes(visible: false),)
   ///```
-  final AlphabetsBarThemeData alphabetsBar;
+  final AlphabetsBarThemeData alphabetsBarTheme;
 
   ///Current Location Tile Theme.
   ///
@@ -75,7 +75,7 @@ class CountryListDialogTheme {
   /// dialogTheme: const CountryListDialogTheme(
   ///   currentLocationTile: CurrentLocationTileTheme(visible: false),)
   ///```
-  final CurrentLocationTileThemeData currentLocationTile;
+  final CurrentLocationTileThemeData currentLocationTileTheme;
 
   ///LastPick Tile Theme.
   ///
@@ -94,7 +94,7 @@ class CountryListDialogTheme {
   ///   lastPickTile: LastPickTileTheme(visible: false),
   /// )
   ///```
-  final LastPickTileTheme lastPickTile;
+  final LastPickTileTheme lastPickTileTheme;
 
   ///Search Tile Theme.
   ///
@@ -114,7 +114,7 @@ class CountryListDialogTheme {
   ///   searchTile: SearchTileTheme(visible: false),
   /// )
   ///```
-  final SearchTileThemeData searchTile;
+  final SearchTileThemeData searchTileTheme;
 
   ///Whether to allow the widget to set a custom UI overlay
   final bool useUiOverlay;
@@ -123,16 +123,16 @@ class CountryListDialogTheme {
   final bool useSafeArea;
 
   const CountryListDialogTheme({
-    this.alphabetsBar = const AlphabetsBarThemeData(),
-    this.currentLocationTile = const CurrentLocationTileThemeData(),
-    this.lastPickTile = const LastPickTileTheme(),
-    this.searchTile = const SearchTileThemeData(),
+    this.alphabetsBarTheme = const AlphabetsBarThemeData(),
+    this.currentLocationTileTheme = const CurrentLocationTileThemeData(),
+    this.lastPickTileTheme = const LastPickTileTheme(),
+    this.searchTileTheme = const SearchTileThemeData(),
     this.appBar,
     this.isShowFlage = true,
     this.isShowFloatButton = true,
     this.backgroundColor = Colors.transparent,
     this.titlesStyle = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-    this.titlesBackground =const  Color(0xFFE9E9E9), //const Color(0x6CDDDDDD),
+    this.titlesBackground = const Color(0xFFE9E9E9), //const Color(0x6CDDDDDD),
     this.isShowDialCode = true,
     this.textStyle = const TextStyle(fontSize: 16),
     this.tileHeight = 50.0,

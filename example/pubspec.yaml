@@ -44,6 +44,7 @@ dependencies:
   provider: ^6.0.5
   flex_color_picker: ^3.0.0
   accordion: ^2.5.1
+  collection: ^1.16.0
 
 dev_dependencies:
   flutter_test:
@@ -72,9 +73,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - jsons/countries.json
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -90,12 +90,21 @@ flutter:
   fonts:
     - family: Quicksand
       fonts:
-        - asset: fonts/Quicksand-Bold.ttf
-        - asset: fonts/Quicksand-Light.ttf
-        - asset: fonts/Quicksand-Medium.ttf
-        - asset: fonts/Quicksand-Regular.ttf     
-        - asset: fonts/Quicksand-SemiBold.ttf
-
+        - asset: fonts/Quicksand/Quicksand-Bold.ttf
+        - asset: fonts/Quicksand/Quicksand-Light.ttf
+        - asset: fonts/Quicksand/Quicksand-Medium.ttf
+        - asset: fonts/Quicksand/Quicksand-Regular.ttf
+        - asset: fonts/Quicksand/Quicksand-SemiBold.ttf                                         
+    - family: Cairo
+      fonts:
+        - asset: fonts/Cairo/Cairo-Black.ttf
+        - asset: fonts/Cairo/Cairo-Bold.ttf
+        - asset: fonts/Cairo/Cairo-ExtraBold.ttf
+        - asset: fonts/Cairo/Cairo-ExtraLight.ttf
+        - asset: fonts/Cairo/Cairo-Light.ttf
+        - asset: fonts/Cairo/Cairo-Medium.ttf
+        - asset: fonts/Cairo/Cairo-Regular.ttf
+        - asset: fonts/Cairo/Cairo-SemiBold.ttf       
   # fonts:
   #   - family: Schyler
   #     fonts:

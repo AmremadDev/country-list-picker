@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import '../../model/screen.dart';
 
 class AboutScreen extends StatelessWidget {
-    final Screen? screen;
-  const AboutScreen({
-    this.screen,
-    super.key});
+  final Screen? screen;
+  const AboutScreen({this.screen, super.key});
 
   @override
   Widget build(BuildContext context) {

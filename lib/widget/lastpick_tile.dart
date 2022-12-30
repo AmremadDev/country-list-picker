@@ -21,8 +21,9 @@ class LastPickTile extends StatelessWidget {
           width: double.infinity,
           height: dialogTheme.tileHeight,
           child: Text(
-            dialogTheme.lastPickTile.title,
-            style: dialogTheme.titlesStyle.copyWith(fontSize: dialogTheme.titlesStyle.fontSize ?? 16),
+            dialogTheme.lastPickTileTheme.title,
+            style:
+                dialogTheme.titlesStyle.copyWith(fontSize: dialogTheme.titlesStyle.fontSize ?? 16),
           )),
       SizedBox(
         height: dialogTheme.tileHeight,
@@ -43,12 +44,13 @@ class LastPickTile extends StatelessWidget {
             ),
             trailing: Padding(
                 padding: EdgeInsets.only(
-                  right: (dialogTheme.alphabetsBar.visible == true) ? 20.0 : 0.0,
+                  right: (dialogTheme.alphabetsBarTheme.visible == true) ? 20.0 : 0.0,
                 ),
                 child: Icon(
-                  dialogTheme.lastPickTile.icon.icon,
-                  color: (dialogTheme.lastPickTile.icon.color) ?? Theme.of(context).colorScheme.primary,
-                  size: dialogTheme.lastPickTile.icon.size ?? dialogTheme.tileHeight * .6,
+                  dialogTheme.lastPickTileTheme.icon.icon,
+                  color: (dialogTheme.lastPickTileTheme.icon.color) ??
+                      Theme.of(context).colorScheme.primary,
+                  size: dialogTheme.lastPickTileTheme.icon.size ?? dialogTheme.tileHeight * .6,
                 )),
             onTap: null),
       )

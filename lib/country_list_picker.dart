@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 
 import '../selection_list.dart';
 import '../models/country.dart';
-import 'contollers/country_list_picker_controller.dart';
+import '../contollers/country_list_picker_controller.dart';
 import '../themes/country_list_dialog_theme.dart';
 import '../models/countries.dart';
 import '../widget/input_filed.dart';
@@ -18,7 +18,38 @@ export '../themes/country_list_dialog_theme.dart';
 export '../themes/input_theme.dart';
 export '../models/country.dart';
 export '../models/countries.dart';
+export '../extensions.dart';
 
+/// Shows a bottom sheet containing a list of countries to select one.
+///
+/// The callback function [onSelect] call when the user select a country.
+/// The function called with parameter the country that the user has selected.
+/// If the user cancels the bottom sheet, the function is not call.
+///
+///  An optional [exclude] argument can be used to exclude(remove) one ore more
+///  country from the countries list. It takes a list of country code(iso2).
+///
+/// An optional [countryFilter] argument can be used to filter the
+/// list of countries. It takes a list of country code(iso2).
+/// Note: Can't provide both [countryFilter] and [exclude]
+///
+/// An optional [favorite] argument can be used to show countries
+/// at the top of the list. It takes a list of country code(iso2).
+///
+/// An optional [showPhoneCode] argument can be used to show phone code.
+///
+/// [countryListTheme] can be used to customizing the country list bottom sheet.
+///
+/// [onClosed] callback which is called when CountryPicker is dismiss,
+/// whether a country is selected or not.
+///
+/// [searchAutofocus] can be used to initially expand virtual keyboard
+///
+/// An optional [showSearch] argument can be used to show/hide the search bar.
+///
+/// The `context` argument is used to look up the [Scaffold] for the bottom
+/// sheet. It is only used when the method is called. Its corresponding widget
+/// can be safely removed from the tree before the bottom sheet is closed.
 class CountryListPicker extends StatelessWidget {
   /// Creates a country list picker widget.
   ///
@@ -29,10 +60,7 @@ class CountryListPicker extends StatelessWidget {
       this.isShowFlag = true,
       this.flagSize = const Size(40.0, 40.0),
       this.isShowCode = true,
-      this.iconDown = const Icon(
-        Icons.keyboard_arrow_down,
-        size: 24,
-      ),
+      this.iconDown = const Icon(Icons.keyboard_arrow_down, size: 24),
       this.isDownIcon = true,
       this.isShowTextField = true,
       this.margin = const EdgeInsets.all(5.0),
@@ -40,7 +68,13 @@ class CountryListPicker extends StatelessWidget {
       this.border,
       this.dialCodeTextStyle = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       this.countryNameTextStyle = const TextStyle(fontSize: 15, color: Colors.grey),
+      this.onCountryChanged,
       this.onChanged,
+      this.onEditingComplete,
+      this.onFieldSubmitted,
+      this.onSaved,
+      this.onTap,
+      this.controller,
       this.dialogTheme = const CountryListDialogTheme(),
       this.inputTheme = const InputThemeData()})
       : assert(isShowFlag == true || isShowCode == true,
@@ -96,8 +130,15 @@ class CountryListPicker extends StatelessWidget {
   /// {@template country_list_picker.onChanged}
   /// Called when the user selects an item.
   ///
-  /// If the [onChanged] callback is null then clickable part will be disabled.
-  final ValueChanged<Country>? onChanged;
+  /// If the [onCountryChanged] callback is null then clickable part will be disabled.
+  final ValueChanged<Country>? onCountryChanged;
+
+  final ValueChanged<String>? onChanged;
+  final FormFieldSetter<String>? onSaved;
+  final TextEditingController? controller;
+  final VoidCallback? onEditingComplete;
+  final ValueChanged<String>? onFieldSubmitted;
+  final GestureTapCallback? onTap;
 
   // ///
   // final Widget Function(BuildContext context, Country? countryCode)? pickerBuilder;
@@ -141,14 +182,20 @@ class CountryListPicker extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       InkWell(
-                        onTap:
-                            (onChanged == null) ? null : () async => await _onChangeEvent(context),
+                        onTap: (onCountryChanged == null)
+                            ? null
+                            : () async => await _onChangeEvent(context),
                         child: _buildMainPart(),
                       ),
                       if (isShowTextField == true)
                         InputField(
                           inputTheme: inputTheme,
-
+                          onChanged: onChanged,
+                          onEditingComplete: onEditingComplete,
+                          onFieldSubmitted: onFieldSubmitted,
+                          onSaved: onSaved,
+                          onTap: onTap,
+                          // onChanged: ,
                           // autovalidateMode: AutovalidateMode.always,
 
                           // validator: (value) {
@@ -201,7 +248,7 @@ class CountryListPicker extends StatelessWidget {
                   },
                 )));
     controller.changeselectedItem(result ?? controller.selectedItem);
-    if (onChanged != null) onChanged!(controller.selectedItem);
+    if (onCountryChanged != null) onCountryChanged!(controller.selectedItem);
   }
 
   Selector<CLPProvider, Country> _buildMainPart() {

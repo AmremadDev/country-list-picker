@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/input_provider.dart';
 import '../custom_list_tile.dart';
+import '../color_picker.dart';
 
 class InputArguments extends StatelessWidget {
   const InputArguments({super.key});
@@ -27,8 +28,8 @@ class InputArguments extends StatelessWidget {
               title: "Font Bold",
               enabled: input.isShowTextField,
               value: input.textStyle.fontWeight == FontWeight.bold,
-              onChanged: (bool value) => input.textStyle =
-                  input.textStyle.copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
+              onChanged: (bool value) => input.textStyle = input.textStyle
+                  .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
             ),
             CustomListTile<Slider, double>(
               title: "Font Size",

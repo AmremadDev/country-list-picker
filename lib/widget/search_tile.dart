@@ -22,11 +22,11 @@ class SearchTile extends StatelessWidget {
       Container(
           color: dialogTheme.titlesBackground,
           alignment: Alignment.centerLeft,
-          padding: const EdgeInsets.only( left:15.0),
+          padding: const EdgeInsets.only(left: 15.0),
           width: double.infinity,
           height: dialogTheme.tileHeight,
           child: Text(
-            dialogTheme.searchTile.title,
+            dialogTheme.searchTileTheme.title,
             style:
                 dialogTheme.titlesStyle.copyWith(fontSize: dialogTheme.titlesStyle.fontSize ?? 16),
           )),
@@ -40,8 +40,8 @@ class SearchTile extends StatelessWidget {
           decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: const EdgeInsets.only(left: 15, bottom: 0, top: 0, right: 15),
-              hintText: dialogTheme.searchTile.hint,
-              hintStyle: dialogTheme.searchTile.hintTextStyle),
+              hintText: dialogTheme.searchTileTheme.hint,
+              hintStyle: dialogTheme.searchTileTheme.hintTextStyle),
           onChanged: ((value) {
             String s = value.toUpperCase();
             context.read<CLPProvider>().changeCountries(elements

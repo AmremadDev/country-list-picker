@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/dialog_provider.dart';
 import '../custom_list_tile.dart';
+import '../color_picker.dart';
 
 class AlphabetsBarArguments extends StatelessWidget {
   const AlphabetsBarArguments({super.key});
@@ -28,7 +29,8 @@ class AlphabetsBarArguments extends StatelessWidget {
             CustomListTile<Switch, bool>(
               title: "Unselected Font Bold",
               value: dialog.alphabetUnSelectedTextStyle.fontWeight == FontWeight.bold,
-              onChanged: (bool value) => dialog.alphabetUnSelectedTextStyle = dialog.alphabetUnSelectedTextStyle
+              onChanged: (bool value) => dialog.alphabetUnSelectedTextStyle = dialog
+                  .alphabetUnSelectedTextStyle
                   .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
             ),
             CustomListTile<Slider, double>(
@@ -38,18 +40,19 @@ class AlphabetsBarArguments extends StatelessWidget {
               divisions: 18,
               value: dialog.alphabetUnSelectedTextStyle.fontSize!,
               sliderLabel: dialog.alphabetUnSelectedTextStyle.fontSize?.toInt().toString(),
-              onChanged: (value) => dialog.alphabetUnSelectedTextStyle = dialog.alphabetUnSelectedTextStyle
+              onChanged: (value) => dialog.alphabetUnSelectedTextStyle = dialog
+                  .alphabetUnSelectedTextStyle
                   .copyWith(fontSize: value, color: dialog.alphabetUnSelectedTextStyle.color),
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Unselected Font Color",
               value: dialog.alphabetUnSelectedTextStyle.color!,
-              onChanged: (Color color) =>
-                  dialog.alphabetUnSelectedTextStyle = dialog.alphabetUnSelectedTextStyle.copyWith(color: color),
+              onChanged: (Color color) => dialog.alphabetUnSelectedTextStyle =
+                  dialog.alphabetUnSelectedTextStyle.copyWith(color: color),
             ),
 
             // selected
-                        CustomListTile<ColorPicker, Color>(
+            CustomListTile<ColorPicker, Color>(
               title: "Selected Background",
               enabled: dialog.alphabetBar,
               value: dialog.alphabetSelectedBackgroundColor,
@@ -58,7 +61,8 @@ class AlphabetsBarArguments extends StatelessWidget {
             CustomListTile<Switch, bool>(
               title: "Selected Font Bold",
               value: dialog.alphabetSelectedTextStyle.fontWeight == FontWeight.bold,
-              onChanged: (bool value) => dialog.alphabetSelectedTextStyle = dialog.alphabetSelectedTextStyle
+              onChanged: (bool value) => dialog.alphabetSelectedTextStyle = dialog
+                  .alphabetSelectedTextStyle
                   .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
             ),
             CustomListTile<Slider, double>(
@@ -68,16 +72,16 @@ class AlphabetsBarArguments extends StatelessWidget {
               divisions: 18,
               value: dialog.alphabetSelectedTextStyle.fontSize!,
               sliderLabel: dialog.alphabetSelectedTextStyle.fontSize?.toInt().toString(),
-              onChanged: (value) => dialog.alphabetSelectedTextStyle = dialog.alphabetSelectedTextStyle
+              onChanged: (value) => dialog.alphabetSelectedTextStyle = dialog
+                  .alphabetSelectedTextStyle
                   .copyWith(fontSize: value, color: dialog.alphabetSelectedTextStyle.color),
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Selected Font Color",
               value: dialog.alphabetSelectedTextStyle.color!,
-              onChanged: (Color color) =>
-                  dialog.alphabetSelectedTextStyle = dialog.alphabetSelectedTextStyle.copyWith(color: color),
+              onChanged: (Color color) => dialog.alphabetSelectedTextStyle =
+                  dialog.alphabetSelectedTextStyle.copyWith(color: color),
             ),
-
           ],
         );
       },

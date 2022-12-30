@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import '../model/screen.dart';
 
@@ -23,7 +21,7 @@ import '../widget/about/about_screen.dart';
 
 const double titlesFontSize = 18;
 const Color lightprimarySwatch = Colors.purple;
-const Color darkprimarySwatch = Colors.red;
+const Color darkprimarySwatch = Colors.green;
 
 List<Screen> screens = [
   Screen(
@@ -62,17 +60,19 @@ List<Argument> pickerArguments = [
       title: "Border",
       child: const SizedBox(
           height: 200,
-          child: Center(child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25))))),
+          child: Center(
+              child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25))))),
 ];
 
 List<Argument> inputArguments = [
   Argument(title: "Input", child: const InputArguments()),
-  Argument(title: "hint", child: const HintArguments()),
+  Argument(title: "Hint", child: const HintArguments()),
   Argument(
       title: "Border",
       child: const SizedBox(
           height: 200,
-          child: Center(child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)))))
+          child: Center(
+              child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)))))
 ];
 
 List<Argument> dialogArguments = [
@@ -84,4 +84,3 @@ List<Argument> dialogArguments = [
   Argument(title: "Last Pick Tile", child: const LastPickTileArguments()),
   Argument(title: "Alphabets Bar", child: const AlphabetsBarArguments()),
 ];
-

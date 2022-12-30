@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/dialog_provider.dart';
 import '../custom_list_tile.dart';
-
+import '../color_picker.dart';
 
 class TextStyleArguments extends StatelessWidget {
   const TextStyleArguments({super.key});
@@ -16,8 +16,8 @@ class TextStyleArguments extends StatelessWidget {
             CustomListTile<Switch, bool>(
               title: "Font Bold",
               value: dialog.textStyle.fontWeight == FontWeight.bold,
-              onChanged: (bool value) => dialog.textStyle =
-                  dialog.textStyle.copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
+              onChanged: (bool value) => dialog.textStyle = dialog.textStyle
+                  .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
             ),
             CustomListTile<Slider, double>(
               title: "Font Size",
@@ -26,13 +26,14 @@ class TextStyleArguments extends StatelessWidget {
               divisions: 18,
               value: dialog.textStyle.fontSize!,
               sliderLabel: dialog.textStyle.fontSize?.toInt().toString(),
-              onChanged: (value) =>
-                  dialog.textStyle = dialog.textStyle.copyWith(fontSize: value, color: dialog.textStyle.color),
+              onChanged: (value) => dialog.textStyle =
+                  dialog.textStyle.copyWith(fontSize: value, color: dialog.textStyle.color),
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Font Color",
               value: dialog.textStyle.color!,
-              onChanged: (Color color) => dialog.textStyle = dialog.textStyle.copyWith(color: color),
+              onChanged: (Color color) =>
+                  dialog.textStyle = dialog.textStyle.copyWith(color: color),
             ),
           ],
         );

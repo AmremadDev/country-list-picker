@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/dialog_provider.dart';
 import '../custom_list_tile.dart';
+import '../color_picker.dart';
 
 class SearchTileArguments extends StatelessWidget {
   const SearchTileArguments({super.key});
@@ -31,7 +31,8 @@ class SearchTileArguments extends StatelessWidget {
             CustomListTile<Switch, bool>(
               title: "Font Bold",
               value: dialog.searchTileHintTextStyle.fontWeight == FontWeight.bold,
-              onChanged: (bool value) => dialog.searchTileHintTextStyle = dialog.searchTileHintTextStyle
+              onChanged: (bool value) => dialog.searchTileHintTextStyle = dialog
+                  .searchTileHintTextStyle
                   .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
             ),
             CustomListTile<Slider, double>(
@@ -41,14 +42,14 @@ class SearchTileArguments extends StatelessWidget {
               divisions: 18,
               value: dialog.searchTileHintTextStyle.fontSize!,
               sliderLabel: dialog.searchTileHintTextStyle.fontSize?.toInt().toString(),
-              onChanged: (value) => dialog.searchTileHintTextStyle =
-                  dialog.searchTileHintTextStyle.copyWith(fontSize: value, color: dialog.searchTileHintTextStyle.color),
+              onChanged: (value) => dialog.searchTileHintTextStyle = dialog.searchTileHintTextStyle
+                  .copyWith(fontSize: value, color: dialog.searchTileHintTextStyle.color),
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Font Color",
               value: dialog.searchTileHintTextStyle.color!,
-              onChanged: (Color color) =>
-                  dialog.searchTileHintTextStyle = dialog.searchTileHintTextStyle.copyWith(color: color),
+              onChanged: (Color color) => dialog.searchTileHintTextStyle =
+                  dialog.searchTileHintTextStyle.copyWith(color: color),
             ),
           ],
         );

@@ -28,7 +28,7 @@ class FlagArguments extends StatelessWidget {
               onChanged: (value) => picker.flagSize = Size(value, picker.flagSize.height),
             ),
             CustomListTile<Slider, double>(
-              title: "Hight",
+              title: "Height",
               enabled: picker.isShowFlag,
               min: 10,
               max: 50,

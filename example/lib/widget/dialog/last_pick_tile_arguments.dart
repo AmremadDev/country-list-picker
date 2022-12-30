@@ -17,12 +17,21 @@ class LastPickTileArguments extends StatelessWidget {
               value: dialog.lastPickTile,
               onChanged: (bool value) => dialog.lastPickTile = value,
             ),
-                        CustomListTile<TextFormField, String>(
+            CustomListTile<TextFormField, String>(
               title: "Title String",
               value: dialog.lastPickTileTitle,
               onChanged: (String value) => dialog.lastPickTileTitle = value,
             ),
-              const SizedBox(height: 20,),
+            CustomListTile<DropdownButtonFormField, IconData?>(
+              title: "Icon",
+              value: Icons.check,
+              onChanged: (value) {
+                dialog.lastPickTileTitleIcon = value!;
+              },
+            ),
+            const SizedBox(
+              height: 20,
+            ),
           ],
         );
       },

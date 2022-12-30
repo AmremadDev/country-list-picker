@@ -9,6 +9,9 @@ class InputField extends StatelessWidget {
     required this.inputTheme,
     this.onChanged,
     this.onSaved,
+    this.onEditingComplete,
+    this.onFieldSubmitted,
+    this.onTap,
     this.controller,
     this.initialValue,
     this.enabled,
@@ -24,6 +27,9 @@ class InputField extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final FormFieldSetter<String>? onSaved;
   final TextEditingController? controller;
+  final VoidCallback? onEditingComplete;
+  final ValueChanged<String>? onFieldSubmitted;
+  final GestureTapCallback? onTap;
   final String? initialValue;
   final bool? enabled;
   final bool readOnly;
@@ -47,7 +53,9 @@ class InputField extends StatelessWidget {
         enabled: enabled,
         onSaved: onSaved,
         onChanged: onChanged,
-
+        onEditingComplete: onEditingComplete,
+        onFieldSubmitted: onFieldSubmitted,
+        onTap: onTap,
         // (String? value) {
         //   // action UnmaskText
         //   MaskTextInputFormatter(

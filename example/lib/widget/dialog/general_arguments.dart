@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/dialog_provider.dart';
 import '../custom_list_tile.dart';
+import '../color_picker.dart';
 
 class GeneralArguments extends StatelessWidget {
   const GeneralArguments({super.key});
@@ -33,13 +34,13 @@ class GeneralArguments extends StatelessWidget {
               onChanged: (bool value) => dialog.upActionbutton = value,
             ),
             CustomListTile<Slider, double>(
-              title: "Tile Hight",
+              title: "Tile height",
               min: 50,
               max: 100,
               divisions: 5,
               value: dialog.tileHeight,
               sliderLabel: dialog.tileHeight.toInt().toString(),
-              onChanged: (value) => dialog.tileHeight =value,
+              onChanged: (value) => dialog.tileHeight = value,
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Background Color",

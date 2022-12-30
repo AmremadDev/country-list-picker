@@ -21,7 +21,8 @@ class TopPart extends StatelessWidget {
           isDownIcon: picker.isDownIcon,
           isShowCountryTitle: picker.isShowCountryName,
           isShowTextField: input.isShowTextField,
-          iconDown: Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),
+          iconDown:
+              Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),
           dialCodeTextStyle: picker.dialCodeTextStyle,
           border: (picker.border == true) ? null : const Border(bottom: BorderSide.none),
           inputTheme: InputThemeData(
@@ -33,7 +34,8 @@ class TopPart extends StatelessWidget {
                 : InputBorder.none,
             mask: MaskTextInputFormatter(mask: input.mask, filter: {"#": RegExp(r'[0-9]')}),
           ),
-          onChanged: ((value) {}),
+          onCountryChanged: ((value) {}),
+          // onChanged: (value) => print(value.getUnmaskedText),
           dialogTheme: CountryListDialogTheme(
             isShowFlage: dialog.countryFlag,
             isShowDialCode: dialog.countryDialCode,
@@ -46,34 +48,32 @@ class TopPart extends StatelessWidget {
             appBar: AppBar(
               title: Text(dialog.appBarTitle),
             ),
-             tileHeight: dialog.tileHeight ,
+            tileHeight: dialog.tileHeight,
             // useSafeArea: ,
             // useUiOverlay: ,
 
-            alphabetsBar: AlphabetsBarThemeData(
+            alphabetsBarTheme: AlphabetsBarThemeData(
               visible: dialog.alphabetBar,
-
-               backgroundColor: dialog.alphabetUnSelectedBackgroundColor ,
-              selectedBackgroundColor: dialog.alphabetSelectedBackgroundColor ,
-             textStyle: dialog.alphabetUnSelectedTextStyle ,
-              selectedTextStyle: dialog.alphabetSelectedTextStyle ,
-
+              backgroundColor: dialog.alphabetUnSelectedBackgroundColor,
+              selectedBackgroundColor: dialog.alphabetSelectedBackgroundColor,
+              textStyle: dialog.alphabetUnSelectedTextStyle,
+              selectedTextStyle: dialog.alphabetSelectedTextStyle,
             ),
-            searchTile: SearchTileThemeData(
+            searchTileTheme: SearchTileThemeData(
               visible: dialog.searchTile,
               title: dialog.searchTileTitle,
               hint: dialog.searchTileHintString,
               hintTextStyle: dialog.searchTileHintTextStyle,
             ),
-            currentLocationTile: CurrentLocationTileThemeData(
+            currentLocationTileTheme: CurrentLocationTileThemeData(
               visible: dialog.currentLocationTile,
               title: dialog.currentLocationTileTitle,
             ),
-            lastPickTile: LastPickTileTheme(
+            lastPickTileTheme: LastPickTileTheme(
               visible: dialog.lastPickTile,
               title: dialog.lastPickTileTitle,
+              icon: Icon(dialog.lastPickTileTitleIcon),
             ),
-
           ),
         );
       },

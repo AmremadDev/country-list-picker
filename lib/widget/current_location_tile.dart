@@ -3,7 +3,8 @@ import '../models/country.dart';
 import '../themes/country_list_dialog_theme.dart';
 
 class CurrentLocationTile extends StatelessWidget {
-  const CurrentLocationTile({Key? key, required this.dialogTheme, required this.countries}) : super(key: key);
+  const CurrentLocationTile({Key? key, required this.dialogTheme, required this.countries})
+      : super(key: key);
 
   final CountryListDialogTheme dialogTheme;
 
@@ -11,8 +12,8 @@ class CurrentLocationTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Country country =
-        countries.singleWhere((element) => element.alpha2 == WidgetsBinding.instance.window.locale.countryCode);
+    Country country = countries.singleWhere(
+        (element) => element.alpha2 == WidgetsBinding.instance.window.locale.countryCode);
 
     return Column(children: [
       Container(
@@ -22,7 +23,7 @@ class CurrentLocationTile extends StatelessWidget {
           width: double.infinity,
           height: dialogTheme.tileHeight,
           child: Text(
-            dialogTheme.currentLocationTile.title,
+            dialogTheme.currentLocationTileTheme.title,
             style: dialogTheme.titlesStyle.copyWith(
               fontSize: dialogTheme.titlesStyle.fontSize ?? 16,
               fontWeight: dialogTheme.titlesStyle.fontWeight ?? FontWeight.bold,
@@ -47,11 +48,12 @@ class CurrentLocationTile extends StatelessWidget {
             ),
             trailing: Padding(
               padding: EdgeInsets.only(
-                right: (dialogTheme.alphabetsBar.visible == true) ? 20.0 : 0.0,
+                right: (dialogTheme.alphabetsBarTheme.visible == true) ? 20.0 : 0.0,
               ),
               child: (dialogTheme.isShowDialCode)
                   ? Text(country.callingCode,
-                      style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
+                      style: dialogTheme.textStyle
+                          .copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
                   : null,
             ),
             onTap: () {

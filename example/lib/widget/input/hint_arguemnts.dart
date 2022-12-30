@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/input_provider.dart';
 import '../../widget/custom_list_tile.dart';
+import '../color_picker.dart';
 
 class HintArguments extends StatelessWidget {
   const HintArguments({super.key});
@@ -21,8 +22,8 @@ class HintArguments extends StatelessWidget {
               title: "Font Bold",
               enabled: input.isShowTextField,
               value: input.hintTextStyle.fontWeight == FontWeight.bold,
-              onChanged: (bool value) => input.hintTextStyle =
-                  input.hintTextStyle.copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
+              onChanged: (bool value) => input.hintTextStyle = input.hintTextStyle
+                  .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
             ),
             CustomListTile<Slider, double>(
               title: "Font Size",
@@ -32,14 +33,15 @@ class HintArguments extends StatelessWidget {
               divisions: 18,
               value: input.hintTextStyle.fontSize!,
               sliderLabel: input.hintTextStyle.fontSize?.toInt().toString(),
-              onChanged: (value) =>
-                  input.hintTextStyle = input.hintTextStyle.copyWith(fontSize: value, color: input.hintTextStyle.color),
+              onChanged: (value) => input.hintTextStyle =
+                  input.hintTextStyle.copyWith(fontSize: value, color: input.hintTextStyle.color),
             ),
-                        CustomListTile<ColorPicker, Color>(
+            CustomListTile<ColorPicker, Color>(
               title: "Font Color",
               enabled: input.isShowTextField,
               value: input.hintTextStyle.color!,
-              onChanged: (Color color) => input.hintTextStyle = input.hintTextStyle.copyWith(color: color),
+              onChanged: (Color color) =>
+                  input.hintTextStyle = input.hintTextStyle.copyWith(color: color),
             ),
           ],
         );
