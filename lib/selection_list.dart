@@ -4,9 +4,9 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../widget/lastpick_tile.dart';
 import '../widget/alphabet_scroll.dart';
-import '../themes/country_list_dialog_theme.dart';
+import 'theme/country_list_dialog_theme.dart';
 import '../widget/country_list_tile.dart';
-import 'model/country.dart';
+import '../model/country.dart';
 import '../widget/current_location_tile.dart';
 import '../widget/search_tile.dart';
 
@@ -42,15 +42,19 @@ class SelectionList extends StatelessWidget {
     _intialValues(context);
     Widget scaffold = Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-        floatingActionButton:
-            (dialogTheme.isShowFloatButton && context.watch<SettingsProvider>().isShowFloatButton)
-                ? FloatingActionButton(
-                    backgroundColor: Theme.of(context).colorScheme.primary,
-                    elevation: 0,
-                    mini: true,
-                    child: const Icon(Icons.arrow_upward),
-                    onPressed: () => _controllerScroll.jumpTo(0))
-                : null,
+        floatingActionButton: dialogTheme.isShowFloatButton
+            ? Selector<SettingsProvider, bool>(
+                selector: (context, settings) => settings.isShowFloatButton,
+                builder: (context, show, child) => show
+                    ? FloatingActionButton(
+                        backgroundColor: Theme.of(context).colorScheme.primary,
+                        elevation: 0,
+                        mini: true,
+                        child: const Icon(Icons.arrow_upward),
+                        onPressed: () => _controllerScroll.jumpTo(0))
+                    : const SizedBox.shrink(),
+              )
+            : null,
         appBar: appBar,
         body: Container(
             color: dialogTheme.backgroundColor,
@@ -130,7 +134,7 @@ class SelectionList extends StatelessWidget {
       int scrollPosition = ((_controllerScroll.position.pixels) / dialogTheme.tileHeight).round();
 
       if (scrollPosition < _boxes) {
-        settings.selectedPositon = -1;
+        settings.selectedPosition = -1;
       } else if (scrollPosition >= _boxes && scrollPosition <= settings.countries.length) {
         int newPos = settings.countries
                 .elementAt(scrollPosition - _boxes)
@@ -139,7 +143,7 @@ class SelectionList extends StatelessWidget {
                 .toUpperCase()
                 .codeUnitAt(0) -
             'A'.codeUnitAt(0);
-        if (newPos != settings.selectedPositon) settings.selectedPositon = newPos;
+        if (newPos != settings.selectedPosition) settings.selectedPosition = newPos;
       }
     });
   }

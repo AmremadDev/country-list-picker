@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-
-import '../themes/input_theme.dart';
+import '../theme/input_theme.dart';
 
 class InputField extends StatelessWidget {
   const InputField({

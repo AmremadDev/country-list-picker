@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/country.dart';
-import '../themes/country_list_dialog_theme.dart';
+import '../theme/country_list_dialog_theme.dart';
 
 class LastPickTile extends StatelessWidget {
   final CountryListDialogTheme dialogTheme;

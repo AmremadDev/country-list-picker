@@ -45,8 +45,8 @@ class SettingsProvider extends ChangeNotifier {
   }
 
   int _selectedPositon = -1;
-  int get selectedPositon => _selectedPositon;
-  set selectedPositon(int value) {
+  int get selectedPosition => _selectedPositon;
+  set selectedPosition(int value) {
     _selectedPositon = value;
     notifyListeners();
   }

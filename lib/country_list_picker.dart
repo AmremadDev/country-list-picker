@@ -2,22 +2,21 @@ library country_list_picker;
 
 // imports
 
-import 'package:country_list_picker/provider/picker_provider.dart';
-import 'package:country_list_picker/themes/input_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import '../provider/picker_provider.dart';
 import '../selection_list.dart';
-import 'model/country.dart';
-import '../themes/country_list_dialog_theme.dart';
-import 'model/countries.dart';
+import '../model/country.dart';
+import '../model/countries.dart';
+import '../theme/country_list_dialog_theme.dart';
+import '../theme/input_theme.dart';
 import '../widget/input_filed.dart';
 
 // exports
-export '../themes/country_list_dialog_theme.dart';
-export '../themes/input_theme.dart';
-export 'model/country.dart';
-export 'model/countries.dart';
+export '../theme/country_list_dialog_theme.dart';
+export '../theme/input_theme.dart';
+export '../model/country.dart';
+export '../model/countries.dart';
 export '../extensions.dart';
 
 /// Shows a bottom sheet containing a list of countries to select one.

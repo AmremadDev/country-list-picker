@@ -18,6 +18,7 @@ import '../widget/dialog/current_location_tile_arguments.dart';
 import '../widget/dialog/last_pick_tile_arguments.dart';
 
 import '../widget/about/about_screen.dart';
+import 'model/onboarding.dart';
 
 const double titlesFontSize = 18;
 const Color lightprimarySwatch = Colors.purple;
@@ -83,4 +84,32 @@ List<Argument> dialogArguments = [
   Argument(title: "Current Location Tile", child: const CurrentLocationTileArguments()),
   Argument(title: "Last Pick Tile", child: const LastPickTileArguments()),
   Argument(title: "Alphabets Bar", child: const AlphabetsBarArguments()),
+];
+
+List<Onboarding> listOnboarding = [
+  Onboarding(
+      title: "Easy",
+      image: "assets/onborading/onborading-1.png",
+      body:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+  Onboarding(
+      title: "Fast",
+      image: "assets/onborading/onborading-2.png",
+      body:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+  Onboarding(
+      title: "Flexible",
+      image: "assets/onborading/onborading-3.png",
+      body:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+  Onboarding(
+      title: "Open Source",
+      image: "assets/onborading/onborading-4.png",
+      body:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+  Onboarding(
+      title: "Documentation",
+      image: "assets/onborading/onborading-4.png",
+      body:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
 ];

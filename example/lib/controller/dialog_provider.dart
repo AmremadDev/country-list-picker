@@ -180,8 +180,6 @@ class DialogProvider extends ChangeNotifier {
   TextStyle _alphabetUnSelectedTextStyle =
       const TextStyle(fontSize: 12, fontWeight: FontWeight.normal);
   TextStyle get alphabetUnSelectedTextStyle => _alphabetUnSelectedTextStyle.copyWith(
-      fontSize: 12,
-      fontWeight: FontWeight.normal,
       color: _alphabetUnSelectedTextStyle.color ??
           (_settings.isDarkMode == true ? Colors.white : Colors.black));
   set alphabetUnSelectedTextStyle(TextStyle value) {

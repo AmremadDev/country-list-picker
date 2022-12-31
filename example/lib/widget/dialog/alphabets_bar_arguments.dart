@@ -28,6 +28,7 @@ class AlphabetsBarArguments extends StatelessWidget {
             // unselected
             CustomListTile<Switch, bool>(
               title: "Unselected Font Bold",
+              enabled: dialog.alphabetBar,
               value: dialog.alphabetUnSelectedTextStyle.fontWeight == FontWeight.bold,
               onChanged: (bool value) => dialog.alphabetUnSelectedTextStyle = dialog
                   .alphabetUnSelectedTextStyle
@@ -35,6 +36,7 @@ class AlphabetsBarArguments extends StatelessWidget {
             ),
             CustomListTile<Slider, double>(
               title: "Unselected Font Size",
+              enabled: dialog.alphabetBar,
               min: 12,
               max: 30,
               divisions: 18,
@@ -46,6 +48,7 @@ class AlphabetsBarArguments extends StatelessWidget {
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Unselected Font Color",
+              enabled: dialog.alphabetBar,
               value: dialog.alphabetUnSelectedTextStyle.color!,
               onChanged: (Color color) => dialog.alphabetUnSelectedTextStyle =
                   dialog.alphabetUnSelectedTextStyle.copyWith(color: color),
@@ -60,6 +63,7 @@ class AlphabetsBarArguments extends StatelessWidget {
             ),
             CustomListTile<Switch, bool>(
               title: "Selected Font Bold",
+              enabled: dialog.alphabetBar,
               value: dialog.alphabetSelectedTextStyle.fontWeight == FontWeight.bold,
               onChanged: (bool value) => dialog.alphabetSelectedTextStyle = dialog
                   .alphabetSelectedTextStyle
@@ -67,6 +71,7 @@ class AlphabetsBarArguments extends StatelessWidget {
             ),
             CustomListTile<Slider, double>(
               title: "Selected Font Size",
+              enabled: dialog.alphabetBar,
               min: 12,
               max: 30,
               divisions: 18,
@@ -78,6 +83,7 @@ class AlphabetsBarArguments extends StatelessWidget {
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Selected Font Color",
+              enabled: dialog.alphabetBar,
               value: dialog.alphabetSelectedTextStyle.color!,
               onChanged: (Color color) => dialog.alphabetSelectedTextStyle =
                   dialog.alphabetSelectedTextStyle.copyWith(color: color),

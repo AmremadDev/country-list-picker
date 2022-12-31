@@ -1,8 +1,8 @@
-import 'package:country_list_picker/provider/picker_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../model/country.dart';
-import '../themes/country_list_dialog_theme.dart';
+import '../theme/country_list_dialog_theme.dart';
+import '../provider/picker_provider.dart';
 
 class SearchTile extends StatelessWidget {
   const SearchTile({
