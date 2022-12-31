@@ -168,8 +168,7 @@ class DialogProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  TextStyle _alphabetSelectedTextStyle =
-      const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: lightprimarySwatch);
+  TextStyle _alphabetSelectedTextStyle = const TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
   TextStyle get alphabetSelectedTextStyle => _alphabetSelectedTextStyle.copyWith(
       color: _alphabetSelectedTextStyle.color ??
           (_settings.isDarkMode == true ? darkprimarySwatch : lightprimarySwatch));

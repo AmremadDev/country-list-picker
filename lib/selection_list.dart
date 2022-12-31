@@ -1,12 +1,12 @@
+import 'package:country_list_picker/provider/picker_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../widget/lastpick_tile.dart';
 import '../widget/alphabet_scroll.dart';
 import '../themes/country_list_dialog_theme.dart';
-import '../contollers/country_list_picker_controller.dart';
 import '../widget/country_list_tile.dart';
-import '../models/country.dart';
+import 'model/country.dart';
 import '../widget/current_location_tile.dart';
 import '../widget/search_tile.dart';
 
@@ -43,7 +43,7 @@ class SelectionList extends StatelessWidget {
     Widget scaffold = Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
         floatingActionButton:
-            (dialogTheme.isShowFloatButton && context.watch<CLPProvider>().floatbutton)
+            (dialogTheme.isShowFloatButton && context.watch<SettingsProvider>().isShowFloatButton)
                 ? FloatingActionButton(
                     backgroundColor: Theme.of(context).colorScheme.primary,
                     elevation: 0,
@@ -76,17 +76,17 @@ class SelectionList extends StatelessWidget {
                             : Container(height: 10, color: dialogTheme.titlesBackground)
                       ]),
                     ),
-                    Selector<CLPProvider, List<Country>>(
-                      selector: (context, model) => model.countries,
-                      builder: (context, value, child) => SliverList(
+                    Selector<SettingsProvider, List<Country>>(
+                      selector: (context, settings) => settings.countries,
+                      builder: (context, countries, child) => SliverList(
                         delegate: SliverChildBuilderDelegate((context, index) {
                           return dialogBuilder != null
-                              ? dialogBuilder!(context, value.elementAt(index))
+                              ? dialogBuilder!(context, countries.elementAt(index))
                               : CountryListTile(
-                                  country: value.elementAt(index),
+                                  country: countries.elementAt(index),
                                   dialogTheme: dialogTheme,
                                 );
-                        }, childCount: value.length),
+                        }, childCount: countries.length),
                       ),
                     ),
                   ],
@@ -124,22 +124,22 @@ class SelectionList extends StatelessWidget {
     }
 
     _controllerScroll.addListener(() {
-      CLPProvider controller = context.read<CLPProvider>();
-      controller.changeIsShowFloatButton(_controllerScroll.position.pixels != 0);
+      SettingsProvider settings = context.read<SettingsProvider>();
+      settings.isShowFloatButton = _controllerScroll.position.pixels != 0;
 
       int scrollPosition = ((_controllerScroll.position.pixels) / dialogTheme.tileHeight).round();
 
       if (scrollPosition < _boxes) {
-        controller.changeSelectedPosition(-1);
-      } else if (scrollPosition >= _boxes && scrollPosition <= controller.countries.length) {
-        int newPos = controller.countries
+        settings.selectedPositon = -1;
+      } else if (scrollPosition >= _boxes && scrollPosition <= settings.countries.length) {
+        int newPos = settings.countries
                 .elementAt(scrollPosition - _boxes)
                 .englishName
                 .common[0]
                 .toUpperCase()
                 .codeUnitAt(0) -
             'A'.codeUnitAt(0);
-        if (newPos != controller.posSelected) controller.changeSelectedPosition(newPos);
+        if (newPos != settings.selectedPositon) settings.selectedPositon = newPos;
       }
     });
   }

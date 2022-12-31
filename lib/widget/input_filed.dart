@@ -56,15 +56,9 @@ class InputField extends StatelessWidget {
         onEditingComplete: onEditingComplete,
         onFieldSubmitted: onFieldSubmitted,
         onTap: onTap,
-        // (String? value) {
-        //   // action UnmaskText
-        //   MaskTextInputFormatter(
-        //       mask: "### #### ###4",
-        //       initialText: value,
-        //       filter: {"#": RegExp(r'[0-9]')}).getUnmaskedText();
-        // },
-        keyboardType: TextInputType.phone,
 
+        keyboardType: TextInputType.phone,
+        textDirection: TextDirection.ltr,
         style: inputTheme.style.copyWith(
             color: inputTheme.style.color ?? Theme.of(context).inputDecorationTheme.focusColor,
             fontSize: inputTheme.style.fontSize ?? 16),
@@ -72,7 +66,7 @@ class InputField extends StatelessWidget {
         inputFormatters: [
           inputTheme.mask ??
               MaskTextInputFormatter(
-                  type: MaskAutoCompletionType.eager,
+                  // type: MaskAutoCompletionType.eager,
                   mask: "### #### ###",
                   filter: {"#": RegExp(r'[0-9]')})
         ],

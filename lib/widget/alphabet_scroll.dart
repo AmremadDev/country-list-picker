@@ -1,7 +1,7 @@
+import 'package:country_list_picker/provider/picker_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/country.dart';
-import '../contollers/country_list_picker_controller.dart';
+import '../model/country.dart';
 import '../themes/country_list_dialog_theme.dart';
 
 // note that need to active GestureDetector ,  must study Drag events
@@ -24,8 +24,8 @@ class AlphabetScroll extends StatelessWidget {
   String? _oldtext;
   @override
   Widget build(BuildContext context) {
-    return Consumer<CLPProvider>(
-      builder: (context, value, child) => Align(
+    return Consumer<SettingsProvider>(
+      builder: (context, settings, child) => Align(
         alignment: Alignment.centerRight,
         child: Container(
           height: MediaQuery.of(context).size.height * 0.8,
@@ -50,7 +50,7 @@ class AlphabetScroll extends StatelessWidget {
                                   : scrollController
                                       .jumpTo(scrollController.position.maxScrollExtent);
                               _oldtext = alphabet![index];
-                              value.changeSelectedPosition(index);
+                              settings.selectedPositon = index;
                             }
                           },
                           child: Container(
@@ -58,7 +58,7 @@ class AlphabetScroll extends StatelessWidget {
                             height: dialogTheme.tileHeight,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: index == value.posSelected
+                              color: index == settings.selectedPositon
                                   ? dialogTheme.alphabetsBarTheme.selectedBackgroundColor
                                   : dialogTheme.alphabetsBarTheme.backgroundColor,
                               shape: BoxShape.circle,
@@ -66,7 +66,7 @@ class AlphabetScroll extends StatelessWidget {
                             child: Text(
                               alphabet![index],
                               textAlign: TextAlign.center,
-                              style: (index == value.posSelected)
+                              style: (index == settings.selectedPositon)
                                   ? dialogTheme.alphabetsBarTheme.selectedTextStyle.copyWith(
                                       fontSize: dialogTheme
                                               .alphabetsBarTheme.selectedTextStyle.fontSize ??

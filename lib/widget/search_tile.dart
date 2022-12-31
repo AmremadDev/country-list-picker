@@ -1,7 +1,7 @@
+import 'package:country_list_picker/provider/picker_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/country.dart';
-import '../contollers/country_list_picker_controller.dart';
+import '../model/country.dart';
 import '../themes/country_list_dialog_theme.dart';
 
 class SearchTile extends StatelessWidget {
@@ -44,10 +44,10 @@ class SearchTile extends StatelessWidget {
               hintStyle: dialogTheme.searchTileTheme.hintTextStyle),
           onChanged: ((value) {
             String s = value.toUpperCase();
-            context.read<CLPProvider>().changeCountries(elements
+            context.read<SettingsProvider>().countries = elements
                 .where((e) =>
                     e.callingCode.startsWith(s) || e.englishName.common.toUpperCase().startsWith(s))
-                .toList());
+                .toList();
           }),
         ),
       ),

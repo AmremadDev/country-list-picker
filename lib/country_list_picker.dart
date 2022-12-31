@@ -2,22 +2,22 @@ library country_list_picker;
 
 // imports
 
+import 'package:country_list_picker/provider/picker_provider.dart';
 import 'package:country_list_picker/themes/input_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../selection_list.dart';
-import '../models/country.dart';
-import '../contollers/country_list_picker_controller.dart';
+import 'model/country.dart';
 import '../themes/country_list_dialog_theme.dart';
-import '../models/countries.dart';
+import 'model/countries.dart';
 import '../widget/input_filed.dart';
 
 // exports
 export '../themes/country_list_dialog_theme.dart';
 export '../themes/input_theme.dart';
-export '../models/country.dart';
-export '../models/countries.dart';
+export 'model/country.dart';
+export 'model/countries.dart';
 export '../extensions.dart';
 
 /// Shows a bottom sheet containing a list of countries to select one.
@@ -56,6 +56,7 @@ class CountryListPicker extends StatelessWidget {
   const CountryListPicker(
       {super.key,
       this.initialCountry = Countries.Egypt,
+      this.localCountry,
       this.isShowCountryTitle = true,
       this.isShowFlag = true,
       this.flagSize = const Size(40.0, 40.0),
@@ -80,8 +81,13 @@ class CountryListPicker extends StatelessWidget {
       : assert(isShowFlag == true || isShowCode == true,
             "Both isShowFlag and isShowCode can't be false");
 
-  ///Use with the [Countries] Enumration Type to show specific contry. countries are identified by their name as listed below, e.g. [Countries.Egypt].
+  ///Use with the [Countries] Enumration Type to show specific contry.
+  ///countries are identified by their name as listed below, e.g. [Countries.Egypt].
   final Countries initialCountry;
+
+  ///Use with the [Countries] Enumration Type to show specific contry.
+  ///countries are identified by their name as listed below, e.g. [Countries.Egypt].
+  final Countries? localCountry;
 
   /// If true country flag will be appear.
   /// Both [isShowFlag] and [isShowCode] can't be false
@@ -154,8 +160,8 @@ class CountryListPicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<CLPProvider>(
-      create: (context) => CLPProvider(initialCountry: initialCountry),
+    return ChangeNotifierProvider<SettingsProvider>(
+      create: (context) => SettingsProvider(),
       builder: (context, child) {
         return Container(
           margin: margin,
@@ -195,24 +201,12 @@ class CountryListPicker extends StatelessWidget {
                           onFieldSubmitted: onFieldSubmitted,
                           onSaved: onSaved,
                           onTap: onTap,
-                          // onChanged: ,
-                          // autovalidateMode: AutovalidateMode.always,
-
-                          // validator: (value) {
-                          //   if (value == "")
-                          //   return "Error";
-                          //   if (value!.length <
-                          //       context
-                          //           .read<CountryListPickerController>()
-                          //           .selectedItem
-                          //           .numberlength) return null;
-                          // },
                         ),
                     ]),
               ),
               if (isShowCountryTitle == true)
-                Selector<CLPProvider, Country>(
-                    selector: (context, model) => model.selectedItem,
+                Selector<SettingsProvider, Country>(
+                    selector: (context, settings) => settings.selectedCountry,
                     builder: (context, value, child) => Text(
                           value.englishName.common,
                           style: countryNameTextStyle.copyWith(
@@ -229,16 +223,16 @@ class CountryListPicker extends StatelessWidget {
   }
 
   Future<void> _onChangeEvent(BuildContext context) async {
-    CLPProvider controller = context.read<CLPProvider>();
+    SettingsProvider settings = context.read<SettingsProvider>();
     final Country? result = await Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) => ChangeNotifierProvider<CLPProvider>(
-                  create: (context) => CLPProvider(initialCountry: Countries.Egypt),
+            builder: (context) => ChangeNotifierProvider<SettingsProvider>(
+                  create: (context) => SettingsProvider(),
                   builder: (context, child) {
                     return SelectionList(
-                      controller.countries,
-                      initialCountry: controller.selectedItem,
+                      settings.countries,
+                      initialCountry: settings.selectedCountry,
                       appBar: dialogTheme.appBar ??
                           AppBar(
                               backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
@@ -247,21 +241,21 @@ class CountryListPicker extends StatelessWidget {
                     );
                   },
                 )));
-    controller.changeselectedItem(result ?? controller.selectedItem);
-    if (onCountryChanged != null) onCountryChanged!(controller.selectedItem);
+    settings.selectedCountry = result ?? settings.selectedCountry;
+    if (onCountryChanged != null) onCountryChanged!(settings.selectedCountry);
   }
 
-  Selector<CLPProvider, Country> _buildMainPart() {
-    return Selector<CLPProvider, Country>(
-        selector: (context, model) => model.selectedItem,
-        builder: (context, value, child) => Row(
+  Selector<SettingsProvider, Country> _buildMainPart() {
+    return Selector<SettingsProvider, Country>(
+        selector: (context, settings) => settings.selectedCountry,
+        builder: (context, country, child) => Row(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   //flage
                   if (isShowFlag == true)
                     Flexible(
-                        child: Image.asset("assets/flags/${value.alpha2.toLowerCase()}.png",
+                        child: Image.asset("assets/flags/${country.alpha2.toLowerCase()}.png",
                             package: "country_list_picker",
                             fit: BoxFit.fill,
                             height: flagSize.height,
@@ -270,12 +264,15 @@ class CountryListPicker extends StatelessWidget {
                   if (isShowCode == true)
                     Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 2.5),
-                        child: Text(value.callingCode.toString(),
-                            style: dialCodeTextStyle.copyWith(
-                                color: dialCodeTextStyle.color ??
-                                    Theme.of(context).textTheme.titleLarge?.color,
-                                fontSize: dialCodeTextStyle.fontSize ?? 16,
-                                fontWeight: dialCodeTextStyle.fontWeight ?? FontWeight.bold))),
+                        child: Directionality(
+                          textDirection: TextDirection.ltr,
+                          child: Text(country.callingCode.toString(),
+                              style: dialCodeTextStyle.copyWith(
+                                  color: dialCodeTextStyle.color ??
+                                      Theme.of(context).textTheme.titleLarge?.color,
+                                  fontSize: dialCodeTextStyle.fontSize ?? 16,
+                                  fontWeight: dialCodeTextStyle.fontWeight ?? FontWeight.bold)),
+                        )),
 
                   //down icon
                   if (isDownIcon == true)

@@ -68,8 +68,8 @@ Map<String, Map<String, String>> transaltionList = {
   },
   "ar": {
     "Country List Picker Demo": "قائمة إختيار الدول",
-    "Picker": "أداة الإدخال",
-    "Input": "اداة الإدخال",
+    "Picker": "أداة الإختيار",
+    "Input": "اداى الإدخال",
     "Dialog": "مربع الإختيار",
     "About": "حول",
     "Flag": "العلم",

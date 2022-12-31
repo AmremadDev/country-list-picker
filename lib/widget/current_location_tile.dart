@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/country.dart';
+import '../model/country.dart';
 import '../themes/country_list_dialog_theme.dart';
 
 class CurrentLocationTile extends StatelessWidget {
