@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/input_provider.dart';
 import '../../widget/custom_list_tile.dart';
-import '../color_picker.dart';
+import '../../widget/color_picker.dart';
 
 class HintArguments extends StatelessWidget {
   const HintArguments({super.key});
