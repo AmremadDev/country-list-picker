@@ -47,7 +47,7 @@ export '../widget/about/about_screen.dart';
 
 const double titlesFontSize = 18;
 const Color lightprimarySwatch = Colors.purple;
-const Color darkprimarySwatch = Colors.green;
+const Color darkprimarySwatch = Colors.red;
 
 List<Screen> screens = [
   Screen(
@@ -103,28 +103,20 @@ List<Argument> dialogArguments = [
 
 List<Onboarding> listOnboarding = [
   Onboarding(
-      title: "Easy",
+      title: "Easy and Fast",
       image: "assets/onborading/onborading-1.png",
-      body:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
-  Onboarding(
-      title: "Fast",
-      image: "assets/onborading/onborading-2.png",
-      body:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+      body: "Easy to use, minimum code and least effort"),
   Onboarding(
       title: "Flexible",
       image: "assets/onborading/onborading-3.png",
-      body:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+      body: "Customize the Country List Picker Settings"),
   Onboarding(
       title: "Open Source",
       image: "assets/onborading/onborading-4.png",
       body:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+          "Open source  to developers can modify and share because its design is publicly accessible"),
   Onboarding(
-      title: "Documentation",
+      title: "Tested and Documentation",
       image: "assets/onborading/onborading-4.png",
-      body:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+      body: "A guide to reference and documentation"),
 ];

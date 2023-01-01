@@ -1,11 +1,13 @@
-import 'package:country_list_picker_example/controller/onboarding_provider.dart';
-import 'package:country_list_picker_example/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../controller/settings_provider.dart';
 import '../controller/dialog_provider.dart';
 import '../controller/input_provider.dart';
 import '../controller/picker_provider.dart';
+
+import '../onboarding_page.dart';
+
 import '../app_data.dart';
 
 void main() {
@@ -68,7 +70,7 @@ class CountryListPickerExample extends StatelessWidget {
                 selectedItemColor: lightprimarySwatch,
               ),
             ),
-            home: const HomePage());
+            home: const OnBoardingPage());
       },
     );
   }

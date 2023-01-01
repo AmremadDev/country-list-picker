@@ -68,6 +68,18 @@ Map<String, Map<String, String>> transaltionList = {
     "Obscure Text": "Obscure Text",
     "Obscuring Character": "Obscuring Character",
     "Type": "Type",
+    "SKIP": "SKIP",
+    "NEXT": "NEXT",
+    "FINISH": "FINISH",
+    "Easy and Fast": "Easy and Fast",
+    "Easy to use, minimum code and least effort": "Easy to use, minimum code and least effort",
+    "Flexible": "Flexible",
+    "Customize the Country List Picker Settings": "Customize the Country List Picker Settings",
+    "Open Source": "Open Source",
+    "Open source  to developers can modify and share because its design is publicly accessible":
+        "Open source  to developers can modify and share because its design is publicly accessible",
+    "Tested and Documentation": "Tested and Documentation",
+    "A guide to reference and documentation": "A guide to reference and documentation"
   },
   "ar": {
     "Country List Picker Demo": "قائمة إختيار الدول",
@@ -119,5 +131,17 @@ Map<String, Map<String, String>> transaltionList = {
     "Obscure Text": "نص غامض",
     "Obscuring Character": "الحرف الغامض",
     "Type": "النوع",
+    "SKIP": "تجاوز",
+    "NEXT": "التالي",
+    "FINISH": "إنهاء",
+    "Easy and Fast": "سهولة وسرعة",
+    "Easy to use, minimum code and least effort": "سهل الاستخدام ، وأقل كود وأقل جهد",
+    "Flexible": "المرونة",
+    "Customize the Country List Picker Settings": "تخصيص إعدادات قائمة إختيار الدول",
+    "Open Source": "مصدر مفتوح",
+    "Open source  to developers can modify and share because its design is publicly accessible":
+        "يمكن للمطورين تعديل المصدر المفتوح ومشاركته لأن تصميمه متاح للجميع",
+    "Tested and Documentation": "الإختبار والتوثيق",
+    "A guide to reference and documentation": "دليل مرجعي وتوثيق"
   }
 };
