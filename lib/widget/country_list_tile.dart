@@ -36,8 +36,7 @@ class CountryListTile extends StatelessWidget {
             ),
             child: (dialogTheme.isShowDialCode)
                 ? Text(country.callingCode,
-                    style: dialogTheme.textStyle
-                        .copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
+                    style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
                 : null,
           ),
           onTap: () {

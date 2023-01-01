@@ -3,10 +3,12 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class InputThemeData {
   final EdgeInsets contentPadding;
-  final InputBorder? border;
+  final InputBorder border;
   final String? hintText;
   final TextStyle hintStyle;
   final TextStyle style;
+  final String obscuringCharacter;
+  final bool obscureText;
   // final int? maxLength;
 
   ///
@@ -26,5 +28,7 @@ class InputThemeData {
     // this.maxLength = 15,
 
     this.mask,
+    this.obscuringCharacter = '•',
+    this.obscureText = false,
   });
 }

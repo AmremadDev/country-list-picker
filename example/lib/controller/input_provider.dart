@@ -25,10 +25,25 @@ class InputProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  String _mask = "(###) #### ###";
+  String _mask = "### #### ###";
   String get mask => _mask;
   set mask(String value) {
     _mask = value;
+
+    notifyListeners();
+  }
+
+  bool _isObscureText = true;
+  bool get isObscureText => _isObscureText;
+  set isObscureText(bool value) {
+    _isObscureText = value;
+    notifyListeners();
+  }
+
+  String _obscuringCharacter = "*";
+  String get obscuringCharacter => _obscuringCharacter;
+  set obscuringCharacter(String value) {
+    _obscuringCharacter = value;
 
     notifyListeners();
   }
@@ -51,7 +66,7 @@ class InputProvider extends ChangeNotifier {
   }
 // ****************************************************************************************************
 
-  bool _border = false;
+  bool _border = true;
   bool get border => _border;
   set border(bool value) {
     _border = value;

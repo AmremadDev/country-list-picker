@@ -1,3 +1,4 @@
+import 'package:country_list_picker_example/main.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:country_list_picker/country_list_picker.dart';
@@ -21,17 +22,25 @@ class TopPart extends StatelessWidget {
           isDownIcon: picker.isDownIcon,
           isShowCountryTitle: picker.isShowCountryName,
           isShowTextField: input.isShowTextField,
-          iconDown:
-              Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),
+          iconDown: Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),
           dialCodeTextStyle: picker.dialCodeTextStyle,
-          border: (picker.border == true) ? null : const Border(bottom: BorderSide.none),
+          border: picker.border == Borders.none
+              ? InputBorder.none
+              : picker.border == Borders.outline
+                  ? OutlineInputBorder(borderSide: BorderSide(color: picker.borderColor, width: picker.borderWidth))
+                  : UnderlineInputBorder(borderSide: BorderSide(color: picker.borderColor, width: picker.borderWidth)),
+
           inputTheme: InputThemeData(
+            obscureText: input.isObscureText,
+            obscuringCharacter: input.obscuringCharacter,
             style: input.textStyle,
             hintText: input.ihintString,
             hintStyle: input.hintTextStyle,
-            border: (input.border == true)
-                ? const OutlineInputBorder(borderSide: BorderSide(width: 1))
-                : InputBorder.none,
+
+            // border: (input.border == true)
+            //     ? const OutlineInputBorder(borderSide: BorderSide(width: 1))
+            //     : InputBorder.none,
+
             mask: MaskTextInputFormatter(mask: input.mask, filter: {"#": RegExp(r'[0-9]')}),
           ),
           onCountryChanged: ((value) {}),

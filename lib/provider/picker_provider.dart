@@ -57,4 +57,12 @@ class SettingsProvider extends ChangeNotifier {
     _isShowFloatButton = value;
     notifyListeners();
   }
+
+  bool _inputOnFocus = false;
+  bool get inputOnFocus => _inputOnFocus;
+  set inputOnFocus(bool value) {
+    _inputOnFocus = value;
+    notifyListeners();
+  }
+
 }

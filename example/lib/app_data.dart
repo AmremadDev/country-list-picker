@@ -1,3 +1,4 @@
+import 'package:country_list_picker_example/widget/picker/picker_border_arguments.dart';
 import 'package:flutter/material.dart';
 import '../model/screen.dart';
 
@@ -57,12 +58,7 @@ List<Argument> pickerArguments = [
   Argument(title: "Dial Code", child: const DialCodeArguments()),
   Argument(title: "Down Icon", child: const DownIconArguments()),
   Argument(title: "Country Name", child: const CountryNameArguments()),
-  Argument(
-      title: "Border",
-      child: const SizedBox(
-          height: 200,
-          child: Center(
-              child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25))))),
+  Argument(title: "Border", child: const PickerBorderArguments()),
 ];
 
 List<Argument> inputArguments = [
@@ -72,8 +68,7 @@ List<Argument> inputArguments = [
       title: "Border",
       child: const SizedBox(
           height: 200,
-          child: Center(
-              child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)))))
+          child: Center(child: Text("Border", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)))))
 ];
 
 List<Argument> dialogArguments = [

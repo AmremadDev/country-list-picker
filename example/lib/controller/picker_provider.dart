@@ -1,3 +1,5 @@
+import 'package:country_list_picker_example/app_data.dart';
+import 'package:country_list_picker_example/main.dart';
 import 'package:flutter/material.dart';
 import '../controller/settings_provider.dart';
 
@@ -84,12 +86,35 @@ class PickerProvider extends ChangeNotifier {
 
 // ****************************************************************************************************
 
-  bool _border = true;
-  bool get border => _border;
-  set border(bool value) {
+  // bool _border = true;
+  // bool get border => _border;
+  // set border(bool value) {
+  //   _border = value;
+  //   notifyListeners();
+  // }
+
+
+  Borders _border = Borders.underline;
+  Borders get border => _border;
+  set border(Borders value) {
     _border = value;
     notifyListeners();
   }
 
+  double _borderWidth = 2;
+  double get borderWidth => _borderWidth;
+  set borderWidth(double value) {
+    _borderWidth = value;
+    notifyListeners();
+    
+  }
+
+    Color? _borderColor; // =  const Colors.red;
+  Color get borderColor =>
+      _borderColor ?? (_settings.isDarkMode == true ? darkprimarySwatch : lightprimarySwatch);
+  set borderColor(Color value) {
+    _borderColor = value;
+    notifyListeners();
+  }
 
 }

@@ -25,6 +25,22 @@ class InputArguments extends StatelessWidget {
               onChanged: (value) => input.mask = value,
             ),
             CustomListTile<Switch, bool>(
+              title: "Obscure Text",
+              value: input.isObscureText,
+              onChanged: (bool value) => input.isObscureText = value,
+            ),
+
+              CustomListTile<TextFormField, String>(
+              title: "Obscuring Character",
+              min: 1,
+              max: 1,
+              enabled: input.isObscureText,
+              value: input.obscuringCharacter,
+              onChanged: (value) {
+                if (value.isNotEmpty)  input.obscuringCharacter = value ;
+              },
+            ),
+            CustomListTile<Switch, bool>(
               title: "Font Bold",
               enabled: input.isShowTextField,
               value: input.textStyle.fontWeight == FontWeight.bold,

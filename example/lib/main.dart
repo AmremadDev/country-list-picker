@@ -1,15 +1,21 @@
 import 'package:country_list_picker_example/controller/onboarding_provider.dart';
-import 'package:country_list_picker_example/onboarding_page.dart';
-import 'package:country_list_picker_example/translation.dart';
+import 'package:country_list_picker_example/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../controller/settings_provider.dart';
 import '../controller/dialog_provider.dart';
 import '../controller/input_provider.dart';
 import '../controller/picker_provider.dart';
-import '../bottom_part.dart';
 import '../app_data.dart';
-import '../top_part.dart';
+
+enum Borders {
+  none("None"),
+  underline("Underline Border"),
+  outline("Outline Border");
+
+  const Borders(this.name);
+  final String name;
+}
 
 void main() {
   runApp(MultiProvider(
@@ -22,18 +28,15 @@ void main() {
 
       // Picker Provider
       ChangeNotifierProxyProvider<SettingsProvider, PickerProvider>(
-          create: (context) => PickerProvider(),
-          update: (ctx, settings, picker) => picker!..update(settings)),
+          create: (context) => PickerProvider(), update: (ctx, settings, picker) => picker!..update(settings)),
 
       // Input Provider
       ChangeNotifierProxyProvider<SettingsProvider, InputProvider>(
-          create: (context) => InputProvider(),
-          update: (ctx, settings, input) => input!..update(settings)),
+          create: (context) => InputProvider(), update: (ctx, settings, input) => input!..update(settings)),
 
       // dialog Provider
       ChangeNotifierProxyProvider<SettingsProvider, DialogProvider>(
-          create: (context) => DialogProvider(),
-          update: (ctx, settings, dialog) => dialog!..update(settings)),
+          create: (context) => DialogProvider(), update: (ctx, settings, dialog) => dialog!..update(settings)),
     ],
     child: const CountryListPickerExample(),
   ));
@@ -71,87 +74,8 @@ class CountryListPickerExample extends StatelessWidget {
                 selectedItemColor: lightprimarySwatch,
               ),
             ),
-            home: const OnBoardingPage());
+            home: const HomePage());
       },
-    );
-  }
-
-  Widget HomePage(BuildContext context) {
-    SettingsProvider settings = Provider.of(context);
-    return Directionality(
-      textDirection: settings.textDirection,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text("Country List Picker Demo".tr),
-          actions: [
-            IconButton(
-              onPressed: () {
-                settings.textDirection = (settings.textDirection == TextDirection.ltr)
-                    ? TextDirection.rtl
-                    : TextDirection.ltr;
-              },
-              icon: settings.textDirection == TextDirection.ltr
-                  ? Icon(
-                      Icons.swipe_right,
-                      color: settings.isDarkMode ? darkprimarySwatch : Colors.white,
-                    )
-                  : Icon(
-                      Icons.swipe_left,
-                      color: settings.isDarkMode ? darkprimarySwatch : Colors.white,
-                    ),
-            ),
-            IconButton(
-              onPressed: () => settings.isDarkMode = !settings.isDarkMode,
-              icon: settings.isDarkMode
-                  ? const Icon(
-                      Icons.sunny,
-                      color: darkprimarySwatch,
-                    )
-                  : const Icon(
-                      Icons.dark_mode,
-                      color: Colors.white,
-                    ),
-            ),
-          ],
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          showUnselectedLabels: true,
-          currentIndex: settings.selectedScreen,
-          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-          unselectedLabelStyle: const TextStyle(fontSize: 14),
-          items: screens
-              .map((e) => BottomNavigationBarItem(
-                    icon: Icon(e.inactiveIcon),
-                    label: e.title.tr,
-                    activeIcon: Icon(e.activeIcon),
-                  ))
-              .toList(),
-          onTap: (index) => settings.selectedScreen = index,
-        ),
-        body: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Container(
-              height: 130,
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: const Card(elevation: 2, child: TopPart()),
-            ),
-            Expanded(
-                child: Stack(
-              children: screens
-                  .asMap()
-                  .map((index, screen) => MapEntry(
-                      index,
-                      Offstage(
-                          offstage: settings.selectedScreen != index,
-                          child: BottomPart(screen: screen))))
-                  .values
-                  .toList(),
-            )),
-          ],
-        ),
-      ),
     );
   }
 }

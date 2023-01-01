@@ -22,11 +22,11 @@ class LastPickTileArguments extends StatelessWidget {
               value: dialog.lastPickTileTitle,
               onChanged: (String value) => dialog.lastPickTileTitle = value,
             ),
-            CustomListTile<DropdownButtonFormField, IconData?>(
+            CustomListTile<DropdownButtonFormField, IconData>(
               title: "Icon",
               value: Icons.check,
-              onChanged: (value) {
-                dialog.lastPickTileTitleIcon = value!;
+              onIconChanged: (value) {
+                dialog.lastPickTileTitleIcon = value;
               },
             ),
             const SizedBox(

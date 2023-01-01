@@ -75,7 +75,7 @@ class OnBoardingPage extends StatelessWidget {
                         ElevatedButton(
                             onPressed: () {
                               if (boarding.currentOnboard >= listOnboarding.length - 1) {
-                                Navigator.push(
+                                Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(builder: (context) => const HomePage()),
                                 );
