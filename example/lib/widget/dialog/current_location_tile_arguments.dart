@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/dialog_provider.dart';
-import '../custom_list_tile.dart';
+import '../../widget/custom_list_tile.dart';
 
 class CurrentLocationTileArguments extends StatelessWidget {
   const CurrentLocationTileArguments({super.key});
@@ -17,12 +17,14 @@ class CurrentLocationTileArguments extends StatelessWidget {
               value: dialog.currentLocationTile,
               onChanged: (bool value) => dialog.currentLocationTile = value,
             ),
-                                    CustomListTile<TextFormField, String>(
+            CustomListTile<TextFormField, String>(
               title: "Title String",
               value: dialog.currentLocationTileTitle,
               onChanged: (String value) => dialog.currentLocationTileTitle = value,
             ),
-           const SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
           ],
         );
       },

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../controller/picker_provider.dart';
-import '../custom_list_tile.dart';
-import '../color_picker.dart';
+import '../../widget/custom_list_tile.dart';
+import '../../widget/color_picker.dart';
 
 class DownIconArguments extends StatelessWidget {
   const DownIconArguments({super.key});

@@ -1,7 +1,6 @@
 import 'package:country_list_picker_example/translation.dart';
 import 'package:flutter/material.dart';
 import '../app_data.dart';
-import '../model/screen.dart';
 import '../widget/expansion_tile.dart';
 
 class BottomPart extends StatelessWidget {

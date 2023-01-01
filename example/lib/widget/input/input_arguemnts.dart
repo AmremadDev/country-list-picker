@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/input_provider.dart';
-import '../custom_list_tile.dart';
-import '../color_picker.dart';
+import '../../widget/custom_list_tile.dart';
+import '../../widget/color_picker.dart';
 
 class InputArguments extends StatelessWidget {
   const InputArguments({super.key});
@@ -29,15 +29,14 @@ class InputArguments extends StatelessWidget {
               value: input.isObscureText,
               onChanged: (bool value) => input.isObscureText = value,
             ),
-
-              CustomListTile<TextFormField, String>(
+            CustomListTile<TextFormField, String>(
               title: "Obscuring Character",
               min: 1,
               max: 1,
               enabled: input.isObscureText,
               value: input.obscuringCharacter,
               onChanged: (value) {
-                if (value.isNotEmpty)  input.obscuringCharacter = value ;
+                if (value.isNotEmpty) input.obscuringCharacter = value;
               },
             ),
             CustomListTile<Switch, bool>(

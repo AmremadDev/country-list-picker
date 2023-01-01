@@ -1,7 +1,7 @@
-import 'package:country_list_picker_example/main.dart';
-import 'package:country_list_picker_example/translation.dart';
-import 'package:country_list_picker_example/widget/color_picker.dart';
 import 'package:flutter/material.dart';
+import '../model/borders.dart';
+import '../translation.dart';
+import '../widget/color_picker.dart';
 
 class CustomListTile<Object, T> extends StatelessWidget {
   final bool enabled;
@@ -42,7 +42,6 @@ class CustomListTile<Object, T> extends StatelessWidget {
       Icons.keyboard_double_arrow_left_rounded,
       Icons.subdirectory_arrow_left_outlined
     ],
-
   });
   @override
   Widget build(BuildContext context) {
@@ -67,8 +66,9 @@ class CustomListTile<Object, T> extends StatelessWidget {
     return ListTile(
       enabled: enabled,
       title: Text(title.tr,
-          style:
-              TextStyle(color: enabled == true ? null : Theme.of(context).disabledColor, fontWeight: FontWeight.bold)),
+          style: TextStyle(
+              color: enabled == true ? null : Theme.of(context).disabledColor,
+              fontWeight: FontWeight.bold)),
       subtitle: ColorPicker(
         enabled: enabled,
         value: value as Color,
@@ -84,8 +84,10 @@ class CustomListTile<Object, T> extends StatelessWidget {
           enabled: enabled,
           title: Text(title.tr,
               style: TextStyle(
-                  color: enabled == true ? null : Theme.of(context).disabledColor, fontWeight: FontWeight.bold)),
+                  color: enabled == true ? null : Theme.of(context).disabledColor,
+                  fontWeight: FontWeight.bold)),
           subtitle: DropdownButtonFormField<IconData>(
+            decoration: InputDecoration(enabled: enabled),
             value: value as IconData,
             items: iconsList
                 .map<DropdownMenuItem<IconData>>(
@@ -101,15 +103,17 @@ class CustomListTile<Object, T> extends StatelessWidget {
             enabled: enabled,
             title: Text(title.tr,
                 style: TextStyle(
-                    color: enabled == true ? null : Theme.of(context).disabledColor, fontWeight: FontWeight.bold)),
+                    color: enabled == true ? null : Theme.of(context).disabledColor,
+                    fontWeight: FontWeight.bold)),
             subtitle: DropdownButtonFormField<Borders>(
+              decoration: InputDecoration(enabled: enabled),
               value: value as Borders,
               items: Borders.values
                   .map<DropdownMenuItem<Borders>>(
                     (e) => DropdownMenuItem<Borders>(value: e, child: Text(e.name)),
                   )
                   .toList(),
-            onChanged: ((value) => onStringChanged!(value!)),
+              onChanged: enabled == true ? ((value) => onStringChanged!(value!)) : null,
             ));
       default:
         return const SizedBox.shrink();
@@ -120,8 +124,9 @@ class CustomListTile<Object, T> extends StatelessWidget {
     return ListTile(
       enabled: enabled,
       title: Text(title.tr,
-          style:
-              TextStyle(color: enabled == true ? null : Theme.of(context).disabledColor, fontWeight: FontWeight.bold)),
+          style: TextStyle(
+              color: enabled == true ? null : Theme.of(context).disabledColor,
+              fontWeight: FontWeight.bold)),
       subtitle: Slider(
         divisions: divisions,
         label: sliderLabel,
@@ -137,8 +142,9 @@ class CustomListTile<Object, T> extends StatelessWidget {
     return ListTile(
       enabled: enabled,
       title: Text(title.tr,
-          style:
-              TextStyle(color: enabled == true ? null : Theme.of(context).disabledColor, fontWeight: FontWeight.bold)),
+          style: TextStyle(
+              color: enabled == true ? null : Theme.of(context).disabledColor,
+              fontWeight: FontWeight.bold)),
       trailing: Switch(
         value: value as bool,
         onChanged: (enabled) ? onChanged as ValueChanged<bool> : null,
@@ -150,14 +156,16 @@ class CustomListTile<Object, T> extends StatelessWidget {
     return ListTile(
       enabled: enabled,
       title: Text(title.tr,
-          style:
-              TextStyle(color: enabled == true ? null : Theme.of(context).disabledColor, fontWeight: FontWeight.bold)),
+          style: TextStyle(
+              color: enabled == true ? null : Theme.of(context).disabledColor,
+              fontWeight: FontWeight.bold)),
       subtitle: Directionality(
         textDirection: TextDirection.ltr,
         child: TextFormField(
+          decoration: InputDecoration(enabled: enabled),
           maxLength: max.toInt(),
           initialValue: value as String,
-          enabled: enabled,
+          // enabled: enabled,
           onChanged: (enabled) ? onChanged as ValueChanged<String> : null,
         ),
       ),

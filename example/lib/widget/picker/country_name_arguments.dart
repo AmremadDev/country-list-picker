@@ -2,7 +2,7 @@ import 'package:country_list_picker_example/widget/color_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/picker_provider.dart';
-import '../custom_list_tile.dart';
+import '../../widget/custom_list_tile.dart';
 
 class CountryNameArguments extends StatelessWidget {
   const CountryNameArguments({super.key});

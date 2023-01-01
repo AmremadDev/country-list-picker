@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../controller/settings_provider.dart';
+import '../model/borders.dart';
 
 class InputProvider extends ChangeNotifier {
   SettingsProvider _settings = SettingsProvider();
@@ -33,7 +34,7 @@ class InputProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  bool _isObscureText = true;
+  bool _isObscureText = false;
   bool get isObscureText => _isObscureText;
   set isObscureText(bool value) {
     _isObscureText = value;
@@ -57,19 +58,26 @@ class InputProvider extends ChangeNotifier {
   }
 
   TextStyle _hintTextStyle =
-     const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, color:  Colors.grey);
-  TextStyle get hintTextStyle =>_hintTextStyle;
-  
+      const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, color: Colors.grey);
+  TextStyle get hintTextStyle => _hintTextStyle;
+
   set hintTextStyle(TextStyle value) {
     _hintTextStyle = value;
     notifyListeners();
   }
 // ****************************************************************************************************
 
-  bool _border = true;
-  bool get border => _border;
-  set border(bool value) {
+  Borders _border = Borders.none;
+  Borders get border => _border;
+  set border(Borders value) {
     _border = value;
+    notifyListeners();
+  }
+
+  double _borderWidth = 2;
+  double get borderWidth => _borderWidth;
+  set borderWidth(double value) {
+    _borderWidth = value;
     notifyListeners();
   }
   // ****************************************************************************************************

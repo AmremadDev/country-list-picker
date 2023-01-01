@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../model/argument.dart';
-export  '../model/argument.dart';
+
+export '../model/argument.dart';
 
 class Screen {
   final String title;
@@ -9,7 +10,7 @@ class Screen {
   final List<Argument> arguments;
   final Widget? child;
 
-   const Screen({
+  const Screen({
     required this.title,
     required this.activeIcon,
     required this.inactiveIcon,
@@ -17,6 +18,3 @@ class Screen {
     this.arguments = const [],
   });
 }
-
-
-

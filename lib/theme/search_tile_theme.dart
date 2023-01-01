@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class SearchTileThemeData {
   final bool visible;
@@ -9,6 +9,6 @@ class SearchTileThemeData {
     this.visible = true,
     this.title = "Search",
     this.hint = "name/dial code...",
-    this.hintTextStyle =const TextStyle(fontSize: 16, color: Color(0xFF9E9E9E)),
+    this.hintTextStyle = const TextStyle(fontSize: 16, color: Color(0xFF9E9E9E)),
   });
 }

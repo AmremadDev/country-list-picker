@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/picker_provider.dart';
-import '../custom_list_tile.dart';
+import '../../widget/custom_list_tile.dart';
 
 class FlagArguments extends StatelessWidget {
   const FlagArguments({super.key});

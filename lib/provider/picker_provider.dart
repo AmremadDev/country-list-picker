@@ -51,7 +51,7 @@ class SettingsProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  bool _isShowFloatButton = true;
+  bool _isShowFloatButton = false;
   bool get isShowFloatButton => _isShowFloatButton;
   set isShowFloatButton(bool value) {
     _isShowFloatButton = value;
@@ -64,5 +64,4 @@ class SettingsProvider extends ChangeNotifier {
     _inputOnFocus = value;
     notifyListeners();
   }
-
 }

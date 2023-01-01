@@ -65,6 +65,9 @@ Map<String, Map<String, String>> transaltionList = {
     "Selected Font Bold": "Selected Font Bold",
     "Selected Font Size": "Selected Font Size",
     "Selected Font Color": "Selected Font Color",
+    "Obscure Text": "Obscure Text",
+    "Obscuring Character": "Obscuring Character",
+    "Type": "Type",
   },
   "ar": {
     "Country List Picker Demo": "قائمة إختيار الدول",
@@ -113,5 +116,8 @@ Map<String, Map<String, String>> transaltionList = {
     "Selected Font Bold": "خط سميك للحرف المحدد",
     "Selected Font Size": "مقاس الحرف المحدد",
     "Selected Font Color": "لون الخط المحدد",
+    "Obscure Text": "نص غامض",
+    "Obscuring Character": "الحرف الغامض",
+    "Type": "النوع",
   }
 };

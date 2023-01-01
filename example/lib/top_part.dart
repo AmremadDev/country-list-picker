@@ -1,4 +1,3 @@
-import 'package:country_list_picker_example/main.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:country_list_picker/country_list_picker.dart';
@@ -6,6 +5,7 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import '../controller/dialog_provider.dart';
 import '../controller/input_provider.dart';
 import '../controller/picker_provider.dart';
+import '../model/borders.dart';
 
 class TopPart extends StatelessWidget {
   const TopPart({super.key});
@@ -22,13 +22,14 @@ class TopPart extends StatelessWidget {
           isDownIcon: picker.isDownIcon,
           isShowCountryTitle: picker.isShowCountryName,
           isShowTextField: input.isShowTextField,
-          iconDown: Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),
+          iconDown:
+              Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),
           dialCodeTextStyle: picker.dialCodeTextStyle,
           border: picker.border == Borders.none
               ? InputBorder.none
               : picker.border == Borders.outline
-                  ? OutlineInputBorder(borderSide: BorderSide(color: picker.borderColor, width: picker.borderWidth))
-                  : UnderlineInputBorder(borderSide: BorderSide(color: picker.borderColor, width: picker.borderWidth)),
+                  ? OutlineInputBorder(borderSide: BorderSide(width: picker.borderWidth))
+                  : UnderlineInputBorder(borderSide: BorderSide(width: picker.borderWidth)),
 
           inputTheme: InputThemeData(
             obscureText: input.isObscureText,
@@ -36,11 +37,11 @@ class TopPart extends StatelessWidget {
             style: input.textStyle,
             hintText: input.ihintString,
             hintStyle: input.hintTextStyle,
-
-            // border: (input.border == true)
-            //     ? const OutlineInputBorder(borderSide: BorderSide(width: 1))
-            //     : InputBorder.none,
-
+            border: input.border == Borders.none
+                ? InputBorder.none
+                : input.border == Borders.outline
+                    ? OutlineInputBorder(borderSide: BorderSide(width: input.borderWidth))
+                    : UnderlineInputBorder(borderSide: BorderSide(width: input.borderWidth)),
             mask: MaskTextInputFormatter(mask: input.mask, filter: {"#": RegExp(r'[0-9]')}),
           ),
           onCountryChanged: ((value) {}),

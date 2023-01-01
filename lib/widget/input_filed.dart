@@ -28,11 +28,10 @@ class InputField extends StatelessWidget {
   final ValueChanged<String>? onFieldSubmitted;
   final GestureTapCallback? onTap;
   final String? initialValue;
-  
+
   final bool? enabled;
   final bool readOnly;
 
-  
   // final AutovalidateMode? autovalidateMode;
   // final FormFieldValidator<String>? validator;
   final FocusNode? focusNode;
@@ -65,7 +64,8 @@ class InputField extends StatelessWidget {
           fontSize: inputTheme.style.fontSize ?? 16,
         ),
         inputFormatters: [
-          inputTheme.mask ?? MaskTextInputFormatter(mask: "### #### ###", filter: {"#": RegExp(r'[0-9]')})
+          inputTheme.mask ??
+              MaskTextInputFormatter(mask: "### #### ###", filter: {"#": RegExp(r'[0-9]')})
         ],
         decoration: InputDecoration(
           contentPadding: inputTheme.contentPadding,
@@ -73,7 +73,19 @@ class InputField extends StatelessWidget {
           hintStyle: inputTheme.hintStyle.copyWith(
             color: inputTheme.hintStyle.color ?? Theme.of(context).hintColor,
           ),
-          border: inputTheme.border,
+          border: inputTheme.border == InputBorder.none
+              ? InputBorder.none
+              : inputTheme.border.copyWith(
+                  borderSide: BorderSide(
+                  color: Theme.of(context).hintColor,
+                  width: 1,
+                )),
+          focusedBorder: inputTheme.border == InputBorder.none
+              ? InputBorder.none
+              : inputTheme.border.copyWith(
+                  borderSide: BorderSide(
+                      width: inputTheme.border.borderSide.width,
+                      color: Theme.of(context).colorScheme.primary)),
           counterText: "",
         ),
       ),

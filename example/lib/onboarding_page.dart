@@ -1,10 +1,8 @@
-import 'package:country_list_picker_example/controller/onboarding_provider.dart';
-import 'package:country_list_picker_example/home_page.dart';
-import 'package:country_list_picker_example/model/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'app_data.dart';
+import '../controller/onboarding_provider.dart';
+import '../home_page.dart';
+import '../app_data.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({super.key});

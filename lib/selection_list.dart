@@ -1,14 +1,14 @@
-import 'package:country_list_picker/provider/picker_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import '../model/country.dart';
+import '../provider/picker_provider.dart';
 import '../widget/lastpick_tile.dart';
 import '../widget/alphabet_scroll.dart';
-import 'theme/country_list_dialog_theme.dart';
-import '../widget/country_list_tile.dart';
-import '../model/country.dart';
 import '../widget/current_location_tile.dart';
+import '../widget/country_list_tile.dart';
 import '../widget/search_tile.dart';
+import '../theme/country_list_dialog_theme.dart';
 
 // ignore: must_be_immutable
 class SelectionList extends StatelessWidget {

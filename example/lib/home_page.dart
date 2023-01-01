@@ -2,10 +2,10 @@ import 'package:country_list_picker_example/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'app_data.dart';
-import 'bottom_part.dart';
-import 'controller/settings_provider.dart';
-import 'top_part.dart';
+import '../app_data.dart';
+import '../bottom_part.dart';
+import '../controller/settings_provider.dart';
+import '../top_part.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

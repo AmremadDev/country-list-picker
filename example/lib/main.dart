@@ -8,15 +8,6 @@ import '../controller/input_provider.dart';
 import '../controller/picker_provider.dart';
 import '../app_data.dart';
 
-enum Borders {
-  none("None"),
-  underline("Underline Border"),
-  outline("Outline Border");
-
-  const Borders(this.name);
-  final String name;
-}
-
 void main() {
   runApp(MultiProvider(
     providers: [
@@ -28,15 +19,18 @@ void main() {
 
       // Picker Provider
       ChangeNotifierProxyProvider<SettingsProvider, PickerProvider>(
-          create: (context) => PickerProvider(), update: (ctx, settings, picker) => picker!..update(settings)),
+          create: (context) => PickerProvider(),
+          update: (ctx, settings, picker) => picker!..update(settings)),
 
       // Input Provider
       ChangeNotifierProxyProvider<SettingsProvider, InputProvider>(
-          create: (context) => InputProvider(), update: (ctx, settings, input) => input!..update(settings)),
+          create: (context) => InputProvider(),
+          update: (ctx, settings, input) => input!..update(settings)),
 
       // dialog Provider
       ChangeNotifierProxyProvider<SettingsProvider, DialogProvider>(
-          create: (context) => DialogProvider(), update: (ctx, settings, dialog) => dialog!..update(settings)),
+          create: (context) => DialogProvider(),
+          update: (ctx, settings, dialog) => dialog!..update(settings)),
     ],
     child: const CountryListPickerExample(),
   ));
@@ -49,7 +43,7 @@ class CountryListPickerExample extends StatelessWidget {
     return Consumer<SettingsProvider>(
       builder: (context, settings, child) {
         return MaterialApp(
-            title: 'Country List Picker Demo',
+            title: 'Country List Picker',
             debugShowCheckedModeBanner: false,
             themeMode: settings.isDarkMode ? ThemeMode.dark : ThemeMode.light,
             darkTheme: ThemeData(

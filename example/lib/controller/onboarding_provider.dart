@@ -1,5 +1,5 @@
-import 'package:country_list_picker_example/app_data.dart';
 import 'package:flutter/material.dart';
+import '../app_data.dart';
 
 class OnboardingProvider extends ChangeNotifier {
   late PageController pageController;
