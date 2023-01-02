@@ -6,15 +6,15 @@ extension TranslationExtension on String {
   String get tr {
     String? trans;
     if (textDirectionShared == TextDirection.rtl) {
-      trans = transaltionList["ar"]?.entries.firstWhereOrNull((element) => element.key == this)?.value;
+      trans =
+          transaltionList["ar"]?.entries.firstWhereOrNull((element) => element.key == this)?.value;
     } else {
-      trans = transaltionList["en"]?.entries.firstWhereOrNull((element) => element.key == this)?.value;
+      trans =
+          transaltionList["en"]?.entries.firstWhereOrNull((element) => element.key == this)?.value;
     }
 
     return trans ?? this;
   }
-
-  
 }
 
 Map<String, Map<String, String>> transaltionList = {
@@ -82,12 +82,21 @@ Map<String, Map<String, String>> transaltionList = {
     "A guide to reference and documentation": "A guide to reference and documentation",
     "Enter your phone number": "Enter your phone number",
     "Select your country": "Select your country",
-
-    "Search by name/dial code":"Search by name/dial code",
-    "Current Location":"Current Location",
-    "Last Pick":"Last Pick",
-     "Search":"Search",
-     "Local Country":"Local Country"
+    "Search by name/dial code": "Search by name/dial code",
+    "Current Location": "Current Location",
+    "Last Pick": "Last Pick",
+    "Search": "Search",
+    "Local Country": "Local Country",
+    "Country List Picker": "Country List Picker",
+    "Version": "Version",
+    "Last Update": "Last Update",
+    "January 2023": "January 2023",
+    "Description": "",
+    "Flutter Widget": "Flutter Widget",
+    "Desinged by": "Desinged by",
+    "Amr Emad Eldin Lotfy": "Amr Emad Eldin Lotfy",
+    "Email": "Email",
+    "Phone": "Phone",
   },
   "ar": {
     "Country List Picker Demo": "قائمة إختيار الدول",
@@ -153,11 +162,20 @@ Map<String, Map<String, String>> transaltionList = {
     "A guide to reference and documentation": "دليل مرجعي وتوثيق",
     "Enter your phone number": "أدخل رقم هاتفك",
     "Select your country": "اختر دولتك",
-    
-    "Search by name/dial code":"بحث بالأسم/كود الإتصال",
-    "Current Location":"المكان الحالي",
-    "Last Pick":"أخر إختيار",
-      "Search":"مربع البحث",
-      "Local Country" : "الدولة الحالية"
+    "Search by name/dial code": "بحث بالأسم/كود الإتصال",
+    "Current Location": "المكان الحالي",
+    "Last Pick": "أخر إختيار",
+    "Search": "مربع البحث",
+    "Local Country": "الدولة الحالية",
+    "Country List Picker": "أداة إختيار الدول",
+    "Version": "رقم الإصدار",
+    "Last Update": "تاريخ أخر تحديث",
+    "January 2023": "يناير 2023",
+    "Description": "الوصف",
+    "Flutter Widget": "أداة فلاتر",
+    "Desinged by": "تم التصميم بواسطة",
+    "Amr Emad Eldin Lotfy": "عمرو عماد الدين لطفي",
+    "Email": "البريد الإلكتروني",
+    "Phone": "رقم الهاتف",
   }
 };

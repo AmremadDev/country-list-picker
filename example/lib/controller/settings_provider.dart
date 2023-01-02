@@ -14,10 +14,13 @@ class SettingsProvider extends ChangeNotifier {
   bool _isDarkMode = false;
   bool get isDarkMode {
     _isDarkMode
-        ? SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.transparent))
-        : SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(statusBarColor: Colors.transparent));
+        ? SystemChrome.setSystemUIOverlayStyle(
+            SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.transparent))
+        : SystemChrome.setSystemUIOverlayStyle(
+            SystemUiOverlayStyle.dark.copyWith(statusBarColor: Colors.transparent));
     return _isDarkMode;
   }
+
   set isDarkMode(bool value) {
     _isDarkMode = value;
 

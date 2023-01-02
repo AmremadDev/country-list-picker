@@ -27,7 +27,10 @@ class AlphabetScroll extends StatelessWidget {
     return Selector<SettingsProvider, int>(
         selector: (context, settings) => settings.selectedPosition,
         builder: (context, position, child) => Align(
-              alignment: Alignment.centerRight,
+              alignment: (Directionality.of(context) == TextDirection.ltr)
+                  ? Alignment.centerRight
+                  : Alignment.centerLeft,
+
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.8,
                 color: Colors.transparent,

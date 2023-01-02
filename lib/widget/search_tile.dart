@@ -21,8 +21,10 @@ class SearchTile extends StatelessWidget {
     return Column(children: [
       Container(
           color: dialogTheme.titlesBackground,
-          alignment: Alignment.centerLeft,
-          padding: const EdgeInsets.only(left: 15.0),
+          alignment: (Directionality.of(context) == TextDirection.ltr)
+              ? Alignment.centerLeft
+              : Alignment.centerRight,
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
           width: double.infinity,
           height: dialogTheme.tileHeight,
           child: Text(
