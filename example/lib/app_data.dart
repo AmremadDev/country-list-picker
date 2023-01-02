@@ -46,8 +46,7 @@ export '../widget/dialog/last_pick_tile_arguments.dart';
 export '../widget/about/about_screen.dart';
 
 const double titlesFontSize = 18;
-const Color lightprimarySwatch = Colors.purple;
-const Color darkprimarySwatch = Colors.red;
+
 
 List<Screen> screens = [
   Screen(

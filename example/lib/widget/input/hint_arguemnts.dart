@@ -1,8 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/input_provider.dart';
 import '../../widget/custom_list_tile.dart';
 import '../../widget/color_picker.dart';
+import '../../translation.dart';
 
 class HintArguments extends StatelessWidget {
   const HintArguments({super.key});
@@ -16,8 +18,8 @@ class HintArguments extends StatelessWidget {
             CustomListTile<TextFormField, String>(
                 title: "Input Hint",
                 enabled: input.isShowTextField,
-                value: input.ihintString,
-                onChanged: (value) => input.ihintString = value),
+                value: input.hintString.tr,
+                onChanged: (value) => input.hintString = value),
             CustomListTile<Switch, bool>(
               title: "Font Bold",
               enabled: input.isShowTextField,
@@ -31,7 +33,7 @@ class HintArguments extends StatelessWidget {
               min: 12,
               max: 30,
               divisions: 18,
-              value: input.hintTextStyle.fontSize!,
+              value: input.hintTextStyle.fontSize != null ? input.hintTextStyle.fontSize! : input.textStyle.fontSize!,
               sliderLabel: input.hintTextStyle.fontSize?.toInt().toString(),
               onChanged: (value) => input.hintTextStyle =
                   input.hintTextStyle.copyWith(fontSize: value, color: input.hintTextStyle.color),

@@ -6,15 +6,15 @@ extension TranslationExtension on String {
   String get tr {
     String? trans;
     if (textDirectionShared == TextDirection.rtl) {
-      trans =
-          transaltionList["ar"]?.entries.firstWhereOrNull((element) => element.key == this)?.value;
+      trans = transaltionList["ar"]?.entries.firstWhereOrNull((element) => element.key == this)?.value;
     } else {
-      trans =
-          transaltionList["en"]?.entries.firstWhereOrNull((element) => element.key == this)?.value;
+      trans = transaltionList["en"]?.entries.firstWhereOrNull((element) => element.key == this)?.value;
     }
 
     return trans ?? this;
   }
+
+  
 }
 
 Map<String, Map<String, String>> transaltionList = {
@@ -79,7 +79,15 @@ Map<String, Map<String, String>> transaltionList = {
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Open source  to developers can modify and share because its design is publicly accessible",
     "Tested and Documentation": "Tested and Documentation",
-    "A guide to reference and documentation": "A guide to reference and documentation"
+    "A guide to reference and documentation": "A guide to reference and documentation",
+    "Enter your phone number": "Enter your phone number",
+    "Select your country": "Select your country",
+
+    "Search by name/dial code":"Search by name/dial code",
+    "Current Location":"Current Location",
+    "Last Pick":"Last Pick",
+     "Search":"Search",
+     "Local Country":"Local Country"
   },
   "ar": {
     "Country List Picker Demo": "قائمة إختيار الدول",
@@ -113,9 +121,9 @@ Map<String, Map<String, String>> transaltionList = {
     "Titles Background Color": "اللون الخلفي للعنوانين",
     "Title TextStyle": "نمط خط العنوان",
     "TextStyle": "نمط الخط",
-    "Search Tile": "وحدة البحث",
-    "Current Location Tile": "وحدة المكان الحالي",
-    "Last Pick Tile": "وحدة أخر إختيار",
+    "Search Tile": "مربع البحث",
+    "Current Location Tile": "مربع المكان الحالي",
+    "Last Pick Tile": "مربع أخر إختيار",
     "Alphabets Bar": "شريط الحروف الهجائية",
     "Title String": "نص العنوان",
     "Hint String": "نص الملاحظة",
@@ -142,6 +150,14 @@ Map<String, Map<String, String>> transaltionList = {
     "Open source  to developers can modify and share because its design is publicly accessible":
         "يمكن للمطورين تعديل المصدر المفتوح ومشاركته لأن تصميمه متاح للجميع",
     "Tested and Documentation": "الإختبار والتوثيق",
-    "A guide to reference and documentation": "دليل مرجعي وتوثيق"
+    "A guide to reference and documentation": "دليل مرجعي وتوثيق",
+    "Enter your phone number": "أدخل رقم هاتفك",
+    "Select your country": "اختر دولتك",
+    
+    "Search by name/dial code":"بحث بالأسم/كود الإتصال",
+    "Current Location":"المكان الحالي",
+    "Last Pick":"أخر إختيار",
+      "Search":"مربع البحث",
+      "Local Country" : "الدولة الحالية"
   }
 };

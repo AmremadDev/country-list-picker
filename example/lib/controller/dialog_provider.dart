@@ -1,6 +1,7 @@
+import 'package:country_list_picker/country_list_picker.dart';
 import 'package:flutter/material.dart';
 import '../controller/settings_provider.dart';
-import '../app_data.dart';
+
 
 class DialogProvider extends ChangeNotifier {
   SettingsProvider _settings = SettingsProvider();
@@ -17,6 +18,14 @@ class DialogProvider extends ChangeNotifier {
     _appBarTitle = value;
     notifyListeners();
   }
+
+  bool _useSafeArea = false;
+  bool get useSafeArea => _useSafeArea;
+  set useSafeArea(bool value) {
+    _useSafeArea = value;
+    notifyListeners();
+  }
+
 
   bool _countryFlag = true;
   bool get countryFlag => _countryFlag;
@@ -114,6 +123,7 @@ class DialogProvider extends ChangeNotifier {
   bool get currentLocationTile => _currentLocationTile;
   set currentLocationTile(bool value) {
     _currentLocationTile = value;
+  
     notifyListeners();
   }
 
@@ -123,6 +133,14 @@ class DialogProvider extends ChangeNotifier {
     _currentLocationTileTitle = value;
     notifyListeners();
   }
+
+    Countries _localCountry = Countries.Egypt;
+  Countries get localCountry => _localCountry;
+  set localCountry(Countries value) {
+    _localCountry = value;
+    notifyListeners();
+  }
+
 
   // ****************************************************************************************************
   bool _lastPickTile = true;
@@ -171,7 +189,7 @@ class DialogProvider extends ChangeNotifier {
   TextStyle _alphabetSelectedTextStyle = const TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
   TextStyle get alphabetSelectedTextStyle => _alphabetSelectedTextStyle.copyWith(
       color: _alphabetSelectedTextStyle.color ??
-          (_settings.isDarkMode == true ? darkprimarySwatch : lightprimarySwatch));
+          (_settings.isDarkMode == true ? _settings.darkprimarySwatch : _settings.lightprimarySwatch));
   set alphabetSelectedTextStyle(TextStyle value) {
     _alphabetSelectedTextStyle = value;
     notifyListeners();

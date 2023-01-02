@@ -1,3 +1,4 @@
+import 'package:country_list_picker/model/countries.dart';
 import 'package:flutter/material.dart';
 import '../model/borders.dart';
 import '../translation.dart';
@@ -11,12 +12,14 @@ class CustomListTile<Object, T> extends StatelessWidget {
   final ValueChanged<T>? onChanged;
   final ValueChanged<IconData>? onIconChanged;
   final ValueChanged<Borders>? onStringChanged;
+  final ValueChanged<Countries>? onCountiresChanged;
   //Slider arguments
   final double min;
   final double max;
   final String? sliderLabel;
   final int? divisions;
   final List<IconData> iconsList;
+  final TextDirection? textDirection;
   const CustomListTile({
     super.key,
     required this.title,
@@ -26,10 +29,12 @@ class CustomListTile<Object, T> extends StatelessWidget {
     this.onChanged,
     this.onIconChanged,
     this.onStringChanged,
+    this.onCountiresChanged,
     this.min = 1,
     this.max = 100,
     this.sliderLabel,
     this.divisions,
+    this.textDirection,
     this.iconsList = const [
       Icons.check,
       Icons.star,
@@ -66,9 +71,8 @@ class CustomListTile<Object, T> extends StatelessWidget {
     return ListTile(
       enabled: enabled,
       title: Text(title.tr,
-          style: TextStyle(
-              color: enabled == true ? null : Theme.of(context).disabledColor,
-              fontWeight: FontWeight.bold)),
+          style:
+              TextStyle(color: enabled == true ? null : Theme.of(context).disabledColor, fontWeight: FontWeight.bold)),
       subtitle: ColorPicker(
         enabled: enabled,
         value: value as Color,
@@ -84,8 +88,7 @@ class CustomListTile<Object, T> extends StatelessWidget {
           enabled: enabled,
           title: Text(title.tr,
               style: TextStyle(
-                  color: enabled == true ? null : Theme.of(context).disabledColor,
-                  fontWeight: FontWeight.bold)),
+                  color: enabled == true ? null : Theme.of(context).disabledColor, fontWeight: FontWeight.bold)),
           subtitle: DropdownButtonFormField<IconData>(
             decoration: InputDecoration(enabled: enabled),
             value: value as IconData,
@@ -103,8 +106,7 @@ class CustomListTile<Object, T> extends StatelessWidget {
             enabled: enabled,
             title: Text(title.tr,
                 style: TextStyle(
-                    color: enabled == true ? null : Theme.of(context).disabledColor,
-                    fontWeight: FontWeight.bold)),
+                    color: enabled == true ? null : Theme.of(context).disabledColor, fontWeight: FontWeight.bold)),
             subtitle: DropdownButtonFormField<Borders>(
               decoration: InputDecoration(enabled: enabled),
               value: value as Borders,
@@ -115,6 +117,27 @@ class CustomListTile<Object, T> extends StatelessWidget {
                   .toList(),
               onChanged: enabled == true ? ((value) => onStringChanged!(value!)) : null,
             ));
+      case Countries:
+        return ListTile(
+            enabled: enabled,
+            title: Text(title.tr,
+                style: TextStyle(
+                    color: enabled == true ? null : Theme.of(context).disabledColor, fontWeight: FontWeight.bold)),
+            subtitle: DropdownButtonFormField<Countries>(
+              decoration: InputDecoration(enabled: enabled),
+              value: value as Countries,
+              items: Countries.values
+                  .map<DropdownMenuItem<Countries>>(
+                    (e) => DropdownMenuItem<Countries>(
+                      value: e,
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width-100,
+                        child: Text(e.name, overflow: TextOverflow.ellipsis)),
+                    ),
+                  )
+                  .toList(),
+              onChanged: enabled == true ? ((value) => onCountiresChanged!(value!)) : null,
+            ));
       default:
         return const SizedBox.shrink();
     }
@@ -124,9 +147,8 @@ class CustomListTile<Object, T> extends StatelessWidget {
     return ListTile(
       enabled: enabled,
       title: Text(title.tr,
-          style: TextStyle(
-              color: enabled == true ? null : Theme.of(context).disabledColor,
-              fontWeight: FontWeight.bold)),
+          style:
+              TextStyle(color: enabled == true ? null : Theme.of(context).disabledColor, fontWeight: FontWeight.bold)),
       subtitle: Slider(
         divisions: divisions,
         label: sliderLabel,
@@ -142,9 +164,8 @@ class CustomListTile<Object, T> extends StatelessWidget {
     return ListTile(
       enabled: enabled,
       title: Text(title.tr,
-          style: TextStyle(
-              color: enabled == true ? null : Theme.of(context).disabledColor,
-              fontWeight: FontWeight.bold)),
+          style:
+              TextStyle(color: enabled == true ? null : Theme.of(context).disabledColor, fontWeight: FontWeight.bold)),
       trailing: Switch(
         value: value as bool,
         onChanged: (enabled) ? onChanged as ValueChanged<bool> : null,
@@ -156,18 +177,14 @@ class CustomListTile<Object, T> extends StatelessWidget {
     return ListTile(
       enabled: enabled,
       title: Text(title.tr,
-          style: TextStyle(
-              color: enabled == true ? null : Theme.of(context).disabledColor,
-              fontWeight: FontWeight.bold)),
-      subtitle: Directionality(
-        textDirection: TextDirection.ltr,
-        child: TextFormField(
-          decoration: InputDecoration(enabled: enabled),
-          maxLength: max.toInt(),
-          initialValue: value as String,
-          // enabled: enabled,
-          onChanged: (enabled) ? onChanged as ValueChanged<String> : null,
-        ),
+          style:
+              TextStyle(color: enabled == true ? null : Theme.of(context).disabledColor, fontWeight: FontWeight.bold)),
+      subtitle: TextFormField(
+        textAlign: textDirection == null ? TextAlign.start : TextAlign.left,
+        decoration: InputDecoration(enabled: enabled),
+        maxLength: max.toInt(),
+        initialValue: value as String,
+        onChanged: (enabled) ? onChanged as ValueChanged<String> : null,
       ),
     );
   }

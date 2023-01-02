@@ -1,3 +1,4 @@
+import 'package:country_list_picker_example/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/dialog_provider.dart';
@@ -9,7 +10,7 @@ class LastPickTileArguments extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<DialogProvider>(
-      builder: (context, dialog, child) {
+      builder: (_, dialog, child) {
         return Column(
           children: [
             CustomListTile<Switch, bool>(
@@ -19,7 +20,7 @@ class LastPickTileArguments extends StatelessWidget {
             ),
             CustomListTile<TextFormField, String>(
               title: "Title String",
-              value: dialog.lastPickTileTitle,
+              value: dialog.lastPickTileTitle.tr,
               onChanged: (String value) => dialog.lastPickTileTitle = value,
             ),
             CustomListTile<DropdownButtonFormField, IconData>(

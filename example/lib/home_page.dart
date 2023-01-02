@@ -21,26 +21,25 @@ class HomePage extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () {
-                settings.textDirection = (settings.textDirection == TextDirection.ltr)
-                    ? TextDirection.rtl
-                    : TextDirection.ltr;
+                settings.textDirection =
+                    (settings.textDirection == TextDirection.ltr) ? TextDirection.rtl : TextDirection.ltr;
               },
               icon: settings.textDirection == TextDirection.ltr
                   ? Icon(
                       Icons.swipe_right,
-                      color: settings.isDarkMode ? darkprimarySwatch : Colors.white,
+                      color: settings.isDarkMode ? settings.darkprimarySwatch : Colors.white,
                     )
                   : Icon(
                       Icons.swipe_left,
-                      color: settings.isDarkMode ? darkprimarySwatch : Colors.white,
+                      color: settings.isDarkMode ? settings.darkprimarySwatch : Colors.white,
                     ),
             ),
             IconButton(
               onPressed: () => settings.isDarkMode = !settings.isDarkMode,
               icon: settings.isDarkMode
-                  ? const Icon(
+                  ? Icon(
                       Icons.sunny,
-                      color: darkprimarySwatch,
+                      color: settings.darkprimarySwatch,
                     )
                   : const Icon(
                       Icons.dark_mode,
@@ -68,7 +67,7 @@ class HomePage extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             Container(
-              height: 130,
+              height: 140,
               padding: const EdgeInsets.symmetric(vertical: 10),
               child: const Card(elevation: 2, child: TopPart()),
             ),
@@ -77,10 +76,7 @@ class HomePage extends StatelessWidget {
               children: screens
                   .asMap()
                   .map((index, screen) => MapEntry(
-                      index,
-                      Offstage(
-                          offstage: settings.selectedScreen != index,
-                          child: BottomPart(screen: screen))))
+                      index, Offstage(offstage: settings.selectedScreen != index, child: BottomPart(screen: screen))))
                   .values
                   .toList(),
             )),

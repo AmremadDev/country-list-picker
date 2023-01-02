@@ -3,20 +3,21 @@ import '../model/country.dart';
 import '../theme/country_list_dialog_theme.dart';
 
 class CurrentLocationTile extends StatelessWidget {
-  const CurrentLocationTile({Key? key, required this.dialogTheme, required this.countries})
+  const CurrentLocationTile({Key? key, required this.dialogTheme, required this.country})
       : super(key: key);
 
   final CountryListDialogTheme dialogTheme;
 
-  final List<Country> countries;
+  final Country country;
 
   @override
   Widget build(BuildContext context) {
-    Country country = countries.singleWhere(
-        (element) => element.alpha2 == WidgetsBinding.instance.window.locale.countryCode);
+    // Country country = countries.singleWhere(
+    //     (element) => element.alpha2 == WidgetsBinding.instance.window.locale.countryCode);
 
     return Column(children: [
       Container(
+        
           color: dialogTheme.titlesBackground,
           alignment: Alignment.centerLeft,
           padding: const EdgeInsets.only(left: 15.0),

@@ -126,13 +126,13 @@ class OnBoardingPage extends StatelessWidget {
                             IconButton(
                               onPressed: () => settings.isDarkMode = !settings.isDarkMode,
                               icon: settings.isDarkMode
-                                  ? const Icon(
+                                  ?  Icon(
                                       Icons.sunny,
-                                      color: darkprimarySwatch,
+                                      color: settings.darkprimarySwatch,
                                     )
-                                  : const Icon(
+                                  :  Icon(
                                       Icons.dark_mode,
-                                      color: lightprimarySwatch,
+                                      color: settings.lightprimarySwatch,
                                     ),
                             ),
                             IconButton(
@@ -146,14 +146,14 @@ class OnBoardingPage extends StatelessWidget {
                                   ? Icon(
                                       Icons.swipe_right,
                                       color: settings.isDarkMode
-                                          ? darkprimarySwatch
-                                          : lightprimarySwatch,
+                                          ? settings.darkprimarySwatch
+                                          : settings.lightprimarySwatch,
                                     )
                                   : Icon(
                                       Icons.swipe_left,
                                       color: settings.isDarkMode
-                                          ? darkprimarySwatch
-                                          : lightprimarySwatch,
+                                          ? settings.darkprimarySwatch
+                                          : settings.lightprimarySwatch,
                                     ),
                             ),
                           ],

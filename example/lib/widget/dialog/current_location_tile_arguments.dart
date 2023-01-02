@@ -1,7 +1,9 @@
+import 'package:country_list_picker/country_list_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/dialog_provider.dart';
 import '../../widget/custom_list_tile.dart';
+import '../../translation.dart';
 
 class CurrentLocationTileArguments extends StatelessWidget {
   const CurrentLocationTileArguments({super.key});
@@ -9,7 +11,7 @@ class CurrentLocationTileArguments extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<DialogProvider>(
-      builder: (context, dialog, child) {
+      builder: (_, dialog, child) {
         return Column(
           children: [
             CustomListTile<Switch, bool>(
@@ -19,8 +21,15 @@ class CurrentLocationTileArguments extends StatelessWidget {
             ),
             CustomListTile<TextFormField, String>(
               title: "Title String",
-              value: dialog.currentLocationTileTitle,
+              enabled: dialog.currentLocationTile,
+              value: dialog.currentLocationTileTitle.tr,
               onChanged: (String value) => dialog.currentLocationTileTitle = value,
+            ),
+            CustomListTile<DropdownButtonFormField, Countries>(
+              title: "Local Country",
+              enabled: dialog.currentLocationTile,
+              value: dialog.localCountry,
+              onCountiresChanged: (value) => dialog.localCountry = value,
             ),
             const SizedBox(
               height: 20,

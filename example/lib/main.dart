@@ -1,3 +1,4 @@
+import 'package:country_list_picker_example/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,31 +9,26 @@ import '../controller/picker_provider.dart';
 
 import '../onboarding_page.dart';
 
-import '../app_data.dart';
-
 void main() {
   runApp(MultiProvider(
     providers: [
       // Settings Provider
-      ChangeNotifierProvider<SettingsProvider>(create: (ctx) => SettingsProvider()),
+      ChangeNotifierProvider<SettingsProvider>(create: (_) => SettingsProvider()),
 
       // Onborading Provider
-      ChangeNotifierProvider<OnboardingProvider>(create: (ctx) => OnboardingProvider()),
+      ChangeNotifierProvider<OnboardingProvider>(create: (_) => OnboardingProvider()),
 
       // Picker Provider
       ChangeNotifierProxyProvider<SettingsProvider, PickerProvider>(
-          create: (context) => PickerProvider(),
-          update: (ctx, settings, picker) => picker!..update(settings)),
+          create: (_) => PickerProvider(), update: (_, settings, picker) => picker!..update(settings)),
 
       // Input Provider
       ChangeNotifierProxyProvider<SettingsProvider, InputProvider>(
-          create: (context) => InputProvider(),
-          update: (ctx, settings, input) => input!..update(settings)),
+          create: (_) => InputProvider(), update: (_, settings, input) => input!..update(settings)),
 
       // dialog Provider
       ChangeNotifierProxyProvider<SettingsProvider, DialogProvider>(
-          create: (context) => DialogProvider(),
-          update: (ctx, settings, dialog) => dialog!..update(settings)),
+          create: (_) => DialogProvider(), update: (_, settings, dialog) => dialog!..update(settings)),
     ],
     child: const CountryListPickerExample(),
   ));
@@ -42,8 +38,9 @@ class CountryListPickerExample extends StatelessWidget {
   const CountryListPickerExample({super.key});
   @override
   Widget build(BuildContext context) {
+ 
     return Consumer<SettingsProvider>(
-      builder: (context, settings, child) {
+      builder: (_, settings, child) {
         return MaterialApp(
             title: 'Country List Picker',
             debugShowCheckedModeBanner: false,
@@ -51,26 +48,26 @@ class CountryListPickerExample extends StatelessWidget {
             darkTheme: ThemeData(
               brightness: Brightness.dark,
               fontFamily: (settings.textDirection == TextDirection.ltr) ? "Quicksand" : "Cairo",
-              primarySwatch: darkprimarySwatch as MaterialColor,
-              toggleableActiveColor: darkprimarySwatch,
-              bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+              primarySwatch: settings.darkprimarySwatch as MaterialColor,
+              toggleableActiveColor: settings.darkprimarySwatch,
+              bottomNavigationBarTheme: BottomNavigationBarThemeData(
                 unselectedItemColor: Colors.white,
-                selectedItemColor: darkprimarySwatch,
+                selectedItemColor: settings.darkprimarySwatch,
               ),
             ),
             theme: ThemeData(
               brightness: Brightness.light,
               fontFamily: (settings.textDirection == TextDirection.ltr) ? "Quicksand" : "Cairo",
-              primarySwatch: lightprimarySwatch as MaterialColor,
+              primarySwatch: settings.lightprimarySwatch as MaterialColor,
               expansionTileTheme: ExpansionTileThemeData(
-                  backgroundColor: lightprimarySwatch.withOpacity(.1),
-                  collapsedBackgroundColor: lightprimarySwatch.withOpacity(.5)),
-              bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+                  backgroundColor: settings.lightprimarySwatch.withOpacity(.1),
+                  collapsedBackgroundColor: settings.lightprimarySwatch.withOpacity(.5)),
+              bottomNavigationBarTheme: BottomNavigationBarThemeData(
                 unselectedItemColor: Colors.black38,
-                selectedItemColor: lightprimarySwatch,
+                selectedItemColor: settings.lightprimarySwatch,
               ),
             ),
-            home: const OnBoardingPage());
+            home: const HomePage());
       },
     );
   }

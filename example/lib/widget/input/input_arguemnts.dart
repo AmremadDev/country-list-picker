@@ -1,3 +1,4 @@
+import 'package:country_list_picker_example/controller/settings_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/input_provider.dart';
@@ -9,8 +10,8 @@ class InputArguments extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<InputProvider>(
-      builder: (context, input, child) {
+    return Consumer2<InputProvider,SettingsProvider>(
+      builder: (context, input,settings, child) {
         return Column(
           children: [
             CustomListTile<Switch, bool>(
@@ -20,6 +21,7 @@ class InputArguments extends StatelessWidget {
             ),
             CustomListTile<TextFormField, String>(
               title: "Mask format",
+              textDirection: TextDirection.ltr,
               enabled: input.isShowTextField,
               value: input.mask,
               onChanged: (value) => input.mask = value,

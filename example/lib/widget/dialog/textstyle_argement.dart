@@ -10,7 +10,7 @@ class TextStyleArguments extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<DialogProvider>(
-      builder: (context, dialog, child) {
+      builder: (_, dialog, child) {
         return Column(
           children: [
             CustomListTile<Switch, bool>(

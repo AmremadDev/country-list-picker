@@ -71,6 +71,7 @@ class InputField extends StatelessWidget {
           contentPadding: inputTheme.contentPadding,
           hintText: inputTheme.hintText,
           hintStyle: inputTheme.hintStyle.copyWith(
+            fontSize: inputTheme.hintStyle.fontSize ?? inputTheme.style.fontSize,
             color: inputTheme.hintStyle.color ?? Theme.of(context).hintColor,
           ),
           border: inputTheme.border == InputBorder.none

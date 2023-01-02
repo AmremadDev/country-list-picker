@@ -6,6 +6,7 @@ import '../controller/dialog_provider.dart';
 import '../controller/input_provider.dart';
 import '../controller/picker_provider.dart';
 import '../model/borders.dart';
+import '../translation.dart';
 
 class TopPart extends StatelessWidget {
   const TopPart({super.key});
@@ -15,6 +16,7 @@ class TopPart extends StatelessWidget {
       builder: (context, picker, input, dialog, child) {
         return CountryListPicker(
           initialCountry: Countries.Egypt,
+          localCountry: (dialog.currentLocationTile == false) ? null : dialog.localCountry,
           countryNameTextStyle: picker.countryNameTextStyle,
           isShowFlag: picker.isShowFlag,
           flagSize: picker.flagSize,
@@ -22,8 +24,7 @@ class TopPart extends StatelessWidget {
           isDownIcon: picker.isDownIcon,
           isShowCountryTitle: picker.isShowCountryName,
           isShowTextField: input.isShowTextField,
-          iconDown:
-              Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),
+          iconDown: Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),
           dialCodeTextStyle: picker.dialCodeTextStyle,
           border: picker.border == Borders.none
               ? InputBorder.none
@@ -35,7 +36,7 @@ class TopPart extends StatelessWidget {
             obscureText: input.isObscureText,
             obscuringCharacter: input.obscuringCharacter,
             style: input.textStyle,
-            hintText: input.ihintString,
+            hintText: input.hintString.tr,
             hintStyle: input.hintTextStyle,
             border: input.border == Borders.none
                 ? InputBorder.none
@@ -50,16 +51,13 @@ class TopPart extends StatelessWidget {
             isShowFlage: dialog.countryFlag,
             isShowDialCode: dialog.countryDialCode,
             isShowFloatButton: dialog.upActionbutton,
-
             backgroundColor: dialog.backgroundColor,
             titlesBackground: dialog.titlesBackgroundColor,
             textStyle: dialog.textStyle,
             titlesStyle: dialog.titleTextStyle,
             appBar: AppBar(title: Text(dialog.appBarTitle)),
             tileHeight: dialog.tileHeight,
-            // useSafeArea: ,
-            // useUiOverlay: ,
-
+            useSafeArea: dialog.useSafeArea,
             alphabetsBarTheme: AlphabetsBarThemeData(
               visible: dialog.alphabetBar,
               backgroundColor: dialog.alphabetUnSelectedBackgroundColor,
@@ -69,17 +67,17 @@ class TopPart extends StatelessWidget {
             ),
             searchTileTheme: SearchTileThemeData(
               visible: dialog.searchTile,
-              title: dialog.searchTileTitle,
-              hint: dialog.searchTileHintString,
+              title: dialog.searchTileTitle.tr,
+              hint: dialog.searchTileHintString.tr,
               hintTextStyle: dialog.searchTileHintTextStyle,
             ),
             currentLocationTileTheme: CurrentLocationTileThemeData(
               visible: dialog.currentLocationTile,
-              title: dialog.currentLocationTileTitle,
+              title: dialog.currentLocationTileTitle.tr,
             ),
             lastPickTileTheme: LastPickTileTheme(
               visible: dialog.lastPickTile,
-              title: dialog.lastPickTileTitle,
+              title: dialog.lastPickTileTitle.tr,
               icon: Icon(dialog.lastPickTileTitleIcon),
             ),
           ),

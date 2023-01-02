@@ -50,15 +50,15 @@ class InputProvider extends ChangeNotifier {
   }
 
 // ****************************************************************************************************
-  String _hintString = "Enger your Phone number";
-  String get ihintString => _hintString;
-  set ihintString(String value) {
+  String _hintString = "Enter your phone number";
+  String get hintString => _hintString;
+  set hintString(String value) {
     _hintString = value;
     notifyListeners();
   }
 
   TextStyle _hintTextStyle =
-      const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, color: Colors.grey);
+      const TextStyle(fontWeight: FontWeight.normal, color: Colors.grey);
   TextStyle get hintTextStyle => _hintTextStyle;
 
   set hintTextStyle(TextStyle value) {

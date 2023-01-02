@@ -1,3 +1,4 @@
+import 'package:country_list_picker_example/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/dialog_provider.dart';
@@ -10,14 +11,20 @@ class GeneralArguments extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<DialogProvider>(
-      builder: (context, dialog, child) {
+      builder: (_, dialog, child) {
         return Column(
           children: [
             CustomListTile<TextFormField, String>(
               title: "App Bar Title",
-              value: dialog.appBarTitle,
+              value: dialog.appBarTitle.tr,
               onChanged: (String value) => dialog.appBarTitle = value,
             ),
+                        CustomListTile<Switch, bool>(
+              title: "Safe Area",
+              value: dialog.useSafeArea,
+              onChanged: (bool value) => dialog.useSafeArea = value,
+            ),
+
             CustomListTile<Switch, bool>(
               title: "Country Flag",
               value: dialog.countryFlag,
