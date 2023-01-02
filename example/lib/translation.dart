@@ -91,7 +91,7 @@ Map<String, Map<String, String>> transaltionList = {
     "Version": "Version",
     "Last Update": "Last Update",
     "January 2023": "January 2023",
-    "Description": "",
+    "Description": "Description",
     "Flutter Widget": "Flutter Widget",
     "Desinged by": "Desinged by",
     "Amr Emad Eldin Lotfy": "Amr Emad Eldin Lotfy",
