@@ -58,6 +58,7 @@ class InputField extends StatelessWidget {
         onTap: onTap,
 
         keyboardType: TextInputType.phone,
+        textAlign:  Directionality.of(context) == TextDirection.ltr ? TextAlign.left: TextAlign.right,
         textDirection: TextDirection.ltr,
         style: inputTheme.style.copyWith(
           color: inputTheme.style.color ?? Theme.of(context).inputDecorationTheme.focusColor,
