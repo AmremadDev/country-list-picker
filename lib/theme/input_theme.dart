@@ -23,7 +23,7 @@ class InputThemeData {
     this.contentPadding = const EdgeInsets.only(left: 12),
     this.border = InputBorder.none,
     this.hintStyle = const TextStyle(fontSize: 16, color: Color(0xFF9E9E9E)),
-    this.hintText = "Enter you number",
+    this.hintText = "Enter your phone number",
     this.style = const TextStyle(fontSize: 16),
     // this.maxLength = 15,
 

@@ -3,7 +3,8 @@ import '../model/country.dart';
 import '../theme/country_list_dialog_theme.dart';
 
 class CurrentLocationTile extends StatelessWidget {
-  const CurrentLocationTile({Key? key, required this.dialogTheme, required this.country}) : super(key: key);
+  const CurrentLocationTile({Key? key, required this.dialogTheme, required this.country})
+      : super(key: key);
 
   final CountryListDialogTheme dialogTheme;
 
@@ -13,13 +14,15 @@ class CurrentLocationTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Container(
-          color: dialogTheme.titlesBackground,
-          alignment: (Directionality.of(context) == TextDirection.ltr) ? Alignment.centerLeft : Alignment.centerRight,
+          color: dialogTheme.tilesTheme.background ?? Theme.of(context).focusColor,
+          alignment: (Directionality.of(context) == TextDirection.ltr)
+              ? Alignment.centerLeft
+              : Alignment.centerRight,
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
           width: double.infinity,
           height: dialogTheme.tileHeight,
           child: Text(
-            dialogTheme.currentLocationTileTheme.title,
+            dialogTheme.tilesTheme.currentLocationTileTitle,
             style: dialogTheme.titlesStyle.copyWith(
               fontSize: dialogTheme.titlesStyle.fontSize ?? 16,
               fontWeight: dialogTheme.titlesStyle.fontWeight ?? FontWeight.bold,
@@ -48,7 +51,9 @@ class CurrentLocationTile extends StatelessWidget {
               ),
               child: (dialogTheme.isShowDialCode)
                   ? Text(country.dialing_code,
-                      textDirection: TextDirection.ltr, style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
+                      textDirection: TextDirection.ltr,
+                      style: dialogTheme.textStyle
+                          .copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
                   : null,
             ),
             onTap: () {

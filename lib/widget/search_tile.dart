@@ -20,14 +20,17 @@ class SearchTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Container(
-          color: dialogTheme.titlesBackground,
-          alignment: (Directionality.of(context) == TextDirection.ltr) ? Alignment.centerLeft : Alignment.centerRight,
+          color: dialogTheme.tilesTheme.background ?? Theme.of(context).focusColor,
+          alignment: (Directionality.of(context) == TextDirection.ltr)
+              ? Alignment.centerLeft
+              : Alignment.centerRight,
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
           width: double.infinity,
           height: dialogTheme.tileHeight,
           child: Text(
-            dialogTheme.searchTileTheme.title,
-            style: dialogTheme.titlesStyle.copyWith(fontSize: dialogTheme.titlesStyle.fontSize ?? 16),
+            dialogTheme.tilesTheme.searchTitle,
+            style:
+                dialogTheme.titlesStyle.copyWith(fontSize: dialogTheme.titlesStyle.fontSize ?? 16),
           )),
       Container(
         color: dialogTheme.backgroundColor,
@@ -39,12 +42,14 @@ class SearchTile extends StatelessWidget {
           decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: const EdgeInsets.only(left: 15, bottom: 0, top: 0, right: 15),
-              hintText: dialogTheme.searchTileTheme.hint,
-              hintStyle: dialogTheme.searchTileTheme.hintTextStyle),
+              hintText: dialogTheme.tilesTheme.searchHint,
+              hintStyle: dialogTheme.tilesTheme.searchHintTextStyle),
           onChanged: ((value) {
             String s = value.toUpperCase();
-            context.read<SettingsProvider>().countries =
-                elements.where((e) => e.dialing_code.startsWith(s) || e.name.common.toUpperCase().startsWith(s)).toList();
+            context.read<SettingsProvider>().countries = elements
+                .where(
+                    (e) => e.dialing_code.contains(s) || e.name.common.toUpperCase().startsWith(s))
+                .toList();
           }),
         ),
       ),

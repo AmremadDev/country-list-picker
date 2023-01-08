@@ -1,11 +1,11 @@
 library country_list_picker;
 
 // imports
-
-import 'package:country_list_picker/model/languages.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../provider/picker_provider.dart';
+import '../model/languages.dart';
+import '../support/countires_multi_languages_list.dart';
 import '../selection_list.dart';
 import '../model/country.dart';
 import '../model/countries.dart';
@@ -20,47 +20,15 @@ export '../model/country.dart';
 export '../model/countries.dart';
 export '../extensions.dart';
 
-/// Shows a bottom sheet containing a list of countries to select one.
-///
-/// The callback function [onSelect] call when the user select a country.
-/// The function called with parameter the country that the user has selected.
-/// If the user cancels the bottom sheet, the function is not call.
-///
-///  An optional [exclude] argument can be used to exclude(remove) one ore more
-///  country from the countries list. It takes a list of country code(iso2).
-///
-/// An optional [countryFilter] argument can be used to filter the
-/// list of countries. It takes a list of country code(iso2).
-/// Note: Can't provide both [countryFilter] and [exclude]
-///
-/// An optional [favorite] argument can be used to show countries
-/// at the top of the list. It takes a list of country code(iso2).
-///
-/// An optional [showPhoneCode] argument can be used to show phone code.
-///
-/// [countryListTheme] can be used to customizing the country list bottom sheet.
-///
-/// [onClosed] callback which is called when CountryPicker is dismiss,
-/// whether a country is selected or not.
-///
-/// [searchAutofocus] can be used to initially expand virtual keyboard
-///
-/// An optional [showSearch] argument can be used to show/hide the search bar.
-///
-/// The `context` argument is used to look up the [Scaffold] for the bottom
-/// sheet. It is only used when the method is called. Its corresponding widget
-/// can be safely removed from the tree before the bottom sheet is closed.
-class CountryListPicker extends StatelessWidget {
-  /// Creates a country list picker widget.
-  ///
+class CountryListPicker extends StatefulWidget {
   const CountryListPicker({
     super.key,
-    // initial paramters
+    // Initial
     this.initialCountry = Countries.Egypt,
     this.localCountry,
     this.language = Languages.English,
     this.textDirection,
-    //main paramters
+    // Main
     this.isShowCountryTitle = true,
     this.isShowFlag = true,
     this.flagSize = const Size(40.0, 40.0),
@@ -68,7 +36,7 @@ class CountryListPicker extends StatelessWidget {
     this.iconDown = const Icon(Icons.keyboard_arrow_down, size: 24),
     this.isShowDownIcon = true,
     this.isShowTextField = true,
-    // style
+    // Style
     this.margin = const EdgeInsets.all(5.0),
     this.padding = const EdgeInsets.all(0.0),
     this.border = const UnderlineInputBorder(),
@@ -76,240 +44,245 @@ class CountryListPicker extends StatelessWidget {
     this.countryNameTextStyle = const TextStyle(fontSize: 15, color: Colors.grey),
     this.dialogTheme = const CountryListDialogTheme(),
     this.inputTheme = const InputThemeData(),
-    //events
+    // Events
     this.onCountryChanged,
     this.onChanged,
     this.onEditingComplete,
     this.onFieldSubmitted,
     this.onSaved,
     this.onTap,
-    //
     this.controller,
-  }) : assert(isShowFlag == true || isShowCode == true, "Both isShowFlag and isShowCode can't be false");
+  }) : assert(isShowFlag == true || isShowCode == true,
+            "Both isShowFlag and isShowCode can't be false");
 
-  ///Use with the [Countries] Enumration Type to show specific contry.
-  ///countries are identified by their name as listed below, e.g. [Countries.Egypt].
+  // Initial
   final Countries initialCountry;
-
-  ///Use with the [Countries] Enumration Type to show specific contry.
-  ///countries are identified by their name as listed below, e.g. [Countries.Egypt].
   final Countries? localCountry;
-
   final Languages language;
-
   final TextDirection? textDirection;
-
-  /// If true country flag will be appear.
-  /// Both [isShowFlag] and [isShowCode] can't be false
+  // Main
   final bool isShowFlag;
-
   final Size flagSize;
-
-  /// If true country title will be appear at left bottom.
-  /// Both [isShowFlag] and [isShowCode] can't be false
   final bool isShowCountryTitle;
-
-  /// If true country dial code will be appear.
   final bool isShowCode;
-
   final Icon iconDown;
-
-  /// If true country flag down icon be appear.
   final bool isShowDownIcon;
-
-  ///If true country TextField will be appear.
   final bool isShowTextField;
 
-  /// Empty space to surround the [decoration] and [child].
+  // Style
   final EdgeInsets margin;
-
-  /// Empty space to inscribe inside the [decoration]. The [child], if any, is
-  /// placed inside this padding.
-  ///
-  /// This padding is in addition to any padding inherent in the [decoration];
-  /// see [Decoration.padding].
   final EdgeInsets padding;
-
-  /// A border to draw above the background [color], [gradient], or [image].
-  /// Use [Border] objects to describe borders that do not depend on the reading
-  /// direction.
   final InputBorder border;
-
-  // final InputBorder inputBorder;
-
-  ///Country dial Code Text Style.
   final TextStyle dialCodeTextStyle;
-
-  ///Country title Text Style.
   final TextStyle countryNameTextStyle;
+  final CountryListDialogTheme dialogTheme;
+  final InputThemeData inputTheme;
 
-  /// {@template country_list_picker.onChanged}
-  /// Called when the user selects an item.
-  ///
-  /// If the [onCountryChanged] callback is null then clickable part will be disabled.
+  // Events
   final ValueChanged<Country>? onCountryChanged;
-
   final ValueChanged<String>? onChanged;
-
   final FormFieldSetter<String>? onSaved;
-
   final TextEditingController? controller;
-
   final VoidCallback? onEditingComplete;
-
   final ValueChanged<String>? onFieldSubmitted;
-
   final GestureTapCallback? onTap;
 
-  // ///
-  // final Widget Function(BuildContext context, Country? countryCode)? pickerBuilder;
+  @override
+  State<CountryListPicker> createState() => _CountryListPickerState();
+}
 
-  // ///
-  // final Widget Function(BuildContext context, Country? country)? dialogBuilder;
-
-  ///
-  ///[tileheight] must be greater than 50.0
-  final CountryListDialogTheme dialogTheme;
-
-  final InputThemeData inputTheme;
+class _CountryListPickerState extends State<CountryListPicker> {
+  Country? selectedCountry;
+  bool inputOnFocus = false;
+  FocusNode focusNode = FocusNode();
+  List<Country> countries = [];
 
   @override
   Widget build(BuildContext context) {
-    // print(Directionality.of(context));
-    FocusNode focusNode = FocusNode();
-    return ChangeNotifierProvider<SettingsProvider>(
-      create: (_) => SettingsProvider(initialCountry: initialCountry, language: language),
-      builder: (_, child) {
-        return Consumer<SettingsProvider>(builder: (context, settings, child) {
-          settings.language = language;
-          return Scaffold(
-            body: Container(
-              margin: margin,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(
-                      top: padding.top,
-                      right: padding.right + 5.0,
-                      bottom: padding.bottom,
-                      left: padding.left + 5.0,
-                    ),
-                    decoration: BoxDecoration(
-                        borderRadius: border.isOutline ? BorderRadius.circular(4) : null,
-                        border: (inputTheme.border == InputBorder.none || isShowTextField == false) && border != InputBorder.none
-                            ? border.isOutline
-                                ? settings.inputOnFocus == true || isShowTextField == false
-                                    ? Border.all(color: Theme.of(context).colorScheme.primary, width: border.borderSide.width)
-                                    : Border.all(color: Theme.of(context).hintColor, width: 1)
-                                : settings.inputOnFocus == true || isShowTextField == false
-                                    ? Border(
-                                        bottom: BorderSide(
-                                            color: Theme.of(context).colorScheme.primary,
-                                            // color: border.borderSide.color,
-                                            width: border.borderSide.width))
-                                    : Border(bottom: BorderSide(color: Theme.of(context).hintColor, width: 1))
-                            : null),
-                    child: Row(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                      InkWell(
-                        onTap: (onCountryChanged == null) ? null : () async => await _onTapEvent(context),
-                        child: _buildMainPart(),
-                      ),
-                      if (isShowTextField == true)
-                        InputField(
-                          inputTheme: inputTheme,
-                          onChanged: onChanged,
-                          onEditingComplete: onEditingComplete,
-                          onFieldSubmitted: onFieldSubmitted,
-                          onSaved: onSaved,
-                          onTap: onTap,
-                          focusNode: focusNode
-                            ..addListener(() {
-                              settings.inputOnFocus = focusNode.hasFocus;
-                            }),
-                        ),
-                    ]),
-                  ),
-                  if (isShowCountryTitle == true)
-                    Text(
-                      settings.selectedCountry.name.common,
-                      style: countryNameTextStyle.copyWith(
-                          fontWeight: countryNameTextStyle.fontWeight,
-                          fontSize: countryNameTextStyle.fontSize ?? 15,
-                          color: countryNameTextStyle.color ?? Colors.grey,
-                          overflow: TextOverflow.ellipsis),
-                    ),
-                ],
+    // if (widget.countries2.isEmpty) {
+    countriesMultiLanguagesList.removeWhere((element) => element['dialing_code'] == null);
+    countries = countriesMultiLanguagesList.map((element) {
+      return Country(
+        iso_3166_1_alpha2: element['iso_3166_1_alpha2'],
+        iso_3166_1_alpha3: element['iso_3166_1_alpha3'],
+        name: (element[widget.language.iso_639_2_alpha3].runtimeType == String)
+            ? Name(
+                common: element[widget.language.iso_639_2_alpha3],
+                official: element[widget.language.iso_639_2_alpha3])
+            : Name(
+                common: element[widget.language.iso_639_2_alpha3]['common'],
+                official: element[widget.language.iso_639_2_alpha3]['official']),
+        dialing_code: (element['dialing_code'] == null) ? "" : element['dialing_code'],
+        default_number_length: element['default_number_length'],
+        default_number_format: element['default_number_format'],
+        local_number_sample: element['local_number_sample'],
+        flagUri: 'assets/flags/${element['iso_3166_1_alpha2'].toLowerCase()}.png',
+      );
+    }).toList();
+    countries.sort((a, b) => a.name.common.compareTo(b.name.common));
+
+    selectedCountry = selectedCountry == null
+        ? countries.firstWhere(
+            (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
+                widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
+            orElse: () => countries[0])
+        : countries.firstWhere(
+            (element) => element.iso_3166_1_alpha3 == selectedCountry!.iso_3166_1_alpha3);
+    // }
+
+    return Scaffold(
+      body: Container(
+        margin: widget.margin,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: EdgeInsets.only(
+                top: widget.padding.top,
+                right: widget.padding.right + 5.0,
+                bottom: widget.padding.bottom,
+                left: widget.padding.left + 5.0,
               ),
+              decoration: BoxDecoration(
+                  borderRadius: widget.border.isOutline ? BorderRadius.circular(4) : null,
+                  border: (widget.inputTheme.border == InputBorder.none ||
+                              widget.isShowTextField == false) &&
+                          widget.border != InputBorder.none
+                      ? widget.border.isOutline
+                          ? inputOnFocus == true || widget.isShowTextField == false
+                              ? Border.all(
+                                  color: Theme.of(context).colorScheme.primary,
+                                  width: widget.border.borderSide.width)
+                              : Border.all(color: Theme.of(context).hintColor, width: 1)
+                          : inputOnFocus == true || widget.isShowTextField == false
+                              ? Border(
+                                  bottom: BorderSide(
+                                      color: Theme.of(context).colorScheme.primary,
+                                      width: widget.border.borderSide.width))
+                              : Border(
+                                  bottom: BorderSide(color: Theme.of(context).hintColor, width: 1))
+                      : null),
+              child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      onTap: (widget.onCountryChanged == null)
+                          ? null
+                          : () async => await _onTapEvent(context),
+                      child: _buildMainPart(selectedCountry!),
+                    ),
+                    if (widget.isShowTextField == true)
+                      InputField(
+                        inputTheme: widget.inputTheme,
+                        onChanged: widget.onChanged,
+                        onEditingComplete: widget.onEditingComplete,
+                        onFieldSubmitted: widget.onFieldSubmitted,
+                        onSaved: widget.onSaved,
+                        onTap: widget.onTap,
+                        focusNode: focusNode
+                          ..addListener(() {
+                            inputOnFocus = focusNode.hasFocus;
+                          }),
+                      ),
+                  ]),
             ),
-          );
-        });
-      },
+            if (widget.isShowCountryTitle == true)
+              Text(
+                selectedCountry != null
+                    ? selectedCountry!.name.common
+                    : countries
+                        .firstWhere(
+                            (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
+                                widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
+                            orElse: () => countries[0])
+                        .name
+                        .common,
+                style: widget.countryNameTextStyle.copyWith(
+                    fontWeight: widget.countryNameTextStyle.fontWeight,
+                    fontSize: widget.countryNameTextStyle.fontSize ?? 15,
+                    color: widget.countryNameTextStyle.color ?? Colors.grey,
+                    overflow: TextOverflow.ellipsis),
+              ),
+          ],
+        ),
+      ),
     );
   }
 
   Future<void> _onTapEvent(BuildContext context) async {
-    SettingsProvider settings = context.read<SettingsProvider>();
     final Country? result = await Navigator.push(
         context,
         MaterialPageRoute(
             builder: (_) => ChangeNotifierProvider<SettingsProvider>(
-                  create: (_) => SettingsProvider(initialCountry: initialCountry, language: language),
+                  create: (_) => SettingsProvider(elements: countries),
                   builder: (_, child) {
                     return SelectionList(
-                      settings.countries,
-                      initialCountry: settings.selectedCountry,
+                      countries,
                       textDirection: Directionality.of(context),
-                      localCountry: (localCountry == null)
+                      selectedCountry: selectedCountry!,
+                      localCountry: (widget.localCountry == null)
                           ? null
-                          : settings.countries.firstWhere(
-                              (Country e) => (e.iso_3166_1_alpha3.toUpperCase() == localCountry!.iso_3166_1_alpha3.toUpperCase()),
+                          : countries.firstWhere(
+                              (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
+                                  widget.localCountry!.iso_3166_1_alpha3.toUpperCase()),
                             ),
-                      appBar: dialogTheme.appBar ??
-                          AppBar(backgroundColor: Theme.of(context).appBarTheme.backgroundColor, title: const Text("Select your country")),
-                      dialogTheme: dialogTheme,
+                      appBar: widget.dialogTheme.appBar ??
+                          AppBar(
+                              backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+                              title: const Text("Select your country")),
+                      dialogTheme: widget.dialogTheme,
                     );
                   },
                 )));
-    settings.selectedCountry = result ?? settings.selectedCountry;
-    if (onCountryChanged != null) onCountryChanged!(settings.selectedCountry);
+
+    if (result != null) {
+      selectedCountry = result;
+      if (widget.onCountryChanged != null) widget.onCountryChanged!(selectedCountry!);
+      setState(() {});
+    }
   }
 
-  Selector<SettingsProvider, Country> _buildMainPart() {
-    return Selector<SettingsProvider, Country>(
-        selector: (context, settings) => settings.selectedCountry,
-        builder: (context, country, child) => Row(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.center, children: [
-              //flage
-              if (isShowFlag == true)
-                Flexible(
-                    child: Image.asset("assets/flags/${country.iso_3166_1_alpha2.toLowerCase()}.png",
-                        package: "country_list_picker", fit: BoxFit.fill, height: flagSize.height, width: flagSize.width)),
-              //code
-              if (isShowCode == true)
-                Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 2.5),
-                    child: Directionality(
-                      textDirection: TextDirection.ltr,
-                      child: Text(country.dialing_code.toString(),
-                          style: dialCodeTextStyle.copyWith(
-                              color: dialCodeTextStyle.color ?? Theme.of(context).textTheme.titleLarge?.color,
-                              fontSize: dialCodeTextStyle.fontSize ?? 16,
-                              fontWeight: dialCodeTextStyle.fontWeight ?? FontWeight.bold)),
-                    )),
+  Row _buildMainPart(Country country) {
+    return Row(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          //flage
+          if (widget.isShowFlag == true)
+            Flexible(
+                child: Image.asset("assets/flags/${country.iso_3166_1_alpha2.toLowerCase()}.png",
+                    package: "country_list_picker",
+                    fit: BoxFit.fill,
+                    height: widget.flagSize.height,
+                    width: widget.flagSize.width)),
+          //code
+          if (widget.isShowCode == true)
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 2.5),
+                child: Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: Text(country.dialing_code.toString(),
+                      style: widget.dialCodeTextStyle.copyWith(
+                          color: widget.dialCodeTextStyle.color ??
+                              Theme.of(context).textTheme.titleLarge?.color,
+                          fontSize: widget.dialCodeTextStyle.fontSize ?? 16,
+                          fontWeight: widget.dialCodeTextStyle.fontWeight ?? FontWeight.bold)),
+                )),
 
-              //down icon
-              if (isShowDownIcon == true)
-                Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 2.5),
-                    child: Icon(
-                      iconDown.icon,
-                      size: iconDown.size,
-                      color: (iconDown.color) ?? Theme.of(context).colorScheme.primary,
-                      semanticLabel: iconDown.semanticLabel,
-                      textDirection: iconDown.textDirection,
-                      shadows: iconDown.shadows,
-                      key: iconDown.key,
-                    )),
-            ]));
+          //down icon
+          if (widget.isShowDownIcon == true)
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 2.5),
+                child: Icon(
+                  widget.iconDown.icon,
+                  size: widget.iconDown.size,
+                  color: (widget.iconDown.color) ?? Theme.of(context).colorScheme.primary,
+                  semanticLabel: widget.iconDown.semanticLabel,
+                  textDirection: widget.iconDown.textDirection,
+                  shadows: widget.iconDown.shadows,
+                  key: widget.iconDown.key,
+                )),
+        ]);
   }
 }

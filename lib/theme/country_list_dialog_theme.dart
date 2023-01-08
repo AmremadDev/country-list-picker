@@ -1,14 +1,9 @@
+import 'tiles_theme_data.dart';
 import 'package:flutter/material.dart';
-
-import './current_location_tile_theme.dart';
 import './alphabets_bar_themes.dart';
-import './last_pick_tile_theme.dart';
-import './search_tile_theme.dart';
 
-export './current_location_tile_theme.dart';
+export 'tiles_theme_data.dart';
 export './alphabets_bar_themes.dart';
-export './last_pick_tile_theme.dart';
-export './search_tile_theme.dart';
 
 class CountryListDialogTheme {
   ///An app bar to display at the top of country list dialog.
@@ -27,10 +22,10 @@ class CountryListDialogTheme {
   final TextStyle titlesStyle;
 
   ///Titles background
-  final Color titlesBackground;
+  // final Color titlesBackground;
 
   ///Country dialog background color.
-  final Color backgroundColor;
+  final Color? backgroundColor;
 
   ///Country text style.
   final TextStyle textStyle;
@@ -38,6 +33,11 @@ class CountryListDialogTheme {
   ///Height of the tile.
   ///[tileheight] must be greater than 50.0
   final double tileHeight;
+
+  final TilesThemeData tilesTheme;
+
+  final bool isShowSearchTile;
+  final bool isShowLastPickTile;
 
   ///Alphabets bar Theme.
   ///
@@ -59,84 +59,19 @@ class CountryListDialogTheme {
   ///```
   final AlphabetsBarThemeData alphabetsBarTheme;
 
-  ///Current Location Tile Theme.
-  ///
-  ///Example:
-  ///```dart
-  /// dialogTheme: const CountryListDialogTheme(
-  ///   currentLocationTile: CurrentLocationTileTheme(
-  ///     visible: true,
-  ///     title: "Current Location",
-  ///   ),
-  /// )
-  ///```
-  ///or to hide Current Location Tile
-  ///```dart
-  /// dialogTheme: const CountryListDialogTheme(
-  ///   currentLocationTile: CurrentLocationTileTheme(visible: false),)
-  ///```
-  final CurrentLocationTileThemeData currentLocationTileTheme;
-
-  ///LastPick Tile Theme.
-  ///
-  ///Example:
-  ///```dart
-  /// dialogTheme: const CountryListDialogTheme(
-  ///   lastPickTile: LastPickTileTheme(
-  ///     title: "Last Pick",
-  ///     icon: Icon(Icons.check_circle_outline_outlined),
-  ///   ),
-  /// )
-  ///```
-  ///or to hide LastPick Tile
-  ///```dart
-  /// dialogTheme: const CountryListDialogTheme(
-  ///   lastPickTile: LastPickTileTheme(visible: false),
-  /// )
-  ///```
-  final LastPickTileTheme lastPickTileTheme;
-
-  ///Search Tile Theme.
-  ///
-  ///Example:
-  ///```dart
-  /// dialogTheme: const CountryListDialogTheme(
-  ///   searchTile: SearchTileTheme(
-  ///     visible: true,
-  ///     title: "Search",
-  ///     hint: "type code/name",
-  ///   ),
-  /// )
-  ///```
-  ///Or to hide Search Tile
-  ///```dart
-  /// dialogTheme: const CountryListDialogTheme(
-  ///   searchTile: SearchTileTheme(visible: false),
-  /// )
-  ///```
-  final SearchTileThemeData searchTileTheme;
-
-  ///Whether to allow the widget to set a custom UI overlay
-  final bool useUiOverlay;
-
-  ///Whether the country list picker should be wrapped in a SafeArea
-  final bool useSafeArea;
-
   const CountryListDialogTheme({
+    this.tilesTheme = const TilesThemeData(),
     this.alphabetsBarTheme = const AlphabetsBarThemeData(),
-    this.currentLocationTileTheme = const CurrentLocationTileThemeData(),
-    this.lastPickTileTheme = const LastPickTileTheme(),
-    this.searchTileTheme = const SearchTileThemeData(),
+    this.isShowLastPickTile = true,
+    this.isShowSearchTile = true,
     this.appBar,
     this.isShowFlage = true,
     this.isShowFloatButton = true,
-    this.backgroundColor = Colors.transparent,
+    this.backgroundColor, //= Colors.transparent,
     this.titlesStyle = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-    this.titlesBackground = const Color(0xFFE9E9E9), //const Color(0x6CDDDDDD),
+    // this.titlesBackground = const Color(0xFFE9E9E9), //const Color(0x6CDDDDDD),
     this.isShowDialCode = true,
     this.textStyle = const TextStyle(fontSize: 16),
     this.tileHeight = 50.0,
-    this.useUiOverlay = false,
-    this.useSafeArea = false,
   }) : assert(tileHeight >= 50.0, "tileheight must be greater than 50.0");
 }

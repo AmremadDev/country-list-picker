@@ -15,7 +15,7 @@ class GeneralPickerArguments extends StatelessWidget {
         return Column(
           children: [
             CustomListTile<DropdownButtonFormField, Languages>(
-              title: "Languange",
+              title: "Language",
               value: picker.language,
               onLanguagesChanged: (value) => picker.language = value,
             ),

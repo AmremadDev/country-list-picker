@@ -8,9 +8,9 @@ class Country {
   final String iso_3166_1_alpha3;
   final Name name;
   final String dialing_code;
-  final int? default_number_length;
-  final String? default_number_format;
-  final String? local_number_sample;
+  final int default_number_length;
+  final String default_number_format;
+  final String local_number_sample;
   String flagUri;
   Country({
     required this.iso_3166_1_alpha2,

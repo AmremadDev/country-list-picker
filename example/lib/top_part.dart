@@ -1,4 +1,3 @@
-import 'package:country_list_picker/model/languages.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:country_list_picker/country_list_picker.dart';
@@ -16,8 +15,11 @@ class TopPart extends StatelessWidget {
     return Consumer3<PickerProvider, InputProvider, DialogProvider>(
       builder: (context, picker, input, dialog, child) {
         return CountryListPicker(
+          // localCountry: Countries.Albania,
+          // onCountryChanged: (value) {},
+          // onChanged: (value) {},
           initialCountry: Countries.Egypt,
-          language: Languages.Arabic, //picker.language,
+          language: picker.language,
           localCountry: (dialog.currentLocationTile == false) ? null : dialog.localCountry,
           countryNameTextStyle: picker.countryNameTextStyle,
           isShowFlag: picker.isShowFlag,
@@ -26,14 +28,14 @@ class TopPart extends StatelessWidget {
           isShowDownIcon: picker.isDownIcon,
           isShowCountryTitle: picker.isShowCountryName,
           isShowTextField: input.isShowTextField,
-          iconDown: Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),
+          iconDown:
+              Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),
           dialCodeTextStyle: picker.dialCodeTextStyle,
           border: picker.border == Borders.none
               ? InputBorder.none
               : picker.border == Borders.outline
                   ? OutlineInputBorder(borderSide: BorderSide(width: picker.borderWidth))
                   : UnderlineInputBorder(borderSide: BorderSide(width: picker.borderWidth)),
-
           inputTheme: InputThemeData(
             obscureText: input.isObscureText,
             obscuringCharacter: input.obscuringCharacter,
@@ -47,19 +49,25 @@ class TopPart extends StatelessWidget {
                     : UnderlineInputBorder(borderSide: BorderSide(width: input.borderWidth)),
             mask: MaskTextInputFormatter(mask: input.mask, filter: {"#": RegExp(r'[0-9]')}),
           ),
-          onCountryChanged: ((value) {}),
-          // onChanged: (value) => print(value.getUnmaskedText),
+          onCountryChanged: ((value) {
+            input.hintString = value.local_number_sample;
+            input.mask = value.default_number_format;
+          }),
+          onChanged: (value) => print(value.getUnmaskedText),
           dialogTheme: CountryListDialogTheme(
             isShowFlage: dialog.countryFlag,
             isShowDialCode: dialog.countryDialCode,
             isShowFloatButton: dialog.upActionbutton,
+
+            isShowSearchTile: dialog.searchTile,
+            isShowLastPickTile: dialog.lastPickTile,
+
             backgroundColor: dialog.backgroundColor,
-            titlesBackground: dialog.titlesBackgroundColor,
+            // titlesBackground: dialog.titlesBackgroundColor,
             textStyle: dialog.textStyle,
-            titlesStyle: dialog.titleTextStyle,
+            // titlesStyle: dialog.titleTextStyle,
             appBar: AppBar(title: Text(dialog.appBarTitle)),
             tileHeight: dialog.tileHeight,
-            useSafeArea: dialog.useSafeArea,
             alphabetsBarTheme: AlphabetsBarThemeData(
               visible: dialog.alphabetBar,
               backgroundColor: dialog.alphabetUnSelectedBackgroundColor,
@@ -67,20 +75,16 @@ class TopPart extends StatelessWidget {
               textStyle: dialog.alphabetUnSelectedTextStyle,
               selectedTextStyle: dialog.alphabetSelectedTextStyle,
             ),
-            searchTileTheme: SearchTileThemeData(
-              visible: dialog.searchTile,
-              title: dialog.searchTileTitle.tr,
-              hint: dialog.searchTileHintString.tr,
-              hintTextStyle: dialog.searchTileHintTextStyle,
-            ),
-            currentLocationTileTheme: CurrentLocationTileThemeData(
-              visible: dialog.currentLocationTile,
-              title: dialog.currentLocationTileTitle.tr,
-            ),
-            lastPickTileTheme: LastPickTileTheme(
-              visible: dialog.lastPickTile,
-              title: dialog.lastPickTileTitle.tr,
-              icon: Icon(dialog.lastPickTileTitleIcon),
+
+            tilesTheme: TilesThemeData(
+              background: dialog.titlesBackgroundColor,
+              style: dialog.titleTextStyle,
+              currentLocationTileTitle: dialog.currentLocationTileTitle.tr,
+              lastPickIcon: Icon(dialog.lastPickTileTitleIcon),
+              lastPickTitle: dialog.lastPickTileTitle.tr,
+              searchHint: dialog.searchTileHintString.tr,
+              searchHintTextStyle: dialog.searchTileHintTextStyle,
+              searchTitle: dialog.searchTileTitle.tr,
             ),
           ),
         );
