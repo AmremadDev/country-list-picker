@@ -1,3 +1,4 @@
+import 'package:country_list_picker/model/languages.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:country_list_picker/country_list_picker.dart';
@@ -16,12 +17,13 @@ class TopPart extends StatelessWidget {
       builder: (context, picker, input, dialog, child) {
         return CountryListPicker(
           initialCountry: Countries.Egypt,
+          language: Languages.Arabic, //picker.language,
           localCountry: (dialog.currentLocationTile == false) ? null : dialog.localCountry,
           countryNameTextStyle: picker.countryNameTextStyle,
           isShowFlag: picker.isShowFlag,
           flagSize: picker.flagSize,
           isShowCode: picker.isShowDialCode,
-          isDownIcon: picker.isDownIcon,
+          isShowDownIcon: picker.isDownIcon,
           isShowCountryTitle: picker.isShowCountryName,
           isShowTextField: input.isShowTextField,
           iconDown: Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),

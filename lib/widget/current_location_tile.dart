@@ -3,8 +3,7 @@ import '../model/country.dart';
 import '../theme/country_list_dialog_theme.dart';
 
 class CurrentLocationTile extends StatelessWidget {
-  const CurrentLocationTile({Key? key, required this.dialogTheme, required this.country})
-      : super(key: key);
+  const CurrentLocationTile({Key? key, required this.dialogTheme, required this.country}) : super(key: key);
 
   final CountryListDialogTheme dialogTheme;
 
@@ -12,13 +11,10 @@ class CurrentLocationTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(Directionality.of(context));
     return Column(children: [
       Container(
           color: dialogTheme.titlesBackground,
-          alignment: (Directionality.of(context) == TextDirection.ltr)
-              ? Alignment.centerLeft
-              : Alignment.centerRight,
+          alignment: (Directionality.of(context) == TextDirection.ltr) ? Alignment.centerLeft : Alignment.centerRight,
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
           width: double.infinity,
           height: dialogTheme.tileHeight,
@@ -34,13 +30,13 @@ class CurrentLocationTile extends StatelessWidget {
         child: ListTile(
             leading: (dialogTheme.isShowFlage)
                 ? Image.asset(
-                    "assets/flags/${country.alpha2.toLowerCase()}.png",
+                    "assets/flags/${country.iso_3166_1_alpha2.toLowerCase()}.png",
                     package: 'country_list_picker',
                     width: dialogTheme.tileHeight * .8,
                   )
                 : null,
             title: Text(
-              country.englishName.common,
+              country.name.common,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
               softWrap: false,
@@ -51,10 +47,8 @@ class CurrentLocationTile extends StatelessWidget {
                 horizontal: (dialogTheme.alphabetsBarTheme.visible == true) ? 20.0 : 0.0,
               ),
               child: (dialogTheme.isShowDialCode)
-                  ? Text(country.callingCode,
-                      textDirection: TextDirection.ltr,
-                      style: dialogTheme.textStyle
-                          .copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
+                  ? Text(country.dialing_code,
+                      textDirection: TextDirection.ltr, style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
                   : null,
             ),
             onTap: () {

@@ -74,18 +74,10 @@ class SelectionList extends StatelessWidget {
                     slivers: [
                       SliverToBoxAdapter(
                         child: Column(children: [
-                          if (dialogTheme.searchTileTheme.visible)
-                            SearchTile(
-                                dialogTheme: dialogTheme,
-                                controller: _controller,
-                                elements: elements),
-                          if (localCountry != null)
-                            CurrentLocationTile(dialogTheme: dialogTheme, country: localCountry!),
-                          if (dialogTheme.lastPickTileTheme.visible)
-                            LastPickTile(dialogTheme: dialogTheme, country: initialCountry),
-                          (_boxes == 0)
-                              ? const SizedBox.shrink()
-                              : Container(height: 10, color: dialogTheme.titlesBackground)
+                          if (dialogTheme.searchTileTheme.visible) SearchTile(dialogTheme: dialogTheme, controller: _controller, elements: elements),
+                          if (localCountry != null) CurrentLocationTile(dialogTheme: dialogTheme, country: localCountry!),
+                          if (dialogTheme.lastPickTileTheme.visible) LastPickTile(dialogTheme: dialogTheme, country: initialCountry),
+                          (_boxes == 0) ? const SizedBox.shrink() : Container(height: 10, color: dialogTheme.titlesBackground)
                         ]),
                       ),
                       Selector<SettingsProvider, List<Country>>(
@@ -108,7 +100,7 @@ class SelectionList extends StatelessWidget {
                       : AlphabetScroll(
                           scrollController: _controllerScroll,
                           dialogTheme: dialogTheme,
-                          alphabet: elements.map((e) => e.englishName.common[0]).toSet().toList(),
+                          alphabet: elements.map((e) => e.name.common[0]).toSet().toList(),
                           countries: elements,
                           unitsCanceled: _boxes,
                         )
@@ -133,13 +125,9 @@ class SelectionList extends StatelessWidget {
       if (scrollPosition < _boxes) {
         settings.selectedPosition = -1;
       } else if (scrollPosition >= _boxes && scrollPosition <= settings.countries.length) {
-        int newPos = settings.countries
-                .elementAt(scrollPosition - _boxes)
-                .englishName
-                .common[0]
-                .toUpperCase()
-                .codeUnitAt(0) -
-            'A'.codeUnitAt(0);
+        print(settings.countries.elementAt(scrollPosition - _boxes).name.common[0].toUpperCase().codeUnitAt(0));
+        int newPos = settings.countries.elementAt(scrollPosition - _boxes).name.common[0].toUpperCase().codeUnitAt(0) - 'ء'.codeUnitAt(0);
+        print(newPos);
         if (newPos != settings.selectedPosition) settings.selectedPosition = newPos;
       }
     });

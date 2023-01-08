@@ -21,16 +21,13 @@ class SearchTile extends StatelessWidget {
     return Column(children: [
       Container(
           color: dialogTheme.titlesBackground,
-          alignment: (Directionality.of(context) == TextDirection.ltr)
-              ? Alignment.centerLeft
-              : Alignment.centerRight,
+          alignment: (Directionality.of(context) == TextDirection.ltr) ? Alignment.centerLeft : Alignment.centerRight,
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
           width: double.infinity,
           height: dialogTheme.tileHeight,
           child: Text(
             dialogTheme.searchTileTheme.title,
-            style:
-                dialogTheme.titlesStyle.copyWith(fontSize: dialogTheme.titlesStyle.fontSize ?? 16),
+            style: dialogTheme.titlesStyle.copyWith(fontSize: dialogTheme.titlesStyle.fontSize ?? 16),
           )),
       Container(
         color: dialogTheme.backgroundColor,
@@ -46,10 +43,8 @@ class SearchTile extends StatelessWidget {
               hintStyle: dialogTheme.searchTileTheme.hintTextStyle),
           onChanged: ((value) {
             String s = value.toUpperCase();
-            context.read<SettingsProvider>().countries = elements
-                .where((e) =>
-                    e.callingCode.startsWith(s) || e.englishName.common.toUpperCase().startsWith(s))
-                .toList();
+            context.read<SettingsProvider>().countries =
+                elements.where((e) => e.dialing_code.startsWith(s) || e.name.common.toUpperCase().startsWith(s)).toList();
           }),
         ),
       ),

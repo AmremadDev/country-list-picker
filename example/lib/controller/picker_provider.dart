@@ -1,3 +1,4 @@
+import 'package:country_list_picker/model/languages.dart';
 import 'package:flutter/material.dart';
 import '../controller/settings_provider.dart';
 import '../model/borders.dart';
@@ -6,6 +7,13 @@ class PickerProvider extends ChangeNotifier {
   SettingsProvider _settings = SettingsProvider();
   void update(SettingsProvider settings) {
     _settings = settings;
+    notifyListeners();
+  }
+
+  Languages _language = Languages.English;
+  Languages get language => _language;
+  set language(Languages value) {
+    _language = value;
     notifyListeners();
   }
 
@@ -35,9 +43,8 @@ class PickerProvider extends ChangeNotifier {
   }
 
   TextStyle _dialCodeTextStyle = const TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
-  TextStyle get dialCodeTextStyle => _dialCodeTextStyle.copyWith(
-      color:
-          _dialCodeTextStyle.color ?? (_settings.isDarkMode == true ? Colors.white : Colors.black));
+  TextStyle get dialCodeTextStyle =>
+      _dialCodeTextStyle.copyWith(color: _dialCodeTextStyle.color ?? (_settings.isDarkMode == true ? Colors.white : Colors.black));
   set dialCodeTextStyle(TextStyle value) {
     _dialCodeTextStyle = value;
     notifyListeners();
@@ -59,8 +66,7 @@ class PickerProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  TextStyle _countryNameTextStyle =
-      const TextStyle(fontWeight: FontWeight.normal, fontSize: 15, color: Colors.grey);
+  TextStyle _countryNameTextStyle = const TextStyle(fontWeight: FontWeight.normal, fontSize: 15, color: Colors.grey);
 
   TextStyle get countryNameTextStyle => _countryNameTextStyle;
   set countryNameTextStyle(TextStyle value) {

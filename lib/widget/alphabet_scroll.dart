@@ -27,9 +27,7 @@ class AlphabetScroll extends StatelessWidget {
     return Selector<SettingsProvider, int>(
         selector: (context, settings) => settings.selectedPosition,
         builder: (context, position, child) => Align(
-              alignment: (Directionality.of(context) == TextDirection.ltr)
-                  ? Alignment.centerRight
-                  : Alignment.centerLeft,
+              alignment: (Directionality.of(context) == TextDirection.ltr) ? Alignment.centerRight : Alignment.centerLeft,
 
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.8,
@@ -44,16 +42,11 @@ class AlphabetScroll extends StatelessWidget {
                               child: InkWell(
                                 onTap: () {
                                   if (alphabet![index] != oldtext) {
-                                    int pos = countries.indexWhere((c) => c.englishName.common
-                                        .toUpperCase()
-                                        .startsWith(alphabet![index]));
+                                    int pos = countries.indexWhere((c) => c.name.common.toUpperCase().startsWith(alphabet![index]));
 
-                                    (dialogTheme.tileHeight * (pos + unitsCanceled) + 10 <=
-                                            scrollController.position.maxScrollExtent)
-                                        ? scrollController.jumpTo(
-                                            dialogTheme.tileHeight * (pos + unitsCanceled) + 10)
-                                        : scrollController
-                                            .jumpTo(scrollController.position.maxScrollExtent);
+                                    (dialogTheme.tileHeight * (pos + unitsCanceled) + 10 <= scrollController.position.maxScrollExtent)
+                                        ? scrollController.jumpTo(dialogTheme.tileHeight * (pos + unitsCanceled) + 10)
+                                        : scrollController.jumpTo(scrollController.position.maxScrollExtent);
                                     oldtext = alphabet![index];
                                     position = index;
                                   }
@@ -73,19 +66,11 @@ class AlphabetScroll extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: (index == position)
                                         ? dialogTheme.alphabetsBarTheme.selectedTextStyle.copyWith(
-                                            fontSize: dialogTheme
-                                                    .alphabetsBarTheme.selectedTextStyle.fontSize ??
-                                                18,
-                                            fontWeight: dialogTheme.alphabetsBarTheme
-                                                    .selectedTextStyle.fontWeight ??
-                                                FontWeight.bold,
-                                            color: dialogTheme
-                                                    .alphabetsBarTheme.selectedTextStyle.color ??
-                                                Theme.of(context).colorScheme.primary)
-                                        : dialogTheme.alphabetsBarTheme.textStyle.copyWith(
-                                            fontSize: (dialogTheme
-                                                    .alphabetsBarTheme.textStyle.fontSize) ??
-                                                12),
+                                            fontSize: dialogTheme.alphabetsBarTheme.selectedTextStyle.fontSize ?? 18,
+                                            fontWeight: dialogTheme.alphabetsBarTheme.selectedTextStyle.fontWeight ?? FontWeight.bold,
+                                            color: dialogTheme.alphabetsBarTheme.selectedTextStyle.color ?? Theme.of(context).colorScheme.primary)
+                                        : dialogTheme.alphabetsBarTheme.textStyle
+                                            .copyWith(fontSize: (dialogTheme.alphabetsBarTheme.textStyle.fontSize) ?? 12),
                                   ),
                                 ),
                               ),

@@ -1,4 +1,4 @@
-// ignore_for_file: constant_identifier_names
+// ignore_for_file: constant_identifier_names, non_constant_identifier_names
 enum Countries {
   Aruba("AW", "ABW", "Aruba"),
   Afghanistan("AF", "AFG", "Afghanistan"),
@@ -251,8 +251,8 @@ enum Countries {
   Zambia("ZM", "ZMB", "Zambia"),
   Zimbabwe("ZW", "ZWE", "Zimbabwe");
 
-  const Countries(this.alpha2, this.alpha3, this.name);
+  const Countries(this.iso_3166_1_alpha2, this.iso_3166_1_alpha3, this.name);
   final String name;
-  final String alpha2;
-  final String alpha3;
+  final String iso_3166_1_alpha2;
+  final String iso_3166_1_alpha3;
 }

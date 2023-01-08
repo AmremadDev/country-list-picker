@@ -5,8 +5,8 @@ import '../../controller/dialog_provider.dart';
 import '../../widget/custom_list_tile.dart';
 import '../../widget/color_picker.dart';
 
-class GeneralArguments extends StatelessWidget {
-  const GeneralArguments({super.key});
+class GeneralDialogArguments extends StatelessWidget {
+  const GeneralDialogArguments({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +19,11 @@ class GeneralArguments extends StatelessWidget {
               value: dialog.appBarTitle.tr,
               onChanged: (String value) => dialog.appBarTitle = value,
             ),
-                        CustomListTile<Switch, bool>(
+            CustomListTile<Switch, bool>(
               title: "Safe Area",
               value: dialog.useSafeArea,
               onChanged: (bool value) => dialog.useSafeArea = value,
             ),
-
             CustomListTile<Switch, bool>(
               title: "Country Flag",
               value: dialog.countryFlag,

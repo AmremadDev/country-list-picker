@@ -1,3 +1,4 @@
+import 'package:country_list_picker_example/widget/picker/general_arguments.dart';
 import 'package:flutter/material.dart';
 import '../model/screen.dart';
 import '../model/onboarding.dart';
@@ -47,7 +48,6 @@ export '../widget/about/about_screen.dart';
 
 const double titlesFontSize = 18;
 
-
 List<Screen> screens = [
   Screen(
     title: "Picker",
@@ -77,6 +77,7 @@ List<Screen> screens = [
 ];
 
 List<Argument> pickerArguments = [
+  Argument(title: "General", child: const GeneralPickerArguments()),
   Argument(title: "Flag", child: const FlagArguments()),
   Argument(title: "Dial Code", child: const DialCodeArguments()),
   Argument(title: "Down Icon", child: const DownIconArguments()),
@@ -91,7 +92,7 @@ List<Argument> inputArguments = [
 ];
 
 List<Argument> dialogArguments = [
-  Argument(title: "General", child: const GeneralArguments()),
+  Argument(title: "General", child: const GeneralDialogArguments()),
   Argument(title: "Title TextStyle", child: const TitleTextStyleArguments()),
   Argument(title: "TextStyle", child: const TextStyleArguments()),
   Argument(title: "Search Tile", child: const SearchTileArguments()),
@@ -101,21 +102,11 @@ List<Argument> dialogArguments = [
 ];
 
 List<Onboarding> listOnboarding = [
-  Onboarding(
-      title: "Easy and Fast",
-      image: "assets/onborading/onborading-1.png",
-      body: "Easy to use, minimum code and least effort"),
-  Onboarding(
-      title: "Flexible",
-      image: "assets/onborading/onborading-3.png",
-      body: "Customize the Country List Picker Settings"),
+  Onboarding(title: "Easy and Fast", image: "assets/onborading/onborading-1.png", body: "Easy to use, minimum code and least effort"),
+  Onboarding(title: "Flexible", image: "assets/onborading/onborading-3.png", body: "Customize the Country List Picker Settings"),
   Onboarding(
       title: "Open Source",
       image: "assets/onborading/onborading-4.png",
-      body:
-          "Open source  to developers can modify and share because its design is publicly accessible"),
-  Onboarding(
-      title: "Tested and Documentation",
-      image: "assets/onborading/onborading-4.png",
-      body: "A guide to reference and documentation"),
+      body: "Open source  to developers can modify and share because its design is publicly accessible"),
+  Onboarding(title: "Tested and Documentation", image: "assets/onborading/onborading-4.png", body: "A guide to reference and documentation"),
 ];
