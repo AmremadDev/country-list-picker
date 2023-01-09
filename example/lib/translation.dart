@@ -97,7 +97,10 @@ Map<String, Map<String, String>> transaltionList = {
     "Amr Emad Eldin Lotfy": "Amr Emad Eldin Lotfy",
     "Email": "Email",
     "Phone": "Phone",
-    "Language": "Language"
+    "Language": "Language",
+    "MultiLanguage": "MultiLanguage",
+    "It supports the display of country names in multiple languages.":
+        "It supports the display of country names in multiple languages."
   },
   "ar": {
     "Country List Picker Demo": "قائمة إختيار الدول",
@@ -178,6 +181,9 @@ Map<String, Map<String, String>> transaltionList = {
     "Amr Emad Eldin Lotfy": "عمرو عماد الدين لطفي",
     "Email": "البريد الإلكتروني",
     "Phone": "رقم الهاتف",
-    "Language": "اللغة"
+    "Language": "اللغة",
+    "MultiLanguage": "متعدد اللغات",
+    "It supports the display of country names in multiple languages.":
+        "يدعم عرض أسماء الدول بلغات متعددة."
   }
 };

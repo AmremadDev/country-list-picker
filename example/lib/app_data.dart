@@ -102,11 +102,25 @@ List<Argument> dialogArguments = [
 ];
 
 List<Onboarding> listOnboarding = [
-  Onboarding(title: "Easy and Fast", image: "assets/onborading/onborading-1.png", body: "Easy to use, minimum code and least effort"),
-  Onboarding(title: "Flexible", image: "assets/onborading/onborading-3.png", body: "Customize the Country List Picker Settings"),
+  Onboarding(
+      title: "Easy and Fast",
+      image: "assets/onborading/onborading-1.png",
+      body: "Easy to use, minimum code and least effort"),
+  Onboarding(
+      title: "MultiLanguage",
+      image: "assets/onborading/onborading-3.png",
+      body: "It supports the display of country names in multiple languages."),
+  Onboarding(
+      title: "Flexible",
+      image: "assets/onborading/onborading-3.png",
+      body: "Customize the Country List Picker Settings"),
   Onboarding(
       title: "Open Source",
       image: "assets/onborading/onborading-4.png",
-      body: "Open source  to developers can modify and share because its design is publicly accessible"),
-  Onboarding(title: "Tested and Documentation", image: "assets/onborading/onborading-4.png", body: "A guide to reference and documentation"),
+      body:
+          "Open source  to developers can modify and share because its design is publicly accessible"),
+  Onboarding(
+      title: "Tested and Documentation",
+      image: "assets/onborading/onborading-4.png",
+      body: "A guide to reference and documentation"),
 ];

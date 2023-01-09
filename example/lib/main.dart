@@ -1,4 +1,3 @@
-import 'package:country_list_picker_example/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +19,8 @@ void main() {
 
       // Picker Provider
       ChangeNotifierProxyProvider<SettingsProvider, PickerProvider>(
-          create: (_) => PickerProvider(), update: (_, settings, picker) => picker!..update(settings)),
+          create: (_) => PickerProvider(),
+          update: (_, settings, picker) => picker!..update(settings)),
 
       // Input Provider
       ChangeNotifierProxyProvider<SettingsProvider, InputProvider>(
@@ -28,7 +28,8 @@ void main() {
 
       // dialog Provider
       ChangeNotifierProxyProvider<SettingsProvider, DialogProvider>(
-          create: (_) => DialogProvider(), update: (_, settings, dialog) => dialog!..update(settings)),
+          create: (_) => DialogProvider(),
+          update: (_, settings, dialog) => dialog!..update(settings)),
     ],
     child: const CountryListPickerExample(),
   ));
@@ -38,7 +39,6 @@ class CountryListPickerExample extends StatelessWidget {
   const CountryListPickerExample({super.key});
   @override
   Widget build(BuildContext context) {
-
     return Consumer<SettingsProvider>(
       builder: (_, settings, child) {
         return MaterialApp(
@@ -67,7 +67,7 @@ class CountryListPickerExample extends StatelessWidget {
                 selectedItemColor: settings.lightprimarySwatch,
               ),
             ),
-            home: const HomePage());
+            home: const OnBoardingPage());
       },
     );
   }

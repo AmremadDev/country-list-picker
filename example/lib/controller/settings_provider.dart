@@ -11,7 +11,7 @@ class SettingsProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  bool _isDarkMode = true;
+  bool _isDarkMode = false;
   bool get isDarkMode {
     _isDarkMode
         ? SystemChrome.setSystemUIOverlayStyle(
