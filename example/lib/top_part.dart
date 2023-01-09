@@ -47,7 +47,7 @@ class TopPart extends StatelessWidget {
                 : input.border == Borders.outline
                     ? OutlineInputBorder(borderSide: BorderSide(width: input.borderWidth))
                     : UnderlineInputBorder(borderSide: BorderSide(width: input.borderWidth)),
-            mask: MaskTextInputFormatter(mask: input.mask, filter: {"#": RegExp(r'[0-9]')}),
+            mask: input.mask,
           ),
           onCountryChanged: ((value) {
             input.hintString = value.local_number_sample;

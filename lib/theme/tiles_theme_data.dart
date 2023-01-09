@@ -19,16 +19,14 @@ class TilesThemeData {
   const TilesThemeData({
     // General
     this.style = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-    this.background, // = const Color(0xFFE9E9E9), //const Color(0x6CDDDDDD),
+    this.background,
 
     // Search Tile
-
     this.searchTitle = "Search",
     this.searchHint = "name/dial code...",
     this.searchHintTextStyle = const TextStyle(fontSize: 16, color: Color(0xFF9E9E9E)),
 
     // Last Pick Tile
-
     this.lastPickTitle = "Last Pick",
     this.lastPickIcon = const Icon(Icons.check),
 

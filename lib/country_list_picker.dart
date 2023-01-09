@@ -102,6 +102,7 @@ class _CountryListPickerState extends State<CountryListPicker> {
   Widget build(BuildContext context) {
     // if (widget.countries2.isEmpty) {
     countriesMultiLanguagesList.removeWhere((element) => element['dialing_code'] == null);
+    // countriesMultiLanguagesList.removeWhere((element) => element['common']. == "E");
     countries = countriesMultiLanguagesList.map((element) {
       return Country(
         iso_3166_1_alpha2: element['iso_3166_1_alpha2'],
@@ -120,6 +121,7 @@ class _CountryListPickerState extends State<CountryListPicker> {
         flagUri: 'assets/flags/${element['iso_3166_1_alpha2'].toLowerCase()}.png',
       );
     }).toList();
+    countries.removeWhere((element) => element.name.common[0] == "F");
     countries.sort((a, b) => a.name.common.compareTo(b.name.common));
 
     selectedCountry = selectedCountry == null
@@ -220,6 +222,7 @@ class _CountryListPickerState extends State<CountryListPicker> {
                   builder: (_, child) {
                     return SelectionList(
                       countries,
+                      language: widget.language,
                       textDirection: Directionality.of(context),
                       selectedCountry: selectedCountry!,
                       localCountry: (widget.localCountry == null)

@@ -3,9 +3,10 @@ import './mask_text_input_formtter.dart';
 import '../theme/input_theme.dart';
 
 export './mask_text_input_formtter.dart';
+
 class InputField extends StatelessWidget {
   const InputField({
-    Key? key,
+    super.key,
     required this.inputTheme,
     this.onChanged,
     this.onSaved,
@@ -19,7 +20,7 @@ class InputField extends StatelessWidget {
     // this.autovalidateMode,
     // this.validator,
     this.focusNode,
-  }) : super(key: key);
+  });
 
   final InputThemeData inputTheme;
   final ValueChanged<String>? onChanged;
@@ -39,12 +40,9 @@ class InputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // focusNode = focusNode ?? FocusNode();
     return Flexible(
       child: TextFormField(
         focusNode: focusNode,
-        // autovalidateMode: autovalidateMode,
-        // validator: validator,
         obscureText: inputTheme.obscureText,
         obscuringCharacter: inputTheme.obscuringCharacter,
         readOnly: readOnly,
@@ -55,9 +53,7 @@ class InputField extends StatelessWidget {
         onChanged: onChanged,
         onEditingComplete: onEditingComplete,
         onFieldSubmitted: onFieldSubmitted,
-
         onTap: onTap,
-
         keyboardType: TextInputType.phone,
         textAlign:
             Directionality.of(context) == TextDirection.ltr ? TextAlign.left : TextAlign.right,
@@ -67,8 +63,7 @@ class InputField extends StatelessWidget {
           fontSize: inputTheme.style.fontSize ?? 16,
         ),
         inputFormatters: [
-          inputTheme.mask ??
-              MaskTextInputFormatter(mask: "### #### ###", filter: {"#": RegExp(r'[0-9]')})
+          MaskTextInputFormatter(mask: inputTheme.mask, filter: {"#": RegExp(r'[0-9]')})
         ],
         decoration: InputDecoration(
           contentPadding: inputTheme.contentPadding,
@@ -80,16 +75,15 @@ class InputField extends StatelessWidget {
           border: inputTheme.border == InputBorder.none
               ? InputBorder.none
               : inputTheme.border.copyWith(
-                  borderSide: BorderSide(
-                  color: Theme.of(context).hintColor,
-                  width: 1,
-                )),
+                  borderSide: BorderSide(color: Theme.of(context).hintColor, width: 1),
+                ),
           focusedBorder: inputTheme.border == InputBorder.none
               ? InputBorder.none
               : inputTheme.border.copyWith(
                   borderSide: BorderSide(
                       width: inputTheme.border.borderSide.width,
-                      color: Theme.of(context).colorScheme.primary)),
+                      color: Theme.of(context).colorScheme.primary),
+                ),
           counterText: "",
         ),
       ),

@@ -1,14 +1,19 @@
+import 'package:country_list_picker/model/languages.dart';
 import 'package:flutter/material.dart';
 import '../model/country.dart';
 import '../theme/country_list_dialog_theme.dart';
 
 class CurrentLocationTile extends StatelessWidget {
-  const CurrentLocationTile({Key? key, required this.dialogTheme, required this.country})
-      : super(key: key);
+  const CurrentLocationTile({
+    super.key,
+    required this.dialogTheme,
+    required this.country,
+    required this.language,
+  });
 
   final CountryListDialogTheme dialogTheme;
-
   final Country country;
+  final Languages language;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +52,11 @@ class CurrentLocationTile extends StatelessWidget {
             ),
             trailing: Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: (dialogTheme.alphabetsBarTheme.visible == true) ? 20.0 : 0.0,
+                horizontal: (dialogTheme.alphabetsBarTheme.visible == false ||
+                        language == Languages.Chinese ||
+                        language == Languages.Japanese)
+                    ? 0.0
+                    : 20.0,
               ),
               child: (dialogTheme.isShowDialCode)
                   ? Text(country.dialing_code,

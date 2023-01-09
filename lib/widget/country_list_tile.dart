@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import '../model/country.dart';
+import '../model/languages.dart';
 import '../theme/country_list_dialog_theme.dart';
 
 class CountryListTile extends StatelessWidget {
   const CountryListTile({
-    Key? key,
+    super.key,
     required this.country,
+    required this.language,
     this.dialogTheme = const CountryListDialogTheme(),
-  }) : super(key: key);
+  });
 
   final Country country;
+  final Languages language;
   final CountryListDialogTheme dialogTheme;
   @override
   Widget build(BuildContext context) {
@@ -25,18 +28,31 @@ class CountryListTile extends StatelessWidget {
               : null,
           title: Text(
             country.name.common,
-            overflow: TextOverflow.ellipsis,
+            overflow: TextOverflow.clip,
             maxLines: 1,
             softWrap: false,
             style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16),
           ),
+          // subtitle: Text(
+          //   country.name.official,
+          //   overflow: TextOverflow.clip,
+          //   // maxLines: 1,
+          //   softWrap: false,
+          //   style: dialogTheme.textStyle.copyWith(color: Colors.grey.shade500, fontSize: 14),
+          // ),
           trailing: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: (dialogTheme.alphabetsBarTheme.visible == true) ? 20.0 : 0.0,
+              horizontal: (dialogTheme.alphabetsBarTheme.visible == false ||
+                      language == Languages.Chinese ||
+                      language == Languages.Japanese)
+                  ? 0.0
+                  : 20.0,
             ),
             child: (dialogTheme.isShowDialCode)
                 ? Text(country.dialing_code,
-                    textDirection: TextDirection.ltr, style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
+                    textDirection: TextDirection.ltr,
+                    style: dialogTheme.textStyle
+                        .copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
                 : null,
           ),
           onTap: () {

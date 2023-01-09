@@ -6,11 +6,11 @@ import '../provider/picker_provider.dart';
 
 class SearchTile extends StatelessWidget {
   const SearchTile({
-    Key? key,
+    super.key,
     required this.dialogTheme,
     required this.controller,
     required this.elements,
-  }) : super(key: key);
+  });
 
   final CountryListDialogTheme dialogTheme;
   final TextEditingController controller;
@@ -29,8 +29,8 @@ class SearchTile extends StatelessWidget {
           height: dialogTheme.tileHeight,
           child: Text(
             dialogTheme.tilesTheme.searchTitle,
-            style:
-                dialogTheme.tilesTheme.style.copyWith(fontSize: dialogTheme.tilesTheme.style.fontSize ?? 16),
+            style: dialogTheme.tilesTheme.style
+                .copyWith(fontSize: dialogTheme.tilesTheme.style.fontSize ?? 16),
           )),
       Container(
         color: dialogTheme.backgroundColor,

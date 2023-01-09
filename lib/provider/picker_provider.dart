@@ -12,24 +12,30 @@ class SettingsProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  int _selectedPositon = -1;
-  int get selectedPosition => _selectedPositon;
-  set selectedPosition(int value) {
-    _selectedPositon = value;
-    notifyListeners();
+  String? _selectedCharacter;
+  String? get selectedCharacter => _selectedCharacter;
+  set selectedCharacter(String? value) {
+    if (_selectedCharacter != value) {
+      _selectedCharacter = value;
+      notifyListeners();
+    }
   }
 
   bool _isShowFloatButton = false;
   bool get isShowFloatButton => _isShowFloatButton;
   set isShowFloatButton(bool value) {
-    _isShowFloatButton = value;
-    notifyListeners();
+    if (_isShowFloatButton != value) {
+      _isShowFloatButton = value;
+      notifyListeners();
+    }
   }
 
   bool _inputOnFocus = false;
   bool get inputOnFocus => _inputOnFocus;
   set inputOnFocus(bool value) {
-    _inputOnFocus = value;
-    notifyListeners();
+    if (_inputOnFocus != value) {
+      _inputOnFocus = value;
+      notifyListeners();
+    }
   }
 }
