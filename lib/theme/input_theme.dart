@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import '../widget/mask_text_input_formtter.dart';
 
 class InputThemeData {
   final EdgeInsets contentPadding;

@@ -52,8 +52,8 @@ class AlphabetScroll extends StatelessWidget {
                                   }
                                 },
                                 child: Container(
-                                  width: 40,
-                                  height: dialogTheme.tileHeight,
+                                  width: dialogTheme.tileHeight,  // <- need to check
+                                  height: dialogTheme.tileHeight, // <- need to check
                                   alignment: Alignment.center,
                                   decoration: BoxDecoration(
                                     color: index == position

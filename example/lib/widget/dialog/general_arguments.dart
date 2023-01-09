@@ -20,11 +20,6 @@ class GeneralDialogArguments extends StatelessWidget {
               onChanged: (String value) => dialog.appBarTitle = value,
             ),
             CustomListTile<Switch, bool>(
-              title: "Safe Area",
-              value: dialog.useSafeArea,
-              onChanged: (bool value) => dialog.useSafeArea = value,
-            ),
-            CustomListTile<Switch, bool>(
               title: "Country Flag",
               value: dialog.countryFlag,
               onChanged: (bool value) => dialog.countryFlag = value,

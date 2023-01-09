@@ -16,16 +16,13 @@ class LastPickTile extends StatelessWidget {
     return Column(children: [
       Container(
           color: dialogTheme.tilesTheme.background ?? Theme.of(context).focusColor,
-          alignment: (Directionality.of(context) == TextDirection.ltr)
-              ? Alignment.centerLeft
-              : Alignment.centerRight,
+          alignment: (Directionality.of(context) == TextDirection.ltr) ? Alignment.centerLeft : Alignment.centerRight,
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
           width: double.infinity,
           height: dialogTheme.tileHeight,
           child: Text(
             dialogTheme.tilesTheme.lastPickTitle,
-            style:
-                dialogTheme.titlesStyle.copyWith(fontSize: dialogTheme.titlesStyle.fontSize ?? 16),
+            style: dialogTheme.tilesTheme.style.copyWith(fontSize: dialogTheme.tilesTheme.style.fontSize ?? 16),
           )),
       SizedBox(
         height: dialogTheme.tileHeight,
@@ -50,8 +47,7 @@ class LastPickTile extends StatelessWidget {
                 ),
                 child: Icon(
                   dialogTheme.tilesTheme.lastPickIcon.icon,
-                  color: (dialogTheme.tilesTheme.lastPickIcon.color) ??
-                      Theme.of(context).colorScheme.primary,
+                  color: (dialogTheme.tilesTheme.lastPickIcon.color) ?? Theme.of(context).colorScheme.primary,
                   size: dialogTheme.tilesTheme.lastPickIcon.size ?? dialogTheme.tileHeight * .6,
                 )),
             onTap: null),

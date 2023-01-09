@@ -2,7 +2,6 @@ import 'package:country_list_picker/country_list_picker.dart';
 import 'package:flutter/material.dart';
 import '../controller/settings_provider.dart';
 
-
 class DialogProvider extends ChangeNotifier {
   SettingsProvider _settings = SettingsProvider();
 
@@ -11,21 +10,13 @@ class DialogProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // ****************************************************************************************************
+  // General Arguments
   String _appBarTitle = "Select your country";
   String get appBarTitle => _appBarTitle;
   set appBarTitle(String value) {
     _appBarTitle = value;
     notifyListeners();
   }
-
-  bool _useSafeArea = false;
-  bool get useSafeArea => _useSafeArea;
-  set useSafeArea(bool value) {
-    _useSafeArea = value;
-    notifyListeners();
-  }
-
 
   bool _countryFlag = true;
   bool get countryFlag => _countryFlag;
@@ -62,21 +53,20 @@ class DialogProvider extends ChangeNotifier {
     _backgroundColor = value;
     notifyListeners();
   }
-
-  Color? _titlesBackgroundColor; // =  const Colors.red;
-  Color get titlesBackgroundColor =>
-      _titlesBackgroundColor ??
-      (_settings.isDarkMode == true ? const Color(0xFF313030) : const Color(0xFFE9E9E9));
-  set titlesBackgroundColor(Color value) {
-    _titlesBackgroundColor = value;
+  TextStyle _textStyle = const TextStyle(fontWeight: FontWeight.normal, fontSize: 16);
+  TextStyle get textStyle =>
+      _textStyle.copyWith(color: _textStyle.color ?? (_settings.isDarkMode == true ? Colors.white : Colors.black));
+  set textStyle(TextStyle value) {
+    _textStyle = value;
     notifyListeners();
   }
 
-  TextStyle _textStyle = const TextStyle(fontWeight: FontWeight.normal, fontSize: 16);
-  TextStyle get textStyle => _textStyle.copyWith(
-      color: _textStyle.color ?? (_settings.isDarkMode == true ? Colors.white : Colors.black));
-  set textStyle(TextStyle value) {
-    _textStyle = value;
+  // Tile Titles Arguments
+  Color? _titlesBackgroundColor;
+  Color get titlesBackgroundColor =>
+      _titlesBackgroundColor ?? (_settings.isDarkMode == true ? const Color(0xFF313030) : const Color(0xFFE9E9E9));
+  set titlesBackgroundColor(Color value) {
+    _titlesBackgroundColor = value;
     notifyListeners();
   }
 
@@ -88,7 +78,7 @@ class DialogProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // ****************************************************************************************************
+  // Search Tile Arguments
   bool _searchTile = true;
   bool get searchTile => _searchTile;
   set searchTile(bool value) {
@@ -110,8 +100,7 @@ class DialogProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  TextStyle _searchTileHintTextStyle =
-      const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, color: Colors.grey);
+  TextStyle _searchTileHintTextStyle = const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, color: Colors.grey);
   TextStyle get searchTileHintTextStyle => _searchTileHintTextStyle;
   set searchTileHintTextStyle(TextStyle value) {
     _searchTileHintTextStyle = value;
@@ -123,7 +112,7 @@ class DialogProvider extends ChangeNotifier {
   bool get currentLocationTile => _currentLocationTile;
   set currentLocationTile(bool value) {
     _currentLocationTile = value;
-  
+
     notifyListeners();
   }
 
@@ -134,13 +123,12 @@ class DialogProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-    Countries _localCountry = Countries.Egypt;
+  Countries _localCountry = Countries.Egypt;
   Countries get localCountry => _localCountry;
   set localCountry(Countries value) {
     _localCountry = value;
     notifyListeners();
   }
-
 
   // ****************************************************************************************************
   bool _lastPickTile = true;
@@ -195,11 +183,9 @@ class DialogProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  TextStyle _alphabetUnSelectedTextStyle =
-      const TextStyle(fontSize: 12, fontWeight: FontWeight.normal);
+  TextStyle _alphabetUnSelectedTextStyle = const TextStyle(fontSize: 12, fontWeight: FontWeight.normal);
   TextStyle get alphabetUnSelectedTextStyle => _alphabetUnSelectedTextStyle.copyWith(
-      color: _alphabetUnSelectedTextStyle.color ??
-          (_settings.isDarkMode == true ? Colors.white : Colors.black));
+      color: _alphabetUnSelectedTextStyle.color ?? (_settings.isDarkMode == true ? Colors.white : Colors.black));
   set alphabetUnSelectedTextStyle(TextStyle value) {
     _alphabetUnSelectedTextStyle = value;
     notifyListeners();

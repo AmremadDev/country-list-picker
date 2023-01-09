@@ -1,4 +1,5 @@
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+
+import './widget/mask_text_input_formtter.dart';
 
 extension StringExtensions on String {
   String get getUnmaskedText => MaskTextInputFormatter(

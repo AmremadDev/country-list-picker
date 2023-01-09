@@ -1,8 +1,8 @@
 import 'tiles_theme_data.dart';
 import 'package:flutter/material.dart';
-import './alphabets_bar_themes.dart';
 
-export 'tiles_theme_data.dart';
+import './alphabets_bar_themes.dart';
+export './tiles_theme_data.dart';
 export './alphabets_bar_themes.dart';
 
 class CountryListDialogTheme {
@@ -18,11 +18,10 @@ class CountryListDialogTheme {
   ///if true country flag will be appear.
   final bool isShowFlage;
 
-  ///Titles text style
-  final TextStyle titlesStyle;
 
-  ///Titles background
-  // final Color titlesBackground;
+  final bool isShowSearchTile;
+  
+  final bool isShowLastPickTile;
 
   ///Country dialog background color.
   final Color? backgroundColor;
@@ -35,9 +34,6 @@ class CountryListDialogTheme {
   final double tileHeight;
 
   final TilesThemeData tilesTheme;
-
-  final bool isShowSearchTile;
-  final bool isShowLastPickTile;
 
   ///Alphabets bar Theme.
   ///
@@ -67,9 +63,8 @@ class CountryListDialogTheme {
     this.appBar,
     this.isShowFlage = true,
     this.isShowFloatButton = true,
-    this.backgroundColor, //= Colors.transparent,
-    this.titlesStyle = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-    // this.titlesBackground = const Color(0xFFE9E9E9), //const Color(0x6CDDDDDD),
+    this.backgroundColor,
+
     this.isShowDialCode = true,
     this.textStyle = const TextStyle(fontSize: 16),
     this.tileHeight = 50.0,

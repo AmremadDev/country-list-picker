@@ -19,6 +19,7 @@ export '../theme/input_theme.dart';
 export '../model/country.dart';
 export '../model/countries.dart';
 export '../extensions.dart';
+export '../widget/mask_text_input_formtter.dart';
 
 class CountryListPicker extends StatefulWidget {
   const CountryListPicker({

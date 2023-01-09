@@ -1,40 +1,43 @@
 // ignore_for_file: non_constant_identifier_names, constant_identifier_names
+import 'package:flutter/cupertino.dart';
+
 enum Languages {
-  Arabic("AR", "ARA", "Arabic"),
-  Chinese("ZH", "ZHO", "Chinese"),
-  Croatian("HR", "HRV", "Croatian"),
-  Czech("CS", "CES", "Czech"),
-  English("EN", "ENG", "English"),
-  Estonian("ET", "EST", "Estonian"),
-  Finnish("FI", "FIN", "Finnish"),
-  French("FR", "FRA", "French"),
-  German("DE", "DEU", "German"),
-  Hungarian("HU", "HUN", "Hungarian"),
-  Italian("IT", "ITA", "Italian"),
-  Japanese("JA", "JPN", "Japanese"),
-  Korean("KO", "KOR", "Korean"),
-  Persian("FA", "PER", "Persian (Farsi)"),
-  Polish("PL", "POL", "Polish"),
-  Portuguese("PT", "POR", "Portuguese"),
-  Russian("RU", "RUS", "Russian"),
-  Slovak("SK", "SLK", "Slovak"),
-  Spanish("ES", "SPA", "Spanish"),
-  Swedish("SV", "SWE", "Swedish"),
-  Urdu("UR", "URD", "Urdu");
+  Arabic("AR", "ARA", "Arabic",  TextDirection.rtl) ,
+  Chinese("ZH", "ZHO", "Chinese",  TextDirection.ltr),
+  Croatian("HR", "HRV", "Croatian",  TextDirection.ltr),
+  Czech("CS", "CES", "Czech",  TextDirection.ltr),
+  English("EN", "ENG", "English",  TextDirection.ltr),
+  Estonian("ET", "EST", "Estonian",  TextDirection.ltr),
+  Finnish("FI", "FIN", "Finnish",  TextDirection.ltr),
+  French("FR", "FRA", "French",  TextDirection.ltr),
+  German("DE", "DEU", "German",  TextDirection.ltr),
+  Hungarian("HU", "HUN", "Hungarian",  TextDirection.ltr),
+  Italian("IT", "ITA", "Italian",  TextDirection.ltr),
+  Japanese("JA", "JPN", "Japanese",  TextDirection.ltr),
+  Korean("KO", "KOR", "Korean",  TextDirection.ltr),
+  Persian("FA", "PER", "Persian (Farsi)",  TextDirection.rtl),
+  Polish("PL", "POL", "Polish",  TextDirection.ltr),
+  Portuguese("PT", "POR", "Portuguese",  TextDirection.ltr),
+  Russian("RU", "RUS", "Russian",  TextDirection.ltr),
+  Slovak("SK", "SLK", "Slovak",  TextDirection.ltr),
+  Spanish("ES", "SPA", "Spanish",  TextDirection.ltr),
+  Swedish("SV", "SWE", "Swedish",  TextDirection.ltr),
+  Urdu("UR", "URD", "Urdu",  TextDirection.rtl);
 
-  // Bulgarian("BG", "BUL", "Bulgarian"),
-  // Danish("DA", "DAN", "Danish"),
-  // Greek("EL", "ELL", "Greek (modern)"),
-  // Esperanto("EO", "EPO", "Esperanto"),
-  // Basque("EU", "EUS", "Basque"),
-  // Armenian("HY", "HYE", "Armenian"),
-  // Lithuanian("LT", "LIT", "Lithuanian"),
-  // Norwegian("NO", "NOR", "Norwegian"),
-  // Romanian("RO", "RON", "Romanian"),
-  // Thai("TH", "THA", "Thai"),
-  // Ukrainian("UK", "UKR", "Ukrainian");
+  // Bulgarian("BG", "BUL", "Bulgarian",  TextDirection.ltr),
+  // Danish("DA", "DAN", "Danish",  TextDirection.ltr),
+  // Greek("EL", "ELL", "Greek (modern)",  TextDirection.ltr),
+  // Esperanto("EO", "EPO", "Esperanto",  TextDirection.ltr),
+  // Basque("EU", "EUS", "Basque",  TextDirection.ltr),
+  // Armenian("HY", "HYE", "Armenian",  TextDirection.ltr),
+  // Lithuanian("LT", "LIT", "Lithuanian",  TextDirection.ltr),
+  // Norwegian("NO", "NOR", "Norwegian",  TextDirection.ltr),
+  // Romanian("RO", "RON", "Romanian",  TextDirection.ltr),
+  // Thai("TH", "THA", "Thai",  TextDirection.ltr),
+  // Ukrainian("UK", "UKR", "Ukrainian",  TextDirection.ltr);
 
-  const Languages(this.iso_639_1_alpha2, this.iso_639_2_alpha3, this.name);
+  const Languages(this.iso_639_1_alpha2, this.iso_639_2_alpha3, this.name,
+      TextDirection textDirection );
   final String name;
   final String iso_639_1_alpha2;
   final String iso_639_2_alpha3;

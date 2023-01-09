@@ -38,7 +38,7 @@ class CountryListPickerExample extends StatelessWidget {
   const CountryListPickerExample({super.key});
   @override
   Widget build(BuildContext context) {
-    // print(''.codeUnitAt(0));
+
     return Consumer<SettingsProvider>(
       builder: (_, settings, child) {
         return MaterialApp(

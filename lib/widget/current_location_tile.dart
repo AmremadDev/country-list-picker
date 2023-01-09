@@ -23,9 +23,9 @@ class CurrentLocationTile extends StatelessWidget {
           height: dialogTheme.tileHeight,
           child: Text(
             dialogTheme.tilesTheme.currentLocationTileTitle,
-            style: dialogTheme.titlesStyle.copyWith(
-              fontSize: dialogTheme.titlesStyle.fontSize ?? 16,
-              fontWeight: dialogTheme.titlesStyle.fontWeight ?? FontWeight.bold,
+            style: dialogTheme.tilesTheme.style.copyWith(
+              fontSize: dialogTheme.tilesTheme.style.fontSize ?? 16,
+              fontWeight: dialogTheme.tilesTheme.style.fontWeight ?? FontWeight.bold,
             ),
           )),
       SizedBox(

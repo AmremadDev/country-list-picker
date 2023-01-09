@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:country_list_picker/country_list_picker.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+
 import '../controller/dialog_provider.dart';
 import '../controller/input_provider.dart';
 import '../controller/picker_provider.dart';
@@ -53,7 +53,9 @@ class TopPart extends StatelessWidget {
             input.hintString = value.local_number_sample;
             input.mask = value.default_number_format;
           }),
-          onChanged: (value) => print(value.getUnmaskedText),
+          onChanged: (value) {
+            // print(value.getUnmaskedText);
+          },
           dialogTheme: CountryListDialogTheme(
             isShowFlage: dialog.countryFlag,
             isShowDialCode: dialog.countryDialCode,

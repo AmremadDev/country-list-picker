@@ -30,7 +30,7 @@ class SearchTile extends StatelessWidget {
           child: Text(
             dialogTheme.tilesTheme.searchTitle,
             style:
-                dialogTheme.titlesStyle.copyWith(fontSize: dialogTheme.titlesStyle.fontSize ?? 16),
+                dialogTheme.tilesTheme.style.copyWith(fontSize: dialogTheme.tilesTheme.style.fontSize ?? 16),
           )),
       Container(
         color: dialogTheme.backgroundColor,
