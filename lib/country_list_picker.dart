@@ -133,81 +133,85 @@ class _CountryListPickerState extends State<CountryListPicker> {
             (element) => element.iso_3166_1_alpha3 == selectedCountry!.iso_3166_1_alpha3);
     // }
 
-    return Scaffold(
-      body: Container(
-        margin: widget.margin,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: EdgeInsets.only(
-                top: widget.padding.top,
-                right: widget.padding.right + 5.0,
-                bottom: widget.padding.bottom,
-                left: widget.padding.left + 5.0,
-              ),
-              decoration: BoxDecoration(
-                  borderRadius: widget.border.isOutline ? BorderRadius.circular(4) : null,
-                  border: (widget.inputTheme.border == InputBorder.none ||
-                              widget.isShowTextField == false) &&
-                          widget.border != InputBorder.none
-                      ? widget.border.isOutline
-                          ? inputOnFocus == true || widget.isShowTextField == false
-                              ? Border.all(
-                                  color: Theme.of(context).colorScheme.primary,
-                                  width: widget.border.borderSide.width)
-                              : Border.all(color: Theme.of(context).hintColor, width: 1)
-                          : inputOnFocus == true || widget.isShowTextField == false
-                              ? Border(
-                                  bottom: BorderSide(
-                                      color: Theme.of(context).colorScheme.primary,
-                                      width: widget.border.borderSide.width))
-                              : Border(
-                                  bottom: BorderSide(color: Theme.of(context).hintColor, width: 1))
-                      : null),
-              child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: (widget.onCountryChanged == null)
-                          ? null
-                          : () async => await _onTapEvent(context),
-                      child: _buildMainPart(selectedCountry!),
-                    ),
-                    if (widget.isShowTextField == true)
-                      InputField(
-                        inputTheme: widget.inputTheme,
-                        onChanged: widget.onChanged,
-                        onEditingComplete: widget.onEditingComplete,
-                        onFieldSubmitted: widget.onFieldSubmitted,
-                        onSaved: widget.onSaved,
-                        onTap: widget.onTap,
-                        focusNode: focusNode
-                          ..addListener(() {
-                            inputOnFocus = focusNode.hasFocus;
-                          }),
+    return Directionality(
+      textDirection: widget.textDirection ?? Directionality.of(context),
+      child: Scaffold(
+        body: Container(
+          margin: widget.margin,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: EdgeInsets.only(
+                  top: widget.padding.top,
+                  right: widget.padding.right + 5.0,
+                  bottom: widget.padding.bottom,
+                  left: widget.padding.left + 5.0,
+                ),
+                decoration: BoxDecoration(
+                    borderRadius: widget.border.isOutline ? BorderRadius.circular(4) : null,
+                    border: (widget.inputTheme.border == InputBorder.none ||
+                                widget.isShowTextField == false) &&
+                            widget.border != InputBorder.none
+                        ? widget.border.isOutline
+                            ? inputOnFocus == true || widget.isShowTextField == false
+                                ? Border.all(
+                                    color: Theme.of(context).colorScheme.primary,
+                                    width: widget.border.borderSide.width)
+                                : Border.all(color: Theme.of(context).hintColor, width: 1)
+                            : inputOnFocus == true || widget.isShowTextField == false
+                                ? Border(
+                                    bottom: BorderSide(
+                                        color: Theme.of(context).colorScheme.primary,
+                                        width: widget.border.borderSide.width))
+                                : Border(
+                                    bottom:
+                                        BorderSide(color: Theme.of(context).hintColor, width: 1))
+                        : null),
+                child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: (widget.onCountryChanged == null)
+                            ? null
+                            : () async => await _onTapEvent(context),
+                        child: _buildMainPart(selectedCountry!),
                       ),
-                  ]),
-            ),
-            if (widget.isShowCountryTitle == true)
-              Text(
-                selectedCountry != null
-                    ? selectedCountry!.name.common
-                    : countries
-                        .firstWhere(
-                            (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
-                                widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
-                            orElse: () => countries[0])
-                        .name
-                        .common,
-                style: widget.countryNameTextStyle.copyWith(
-                    fontWeight: widget.countryNameTextStyle.fontWeight,
-                    fontSize: widget.countryNameTextStyle.fontSize ?? 15,
-                    color: widget.countryNameTextStyle.color ?? Colors.grey,
-                    overflow: TextOverflow.ellipsis),
+                      if (widget.isShowTextField == true)
+                        InputField(
+                          inputTheme: widget.inputTheme,
+                          onChanged: widget.onChanged,
+                          onEditingComplete: widget.onEditingComplete,
+                          onFieldSubmitted: widget.onFieldSubmitted,
+                          onSaved: widget.onSaved,
+                          onTap: widget.onTap,
+                          focusNode: focusNode
+                            ..addListener(() {
+                              inputOnFocus = focusNode.hasFocus;
+                            }),
+                        ),
+                    ]),
               ),
-          ],
+              if (widget.isShowCountryTitle == true)
+                Text(
+                  selectedCountry != null
+                      ? selectedCountry!.name.common
+                      : countries
+                          .firstWhere(
+                              (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
+                                  widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
+                              orElse: () => countries[0])
+                          .name
+                          .common,
+                  style: widget.countryNameTextStyle.copyWith(
+                      fontWeight: widget.countryNameTextStyle.fontWeight,
+                      fontSize: widget.countryNameTextStyle.fontSize ?? 15,
+                      color: widget.countryNameTextStyle.color ?? Colors.grey,
+                      overflow: TextOverflow.ellipsis),
+                ),
+            ],
+          ),
         ),
       ),
     );
@@ -223,7 +227,7 @@ class _CountryListPickerState extends State<CountryListPicker> {
                     return SelectionList(
                       countries,
                       language: widget.language,
-                      textDirection: Directionality.of(context),
+                      textDirection: widget.textDirection ?? Directionality.of(context),
                       selectedCountry: selectedCountry!,
                       localCountry: (widget.localCountry == null)
                           ? null

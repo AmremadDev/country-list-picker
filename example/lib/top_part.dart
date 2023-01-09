@@ -20,6 +20,7 @@ class TopPart extends StatelessWidget {
           // onChanged: (value) {},
           initialCountry: Countries.Egypt,
           language: picker.language,
+          textDirection: picker.textDirection,
           localCountry: (dialog.currentLocationTile == false) ? null : dialog.localCountry,
           countryNameTextStyle: picker.countryNameTextStyle,
           isShowFlag: picker.isShowFlag,

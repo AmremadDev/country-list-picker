@@ -17,6 +17,13 @@ class PickerProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  TextDirection? _textDirection;
+  TextDirection? get textDirection => _textDirection;
+  set textDirection(TextDirection? value) {
+    _textDirection = value;
+    notifyListeners();
+  }
+
 // ****************************************************************************************************
   bool _isShowFlag = true;
   bool get isShowFlag => _isShowFlag;
@@ -43,8 +50,9 @@ class PickerProvider extends ChangeNotifier {
   }
 
   TextStyle _dialCodeTextStyle = const TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
-  TextStyle get dialCodeTextStyle =>
-      _dialCodeTextStyle.copyWith(color: _dialCodeTextStyle.color ?? (_settings.isDarkMode == true ? Colors.white : Colors.black));
+  TextStyle get dialCodeTextStyle => _dialCodeTextStyle.copyWith(
+      color:
+          _dialCodeTextStyle.color ?? (_settings.isDarkMode == true ? Colors.white : Colors.black));
   set dialCodeTextStyle(TextStyle value) {
     _dialCodeTextStyle = value;
     notifyListeners();
@@ -66,7 +74,8 @@ class PickerProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  TextStyle _countryNameTextStyle = const TextStyle(fontWeight: FontWeight.normal, fontSize: 15, color: Colors.grey);
+  TextStyle _countryNameTextStyle =
+      const TextStyle(fontWeight: FontWeight.normal, fontSize: 15, color: Colors.grey);
 
   TextStyle get countryNameTextStyle => _countryNameTextStyle;
   set countryNameTextStyle(TextStyle value) {
