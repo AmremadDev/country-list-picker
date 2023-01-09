@@ -131,8 +131,6 @@ class _CountryListPickerState extends State<CountryListPicker> {
             orElse: () => countries[0])
         : countries.firstWhere(
             (element) => element.iso_3166_1_alpha3 == selectedCountry!.iso_3166_1_alpha3);
-    // }
-
     return Directionality(
       textDirection: widget.textDirection ?? Directionality.of(context),
       child: Scaffold(

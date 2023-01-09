@@ -2,8 +2,8 @@
 ![version](https://img.shields.io/badge/version-1.0.0-purple.svg) ![version](https://img.shields.io/badge/NullSefety-True-brightgreen)
 [![pub package](https://img.shields.io/pub/v/country_list_picker.svg)](https://pub.dev/packages/country_list_picker)
 
+CountryListPicker is a customizable country picker for Flutter. The CountryListPicker can show many different languages. The sizes and styles used for the picker items can be customized.
 
-Searchable Country List Picker is a flutter package to return and display country information (name, dialCode and flag).
 
 ## Installation
 Run this command:
@@ -31,8 +31,12 @@ import  'package:country_list_picker/country_list_picker.dart';
 void  main() async {
     //simple code
     CountryListPicker(
-      onChanged: (value) => //do something.
-    ),
+          onCountryChanged: ((value) {
+              // do something
+          }),
+          onChanged: (value) {
+             // do something
+          },
 }
 ```
 ## Getting started
