@@ -12,75 +12,64 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SettingsProvider settings = Provider.of(context);
-    return Directionality(
-      textDirection: settings.textDirection,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text("Country List Picker Demo".tr),
-          actions: [
-            IconButton(
-              onPressed: () {
-                settings.textDirection =
-                    (settings.textDirection == TextDirection.ltr) ? TextDirection.rtl : TextDirection.ltr;
-              },
-              icon: settings.textDirection == TextDirection.ltr
-                  ? Icon(
-                      Icons.swipe_right,
-                      color: settings.isDarkMode ? settings.darkprimarySwatch : Colors.white,
-                    )
-                  : Icon(
-                      Icons.swipe_left,
-                      color: settings.isDarkMode ? settings.darkprimarySwatch : Colors.white,
-                    ),
-            ),
-            IconButton(
-              onPressed: () => settings.isDarkMode = !settings.isDarkMode,
-              icon: settings.isDarkMode
-                  ? Icon(
-                      Icons.sunny,
-                      color: settings.darkprimarySwatch,
-                    )
-                  : const Icon(
-                      Icons.dark_mode,
-                      color: Colors.white,
-                    ),
-            ),
-          ],
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          showUnselectedLabels: true,
-          currentIndex: settings.selectedScreen,
-          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-          unselectedLabelStyle: const TextStyle(fontSize: 14),
-          items: screens
-              .map((e) => BottomNavigationBarItem(
-                    icon: Icon(e.inactiveIcon),
-                    label: e.title.tr,
-                    activeIcon: Icon(e.activeIcon),
-                  ))
-              .toList(),
-          onTap: (index) => settings.selectedScreen = index,
-        ),
-        body: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Container(
-              height: 140,
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: const Card(elevation: 2, child: TopPart()),
-            ),
-            Expanded(
-                child: Stack(
-              children: screens
-                  .asMap()
-                  .map((index, screen) => MapEntry(
-                      index, Offstage(offstage: settings.selectedScreen != index, child: BottomPart(screen: screen))))
-                  .values
-                  .toList(),
-            )),
-          ],
+    return Consumer<SettingsProvider>(
+      builder: (context, settings, child) => Directionality(
+        textDirection: settings.language.textDirection,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text("Country List Picker".tr),
+            actions: [
+              IconButton(
+                onPressed: () => settings.isDarkMode = !settings.isDarkMode,
+                icon: settings.isDarkMode
+                    ? Icon(
+                        Icons.sunny,
+                        color: settings.darkprimarySwatch,
+                      )
+                    : const Icon(
+                        Icons.dark_mode,
+                        color: Colors.white,
+                      ),
+              ),
+            ],
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            showUnselectedLabels: true,
+            currentIndex: settings.selectedScreen,
+            selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            unselectedLabelStyle: const TextStyle(fontSize: 14),
+            items: screens
+                .map((e) => BottomNavigationBarItem(
+                      icon: Icon(e.inactiveIcon),
+                      label: e.title.tr,
+                      activeIcon: Icon(e.activeIcon),
+                    ))
+                .toList(),
+            onTap: (index) => settings.selectedScreen = index,
+          ),
+          body: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Container(
+                height: 140,
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: const Card(elevation: 2, child: TopPart()),
+              ),
+              Expanded(
+                  child: Stack(
+                children: screens
+                    .asMap()
+                    .map((index, screen) => MapEntry(
+                        index,
+                        Offstage(
+                            offstage: settings.selectedScreen != index,
+                            child: BottomPart(screen: screen))))
+                    .values
+                    .toList(),
+              )),
+            ],
+          ),
         ),
       ),
     );

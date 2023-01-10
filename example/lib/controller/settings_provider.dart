@@ -1,7 +1,8 @@
+import 'package:country_list_picker/model/languages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-TextDirection textDirectionShared = TextDirection.ltr;
+Languages languageShared = Languages.English;
 
 class SettingsProvider extends ChangeNotifier {
   int _selectedScreen = 0;
@@ -27,9 +28,18 @@ class SettingsProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  TextDirection get textDirection => textDirectionShared;
+  TextDirection _textDirection = TextDirection.ltr;
+  TextDirection get textDirection => _textDirection;
   set textDirection(TextDirection value) {
-    textDirectionShared = value;
+    _textDirection = value;
+    notifyListeners();
+  }
+
+  Languages _language = Languages.English;
+  Languages get language => _language;
+  set language(Languages value) {
+    _language = value;
+    languageShared = _language;
     notifyListeners();
   }
 

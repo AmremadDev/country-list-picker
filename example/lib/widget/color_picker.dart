@@ -32,11 +32,10 @@ class ColorPicker extends StatefulWidget {
 
 class _ColorPickerState extends State<ColorPicker> {
   int selectedIndex = 0;
-  List<Color> colorList = [];
+
   @override
   void initState() {
-    colorList = widget.colors;
-    selectedIndex = colorList.indexOf(widget.value);
+    selectedIndex = widget.colors.indexOf(widget.value);
     super.initState();
   }
 
@@ -52,22 +51,22 @@ class _ColorPickerState extends State<ColorPicker> {
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: widget.colors.length, crossAxisSpacing: 5),
-            itemCount: colorList.length,
+            itemCount: widget.colors.length,
             itemBuilder: (BuildContext context, int index) {
               return FloatingActionButton(
                 heroTag: null,
                 elevation: 5,
-                backgroundColor: colorList[index],
+                backgroundColor: widget.colors[index],
                 onPressed: () {
                   setState(() => selectedIndex = index);
-                  if (widget.onColorChanged != null) widget.onColorChanged!(colorList[index]);
+                  if (widget.onColorChanged != null) widget.onColorChanged!(widget.colors[index]);
                 },
                 child: (selectedIndex == index)
                     ? Center(
                         child: Icon(Icons.check,
                             size: 15,
-                            color: (colorList[index].value >= 4294961979 ||
-                                    colorList[index].value == 0)
+                            color: (widget.colors[index].value >= 4294961979 ||
+                                    widget.colors[index].value == 0)
                                 ? Colors.black
                                 : Colors.white),
                       )

@@ -518,35 +518,77 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "TF",
     "iso_3166_1_alpha3": "ATF",
-    "natives": {"official": "Territoire des Terres australes et antarctiques françaises", "common": "Terres australes et antarctiques françaises"},
+    "natives": {
+      "official": "Territoire des Terres australes et antarctiques françaises",
+      "common": "Terres australes et antarctiques françaises"
+    },
     "dialing_code": "+33",
     "default_number_length": 9,
     "default_number_format": "## ### ####",
     "local_number_sample": "93 514 4173",
     "International_number_sample": "+33 93 514 4173",
-    "ENG": {"official": "Territory of the French Southern and Antarctic Lands", "common": "French Southern and Antarctic Lands"},
-    "CES": {"official": "Teritorium Francouzská jižní a antarktická území", "common": "Francouzská jižní a antarktická území"},
-    "DEU": {"official": "Gebiet der Französisch Süd- und Antarktisgebiete", "common": "Französische Süd- und Antarktisgebiete"},
+    "ENG": {
+      "official": "Territory of the French Southern and Antarctic Lands",
+      "common": "French Southern and Antarctic Lands"
+    },
+    "CES": {
+      "official": "Teritorium Francouzská jižní a antarktická území",
+      "common": "Francouzská jižní a antarktická území"
+    },
+    "DEU": {
+      "official": "Gebiet der Französisch Süd- und Antarktisgebiete",
+      "common": "Französische Süd- und Antarktisgebiete"
+    },
     "EST": "Prantsuse Lõunaalad",
     "FIN": "Ranskan eteläiset ja antarktiset alueet",
-    "FRA": {"official": "Territoire des Terres australes et antarctiques françaises", "common": "Terres australes et antarctiques françaises"},
+    "FRA": {
+      "official": "Territoire des Terres australes et antarctiques françaises",
+      "common": "Terres australes et antarctiques françaises"
+    },
     "NLD": {
       "official": "Grondgebied van de Franse Zuidelijke en Antarctische gebieden",
       "common": "Franse Gebieden in de zuidelijke Indische Oceaan"
     },
-    "HRV": {"official": "Teritoriju Francuski južni i antarktički teritoriji", "common": "Francuski južni i antarktički teritoriji"},
-    "HUN": {"official": "Territorio della australi e antartiche francesi Terre", "common": "Territori Francesi del Sud"},
-    "ITA": {"official": "Territorio della australi e antartiche francesi Terre", "common": "Territori Francesi del Sud"},
+    "HRV": {
+      "official": "Teritoriju Francuski južni i antarktički teritoriji",
+      "common": "Francuski južni i antarktički teritoriji"
+    },
+    "HUN": {
+      "official": "Territorio della australi e antartiche francesi Terre",
+      "common": "Territori Francesi del Sud"
+    },
+    "ITA": {
+      "official": "Territorio della australi e antartiche francesi Terre",
+      "common": "Territori Francesi del Sud"
+    },
     "JPN": {"official": "フランス領南方·南極地域の領土", "common": "フランス領南方・南極地域"},
     "KOR": "프랑스령 남부와 남극 지역",
     "PER": "سرزمین‌های جنوبی و جنوبگانی فرانسه",
     "POL": "Francuskie Terytoria Południowe i Antarktyczne",
-    "POR": {"official": "Território do Sul e Antártica Francesa", "common": "Terras Austrais e Antárticas Francesas"},
-    "RUS": {"official": "Территория Французские Южные и Антарктические земли", "common": "Французские Южные и Антарктические территории"},
-    "SLK": {"official": "Francúzske južné a antarktické územia", "common": "Francúzske juŽné a antarktické územia"},
-    "SPA": {"official": "Territorio del Francés Tierras australes y antárticas", "common": "Tierras Australes y Antárticas Francesas"},
-    "SWE": {"official": "Franska syd- och Antarktisterritorierna", "common": "Franska södra territorierna"},
-    "URD": {"official": "سرزمینِ جنوبی فرانسیسیہ و انٹارکٹیکہ", "common": "سرزمین جنوبی فرانسیسیہ و انٹارکٹیکا"},
+    "POR": {
+      "official": "Território do Sul e Antártica Francesa",
+      "common": "Terras Austrais e Antárticas Francesas"
+    },
+    "RUS": {
+      "official": "Территория Французские Южные и Антарктические земли",
+      "common": "Французские Южные и Антарктические территории"
+    },
+    "SLK": {
+      "official": "Francúzske južné a antarktické územia",
+      "common": "Francúzske juŽné a antarktické územia"
+    },
+    "SPA": {
+      "official": "Territorio del Francés Tierras australes y antárticas",
+      "common": "Tierras Australes y Antárticas Francesas"
+    },
+    "SWE": {
+      "official": "Franska syd- och Antarktisterritorierna",
+      "common": "Franska södra territorierna"
+    },
+    "URD": {
+      "official": "سرزمینِ جنوبی فرانسیسیہ و انٹارکٹیکہ",
+      "common": "سرزمین جنوبی فرانسیسیہ و انٹارکٹیکا"
+    },
     "ZHO": "法国南部和南极土地",
     "ARA": "الأراضي الفرنسية الجنوبية والقطبية",
     "BUL": null,
@@ -1174,7 +1216,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "International_number_sample": "+290 74854",
     "ENG": "Saint Helena, Ascension and Tristan da Cunha",
     "CES": "Svatá Helena, Ascension a Tristan da Cunha",
-    "DEU": {"official": "Sankt Helena, Ascension und Tristan da Cunha", "common": "St. Helena, Ascension und Tristan da Cunha"},
+    "DEU": {
+      "official": "Sankt Helena, Ascension und Tristan da Cunha",
+      "common": "St. Helena, Ascension und Tristan da Cunha"
+    },
     "EST": "Saint Helena, Ascension ja Tristan da Cunha",
     "FIN": "Saint Helena, Ascension ja Tristan da Cunha",
     "FRA": "Sainte-Hélène, Ascension et Tristan da Cunha",
@@ -1703,7 +1748,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "PER": "جمهوری آفریقای مرکزی",
     "POL": "Republika Środkowoafrykańska",
     "POR": {"official": "República Centro-Africano", "common": "República Centro-Africana"},
-    "RUS": {"official": "Центрально-Африканская Республика", "common": "Центральноафриканская Республика"},
+    "RUS": {
+      "official": "Центрально-Африканская Республика",
+      "common": "Центральноафриканская Республика"
+    },
     "SLK": "Stredoafrická republika",
     "SPA": "República Centroafricana",
     "SWE": "Centralafrikanska republiken",
@@ -1768,13 +1816,19 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "CC",
     "iso_3166_1_alpha3": "CCK",
-    "natives": {"official": "Territory of the Cocos (Keeling) Islands", "common": "Cocos (Keeling) Islands"},
+    "natives": {
+      "official": "Territory of the Cocos (Keeling) Islands",
+      "common": "Cocos (Keeling) Islands"
+    },
     "dialing_code": "+61",
     "default_number_length": 9,
     "default_number_format": "### ### ###",
     "local_number_sample": "493 127 834",
     "International_number_sample": "+61 493 127 834",
-    "ENG": {"official": "Territory of the Cocos (Keeling) Islands", "common": "Cocos (Keeling) Islands"},
+    "ENG": {
+      "official": "Territory of the Cocos (Keeling) Islands",
+      "common": "Cocos (Keeling) Islands"
+    },
     "CES": "Kokosové ostrovy",
     "DEU": {"official": "Gebiet der Kokos- (Keeling-) Inseln", "common": "Kokosinseln"},
     "EST": {"official": "Kookossaarte ala", "common": "Kookossaared"},
@@ -1782,8 +1836,14 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "FRA": {"official": "Territoire des îles Cocos (Keeling)", "common": "Îles Cocos"},
     "NLD": {"official": "Grondgebied van de Eilanden Cocos (Keeling )", "common": "Cocoseilanden"},
     "HRV": {"official": "Teritoriju Kokosovi (Keeling) Islands", "common": "Kokosovi Otoci"},
-    "HUN": {"official": "Territorio della (Keeling) Isole Cocos", "common": "Isole Cocos e Keeling"},
-    "ITA": {"official": "Territorio della (Keeling) Isole Cocos", "common": "Isole Cocos e Keeling"},
+    "HUN": {
+      "official": "Territorio della (Keeling) Isole Cocos",
+      "common": "Isole Cocos e Keeling"
+    },
+    "ITA": {
+      "official": "Territorio della (Keeling) Isole Cocos",
+      "common": "Isole Cocos e Keeling"
+    },
     "JPN": {"official": "ココス諸島の領土", "common": "ココス（キーリング）諸島"},
     "KOR": "코코스 제도",
     "PER": "جزایر کوکوس",
@@ -1791,7 +1851,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "POR": {"official": "Território dos Cocos (Keeling)", "common": "Ilhas Cocos (Keeling)"},
     "RUS": {"official": "Территория Кокосовые (Килинг) острова", "common": "Кокосовые острова"},
     "SLK": "Kokosové ostrovy",
-    "SPA": {"official": "Territorio de los (Keeling) Islas Cocos", "common": "Islas Cocos o Islas Keeling"},
+    "SPA": {
+      "official": "Territorio de los (Keeling) Islas Cocos",
+      "common": "Islas Cocos o Islas Keeling"
+    },
     "SWE": "Kokosöarna",
     "URD": {"official": "جزائر (کیلنگ) کوکوس", "common": "جزائر کوکوس"},
     "ZHO": "科科斯",
@@ -3445,34 +3508,73 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "GB",
     "iso_3166_1_alpha3": "GBR",
-    "natives": {"official": "United Kingdom of Great Britain and Northern Ireland", "common": "United Kingdom"},
+    "natives": {
+      "official": "United Kingdom of Great Britain and Northern Ireland",
+      "common": "United Kingdom"
+    },
     "dialing_code": "+44",
     "default_number_length": 10,
     "default_number_format": "#### ######",
     "local_number_sample": "7911 233847",
     "International_number_sample": "+44 7911 233847",
-    "ENG": {"official": "United Kingdom of Great Britain and Northern Ireland", "common": "United Kingdom"},
-    "CES": {"official": "Spojené království Velké Británie a Severního Irska", "common": "Spojené království"},
-    "DEU": {"official": "Vereinigtes Königreich Großbritannien und Nordirland", "common": "Vereinigtes Königreich"},
+    "ENG": {
+      "official": "United Kingdom of Great Britain and Northern Ireland",
+      "common": "United Kingdom"
+    },
+    "CES": {
+      "official": "Spojené království Velké Británie a Severního Irska",
+      "common": "Spojené království"
+    },
+    "DEU": {
+      "official": "Vereinigtes Königreich Großbritannien und Nordirland",
+      "common": "Vereinigtes Königreich"
+    },
     "EST": {"official": "Suurbritannia ja Põhja-Iiri Ühendkuningriik", "common": "Suurbritannia"},
-    "FIN": {"official": "Ison-Britannian ja Pohjois-Irlannin yhdistynyt kuningaskunta", "common": "Yhdistynyt kuningaskunta"},
-    "FRA": {"official": "Royaume-Uni de Grande-Bretagne et d'Irlande du Nord", "common": "Royaume-Uni"},
-    "NLD": {"official": "Verenigd Koninkrijk van Groot-Brittannië en Noord-Ierland", "common": "Verenigd Koninkrijk"},
-    "HRV": {"official": "Ujedinjeno Kraljevstvo Velike Britanije i Sjeverne Irske", "common": "Ujedinjeno Kraljevstvo"},
+    "FIN": {
+      "official": "Ison-Britannian ja Pohjois-Irlannin yhdistynyt kuningaskunta",
+      "common": "Yhdistynyt kuningaskunta"
+    },
+    "FRA": {
+      "official": "Royaume-Uni de Grande-Bretagne et d'Irlande du Nord",
+      "common": "Royaume-Uni"
+    },
+    "NLD": {
+      "official": "Verenigd Koninkrijk van Groot-Brittannië en Noord-Ierland",
+      "common": "Verenigd Koninkrijk"
+    },
+    "HRV": {
+      "official": "Ujedinjeno Kraljevstvo Velike Britanije i Sjeverne Irske",
+      "common": "Ujedinjeno Kraljevstvo"
+    },
     "HUN": {"official": "Regno Unito di Gran Bretagna e Irlanda del Nord", "common": "Regno Unito"},
     "ITA": {"official": "Regno Unito di Gran Bretagna e Irlanda del Nord", "common": "Regno Unito"},
     "JPN": {"official": "グレート·ブリテンおよび北アイルランド連合王国", "common": "イギリス"},
     "KOR": {"official": "그레이트브리튼 북아일랜드 연합 왕국", "common": "영국"},
     "PER": {"official": "پادشاهی متحد بریتانیای کبیر و ایرلند شمالی", "common": "انگلیس"},
-    "POL": {"official": "Zjednoczone Królestwo Wielkiej Brytanii i Irlandii Północnej", "common": "Zjednoczone Krłlestwo"},
+    "POL": {
+      "official": "Zjednoczone Królestwo Wielkiej Brytanii i Irlandii Północnej",
+      "common": "Zjednoczone Krłlestwo"
+    },
     "POR": {"official": "Reino Unido da Grã-Bretanha e Irlanda do Norte", "common": "Reino Unido"},
-    "RUS": {"official": "Соединенное Королевство Великобритании и Северной Ирландии", "common": "Великобритания"},
-    "SLK": {"official": "Spojené kráľovstvo Veľkej Británie a SevernéhoÌrska", "common": "Spojené kráľovstvo"},
+    "RUS": {
+      "official": "Соединенное Королевство Великобритании и Северной Ирландии",
+      "common": "Великобритания"
+    },
+    "SLK": {
+      "official": "Spojené kráľovstvo Veľkej Británie a SevernéhoÌrska",
+      "common": "Spojené kráľovstvo"
+    },
     "SPA": {"official": "Reino Unido de Gran Bretaña e Irlanda del Norte", "common": "Reino Unido"},
-    "SWE": {"official": "Förenade konungariket Storbritannien och Nordirland", "common": "Storbritannien"},
+    "SWE": {
+      "official": "Förenade konungariket Storbritannien och Nordirland",
+      "common": "Storbritannien"
+    },
     "URD": {"official": "مملکتِ متحدہ برطانیہ عظمی و شمالی آئرلینڈ", "common": "مملکتِ متحدہ"},
     "ZHO": {"official": "大不列颠及北爱尔兰联合王国", "common": "英国"},
-    "ARA": {"official": "المملكة المتحدة لبريطانيا العظمى وأيرلندا الشمالية", "common": "المملكة المتحدة"},
+    "ARA": {
+      "official": "المملكة المتحدة لبريطانيا العظمى وأيرلندا الشمالية",
+      "common": "المملكة المتحدة"
+    },
     "BUL": "Великобритания",
     "DAN": "Storbritannien",
     "ELL": "Ηνωμένο Βασίλειο",
@@ -4176,32 +4278,78 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "HK",
     "iso_3166_1_alpha3": "HKG",
-    "natives": {"official": "Hong Kong Special Administrative Region of the People's Republic of China", "common": "Hong Kong"},
+    "natives": {
+      "official": "Hong Kong Special Administrative Region of the People's Republic of China",
+      "common": "Hong Kong"
+    },
     "dialing_code": "+852",
     "default_number_length": 8,
     "default_number_format": "#### ####",
     "local_number_sample": "1286 5171",
     "International_number_sample": "+852 1286 5171",
-    "ENG": {"official": "Hong Kong Special Administrative Region of the People's Republic of China", "common": "Hong Kong"},
-    "CES": {"official": "Zvláštní administrativní oblast Čínské lidové republiky Hongkong", "common": "Hongkong"},
-    "DEU": {"official": "Sonderverwaltungszone Hongkong der Volksrepublik China", "common": "Hongkong"},
+    "ENG": {
+      "official": "Hong Kong Special Administrative Region of the People's Republic of China",
+      "common": "Hong Kong"
+    },
+    "CES": {
+      "official": "Zvláštní administrativní oblast Čínské lidové republiky Hongkong",
+      "common": "Hongkong"
+    },
+    "DEU": {
+      "official": "Sonderverwaltungszone Hongkong der Volksrepublik China",
+      "common": "Hongkong"
+    },
     "EST": {"official": "Hongkongi erihalduspiirkond", "common": "Hongkong"},
     "FIN": {"official": "Hong Kongin erityishallintoalue", "common": "Hongkong"},
-    "FRA": {"official": "Région administrative spéciale de Hong Kong de la République populaire de Chine", "common": "Hong Kong"},
-    "NLD": {"official": "Hong Kong Speciale Administratieve Regio van de Volksrepubliek China", "common": "Hongkong"},
-    "HRV": {"official": "Hong Kong Posebnog upravnog područjaNarodne Republike Kine", "common": "Hong Kong"},
-    "HUN": {"official": "Hong Kong Regione amministrativa speciale della Repubblica Popolare Cinese", "common": "Hong Kong"},
-    "ITA": {"official": "Hong Kong Regione amministrativa speciale della Repubblica Popolare Cinese", "common": "Hong Kong"},
+    "FRA": {
+      "official": "Région administrative spéciale de Hong Kong de la République populaire de Chine",
+      "common": "Hong Kong"
+    },
+    "NLD": {
+      "official": "Hong Kong Speciale Administratieve Regio van de Volksrepubliek China",
+      "common": "Hongkong"
+    },
+    "HRV": {
+      "official": "Hong Kong Posebnog upravnog područjaNarodne Republike Kine",
+      "common": "Hong Kong"
+    },
+    "HUN": {
+      "official": "Hong Kong Regione amministrativa speciale della Repubblica Popolare Cinese",
+      "common": "Hong Kong"
+    },
+    "ITA": {
+      "official": "Hong Kong Regione amministrativa speciale della Repubblica Popolare Cinese",
+      "common": "Hong Kong"
+    },
     "JPN": {"official": "中華人民共和国香港特別行政区", "common": "香港"},
     "KOR": {"official": "중화인민공화국 홍콩 특별행정구", "common": "홍콩"},
     "PER": "هُنگ کُنگ",
-    "POL": {"official": "Specjalny Region Administracyjny Chińskiej Republiki Ludowej Hongkong", "common": "Hongkong"},
-    "POR": {"official": "Hong Kong Região Administrativa Especial da República Popular da China", "common": "Hong Kong"},
-    "RUS": {"official": "Hong Kong Специальный административный район Китайской Народной Республики Китая", "common": "Гонконг"},
-    "SLK": {"official": "Špeciálna administratívna oblasťČínskej ľudovej republiky Hongkong", "common": "Hongkong"},
-    "SPA": {"official": "Hong Kong Región Administrativa Especial de la República Popular China", "common": "Hong Kong"},
+    "POL": {
+      "official": "Specjalny Region Administracyjny Chińskiej Republiki Ludowej Hongkong",
+      "common": "Hongkong"
+    },
+    "POR": {
+      "official": "Hong Kong Região Administrativa Especial da República Popular da China",
+      "common": "Hong Kong"
+    },
+    "RUS": {
+      "official":
+          "Hong Kong Специальный административный район Китайской Народной Республики Китая",
+      "common": "Гонконг"
+    },
+    "SLK": {
+      "official": "Špeciálna administratívna oblasťČínskej ľudovej republiky Hongkong",
+      "common": "Hongkong"
+    },
+    "SPA": {
+      "official": "Hong Kong Región Administrativa Especial de la República Popular China",
+      "common": "Hong Kong"
+    },
     "SWE": "Hongkong",
-    "URD": {"official": "ہانگ کانگ عوامی جمہوریہ چین کا خصوصی انتظامی علاقہ", "common": "ہانگ کانگ"},
+    "URD": {
+      "official": "ہانگ کانگ عوامی جمہوریہ چین کا خصوصی انتظامی علاقہ",
+      "common": "ہانگ کانگ"
+    },
     "ZHO": {"official": "香港特别行政区", "common": "香港"},
     "ARA": {"official": "مناطق جمهورية الصين الشعبية الإدارية الخاصة", "common": "هونغ كونغ"},
     "BUL": null,
@@ -4241,7 +4389,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "POL": {"official": "Terytorium Wysp Heard i McDonalda", "common": "Wyspy Heard i McDonalda"},
     "POR": "Ilha Heard e Ilhas McDonald",
     "RUS": "Остров Херд и острова Макдональд",
-    "SLK": {"official": "Teritórium Heardovho ostrova a Macdonaldových ostrovov", "common": "Heardov ostrov"},
+    "SLK": {
+      "official": "Teritórium Heardovho ostrova a Macdonaldových ostrovov",
+      "common": "Heardov ostrov"
+    },
     "SPA": "Islas Heard y McDonald",
     "SWE": "Heard- och McDonaldöarna",
     "URD": "جزیرہ ہرڈ و جزائر مکڈونلڈ",
@@ -4574,17 +4725,38 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "DEU": "Britisches Territorium im Indischen Ozean",
     "EST": "Briti India ookeani ala",
     "FIN": "Brittiläinen Intian valtameren alue",
-    "FRA": {"official": "Territoire britannique de l' océan Indien", "common": "Territoire britannique de l'océan Indien"},
-    "NLD": {"official": "Brits Indische Oceaan Territorium", "common": "Britse Gebieden in de Indische Oceaan"},
-    "HRV": {"official": "British Indian Ocean Territory", "common": "Britanski Indijskooceanski teritorij"},
-    "HUN": {"official": "Territorio britannico dell'Oceano Indiano", "common": "Territorio britannico dell'oceano indiano"},
-    "ITA": {"official": "Territorio britannico dell'Oceano Indiano", "common": "Territorio britannico dell'oceano indiano"},
+    "FRA": {
+      "official": "Territoire britannique de l' océan Indien",
+      "common": "Territoire britannique de l'océan Indien"
+    },
+    "NLD": {
+      "official": "Brits Indische Oceaan Territorium",
+      "common": "Britse Gebieden in de Indische Oceaan"
+    },
+    "HRV": {
+      "official": "British Indian Ocean Territory",
+      "common": "Britanski Indijskooceanski teritorij"
+    },
+    "HUN": {
+      "official": "Territorio britannico dell'Oceano Indiano",
+      "common": "Territorio britannico dell'oceano indiano"
+    },
+    "ITA": {
+      "official": "Territorio britannico dell'Oceano Indiano",
+      "common": "Territorio britannico dell'oceano indiano"
+    },
     "JPN": "イギリス領インド洋地域",
     "KOR": {"official": "인도 공화국", "common": "인도"},
     "PER": "قلمرو بریتانیا در اقیانوس هند",
     "POL": "Brytyjskie Terytorium Oceanu Indyjskiego",
-    "POR": {"official": "British Indian Ocean Territory", "common": "Território Britânico do Oceano Índico"},
-    "RUS": {"official": "Британская территория Индийского океана", "common": "Британская территория в Индийском океане"},
+    "POR": {
+      "official": "British Indian Ocean Territory",
+      "common": "Território Britânico do Oceano Índico"
+    },
+    "RUS": {
+      "official": "Британская территория Индийского океана",
+      "common": "Британская территория в Индийском океане"
+    },
     "SLK": "Britské indickooceánske územie",
     "SPA": "Territorio Británico del Océano Índico",
     "SWE": "Brittiska territoriet i Indiska Oceanen",
@@ -5251,22 +5423,40 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "KN",
     "iso_3166_1_alpha3": "KNA",
-    "natives": {"official": "Federation of Saint Christopher and Nevis", "common": "Saint Kitts and Nevis"},
+    "natives": {
+      "official": "Federation of Saint Christopher and Nevis",
+      "common": "Saint Kitts and Nevis"
+    },
     "dialing_code": "+1 869",
     "default_number_length": 7,
     "default_number_format": "### ####",
     "local_number_sample": "582 8894",
     "International_number_sample": "+1 869 582 8894",
-    "ENG": {"official": "Federation of Saint Christopher and Nevis", "common": "Saint Kitts and Nevis"},
+    "ENG": {
+      "official": "Federation of Saint Christopher and Nevis",
+      "common": "Saint Kitts and Nevis"
+    },
     "CES": {"official": "Federace Sv. Kryštof a Nevis", "common": "Svatý Kryštof a Nevis"},
     "DEU": {"official": "Föderation von St. Kitts und Nevis", "common": "St. Kitts und Nevis"},
     "EST": {"official": "Saint Kittsi ja Nevise Föderatsioon", "common": "Saint Kitts ja Nevis"},
-    "FIN": {"official": "Saint Christopherin ja Nevisin federaatio", "common": "Saint Kitts ja Nevis"},
-    "FRA": {"official": "Fédération de Saint-Christophe-et-Niévès", "common": "Saint-Christophe-et-Niévès"},
+    "FIN": {
+      "official": "Saint Christopherin ja Nevisin federaatio",
+      "common": "Saint Kitts ja Nevis"
+    },
+    "FRA": {
+      "official": "Fédération de Saint-Christophe-et-Niévès",
+      "common": "Saint-Christophe-et-Niévès"
+    },
     "NLD": {"official": "Federatie van Saint Kitts en Nevis", "common": "Saint Kitts en Nevis"},
     "HRV": {"official": "Federacija Sv.Kristofora i Nevisa", "common": "Sveti Kristof i Nevis"},
-    "HUN": {"official": "Federazione di Saint Christopher e Nevis", "common": "Saint Kitts e Nevis"},
-    "ITA": {"official": "Federazione di Saint Christopher e Nevis", "common": "Saint Kitts e Nevis"},
+    "HUN": {
+      "official": "Federazione di Saint Christopher e Nevis",
+      "common": "Saint Kitts e Nevis"
+    },
+    "ITA": {
+      "official": "Federazione di Saint Christopher e Nevis",
+      "common": "Saint Kitts e Nevis"
+    },
     "JPN": {"official": "セントクリストファーNevis連盟", "common": "セントクリストファー・ネイビス"},
     "KOR": {"official": "세인트키츠 네비스 연방", "common": "세인트키츠 네비스"},
     "PER": {"official": "فدراسیون سنت کیتس و نویس", "common": "سنت کیتس و نویس"},
@@ -5563,7 +5753,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "DEU": {"official": "Staat Libyen", "common": "Libyen"},
     "EST": "Liibüa",
     "FIN": {"official": "Libyan valtio", "common": "Libya"},
-    "FRA": {"official": "Grande République arabe libyenne populaire et socialiste", "common": "Libye"},
+    "FRA": {
+      "official": "Grande République arabe libyenne populaire et socialiste",
+      "common": "Libye"
+    },
     "NLD": {"official": "Staat van Libië", "common": "Libië"},
     "HRV": {"official": "Država Libiji", "common": "Libija"},
     "HUN": {"official": "Stato della Libia", "common": "Libia"},
@@ -5702,7 +5895,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "PER": {"official": "جمهوری دموکراتیک سوسیالیستی سری‌لانکا", "common": "سری‌لانکا"},
     "POL": {"official": "Demokratyczno-Socjalistyczna Republika Sri Lanki", "common": "Sri Lanka"},
     "POR": {"official": "República Democrática Socialista do Sri Lanka", "common": "Sri Lanka"},
-    "RUS": {"official": "Демократическая Социалистическая Республика Шри-Ланка", "common": "Шри-Ланка"},
+    "RUS": {
+      "official": "Демократическая Социалистическая Республика Шри-Ланка",
+      "common": "Шри-Ланка"
+    },
     "SLK": {"official": "Srílanská demokratická socialistická republika", "common": "Srí Lanka"},
     "SPA": {"official": "República Democrática Socialista de Sri Lanka", "common": "Sri Lanka"},
     "SWE": {"official": "Demokratiska socialistiska republiken Sri Lanka", "common": "Sri Lanka"},
@@ -5896,30 +6092,63 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "MO",
     "iso_3166_1_alpha3": "MAC",
-    "natives": {"official": "Região Administrativa Especial de Macau da República Popular da China", "common": "Macau"},
+    "natives": {
+      "official": "Região Administrativa Especial de Macau da República Popular da China",
+      "common": "Macau"
+    },
     "dialing_code": "+853",
     "default_number_length": 8,
     "default_number_format": "#### ####",
     "local_number_sample": "3930 9919",
     "International_number_sample": "+853 3930 9919",
-    "ENG": {"official": "Macao Special Administrative Region of the People's Republic of China", "common": "Macao"},
+    "ENG": {
+      "official": "Macao Special Administrative Region of the People's Republic of China",
+      "common": "Macao"
+    },
     "CES": {"official": "Zvláštní správní oblast Čínské lidové republiky Macao", "common": "Macao"},
     "DEU": {"official": "Sonderverwaltungsregion Macau der Volksrepublik China", "common": "Macao"},
     "EST": {"official": "Macau erihalduspiirkond", "common": "Macau"},
     "FIN": {"official": "Macaon Kiinan kansantasavallan erityishallintoalue", "common": "Macao"},
-    "FRA": {"official": "Région administrative spéciale de Macao de la République populaire de Chine", "common": "Macao"},
-    "NLD": {"official": "Speciale Administratieve Regio Macau van de Volksrepubliek China", "common": "Macao"},
-    "HRV": {"official": "Makao Posebnog upravnog područjaNarodne Republike Kine", "common": "Makao"},
-    "HUN": {"official": "Macao Regione amministrativa speciale della Repubblica Popolare Cinese", "common": "Macao"},
-    "ITA": {"official": "Macao Regione amministrativa speciale della Repubblica Popolare Cinese", "common": "Macao"},
+    "FRA": {
+      "official": "Région administrative spéciale de Macao de la République populaire de Chine",
+      "common": "Macao"
+    },
+    "NLD": {
+      "official": "Speciale Administratieve Regio Macau van de Volksrepubliek China",
+      "common": "Macao"
+    },
+    "HRV": {
+      "official": "Makao Posebnog upravnog područjaNarodne Republike Kine",
+      "common": "Makao"
+    },
+    "HUN": {
+      "official": "Macao Regione amministrativa speciale della Repubblica Popolare Cinese",
+      "common": "Macao"
+    },
+    "ITA": {
+      "official": "Macao Regione amministrativa speciale della Repubblica Popolare Cinese",
+      "common": "Macao"
+    },
     "JPN": {"official": "中華人民共和国マカオ特別行政区", "common": "マカオ"},
     "KOR": {"official": "중화인민공화국 마카오 특별행정구", "common": "마카오"},
     "PER": "ماکائو",
-    "POL": {"official": "Specjalny Region Administracyjny Chińskiej Republiki Ludowej Makau", "common": "Makau"},
-    "POR": {"official": "Macau Região Administrativa Especial da República Popular da China", "common": "Macau"},
-    "RUS": {"official": "Специальный административный район Макао Китайской Народной Республики Китай", "common": "Макао"},
+    "POL": {
+      "official": "Specjalny Region Administracyjny Chińskiej Republiki Ludowej Makau",
+      "common": "Makau"
+    },
+    "POR": {
+      "official": "Macau Região Administrativa Especial da República Popular da China",
+      "common": "Macau"
+    },
+    "RUS": {
+      "official": "Специальный административный район Макао Китайской Народной Республики Китай",
+      "common": "Макао"
+    },
     "SLK": {"official": "Macao, Špeciàlna administratívna oblasŦ", "common": "Macao"},
-    "SPA": {"official": "Macao, Región Administrativa Especial de la República Popular China", "common": "Macao"},
+    "SPA": {
+      "official": "Macao, Región Administrativa Especial de la República Popular China",
+      "common": "Macao"
+    },
     "SWE": "Macao",
     "URD": {"official": "مکاؤ عوامی جمہوریہ چین کا خصوصی انتظامی علاقہ", "common": "مکاؤ"},
     "ZHO": {"official": "澳门特别行政区", "common": "澳门"},
@@ -6541,30 +6770,60 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "MP",
     "iso_3166_1_alpha3": "MNP",
-    "natives": {"official": "Commonwealth of the Northern Mariana Islands", "common": "Northern Mariana Islands"},
+    "natives": {
+      "official": "Commonwealth of the Northern Mariana Islands",
+      "common": "Northern Mariana Islands"
+    },
     "dialing_code": "+1 670",
     "default_number_length": 7,
     "default_number_format": "### ####",
     "local_number_sample": "296 2555",
     "International_number_sample": "+1 670 296 2555",
-    "ENG": {"official": "Commonwealth of the Northern Mariana Islands", "common": "Northern Mariana Islands"},
+    "ENG": {
+      "official": "Commonwealth of the Northern Mariana Islands",
+      "common": "Northern Mariana Islands"
+    },
     "CES": {"official": "Společenství Severních Marian", "common": "Severní Mariany"},
     "DEU": {"official": "Commonwealth der Nördlichen Marianen", "common": "Nördliche Marianen"},
     "EST": {"official": "Põhja-Mariaani Ühendus", "common": "Põhja-Mariaanid"},
     "FIN": "Pohjois-Mariaanit",
-    "FRA": {"official": "Commonwealth des îles Mariannes du Nord", "common": "Îles Mariannes du Nord"},
-    "NLD": {"official": "Commonwealth van de Noordelijke Marianen", "common": "Noordelijke Marianeneilanden"},
-    "HRV": {"official": "Zajednica je Sjeverni Marijanski otoci", "common": "Sjevernomarijanski otoci"},
-    "HUN": {"official": "Commonwealth delle Isole Marianne Settentrionali", "common": "Isole Marianne Settentrionali"},
-    "ITA": {"official": "Commonwealth delle Isole Marianne Settentrionali", "common": "Isole Marianne Settentrionali"},
+    "FRA": {
+      "official": "Commonwealth des îles Mariannes du Nord",
+      "common": "Îles Mariannes du Nord"
+    },
+    "NLD": {
+      "official": "Commonwealth van de Noordelijke Marianen",
+      "common": "Noordelijke Marianeneilanden"
+    },
+    "HRV": {
+      "official": "Zajednica je Sjeverni Marijanski otoci",
+      "common": "Sjevernomarijanski otoci"
+    },
+    "HUN": {
+      "official": "Commonwealth delle Isole Marianne Settentrionali",
+      "common": "Isole Marianne Settentrionali"
+    },
+    "ITA": {
+      "official": "Commonwealth delle Isole Marianne Settentrionali",
+      "common": "Isole Marianne Settentrionali"
+    },
     "JPN": "北マリアナ諸島",
     "KOR": "북마리아나 제도",
     "PER": "جزایر ماریانای شمالی",
     "POL": {"official": "Wspólnota Marianów Północnych", "common": "Mariany Północne"},
-    "POR": {"official": "Comunidade das Ilhas Marianas do Norte", "common": "Marianas Setentrionais"},
-    "RUS": {"official": "Содружество Северных Марианских островов", "common": "Северные Марианские острова"},
+    "POR": {
+      "official": "Comunidade das Ilhas Marianas do Norte",
+      "common": "Marianas Setentrionais"
+    },
+    "RUS": {
+      "official": "Содружество Северных Марианских островов",
+      "common": "Северные Марианские острова"
+    },
     "SLK": {"official": "Spoločenstvo ostrovov Severné Mariány", "common": "Severné Mariány"},
-    "SPA": {"official": "Mancomunidad de las Islas Marianas del Norte", "common": "Islas Marianas del Norte"},
+    "SPA": {
+      "official": "Mancomunidad de las Islas Marianas del Norte",
+      "common": "Islas Marianas del Norte"
+    },
     "SWE": "Nordmarianerna",
     "URD": {"official": "دولتِ مشترکہ جزائر شمالی ماریانا", "common": "جزائر شمالی ماریانا"},
     "ZHO": "北马里亚纳群岛",
@@ -7756,8 +8015,14 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "DEU": {"official": "Unabhängiger Staat Papua-Neuguinea", "common": "Papua-Neuguinea"},
     "EST": {"official": "Paapua Uus-Guinea Iseseisvusriik", "common": "Paapua Uus-Guinea"},
     "FIN": {"official": "Papua-Uuden-Guinean Itsenäinen valtio", "common": "Papua-Uusi-Guinea"},
-    "FRA": {"official": "État indépendant de Papouasie-Nouvelle-Guinée", "common": "Papouasie-Nouvelle-Guinée"},
-    "NLD": {"official": "Onafhankelijke Staat Papoea -Nieuw-Guinea", "common": "Papoea-Nieuw-Guinea"},
+    "FRA": {
+      "official": "État indépendant de Papouasie-Nouvelle-Guinée",
+      "common": "Papouasie-Nouvelle-Guinée"
+    },
+    "NLD": {
+      "official": "Onafhankelijke Staat Papoea -Nieuw-Guinea",
+      "common": "Papoea-Nieuw-Guinea"
+    },
     "HRV": {"official": "Nezavisna Država Papui Novoj Gvineji", "common": "Papua Nova Gvineja"},
     "HUN": {"official": "Stato indipendente di Papua Nuova Guinea", "common": "Papua Nuova Guinea"},
     "ITA": {"official": "Stato indipendente di Papua Nuova Guinea", "common": "Papua Nuova Guinea"},
@@ -7766,9 +8031,15 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "PER": {"official": "مملکت مستقل پاپوآ گینهٔ نو", "common": "پاپوآ گینه نو"},
     "POL": {"official": "Niezależne Państwo Papui-Nowej Gwinei", "common": "Papua-Nowa Gwinea"},
     "POR": {"official": "Estado Independente da Papua Nova Guiné", "common": "Papua Nova Guiné"},
-    "RUS": {"official": "Независимое Государство Папуа-Новой Гвинеи", "common": "Папуа — Новая Гвинея"},
+    "RUS": {
+      "official": "Независимое Государство Папуа-Новой Гвинеи",
+      "common": "Папуа — Новая Гвинея"
+    },
     "SLK": {"official": "Nezávislý štát Papua-Nová Guinea", "common": "Papua-Nová Guinea"},
-    "SPA": {"official": "Estado Independiente de Papúa Nueva Guinea", "common": "Papúa Nueva Guinea"},
+    "SPA": {
+      "official": "Estado Independiente de Papúa Nueva Guinea",
+      "common": "Papúa Nueva Guinea"
+    },
     "SWE": {"official": "Den oberoende staten Papua Nya Guinea", "common": "Papua Nya Guinea"},
     "URD": {"official": "آزاد ریاستِ پاپوا نیو گنی", "common": "پاپوا نیو گنی"},
     "ZHO": "巴布亚新几内亚",
@@ -7895,7 +8166,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "PER": {"official": "جمهوری دموکراتیک خلق کره", "common": "کُره شمالی"},
     "POL": {"official": "Koreańska Republika Ludowo-Demokratyczna", "common": "Korea Północna"},
     "POR": {"official": "República Popular Democrática da Coreia", "common": "Coreia do Norte"},
-    "RUS": {"official": "Корейская Народно-Демократическая Республика Корея", "common": "Северная Корея"},
+    "RUS": {
+      "official": "Корейская Народно-Демократическая Республика Корея",
+      "common": "Северная Корея"
+    },
     "SLK": {"official": "Kórejská ľudovodemokratická republika", "common": "Severná Kórea"},
     "SPA": {"official": "República Popular Democrática de Corea", "common": "Corea del Norte"},
     "SWE": {"official": "Demokratiska Folkrepubliken Korea", "common": "Nordkorea"},
@@ -8476,7 +8750,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "GS",
     "iso_3166_1_alpha3": "SGS",
-    "natives": {"official": "South Georgia and the South Sandwich Islands", "common": "South Georgia"},
+    "natives": {
+      "official": "South Georgia and the South Sandwich Islands",
+      "common": "South Georgia"
+    },
     "dialing_code": "+500",
     "default_number_length": 5,
     "default_number_format": "#####",
@@ -8487,19 +8764,40 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "DEU": "Südgeorgien und die Südlichen Sandwichinseln",
     "EST": "Lõuna-Georgia ja Lõuna-Sandwichi saared",
     "FIN": "Etelä-Georgia ja Eteläiset Sandwichsaaret",
-    "FRA": {"official": "Géorgie du Sud et les îles Sandwich du Sud", "common": "Géorgie du Sud-et-les Îles Sandwich du Sud"},
-    "NLD": {"official": "Zuid-Georgië en de Zuidelijke Sandwich-eilanden", "common": "Zuid-Georgia en Zuidelijke Sandwicheilanden"},
-    "HRV": {"official": "Južna Džordžija i Otoci Južni Sendvič", "common": "Južna Georgija i otočje Južni Sandwich"},
-    "HUN": {"official": "Georgia del Sud e isole Sandwich del Sud", "common": "Georgia del Sud e Isole Sandwich Meridionali"},
-    "ITA": {"official": "Georgia del Sud e isole Sandwich del Sud", "common": "Georgia del Sud e Isole Sandwich Meridionali"},
+    "FRA": {
+      "official": "Géorgie du Sud et les îles Sandwich du Sud",
+      "common": "Géorgie du Sud-et-les Îles Sandwich du Sud"
+    },
+    "NLD": {
+      "official": "Zuid-Georgië en de Zuidelijke Sandwich-eilanden",
+      "common": "Zuid-Georgia en Zuidelijke Sandwicheilanden"
+    },
+    "HRV": {
+      "official": "Južna Džordžija i Otoci Južni Sendvič",
+      "common": "Južna Georgija i otočje Južni Sandwich"
+    },
+    "HUN": {
+      "official": "Georgia del Sud e isole Sandwich del Sud",
+      "common": "Georgia del Sud e Isole Sandwich Meridionali"
+    },
+    "ITA": {
+      "official": "Georgia del Sud e isole Sandwich del Sud",
+      "common": "Georgia del Sud e Isole Sandwich Meridionali"
+    },
     "JPN": {"official": "サウスジョージア·サウスサンドウィッチ諸島", "common": "サウスジョージア・サウスサンドウィッチ諸島"},
     "KOR": "조지아",
     "PER": "جزایر جورجیای جنوبی و ساندویچ جنوبی",
     "POL": "Georgia Południowa i Sandwich Południowy",
-    "POR": {"official": "Geórgia do Sul e Sandwich do Sul", "common": "Ilhas Geórgia do Sul e Sandwich do Sul"},
+    "POR": {
+      "official": "Geórgia do Sul e Sandwich do Sul",
+      "common": "Ilhas Geórgia do Sul e Sandwich do Sul"
+    },
     "RUS": "Южная Георгия и Южные Сандвичевы острова",
     "SLK": "Južná Georgia a Južné Sandwichove ostrovy",
-    "SPA": {"official": "Georgia del Sur y las Islas Sandwich del Sur", "common": "Islas Georgias del Sur y Sandwich del Sur"},
+    "SPA": {
+      "official": "Georgia del Sur y las Islas Sandwich del Sur",
+      "common": "Islas Georgias del Sur y Sandwich del Sur"
+    },
     "SWE": "Sydgeorgien",
     "URD": {"official": "جنوبی جارجیا و جزائر جنوبی سینڈوچ", "common": "جنوبی جارجیا"},
     "ZHO": {"official": "南乔治亚岛和南桑威奇群岛", "common": "南乔治亚"},
@@ -8777,7 +9075,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "PM",
     "iso_3166_1_alpha3": "SPM",
-    "natives": {"official": "Collectivité territoriale de Saint-Pierre-et-Miquelon", "common": "Saint-Pierre-et-Miquelon"},
+    "natives": {
+      "official": "Collectivité territoriale de Saint-Pierre-et-Miquelon",
+      "common": "Saint-Pierre-et-Miquelon"
+    },
     "dialing_code": "+508",
     "default_number_length": 6,
     "default_number_format": "######",
@@ -8786,7 +9087,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "ENG": "Saint Pierre and Miquelon",
     "CES": "Saint-Pierre a Miquelon",
     "DEU": "St. Pierre und Miquelon",
-    "EST": {"official": "Saint-Pierre’i ja Miqueloni territoriaalühendus", "common": "Saint-Pierre ja Miquelon"},
+    "EST": {
+      "official": "Saint-Pierre’i ja Miqueloni territoriaalühendus",
+      "common": "Saint-Pierre ja Miquelon"
+    },
     "FIN": "Saint-Pierre ja Miquelon",
     "FRA": "Saint-Pierre-et-Miquelon",
     "NLD": {"official": "Saint-Pierre en Miquelon", "common": "Saint Pierre en Miquelon"},
@@ -8906,31 +9210,82 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "ST",
     "iso_3166_1_alpha3": "STP",
-    "natives": {"official": "República Democrática do São Tomé e Príncipe", "common": "São Tomé e Príncipe"},
+    "natives": {
+      "official": "República Democrática do São Tomé e Príncipe",
+      "common": "São Tomé e Príncipe"
+    },
     "dialing_code": "+239",
     "default_number_length": 7,
     "default_number_format": "### ####",
     "local_number_sample": "347 8705",
     "International_number_sample": "+239 347 8705",
-    "ENG": {"official": "Democratic Republic of Sao Tome and Principe", "common": "Sao Tome and Principe"},
-    "CES": {"official": "Demokratická republika Svatý Tomáš a Princův ostrov", "common": "Svatý Tomáš a Princův ostrov"},
-    "DEU": {"official": "Demokratische Republik São Tomé und Príncipe", "common": "São Tomé und Príncipe"},
-    "EST": {"official": "São Tomé ja Príncipe Demokraatlik Vabariik", "common": "São Tomé ja Príncipe"},
-    "FIN": {"official": "São Tomé ja Príncipen demokraattinen tasavalta", "common": "São Tomé ja Príncipe"},
-    "FRA": {"official": "République démocratique de São Tomé et Príncipe", "common": "São Tomé et Príncipe"},
-    "NLD": {"official": "Democratische Republiek Sao Tomé en Principe", "common": "Sao Tomé en Principe"},
-    "HRV": {"official": "Demokratska Republika São Tome i Principe", "common": "Sveti Toma i Princip"},
-    "HUN": {"official": "Repubblica democratica di São Tomé e Príncipe", "common": "São Tomé e Príncipe"},
-    "ITA": {"official": "Repubblica democratica di São Tomé e Príncipe", "common": "São Tomé e Príncipe"},
+    "ENG": {
+      "official": "Democratic Republic of Sao Tome and Principe",
+      "common": "Sao Tome and Principe"
+    },
+    "CES": {
+      "official": "Demokratická republika Svatý Tomáš a Princův ostrov",
+      "common": "Svatý Tomáš a Princův ostrov"
+    },
+    "DEU": {
+      "official": "Demokratische Republik São Tomé und Príncipe",
+      "common": "São Tomé und Príncipe"
+    },
+    "EST": {
+      "official": "São Tomé ja Príncipe Demokraatlik Vabariik",
+      "common": "São Tomé ja Príncipe"
+    },
+    "FIN": {
+      "official": "São Tomé ja Príncipen demokraattinen tasavalta",
+      "common": "São Tomé ja Príncipe"
+    },
+    "FRA": {
+      "official": "République démocratique de São Tomé et Príncipe",
+      "common": "São Tomé et Príncipe"
+    },
+    "NLD": {
+      "official": "Democratische Republiek Sao Tomé en Principe",
+      "common": "Sao Tomé en Principe"
+    },
+    "HRV": {
+      "official": "Demokratska Republika São Tome i Principe",
+      "common": "Sveti Toma i Princip"
+    },
+    "HUN": {
+      "official": "Repubblica democratica di São Tomé e Príncipe",
+      "common": "São Tomé e Príncipe"
+    },
+    "ITA": {
+      "official": "Repubblica democratica di São Tomé e Príncipe",
+      "common": "São Tomé e Príncipe"
+    },
     "JPN": {"official": "サントメ·プリンシペ民主共和国", "common": "サントメ・プリンシペ"},
     "KOR": {"official": "상투메 프린시페 민주 공화국", "common": "상투메 프린시페"},
     "PER": {"official": "جمهوری دموکراتیک سائوتومه و پرنسیپ", "common": "سائوتومه و پرنسیپ"},
-    "POL": {"official": "Demokratyczna Republika Wysp Świętego Tomasza i Książęcej", "common": "Wyspy Świętego Tomasza i Książęca"},
-    "POR": {"official": "República Democrática de São Tomé e Príncipe", "common": "São Tomé e Príncipe"},
-    "RUS": {"official": "Демократическая Республика Сан-Томе и Принсипи", "common": "Сан-Томе и Принсипи"},
-    "SLK": {"official": "Demokratická republika Svätého Tomáša A princovho ostrova", "common": "Svätý Tomáš a Princov ostrov"},
-    "SPA": {"official": "República Democrática de Santo Tomé y Príncipe", "common": "Santo Tomé y Príncipe"},
-    "SWE": {"official": "Demokratiska republiken São Tomé och Príncipe", "common": "São Tomé och Príncipe"},
+    "POL": {
+      "official": "Demokratyczna Republika Wysp Świętego Tomasza i Książęcej",
+      "common": "Wyspy Świętego Tomasza i Książęca"
+    },
+    "POR": {
+      "official": "República Democrática de São Tomé e Príncipe",
+      "common": "São Tomé e Príncipe"
+    },
+    "RUS": {
+      "official": "Демократическая Республика Сан-Томе и Принсипи",
+      "common": "Сан-Томе и Принсипи"
+    },
+    "SLK": {
+      "official": "Demokratická republika Svätého Tomáša A princovho ostrova",
+      "common": "Svätý Tomáš a Princov ostrov"
+    },
+    "SPA": {
+      "official": "República Democrática de Santo Tomé y Príncipe",
+      "common": "Santo Tomé y Príncipe"
+    },
+    "SWE": {
+      "official": "Demokratiska republiken São Tomé och Príncipe",
+      "common": "São Tomé och Príncipe"
+    },
     "URD": {"official": "جمہوریہ ساؤ ٹومے و پرنسپے", "common": "ساؤ ٹومے و پرنسپے"},
     "ZHO": {"official": "圣多美和普林西比民主共和国", "common": "圣多美和普林西比"},
     "ARA": {"official": "جمهورية ساو تومي وبرينسيب", "common": "ساو تومي وبرينسيب"},
@@ -9707,7 +10062,7 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "SWE": {"official": "Republiken Trinidad och Tobago", "common": "Trinidad och Tobago"},
     "URD": {"official": "جمہوریہ ٹرینیڈاڈ و ٹوباگو", "common": "ٹرینیڈاڈ و ٹوباگو"},
     "ZHO": {"official": "特立尼达和多巴哥共和国", "common": "特立尼达和多巴哥"},
-    "ARA": {"official": "特立尼达和多巴哥共和国", "common": "ترينيداد وتوباغو"},
+    "ARA": {"official": "جمهورية ترينيداد وتوباغو", "common": "ترينيداد وتوباغو"},
     "BUL": "Тринидад и Тобаго",
     "DAN": "Trinidad og Tobago",
     "ELL": "Τρινιντάντ και Τομπάγκο",
@@ -10031,23 +10386,44 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "local_number_sample": null,
     "International_number_sample": null,
     "ENG": "United States Minor Outlying Islands",
-    "CES": {"official": "Menší odlehlé ostrovy Spojených států amerických", "common": "Menší odlehlé ostrovy USA"},
-    "DEU": {"official": "USA, kleinere ausgelagerte Inseln", "common": "Kleinere Inselbesitzungen der Vereinigten Staaten"},
+    "CES": {
+      "official": "Menší odlehlé ostrovy Spojených států amerických",
+      "common": "Menší odlehlé ostrovy USA"
+    },
+    "DEU": {
+      "official": "USA, kleinere ausgelagerte Inseln",
+      "common": "Kleinere Inselbesitzungen der Vereinigten Staaten"
+    },
     "EST": {"official": "Ühendriikide väikesed hajasaared", "common": "Ühendriikide hajasaared"},
     "FIN": "Yhdysvaltain asumattomat saaret",
     "FRA": "Îles mineures éloignées des États-Unis",
     "NLD": "Kleine afgelegen eilanden van de Verenigde Staten",
     "HRV": "Mali udaljeni otoci SAD-a",
-    "HUN": {"official": "Stati Uniti Isole Minori", "common": "Isole minori esterne degli Stati Uniti d'America"},
-    "ITA": {"official": "Stati Uniti Isole Minori", "common": "Isole minori esterne degli Stati Uniti d'America"},
+    "HUN": {
+      "official": "Stati Uniti Isole Minori",
+      "common": "Isole minori esterne degli Stati Uniti d'America"
+    },
+    "ITA": {
+      "official": "Stati Uniti Isole Minori",
+      "common": "Isole minori esterne degli Stati Uniti d'America"
+    },
     "JPN": {"official": "アメリカ合衆国外諸島", "common": "合衆国領有小離島"},
     "KOR": "미국령 군소 제도",
     "PER": "جزایر کوچک حاشیه‌ای ایالات متحده آمریکا",
     "POL": "Dalekie Wyspy Mniejsze Stanów Zjednoczonych",
-    "POR": {"official": "Estados Unidos Ilhas Menores Distantes", "common": "Ilhas Menores Distantes dos Estados Unidos"},
+    "POR": {
+      "official": "Estados Unidos Ilhas Menores Distantes",
+      "common": "Ilhas Menores Distantes dos Estados Unidos"
+    },
     "RUS": "Внешние малые острова США",
-    "SLK": {"official": "Menšie odľahlé ostrovy Spjoených štátov", "common": "Menšie odľahlé ostrovy USA"},
-    "SPA": {"official": "Estados Unidos Islas menores alejadas de", "common": "Islas Ultramarinas Menores de Estados Unidos"},
+    "SLK": {
+      "official": "Menšie odľahlé ostrovy Spjoených štátov",
+      "common": "Menšie odľahlé ostrovy USA"
+    },
+    "SPA": {
+      "official": "Estados Unidos Islas menores alejadas de",
+      "common": "Islas Ultramarinas Menores de Estados Unidos"
+    },
     "SWE": "Förenta staternas mindre öar i Oceanien och Västindien",
     "URD": "امریکی چھوٹے بیرونی جزائر",
     "ZHO": "美国本土外小岛屿",
@@ -10250,7 +10626,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "DEU": "St. Vincent und die Grenadinen",
     "EST": {"official": "Saint Vincent ja Grenadiinid", "common": "Saint Vincent"},
     "FIN": "Saint Vincent ja Grenadiinit",
-    "FRA": {"official": "Saint-Vincent-et-les Grenadines", "common": "Saint-Vincent-et-les-Grenadines"},
+    "FRA": {
+      "official": "Saint-Vincent-et-les Grenadines",
+      "common": "Saint-Vincent-et-les-Grenadines"
+    },
     "NLD": "Saint Vincent en de Grenadines",
     "HRV": "Sveti Vincent i Grenadini",
     "HUN": "Saint Vincent e Grenadine",
@@ -10368,19 +10747,28 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "VI",
     "iso_3166_1_alpha3": "VIR",
-    "natives": {"official": "Virgin Islands of the United States", "common": "United States Virgin Islands"},
+    "natives": {
+      "official": "Virgin Islands of the United States",
+      "common": "United States Virgin Islands"
+    },
     "dialing_code": "+1 340",
     "default_number_length": 7,
     "default_number_format": "### ####",
     "local_number_sample": "461 5092",
     "International_number_sample": "+1 340 461 5092",
-    "ENG": {"official": "Virgin Islands of the United States", "common": "United States Virgin Islands"},
+    "ENG": {
+      "official": "Virgin Islands of the United States",
+      "common": "United States Virgin Islands"
+    },
     "CES": "Americké Panenské ostrovy",
     "DEU": "Amerikanische Jungferninseln",
     "EST": {"official": "Ühendriikide Neitsisaared", "common": "Neitsisaared, USA"},
     "FIN": {"official": "Yhdysvaltain Neitsytsaaret", "common": "Neitsytsaaret"},
     "FRA": "Îles Vierges des États-Unis",
-    "NLD": {"official": "Maagdeneilanden van de Verenigde Staten", "common": "Amerikaanse Maagdeneilanden"},
+    "NLD": {
+      "official": "Maagdeneilanden van de Verenigde Staten",
+      "common": "Amerikaanse Maagdeneilanden"
+    },
     "HRV": {"official": "Djevičanski Otoci SAD", "common": "Američki Djevičanski Otoci"},
     "HUN": {"official": "Isole Vergini degli Stati Uniti", "common": "Isole Vergini americane"},
     "ITA": {"official": "Isole Vergini degli Stati Uniti", "common": "Isole Vergini americane"},
@@ -10503,7 +10891,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "default_number_format": "### ####",
     "local_number_sample": "210 5257",
     "International_number_sample": "+681 210 5257",
-    "ENG": {"official": "Territory of the Wallis and Futuna Islands", "common": "Wallis and Futuna"},
+    "ENG": {
+      "official": "Territory of the Wallis and Futuna Islands",
+      "common": "Wallis and Futuna"
+    },
     "CES": {"official": "Teritorium ostrovů Wallis a Futuna", "common": "Wallis a Futuna"},
     "DEU": {"official": "Gebiet der Wallis und Futuna", "common": "Wallis und Futuna"},
     "EST": {"official": "Wallise ja Futuna ala", "common": "Wallis ja Futuna"},

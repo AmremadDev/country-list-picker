@@ -1,7 +1,7 @@
-import 'package:country_list_picker/model/languages.dart';
 import 'package:flutter/material.dart';
 import '../model/country.dart';
 import '../theme/country_list_dialog_theme.dart';
+import '../model/languages.dart';
 
 class LastPickTile extends StatelessWidget {
   final CountryListDialogTheme dialogTheme;
@@ -51,6 +51,7 @@ class LastPickTile extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                   horizontal: (dialogTheme.alphabetsBarTheme.visible == false ||
                           language == Languages.Chinese ||
+                          language == Languages.Korean ||
                           language == Languages.Japanese)
                       ? 0.0
                       : 20.0,

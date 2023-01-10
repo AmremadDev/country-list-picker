@@ -1,4 +1,5 @@
 import 'package:country_list_picker_example/widget/picker/general_arguments.dart';
+import 'package:country_list_picker_example/widget/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
 import '../model/screen.dart';
 import '../model/onboarding.dart';
@@ -69,6 +70,12 @@ List<Screen> screens = [
     arguments: dialogArguments,
   ),
   const Screen(
+    title: "Settings",
+    activeIcon: Icons.settings,
+    inactiveIcon: Icons.settings_outlined,
+    child: SettingsScreen(),
+  ),
+  const Screen(
     title: "About",
     activeIcon: Icons.info,
     inactiveIcon: Icons.info_outline,
@@ -107,7 +114,7 @@ List<Onboarding> listOnboarding = [
       image: "assets/onborading/onborading-1.png",
       body: "Easy to use, minimum code and least effort"),
   Onboarding(
-      title: "MultiLanguage",
+      title: "Multilanguage",
       image: "assets/onborading/onborading-3.png",
       body: "It supports the display of country names in multiple languages."),
   Onboarding(

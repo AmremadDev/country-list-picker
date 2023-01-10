@@ -69,7 +69,7 @@ class TopPart extends StatelessWidget {
             // titlesBackground: dialog.titlesBackgroundColor,
             textStyle: dialog.textStyle,
             // titlesStyle: dialog.titleTextStyle,
-            appBar: AppBar(title: Text(dialog.appBarTitle)),
+            appBar: AppBar(title: Text(dialog.appBarTitle.tr)),
             tileHeight: dialog.tileHeight,
             alphabetsBarTheme: AlphabetsBarThemeData(
               visible: dialog.alphabetBar,

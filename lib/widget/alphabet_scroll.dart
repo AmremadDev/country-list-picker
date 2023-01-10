@@ -6,11 +6,11 @@ class AlphabetScroll extends StatelessWidget {
   const AlphabetScroll({
     super.key,
     required this.scrollController,
-    this.dialogTheme = const CountryListDialogTheme(),
     required this.alphabet,
     required this.countries,
-    this.unitsCanceled = 6,
     required this.selectedChar,
+    this.dialogTheme = const CountryListDialogTheme(),
+    this.unitsCanceled = 6,
   });
   final ScrollController scrollController;
   final CountryListDialogTheme dialogTheme;
@@ -84,8 +84,6 @@ class AlphabetScroll extends StatelessWidget {
           ],
         ),
       ),
-
-      // ) ,
     );
   }
 }

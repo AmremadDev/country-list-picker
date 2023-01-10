@@ -17,8 +17,6 @@ class InputField extends StatelessWidget {
     this.initialValue,
     this.enabled,
     this.readOnly = false,
-    // this.autovalidateMode,
-    // this.validator,
     this.focusNode,
   });
 
@@ -34,10 +32,7 @@ class InputField extends StatelessWidget {
   final bool? enabled;
   final bool readOnly;
 
-  // final AutovalidateMode? autovalidateMode;
-  // final FormFieldValidator<String>? validator;
   final FocusNode? focusNode;
-
   @override
   Widget build(BuildContext context) {
     return Flexible(

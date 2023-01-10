@@ -53,9 +53,10 @@ class DialogProvider extends ChangeNotifier {
     _backgroundColor = value;
     notifyListeners();
   }
+
   TextStyle _textStyle = const TextStyle(fontWeight: FontWeight.normal, fontSize: 16);
-  TextStyle get textStyle =>
-      _textStyle.copyWith(color: _textStyle.color ?? (_settings.isDarkMode == true ? Colors.white : Colors.black));
+  TextStyle get textStyle => _textStyle.copyWith(
+      color: _textStyle.color ?? (_settings.isDarkMode == true ? Colors.white : Colors.black));
   set textStyle(TextStyle value) {
     _textStyle = value;
     notifyListeners();
@@ -64,7 +65,8 @@ class DialogProvider extends ChangeNotifier {
   // Tile Titles Arguments
   Color? _titlesBackgroundColor;
   Color get titlesBackgroundColor =>
-      _titlesBackgroundColor ?? (_settings.isDarkMode == true ? const Color(0xFF313030) : const Color(0xFFE9E9E9));
+      _titlesBackgroundColor ??
+      (_settings.isDarkMode == true ? const Color(0xFF313030) : const Color(0xFFE9E9E9));
   set titlesBackgroundColor(Color value) {
     _titlesBackgroundColor = value;
     notifyListeners();
@@ -100,7 +102,8 @@ class DialogProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  TextStyle _searchTileHintTextStyle = const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, color: Colors.grey);
+  TextStyle _searchTileHintTextStyle =
+      const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, color: Colors.grey);
   TextStyle get searchTileHintTextStyle => _searchTileHintTextStyle;
   set searchTileHintTextStyle(TextStyle value) {
     _searchTileHintTextStyle = value;
@@ -177,15 +180,19 @@ class DialogProvider extends ChangeNotifier {
   TextStyle _alphabetSelectedTextStyle = const TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
   TextStyle get alphabetSelectedTextStyle => _alphabetSelectedTextStyle.copyWith(
       color: _alphabetSelectedTextStyle.color ??
-          (_settings.isDarkMode == true ? _settings.darkprimarySwatch : _settings.lightprimarySwatch));
+          (_settings.isDarkMode == true
+              ? _settings.darkprimarySwatch
+              : _settings.lightprimarySwatch));
   set alphabetSelectedTextStyle(TextStyle value) {
     _alphabetSelectedTextStyle = value;
     notifyListeners();
   }
 
-  TextStyle _alphabetUnSelectedTextStyle = const TextStyle(fontSize: 12, fontWeight: FontWeight.normal);
+  TextStyle _alphabetUnSelectedTextStyle =
+      const TextStyle(fontSize: 12, fontWeight: FontWeight.normal);
   TextStyle get alphabetUnSelectedTextStyle => _alphabetUnSelectedTextStyle.copyWith(
-      color: _alphabetUnSelectedTextStyle.color ?? (_settings.isDarkMode == true ? Colors.white : Colors.black));
+      color: _alphabetUnSelectedTextStyle.color ??
+          (_settings.isDarkMode == true ? Colors.white : Colors.black));
   set alphabetUnSelectedTextStyle(TextStyle value) {
     _alphabetUnSelectedTextStyle = value;
     notifyListeners();

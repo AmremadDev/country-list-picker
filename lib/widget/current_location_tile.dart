@@ -54,6 +54,7 @@ class CurrentLocationTile extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                 horizontal: (dialogTheme.alphabetsBarTheme.visible == false ||
                         language == Languages.Chinese ||
+                        language == Languages.Korean ||
                         language == Languages.Japanese)
                     ? 0.0
                     : 20.0,

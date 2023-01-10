@@ -80,8 +80,9 @@ class AboutScreen extends StatelessWidget {
             title: Text("Phone".tr,
                 style: const TextStyle(fontSize: 19, fontWeight: FontWeight.normal)),
             subtitle: Text("+20 111 1146 515",
-                textAlign:
-                    (textDirectionShared == TextDirection.rtl) ? TextAlign.right : TextAlign.left,
+                textAlign: (Directionality.of(context) == TextDirection.rtl)
+                    ? TextAlign.right
+                    : TextAlign.left,
                 textDirection: TextDirection.ltr,
                 style: TextStyle(
                   fontSize: 20,

@@ -28,22 +28,15 @@ class CountryListTile extends StatelessWidget {
               : null,
           title: Text(
             country.name.common,
-            overflow: TextOverflow.clip,
+            overflow: TextOverflow.ellipsis,
             maxLines: 1,
-            softWrap: false,
             style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16),
           ),
-          // subtitle: Text(
-          //   country.name.official,
-          //   overflow: TextOverflow.clip,
-          //   // maxLines: 1,
-          //   softWrap: false,
-          //   style: dialogTheme.textStyle.copyWith(color: Colors.grey.shade500, fontSize: 14),
-          // ),
           trailing: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: (dialogTheme.alphabetsBarTheme.visible == false ||
                       language == Languages.Chinese ||
+                      language == Languages.Korean ||
                       language == Languages.Japanese)
                   ? 0.0
                   : 20.0,

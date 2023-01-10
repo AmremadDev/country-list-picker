@@ -1,3 +1,4 @@
+import 'package:country_list_picker/model/languages.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -42,32 +43,33 @@ class CountryListPickerExample extends StatelessWidget {
     return Consumer<SettingsProvider>(
       builder: (_, settings, child) {
         return MaterialApp(
-            title: 'Country List Picker',
-            debugShowCheckedModeBanner: false,
-            themeMode: settings.isDarkMode ? ThemeMode.dark : ThemeMode.light,
-            darkTheme: ThemeData(
-              brightness: Brightness.dark,
-              fontFamily: (settings.textDirection == TextDirection.ltr) ? "Quicksand" : "Cairo",
-              primarySwatch: settings.darkprimarySwatch as MaterialColor,
-              toggleableActiveColor: settings.darkprimarySwatch,
-              bottomNavigationBarTheme: BottomNavigationBarThemeData(
-                unselectedItemColor: Colors.white,
-                selectedItemColor: settings.darkprimarySwatch,
-              ),
+          title: 'Country List Picker',
+          debugShowCheckedModeBanner: false,
+          themeMode: settings.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+          darkTheme: ThemeData(
+            brightness: Brightness.dark,
+            fontFamily: (settings.language != Languages.Arabic) ? "Quicksand" : "Cairo",
+            primarySwatch: settings.darkprimarySwatch as MaterialColor,
+            toggleableActiveColor: settings.darkprimarySwatch,
+            bottomNavigationBarTheme: BottomNavigationBarThemeData(
+              unselectedItemColor: Colors.white,
+              selectedItemColor: settings.darkprimarySwatch,
             ),
-            theme: ThemeData(
-              brightness: Brightness.light,
-              fontFamily: (settings.textDirection == TextDirection.ltr) ? "Quicksand" : "Cairo",
-              primarySwatch: settings.lightprimarySwatch as MaterialColor,
-              expansionTileTheme: ExpansionTileThemeData(
-                  backgroundColor: settings.lightprimarySwatch.withOpacity(.1),
-                  collapsedBackgroundColor: settings.lightprimarySwatch.withOpacity(.5)),
-              bottomNavigationBarTheme: BottomNavigationBarThemeData(
-                unselectedItemColor: Colors.black38,
-                selectedItemColor: settings.lightprimarySwatch,
-              ),
+          ),
+          theme: ThemeData(
+            brightness: Brightness.light,
+            fontFamily: (settings.language != Languages.Arabic) ? "Quicksand" : "Cairo",
+            primarySwatch: settings.lightprimarySwatch as MaterialColor,
+            expansionTileTheme: ExpansionTileThemeData(
+                backgroundColor: settings.lightprimarySwatch.withOpacity(.1),
+                collapsedBackgroundColor: settings.lightprimarySwatch.withOpacity(.5)),
+            bottomNavigationBarTheme: BottomNavigationBarThemeData(
+              unselectedItemColor: Colors.black38,
+              selectedItemColor: settings.lightprimarySwatch,
             ),
-            home: const OnBoardingPage());
+          ),
+          home: const OnBoardingPage(),
+        );
       },
     );
   }

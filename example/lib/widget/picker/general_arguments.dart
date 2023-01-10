@@ -11,8 +11,8 @@ class GeneralPickerArguments extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<PickerProvider>(
-      builder: (_, picker, child) {
+    return Consumer2<PickerProvider, SettingsProvider>(
+      builder: (_, picker, settings, child) {
         return Column(
           children: [
             CustomListTile<DropdownButtonFormField, Languages>(
@@ -22,7 +22,7 @@ class GeneralPickerArguments extends StatelessWidget {
             ),
             CustomListTile<DropdownButtonFormField, TextDirection>(
               title: "Language",
-              value: picker.textDirection ?? textDirectionShared,
+              value: picker.textDirection ?? settings.language.textDirection,
               ontextDirectionChanged: (value) => picker.textDirection = value,
             ),
             const SizedBox(

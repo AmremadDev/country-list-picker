@@ -1,5 +1,7 @@
 name: country_list_picker
-description: Flutter plugin project to pick country code, will show code country, dial code, flag country, and name country.
+description: CountryListPicker is a customizable country picker for Flutter. 
+             The CountryListPicker can be show in many different languages. 
+             The sizes and styles used for the picker items can be customized.
 version: 0.0.1
 homepage: https://github.com/AmremadDev/country-list-picker.git
 # publish_to: none
@@ -11,14 +13,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  get: ^4.6.5
-  http: ^0.13.5
+  flutter_lints: ^2.0.1
   provider: ^6.0.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
 
 flutter:
   assets:

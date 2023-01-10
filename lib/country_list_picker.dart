@@ -64,10 +64,13 @@ class CountryListPicker extends StatefulWidget {
   // Main
   final bool isShowFlag;
   final Size flagSize;
+
   final bool isShowCountryTitle;
   final bool isShowCode;
-  final Icon iconDown;
+
   final bool isShowDownIcon;
+  final Icon iconDown;
+
   final bool isShowTextField;
 
   // Style
@@ -100,9 +103,7 @@ class _CountryListPickerState extends State<CountryListPicker> {
 
   @override
   Widget build(BuildContext context) {
-    // if (widget.countries2.isEmpty) {
     countriesMultiLanguagesList.removeWhere((element) => element['dialing_code'] == null);
-    // countriesMultiLanguagesList.removeWhere((element) => element['common']. == "E");
     countries = countriesMultiLanguagesList.map((element) {
       return Country(
         iso_3166_1_alpha2: element['iso_3166_1_alpha2'],
@@ -187,6 +188,7 @@ class _CountryListPickerState extends State<CountryListPicker> {
                           focusNode: focusNode
                             ..addListener(() {
                               inputOnFocus = focusNode.hasFocus;
+                              setState(() {});
                             }),
                         ),
                     ]),

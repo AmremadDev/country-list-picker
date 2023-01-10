@@ -122,6 +122,7 @@ class SelectionList extends StatelessWidget {
                   ),
                   (dialogTheme.alphabetsBarTheme.visible == false ||
                           language == Languages.Chinese ||
+                          language == Languages.Korean ||
                           language == Languages.Japanese)
                       ? const SizedBox.shrink()
                       : Consumer<SettingsProvider>(builder: (context, settings, child) {
