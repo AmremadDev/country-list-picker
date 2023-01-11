@@ -25,7 +25,7 @@ class TopPart extends StatelessWidget {
           countryNameTextStyle: picker.countryNameTextStyle,
           isShowFlag: picker.isShowFlag,
           flagSize: picker.flagSize,
-          isShowCode: picker.isShowDialCode,
+          isShowDialingCode: picker.isShowDialCode,
           isShowDownIcon: picker.isDownIcon,
           isShowCountryTitle: picker.isShowCountryName,
           isShowTextField: input.isShowTextField,
