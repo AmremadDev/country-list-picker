@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
 
 class TilesThemeData {
-  ///Titles text style
+  /// Text style of tile title.
   final TextStyle style;
 
-  ///Titles background
+  /// Background color of tile title.
   final Color? background;
 
+  /// Text of search tile title.
   final String searchTitle;
+
+  /// Text that suggests what sort of input the search field.
   final String searchHint;
+
+  /// The style to use for the [searchHint].
   final TextStyle searchHintTextStyle;
 
+  /// Text of last pick tile title.
   final String lastPickTitle;
+
+  /// Icon  of last pick tile.
   final Icon lastPickIcon;
 
+  /// Text of current location tile title.
   final String currentLocationTileTitle;
 
   const TilesThemeData({

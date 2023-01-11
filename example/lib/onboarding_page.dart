@@ -100,7 +100,7 @@ class OnBoardingPage extends StatelessWidget {
                                   children: [
                                     TextButton(
                                       onPressed: () {
-                                        Navigator.push(
+                                        Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(builder: (context) => const HomePage()),
                                         );

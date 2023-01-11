@@ -1,6 +1,5 @@
-import 'tiles_theme_data.dart';
 import 'package:flutter/material.dart';
-
+import './tiles_theme_data.dart';
 import './alphabets_bar_themes.dart';
 export './tiles_theme_data.dart';
 export './alphabets_bar_themes.dart';
@@ -9,30 +8,47 @@ class CountryListDialogTheme {
   ///An app bar to display at the top of country list dialog.
   final PreferredSizeWidget? appBar;
 
-  ///if true float button will be appear.
+  /// [isShowFloatButton] is a [bool] variable that determines whether or not to display the float button.
+  /// If set to true, the float button will be shown, and if set to false, the float button will be hidden.
+  /// This variable is declared as final, indicating that it can't be reassigned after being initialized.
   final bool isShowFloatButton;
 
-  ///if true country dial code will be appear.
+  /// [isShowDialCode] is a [bool] variable that determines whether or not to display dial codes.
+  /// If set to true, dial codes will be shown, and if set to false, dial codes will be hidden.
+  /// This variable is declared as final, indicating that it can't be reassigned after being initialized.
   final bool isShowDialCode;
 
-  ///if true country flag will be appear.
-  final bool isShowFlage;
+  /// [isShowFlag] is a [bool] variable that determines whether or not to display flags.
+  /// If set to true, flags will be shown, and if set to false, flags will be hidden.
+  /// This variable is declared as final, indicating that it can't be reassigned after being initialized.
+  final bool isShowFlag;
 
-
+  /// [isShowSearchTile] is a [bool] variable that determines whether or not to display the search tile.
+  /// If set to true, the search tile will be shown, and if set to false, the search tile will be hidden.
+  /// This variable is declared as final, indicating that it can't be reassigned after being initialized.
   final bool isShowSearchTile;
-  
+
+  /// [isShowLastPickTile] is a [bool] variable that determines whether or not to display the last pick tile.
+  /// If set to true, the last pick will be shown, and if set to false, the last pick will be hidden.
+  /// This variable is declared as final, indicating that it can't be reassigned after being initialized.
   final bool isShowLastPickTile;
 
-  ///Country dialog background color.
+  /// [isShowAlphabetsBar] is a [bool] variable that determines whether or not to display the alphabet bar.
+  /// If set to true, the alphabet bar will be shown, and if set to false, the alphabet bar will be hidden.
+  /// This variable is declared as final, indicating that it can't be reassigned after being initialized.
+  final bool isShowAlphabetsBar;
+
+  /// Country dialog background color.
   final Color? backgroundColor;
 
-  ///Country text style.
+  /// Country text style.
   final TextStyle textStyle;
 
-  ///Height of the tile.
-  ///[tileheight] must be greater than 50.0
+  /// Height of the tile.
+  /// [tileHeight] must be greater than 50.0
   final double tileHeight;
 
+  /// Theme data of dialog tiles.
   final TilesThemeData tilesTheme;
 
   ///Alphabets bar Theme.
@@ -60,11 +76,11 @@ class CountryListDialogTheme {
     this.alphabetsBarTheme = const AlphabetsBarThemeData(),
     this.isShowLastPickTile = true,
     this.isShowSearchTile = true,
+    this.isShowAlphabetsBar = true,
     this.appBar,
-    this.isShowFlage = true,
+    this.isShowFlag = true,
     this.isShowFloatButton = true,
     this.backgroundColor,
-
     this.isShowDialCode = true,
     this.textStyle = const TextStyle(fontSize: 16),
     this.tileHeight = 50.0,

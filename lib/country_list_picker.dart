@@ -22,6 +22,22 @@ export '../extensions.dart';
 export '../widget/mask_text_input_formtter.dart';
 
 class CountryListPicker extends StatefulWidget {
+  ///CountryListPicker is a customizable country picker for Flutter.
+  ///The sizes and styles used for the picker items can be customized.
+  /// The CountryListPicker allows to select a country from a list.
+  /// The CountryListPicker can show many different languages.
+  /// It can be customized with various properties such as [initialCountry], [language], [textDirection] and more.
+  /// It has various callback properties for events such as [onCountryChanged], [onChanged] and others.
+  /// It throws an error if [isShowFlag] and [isShowDialingCode] both are set to false.
+  /// note that: if 'border' property of the 'inputTheme'is not equal [InputBorder.none], the [border] will be canceled.
+  /// simple code
+  /// ```dart
+  /// CountryListPicker(
+  ///  onChanged: (value) {
+  ///       // do something
+  ///    },
+  /// ),
+  /// ```
   const CountryListPicker({
     super.key,
     // Initial
@@ -36,7 +52,7 @@ class CountryListPicker extends StatefulWidget {
     this.isShowDialingCode = true,
     this.iconDown = const Icon(Icons.keyboard_arrow_down, size: 24),
     this.isShowDownIcon = true,
-    this.isShowTextField = true,
+    this.isShowInputField = true,
     // Style
     this.margin = const EdgeInsets.all(5.0),
     this.padding = const EdgeInsets.all(0.0),
@@ -53,7 +69,13 @@ class CountryListPicker extends StatefulWidget {
     this.onSaved,
     this.onTap,
     this.controller,
-  }) : assert(isShowFlag == true || isShowDialingCode == true, "Both isShowFlag and isShowCode can't be false");
+  }) : assert(isShowFlag == true || isShowDialingCode == true,
+            "Both isShowFlag and isShowCode can't be false")
+
+  // ,assert((border == InputBorder.none || inputTheme.border == InputBorder.none),
+  //     '''The 'border' variable must be set to InputBorder.none, or the 'border' property of the 'inputTheme' object must be set to InputBorder.none''')
+
+  ;
 
   ///Use with the [Countries] Enumration Type to show specific contry.
   ///Countries are identified by their name as listed below, e.g. [Countries.Egypt].
@@ -106,35 +128,79 @@ class CountryListPicker extends StatefulWidget {
   ///If set to true, the down icon will be shown, and if set to false, the down icon will be hidden.
   ///This variable is declared as final, indicating that it can't be reassigned after being initialized.
   final bool isShowDownIcon;
-  
+
+  /// Creating a variable called iconDown and assigning it to the Icon class.
   final Icon iconDown;
 
-  final bool isShowTextField;
+  ///[isShowInputField] is a [bool] variable that determines whether or not to display the input field.
+  ///If set to true, the input field will be shown, and if set to false, the input field will be hidden.
+  ///This variable is declared as final, indicating that it can't be reassigned after being initialized.
+  final bool isShowInputField;
 
-  // Style
+  /// Empty space to surround the [CountryListPicker].
+  final EdgeInsetsGeometry margin;
 
-  final EdgeInsets margin;
+  /// Empty space to inscribe inside the [CountryListPicker].
+  final EdgeInsetsGeometry padding;
 
-  /// The amount of space by which to inset the child.
-  final EdgeInsets padding;
-
+  /// The shape of the border to be drawn around the [CountryListPicker] can be defined using the [border] variable.
+  ///
+  /// This variable can take on several different values including:
+  ///
+  /// [InputBorder.none], which means no border will be drawn.
+  ///
+  /// [UnderlineInputBorder], which draws a horizontal line at the bottom of the [CountryListPicker].
+  ///
+  /// [OutlineInputBorder], which results in a rounded rectangle being drawn around the [CountryListPicker].
   final InputBorder border;
 
+  /// If non-null, the style to use for this text.
+  ///
+  /// If the style's "inherit" property is true, the style will be merged with
+  /// the closest enclosing [DefaultTextStyle]. Otherwise, the style will
+  /// replace the closest enclosing [DefaultTextStyle].
   final TextStyle dialCodeTextStyle;
 
+  /// If non-null, the style to use for this text.
+  ///
+  /// If the style's "inherit" property is true, the style will be merged with
+  /// the closest enclosing [DefaultTextStyle]. Otherwise, the style will
+  /// replace the closest enclosing [DefaultTextStyle].
   final TextStyle countryNameTextStyle;
 
+  /// dilaog theme data
   final CountryListDialogTheme dialogTheme;
 
+  /// Input field theme data
   final InputThemeData inputTheme;
 
   // Events
+
+  ///Optional [ValueChanged] callback.
+  ///
+  ///Called when the user selects a new country.
+  ///The callback returns the new selected country as an instance of the 'Country' class.
   final ValueChanged<Country>? onCountryChanged;
+
+  /// Optional [ValueChanged] callback.
+  ///
+  /// Called as soon as the user begins typing in a phone number into the input field,
+  /// it returns the current phone number as the user types"
   final ValueChanged<String>? onChanged;
+
+  ///
   final FormFieldSetter<String>? onSaved;
+
+  ///
   final TextEditingController? controller;
+
+  ///
   final VoidCallback? onEditingComplete;
+
+  ///
   final ValueChanged<String>? onFieldSubmitted;
+
+  ///
   final GestureTapCallback? onTap;
 
   @override
@@ -156,7 +222,8 @@ class _CountryListPickerState extends State<CountryListPicker> {
         iso_3166_1_alpha3: element['iso_3166_1_alpha3'],
         name: (element[widget.language.iso_639_2_alpha3].runtimeType == String)
             ? Name(
-                common: element[widget.language.iso_639_2_alpha3], official: element[widget.language.iso_639_2_alpha3])
+                common: element[widget.language.iso_639_2_alpha3],
+                official: element[widget.language.iso_639_2_alpha3])
             : Name(
                 common: element[widget.language.iso_639_2_alpha3]['common'],
                 official: element[widget.language.iso_639_2_alpha3]['official']),
@@ -172,9 +239,11 @@ class _CountryListPickerState extends State<CountryListPicker> {
 
     selectedCountry = selectedCountry == null
         ? countries.firstWhere(
-            (Country e) => (e.iso_3166_1_alpha3.toUpperCase() == widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
+            (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
+                widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
             orElse: () => countries[0])
-        : countries.firstWhere((element) => element.iso_3166_1_alpha3 == selectedCountry!.iso_3166_1_alpha3);
+        : countries.firstWhere(
+            (element) => element.iso_3166_1_alpha3 == selectedCountry!.iso_3166_1_alpha3);
     return Directionality(
       textDirection: widget.textDirection ?? Directionality.of(context),
       child: Scaffold(
@@ -185,47 +254,60 @@ class _CountryListPickerState extends State<CountryListPicker> {
             children: [
               Container(
                 padding: EdgeInsets.only(
-                  top: widget.padding.top,
-                  right: widget.padding.right + 5.0,
-                  bottom: widget.padding.bottom,
-                  left: widget.padding.left + 5.0,
+                  top: (widget.padding as EdgeInsets).top,
+                  right: (widget.padding as EdgeInsets).right + 5.0,
+                  bottom: (widget.padding as EdgeInsets).bottom,
+                  left: (widget.padding as EdgeInsets).left + 5.0,
                 ),
                 decoration: BoxDecoration(
                     borderRadius: widget.border.isOutline ? BorderRadius.circular(4) : null,
-                    border: (widget.inputTheme.border == InputBorder.none || widget.isShowTextField == false) &&
+                    border: (widget.inputTheme.border == InputBorder.none ||
+                                widget.isShowInputField == false) &&
                             widget.border != InputBorder.none
                         ? widget.border.isOutline
-                            ? inputOnFocus == true || widget.isShowTextField == false
+                            ? inputOnFocus == true || widget.isShowInputField == false
                                 ? Border.all(
-                                    color: Theme.of(context).colorScheme.primary, width: widget.border.borderSide.width)
+                                    color: Theme.of(context).colorScheme.primary,
+                                    width: widget.border.borderSide.width)
                                 : Border.all(color: Theme.of(context).hintColor, width: 1)
-                            : inputOnFocus == true || widget.isShowTextField == false
+                            : inputOnFocus == true || widget.isShowInputField == false
                                 ? Border(
                                     bottom: BorderSide(
                                         color: Theme.of(context).colorScheme.primary,
                                         width: widget.border.borderSide.width))
-                                : Border(bottom: BorderSide(color: Theme.of(context).hintColor, width: 1))
+                                : Border(
+                                    bottom:
+                                        BorderSide(color: Theme.of(context).hintColor, width: 1))
                         : null),
-                child: Row(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                  InkWell(
-                    onTap: (widget.onCountryChanged == null) ? null : () async => await _onTapEvent(context),
-                    child: _buildMainPart(selectedCountry!),
-                  ),
-                  if (widget.isShowTextField == true)
-                    InputField(
-                      inputTheme: widget.inputTheme,
-                      onChanged: widget.onChanged,
-                      onEditingComplete: widget.onEditingComplete,
-                      onFieldSubmitted: widget.onFieldSubmitted,
-                      onSaved: widget.onSaved,
-                      onTap: widget.onTap,
-                      focusNode: focusNode
-                        ..addListener(() {
-                          inputOnFocus = focusNode.hasFocus;
-                          setState(() {});
-                        }),
-                    ),
-                ]),
+                child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: (widget.onCountryChanged == null)
+                            ? null
+                            : () async => await _onTapEvent(context),
+                        child: _buildMainPart(selectedCountry!),
+                      ),
+                      if (widget.isShowInputField == true)
+                        InputField(
+                          inputTheme: widget.inputTheme,
+                          onChanged: (value) {
+                            if (widget.onChanged != null) {
+                              widget.onChanged!("${selectedCountry!.dialing_code} $value");
+                            }
+                          },
+                          onEditingComplete: widget.onEditingComplete,
+                          onFieldSubmitted: widget.onFieldSubmitted,
+                          onSaved: widget.onSaved,
+                          onTap: widget.onTap,
+                          focusNode: focusNode
+                            ..addListener(() {
+                              inputOnFocus = focusNode.hasFocus;
+                              setState(() {});
+                            }),
+                        ),
+                    ]),
               ),
               if (widget.isShowCountryTitle == true)
                 Text(
@@ -286,41 +368,45 @@ class _CountryListPickerState extends State<CountryListPicker> {
   }
 
   Row _buildMainPart(Country country) {
-    return Row(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.center, children: [
-      //flage
-      if (widget.isShowFlag == true)
-        Flexible(
-            child: Image.asset("assets/flags/${country.iso_3166_1_alpha2.toLowerCase()}.png",
-                package: "country_list_picker",
-                fit: BoxFit.fill,
-                height: widget.flagSize.height,
-                width: widget.flagSize.width)),
-      //code
-      if (widget.isShowDialingCode == true)
-        Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 2.5),
-            child: Directionality(
-              textDirection: TextDirection.ltr,
-              child: Text(country.dialing_code.toString(),
-                  style: widget.dialCodeTextStyle.copyWith(
-                      color: widget.dialCodeTextStyle.color ?? Theme.of(context).textTheme.titleLarge?.color,
-                      fontSize: widget.dialCodeTextStyle.fontSize ?? 16,
-                      fontWeight: widget.dialCodeTextStyle.fontWeight ?? FontWeight.bold)),
-            )),
+    return Row(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          //flage
+          if (widget.isShowFlag == true)
+            Flexible(
+                child: Image.asset("assets/flags/${country.iso_3166_1_alpha2.toLowerCase()}.png",
+                    package: "country_list_picker",
+                    fit: BoxFit.fill,
+                    height: widget.flagSize.height,
+                    width: widget.flagSize.width)),
+          //code
+          if (widget.isShowDialingCode == true)
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 2.5),
+                child: Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: Text(country.dialing_code.toString(),
+                      style: widget.dialCodeTextStyle.copyWith(
+                          color: widget.dialCodeTextStyle.color ??
+                              Theme.of(context).textTheme.titleLarge?.color,
+                          fontSize: widget.dialCodeTextStyle.fontSize ?? 16,
+                          fontWeight: widget.dialCodeTextStyle.fontWeight ?? FontWeight.bold)),
+                )),
 
-      //down icon
-      if (widget.isShowDownIcon == true)
-        Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 2.5),
-            child: Icon(
-              widget.iconDown.icon,
-              size: widget.iconDown.size,
-              color: (widget.iconDown.color) ?? Theme.of(context).colorScheme.primary,
-              semanticLabel: widget.iconDown.semanticLabel,
-              textDirection: widget.iconDown.textDirection,
-              shadows: widget.iconDown.shadows,
-              key: widget.iconDown.key,
-            )),
-    ]);
+          //down icon
+          if (widget.isShowDownIcon == true)
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 2.5),
+                child: Icon(
+                  widget.iconDown.icon,
+                  size: widget.iconDown.size,
+                  color: (widget.iconDown.color) ?? Theme.of(context).colorScheme.primary,
+                  semanticLabel: widget.iconDown.semanticLabel,
+                  textDirection: widget.iconDown.textDirection,
+                  shadows: widget.iconDown.shadows,
+                  key: widget.iconDown.key,
+                )),
+        ]);
   }
 }

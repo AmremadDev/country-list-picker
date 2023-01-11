@@ -1,4 +1,5 @@
 import 'package:country_list_picker_example/translation.dart';
+import 'package:country_list_picker_example/widget/code_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,6 +20,23 @@ class HomePage extends StatelessWidget {
           appBar: AppBar(
             title: Text("Country List Picker".tr),
             actions: [
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const CodePage()),
+                  );
+                },
+                icon: settings.isDarkMode
+                    ? Icon(
+                        Icons.code,
+                        color: settings.darkprimarySwatch,
+                      )
+                    : const Icon(
+                        Icons.code,
+                        color: Colors.white,
+                      ),
+              ),
               IconButton(
                 onPressed: () => settings.isDarkMode = !settings.isDarkMode,
                 icon: settings.isDarkMode

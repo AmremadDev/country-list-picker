@@ -36,7 +36,7 @@ class CurrentLocationTile extends StatelessWidget {
       SizedBox(
         height: dialogTheme.tileHeight,
         child: ListTile(
-            leading: (dialogTheme.isShowFlage)
+            leading: (dialogTheme.isShowFlag)
                 ? Image.asset(
                     "assets/flags/${country.iso_3166_1_alpha2.toLowerCase()}.png",
                     package: 'country_list_picker',
@@ -52,7 +52,7 @@ class CurrentLocationTile extends StatelessWidget {
             ),
             trailing: Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: (dialogTheme.alphabetsBarTheme.visible == false ||
+                horizontal: (dialogTheme.isShowAlphabetsBar == false ||
                         language == Languages.Chinese ||
                         language == Languages.Korean ||
                         language == Languages.Japanese)

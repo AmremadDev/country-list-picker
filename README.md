@@ -32,7 +32,7 @@ import 'package:country_list_picker/country_list_picker.dart'
 
 ```dart
 import  'package:country_list_picker/country_list_picker.dart';
-void  main() async {
+void  main() {
     //simple code
     CountryListPicker(
           onCountryChanged: ((value) {

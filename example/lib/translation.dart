@@ -1052,7 +1052,7 @@ Map<String, Map<String, String>> transaltionList = {
     "Description": "説明",
     "Flutter Widget": "フィルター ツール",
     "Desinged by": "によって設計された",
-    "Amr Emad Eldin Lotfy": "アムル エマド エル ディン ロトフィー",
+    "Amr Emad Eldin Lotfy": "Amr Emad Eldin Lotfy",
     "Email": "Eメール",
     "Phone": "電話番号",
     "Language": "言語",

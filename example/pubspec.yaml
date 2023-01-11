@@ -45,6 +45,7 @@ dependencies:
   flex_color_picker: ^3.0.0
   accordion: ^2.5.1
   collection: ^1.16.0
+  dart_code_viewer2: ^1.0.0
 
 dev_dependencies:
   flutter_test:

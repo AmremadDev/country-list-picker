@@ -1,23 +1,23 @@
+import 'package:dart_code_viewer2/dart_code_viewer2.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:country_list_picker/country_list_picker.dart';
 
-import '../controller/dialog_provider.dart';
-import '../controller/input_provider.dart';
-import '../controller/picker_provider.dart';
-import '../model/borders.dart';
-import '../translation.dart';
+class CodePage extends StatelessWidget {
+  const CodePage({super.key});
 
-class TopPart extends StatelessWidget {
-  const TopPart({super.key});
   @override
   Widget build(BuildContext context) {
-    return Consumer3<PickerProvider, InputProvider, DialogProvider>(
-      builder: (context, picker, input, dialog, child) {
-        return CountryListPicker(
-          // localCountry: Countries.Albania,
-          // onCountryChanged: (value) {},
-          // onChanged: (value) {},
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
+        body: Container(
+          child: DartCodeViewer(
+              backgroundColor: Theme.of(context).colorScheme.surface,
+              width: double.infinity,
+              copyButtonText: Text("Copy code"),
+              '''
+      CountryListPicker(
           initialCountry: Countries.Egypt,
           language: picker.language,
           textDirection: picker.textDirection,
@@ -55,7 +55,7 @@ class TopPart extends StatelessWidget {
             input.mask = value.default_number_format;
           }),
           onChanged: (value) {
-            print(value);
+            // print(value.getUnmaskedText);
           },
           dialogTheme: CountryListDialogTheme(
             isShowFlag: dialog.countryFlag,
@@ -86,7 +86,7 @@ class TopPart extends StatelessWidget {
             ),
           ),
         );
-      },
-    );
+'''),
+        ));
   }
 }

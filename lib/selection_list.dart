@@ -120,7 +120,7 @@ class SelectionList extends StatelessWidget {
                       ),
                     ],
                   ),
-                  (dialogTheme.alphabetsBarTheme.visible == false ||
+                  (dialogTheme.isShowAlphabetsBar == false ||
                           language == Languages.Chinese ||
                           language == Languages.Korean ||
                           language == Languages.Japanese)
