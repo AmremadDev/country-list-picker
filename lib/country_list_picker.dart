@@ -10,12 +10,12 @@ import '../support/countires_multi_languages_list.dart';
 import '../selection_list.dart';
 import '../model/country.dart';
 import '../model/countries.dart';
-import '../theme/country_list_dialog_theme.dart';
+import '../theme/dialog_theme.dart';
 import '../theme/input_theme.dart';
 import '../widget/input_filed.dart';
 
 // exports
-export '../theme/country_list_dialog_theme.dart';
+export '../theme/dialog_theme.dart';
 export '../theme/input_theme.dart';
 export '../model/country.dart';
 export '../model/countries.dart';
@@ -27,7 +27,7 @@ class CountryListPicker extends StatefulWidget {
   /// The CountryListPicker can show many different languages.
   /// It can be customized with various properties such as [initialCountry], [language], [textDirection] and more.
   /// It has various callback properties for events such as [onCountryChanged], [onChanged] and others.
-  /// It throws an error if [isShowFlag] and [isShowDialingCode] both are set to false.
+  /// It throws an error if [isShowFlag] and [isShowDiallingCode] both are set to false.
   /// note that: if 'border' property of the 'inputTheme'is not equal [InputBorder.none], the [border] will be canceled.
   /// simple code
   /// ```dart
@@ -48,7 +48,7 @@ class CountryListPicker extends StatefulWidget {
     this.isShowCountryTitle = true,
     this.isShowFlag = true,
     this.flagSize = const Size(40.0, 40.0),
-    this.isShowDialingCode = true,
+    this.isShowDiallingCode = true,
     this.iconDown = const Icon(Icons.keyboard_arrow_down, size: 24),
     this.isShowDownIcon = true,
     this.isShowInputField = true,
@@ -56,9 +56,9 @@ class CountryListPicker extends StatefulWidget {
     this.margin = const EdgeInsets.all(5.0),
     this.padding = const EdgeInsets.all(0.0),
     this.border = const UnderlineInputBorder(),
-    this.dialCodeTextStyle = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-    this.countryNameTextStyle = const TextStyle(fontSize: 15, color: Colors.grey),
-    this.dialogTheme = const CountryListDialogTheme(),
+    this.diallingCodeStyle = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+    this.countryNameStyle = const TextStyle(fontSize: 15, color: Colors.grey),
+    this.dialogTheme = const DialogThemeData(),
     this.inputTheme = const InputThemeData(),
     // Events
     this.onCountryChanged,
@@ -68,7 +68,7 @@ class CountryListPicker extends StatefulWidget {
     this.onSaved,
     this.onTap,
     this.controller,
-  }) : assert(isShowFlag == true || isShowDialingCode == true,
+  }) : assert(isShowFlag == true || isShowDiallingCode == true,
             "Both isShowFlag and isShowCode can't be false")
 
   // ,assert((border == InputBorder.none || inputTheme.border == InputBorder.none),
@@ -117,10 +117,10 @@ class CountryListPicker extends StatefulWidget {
   /// This variable is declared as final, indicating that it can't be reassigned after being initialized.
   final bool isShowCountryTitle;
 
-  /// [isShowDialingCode] is a [bool] variable that determines whether or not to display the dialing code of the country.
-  /// If set to true, the dialing code will be shown, and if set to false, the dialing code will be hidden.
+  /// [isShowDiallingCode] is a [bool] variable that determines whether or not to display the dialling code of the country.
+  /// If set to true, the dialling code will be shown, and if set to false, the dialling code will be hidden.
   /// This variable is declared as final, indicating that it can't be reassigned after being initialized.
-  final bool isShowDialingCode;
+  final bool isShowDiallingCode;
 
   /// [isShowDownIcon] is a [bool] variable that determines whether or not to display the down icon.
   /// If set to true, the down icon will be shown, and if set to false, the down icon will be hidden.
@@ -152,22 +152,14 @@ class CountryListPicker extends StatefulWidget {
   /// [OutlineInputBorder], which results in a rounded rectangle being drawn around the [CountryListPicker].
   final InputBorder border;
 
-  /// If non-null, the style to use for this text.
-  ///
-  /// If the style's "inherit" property is true, the style will be merged with
-  /// the closest enclosing [DefaultTextStyle]. Otherwise, the style will
-  /// replace the closest enclosing [DefaultTextStyle].
-  final TextStyle dialCodeTextStyle;
+  /// [diallingCodeStyle] text style.
+  final TextStyle diallingCodeStyle;
 
-  /// If non-null, the style to use for this text.
-  ///
-  /// If the style's "inherit" property is true, the style will be merged with
-  /// the closest enclosing [DefaultTextStyle]. Otherwise, the style will
-  /// replace the closest enclosing [DefaultTextStyle].
-  final TextStyle countryNameTextStyle;
+  /// [countryNameStyle] text style.
+  final TextStyle countryNameStyle;
 
   /// dilaog theme data
-  final CountryListDialogTheme dialogTheme;
+  final DialogThemeData dialogTheme;
 
   /// Input field theme data
   final InputThemeData inputTheme;
@@ -230,7 +222,6 @@ class _CountryListPickerState extends State<CountryListPicker> {
         flagUri: 'assets/flags/${element['iso_3166_1_alpha2'].toLowerCase()}.png',
       );
     }).toList();
-    countries.removeWhere((element) => element.name.common[0] == "F");
     countries.sort((a, b) => a.name.common.compareTo(b.name.common));
 
     selectedCountry = selectedCountry == null
@@ -319,10 +310,10 @@ class _CountryListPickerState extends State<CountryListPicker> {
                             orElse: () => countries[0])
                         .name
                         .common,
-                style: widget.countryNameTextStyle.copyWith(
-                    fontWeight: widget.countryNameTextStyle.fontWeight,
-                    fontSize: widget.countryNameTextStyle.fontSize ?? 15,
-                    color: widget.countryNameTextStyle.color ?? Colors.grey,
+                style: widget.countryNameStyle.copyWith(
+                    fontWeight: widget.countryNameStyle.fontWeight,
+                    fontSize: widget.countryNameStyle.fontSize ?? 15,
+                    color: widget.countryNameStyle.color ?? Colors.grey,
                     overflow: TextOverflow.ellipsis),
               ),
           ],
@@ -379,17 +370,17 @@ class _CountryListPickerState extends State<CountryListPicker> {
                     height: widget.flagSize.height,
                     width: widget.flagSize.width)),
           //code
-          if (widget.isShowDialingCode == true)
+          if (widget.isShowDiallingCode == true)
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 2.5),
                 child: Directionality(
                   textDirection: TextDirection.ltr,
                   child: Text(country.dialing_code.toString(),
-                      style: widget.dialCodeTextStyle.copyWith(
-                          color: widget.dialCodeTextStyle.color ??
+                      style: widget.diallingCodeStyle.copyWith(
+                          color: widget.diallingCodeStyle.color ??
                               Theme.of(context).textTheme.titleLarge?.color,
-                          fontSize: widget.dialCodeTextStyle.fontSize ?? 16,
-                          fontWeight: widget.dialCodeTextStyle.fontWeight ?? FontWeight.bold)),
+                          fontSize: widget.diallingCodeStyle.fontSize ?? 16,
+                          fontWeight: widget.diallingCodeStyle.fontWeight ?? FontWeight.bold)),
                 )),
 
           //down icon

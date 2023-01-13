@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../model/country.dart';
-import '../theme/country_list_dialog_theme.dart';
+import '../theme/dialog_theme.dart';
 import '../provider/picker_provider.dart';
 
 class SearchTile extends StatelessWidget {
@@ -12,7 +12,7 @@ class SearchTile extends StatelessWidget {
     required this.elements,
   });
 
-  final CountryListDialogTheme dialogTheme;
+  final DialogThemeData dialogTheme;
   final TextEditingController controller;
   final List<Country> elements;
 
@@ -20,7 +20,7 @@ class SearchTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Container(
-          color: dialogTheme.tilesTheme.background ?? Theme.of(context).focusColor,
+          color: dialogTheme.tilesTheme.backgroundColor ?? Theme.of(context).focusColor,
           alignment: (Directionality.of(context) == TextDirection.ltr)
               ? Alignment.centerLeft
               : Alignment.centerRight,
@@ -37,13 +37,13 @@ class SearchTile extends StatelessWidget {
         height: dialogTheme.tileHeight,
         child: TextField(
           textInputAction: TextInputAction.search,
-          style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16),
+          style: dialogTheme.style.copyWith(fontSize: dialogTheme.style.fontSize ?? 16),
           controller: controller,
           decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: const EdgeInsets.only(left: 15, bottom: 0, top: 0, right: 15),
               hintText: dialogTheme.tilesTheme.searchHint,
-              hintStyle: dialogTheme.tilesTheme.searchHintTextStyle),
+              hintStyle: dialogTheme.tilesTheme.searchHintStyle),
           onChanged: ((value) {
             String s = value.toUpperCase();
             context.read<SettingsProvider>().countries = elements

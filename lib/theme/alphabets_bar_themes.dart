@@ -8,15 +8,15 @@ class AlphabetsBarThemeData {
   final Color selectedBackgroundColor;
 
   /// Text style of unselected alphabet.
-  final TextStyle textStyle;
+  final TextStyle style;
 
   /// Text style of selected alphabet.
-  final TextStyle selectedTextStyle;
+  final TextStyle selectedStyle;
 
   const AlphabetsBarThemeData({
     this.backgroundColor = Colors.transparent,
     this.selectedBackgroundColor = Colors.transparent,
-    this.textStyle = const TextStyle(fontSize: 12),
-    this.selectedTextStyle = const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+    this.style = const TextStyle(fontSize: 12),
+    this.selectedStyle = const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
   });
 }

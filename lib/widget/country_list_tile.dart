@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import '../model/country.dart';
 import '../model/languages.dart';
-import '../theme/country_list_dialog_theme.dart';
+import '../theme/dialog_theme.dart';
 
 class CountryListTile extends StatelessWidget {
   const CountryListTile({
     super.key,
     required this.country,
     required this.language,
-    this.dialogTheme = const CountryListDialogTheme(),
+    this.dialogTheme = const DialogThemeData(),
   });
 
   final Country country;
   final Languages language;
-  final CountryListDialogTheme dialogTheme;
+  final DialogThemeData dialogTheme;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -30,7 +30,7 @@ class CountryListTile extends StatelessWidget {
             country.name.common,
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
-            style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16),
+            style: dialogTheme.style.copyWith(fontSize: dialogTheme.style.fontSize ?? 16),
           ),
           trailing: Padding(
             padding: EdgeInsets.symmetric(
@@ -44,8 +44,7 @@ class CountryListTile extends StatelessWidget {
             child: (dialogTheme.isShowDialCode)
                 ? Text(country.dialing_code,
                     textDirection: TextDirection.ltr,
-                    style: dialogTheme.textStyle
-                        .copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
+                    style: dialogTheme.style.copyWith(fontSize: dialogTheme.style.fontSize ?? 16))
                 : null,
           ),
           onTap: () {

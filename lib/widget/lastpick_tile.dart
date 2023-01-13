@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../model/country.dart';
-import '../theme/country_list_dialog_theme.dart';
+import '../theme/dialog_theme.dart';
 import '../model/languages.dart';
 
 class LastPickTile extends StatelessWidget {
-  final CountryListDialogTheme dialogTheme;
+  final DialogThemeData dialogTheme;
   final Country country;
   final Languages language;
   const LastPickTile({
@@ -18,7 +18,7 @@ class LastPickTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Container(
-          color: dialogTheme.tilesTheme.background ?? Theme.of(context).focusColor,
+          color: dialogTheme.tilesTheme.backgroundColor ?? Theme.of(context).focusColor,
           alignment: (Directionality.of(context) == TextDirection.ltr)
               ? Alignment.centerLeft
               : Alignment.centerRight,
@@ -45,7 +45,7 @@ class LastPickTile extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
               softWrap: false,
-              style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16),
+              style: dialogTheme.style.copyWith(fontSize: dialogTheme.style.fontSize ?? 16),
             ),
             trailing: Padding(
                 padding: EdgeInsets.symmetric(

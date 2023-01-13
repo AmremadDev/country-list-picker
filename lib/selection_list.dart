@@ -8,7 +8,7 @@ import '../widget/alphabet_scroll.dart';
 import '../widget/current_location_tile.dart';
 import '../widget/country_list_tile.dart';
 import '../widget/search_tile.dart';
-import '../theme/country_list_dialog_theme.dart';
+import '../theme/dialog_theme.dart';
 
 class SelectionList extends StatelessWidget {
   SelectionList(
@@ -17,7 +17,7 @@ class SelectionList extends StatelessWidget {
     required this.selectedCountry,
     this.localCountry,
     this.appBar,
-    this.dialogTheme = const CountryListDialogTheme(),
+    this.dialogTheme = const DialogThemeData(),
     this.textDirection = TextDirection.ltr,
     required this.language,
   });
@@ -28,7 +28,7 @@ class SelectionList extends StatelessWidget {
   final Country? localCountry;
   final TextDirection textDirection;
   final Languages language;
-  final CountryListDialogTheme dialogTheme;
+  final DialogThemeData dialogTheme;
   final TextEditingController _controller = TextEditingController();
 
   @override
@@ -101,7 +101,7 @@ class SelectionList extends StatelessWidget {
                               ? const SizedBox.shrink()
                               : Container(
                                   height: 10,
-                                  color: dialogTheme.tilesTheme.background ??
+                                  color: dialogTheme.tilesTheme.backgroundColor ??
                                       Theme.of(context).focusColor,
                                 )
                         ]),

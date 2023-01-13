@@ -1,7 +1,7 @@
 import 'package:country_list_picker/model/languages.dart';
 import 'package:flutter/material.dart';
 import '../model/country.dart';
-import '../theme/country_list_dialog_theme.dart';
+import '../theme/dialog_theme.dart';
 
 class CurrentLocationTile extends StatelessWidget {
   const CurrentLocationTile({
@@ -11,7 +11,7 @@ class CurrentLocationTile extends StatelessWidget {
     required this.language,
   });
 
-  final CountryListDialogTheme dialogTheme;
+  final DialogThemeData dialogTheme;
   final Country country;
   final Languages language;
 
@@ -19,7 +19,7 @@ class CurrentLocationTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Container(
-          color: dialogTheme.tilesTheme.background ?? Theme.of(context).focusColor,
+          color: dialogTheme.tilesTheme.backgroundColor ?? Theme.of(context).focusColor,
           alignment: (Directionality.of(context) == TextDirection.ltr)
               ? Alignment.centerLeft
               : Alignment.centerRight,
@@ -48,7 +48,7 @@ class CurrentLocationTile extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
               softWrap: false,
-              style: dialogTheme.textStyle.copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16),
+              style: dialogTheme.style.copyWith(fontSize: dialogTheme.style.fontSize ?? 16),
             ),
             trailing: Padding(
               padding: EdgeInsets.symmetric(
@@ -62,8 +62,7 @@ class CurrentLocationTile extends StatelessWidget {
               child: (dialogTheme.isShowDialCode)
                   ? Text(country.dialing_code,
                       textDirection: TextDirection.ltr,
-                      style: dialogTheme.textStyle
-                          .copyWith(fontSize: dialogTheme.textStyle.fontSize ?? 16))
+                      style: dialogTheme.style.copyWith(fontSize: dialogTheme.style.fontSize ?? 16))
                   : null,
             ),
             onTap: () {

@@ -4,7 +4,7 @@ import './alphabets_bar_themes.dart';
 export './tiles_theme_data.dart';
 export './alphabets_bar_themes.dart';
 
-class CountryListDialogTheme {
+class DialogThemeData {
   ///An app bar to display at the top of country list dialog.
   final PreferredSizeWidget? appBar;
 
@@ -42,7 +42,7 @@ class CountryListDialogTheme {
   final Color? backgroundColor;
 
   /// Country text style.
-  final TextStyle textStyle;
+  final TextStyle style;
 
   /// Height of the tile.
   /// [tileHeight] must be greater than 50.0
@@ -71,7 +71,7 @@ class CountryListDialogTheme {
   ///```
   final AlphabetsBarThemeData alphabetsBarTheme;
 
-  const CountryListDialogTheme({
+  const DialogThemeData({
     this.tilesTheme = const TilesThemeData(),
     this.alphabetsBarTheme = const AlphabetsBarThemeData(),
     this.isShowLastPickTile = true,
@@ -82,7 +82,7 @@ class CountryListDialogTheme {
     this.isShowFloatButton = true,
     this.backgroundColor,
     this.isShowDialCode = true,
-    this.textStyle = const TextStyle(fontSize: 16),
+    this.style = const TextStyle(fontSize: 16),
     this.tileHeight = 50.0,
   }) : assert(tileHeight >= 50.0, "tileheight must be greater than 50.0");
 }

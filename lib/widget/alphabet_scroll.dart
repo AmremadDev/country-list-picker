@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/country.dart';
-import '../theme/country_list_dialog_theme.dart';
+import '../theme/dialog_theme.dart';
 
 class AlphabetScroll extends StatelessWidget {
   const AlphabetScroll({
@@ -9,11 +9,11 @@ class AlphabetScroll extends StatelessWidget {
     required this.alphabet,
     required this.countries,
     required this.selectedChar,
-    this.dialogTheme = const CountryListDialogTheme(),
+    this.dialogTheme = const DialogThemeData(),
     this.unitsCanceled = 6,
   });
   final ScrollController scrollController;
-  final CountryListDialogTheme dialogTheme;
+  final DialogThemeData dialogTheme;
   final List<String> alphabet;
   final List<Country> countries;
   final String? selectedChar;
@@ -65,18 +65,16 @@ class AlphabetScroll extends StatelessWidget {
                             alphabet[index],
                             textAlign: TextAlign.center,
                             style: (index == selectedint)
-                                ? dialogTheme.alphabetsBarTheme.selectedTextStyle.copyWith(
+                                ? dialogTheme.alphabetsBarTheme.selectedStyle.copyWith(
                                     fontSize:
-                                        dialogTheme.alphabetsBarTheme.selectedTextStyle.fontSize ??
-                                            18,
-                                    fontWeight: dialogTheme
-                                            .alphabetsBarTheme.selectedTextStyle.fontWeight ??
-                                        FontWeight.bold,
-                                    color: dialogTheme.alphabetsBarTheme.selectedTextStyle.color ??
+                                        dialogTheme.alphabetsBarTheme.selectedStyle.fontSize ?? 18,
+                                    fontWeight:
+                                        dialogTheme.alphabetsBarTheme.selectedStyle.fontWeight ??
+                                            FontWeight.bold,
+                                    color: dialogTheme.alphabetsBarTheme.selectedStyle.color ??
                                         Theme.of(context).colorScheme.primary)
-                                : dialogTheme.alphabetsBarTheme.textStyle.copyWith(
-                                    fontSize:
-                                        (dialogTheme.alphabetsBarTheme.textStyle.fontSize) ?? 12),
+                                : dialogTheme.alphabetsBarTheme.style.copyWith(
+                                    fontSize: (dialogTheme.alphabetsBarTheme.style.fontSize) ?? 12),
                           ),
                         ),
                       ),

@@ -16,24 +16,28 @@ class TopPart extends StatelessWidget {
     return Consumer4<PickerProvider, InputProvider, DialogProvider, SettingsProvider>(
       builder: (context, picker, input, dialog, settings, child) {
         return CountryListPicker(
-          // localCountry: Countries.Albania,
-          // onCountryChanged: (value) {},
-          // onChanged: (value) {},
+          onCountryChanged: ((value) {
+            input.hintString = value.local_number_sample;
+            input.mask = value.default_number_format;
+          }),
+          onChanged: (value) {
+            print(value);
+          },
           initialCountry: Countries.Egypt,
           language: picker.separated == true ? picker.language : settings.language,
           textDirection:
               picker.separated == true ? picker.textDirection : settings.language.textDirection,
           localCountry: (dialog.currentLocationTile == false) ? null : dialog.localCountry,
-          countryNameTextStyle: picker.countryNameTextStyle,
+          countryNameStyle: picker.countryNameTextStyle,
           isShowFlag: picker.isShowFlag,
           flagSize: picker.flagSize,
-          isShowDialingCode: picker.isShowDialCode,
+          isShowDiallingCode: picker.isShowDialCode,
           isShowDownIcon: picker.isDownIcon,
           isShowCountryTitle: picker.isShowCountryName,
           isShowInputField: input.isShowTextField,
           iconDown:
               Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),
-          dialCodeTextStyle: picker.dialCodeTextStyle,
+          diallingCodeStyle: picker.dialCodeTextStyle,
           border: picker.border == Borders.none
               ? InputBorder.none
               : picker.border == Borders.outline
@@ -52,14 +56,7 @@ class TopPart extends StatelessWidget {
                     : UnderlineInputBorder(borderSide: BorderSide(width: input.borderWidth)),
             mask: input.mask,
           ),
-          onCountryChanged: ((value) {
-            input.hintString = value.local_number_sample;
-            input.mask = value.default_number_format;
-          }),
-          onChanged: (value) {
-            print(value);
-          },
-          dialogTheme: CountryListDialogTheme(
+          dialogTheme: DialogThemeData(
             isShowFlag: dialog.countryFlag,
             isShowDialCode: dialog.countryDialCode,
             isShowFloatButton: dialog.upActionbutton,
@@ -67,23 +64,23 @@ class TopPart extends StatelessWidget {
             isShowLastPickTile: dialog.lastPickTile,
             isShowAlphabetsBar: dialog.alphabetBar,
             backgroundColor: dialog.backgroundColor,
-            textStyle: dialog.textStyle,
+            style: dialog.textStyle,
             appBar: AppBar(title: Text(dialog.appBarTitle.tr)),
             tileHeight: dialog.tileHeight,
             alphabetsBarTheme: AlphabetsBarThemeData(
               backgroundColor: dialog.alphabetUnSelectedBackgroundColor,
               selectedBackgroundColor: dialog.alphabetSelectedBackgroundColor,
-              textStyle: dialog.alphabetUnSelectedTextStyle,
-              selectedTextStyle: dialog.alphabetSelectedTextStyle,
+              style: dialog.alphabetUnSelectedTextStyle,
+              selectedStyle: dialog.alphabetSelectedTextStyle,
             ),
             tilesTheme: TilesThemeData(
-              background: dialog.titlesBackgroundColor,
+              backgroundColor: dialog.titlesBackgroundColor,
               style: dialog.titleTextStyle,
               currentLocationTileTitle: dialog.currentLocationTileTitle.tr,
               lastPickIcon: Icon(dialog.lastPickTileTitleIcon),
               lastPickTitle: dialog.lastPickTileTitle.tr,
               searchHint: dialog.searchTileHintString.tr,
-              searchHintTextStyle: dialog.searchTileHintTextStyle,
+              searchHintStyle: dialog.searchTileHintTextStyle,
               searchTitle: dialog.searchTileTitle.tr,
             ),
           ),
