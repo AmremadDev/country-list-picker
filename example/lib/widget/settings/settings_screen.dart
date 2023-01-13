@@ -18,7 +18,7 @@ class SettingsScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: Text("General APP Settings".tr,
-                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             ),
             ListTile(
                 title: Text("Language".tr, style: const TextStyle(fontWeight: FontWeight.bold)),

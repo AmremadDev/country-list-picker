@@ -1,6 +1,7 @@
 library country_list_picker;
 
 // imports
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../provider/picker_provider.dart';
@@ -18,12 +19,10 @@ export '../theme/country_list_dialog_theme.dart';
 export '../theme/input_theme.dart';
 export '../model/country.dart';
 export '../model/countries.dart';
-export '../extensions.dart';
-export '../widget/mask_text_input_formtter.dart';
 
 class CountryListPicker extends StatefulWidget {
-  ///CountryListPicker is a customizable country picker for Flutter.
-  ///The sizes and styles used for the picker items can be customized.
+  /// CountryListPicker is a customizable country picker for Flutter.
+  /// The sizes and styles used for the picker items can be customized.
   /// The CountryListPicker allows to select a country from a list.
   /// The CountryListPicker can show many different languages.
   /// It can be customized with various properties such as [initialCountry], [language], [textDirection] and more.
@@ -77,19 +76,19 @@ class CountryListPicker extends StatefulWidget {
 
   ;
 
-  ///Use with the [Countries] Enumration Type to show specific contry.
-  ///Countries are identified by their name as listed below, e.g. [Countries.Egypt].
-  ///default value is [Countries.Egypt]
+  /// Use with the [Countries] Enumration Type to show specific intial country.
+  /// Countries are identified by their name as listed below, e.g. [Countries.Egypt].
+  /// default value is [Countries.Egypt]
   final Countries initialCountry;
 
-  ///Use with the [Countries] Enumration Type to show specific contry.
-  ///Countries are identified by their name as listed below, e.g. [Countries.Egypt].
-  ///default value is [null]
+  /// Use with the [Countries] Enumration Type to show specific local country.
+  /// Countries are identified by their name as listed below, e.g. [Countries.Egypt].
+  /// default value is [null]
   final Countries? localCountry;
 
-  ///Use with the [Languages] Enumration Type to show specific language.
-  ///Languages are identified by their name as listed below, e.g. [Language.Arabic].
-  ///default value is [Language.English]
+  /// Use with the [Languages] Enumration Type to show specific language.
+  /// Languages are identified by their name as listed below, e.g. [Language.Arabic].
+  /// default value is [Language.English]
   final Languages language;
 
   /// A direction in which text flows.
@@ -102,39 +101,38 @@ class CountryListPicker extends StatefulWidget {
   ///
   /// The text direction must be provided to APIs that render text or lay out
   /// boxes horizontally, so that they can determine which direction to start in:
-  /// either right-to-left, [TextDirection.rtl]; or left-to-right,
-  /// [TextDirection.ltr].
+  /// either right-to-left, [TextDirection.rtl]; or left-to-right, [TextDirection.ltr].
   final TextDirection? textDirection;
 
-  ///[isShowFlag] is a [bool] variable that determines whether or not to display the flag of the country.
-  ///If set to true, the flage will be shown, and if set to false, the flag will be hidden.
-  ///This variable is declared as final, indicating that it can't be reassigned after being initialized.
+  /// [isShowFlag] is a [bool] variable that determines whether or not to display the flag of the country.
+  /// If set to true, the flage will be shown, and if set to false, the flag will be hidden.
+  /// This variable is declared as final, indicating that it can't be reassigned after being initialized.
   final bool isShowFlag;
 
-  ///[flagSize] is a [Size] variable that stores the size of the flag to be displayed.
+  /// [flagSize] is a [Size] variable that stores the size of the flag to be displayed.
   final Size flagSize;
 
-  ///[isShowCountryTitle] is a [bool] variable that determines whether or not to display the title of the country.
-  ///If set to true, the title will be shown, and if set to false, the title will be hidden.
-  ///This variable is declared as final, indicating that it can't be reassigned after being initialized.
+  /// [isShowCountryTitle] is a [bool] variable that determines whether or not to display the title of the country.
+  /// If set to true, the title will be shown, and if set to false, the title will be hidden.
+  /// This variable is declared as final, indicating that it can't be reassigned after being initialized.
   final bool isShowCountryTitle;
 
-  ///[isShowDialingCode] is a [bool] variable that determines whether or not to display the dialing code of the country.
-  ///If set to true, the dialing code will be shown, and if set to false, the dialing code will be hidden.
-  ///This variable is declared as final, indicating that it can't be reassigned after being initialized.
+  /// [isShowDialingCode] is a [bool] variable that determines whether or not to display the dialing code of the country.
+  /// If set to true, the dialing code will be shown, and if set to false, the dialing code will be hidden.
+  /// This variable is declared as final, indicating that it can't be reassigned after being initialized.
   final bool isShowDialingCode;
 
-  ///[isShowDownIcon] is a [bool] variable that determines whether or not to display the down icon.
-  ///If set to true, the down icon will be shown, and if set to false, the down icon will be hidden.
-  ///This variable is declared as final, indicating that it can't be reassigned after being initialized.
+  /// [isShowDownIcon] is a [bool] variable that determines whether or not to display the down icon.
+  /// If set to true, the down icon will be shown, and if set to false, the down icon will be hidden.
+  /// This variable is declared as final, indicating that it can't be reassigned after being initialized.
   final bool isShowDownIcon;
 
   /// Creating a variable called iconDown and assigning it to the Icon class.
   final Icon iconDown;
 
-  ///[isShowInputField] is a [bool] variable that determines whether or not to display the input field.
-  ///If set to true, the input field will be shown, and if set to false, the input field will be hidden.
-  ///This variable is declared as final, indicating that it can't be reassigned after being initialized.
+  /// [isShowInputField] is a [bool] variable that determines whether or not to display the input field.
+  /// If set to true, the input field will be shown, and if set to false, the input field will be hidden.
+  /// This variable is declared as final, indicating that it can't be reassigned after being initialized.
   final bool isShowInputField;
 
   /// Empty space to surround the [CountryListPicker].
@@ -173,8 +171,6 @@ class CountryListPicker extends StatefulWidget {
 
   /// Input field theme data
   final InputThemeData inputTheme;
-
-  // Events
 
   ///Optional [ValueChanged] callback.
   ///
@@ -246,88 +242,90 @@ class _CountryListPickerState extends State<CountryListPicker> {
             (element) => element.iso_3166_1_alpha3 == selectedCountry!.iso_3166_1_alpha3);
     return Directionality(
       textDirection: widget.textDirection ?? Directionality.of(context),
-      child: Scaffold(
-        body: Container(
-          margin: widget.margin,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: EdgeInsets.only(
-                  top: (widget.padding as EdgeInsets).top,
-                  right: (widget.padding as EdgeInsets).right + 5.0,
-                  bottom: (widget.padding as EdgeInsets).bottom,
-                  left: (widget.padding as EdgeInsets).left + 5.0,
-                ),
-                decoration: BoxDecoration(
-                    borderRadius: widget.border.isOutline ? BorderRadius.circular(4) : null,
-                    border: (widget.inputTheme.border == InputBorder.none ||
-                                widget.isShowInputField == false) &&
-                            widget.border != InputBorder.none
-                        ? widget.border.isOutline
-                            ? inputOnFocus == true || widget.isShowInputField == false
-                                ? Border.all(
-                                    color: Theme.of(context).colorScheme.primary,
-                                    width: widget.border.borderSide.width)
-                                : Border.all(color: Theme.of(context).hintColor, width: 1)
-                            : inputOnFocus == true || widget.isShowInputField == false
-                                ? Border(
-                                    bottom: BorderSide(
-                                        color: Theme.of(context).colorScheme.primary,
-                                        width: widget.border.borderSide.width))
-                                : Border(
-                                    bottom:
-                                        BorderSide(color: Theme.of(context).hintColor, width: 1))
-                        : null),
-                child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: (widget.onCountryChanged == null)
-                            ? null
-                            : () async => await _onTapEvent(context),
-                        child: _buildMainPart(selectedCountry!),
-                      ),
-                      if (widget.isShowInputField == true)
-                        InputField(
-                          inputTheme: widget.inputTheme,
-                          onChanged: (value) {
-                            if (widget.onChanged != null) {
-                              widget.onChanged!("${selectedCountry!.dialing_code} $value");
-                            }
-                          },
-                          onEditingComplete: widget.onEditingComplete,
-                          onFieldSubmitted: widget.onFieldSubmitted,
-                          onSaved: widget.onSaved,
-                          onTap: widget.onTap,
-                          focusNode: focusNode
-                            ..addListener(() {
-                              inputOnFocus = focusNode.hasFocus;
-                              setState(() {});
-                            }),
-                        ),
-                    ]),
+      child: Container(
+        margin: widget.margin,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: EdgeInsets.only(
+                top: (widget.padding as EdgeInsets).top,
+                right: (widget.padding as EdgeInsets).right + 5.0,
+                bottom: (widget.padding as EdgeInsets).bottom,
+                left: (widget.padding as EdgeInsets).left + 5.0,
               ),
-              if (widget.isShowCountryTitle == true)
-                Text(
-                  selectedCountry != null
-                      ? selectedCountry!.name.common
-                      : countries
-                          .firstWhere(
-                              (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
-                                  widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
-                              orElse: () => countries[0])
-                          .name
-                          .common,
-                  style: widget.countryNameTextStyle.copyWith(
-                      fontWeight: widget.countryNameTextStyle.fontWeight,
-                      fontSize: widget.countryNameTextStyle.fontSize ?? 15,
-                      color: widget.countryNameTextStyle.color ?? Colors.grey,
-                      overflow: TextOverflow.ellipsis),
-                ),
-            ],
-          ),
+              decoration: BoxDecoration(
+                  borderRadius: widget.border.isOutline ? BorderRadius.circular(4) : null,
+                  border: (widget.inputTheme.border == InputBorder.none ||
+                              widget.isShowInputField == false) &&
+                          widget.border != InputBorder.none
+                      ? widget.border.isOutline
+                          ? inputOnFocus == true || widget.isShowInputField == false
+                              ? Border.all(
+                                  color: Theme.of(context).colorScheme.primary,
+                                  width: widget.border.borderSide.width)
+                              : Border.all(color: Theme.of(context).hintColor, width: 1)
+                          : inputOnFocus == true || widget.isShowInputField == false
+                              ? Border(
+                                  bottom: BorderSide(
+                                      color: Theme.of(context).colorScheme.primary,
+                                      width: widget.border.borderSide.width))
+                              : Border(
+                                  bottom: BorderSide(color: Theme.of(context).hintColor, width: 1))
+                      : null),
+              child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      onTap: (widget.onCountryChanged == null)
+                          ? null
+                          : () async => await _onTapEvent(context),
+                      child: _buildMainPart(selectedCountry!),
+                    ),
+                    if (widget.isShowInputField == true)
+                      InputField(
+                        inputTheme: widget.inputTheme,
+                        onChanged: (value) {
+                          if (widget.onChanged != null) {
+                            String unMaskedText = MaskTextInputFormatter(
+                                mask: widget.inputTheme.mask,
+                                initialText: value,
+                                filter: {"#": RegExp(r'[0-9]')}).getUnmaskedText();
+
+                            widget.onChanged!("${selectedCountry!.dialing_code}$unMaskedText");
+                          }
+                        },
+                        onEditingComplete: widget.onEditingComplete,
+                        onFieldSubmitted: widget.onFieldSubmitted,
+                        onSaved: widget.onSaved,
+                        onTap: widget.onTap,
+                        focusNode: focusNode
+                          ..addListener(() {
+                            inputOnFocus = focusNode.hasFocus;
+                            setState(() {});
+                          }),
+                      ),
+                  ]),
+            ),
+            if (widget.isShowCountryTitle == true)
+              Text(
+                selectedCountry != null
+                    ? selectedCountry!.name.common
+                    : countries
+                        .firstWhere(
+                            (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
+                                widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
+                            orElse: () => countries[0])
+                        .name
+                        .common,
+                style: widget.countryNameTextStyle.copyWith(
+                    fontWeight: widget.countryNameTextStyle.fontWeight,
+                    fontSize: widget.countryNameTextStyle.fontSize ?? 15,
+                    color: widget.countryNameTextStyle.color ?? Colors.grey,
+                    overflow: TextOverflow.ellipsis),
+              ),
+          ],
         ),
       ),
     );

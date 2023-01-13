@@ -1,3 +1,4 @@
+import 'package:country_list_picker_example/controller/settings_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:country_list_picker/country_list_picker.dart';
@@ -12,15 +13,16 @@ class TopPart extends StatelessWidget {
   const TopPart({super.key});
   @override
   Widget build(BuildContext context) {
-    return Consumer3<PickerProvider, InputProvider, DialogProvider>(
-      builder: (context, picker, input, dialog, child) {
+    return Consumer4<PickerProvider, InputProvider, DialogProvider, SettingsProvider>(
+      builder: (context, picker, input, dialog, settings, child) {
         return CountryListPicker(
           // localCountry: Countries.Albania,
           // onCountryChanged: (value) {},
           // onChanged: (value) {},
           initialCountry: Countries.Egypt,
-          language: picker.language,
-          textDirection: picker.textDirection,
+          language: picker.separated == true ? picker.language : settings.language,
+          textDirection:
+              picker.separated == true ? picker.textDirection : settings.language.textDirection,
           localCountry: (dialog.currentLocationTile == false) ? null : dialog.localCountry,
           countryNameTextStyle: picker.countryNameTextStyle,
           isShowFlag: picker.isShowFlag,

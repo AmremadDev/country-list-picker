@@ -1,4 +1,6 @@
+import 'package:country_list_picker/country_list_picker.dart';
 import 'package:country_list_picker/model/languages.dart';
+import 'package:country_list_picker_example/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -71,6 +73,21 @@ class CountryListPickerExample extends StatelessWidget {
           home: const OnBoardingPage(),
         );
       },
+    );
+  }
+}
+
+class testing extends StatelessWidget {
+  const testing({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          CountryListPicker(),
+        ],
+      ),
     );
   }
 }

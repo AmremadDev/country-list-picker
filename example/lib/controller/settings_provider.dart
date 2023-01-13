@@ -28,13 +28,6 @@ class SettingsProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  TextDirection _textDirection = TextDirection.ltr;
-  TextDirection get textDirection => _textDirection;
-  set textDirection(TextDirection value) {
-    _textDirection = value;
-    notifyListeners();
-  }
-
   Languages _language = Languages.English;
   Languages get language => _language;
   set language(Languages value) {

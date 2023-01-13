@@ -10,6 +10,13 @@ class PickerProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  bool _separated = false;
+  bool get separated => _separated;
+  set separated(bool value) {
+    _separated = value;
+    notifyListeners();
+  }
+
   Languages _language = Languages.English;
   Languages get language => _language;
   set language(Languages value) {
@@ -17,9 +24,9 @@ class PickerProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  TextDirection? _textDirection;
-  TextDirection? get textDirection => _textDirection;
-  set textDirection(TextDirection? value) {
+  TextDirection _textDirection = TextDirection.ltr;
+  TextDirection get textDirection => _textDirection;
+  set textDirection(TextDirection value) {
     _textDirection = value;
     notifyListeners();
   }

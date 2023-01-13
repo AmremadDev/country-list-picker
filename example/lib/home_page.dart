@@ -1,8 +1,7 @@
-import 'package:country_list_picker_example/translation.dart';
-import 'package:country_list_picker_example/widget/code_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../translation.dart';
 import '../app_data.dart';
 import '../bottom_part.dart';
 import '../controller/settings_provider.dart';
@@ -22,21 +21,65 @@ class HomePage extends StatelessWidget {
             actions: [
               IconButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const CodePage()),
+                  // show the dialog
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Country List Picker",
+                              style: TextStyle(color: Theme.of(context).colorScheme.primary),
+                            ),
+                            const Text("1.0.0", style: TextStyle(fontSize: 15)),
+                            const Text("© 2023 - Amr Emad", style: TextStyle(fontSize: 15)),
+                            const Text("a.emad@outlook.com / +201111146515",
+                                style: TextStyle(fontSize: 15))
+                          ],
+                        ),
+                        content:
+                            const Text("This example shows the features of the CountryListPicker"),
+                        actions: [
+                          TextButton(
+                            child: const Text("OK"),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ],
+                      );
+                    },
                   );
                 },
                 icon: settings.isDarkMode
                     ? Icon(
-                        Icons.code,
+                        Icons.info,
                         color: settings.darkprimarySwatch,
                       )
                     : const Icon(
-                        Icons.code,
+                        Icons.info,
                         color: Colors.white,
                       ),
               ),
+              // IconButton(
+              //   onPressed: () {
+              //     // Navigator.push(
+              //     //   context,
+              //     //   MaterialPageRoute(builder: (context) => const CodePage()),
+              //     // );
+              //   },
+              //   icon: settings.isDarkMode
+              //       ? Icon(
+              //           Icons.code,
+              //           color: settings.darkprimarySwatch,
+              //         )
+              //       : const Icon(
+              //           Icons.code,
+              //           color: Colors.white,
+              //         ),
+              // ),
               IconButton(
                 onPressed: () => settings.isDarkMode = !settings.isDarkMode,
                 icon: settings.isDarkMode

@@ -15,14 +15,21 @@ class GeneralPickerArguments extends StatelessWidget {
       builder: (_, picker, settings, child) {
         return Column(
           children: [
+            CustomListTile<Switch, bool>(
+              title: "Separated",
+              value: picker.separated,
+              onChanged: (bool value) => picker.separated = value,
+            ),
             CustomListTile<DropdownButtonFormField, Languages>(
               title: "Language",
+              enabled: picker.separated,
               value: picker.language,
               onLanguagesChanged: (value) => picker.language = value,
             ),
             CustomListTile<DropdownButtonFormField, TextDirection>(
-              title: "Language",
-              value: picker.textDirection ?? settings.language.textDirection,
+              title: "Text Direction",
+              enabled: picker.separated,
+              value: picker.textDirection,
               ontextDirectionChanged: (value) => picker.textDirection = value,
             ),
             const SizedBox(

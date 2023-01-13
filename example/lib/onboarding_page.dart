@@ -52,12 +52,12 @@ class OnBoardingPage extends StatelessWidget {
                                     //   width: 200,
                                     //   height: 250,
                                     // ),
-                                    const FlutterLogo(size: 250),
+                                    // const FlutterLogo(size: 250),
                                     Text(listOnboarding[index].title.tr,
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline5!
-                                            .copyWith(fontSize: 25, fontWeight: FontWeight.bold)),
+                                            .copyWith(fontSize: 21, fontWeight: FontWeight.bold)),
                                     const SizedBox(height: 20),
                                     Text(
                                       textAlign: TextAlign.center,

@@ -75,12 +75,12 @@ List<Screen> screens = [
     inactiveIcon: Icons.settings_outlined,
     child: SettingsScreen(),
   ),
-  const Screen(
-    title: "About",
-    activeIcon: Icons.info,
-    inactiveIcon: Icons.info_outline,
-    child: AboutScreen(),
-  ),
+  // const Screen(
+  //   title: "About",
+  //   activeIcon: Icons.info,
+  //   inactiveIcon: Icons.info_outline,
+  //   child: AboutScreen(),
+  // ),
 ];
 
 List<Argument> pickerArguments = [
