@@ -68,77 +68,78 @@ void  main() {
 ```
 ## Getting started
 
-picker paramters
-| Parameter                     | Type                      | Description                                                             |
-| ----------------------------- | ------------------------- | ----------------------------------------------------------------------- |
-| `onCountryChanged`            | `ValueChanged<Country>?`  | This is a callback function that is invoked when the selected country is changed, which can be used to access the newly selected country.                        |
-| `onChanged`                   | `ValueChanged<String>?`   | cThis is a callback function that is invoked when the phone number in the input field changes, which can be used to access the new phone number.                             |
-| `initialCountry`              | `Countries`               | This parameter sets the initial country that is selected when the widget is first rendered. It has a default value of `Countries.Egypt`.                  |
-| `language`                    | `Languages`               | This parameter sets the display language for the widget. It has a default value of `Languages.English`.                 |
-| `textDirection`               | `TextDirection`           | This parameter sets the text direction for the widget depending on the language direction.                          |
-| `localCountry`                | `Countries`               | Refer to local device which will define by you, it has a default value is `null`,                                  |
-| `countryNameTextStyle`        | `TextStyle`               | Text style for the country name display.                                |
-| `isShowFlag`                  | `bool`                    | Determines the visibility of the flag icon. A value of true will display the flag icon, while a value of false will hide it.   |
-| `flagSize`                    | `Size`                    | size of the flag icon. It has a default value Size (40,40)                                                 |
-| `isShowDiallingCode`          | `bool`                    | Determines whether the dialling code should be displayed or not. If true, the dialling code will be displayed. If false, it will be hidden.|
-| `isShowDownIcon`              | `bool`                    | Determines whether the flag icon should be displayed or not. If true, the flag icon will be displayed. If false, it will be hidden.|
-| `isShowCountryTitle`          | `bool`                    | Determines whether the country title should be displayed or not. If true, the country title will be displayed. If false, it will be hidden.|
-| `isShowInputField`            | `bool`                    | Determines whether the phone number input field should be displayed or not. If true, the phone number input field will be displayed. If false, it will be hidden.|
-| `iconDown`                    | `Icon`                    | Determines whether the dropdown arrow icon should be displayed or not. If true, the dropdown arrow icon will be displayed. If false, it will be hidden.|
-| `diallCodeStyle`              | `TextStyle`               | Text style for the dialling code display.                               |
-| `border`                      | `InputBorder`             | border of the phone number input field.                                  |
-| `inputTheme`                  | `InputThemeData`          | theme data for the phone number input field.                            |
-| `dialogTheme`                 | `DialogThemeData`         | theme data for the country selection dialog.                            |
+### Picker Paramters
+
+| Parameter              	| Type              	| Default                                                	| Description                                                                                                                                                        	|
+|------------------------	|-------------------	|--------------------------------------------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| `onCountryChanged`     	| `ValueChanged?`   	| `null`                                                 	| This is a callback function that is invoked when the selected country is changed,  which can be used to access the newly selected country.                         	|
+| `onChanged`            	| `ValueChanged?`   	| `null`                                                 	| cThis is a callback function that is invoked when the phone number in the input field changes,  which can be used to access the new phone number.                  	|
+| `initialCountry`       	| `Countries`       	| `Countries.Egypt`                                      	| This parameter sets the initial country that is selected when the widget is first rendered.                                                                        	|
+| `language`             	| `Languages`       	| `Languages.English`                                    	| This parameter sets the display language for the widget.                                                                                                           	|
+| `textDirection`        	| `TextDirection`   	| --                                                     	| This parameter sets the text direction for the widget depending on the language direction.                                                                         	|
+| `localCountry`         	| `Countries`       	| `null`                                                 	| Refer to local device which will define by you.                                                                                                                    	|
+| `countryNameTextStyle` 	| `TextStyle`       	| `TextStyle(fontSize: 15, color: Colors.grey)`          	| Text style for the country name display.                                                                                                                           	|
+| `isShowFlag`           	| `bool`            	| `true`                                                 	| Determines the visibility of the flag icon.  A value of true will display the flag icon, while a value of false will hide it.                                      	|
+| `flagSize`             	| `Size`            	| `true`                                                 	| size of the flag icon. It has a default value Size (40,40)                                                                                                         	|
+| `isShowDiallingCode`   	| `bool`            	| `true`                                                 	| Determines whether the dialling code should be displayed or not.  If true, the dialling code will be displayed. If false, it will be hidden.                       	|
+| `isShowDownIcon`       	| `bool`            	| `true`                                                 	| Determines whether the flag icon should be displayed or not.  If true, the flag icon will be displayed. If false, it will be hidden.                               	|
+| `isShowCountryTitle`   	| `bool`            	| `true`                                                 	| Determines whether the country title should be displayed or not.  If true, the country title will be displayed. If false, it will be hidden.                       	|
+| `isShowInputField`     	| `bool`            	| `true`                                                 	| Determines whether the phone number input field should be displayed or not.  If true, the phone number input field will be displayed. If false, it will be hidden. 	|
+| `iconDown`             	| `Icon`            	| `const Icon(Icons.keyboard_arrow_down, size: 24)`      	| Determines whether the dropdown arrow icon should be displayed or not.  If true, the dropdown arrow icon will be displayed. If false, it will be hidden.           	|
+| `diallCodeStyle`       	| `TextStyle`       	| `TextStyle(fontSize: 16, fontWeight: FontWeight.bold)` 	| Text style for the dialling code display.                                                                                                                          	|
+| `border`               	| `InputBorder`     	| `UnderlineInputBorder()`                               	| border of the phone number input field.                                                                                                                            	|
+| `inputTheme`           	| `InputThemeData`  	| --                                                     	| theme data for the phone number input field.                                                                                                                       	|
+| `dialogTheme`          	| `DialogThemeData` 	| --                                                     	| theme data for the country selection dialog.                                                                                                                       	|
+
+### Input Paramters
+
+| Parameter            	| Type          	| Default                                             	| Description                                                  	|
+|----------------------	|---------------	|-----------------------------------------------------	|--------------------------------------------------------------	|
+| `obscureText`        	| `bool`        	| `false`                                             	| Determines if the text input should be obscured or not.      	|
+| `obscuringCharacter` 	| `String`      	| "*"                                                 	| The character used to obscure the text input.                	|
+| `style`              	| `TextStyle`   	| `TextStyle(fontSize: 16)`                           	| The text style for the input field.                          	|
+| `hintText`           	| `String`      	| `Enter your phone number`                           	| The hint text to be displayed when the input field is empty. 	|
+| `hintStyle`          	| `TextStyle`   	| `TextStyle(fontSize: 16, color: Color(0xFF9E9E9E))` 	| text style for the hint text.                                	|
+| `border`             	| `InputBorder` 	| `InputBorder.none`                                  	| The border style for the input field.                        	|
+| `mask`               	| `String`      	| "### #### ###"                                      	| The mask used to format the text input.                      	|
+
+### Dialog Paramters
+
+| Parameter            	| Type                    	| Default 	| Description                                                                                                                                        	|
+|----------------------	|-------------------------	|---------	|----------------------------------------------------------------------------------------------------------------------------------------------------	|
+| `isShowFlag`         	| `bool`                  	|         	| Determines whether the flag icon should be displayed. A value of true will display the flag icon, while a value of false will hide it.             	|
+| `isShowDiallCode`    	| `bool`                  	|         	| Determines whether the dialling code should be displayed. A value of true will display the dialling code, while a value of false will hide it.     	|
+| `isShowFloatButton`  	| `bool`                  	|         	| Determines whether the floating button should be displayed. A value of true will display the floating button, while a value of false will hide it. 	|
+| `isShowSearchTile`   	| `bool`                  	|         	| Determines whether the search tile should be displayed. A value of true will display the search tile, while a value of false will hide it.         	|
+| `isShowLastPickTile` 	| `bool`                  	|         	| Determines whether the last pick tile should be displayed. A value of true will display the last pick tile, while a value of false will hide it.   	|
+| `isShowAlphabetsBar` 	| `bool`                  	|         	| Determines whether the alphabets bar should be displayed. A value of true will display the alphabets bar, while a value of false will hide it.     	|
+| `backgroundColor`    	| `Color`                 	|         	| background color for the dialog.                                                                                                                   	|
+| `textStyle`          	| `TextStyle`             	|         	| text style for the text displayed in the dialog. The default value is `TextStyle(fontSize: 16)`.                                                   	|
+| `appBar`             	| `PreferredSizeWidget`   	|         	| Appbar dialog to be displayed on top of the screen.                                                                                                	|
+| `tileHeight`         	| `double`                	|         	| height of the tiles. The default value is `50`                                                                                                     	|
+| `alphabetsBarTheme`  	| `AlphabetsBarThemeData` 	|         	| theme data for the alphabets bar.                                                                                                                  	|
+| `tilesTheme`         	| `TilesThemeData`        	|         	| theme data for the tiles.                                                                                                                          	|
 
 
-input parameters
+### Alphabets Paramters
 
-| Parameter                      | Type                      | Description                                                             |
-| -----------------------------  | ------------------------- | ----------------------------------------------------------------------- |
-| `obscureText`                 | `bool`                    | Determines if the text input should be obscured or not. The default value is `false`.                  |
-| `obscuringCharacter`          | `String`                  | The character used to obscure the text input. The default value is `*`.      |
-| `style`                       | `TextStyle`               | The text style for the input field. The default value is `TextStyle(fontSize: 16)`.              |
-| `hintText`                    | `String`                  | The hint text to be displayed when the input field is empty. The default value is `Enter your phone number`.          |
-| `hintStyle`                   | `TextStyle`               | text style for the hint text. The default value is `TextStyle(fontSize: 16, color: Color(0xFF9E9E9E))`       |
-| `border`                      | `InputBorder`             | TThe border style for the input field. The default value is `InputBorder.none`.|
-| `mask`                        | `String`                  | The mask used to format the text input. Default is `### #### ###`.                                |
-
-dialog parameters
-
-| Parameter                      | Type                      | Description                                                             |
-| -----------------------------  | ------------------------- | ----------------------------------------------------------------------- |
-| `isShowFlag`                   | `bool`                    | Determines whether the flag icon should be displayed. A value of true will display the flag icon, while a value of false will hide it.             |
-| `isShowDiallCode`              | `bool`                    | Determines whether the dialling code should be displayed. A value of true will display the dialling code, while a value of false will hide it.         |
-| `isShowFloatButton`            | `bool`                    | Determines whether the floating button should be displayed. A value of true will display the floating button, while a value of false will hide it.       |
-| `isShowSearchTile`             | `bool`                    |  Determines whether the search tile should be displayed. A value of true will display the search tile, while a value of false will hide it.          |
-| `isShowLastPickTile`           | `bool`                    | Determines whether the last pick tile should be displayed. A value of true will display the last pick tile, while a value of false will hide it.       |
-| `isShowAlphabetsBar`           | `bool`                    | Determines whether the alphabets bar should be displayed. A value of true will display the alphabets bar, while a value of false will hide it.        |
-| `backgroundColor`              | `Color`                   | background color for the dialog.                                       |
-| `textStyle`                    | `TextStyle`               | text style for the text displayed in the dialog. The default value is `TextStyle(fontSize: 16)`. |
-| `appBar`                       | `PreferredSizeWidget`     | Appbar dialog to be displayed on top of the screen.                     |
-| `tileHeight`                   | `double`                  | height of the tiles. The default value is `50`  |
-| `alphabetsBarTheme`            | `AlphabetsBarThemeData`   | theme data for the alphabets bar.                                       |
-| `tilesTheme`                   | `TilesThemeData`          | theme data for the tiles.                                               |
+| Parameter                 	| Type        	| Default                                               	| Description                                        	|
+|---------------------------	|-------------	|-------------------------------------------------------	|----------------------------------------------------	|
+| `backgroundColor`         	| `Color`     	| `Colors.transparent`                                  	| The background color of unselected alphabet item   	|
+| `style`                   	| `TextStyle` 	| `TextStyle(fontSize: 12)`                             	| The text style of the alphabet item text.          	|
+| `selectedBackgroundColor` 	| `Color`     	| `Colors.transparent`                                  	| The background color of alphabet item.             	|
+| `selectedStyle`           	| `TextStyle` 	| `TextStyl(fontSize: 18, fontWeight: FontWeight.bold)` 	| The text style of the selected alphabet item text. 	|
 
 
-alphabets parameters
+### Dialog Tiles Paramters
 
-| Parameter                      | Type                      | Description                                                             |
-| -----------------------------  | ------------------------- | ----------------------------------------------------------------------- |
-| `backgroundColor`             | `Color`                   | The background color of unselected alphabet item. The default value is `Colors.transparent`|
-| `style`                       | `TextStyle`               | The text style of the alphabet item text. The default value is `TextStyle(fontSize: 12)`.                                        |
-| `selectedBackgroundColor`     | `Color`                   | The background color of alphabet item. The default value is `Colors.transparent`|
-| `selectedStyle`               | `TextStyle`               | The text style of the selected alphabet item text. The default value is `TextStyl(fontSize: 18, fontWeight: FontWeight.bold)`.                            |
-
-
-tiles parameters
-| Parameter                      | Type                      | Description                                                             |
-| -----------------------------  | ------------------------- | ----------------------------------------------------------------------- |
-| `backgroundColor`             | `Color`                   | The background color of the tile. The default value is `Theme.of(context).colorScheme.surface`   |
-| `style`                       | `TextStyle`               | The text style of the title text. The default value is  `TextStyle(fontSize: 16, fontWeight: FontWeight.bold)`    |
-| `currentLocationTileTitle`    | `String`                  | The title of the tile for current location. The default value is `Current Location`  |
-| `lastPickIcon`                | `Icon`                    | The icon for the last pick tile.  The default value is  `Icon(Icons.check)`   |
-| `lastPickTitle`               | `String`                  | The title of the last pick tile.    The default value is  `Last Pick` |
-| `searchHint`                  | `String`                  | The hint text for the search bar.    The default value is    `name/dial code...` |
-| `searchHintStyle`             | `TextStyle`               | The text style of the search hint text.  The default value is  `TextStyle(fontSize: 16, color: Color(0xFF9E9E9E)` |
-| `searchTitle`                 | `String`                  | The title of the search bar.    The default value is    `Search` |
+| Parameter                  	| Type        	| Default                                                	| Description                                 	|
+|----------------------------	|-------------	|--------------------------------------------------------	|---------------------------------------------	|
+| `backgroundColor`          	| `Color`     	| `Theme.of(context).colorScheme.surface`                	| The background color of the tile.           	|
+| `style`                    	| `TextStyle` 	| `TextStyle(fontSize: 16, fontWeight: FontWeight.bold)` 	| The text style of the title text.           	|
+| `currentLocationTileTitle` 	| `String`    	| "Current Location"                                     	| The title of the tile for current location. 	|
+| `lastPickIcon`             	| `Icon`      	| `Icon(Icons.check)`                                    	| The icon for the last pick tile.            	|
+| `lastPickTitle`            	| `String`    	| "Last Pick"                                            	| The title of the last pick tile.            	|
+| `searchHint`               	| `String`    	| "name/dial code..."                                    	| The hint text for the search bar.           	|
+| `searchHintStyle`          	| `TextStyle` 	| `TextStyle(fontSize: 16, color: Color(0xFF9E9E9E)`     	| The text style of the search hint text.     	|
+| `searchTitle`              	| `String`    	| "Search"                                               	| The title of the search bar.                	|

@@ -342,7 +342,7 @@ class _CountryListPickerState extends State<CountryListPicker> {
                             ),
                       appBar: widget.dialogTheme.appBar ??
                           AppBar(
-                              backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+                              // backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
                               title: const Text("Select your country")),
                       dialogTheme: widget.dialogTheme,
                     );
