@@ -77,14 +77,17 @@ Map<String, Map<String, String>> transaltionList = {
     "NEXT": "NEXT",
     "FINISH": "FINISH",
     "Easy and Fast": "Easy and Fast",
-    "Easy to use, minimum code and least effort": "Easy to use, minimum code and least effort",
+    "Easy to use, minimum code and least effort":
+        "Easy to use, minimum code and least effort",
     "Flexible": "Flexible",
-    "Customize the Country List Picker Settings": "Customize the Country List Picker Settings",
+    "Customize the Country List Picker Settings":
+        "Customize the Country List Picker Settings",
     "Open Source": "Open Source",
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Open source  to developers can modify and share because its design is publicly accessible",
     "Tested and Documentation": "Tested and Documentation",
-    "A guide to reference and documentation": "A guide to reference and documentation",
+    "A guide to reference and documentation":
+        "A guide to reference and documentation",
     "Enter your phone number": "Enter your phone number",
     "Select your country": "Select your country",
     "Search by name/dial code": "Search by name/dial code",
@@ -157,9 +160,11 @@ Map<String, Map<String, String>> transaltionList = {
     "NEXT": "التالي",
     "FINISH": "إنهاء",
     "Easy and Fast": "سهولة وسرعة",
-    "Easy to use, minimum code and least effort": "سهل الاستخدام ، وأقل كود وأقل جهد",
+    "Easy to use, minimum code and least effort":
+        "سهل الاستخدام ، وأقل كود وأقل جهد",
     "Flexible": "المرونة",
-    "Customize the Country List Picker Settings": "تخصيص إعدادات قائمة إختيار الدول",
+    "Customize the Country List Picker Settings":
+        "تخصيص إعدادات قائمة إختيار الدول",
     "Open Source": "مصدر مفتوح",
     "Open source  to developers can modify and share because its design is publicly accessible":
         "يمكن للمطورين تعديل المصدر المفتوح ومشاركته لأن تصميمه متاح للجميع",
@@ -255,7 +260,8 @@ Map<String, Map<String, String>> transaltionList = {
     "Version": "发行数量",
     "Language": "语言",
     "Multilanguage": "多语言",
-    "It supports the display of country names in multiple languages.": "支持以多种语言显示国家名称。",
+    "It supports the display of country names in multiple languages.":
+        "支持以多种语言显示国家名称。",
     "Light Primary Color": "原色是慢动作",
     "Dark Primary Color": "深色模式下的原色",
     "General APP Settings": "一般应用程序设置",
@@ -320,12 +326,14 @@ Map<String, Map<String, String>> transaltionList = {
     "Easy to use, minimum code and least effort":
         "Jednostavan za korištenje, manje koda i manje truda",
     "Flexible": "Fleksibilnost",
-    "Customize the Country List Picker Settings": "Prilagodite postavke izbornika za odabir zemlje",
+    "Customize the Country List Picker Settings":
+        "Prilagodite postavke izbornika za odabir zemlje",
     "Open Source": "otvoreni izvor",
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Programeri mogu mijenjati i dijeliti otvoreni kod jer je njegov dizajn otvoren svima",
     "Tested and Documentation": "Ispitivanje i dokumentacija",
-    "A guide to reference and documentation": "Referentni i dokumentacijski vodič",
+    "A guide to reference and documentation":
+        "Referentni i dokumentacijski vodič",
     "Enter your phone number": "Unesite vaš telefonski broj",
     "Select your country": "Odaberite svoju zemlju",
     "Search by name/dial code": "Pretraživanje po imenu/kod kontakta",
@@ -398,14 +406,17 @@ Map<String, Map<String, String>> transaltionList = {
     "NEXT": "další",
     "FINISH": "konec",
     "Easy and Fast": "Snadnost a rychlost",
-    "Easy to use, minimum code and least effort": "Snadné použití, méně kódu a méně úsilí",
+    "Easy to use, minimum code and least effort":
+        "Snadné použití, méně kódu a méně úsilí",
     "Flexible": "Flexibilita",
-    "Customize the Country List Picker Settings": "Přizpůsobte nastavení nabídky výběru země",
+    "Customize the Country List Picker Settings":
+        "Přizpůsobte nastavení nabídky výběru země",
     "Open Source": "open source",
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Vývojáři mohou upravovat a sdílet open source, protože jeho design je otevřený všem",
     "Tested and Documentation": "Testování a dokumentace",
-    "A guide to reference and documentation": "Referenční a dokumentační příručka",
+    "A guide to reference and documentation":
+        "Referenční a dokumentační příručka",
     "Enter your phone number": "Vložte své telefonní číslo",
     "Select your country": "Vyberte svoji zemi",
     "Search by name/dial code": "Vyhledávání podle jména/kontaktního kódu",
@@ -478,14 +489,17 @@ Map<String, Map<String, String>> transaltionList = {
     "NEXT": "järgmine",
     "FINISH": "lõppu",
     "Easy and Fast": "Lihtsus ja kiirus",
-    "Easy to use, minimum code and least effort": "Lihtne kasutada, vähem koodi ja vähem vaeva",
+    "Easy to use, minimum code and least effort":
+        "Lihtne kasutada, vähem koodi ja vähem vaeva",
     "Flexible": "Paindlikkus",
-    "Customize the Country List Picker Settings": "Kohandage riigi valiku menüü sätteid",
+    "Customize the Country List Picker Settings":
+        "Kohandage riigi valiku menüü sätteid",
     "Open Source": "avatud lähtekoodiga",
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Arendajad saavad avatud lähtekoodi muuta ja jagada, kuna selle disain on kõigile avatud",
     "Tested and Documentation": "Testimine ja dokumentatsioon",
-    "A guide to reference and documentation": "Viite- ja dokumentatsioonijuhend",
+    "A guide to reference and documentation":
+        "Viite- ja dokumentatsioonijuhend",
     "Enter your phone number": "Sisesta oma telefoninumber",
     "Select your country": "Valige oma riik",
     "Search by name/dial code": "Otsi nime/kontaktkoodi järgi",
@@ -561,7 +575,8 @@ Map<String, Map<String, String>> transaltionList = {
     "Easy to use, minimum code and least effort":
         "Helppokäyttöinen, vähemmän koodia ja vähemmän vaivaa",
     "Flexible": "Joustavuus",
-    "Customize the Country List Picker Settings": "Mukauta maan valintavalikkoasetuksia",
+    "Customize the Country List Picker Settings":
+        "Mukauta maan valintavalikkoasetuksia",
     "Open Source": "avoin lähdekoodi",
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Kehittäjät voivat muokata ja jakaa avoimen lähdekoodin, koska sen suunnittelu on avoin kaikille",
@@ -648,7 +663,8 @@ Map<String, Map<String, String>> transaltionList = {
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Les développeurs peuvent modifier et partager l'open source car sa conception est ouverte à tous",
     "Tested and Documentation": "Essais et documentation",
-    "A guide to reference and documentation": "Guide de référence et de documentation",
+    "A guide to reference and documentation":
+        "Guide de référence et de documentation",
     "Enter your phone number": "Entrez votre numéro de téléphone",
     "Select your country": "Choisis ton pays",
     "Search by name/dial code": "Recherche par nom/code de contact",
@@ -730,7 +746,8 @@ Map<String, Map<String, String>> transaltionList = {
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Entwickler können die Open Source ändern und teilen, da ihr Design für alle offen ist",
     "Tested and Documentation": "Prüfung und Dokumentation",
-    "A guide to reference and documentation": "Referenz- und Dokumentationshandbuch",
+    "A guide to reference and documentation":
+        "Referenz- und Dokumentationshandbuch",
     "Enter your phone number": "Trage deine Telefonnummer ein",
     "Select your country": "Wähle dein Land",
     "Search by name/dial code": "Suche nach Name/Kontaktcode",
@@ -812,7 +829,8 @@ Map<String, Map<String, String>> transaltionList = {
     "Open source  to developers can modify and share because its design is publicly accessible":
         "A fejlesztők módosíthatják és megoszthatják a nyílt forráskódot, mert annak kialakítása mindenki számára nyitott",
     "Tested and Documentation": "Tesztelés és dokumentálás",
-    "A guide to reference and documentation": "Referencia- és dokumentációs útmutató",
+    "A guide to reference and documentation":
+        "Referencia- és dokumentációs útmutató",
     "Enter your phone number": "Írja be a telefonszámát",
     "Select your country": "válaszd ki az országodat",
     "Search by name/dial code": "Keresés név/kapcsolati kód alapján",
@@ -885,7 +903,8 @@ Map<String, Map<String, String>> transaltionList = {
     "NEXT": "successiva",
     "FINISH": "finendo",
     "Easy and Fast": "Facilità e velocità",
-    "Easy to use, minimum code and least effort": "Facile da usare, meno codice e meno sforzo",
+    "Easy to use, minimum code and least effort":
+        "Facile da usare, meno codice e meno sforzo",
     "Flexible": "Flessibilità",
     "Customize the Country List Picker Settings":
         "Personalizza le impostazioni del menu di selezione del paese",
@@ -893,7 +912,8 @@ Map<String, Map<String, String>> transaltionList = {
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Gli sviluppatori possono modificare e condividere l'open source perché il suo design è aperto a tutti",
     "Tested and Documentation": "Test e documentazione",
-    "A guide to reference and documentation": "Guida di riferimento e documentazione",
+    "A guide to reference and documentation":
+        "Guida di riferimento e documentazione",
     "Enter your phone number": "Inserisci il tuo numero di telefono",
     "Select your country": "Scegli il tuo paese",
     "Search by name/dial code": "Cerca per nome/codice contatto",
@@ -983,7 +1003,8 @@ Map<String, Map<String, String>> transaltionList = {
     "Local Country": "現在の状態",
     "Language": "言語",
     "Multilanguage": "多言語",
-    "It supports the display of country names in multiple languages.": "国名の多言語表示に対応。",
+    "It supports the display of country names in multiple languages.":
+        "国名の多言語表示に対応。",
     "Light Primary Color": "原色がスローモーション",
     "Dark Primary Color": "ダークモードでの原色",
     "General APP Settings": "一般的なアプリケーション設定",
@@ -1063,7 +1084,8 @@ Map<String, Map<String, String>> transaltionList = {
     "Version": "발행 번호",
     "Language": "언어",
     "Multilanguage": "다국어",
-    "It supports the display of country names in multiple languages.": "여러 언어로 국가 이름 표시를 지원합니다.",
+    "It supports the display of country names in multiple languages.":
+        "여러 언어로 국가 이름 표시를 지원합니다.",
     "Light Primary Color": "기본 색상은 슬로우 모션입니다.",
     "Dark Primary Color": "다크 모드의 기본 색상",
     "General APP Settings": "일반 애플리케이션 설정",
@@ -1125,9 +1147,11 @@ Map<String, Map<String, String>> transaltionList = {
     "NEXT": "بعدی",
     "FINISH": "پایان دادن",
     "Easy and Fast": "سهولت و سرعت",
-    "Easy to use, minimum code and least effort": "استفاده آسان، کد کمتر و تلاش کمتر",
+    "Easy to use, minimum code and least effort":
+        "استفاده آسان، کد کمتر و تلاش کمتر",
     "Flexible": "انعطاف پذیری",
-    "Customize the Country List Picker Settings": "تنظیمات منوی انتخاب کشور را سفارشی کنید",
+    "Customize the Country List Picker Settings":
+        "تنظیمات منوی انتخاب کشور را سفارشی کنید",
     "Open Source": "متن باز",
     "Open source  to developers can modify and share because its design is publicly accessible":
         "توسعه دهندگان می توانند منبع باز را تغییر داده و به اشتراک بگذارند زیرا طراحی آن برای همه باز است",
@@ -1205,14 +1229,17 @@ Map<String, Map<String, String>> transaltionList = {
     "NEXT": "Następna",
     "FINISH": "kończący się",
     "Easy and Fast": "Łatwość i szybkość",
-    "Easy to use, minimum code and least effort": "Łatwy w użyciu, mniej kodu i mniej wysiłku",
+    "Easy to use, minimum code and least effort":
+        "Łatwy w użyciu, mniej kodu i mniej wysiłku",
     "Flexible": "Elastyczność",
-    "Customize the Country List Picker Settings": "Dostosuj ustawienia menu wyboru kraju",
+    "Customize the Country List Picker Settings":
+        "Dostosuj ustawienia menu wyboru kraju",
     "Open Source": "otwarte źródło",
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Deweloperzy mogą modyfikować i udostępniać open source, ponieważ jego projekt jest otwarty dla wszystkich",
     "Tested and Documentation": "Testowanie i dokumentacja",
-    "A guide to reference and documentation": "Przewodnik referencyjny i dokumentacyjny",
+    "A guide to reference and documentation":
+        "Przewodnik referencyjny i dokumentacyjny",
     "Enter your phone number": "Wprowadź swój numer telefonu",
     "Select your country": "Wybierz swój kraj",
     "Search by name/dial code": "Szukaj według nazwy/kodu kontaktu",
@@ -1284,7 +1311,8 @@ Map<String, Map<String, String>> transaltionList = {
     "NEXT": "o próximo",
     "FINISH": "final",
     "Easy and Fast": "Facilidade e rapidez",
-    "Easy to use, minimum code and least effort": "Fácil de usar, menos código e menos esforço",
+    "Easy to use, minimum code and least effort":
+        "Fácil de usar, menos código e menos esforço",
     "Flexible": "Flexibilidade",
     "Customize the Country List Picker Settings":
         "Personalize as configurações do menu de seleção de país",
@@ -1292,7 +1320,8 @@ Map<String, Map<String, String>> transaltionList = {
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Os desenvolvedores podem modificar e compartilhar o código aberto porque seu design é aberto a todos",
     "Tested and Documentation": "Teste e documentação",
-    "A guide to reference and documentation": "Guia de referência e documentação",
+    "A guide to reference and documentation":
+        "Guia de referência e documentação",
     "Enter your phone number": "Digite seu número de telefone",
     "Select your country": "Escolha seu país",
     "Search by name/dial code": "Pesquise por nome/código de contato",
@@ -1368,12 +1397,14 @@ Map<String, Map<String, String>> transaltionList = {
     "Easy to use, minimum code and least effort":
         "Простота в использовании, меньше кода и меньше усилий",
     "Flexible": "Гибкость",
-    "Customize the Country List Picker Settings": "Настройте параметры меню выбора страны",
+    "Customize the Country List Picker Settings":
+        "Настройте параметры меню выбора страны",
     "Open Source": "открытый источник",
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Разработчики могут изменять и делиться открытым исходным кодом, потому что его структура открыта для всех.",
     "Tested and Documentation": "Тестирование и документация",
-    "A guide to reference and documentation": "Руководство по справке и документации",
+    "A guide to reference and documentation":
+        "Руководство по справке и документации",
     "Enter your phone number": "Введите свой номер телефона",
     "Select your country": "Выберите вашу страну",
     "Search by name/dial code": "Поиск по имени/контактному коду",
@@ -1446,14 +1477,17 @@ Map<String, Map<String, String>> transaltionList = {
     "NEXT": "ďalší",
     "FINISH": "zakončenie",
     "Easy and Fast": "Jednoduchosť a rýchlosť",
-    "Easy to use, minimum code and least effort": "Jednoduché použitie, menej kódu a menej úsilia",
+    "Easy to use, minimum code and least effort":
+        "Jednoduché použitie, menej kódu a menej úsilia",
     "Flexible": "Flexibilita",
-    "Customize the Country List Picker Settings": "Prispôsobte nastavenia ponuky výberu krajiny",
+    "Customize the Country List Picker Settings":
+        "Prispôsobte nastavenia ponuky výberu krajiny",
     "Open Source": "open source",
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Vývojári môžu upravovať a zdieľať open source, pretože jeho dizajn je otvorený pre všetkých",
     "Tested and Documentation": "Testovanie a dokumentácia",
-    "A guide to reference and documentation": "Referenčná a dokumentačná príručka",
+    "A guide to reference and documentation":
+        "Referenčná a dokumentačná príručka",
     "Enter your phone number": "Zadajte svoje telefónne číslo",
     "Select your country": "Vyberte si svoju krajinu",
     "Search by name/dial code": "Vyhľadajte podľa mena/kódu kontaktu",
@@ -1526,7 +1560,8 @@ Map<String, Map<String, String>> transaltionList = {
     "NEXT": "el proximo",
     "FINISH": "finalizando",
     "Easy and Fast": "Facilidad y rapidez",
-    "Easy to use, minimum code and least effort": "Fácil de usar, menos código y menos esfuerzo",
+    "Easy to use, minimum code and least effort":
+        "Fácil de usar, menos código y menos esfuerzo",
     "Flexible": "Flexibilidad",
     "Customize the Country List Picker Settings":
         "Personalizar la configuración del menú de selección de país",
@@ -1534,7 +1569,8 @@ Map<String, Map<String, String>> transaltionList = {
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Los desarrolladores pueden modificar y compartir el código abierto porque su diseño está abierto a todos",
     "Tested and Documentation": "Pruebas y documentación",
-    "A guide to reference and documentation": "Guía de referencia y documentación",
+    "A guide to reference and documentation":
+        "Guía de referencia y documentación",
     "Enter your phone number": "Ingrese su número telefónico",
     "Select your country": "Elige tu país",
     "Search by name/dial code": "Buscar por nombre/código de contacto",
@@ -1610,12 +1646,14 @@ Map<String, Map<String, String>> transaltionList = {
     "Easy to use, minimum code and least effort":
         "Lätt att använda, mindre kod och mindre ansträngning",
     "Flexible": "Flexibilitet",
-    "Customize the Country List Picker Settings": "Anpassa menyinställningarna för landsval",
+    "Customize the Country List Picker Settings":
+        "Anpassa menyinställningarna för landsval",
     "Open Source": "öppen källa",
     "Open source  to developers can modify and share because its design is publicly accessible":
         "Utvecklare kan ändra och dela öppen källkod eftersom dess design är öppen för alla",
     "Tested and Documentation": "Testning och dokumentation",
-    "A guide to reference and documentation": "Referens- och dokumentationsguide",
+    "A guide to reference and documentation":
+        "Referens- och dokumentationsguide",
     "Enter your phone number": "Skriv in ditt telefonnummer",
     "Select your country": "Välj ditt land",
     "Search by name/dial code": "Sök på namn/kontaktkod",
@@ -1688,7 +1726,8 @@ Map<String, Map<String, String>> transaltionList = {
     "NEXT": "اگلا",
     "FINISH": "ختم",
     "Easy and Fast": "آسانی اور رفتار",
-    "Easy to use, minimum code and least effort": "استعمال میں آسان، کم کوڈ اور کم محنت",
+    "Easy to use, minimum code and least effort":
+        "استعمال میں آسان، کم کوڈ اور کم محنت",
     "Flexible": "لچک",
     "Customize the Country List Picker Settings":
         "ملک کے انتخاب کے مینو کی ترتیبات کو حسب ضرورت بنائیں",

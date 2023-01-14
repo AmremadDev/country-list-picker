@@ -10,8 +10,8 @@ class InputArguments extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer2<InputProvider,SettingsProvider>(
-      builder: (context, input,settings, child) {
+    return Consumer2<InputProvider, SettingsProvider>(
+      builder: (context, input, settings, child) {
         return Column(
           children: [
             CustomListTile<Switch, bool>(
@@ -46,7 +46,10 @@ class InputArguments extends StatelessWidget {
               enabled: input.isShowTextField,
               value: input.textStyle.fontWeight == FontWeight.bold,
               onChanged: (bool value) => input.textStyle = input.textStyle
-                  .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
+                  .copyWith(
+                      fontWeight: (value == false)
+                          ? FontWeight.normal
+                          : FontWeight.bold),
             ),
             CustomListTile<Slider, double>(
               title: "Font Size",
@@ -56,13 +59,15 @@ class InputArguments extends StatelessWidget {
               divisions: 18,
               value: input.textStyle.fontSize!,
               sliderLabel: input.textStyle.fontSize?.toInt().toString(),
-              onChanged: (value) => input.textStyle = input.textStyle.copyWith(fontSize: value),
+              onChanged: (value) =>
+                  input.textStyle = input.textStyle.copyWith(fontSize: value),
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Font Color",
               enabled: input.isShowTextField,
               value: input.textStyle.color!,
-              onChanged: (Color color) => input.textStyle = input.textStyle.copyWith(color: color),
+              onChanged: (Color color) =>
+                  input.textStyle = input.textStyle.copyWith(color: color),
             ),
           ],
         );

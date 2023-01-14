@@ -42,7 +42,8 @@ class SelectionList extends StatelessWidget {
     controllerScroll.addListener(() {
       SettingsProvider settings = context.read<SettingsProvider>();
       settings.isShowFloatButton = controllerScroll.position.pixels != 0;
-      int scrollPosition = ((controllerScroll.position.pixels) / dialogTheme.tileHeight).round();
+      int scrollPosition =
+          ((controllerScroll.position.pixels) / dialogTheme.tileHeight).round();
 
       if (scrollPosition < boxes) {
         settings.selectedCharacter = null;
@@ -66,7 +67,8 @@ class SelectionList extends StatelessWidget {
                   selector: (_, settings) => settings.isShowFloatButton,
                   builder: (_, show, child) => show
                       ? FloatingActionButton(
-                          backgroundColor: Theme.of(context).colorScheme.primary,
+                          backgroundColor:
+                              Theme.of(context).colorScheme.primary,
                           elevation: 0,
                           mini: true,
                           child: const Icon(Icons.arrow_upward),
@@ -76,7 +78,8 @@ class SelectionList extends StatelessWidget {
               : null,
           appBar: appBar,
           body: Container(
-              color: dialogTheme.backgroundColor ?? Theme.of(context).colorScheme.surface,
+              color: dialogTheme.backgroundColor ??
+                  Theme.of(context).colorScheme.surface,
               child: Stack(
                 children: <Widget>[
                   CustomScrollView(
@@ -108,15 +111,17 @@ class SelectionList extends StatelessWidget {
                               ? const SizedBox.shrink()
                               : Container(
                                   height: 10,
-                                  color: dialogTheme.tilesTheme.backgroundColor ??
-                                      Theme.of(context).focusColor,
+                                  color:
+                                      dialogTheme.tilesTheme.backgroundColor ??
+                                          Theme.of(context).focusColor,
                                 )
                         ]),
                       ),
                       Selector<SettingsProvider, List<Country>>(
                         selector: (_, settings) => settings.countries,
                         builder: (_, countries, child) => SliverList(
-                          delegate: SliverChildBuilderDelegate((context, index) {
+                          delegate:
+                              SliverChildBuilderDelegate((context, index) {
                             return CountryListTile(
                               displayName: displayName,
                               country: countries.elementAt(index),
@@ -133,15 +138,22 @@ class SelectionList extends StatelessWidget {
                           language == Languages.Korean ||
                           language == Languages.Japanese)
                       ? const SizedBox.shrink()
-                      : Consumer<SettingsProvider>(builder: (context, settings, child) {
+                      : Consumer<SettingsProvider>(
+                          builder: (context, settings, child) {
                           return AlphabetScroll(
                             displayName: displayName,
                             scrollController: controllerScroll,
                             selectedChar: settings.selectedCharacter,
                             dialogTheme: dialogTheme,
                             alphabet: (displayName == Names.common)
-                                ? elements.map((e) => e.name.common[0]).toSet().toList()
-                                : elements.map((e) => e.name.official[0]).toSet().toList(),
+                                ? elements
+                                    .map((e) => e.name.common[0])
+                                    .toSet()
+                                    .toList()
+                                : elements
+                                    .map((e) => e.name.official[0])
+                                    .toSet()
+                                    .toList(),
                             countries: elements,
                             unitsCanceled: boxes,
                           );

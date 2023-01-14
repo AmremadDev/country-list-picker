@@ -18,9 +18,11 @@ class InputProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  TextStyle _textStyle = const TextStyle(fontWeight: FontWeight.normal, fontSize: 16);
+  TextStyle _textStyle =
+      const TextStyle(fontWeight: FontWeight.normal, fontSize: 16);
   TextStyle get textStyle => _textStyle.copyWith(
-      color: _textStyle.color ?? (_settings.isDarkMode == true ? Colors.white : Colors.black));
+      color: _textStyle.color ??
+          (_settings.isDarkMode == true ? Colors.white : Colors.black));
   set textStyle(TextStyle value) {
     _textStyle = value;
     notifyListeners();

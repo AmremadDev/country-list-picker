@@ -17,6 +17,7 @@ class AlphabetsBarThemeData {
     this.backgroundColor = Colors.transparent,
     this.selectedBackgroundColor = Colors.transparent,
     this.style = const TextStyle(fontSize: 12),
-    this.selectedStyle = const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+    this.selectedStyle =
+        const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
   });
 }

@@ -33,7 +33,8 @@ class TilesThemeData {
     // Search Tile
     this.searchTitle = "Search",
     this.searchHint = "name/dial code...",
-    this.searchHintStyle = const TextStyle(fontSize: 16, color: Color(0xFF9E9E9E)),
+    this.searchHintStyle =
+        const TextStyle(fontSize: 16, color: Color(0xFF9E9E9E)),
 
     // Last Pick Tile
     this.lastPickTitle = "Last Pick",

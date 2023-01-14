@@ -23,11 +23,13 @@ class BottomPart extends StatelessWidget {
             initiallyExpanded: selectedIndex == index,
             key: screen.arguments[index].key,
             title: Text(screen.arguments[index].title.tr,
-                style: const TextStyle(fontSize: titlesFontSize, fontWeight: FontWeight.bold)),
+                style: const TextStyle(
+                    fontSize: titlesFontSize, fontWeight: FontWeight.bold)),
             children: [screen.arguments[index].child],
             onExpansionChanged: (value) {
               if (value && index != selectedIndex) {
-                screen.arguments[selectedIndex].key!.currentState.closeExpansion();
+                screen.arguments[selectedIndex].key!.currentState
+                    .closeExpansion();
               }
               selectedIndex = index;
             },

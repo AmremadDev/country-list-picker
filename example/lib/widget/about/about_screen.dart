@@ -41,7 +41,8 @@ class AboutScreen extends StatelessWidget {
               ),
               ListTile(
                 title: Text("Last Update".tr,
-                    style: const TextStyle(fontSize: 19, fontWeight: FontWeight.normal)),
+                    style: const TextStyle(
+                        fontSize: 19, fontWeight: FontWeight.normal)),
                 subtitle: Text("January 2023".tr,
                     style: TextStyle(
                       fontSize: 20,
@@ -51,7 +52,8 @@ class AboutScreen extends StatelessWidget {
               ),
               ListTile(
                 title: Text("Description".tr,
-                    style: const TextStyle(fontSize: 19, fontWeight: FontWeight.normal)),
+                    style: const TextStyle(
+                        fontSize: 19, fontWeight: FontWeight.normal)),
                 subtitle: Text("Flutter Widget".tr,
                     style: TextStyle(
                       fontSize: 20,
@@ -61,7 +63,8 @@ class AboutScreen extends StatelessWidget {
               ),
               ListTile(
                 title: Text("Desinged by".tr,
-                    style: const TextStyle(fontSize: 19, fontWeight: FontWeight.normal)),
+                    style: const TextStyle(
+                        fontSize: 19, fontWeight: FontWeight.normal)),
                 subtitle: Text("Amr Emad Eldin Lotfy".tr,
                     style: TextStyle(
                       fontSize: 20,
@@ -71,7 +74,8 @@ class AboutScreen extends StatelessWidget {
               ),
               ListTile(
                 title: Text("Email".tr,
-                    style: const TextStyle(fontSize: 19, fontWeight: FontWeight.normal)),
+                    style: const TextStyle(
+                        fontSize: 19, fontWeight: FontWeight.normal)),
                 subtitle: Text("a.emad@outlook.com",
                     style: TextStyle(
                       fontSize: 20,
@@ -81,7 +85,8 @@ class AboutScreen extends StatelessWidget {
               ),
               ListTile(
                 title: Text("Phone".tr,
-                    style: const TextStyle(fontSize: 19, fontWeight: FontWeight.normal)),
+                    style: const TextStyle(
+                        fontSize: 19, fontWeight: FontWeight.normal)),
                 subtitle: Text("+20 111 1146 515",
                     textAlign: (Directionality.of(context) == TextDirection.rtl)
                         ? TextAlign.right

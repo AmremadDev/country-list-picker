@@ -30,10 +30,13 @@ class CountryListTile extends StatelessWidget {
                 )
               : null,
           title: Text(
-            displayName == Names.common ? country.name.common : country.name.official,
+            displayName == Names.common
+                ? country.name.common
+                : country.name.official,
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
-            style: dialogTheme.style.copyWith(fontSize: dialogTheme.style.fontSize ?? 16),
+            style: dialogTheme.style
+                .copyWith(fontSize: dialogTheme.style.fontSize ?? 16),
           ),
           trailing: Padding(
             padding: EdgeInsets.symmetric(
@@ -47,7 +50,8 @@ class CountryListTile extends StatelessWidget {
             child: (dialogTheme.isShowDialCode)
                 ? Text(country.dialing_code,
                     textDirection: TextDirection.ltr,
-                    style: dialogTheme.style.copyWith(fontSize: dialogTheme.style.fontSize ?? 16))
+                    style: dialogTheme.style
+                        .copyWith(fontSize: dialogTheme.style.fontSize ?? 16))
                 : null,
           ),
           onTap: () {

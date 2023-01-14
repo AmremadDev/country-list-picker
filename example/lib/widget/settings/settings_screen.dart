@@ -18,10 +18,12 @@ class SettingsScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: Text("General APP Settings".tr,
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold)),
             ),
             ListTile(
-                title: Text("Language".tr, style: const TextStyle(fontWeight: FontWeight.bold)),
+                title: Text("Language".tr,
+                    style: const TextStyle(fontWeight: FontWeight.bold)),
                 subtitle: DropdownButtonFormField<Languages>(
                   value: settings.language,
                   items: Languages.values
@@ -30,7 +32,8 @@ class SettingsScreen extends StatelessWidget {
                           value: e,
                           child: SizedBox(
                               width: MediaQuery.of(context).size.width - 100,
-                              child: Text(e.name, overflow: TextOverflow.ellipsis)),
+                              child: Text(e.name,
+                                  overflow: TextOverflow.ellipsis)),
                         ),
                       )
                       .toList(),

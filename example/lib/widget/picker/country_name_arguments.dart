@@ -22,8 +22,11 @@ class CountryNameArguments extends StatelessWidget {
               title: "Font Bold",
               enabled: picker.isShowCountryName,
               value: picker.countryNameTextStyle.fontWeight == FontWeight.bold,
-              onChanged: (bool value) => picker.countryNameTextStyle = picker.countryNameTextStyle
-                  .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
+              onChanged: (bool value) => picker.countryNameTextStyle =
+                  picker.countryNameTextStyle.copyWith(
+                      fontWeight: (value == false)
+                          ? FontWeight.normal
+                          : FontWeight.bold),
             ),
             CustomListTile<Slider, double>(
               title: "Font Size",
@@ -32,7 +35,8 @@ class CountryNameArguments extends StatelessWidget {
               max: 30,
               divisions: 18,
               value: picker.countryNameTextStyle.fontSize!,
-              sliderLabel: picker.countryNameTextStyle.fontSize?.toInt().toString(),
+              sliderLabel:
+                  picker.countryNameTextStyle.fontSize?.toInt().toString(),
               onChanged: (value) => picker.countryNameTextStyle =
                   picker.countryNameTextStyle.copyWith(fontSize: value),
             ),
@@ -40,8 +44,8 @@ class CountryNameArguments extends StatelessWidget {
               title: "Font Color",
               enabled: picker.isShowCountryName,
               value: picker.countryNameTextStyle.color!,
-              onChanged: (Color color) =>
-                  picker.countryNameTextStyle = picker.countryNameTextStyle.copyWith(color: color),
+              onChanged: (Color color) => picker.countryNameTextStyle =
+                  picker.countryNameTextStyle.copyWith(color: color),
             ),
           ],
         );

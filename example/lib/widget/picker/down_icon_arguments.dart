@@ -9,7 +9,6 @@ class DownIconArguments extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Consumer<PickerProvider>(
       builder: (context, picker, child) {
         return Column(
@@ -28,17 +27,19 @@ class DownIconArguments extends StatelessWidget {
                 divisions: 5,
                 value: picker.downIcon.size!,
                 sliderLabel: picker.downIcon.size!.toInt().toString(),
-                onChanged: (value) => picker.downIcon = picker.downIcon =
-                    Icon(picker.downIcon.icon, color: picker.downIcon.color, size: value)),
+                onChanged: (value) => picker.downIcon = picker.downIcon = Icon(
+                    picker.downIcon.icon,
+                    color: picker.downIcon.color,
+                    size: value)),
             CustomListTile<ColorPicker, Color>(
               title: "Icon Color",
               enabled: picker.isDownIcon,
-              value: picker.downIcon.color ?? Theme.of(context).colorScheme.primary,
+              value: picker.downIcon.color ??
+                  Theme.of(context).colorScheme.primary,
               onChanged: (Color color) => picker.downIcon = Icon(
                 picker.downIcon.icon,
                 color: color,
                 size: picker.downIcon.size,
-             
               ),
             ),
           ],

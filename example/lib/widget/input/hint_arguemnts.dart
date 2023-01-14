@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/input_provider.dart';
@@ -24,8 +23,11 @@ class HintArguments extends StatelessWidget {
               title: "Font Bold",
               enabled: input.isShowTextField,
               value: input.hintTextStyle.fontWeight == FontWeight.bold,
-              onChanged: (bool value) => input.hintTextStyle = input.hintTextStyle
-                  .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
+              onChanged: (bool value) => input.hintTextStyle =
+                  input.hintTextStyle.copyWith(
+                      fontWeight: (value == false)
+                          ? FontWeight.normal
+                          : FontWeight.bold),
             ),
             CustomListTile<Slider, double>(
               title: "Font Size",
@@ -33,17 +35,19 @@ class HintArguments extends StatelessWidget {
               min: 12,
               max: 30,
               divisions: 18,
-              value: input.hintTextStyle.fontSize != null ? input.hintTextStyle.fontSize! : input.textStyle.fontSize!,
+              value: input.hintTextStyle.fontSize != null
+                  ? input.hintTextStyle.fontSize!
+                  : input.textStyle.fontSize!,
               sliderLabel: input.hintTextStyle.fontSize?.toInt().toString(),
-              onChanged: (value) => input.hintTextStyle =
-                  input.hintTextStyle.copyWith(fontSize: value, color: input.hintTextStyle.color),
+              onChanged: (value) => input.hintTextStyle = input.hintTextStyle
+                  .copyWith(fontSize: value, color: input.hintTextStyle.color),
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Font Color",
               enabled: input.isShowTextField,
               value: input.hintTextStyle.color!,
-              onChanged: (Color color) =>
-                  input.hintTextStyle = input.hintTextStyle.copyWith(color: color),
+              onChanged: (Color color) => input.hintTextStyle =
+                  input.hintTextStyle.copyWith(color: color),
             ),
           ],
         );

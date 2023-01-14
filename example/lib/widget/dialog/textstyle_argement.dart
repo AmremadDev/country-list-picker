@@ -17,7 +17,10 @@ class TextStyleArguments extends StatelessWidget {
               title: "Font Bold",
               value: dialog.textStyle.fontWeight == FontWeight.bold,
               onChanged: (bool value) => dialog.textStyle = dialog.textStyle
-                  .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
+                  .copyWith(
+                      fontWeight: (value == false)
+                          ? FontWeight.normal
+                          : FontWeight.bold),
             ),
             CustomListTile<Slider, double>(
               title: "Font Size",
@@ -26,8 +29,8 @@ class TextStyleArguments extends StatelessWidget {
               divisions: 18,
               value: dialog.textStyle.fontSize!,
               sliderLabel: dialog.textStyle.fontSize?.toInt().toString(),
-              onChanged: (value) => dialog.textStyle =
-                  dialog.textStyle.copyWith(fontSize: value, color: dialog.textStyle.color),
+              onChanged: (value) => dialog.textStyle = dialog.textStyle
+                  .copyWith(fontSize: value, color: dialog.textStyle.color),
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Font Color",

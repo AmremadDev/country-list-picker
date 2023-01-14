@@ -31,10 +31,13 @@ class SearchTileArguments extends StatelessWidget {
             ),
             CustomListTile<Switch, bool>(
               title: "Font Bold",
-              value: dialog.searchTileHintTextStyle.fontWeight == FontWeight.bold,
-              onChanged: (bool value) => dialog.searchTileHintTextStyle = dialog
-                  .searchTileHintTextStyle
-                  .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
+              value:
+                  dialog.searchTileHintTextStyle.fontWeight == FontWeight.bold,
+              onChanged: (bool value) => dialog.searchTileHintTextStyle =
+                  dialog.searchTileHintTextStyle.copyWith(
+                      fontWeight: (value == false)
+                          ? FontWeight.normal
+                          : FontWeight.bold),
             ),
             CustomListTile<Slider, double>(
               title: "Font Size",
@@ -42,9 +45,12 @@ class SearchTileArguments extends StatelessWidget {
               max: 30,
               divisions: 18,
               value: dialog.searchTileHintTextStyle.fontSize!,
-              sliderLabel: dialog.searchTileHintTextStyle.fontSize?.toInt().toString(),
-              onChanged: (value) => dialog.searchTileHintTextStyle = dialog.searchTileHintTextStyle
-                  .copyWith(fontSize: value, color: dialog.searchTileHintTextStyle.color),
+              sliderLabel:
+                  dialog.searchTileHintTextStyle.fontSize?.toInt().toString(),
+              onChanged: (value) => dialog.searchTileHintTextStyle =
+                  dialog.searchTileHintTextStyle.copyWith(
+                      fontSize: value,
+                      color: dialog.searchTileHintTextStyle.color),
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Font Color",

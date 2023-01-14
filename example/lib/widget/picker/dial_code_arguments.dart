@@ -22,8 +22,11 @@ class DialCodeArguments extends StatelessWidget {
               title: "Font Bold",
               enabled: picker.isShowDialCode,
               value: picker.dialCodeTextStyle.fontWeight == FontWeight.bold,
-              onChanged: (bool value) => picker.dialCodeTextStyle = picker.dialCodeTextStyle
-                  .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
+              onChanged: (bool value) => picker.dialCodeTextStyle =
+                  picker.dialCodeTextStyle.copyWith(
+                      fontWeight: (value == false)
+                          ? FontWeight.normal
+                          : FontWeight.bold),
             ),
             CustomListTile<Slider, double>(
               title: "Font Size",
@@ -32,16 +35,18 @@ class DialCodeArguments extends StatelessWidget {
               max: 30,
               divisions: 18,
               value: picker.dialCodeTextStyle.fontSize!,
-              sliderLabel: picker.dialCodeTextStyle.fontSize?.toInt().toString(),
-              onChanged: (value) =>
-                  picker.dialCodeTextStyle = picker.dialCodeTextStyle.copyWith(fontSize: value),
+              sliderLabel:
+                  picker.dialCodeTextStyle.fontSize?.toInt().toString(),
+              onChanged: (value) => picker.dialCodeTextStyle =
+                  picker.dialCodeTextStyle.copyWith(fontSize: value),
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Font Color",
               enabled: picker.isShowDialCode,
               value: picker.dialCodeTextStyle.color!,
               onChanged: (Color color) {
-                picker.dialCodeTextStyle = picker.dialCodeTextStyle.copyWith(color: color);
+                picker.dialCodeTextStyle =
+                    picker.dialCodeTextStyle.copyWith(color: color);
               },
             ),
           ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class Argument {
   bool isExpanded;
 
@@ -9,6 +10,5 @@ class Argument {
     required this.title,
     required this.child,
     this.isExpanded = false,
-
   });
 }

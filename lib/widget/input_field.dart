@@ -1,4 +1,3 @@
-import 'package:country_list_picker/model/names.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import '../theme/input_theme.dart';
@@ -50,27 +49,32 @@ class InputField extends StatelessWidget {
         onFieldSubmitted: onFieldSubmitted,
         onTap: onTap,
         keyboardType: TextInputType.phone,
-        textAlign:
-            Directionality.of(context) == TextDirection.ltr ? TextAlign.left : TextAlign.right,
+        textAlign: Directionality.of(context) == TextDirection.ltr
+            ? TextAlign.left
+            : TextAlign.right,
         textDirection: TextDirection.ltr,
         style: inputTheme.style.copyWith(
-          color: inputTheme.style.color ?? Theme.of(context).inputDecorationTheme.focusColor,
+          color: inputTheme.style.color ??
+              Theme.of(context).inputDecorationTheme.focusColor,
           fontSize: inputTheme.style.fontSize ?? 16,
         ),
         inputFormatters: [
-          MaskTextInputFormatter(mask: inputTheme.mask, filter: {"#": RegExp(r'[0-9]')})
+          MaskTextInputFormatter(
+              mask: inputTheme.mask, filter: {"#": RegExp(r'[0-9]')})
         ],
         decoration: InputDecoration(
           contentPadding: inputTheme.contentPadding,
           hintText: inputTheme.hintText,
           hintStyle: inputTheme.hintStyle.copyWith(
-            fontSize: inputTheme.hintStyle.fontSize ?? inputTheme.style.fontSize,
+            fontSize:
+                inputTheme.hintStyle.fontSize ?? inputTheme.style.fontSize,
             color: inputTheme.hintStyle.color ?? Theme.of(context).hintColor,
           ),
           border: inputTheme.border == InputBorder.none
               ? InputBorder.none
               : inputTheme.border.copyWith(
-                  borderSide: BorderSide(color: Theme.of(context).hintColor, width: 1),
+                  borderSide:
+                      BorderSide(color: Theme.of(context).hintColor, width: 1),
                 ),
           focusedBorder: inputTheme.border == InputBorder.none
               ? InputBorder.none

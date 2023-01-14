@@ -23,7 +23,8 @@ class CurrentLocationTileArguments extends StatelessWidget {
               title: "Title String",
               enabled: dialog.currentLocationTile,
               value: dialog.currentLocationTileTitle.tr,
-              onChanged: (String value) => dialog.currentLocationTileTitle = value,
+              onChanged: (String value) =>
+                  dialog.currentLocationTileTitle = value,
             ),
             CustomListTile<DropdownButtonFormField, Countries>(
               title: "Local Country",

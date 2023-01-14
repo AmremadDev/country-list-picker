@@ -103,7 +103,9 @@ List<Argument> dialogArguments = [
   Argument(title: "Title TextStyle", child: const TitleTextStyleArguments()),
   Argument(title: "TextStyle", child: const TextStyleArguments()),
   Argument(title: "Search Tile", child: const SearchTileArguments()),
-  Argument(title: "Current Location Tile", child: const CurrentLocationTileArguments()),
+  Argument(
+      title: "Current Location Tile",
+      child: const CurrentLocationTileArguments()),
   Argument(title: "Last Pick Tile", child: const LastPickTileArguments()),
   Argument(title: "Alphabets Bar", child: const AlphabetsBarArguments()),
 ];

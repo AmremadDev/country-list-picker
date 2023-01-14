@@ -94,7 +94,8 @@ class CustomListTile<Object, T> extends StatelessWidget {
           enabled: enabled,
           title: Text(title.tr,
               style: TextStyle(
-                  color: enabled == true ? null : Theme.of(context).disabledColor,
+                  color:
+                      enabled == true ? null : Theme.of(context).disabledColor,
                   fontWeight: FontWeight.bold)),
           subtitle: DropdownButtonFormField<IconData>(
             decoration: InputDecoration(enabled: enabled),
@@ -102,7 +103,9 @@ class CustomListTile<Object, T> extends StatelessWidget {
             items: iconsList
                 .map<DropdownMenuItem<IconData>>(
                   (e) => DropdownMenuItem<IconData>(
-                      value: e, child: Icon(e, color: Theme.of(context).colorScheme.primary)),
+                      value: e,
+                      child: Icon(e,
+                          color: Theme.of(context).colorScheme.primary)),
                 )
                 .toList(),
             onChanged: ((value) => onIconChanged!(value!)),
@@ -113,24 +116,31 @@ class CustomListTile<Object, T> extends StatelessWidget {
             enabled: enabled,
             title: Text(title.tr,
                 style: TextStyle(
-                    color: enabled == true ? null : Theme.of(context).disabledColor,
+                    color: enabled == true
+                        ? null
+                        : Theme.of(context).disabledColor,
                     fontWeight: FontWeight.bold)),
             subtitle: DropdownButtonFormField<Borders>(
               decoration: InputDecoration(enabled: enabled),
               value: value as Borders,
               items: Borders.values
                   .map<DropdownMenuItem<Borders>>(
-                    (e) => DropdownMenuItem<Borders>(value: e, child: Text(e.name)),
+                    (e) => DropdownMenuItem<Borders>(
+                        value: e, child: Text(e.name)),
                   )
                   .toList(),
-              onChanged: enabled == true ? ((value) => onStringChanged!(value!)) : null,
+              onChanged: enabled == true
+                  ? ((value) => onStringChanged!(value!))
+                  : null,
             ));
       case Countries:
         return ListTile(
             enabled: enabled,
             title: Text(title.tr,
                 style: TextStyle(
-                    color: enabled == true ? null : Theme.of(context).disabledColor,
+                    color: enabled == true
+                        ? null
+                        : Theme.of(context).disabledColor,
                     fontWeight: FontWeight.bold)),
             subtitle: DropdownButtonFormField<Countries>(
               decoration: InputDecoration(enabled: enabled),
@@ -145,14 +155,18 @@ class CustomListTile<Object, T> extends StatelessWidget {
                     ),
                   )
                   .toList(),
-              onChanged: enabled == true ? ((value) => onCountiresChanged!(value!)) : null,
+              onChanged: enabled == true
+                  ? ((value) => onCountiresChanged!(value!))
+                  : null,
             ));
       case Languages:
         return ListTile(
             enabled: enabled,
             title: Text(title.tr,
                 style: TextStyle(
-                    color: enabled == true ? null : Theme.of(context).disabledColor,
+                    color: enabled == true
+                        ? null
+                        : Theme.of(context).disabledColor,
                     fontWeight: FontWeight.bold)),
             subtitle: DropdownButtonFormField<Languages>(
               decoration: InputDecoration(enabled: enabled),
@@ -167,14 +181,18 @@ class CustomListTile<Object, T> extends StatelessWidget {
                     ),
                   )
                   .toList(),
-              onChanged: enabled == true ? ((value) => onLanguagesChanged!(value!)) : null,
+              onChanged: enabled == true
+                  ? ((value) => onLanguagesChanged!(value!))
+                  : null,
             ));
       case TextDirection:
         return ListTile(
             enabled: enabled,
             title: Text(title.tr,
                 style: TextStyle(
-                    color: enabled == true ? null : Theme.of(context).disabledColor,
+                    color: enabled == true
+                        ? null
+                        : Theme.of(context).disabledColor,
                     fontWeight: FontWeight.bold)),
             subtitle: DropdownButtonFormField<TextDirection>(
               decoration: InputDecoration(enabled: enabled),
@@ -189,7 +207,9 @@ class CustomListTile<Object, T> extends StatelessWidget {
                     ),
                   )
                   .toList(),
-              onChanged: enabled == true ? ((value) => ontextDirectionChanged!(value!)) : null,
+              onChanged: enabled == true
+                  ? ((value) => ontextDirectionChanged!(value!))
+                  : null,
             ));
       default:
         return const SizedBox.shrink();

@@ -16,8 +16,11 @@ class TitleTextStyleArguments extends StatelessWidget {
             CustomListTile<Switch, bool>(
               title: "Font Bold",
               value: dialog.titleTextStyle.fontWeight == FontWeight.bold,
-              onChanged: (bool value) => dialog.titleTextStyle = dialog.titleTextStyle
-                  .copyWith(fontWeight: (value == false) ? FontWeight.normal : FontWeight.bold),
+              onChanged: (bool value) => dialog.titleTextStyle =
+                  dialog.titleTextStyle.copyWith(
+                      fontWeight: (value == false)
+                          ? FontWeight.normal
+                          : FontWeight.bold),
             ),
             CustomListTile<Slider, double>(
               title: "Font Size",
@@ -26,14 +29,15 @@ class TitleTextStyleArguments extends StatelessWidget {
               divisions: 18,
               value: dialog.titleTextStyle.fontSize!,
               sliderLabel: dialog.titleTextStyle.fontSize?.toInt().toString(),
-              onChanged: (value) => dialog.titleTextStyle = dialog.titleTextStyle
-                  .copyWith(fontSize: value, color: dialog.titleTextStyle.color),
+              onChanged: (value) => dialog.titleTextStyle =
+                  dialog.titleTextStyle.copyWith(
+                      fontSize: value, color: dialog.titleTextStyle.color),
             ),
             CustomListTile<ColorPicker, Color>(
               title: "Font Color",
               value: dialog.titleTextStyle.color!,
-              onChanged: (Color color) =>
-                  dialog.titleTextStyle = dialog.titleTextStyle.copyWith(color: color),
+              onChanged: (Color color) => dialog.titleTextStyle =
+                  dialog.titleTextStyle.copyWith(color: color),
             ),
           ],
         );

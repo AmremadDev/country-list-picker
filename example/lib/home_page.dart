@@ -31,16 +31,18 @@ class HomePage extends StatelessWidget {
                           children: [
                             Text(
                               "Country List Picker",
-                              style: TextStyle(color: Theme.of(context).colorScheme.primary),
+                              style: TextStyle(
+                                  color: Theme.of(context).colorScheme.primary),
                             ),
                             const Text("1.0.0", style: TextStyle(fontSize: 15)),
-                            const Text("© 2023 - Amr Emad", style: TextStyle(fontSize: 15)),
+                            const Text("© 2023 - Amr Emad",
+                                style: TextStyle(fontSize: 15)),
                             const Text("a.emad@outlook.com / +201111146515",
                                 style: TextStyle(fontSize: 15))
                           ],
                         ),
-                        content:
-                            const Text("This example shows the features of the CountryListPicker"),
+                        content: const Text(
+                            "This example shows the features of the CountryListPicker"),
                         actions: [
                           TextButton(
                             child: const Text("OK"),
@@ -98,7 +100,8 @@ class HomePage extends StatelessWidget {
             type: BottomNavigationBarType.fixed,
             showUnselectedLabels: true,
             currentIndex: settings.selectedScreen,
-            selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            selectedLabelStyle:
+                const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             unselectedLabelStyle: const TextStyle(fontSize: 14),
             items: screens
                 .map((e) => BottomNavigationBarItem(

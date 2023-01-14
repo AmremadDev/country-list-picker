@@ -51,25 +51,67 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "default_number_format": "### ### ####",
     "local_number_sample": "077 711 0551",
     "International_number_sample": "+93 077 711 0551",
-    "ENG": {"official": "Islamic Republic of Afghanistan", "common": "Afghanistan"},
-    "CES": {"official": "Afghánská islámská republika", "common": "Afghánistán"},
-    "DEU": {"official": "Islamische Republik Afghanistan", "common": "Afghanistan"},
+    "ENG": {
+      "official": "Islamic Republic of Afghanistan",
+      "common": "Afghanistan"
+    },
+    "CES": {
+      "official": "Afghánská islámská republika",
+      "common": "Afghánistán"
+    },
+    "DEU": {
+      "official": "Islamische Republik Afghanistan",
+      "common": "Afghanistan"
+    },
     "EST": {"official": "Afganistani Islamivabariik", "common": "Afganistan"},
-    "FIN": {"official": "Afganistanin islamilainen tasavalta", "common": "Afganistan"},
-    "FRA": {"official": "République islamique d'Afghanistan", "common": "Afghanistan"},
-    "NLD": {"official": "Islamitische Republiek Afghanistan", "common": "Afghanistan"},
-    "HRV": {"official": "Islamska Republika Afganistan", "common": "Afganistan"},
-    "HUN": {"official": "Repubblica islamica dell'Afghanistan", "common": "Afghanistan"},
-    "ITA": {"official": "Repubblica islamica dell'Afghanistan", "common": "Afghanistan"},
+    "FIN": {
+      "official": "Afganistanin islamilainen tasavalta",
+      "common": "Afganistan"
+    },
+    "FRA": {
+      "official": "République islamique d'Afghanistan",
+      "common": "Afghanistan"
+    },
+    "NLD": {
+      "official": "Islamitische Republiek Afghanistan",
+      "common": "Afghanistan"
+    },
+    "HRV": {
+      "official": "Islamska Republika Afganistan",
+      "common": "Afganistan"
+    },
+    "HUN": {
+      "official": "Repubblica islamica dell'Afghanistan",
+      "common": "Afghanistan"
+    },
+    "ITA": {
+      "official": "Repubblica islamica dell'Afghanistan",
+      "common": "Afghanistan"
+    },
     "JPN": {"official": "アフガニスタン·イスラム共和国", "common": "アフガニスタン"},
     "KOR": {"official": "아프가니스탄 이슬람 공화국", "common": "아프가니스탄"},
     "PER": {"official": "جمهوری اسلامی افغانستان", "common": "افغانستان"},
-    "POL": {"official": "Islamska Republika Afganistanu", "common": "Afganistan"},
-    "POR": {"official": "República Islâmica do Afeganistão", "common": "Afeganistão"},
-    "RUS": {"official": "Исламская Республика Афганистан", "common": "Афганистан"},
+    "POL": {
+      "official": "Islamska Republika Afganistanu",
+      "common": "Afganistan"
+    },
+    "POR": {
+      "official": "República Islâmica do Afeganistão",
+      "common": "Afeganistão"
+    },
+    "RUS": {
+      "official": "Исламская Республика Афганистан",
+      "common": "Афганистан"
+    },
     "SLK": {"official": "Afgánsky islamský štát", "common": "Afganistan"},
-    "SPA": {"official": "República Islámica de Afganistán", "common": "Afganistán"},
-    "SWE": {"official": "Islamiska republiken Afghanistan", "common": "Afghanistan"},
+    "SPA": {
+      "official": "República Islámica de Afganistán",
+      "common": "Afganistán"
+    },
+    "SWE": {
+      "official": "Islamiska republiken Afghanistan",
+      "common": "Afghanistan"
+    },
     "URD": {"official": "اسلامی جمہوریہ افغانستان", "common": "افغانستان"},
     "ZHO": {"official": "阿富汗伊斯兰共和国", "common": "阿富汗"},
     "ARA": {"official": "إمارة أفغانستان الإسلامية", "common": "أفغانستان"},
@@ -303,7 +345,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "AE",
     "iso_3166_1_alpha3": "ARE",
-    "natives": {"official": "الإمارات العربية المتحدة", "common": "دولة الإمارات العربية المتحدة"},
+    "natives": {
+      "official": "الإمارات العربية المتحدة",
+      "common": "دولة الإمارات العربية المتحدة"
+    },
     "dialing_code": "+971",
     "default_number_length": 9,
     "default_number_format": "## ### ####",
@@ -313,7 +358,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "CES": "Spojené arabské emiráty",
     "DEU": "Vereinigte Arabische Emirate",
     "EST": "Araabia Ühendemiraadid",
-    "FIN": {"official": "Yhdistyneet arabiemiirikunnat", "common": "Arabiemiirikunnat"},
+    "FIN": {
+      "official": "Yhdistyneet arabiemiirikunnat",
+      "common": "Arabiemiirikunnat"
+    },
     "FRA": "Émirats arabes unis",
     "NLD": "Verenigde Arabische Emiraten",
     "HRV": "Ujedinjeni Arapski Emirati",
@@ -546,7 +594,8 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "common": "Terres australes et antarctiques françaises"
     },
     "NLD": {
-      "official": "Grondgebied van de Franse Zuidelijke en Antarctische gebieden",
+      "official":
+          "Grondgebied van de Franse Zuidelijke en Antarctische gebieden",
       "common": "Franse Gebieden in de zuidelijke Indische Oceaan"
     },
     "HRV": {
@@ -956,24 +1005,42 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "default_number_format": "### ### ####",
     "local_number_sample": "115 676 0353",
     "International_number_sample": "+880 115 676 0353",
-    "ENG": {"official": "People's Republic of Bangladesh", "common": "Bangladesh"},
+    "ENG": {
+      "official": "People's Republic of Bangladesh",
+      "common": "Bangladesh"
+    },
     "CES": {"official": "Bangladéšská lidová republika", "common": "Bangladéš"},
     "DEU": {"official": "Volksrepublik Bangladesch", "common": "Bangladesch"},
     "EST": {"official": "Bangladeshi Rahvavabariik", "common": "Bangladesh"},
     "FIN": {"official": "Bangladeshin kansantasavalta", "common": "Bangladesh"},
-    "FRA": {"official": "La République populaire du Bangladesh", "common": "Bangladesh"},
+    "FRA": {
+      "official": "La République populaire du Bangladesh",
+      "common": "Bangladesh"
+    },
     "NLD": {"official": "Volksrepubliek Bangladesh", "common": "Bangladesh"},
     "HRV": {"official": "Narodna Republika Bangladeš", "common": "Bangladeš"},
-    "HUN": {"official": "Repubblica popolare del Bangladesh", "common": "Bangladesh"},
-    "ITA": {"official": "Repubblica popolare del Bangladesh", "common": "Bangladesh"},
+    "HUN": {
+      "official": "Repubblica popolare del Bangladesh",
+      "common": "Bangladesh"
+    },
+    "ITA": {
+      "official": "Repubblica popolare del Bangladesh",
+      "common": "Bangladesh"
+    },
     "JPN": {"official": "バングラデシュ人民共和国", "common": "バングラデシュ"},
     "KOR": {"official": "방글라데시 인민 공화국", "common": "방글라데시"},
     "PER": {"official": "جمهوری خلق بنگلادش", "common": "بنگلادش"},
     "POL": {"official": "Ludowa Republika Bangladeszu", "common": "Bangladesz"},
-    "POR": {"official": "República Popular do Bangladesh", "common": "Bangladesh"},
+    "POR": {
+      "official": "República Popular do Bangladesh",
+      "common": "Bangladesh"
+    },
     "RUS": {"official": "Народная Республика Бангладеш", "common": "Бангладеш"},
     "SLK": {"official": "Bangladéšska ľudová republika", "common": "Bangladéš"},
-    "SPA": {"official": "República Popular de Bangladesh", "common": "Bangladesh"},
+    "SPA": {
+      "official": "República Popular de Bangladesh",
+      "common": "Bangladesh"
+    },
     "SWE": {"official": "Folkrepubliken Bangladesh", "common": "Bangladesh"},
     "URD": {"official": "عوامی جمہوریہ بنگلہ دیش", "common": "بنگلہ دیش"},
     "ZHO": {"official": "孟加拉人民共和国", "common": "孟加拉国"},
@@ -1100,7 +1167,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "PER": {"official": "قلمرو همسود باهاما", "common": "باهاما"},
     "POL": "Bahamy",
     "POR": {"official": "Comunidade das Bahamas", "common": "Bahamas"},
-    "RUS": {"official": "Содружество Багамских Островов", "common": "Багамские Острова"},
+    "RUS": {
+      "official": "Содружество Багамских Островов",
+      "common": "Багамские Острова"
+    },
     "SLK": {"official": "Bahamské spoločenstvo", "common": "Bahamy"},
     "SPA": {"official": "Commonwealth de las Bahamas", "common": "Bahamas"},
     "SWE": {"official": "Samväldet Bahamas", "common": "Bahamas"},
@@ -1133,8 +1203,14 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "DEU": "Bosnien und Herzegowina",
     "EST": "Bosnia ja Hertsegoviina",
     "FIN": "Bosnia ja Hertsegovina",
-    "FRA": {"official": "Bosnie-et-Herzégovine", "common": "Bosnie-Herzégovine"},
-    "NLD": {"official": "Bosnië-Herzegovina", "common": "Bosnië en Herzegovina"},
+    "FRA": {
+      "official": "Bosnie-et-Herzégovine",
+      "common": "Bosnie-Herzégovine"
+    },
+    "NLD": {
+      "official": "Bosnië-Herzegovina",
+      "common": "Bosnië en Herzegovina"
+    },
     "HRV": "Bosna i Hercegovina",
     "HUN": {"official": "Bosnia-Erzegovina", "common": "Bosnia ed Erzegovina"},
     "ITA": {"official": "Bosnia-Erzegovina", "common": "Bosnia ed Erzegovina"},
@@ -1144,7 +1220,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "POL": "Bośnia i Hercegowina",
     "POR": "Bósnia e Herzegovina",
     "RUS": "Босния и Герцеговина",
-    "SLK": {"official": "Republika Bosny a Hercegoviny", "common": "Bosna a Hercegovina"},
+    "SLK": {
+      "official": "Republika Bosny a Hercegoviny",
+      "common": "Bosna a Hercegovina"
+    },
     "SPA": "Bosnia y Herzegovina",
     "SWE": "Bosnien och Hercegovina",
     "URD": "بوسنیا و ہرزیگووینا",
@@ -1165,34 +1244,76 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "BL",
     "iso_3166_1_alpha3": "BLM",
-    "natives": {"official": "Collectivité de Saint-Barthélemy", "common": "Saint-Barthélemy"},
+    "natives": {
+      "official": "Collectivité de Saint-Barthélemy",
+      "common": "Saint-Barthélemy"
+    },
     "dialing_code": "+590",
     "default_number_length": 9,
     "default_number_format": "### ## ## ##",
     "local_number_sample": "691 23 89 18",
     "International_number_sample": "+590 691 23 89 18",
-    "ENG": {"official": "Collectivity of Saint Barthelemy", "common": "Saint Barthelemy"},
+    "ENG": {
+      "official": "Collectivity of Saint Barthelemy",
+      "common": "Saint Barthelemy"
+    },
     "CES": "Svatý Bartoloměj",
-    "DEU": {"official": "Gebietskörperschaft Saint-Barthélemy", "common": "Saint-Barthélemy"},
-    "EST": {"official": "Saint-Barthélemy territoriaalühendus", "common": "Saint-Barthélemy"},
-    "FIN": {"official": "Saint-Barthélemyn yhteisö", "common": "Saint-Barthélemy"},
-    "FRA": {"official": "Collectivité de Saint-Barthélemy", "common": "Saint-Barthélemy"},
-    "NLD": {"official": "Gemeenschap Saint Barthélemy", "common": "Saint Barthélemy"},
-    "HRV": {"official": "Kolektivnost sv Barthélemy", "common": "Saint Barthélemy"},
-    "HUN": {"official": "Collettività di Saint Barthélemy", "common": "Antille Francesi"},
-    "ITA": {"official": "Collettività di Saint Barthélemy", "common": "Antille Francesi"},
+    "DEU": {
+      "official": "Gebietskörperschaft Saint-Barthélemy",
+      "common": "Saint-Barthélemy"
+    },
+    "EST": {
+      "official": "Saint-Barthélemy territoriaalühendus",
+      "common": "Saint-Barthélemy"
+    },
+    "FIN": {
+      "official": "Saint-Barthélemyn yhteisö",
+      "common": "Saint-Barthélemy"
+    },
+    "FRA": {
+      "official": "Collectivité de Saint-Barthélemy",
+      "common": "Saint-Barthélemy"
+    },
+    "NLD": {
+      "official": "Gemeenschap Saint Barthélemy",
+      "common": "Saint Barthélemy"
+    },
+    "HRV": {
+      "official": "Kolektivnost sv Barthélemy",
+      "common": "Saint Barthélemy"
+    },
+    "HUN": {
+      "official": "Collettività di Saint Barthélemy",
+      "common": "Antille Francesi"
+    },
+    "ITA": {
+      "official": "Collettività di Saint Barthélemy",
+      "common": "Antille Francesi"
+    },
     "JPN": {"official": "サン·バルテルミー島の集合体", "common": "サン・バルテルミー"},
     "KOR": "생바르텔레미",
     "PER": "سن بارتلمی",
     "POL": "Saint-Barthélemy",
-    "POR": {"official": "Coletividade de Saint Barthélemy", "common": "São Bartolomeu"},
-    "RUS": {"official": "Коллективность Санкт -Бартельми", "common": "Сен-Бартелеми"},
+    "POR": {
+      "official": "Coletividade de Saint Barthélemy",
+      "common": "São Bartolomeu"
+    },
+    "RUS": {
+      "official": "Коллективность Санкт -Бартельми",
+      "common": "Сен-Бартелеми"
+    },
     "SLK": "Svätý Bartolomej",
-    "SPA": {"official": "Colectividad de San Barthélemy", "common": "San Bartolomé"},
+    "SPA": {
+      "official": "Colectividad de San Barthélemy",
+      "common": "San Bartolomé"
+    },
     "SWE": "Saint-Barthélemy",
     "URD": "سینٹ بارتھیملے",
     "ZHO": {"official": "圣巴泰勒米集体", "common": "圣巴泰勒米"},
-    "ARA": {"official": "التجمع الإقليمي لسانت بارتيليمي", "common": "سانت بارتيليمي"},
+    "ARA": {
+      "official": "التجمع الإقليمي لسانت بارتيليمي",
+      "common": "سانت بارتيليمي"
+    },
     "BUL": null,
     "DAN": null,
     "ELL": null,
@@ -1395,16 +1516,28 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "EST": {"official": "Boliivia Paljurahvuseline Riik", "common": "Boliivia"},
     "FIN": {"official": "Bolivian monikansainen valtio", "common": "Bolivia"},
     "FRA": {"official": "État plurinational de Bolivie", "common": "Bolivie"},
-    "NLD": {"official": "Plurinationale Staat van Bolivia", "common": "Bolivia"},
+    "NLD": {
+      "official": "Plurinationale Staat van Bolivia",
+      "common": "Bolivia"
+    },
     "HRV": {"official": "Plurinational State of Bolivia", "common": "Bolivija"},
-    "HUN": {"official": "Stato Plurinazionale della Bolivia", "common": "Bolivia"},
-    "ITA": {"official": "Stato Plurinazionale della Bolivia", "common": "Bolivia"},
+    "HUN": {
+      "official": "Stato Plurinazionale della Bolivia",
+      "common": "Bolivia"
+    },
+    "ITA": {
+      "official": "Stato Plurinazionale della Bolivia",
+      "common": "Bolivia"
+    },
     "JPN": {"official": "ボリビアの多民族国", "common": "ボリビア多民族国"},
     "KOR": {"official": "볼리비아 다민족국", "common": "볼리비아"},
     "PER": {"official": "جمهوری بولیوی", "common": "بولیوی"},
     "POL": {"official": "Wielonarodowe Państwo Boliwia", "common": "Boliwia"},
     "POR": {"official": "Estado Plurinacional da Bolívia", "common": "Bolívia"},
-    "RUS": {"official": "Многонациональное Государство Боливия", "common": "Боливия"},
+    "RUS": {
+      "official": "Многонациональное Государство Боливия",
+      "common": "Боливия"
+    },
     "SLK": {"official": "Bolívijská republika", "common": "Bolívia"},
     "SPA": {"official": "Estado Plurinacional de Bolivia", "common": "Bolivia"},
     "SWE": {"official": "Mångnationella staten Bolivia", "common": "Bolivia"},
@@ -1426,34 +1559,76 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "BQ",
     "iso_3166_1_alpha3": "BES",
-    "natives": {"official": "Bonaire, Sint Eustatius en Saba", "common": "Caribisch Nederland"},
+    "natives": {
+      "official": "Bonaire, Sint Eustatius en Saba",
+      "common": "Caribisch Nederland"
+    },
     "dialing_code": "+599",
     "default_number_length": 7,
     "default_number_format": "### ####",
     "local_number_sample": "416 7622",
     "International_number_sample": "+599 416 7622",
-    "ENG": {"official": "Bonaire, Sint Eustatius and Saba", "common": "Caribbean Netherlands"},
+    "ENG": {
+      "official": "Bonaire, Sint Eustatius and Saba",
+      "common": "Caribbean Netherlands"
+    },
     "CES": "Karibské Nizozemsko",
-    "DEU": {"official": "Bonaire, Sint Eustatius und Saba", "common": "Karibische Niederlande"},
+    "DEU": {
+      "official": "Bonaire, Sint Eustatius und Saba",
+      "common": "Karibische Niederlande"
+    },
     "EST": "Bonaire, Sint Eustatius ja Saba",
     "FIN": "Bonaire, Sint Eustatius ja Saba",
-    "FRA": {"official": "Bonaire, Saint-Eustache et Saba", "common": "Pays-Bas caribéens"},
-    "NLD": {"official": "Bonaire, Sint Eustatius en Saba", "common": "Caribisch Nederland"},
+    "FRA": {
+      "official": "Bonaire, Saint-Eustache et Saba",
+      "common": "Pays-Bas caribéens"
+    },
+    "NLD": {
+      "official": "Bonaire, Sint Eustatius en Saba",
+      "common": "Caribisch Nederland"
+    },
     "HRV": "Bonaire, Sint Eustatius i Saba",
-    "HUN": {"official": "Bonaire, Sint Eustatius e Saba", "common": "Paesi Bassi caraibici"},
-    "ITA": {"official": "Bonaire, Sint Eustatius e Saba", "common": "Paesi Bassi caraibici"},
+    "HUN": {
+      "official": "Bonaire, Sint Eustatius e Saba",
+      "common": "Paesi Bassi caraibici"
+    },
+    "ITA": {
+      "official": "Bonaire, Sint Eustatius e Saba",
+      "common": "Paesi Bassi caraibici"
+    },
     "JPN": "ボネール、シント・ユースタティウスおよびサバ",
     "KOR": {"official": "보네르, 신트외스타티위스, 사바", "common": "카리브 네덜란드"},
     "PER": "جزایر کارائیب هلند",
-    "POL": {"official": "Bonaire, Sint Eustatius i Saba", "common": "Antyle Holenderskie"},
-    "POR": {"official": "Bonaire, Saba e Santo Eustáquio", "common": "Países Baixos Caribenhos"},
-    "RUS": {"official": "Бонэйр, Синт-Эстатиус и Саба", "common": "Карибские Нидерланды"},
+    "POL": {
+      "official": "Bonaire, Sint Eustatius i Saba",
+      "common": "Antyle Holenderskie"
+    },
+    "POR": {
+      "official": "Bonaire, Saba e Santo Eustáquio",
+      "common": "Países Baixos Caribenhos"
+    },
+    "RUS": {
+      "official": "Бонэйр, Синт-Эстатиус и Саба",
+      "common": "Карибские Нидерланды"
+    },
     "SLK": "Bonaire, Sint Eustatius a Saba",
-    "SPA": {"official": "Bonaire, San Eustaquio y Saba", "common": "Caribe Neerlandés"},
-    "SWE": {"official": "Bonaire, Sint Eustatius and Saba", "common": "Karibiska Nederländerna"},
-    "URD": {"official": "بونایر، سینٹ ایوسٹائیس اور سابا", "common": "کیریبین نیدرلینڈز"},
+    "SPA": {
+      "official": "Bonaire, San Eustaquio y Saba",
+      "common": "Caribe Neerlandés"
+    },
+    "SWE": {
+      "official": "Bonaire, Sint Eustatius and Saba",
+      "common": "Karibiska Nederländerna"
+    },
+    "URD": {
+      "official": "بونایر، سینٹ ایوسٹائیس اور سابا",
+      "common": "کیریبین نیدرلینڈز"
+    },
     "ZHO": "荷蘭加勒比區",
-    "ARA": {"official": "بونير وسانت أوستاتيوس وسابا", "common": "سينت أوستاتيوس"},
+    "ARA": {
+      "official": "بونير وسانت أوستاتيوس وسابا",
+      "common": "سينت أوستاتيوس"
+    },
     "BUL": null,
     "DAN": null,
     "ELL": null,
@@ -1469,29 +1644,47 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "BR",
     "iso_3166_1_alpha3": "BRA",
-    "natives": {"official": "República Federativa do Brasil", "common": "Brasil"},
+    "natives": {
+      "official": "República Federativa do Brasil",
+      "common": "Brasil"
+    },
     "dialing_code": "+55",
     "default_number_length": 10,
     "default_number_format": "### ### ####",
     "local_number_sample": "955 038 1207",
     "International_number_sample": "+55 955 038 1207",
     "ENG": {"official": "Federative Republic of Brazil", "common": "Brazil"},
-    "CES": {"official": "Brazilská federativní republika", "common": "Brazílie"},
+    "CES": {
+      "official": "Brazilská federativní republika",
+      "common": "Brazílie"
+    },
     "DEU": {"official": "Föderative Republik Brasilien", "common": "Brasilien"},
     "EST": {"official": "Brasiilia Liitvabariik", "common": "Brasiilia"},
     "FIN": {"official": "Brasilian liittotasavalta", "common": "Brasilia"},
     "FRA": {"official": "République fédérative du Brésil", "common": "Brésil"},
     "NLD": {"official": "Federale Republiek Brazilië", "common": "Brazilië"},
     "HRV": {"official": "Savezne Republike Brazil", "common": "Brazil"},
-    "HUN": {"official": "Repubblica federativa del Brasile", "common": "Brasile"},
-    "ITA": {"official": "Repubblica federativa del Brasile", "common": "Brasile"},
+    "HUN": {
+      "official": "Repubblica federativa del Brasile",
+      "common": "Brasile"
+    },
+    "ITA": {
+      "official": "Repubblica federativa del Brasile",
+      "common": "Brasile"
+    },
     "JPN": {"official": "ブラジル連邦共和国", "common": "ブラジル"},
     "KOR": {"official": "브라질 연방 공화국", "common": "브라질"},
     "PER": {"official": "جمهوری فدراتیو برزیل", "common": "برزیل"},
     "POL": {"official": "Federacyjna Republika Brazylii", "common": "Brazylia"},
     "POR": {"official": "República Federativa do Brasil", "common": "Brasil"},
-    "RUS": {"official": "Федеративная Республика Бразилия", "common": "Бразилия"},
-    "SLK": {"official": "Brazílska federatívna republika", "common": "Brazília"},
+    "RUS": {
+      "official": "Федеративная Республика Бразилия",
+      "common": "Бразилия"
+    },
+    "SLK": {
+      "official": "Brazílska federatívna republika",
+      "common": "Brazília"
+    },
     "SPA": {"official": "República Federativa del Brasil", "common": "Brasil"},
     "SWE": {"official": "Förbundsrepubliken Brasilien", "common": "Brasilien"},
     "URD": {"official": "وفاقی جمہوریہ برازیل", "common": "برازیل"},
@@ -1555,7 +1748,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "BN",
     "iso_3166_1_alpha3": "BRN",
-    "natives": {"official": "Nation of Brunei, Abode Damai", "common": "Negara Brunei Darussalam"},
+    "natives": {
+      "official": "Nation of Brunei, Abode Damai",
+      "common": "Negara Brunei Darussalam"
+    },
     "dialing_code": "+673",
     "default_number_length": 7,
     "default_number_format": "### ####",
@@ -1567,10 +1763,19 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "EST": {"official": "Brunei Darussalami Riik", "common": "Brunei"},
     "FIN": {"official": "Brunei Darussalamin valtio", "common": "Brunei"},
     "FRA": {"official": "État de Brunei Darussalam", "common": "Brunei"},
-    "NLD": {"official": "Natie van Brunei, de verblijfplaats van de Vrede", "common": "Brunei"},
+    "NLD": {
+      "official": "Natie van Brunei, de verblijfplaats van de Vrede",
+      "common": "Brunei"
+    },
     "HRV": {"official": "Nacija od Bruneja, Kuću Mira", "common": "Brunej"},
-    "HUN": {"official": "Nazione di Brunei, Dimora della Pace", "common": "Brunei"},
-    "ITA": {"official": "Nazione di Brunei, Dimora della Pace", "common": "Brunei"},
+    "HUN": {
+      "official": "Nazione di Brunei, Dimora della Pace",
+      "common": "Brunei"
+    },
+    "ITA": {
+      "official": "Nazione di Brunei, Dimora della Pace",
+      "common": "Brunei"
+    },
     "JPN": {"official": "ブルネイ、平和の精舎の国家", "common": "ブルネイ・ダルサラーム"},
     "KOR": {"official": "브루나이 다루살람국", "common": "브루나이"},
     "PER": {"official": "برونئی سرای صلح", "common": "برونئی"},
@@ -1578,7 +1783,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "POR": {"official": "Nação do Brunei, Morada da Paz", "common": "Brunei"},
     "RUS": {"official": "Нация Бруней, обитель мира", "common": "Бруней"},
     "SLK": {"official": "Brunejský sultanât", "common": "Brunej"},
-    "SPA": {"official": "Nación de Brunei, Morada de la Paz", "common": "Brunei"},
+    "SPA": {
+      "official": "Nación de Brunei, Morada de la Paz",
+      "common": "Brunei"
+    },
     "SWE": {"official": "Brunei Darussalam", "common": "Brunei"},
     "URD": {"official": "ریاستِ برونائی دارالسلام", "common": "برونائی"},
     "ZHO": {"official": "文莱和平之国", "common": "文莱"},
@@ -1740,14 +1948,20 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "FIN": "Keski-Afrikan tasavalta",
     "FRA": "République centrafricaine",
     "NLD": "Centraal-Afrikaanse Republiek",
-    "HRV": {"official": "Centralna Afrička Republika", "common": "Srednjoafrička Republika"},
+    "HRV": {
+      "official": "Centralna Afrička Republika",
+      "common": "Srednjoafrička Republika"
+    },
     "HUN": "Repubblica Centrafricana",
     "ITA": "Repubblica Centrafricana",
     "JPN": "中央アフリカ共和国",
     "KOR": "중앙아프리카 공화국",
     "PER": "جمهوری آفریقای مرکزی",
     "POL": "Republika Środkowoafrykańska",
-    "POR": {"official": "República Centro-Africano", "common": "República Centro-Africana"},
+    "POR": {
+      "official": "República Centro-Africano",
+      "common": "República Centro-Africana"
+    },
     "RUS": {
       "official": "Центрально-Африканская Республика",
       "common": "Центральноафриканская Республика"
@@ -1830,12 +2044,24 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "common": "Cocos (Keeling) Islands"
     },
     "CES": "Kokosové ostrovy",
-    "DEU": {"official": "Gebiet der Kokos- (Keeling-) Inseln", "common": "Kokosinseln"},
+    "DEU": {
+      "official": "Gebiet der Kokos- (Keeling-) Inseln",
+      "common": "Kokosinseln"
+    },
     "EST": {"official": "Kookossaarte ala", "common": "Kookossaared"},
     "FIN": "Kookossaaret",
-    "FRA": {"official": "Territoire des îles Cocos (Keeling)", "common": "Îles Cocos"},
-    "NLD": {"official": "Grondgebied van de Eilanden Cocos (Keeling )", "common": "Cocoseilanden"},
-    "HRV": {"official": "Teritoriju Kokosovi (Keeling) Islands", "common": "Kokosovi Otoci"},
+    "FRA": {
+      "official": "Territoire des îles Cocos (Keeling)",
+      "common": "Îles Cocos"
+    },
+    "NLD": {
+      "official": "Grondgebied van de Eilanden Cocos (Keeling )",
+      "common": "Cocoseilanden"
+    },
+    "HRV": {
+      "official": "Teritoriju Kokosovi (Keeling) Islands",
+      "common": "Kokosovi Otoci"
+    },
     "HUN": {
       "official": "Territorio della (Keeling) Isole Cocos",
       "common": "Isole Cocos e Keeling"
@@ -1848,8 +2074,14 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "KOR": "코코스 제도",
     "PER": "جزایر کوکوس",
     "POL": "Wyspy Kokosowe",
-    "POR": {"official": "Território dos Cocos (Keeling)", "common": "Ilhas Cocos (Keeling)"},
-    "RUS": {"official": "Территория Кокосовые (Килинг) острова", "common": "Кокосовые острова"},
+    "POR": {
+      "official": "Território dos Cocos (Keeling)",
+      "common": "Ilhas Cocos (Keeling)"
+    },
+    "RUS": {
+      "official": "Территория Кокосовые (Килинг) острова",
+      "common": "Кокосовые острова"
+    },
     "SLK": "Kokosové ostrovy",
     "SPA": {
       "official": "Territorio de los (Keeling) Islas Cocos",
@@ -1858,7 +2090,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "SWE": "Kokosöarna",
     "URD": {"official": "جزائر (کیلنگ) کوکوس", "common": "جزائر کوکوس"},
     "ZHO": "科科斯",
-    "ARA": {"official": "إقليم جزر كوكوس (كيلينغ)", "common": "جزر كوكوس (كيلينغ)"},
+    "ARA": {
+      "official": "إقليم جزر كوكوس (كيلينغ)",
+      "common": "جزر كوكوس (كيلينغ)"
+    },
     "BUL": null,
     "DAN": null,
     "ELL": null,
@@ -1882,7 +2117,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "International_number_sample": "+41 33 724 8757",
     "ENG": {"official": "Swiss Confederation", "common": "Switzerland"},
     "CES": {"official": "Švýcarská konfederace", "common": "Švýcarsko"},
-    "DEU": {"official": "Schweizerische Eidgenossenschaft", "common": "Schweiz"},
+    "DEU": {
+      "official": "Schweizerische Eidgenossenschaft",
+      "common": "Schweiz"
+    },
     "EST": {"official": "Šveitsi Konföderatsioon", "common": "Šveits"},
     "FIN": {"official": "Sveitsin valaliitto", "common": "Sveitsi"},
     "FRA": {"official": "Confédération suisse", "common": "Suisse"},
@@ -2003,31 +2241,70 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "CI",
     "iso_3166_1_alpha3": "CIV",
-    "natives": {"official": "République de Côte d'Ivoire", "common": "Côte d'Ivoire"},
+    "natives": {
+      "official": "République de Côte d'Ivoire",
+      "common": "Côte d'Ivoire"
+    },
     "dialing_code": "+225",
     "default_number_length": 10,
     "default_number_format": "## ## ## ####",
     "local_number_sample": "07 60 46 1537",
     "International_number_sample": "+225 07 60 46 1537",
     "ENG": {"official": "Republic of Côte d'Ivoire", "common": "Ivory Coast"},
-    "CES": {"official": "Republika Pobřeží slonoviny", "common": "Pobřeží slonoviny"},
+    "CES": {
+      "official": "Republika Pobřeží slonoviny",
+      "common": "Pobřeží slonoviny"
+    },
     "DEU": {"official": "Republik Côte d'Ivoire", "common": "Elfenbeinküste"},
-    "EST": {"official": "Côte d’Ivoire’i Vabariik", "common": "Elevandiluurannik"},
-    "FIN": {"official": "Norsunluurannikon tasavalta", "common": "Norsunluurannikko"},
-    "FRA": {"official": "République de Côte d' Ivoire", "common": "Côte d'Ivoire"},
+    "EST": {
+      "official": "Côte d’Ivoire’i Vabariik",
+      "common": "Elevandiluurannik"
+    },
+    "FIN": {
+      "official": "Norsunluurannikon tasavalta",
+      "common": "Norsunluurannikko"
+    },
+    "FRA": {
+      "official": "République de Côte d' Ivoire",
+      "common": "Côte d'Ivoire"
+    },
     "NLD": {"official": "Republiek Ivoorkust", "common": "Ivoorkust"},
-    "HRV": {"official": "Republika Côte d'Ivoire", "common": "Obala Bjelokosti"},
-    "HUN": {"official": "Repubblica della Costa d'Avorio", "common": "Costa d'Avorio"},
-    "ITA": {"official": "Repubblica della Costa d'Avorio", "common": "Costa d'Avorio"},
+    "HRV": {
+      "official": "Republika Côte d'Ivoire",
+      "common": "Obala Bjelokosti"
+    },
+    "HUN": {
+      "official": "Repubblica della Costa d'Avorio",
+      "common": "Costa d'Avorio"
+    },
+    "ITA": {
+      "official": "Repubblica della Costa d'Avorio",
+      "common": "Costa d'Avorio"
+    },
     "JPN": {"official": "コートジボワール共和国", "common": "コートジボワール"},
     "KOR": {"official": "코트디부아르 공화국", "common": "코트디부아르"},
     "PER": {"official": "جمهوری ساحل عاج", "common": "ساحل عاج"},
-    "POL": {"official": "Republika WybrzeŻa Kości Słoniowej", "common": "WybrzeŻe Kości Słoniowej"},
-    "POR": {"official": "República da Côte d'Ivoire", "common": "Costa do Marfim"},
+    "POL": {
+      "official": "Republika WybrzeŻa Kości Słoniowej",
+      "common": "WybrzeŻe Kości Słoniowej"
+    },
+    "POR": {
+      "official": "República da Côte d'Ivoire",
+      "common": "Costa do Marfim"
+    },
     "RUS": {"official": "Республика Кот-д'Ивуаре", "common": "Кот-д’Ивуар"},
-    "SLK": {"official": "Republika Pobrežie Slonoviny", "common": "Pobržie Slonoviny"},
-    "SPA": {"official": "República de Côte d'Ivoire", "common": "Costa de Marfil"},
-    "SWE": {"official": "Republiken Elfenbenskusten", "common": "Elfenbenskusten"},
+    "SLK": {
+      "official": "Republika Pobrežie Slonoviny",
+      "common": "Pobržie Slonoviny"
+    },
+    "SPA": {
+      "official": "República de Côte d'Ivoire",
+      "common": "Costa de Marfil"
+    },
+    "SWE": {
+      "official": "Republiken Elfenbenskusten",
+      "common": "Elfenbenskusten"
+    },
     "URD": {"official": "جمہوریہ کوت دیواغ", "common": "آئیوری کوسٹ"},
     "ZHO": {"official": "科特迪瓦共和国", "common": "科特迪瓦"},
     "ARA": {"official": "كوت ديفوار", "common": "جمهورية كوت ديفوار"},
@@ -2065,7 +2342,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "JPN": {"official": "カメルーン共和国", "common": "カメルーン"},
     "KOR": {"official": "카메룬 공화국", "common": "카메룬"},
     "PER": {"official": "جمهوری کامِرون", "common": "کامِرون"},
-    "POL": {"official": "Republika WybrzeŻa Kości Słoniowej", "common": "WybrzeŻe Kości Słoniowej"},
+    "POL": {
+      "official": "Republika WybrzeŻa Kości Słoniowej",
+      "common": "WybrzeŻe Kości Słoniowej"
+    },
     "POR": {"official": "República dos Camarões", "common": "Camarões"},
     "RUS": {"official": "Республика Камерун", "common": "Камерун"},
     "SLK": {"official": "Kamerunská republika", "common": "Kamerun"},
@@ -2089,22 +2369,46 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "CD",
     "iso_3166_1_alpha3": "COD",
-    "natives": {"official": "République démocratique du Congo", "common": "RD Congo"},
+    "natives": {
+      "official": "République démocratique du Congo",
+      "common": "RD Congo"
+    },
     "dialing_code": "+243",
     "default_number_length": 9,
     "default_number_format": "## ### ####",
     "local_number_sample": "80 323 5925",
     "International_number_sample": "+243 80 323 5925",
-    "ENG": {"official": "Democratic Republic of the Congo", "common": "Congo-Kinshasa"},
+    "ENG": {
+      "official": "Democratic Republic of the Congo",
+      "common": "Congo-Kinshasa"
+    },
     "CES": {"official": "Demokratická republika Kongo", "common": "DR Kongo"},
-    "DEU": {"official": "Demokratische Republik Kongo", "common": "Kongo (Dem. Rep.)"},
+    "DEU": {
+      "official": "Demokratische Republik Kongo",
+      "common": "Kongo (Dem. Rep.)"
+    },
     "EST": {"official": "Kongo Demokraatlik Vabariik", "common": "Kongo DV"},
     "FIN": "Kongon demokraattinen tasavalta",
-    "FRA": {"official": "République démocratique du Congo", "common": "Congo (Rép. dém.)"},
-    "NLD": {"official": "Democratische Republiek Congo", "common": "Congo (DRC)"},
-    "HRV": {"official": "Demokratska Republika Kongo", "common": "Kongo, Demokratska Republika"},
-    "HUN": {"official": "Repubblica Democratica del Congo", "common": "Congo (Rep. Dem.)"},
-    "ITA": {"official": "Repubblica Democratica del Congo", "common": "Congo (Rep. Dem.)"},
+    "FRA": {
+      "official": "République démocratique du Congo",
+      "common": "Congo (Rép. dém.)"
+    },
+    "NLD": {
+      "official": "Democratische Republiek Congo",
+      "common": "Congo (DRC)"
+    },
+    "HRV": {
+      "official": "Demokratska Republika Kongo",
+      "common": "Kongo, Demokratska Republika"
+    },
+    "HUN": {
+      "official": "Repubblica Democratica del Congo",
+      "common": "Congo (Rep. Dem.)"
+    },
+    "ITA": {
+      "official": "Repubblica Democratica del Congo",
+      "common": "Congo (Rep. Dem.)"
+    },
     "JPN": "コンゴ民主共和国",
     "KOR": "콩고 민주 공화국",
     "PER": {"official": "جمهوری دموکراتیک کنگو", "common": "کنگو دموکراتیک"},
@@ -2112,11 +2416,20 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "POR": "República Democrática do Congo",
     "RUS": "Демократическая Республика Конго",
     "SLK": {"official": "Konžská demokratická republika", "common": "Kongo"},
-    "SPA": {"official": "República Democrática del Congo", "common": "Congo (Rep. Dem.)"},
-    "SWE": {"official": "Demokratiska republiken Kongo", "common": "Kongo-Kinshasa"},
+    "SPA": {
+      "official": "República Democrática del Congo",
+      "common": "Congo (Rep. Dem.)"
+    },
+    "SWE": {
+      "official": "Demokratiska republiken Kongo",
+      "common": "Kongo-Kinshasa"
+    },
     "URD": {"official": "جمہوری جمہوریہ کانگو", "common": "کانگو"},
     "ZHO": {"official": "刚果民主共和国", "common": "民主刚果"},
-    "ARA": {"official": "جمهورية الكونغو الديمقراطية", "common": "الكونغو – كينشاسا"},
+    "ARA": {
+      "official": "جمهورية الكونغو الديمقراطية",
+      "common": "الكونغو – كينشاسا"
+    },
     "BUL": "Демократична република Конго",
     "DAN": "Demokratiske Republik Congo",
     "ELL": "Λαϊκή Δημοκρατία του Κογκό",
@@ -2317,7 +2630,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "FIN": {"official": "Kap Verden tasavalta", "common": "Kap Verde"},
     "FRA": {"official": "République du Cap-Vert", "common": "Cap-Vert"},
     "NLD": {"official": "Republiek van Cabo Verde", "common": "Kaapverdië"},
-    "HRV": {"official": "Republika Cabo Verde", "common": "Zelenortska Republika"},
+    "HRV": {
+      "official": "Republika Cabo Verde",
+      "common": "Zelenortska Republika"
+    },
     "HUN": {"official": "Repubblica di Capo Verde", "common": "Capo Verde"},
     "ITA": {"official": "Repubblica di Capo Verde", "common": "Capo Verde"},
     "JPN": {"official": "カーボベルデ共和国", "common": "カーボベルデ"},
@@ -2476,30 +2792,66 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "CX",
     "iso_3166_1_alpha3": "CXR",
-    "natives": {"official": "Territory of Christmas Island", "common": "Christmas Island"},
+    "natives": {
+      "official": "Territory of Christmas Island",
+      "common": "Christmas Island"
+    },
     "dialing_code": "+61",
     "default_number_length": 9,
     "default_number_format": "### ### ###",
     "local_number_sample": "483 213 756",
     "International_number_sample": "+61 483 213 756",
-    "ENG": {"official": "Territory of Christmas Island", "common": "Christmas Island"},
-    "CES": {"official": "Teritorium Vánočního ostrova", "common": "Vánoční ostrov"},
-    "DEU": {"official": "Gebiet der Weihnachtsinsel", "common": "Weihnachtsinsel"},
+    "ENG": {
+      "official": "Territory of Christmas Island",
+      "common": "Christmas Island"
+    },
+    "CES": {
+      "official": "Teritorium Vánočního ostrova",
+      "common": "Vánoční ostrov"
+    },
+    "DEU": {
+      "official": "Gebiet der Weihnachtsinsel",
+      "common": "Weihnachtsinsel"
+    },
     "EST": {"official": "Jõulusaare ala", "common": "Jõulusaar"},
     "FIN": {"official": "Joulusaaren alue", "common": "Joulusaari"},
-    "FRA": {"official": "Territoire de l'île Christmas", "common": "Île Christmas"},
-    "NLD": {"official": "Grondgebied van Christmas Island", "common": "Christmaseiland"},
+    "FRA": {
+      "official": "Territoire de l'île Christmas",
+      "common": "Île Christmas"
+    },
+    "NLD": {
+      "official": "Grondgebied van Christmas Island",
+      "common": "Christmaseiland"
+    },
     "HRV": {"official": "Teritorij Božićni otok", "common": "Božićni otok"},
-    "HUN": {"official": "Territorio di Christmas Island", "common": "Isola di Natale"},
-    "ITA": {"official": "Territorio di Christmas Island", "common": "Isola di Natale"},
+    "HUN": {
+      "official": "Territorio di Christmas Island",
+      "common": "Isola di Natale"
+    },
+    "ITA": {
+      "official": "Territorio di Christmas Island",
+      "common": "Isola di Natale"
+    },
     "JPN": {"official": "クリスマス島の領土", "common": "クリスマス島"},
     "KOR": "크리스마스 섬",
     "PER": "جزیرهٔ کریسمس",
     "POL": "Wyspa Bożego Narodzenia",
-    "POR": {"official": "Território da Ilha Christmas", "common": "Ilha do Natal"},
-    "RUS": {"official": "Территория острова Рождества", "common": "Остров Рождества"},
-    "SLK": {"official": "Teritórium Vianočného ostrova", "common": "Vianočnú ostrov"},
-    "SPA": {"official": "Territorio de la Isla de Navidad", "common": "Isla de Navidad"},
+    "POR": {
+      "official": "Território da Ilha Christmas",
+      "common": "Ilha do Natal"
+    },
+    "RUS": {
+      "official": "Территория острова Рождества",
+      "common": "Остров Рождества"
+    },
+    "SLK": {
+      "official": "Teritórium Vianočného ostrova",
+      "common": "Vianočnú ostrov"
+    },
+    "SPA": {
+      "official": "Territorio de la Isla de Navidad",
+      "common": "Isla de Navidad"
+    },
     "SWE": "Julön",
     "URD": {"official": "ریاستِ جزیرہ کرسمس", "common": "جزیرہ کرسمس"},
     "ZHO": "圣诞岛",
@@ -2648,7 +3000,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "DE",
     "iso_3166_1_alpha3": "DEU",
-    "natives": {"official": "Bundesrepublik Deutschland", "common": "Deutschland"},
+    "natives": {
+      "official": "Bundesrepublik Deutschland",
+      "common": "Deutschland"
+    },
     "dialing_code": "+49",
     "default_number_length": 11,
     "default_number_format": "## #########",
@@ -2659,17 +3014,29 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "DEU": {"official": "Bundesrepublik Deutschland", "common": "Deutschland"},
     "EST": {"official": "Saksamaa Liitvabariik", "common": "Saksamaa"},
     "FIN": {"official": "Saksan liittotasavalta", "common": "Saksa"},
-    "FRA": {"official": "République fédérale d'Allemagne", "common": "Allemagne"},
+    "FRA": {
+      "official": "République fédérale d'Allemagne",
+      "common": "Allemagne"
+    },
     "NLD": {"official": "Bondsrepubliek Duitsland", "common": "Duitsland"},
     "HRV": {"official": "Njemačka Federativna Republika", "common": "Njemačka"},
-    "HUN": {"official": "Repubblica federale di Germania", "common": "Germania"},
-    "ITA": {"official": "Repubblica federale di Germania", "common": "Germania"},
+    "HUN": {
+      "official": "Repubblica federale di Germania",
+      "common": "Germania"
+    },
+    "ITA": {
+      "official": "Repubblica federale di Germania",
+      "common": "Germania"
+    },
     "JPN": {"official": "ドイツ連邦共和国", "common": "ドイツ"},
     "KOR": {"official": "독일 연방 공화국", "common": "독일"},
     "PER": {"official": "جمهوری فدرال آلمان", "common": "آلمان"},
     "POL": {"official": "Republika Federalna Niemiec", "common": "Niemcy"},
     "POR": {"official": "República Federal da Alemanha", "common": "Alemanha"},
-    "RUS": {"official": "Федеративная Республика Германия", "common": "Германия"},
+    "RUS": {
+      "official": "Федеративная Республика Германия",
+      "common": "Германия"
+    },
     "SLK": {"official": "Nemecká spolková republika", "common": "Nemecko"},
     "SPA": {"official": "República Federal de Alemania", "common": "Alemania"},
     "SWE": {"official": "Förbundsrepubliken Tyskland", "common": "Tyskland"},
@@ -2831,7 +3198,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "DEU": "Dominikanische Republik",
     "EST": "Dominikaani Vabariik",
     "FIN": "Dominikaaninen tasavalta",
-    "FRA": {"official": "République Dominicaine", "common": "République dominicaine"},
+    "FRA": {
+      "official": "République Dominicaine",
+      "common": "République dominicaine"
+    },
     "NLD": "Dominicaanse Republiek",
     "HRV": "Dominikanska Republika",
     "HUN": "Repubblica Dominicana",
@@ -2863,34 +3233,88 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "DZ",
     "iso_3166_1_alpha3": "DZA",
-    "natives": {"official": "الجمهورية الديمقراطية الشعبية الجزائرية", "common": "الجزائر"},
+    "natives": {
+      "official": "الجمهورية الديمقراطية الشعبية الجزائرية",
+      "common": "الجزائر"
+    },
     "dialing_code": "+213",
     "default_number_length": 8,
     "default_number_format": "#### ####",
     "local_number_sample": "5282 7544",
     "International_number_sample": "+213 5282 7544",
-    "ENG": {"official": "People's Democratic Republic of Algeria", "common": "Algeria"},
-    "CES": {"official": "Alžírská demokratická a lidová republika", "common": "Alžírsko"},
-    "DEU": {"official": "Demokratische Volksrepublik Algerien", "common": "Algerien"},
-    "EST": {"official": "Alžeeria Demokraatlik Rahvavabariik", "common": "Alžeeria"},
-    "FIN": {"official": "Algerian demokraattinen kansantasavalta", "common": "Algeria"},
-    "FRA": {"official": "République démocratique et populaire d'Algérie", "common": "Algérie"},
-    "NLD": {"official": "Democratische Volksrepubliek Algerije", "common": "Algerije"},
-    "HRV": {"official": "Narodna Demokratska Republika Alžir", "common": "Alžir"},
-    "HUN": {"official": "Repubblica popolare democratica di Algeria", "common": "Algeria"},
-    "ITA": {"official": "Repubblica popolare democratica di Algeria", "common": "Algeria"},
+    "ENG": {
+      "official": "People's Democratic Republic of Algeria",
+      "common": "Algeria"
+    },
+    "CES": {
+      "official": "Alžírská demokratická a lidová republika",
+      "common": "Alžírsko"
+    },
+    "DEU": {
+      "official": "Demokratische Volksrepublik Algerien",
+      "common": "Algerien"
+    },
+    "EST": {
+      "official": "Alžeeria Demokraatlik Rahvavabariik",
+      "common": "Alžeeria"
+    },
+    "FIN": {
+      "official": "Algerian demokraattinen kansantasavalta",
+      "common": "Algeria"
+    },
+    "FRA": {
+      "official": "République démocratique et populaire d'Algérie",
+      "common": "Algérie"
+    },
+    "NLD": {
+      "official": "Democratische Volksrepubliek Algerije",
+      "common": "Algerije"
+    },
+    "HRV": {
+      "official": "Narodna Demokratska Republika Alžir",
+      "common": "Alžir"
+    },
+    "HUN": {
+      "official": "Repubblica popolare democratica di Algeria",
+      "common": "Algeria"
+    },
+    "ITA": {
+      "official": "Repubblica popolare democratica di Algeria",
+      "common": "Algeria"
+    },
     "JPN": {"official": "アルジェリア人民民主共和国", "common": "アルジェリア"},
     "KOR": {"official": "알제리 인민 민주 공화국", "common": "알제리"},
     "PER": {"official": "جمهوری دموکراتیک خلق الجزایر", "common": "الجزایر"},
-    "POL": {"official": "Algierska Republika Ludowo-Demokratyczna", "common": "Algieria"},
-    "POR": {"official": "República Argelina Democrática e Popular", "common": "Argélia"},
-    "RUS": {"official": "Народно-Демократическая Республика Алжир", "common": "Алжир"},
-    "SLK": {"official": "Alžírska demokratická ľudová republika", "common": "Alžírsko"},
-    "SPA": {"official": "República Argelina Democrática y Popular", "common": "Argelia"},
-    "SWE": {"official": "Demokratiska folkrepubliken Algeriet", "common": "Algeriet"},
+    "POL": {
+      "official": "Algierska Republika Ludowo-Demokratyczna",
+      "common": "Algieria"
+    },
+    "POR": {
+      "official": "República Argelina Democrática e Popular",
+      "common": "Argélia"
+    },
+    "RUS": {
+      "official": "Народно-Демократическая Республика Алжир",
+      "common": "Алжир"
+    },
+    "SLK": {
+      "official": "Alžírska demokratická ľudová republika",
+      "common": "Alžírsko"
+    },
+    "SPA": {
+      "official": "República Argelina Democrática y Popular",
+      "common": "Argelia"
+    },
+    "SWE": {
+      "official": "Demokratiska folkrepubliken Algeriet",
+      "common": "Algeriet"
+    },
     "URD": {"official": "عوامی جمہوری جمہوریہ الجزائر", "common": "الجزائر"},
     "ZHO": {"official": "阿尔及利亚人民民主共和国", "common": "阿尔及利亚"},
-    "ARA": {"official": "الجمهورية الديمقراطية الشعبية الجزائرية", "common": "الجزائر"},
+    "ARA": {
+      "official": "الجمهورية الديمقراطية الشعبية الجزائرية",
+      "common": "الجزائر"
+    },
     "BUL": "Алжир",
     "DAN": "Algeriet",
     "ELL": "Αλγερία",
@@ -3035,34 +3459,73 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "EH",
     "iso_3166_1_alpha3": "ESH",
-    "natives": {"official": "Sahrawi Arab Democratic Republic", "common": "Western Sahara"},
+    "natives": {
+      "official": "Sahrawi Arab Democratic Republic",
+      "common": "Western Sahara"
+    },
     "dialing_code": "+212",
     "default_number_length": 9,
     "default_number_format": "### ######",
     "local_number_sample": "772 093714",
     "International_number_sample": "+212 772 093714",
-    "ENG": {"official": "Sahrawi Arab Democratic Republic", "common": "Western Sahara"},
+    "ENG": {
+      "official": "Sahrawi Arab Democratic Republic",
+      "common": "Western Sahara"
+    },
     "CES": "Západní Sahara",
-    "DEU": {"official": "Demokratische Arabische Republik Sahara", "common": "Westsahara"},
+    "DEU": {
+      "official": "Demokratische Arabische Republik Sahara",
+      "common": "Westsahara"
+    },
     "EST": "Lääne-Sahara",
     "FIN": "Länsi-Sahara",
-    "FRA": {"official": "République arabe sahraouie démocratique", "common": "Sahara Occidental"},
-    "NLD": {"official": "Sahrawi Arabische Democratische Republiek", "common": "Westelijke Sahara"},
-    "HRV": {"official": "Sahrawi Arab Demokratska Republika", "common": "Zapadna Sahara"},
-    "HUN": {"official": "Repubblica Araba Saharawi Democratica", "common": "Sahara Occidentale"},
-    "ITA": {"official": "Repubblica Araba Saharawi Democratica", "common": "Sahara Occidentale"},
+    "FRA": {
+      "official": "République arabe sahraouie démocratique",
+      "common": "Sahara Occidental"
+    },
+    "NLD": {
+      "official": "Sahrawi Arabische Democratische Republiek",
+      "common": "Westelijke Sahara"
+    },
+    "HRV": {
+      "official": "Sahrawi Arab Demokratska Republika",
+      "common": "Zapadna Sahara"
+    },
+    "HUN": {
+      "official": "Repubblica Araba Saharawi Democratica",
+      "common": "Sahara Occidentale"
+    },
+    "ITA": {
+      "official": "Repubblica Araba Saharawi Democratica",
+      "common": "Sahara Occidentale"
+    },
     "JPN": {"official": "サハラアラブ民主共和国", "common": "西サハラ"},
     "KOR": {"official": "사하라 아랍 민주 공화국", "common": "서사하라"},
     "PER": "صحرای غربی",
-    "POL": {"official": "Saharyjska Arabska Republika Demokratyczna", "common": "Sahara Zachodnia"},
-    "POR": {"official": "República Árabe Saharaui Democrática", "common": "Saara Ocidental"},
-    "RUS": {"official": "Sahrawi Арабская Демократическая Республика", "common": "Западная Сахара"},
+    "POL": {
+      "official": "Saharyjska Arabska Republika Demokratyczna",
+      "common": "Sahara Zachodnia"
+    },
+    "POR": {
+      "official": "República Árabe Saharaui Democrática",
+      "common": "Saara Ocidental"
+    },
+    "RUS": {
+      "official": "Sahrawi Арабская Демократическая Республика",
+      "common": "Западная Сахара"
+    },
     "SLK": "Západná Sahara",
-    "SPA": {"official": "República Árabe Saharaui Democrática", "common": "Sahara Occidental"},
+    "SPA": {
+      "official": "República Árabe Saharaui Democrática",
+      "common": "Sahara Occidental"
+    },
     "SWE": "Västsahara",
     "URD": {"official": "صحراوی عرب عوامی جمہوریہ", "common": "مغربی صحارا"},
     "ZHO": {"official": "阿拉伯撒哈拉民主共和国", "common": "西撒哈拉"},
-    "ARA": {"official": "الجمهورية العربية الصحراوية الديمقراطية", "common": "الصحراء الغربية"},
+    "ARA": {
+      "official": "الجمهورية العربية الصحراوية الديمقراطية",
+      "common": "الصحراء الغربية"
+    },
     "BUL": null,
     "DAN": null,
     "ELL": null,
@@ -3170,28 +3633,79 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "default_number_format": "## ### ####",
     "local_number_sample": "11 448 5594",
     "International_number_sample": "+251 11 448 5594",
-    "ENG": {"official": "Federal Democratic Republic of Ethiopia", "common": "Ethiopia"},
-    "CES": {"official": "Etiopská federativní demokratická republika", "common": "Etiopie"},
-    "DEU": {"official": "Demokratische Bundesrepublik Äthiopien", "common": "Äthiopien"},
-    "EST": {"official": "Etioopia Demokraatlik Liitvabariik", "common": "Etioopia"},
-    "FIN": {"official": "Etiopian demokraattinen liittotasavalta", "common": "Etiopia"},
-    "FRA": {"official": "République fédérale démocratique d'Éthiopie", "common": "Éthiopie"},
-    "NLD": {"official": "Federale Democratische Republiek Ethiopië", "common": "Ethiopië"},
-    "HRV": {"official": "Savezna Demokratska Republika Etiopija", "common": "Etiopija"},
-    "HUN": {"official": "Repubblica federale democratica di Etiopia", "common": "Etiopia"},
-    "ITA": {"official": "Repubblica federale democratica di Etiopia", "common": "Etiopia"},
+    "ENG": {
+      "official": "Federal Democratic Republic of Ethiopia",
+      "common": "Ethiopia"
+    },
+    "CES": {
+      "official": "Etiopská federativní demokratická republika",
+      "common": "Etiopie"
+    },
+    "DEU": {
+      "official": "Demokratische Bundesrepublik Äthiopien",
+      "common": "Äthiopien"
+    },
+    "EST": {
+      "official": "Etioopia Demokraatlik Liitvabariik",
+      "common": "Etioopia"
+    },
+    "FIN": {
+      "official": "Etiopian demokraattinen liittotasavalta",
+      "common": "Etiopia"
+    },
+    "FRA": {
+      "official": "République fédérale démocratique d'Éthiopie",
+      "common": "Éthiopie"
+    },
+    "NLD": {
+      "official": "Federale Democratische Republiek Ethiopië",
+      "common": "Ethiopië"
+    },
+    "HRV": {
+      "official": "Savezna Demokratska Republika Etiopija",
+      "common": "Etiopija"
+    },
+    "HUN": {
+      "official": "Repubblica federale democratica di Etiopia",
+      "common": "Etiopia"
+    },
+    "ITA": {
+      "official": "Repubblica federale democratica di Etiopia",
+      "common": "Etiopia"
+    },
     "JPN": {"official": "エチオピア連邦民主共和国", "common": "エチオピア"},
     "KOR": {"official": "에티오피아 연방 민주 공화국", "common": "에티오피아"},
     "PER": {"official": "جمهوری فدرال دموکراتیک اتیوپی", "common": "اِتیوپی"},
-    "POL": {"official": "Federalna Demokratyczna Republika Etiopii", "common": "Etiopia"},
-    "POR": {"official": "República Federal Democrática da Etiópia", "common": "Etiópia"},
-    "RUS": {"official": "Федеративная Демократическая Республика Эфиопия", "common": "Эфиопия"},
-    "SLK": {"official": "Etiópska federatívna demokratická republika", "common": "Etiópia"},
-    "SPA": {"official": "República Democrática Federal de Etiopía", "common": "Etiopía"},
-    "SWE": {"official": "Demokratiska förbundsrepubliken Etiopien", "common": "Etiopien"},
+    "POL": {
+      "official": "Federalna Demokratyczna Republika Etiopii",
+      "common": "Etiopia"
+    },
+    "POR": {
+      "official": "República Federal Democrática da Etiópia",
+      "common": "Etiópia"
+    },
+    "RUS": {
+      "official": "Федеративная Демократическая Республика Эфиопия",
+      "common": "Эфиопия"
+    },
+    "SLK": {
+      "official": "Etiópska federatívna demokratická republika",
+      "common": "Etiópia"
+    },
+    "SPA": {
+      "official": "República Democrática Federal de Etiopía",
+      "common": "Etiopía"
+    },
+    "SWE": {
+      "official": "Demokratiska förbundsrepubliken Etiopien",
+      "common": "Etiopien"
+    },
     "URD": {"official": "وفاقی جمہوری جمہوریہ ایتھوپیا", "common": "ایتھوپیا"},
     "ZHO": {"official": "埃塞俄比亚联邦民主共和国", "common": "埃塞俄比亚"},
-    "ARA": {"official": "جمهورية إثيوبيا الفيدرالية الديمقراطية", "common": "إثيوبيا"},
+    "ARA": {
+      "official": "جمهورية إثيوبيا الفيدرالية الديمقراطية",
+      "common": "إثيوبيا"
+    },
     "BUL": "Етиопия",
     "DAN": "Etiopien",
     "ELL": "Αιθιοπία",
@@ -3307,8 +3821,14 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "FRA": "Îles Malouines",
     "NLD": {"official": "Falkland eilanden", "common": "Falklandeilanden"},
     "HRV": {"official": "Falklandski otoci", "common": "Falklandski Otoci"},
-    "HUN": {"official": "Isole Falkland", "common": "Isole Falkland o Isole Malvine"},
-    "ITA": {"official": "Isole Falkland", "common": "Isole Falkland o Isole Malvine"},
+    "HUN": {
+      "official": "Isole Falkland",
+      "common": "Isole Falkland o Isole Malvine"
+    },
+    "ITA": {
+      "official": "Isole Falkland",
+      "common": "Isole Falkland o Isole Malvine"
+    },
     "JPN": {"official": "フォークランド", "common": "フォークランド（マルビナス）諸島"},
     "KOR": "포클랜드 제도",
     "PER": "جزایر فالکلند",
@@ -3422,19 +3942,31 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "FM",
     "iso_3166_1_alpha3": "FSM",
-    "natives": {"official": "Federated States of Micronesia", "common": "Micronesia"},
+    "natives": {
+      "official": "Federated States of Micronesia",
+      "common": "Micronesia"
+    },
     "dialing_code": "+691",
     "default_number_length": 7,
     "default_number_format": "### ####",
     "local_number_sample": "560 4374",
     "International_number_sample": "+691 560 4374",
-    "ENG": {"official": "Federated States of Micronesia", "common": "Micronesia"},
+    "ENG": {
+      "official": "Federated States of Micronesia",
+      "common": "Micronesia"
+    },
     "CES": {"official": "Federativní státy Mikronésie", "common": "Mikronésie"},
-    "DEU": {"official": "Föderierte Staaten von Mikronesien", "common": "Mikronesien"},
+    "DEU": {
+      "official": "Föderierte Staaten von Mikronesien",
+      "common": "Mikronesien"
+    },
     "EST": {"official": "Mikroneesia Liiduriigid", "common": "Mikroneesia"},
     "FIN": {"official": "Mikronesian liittovaltio", "common": "Mikronesia"},
     "FRA": {"official": "États fédérés de Micronésie", "common": "Micronésie"},
-    "NLD": {"official": "Federale Staten van Micronesia", "common": "Micronesië"},
+    "NLD": {
+      "official": "Federale Staten van Micronesia",
+      "common": "Micronesië"
+    },
     "HRV": {"official": "Savezne Države Mikronezije", "common": "Mikronezija"},
     "HUN": {"official": "Stati federati di Micronesia", "common": "Micronesia"},
     "ITA": {"official": "Stati federati di Micronesia", "common": "Micronesia"},
@@ -3442,12 +3974,24 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "KOR": {"official": "미크로네시아 연방", "common": "미크로네시아"},
     "PER": {"official": "ایالات فدرال میکرونزی", "common": "میکرونزی"},
     "POL": {"official": "Sfederowane Stany Mikronezji", "common": "Mikronezja"},
-    "POR": {"official": "Estados Federados da Micronésia", "common": "Micronésia"},
+    "POR": {
+      "official": "Estados Federados da Micronésia",
+      "common": "Micronésia"
+    },
     "RUS": {"official": "Федеративные Штаты Микронезии", "common": "ФШМ"},
-    "SLK": {"official": "Mikronézske federatívne štáty", "common": "Mikronézia"},
-    "SPA": {"official": "Estados Federados de Micronesia", "common": "Micronesia"},
+    "SLK": {
+      "official": "Mikronézske federatívne štáty",
+      "common": "Mikronézia"
+    },
+    "SPA": {
+      "official": "Estados Federados de Micronesia",
+      "common": "Micronesia"
+    },
     "SWE": "Mikronesiska federationen",
-    "URD": {"official": "ریاستہائے وفاقیہ مائکرونیشیا", "common": "مائکرونیشیا"},
+    "URD": {
+      "official": "ریاستہائے وفاقیہ مائکرونیشیا",
+      "common": "مائکرونیشیا"
+    },
     "ZHO": {"official": "密克罗尼西亚联邦", "common": "密克罗尼西亚"},
     "ARA": {"official": "ولايات ميكرونيسيا المتحدة", "common": "ميكرونيسيا"},
     "BUL": "Микронезия",
@@ -3529,9 +4073,13 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "official": "Vereinigtes Königreich Großbritannien und Nordirland",
       "common": "Vereinigtes Königreich"
     },
-    "EST": {"official": "Suurbritannia ja Põhja-Iiri Ühendkuningriik", "common": "Suurbritannia"},
+    "EST": {
+      "official": "Suurbritannia ja Põhja-Iiri Ühendkuningriik",
+      "common": "Suurbritannia"
+    },
     "FIN": {
-      "official": "Ison-Britannian ja Pohjois-Irlannin yhdistynyt kuningaskunta",
+      "official":
+          "Ison-Britannian ja Pohjois-Irlannin yhdistynyt kuningaskunta",
       "common": "Yhdistynyt kuningaskunta"
     },
     "FRA": {
@@ -3546,16 +4094,29 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "official": "Ujedinjeno Kraljevstvo Velike Britanije i Sjeverne Irske",
       "common": "Ujedinjeno Kraljevstvo"
     },
-    "HUN": {"official": "Regno Unito di Gran Bretagna e Irlanda del Nord", "common": "Regno Unito"},
-    "ITA": {"official": "Regno Unito di Gran Bretagna e Irlanda del Nord", "common": "Regno Unito"},
+    "HUN": {
+      "official": "Regno Unito di Gran Bretagna e Irlanda del Nord",
+      "common": "Regno Unito"
+    },
+    "ITA": {
+      "official": "Regno Unito di Gran Bretagna e Irlanda del Nord",
+      "common": "Regno Unito"
+    },
     "JPN": {"official": "グレート·ブリテンおよび北アイルランド連合王国", "common": "イギリス"},
     "KOR": {"official": "그레이트브리튼 북아일랜드 연합 왕국", "common": "영국"},
-    "PER": {"official": "پادشاهی متحد بریتانیای کبیر و ایرلند شمالی", "common": "انگلیس"},
+    "PER": {
+      "official": "پادشاهی متحد بریتانیای کبیر و ایرلند شمالی",
+      "common": "انگلیس"
+    },
     "POL": {
-      "official": "Zjednoczone Królestwo Wielkiej Brytanii i Irlandii Północnej",
+      "official":
+          "Zjednoczone Królestwo Wielkiej Brytanii i Irlandii Północnej",
       "common": "Zjednoczone Krłlestwo"
     },
-    "POR": {"official": "Reino Unido da Grã-Bretanha e Irlanda do Norte", "common": "Reino Unido"},
+    "POR": {
+      "official": "Reino Unido da Grã-Bretanha e Irlanda do Norte",
+      "common": "Reino Unido"
+    },
     "RUS": {
       "official": "Соединенное Королевство Великобритании и Северной Ирландии",
       "common": "Великобритания"
@@ -3564,12 +4125,18 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "official": "Spojené kráľovstvo Veľkej Británie a SevernéhoÌrska",
       "common": "Spojené kráľovstvo"
     },
-    "SPA": {"official": "Reino Unido de Gran Bretaña e Irlanda del Norte", "common": "Reino Unido"},
+    "SPA": {
+      "official": "Reino Unido de Gran Bretaña e Irlanda del Norte",
+      "common": "Reino Unido"
+    },
     "SWE": {
       "official": "Förenade konungariket Storbritannien och Nordirland",
       "common": "Storbritannien"
     },
-    "URD": {"official": "مملکتِ متحدہ برطانیہ عظمی و شمالی آئرلینڈ", "common": "مملکتِ متحدہ"},
+    "URD": {
+      "official": "مملکتِ متحدہ برطانیہ عظمی و شمالی آئرلینڈ",
+      "common": "مملکتِ متحدہ"
+    },
     "ZHO": {"official": "大不列颠及北爱尔兰联合王国", "common": "英国"},
     "ARA": {
       "official": "المملكة المتحدة لبريطانيا العظمى وأيرلندا الشمالية",
@@ -3814,7 +4381,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "ENG": "Guadeloupe",
     "CES": "Guadeloupe",
     "DEU": "Guadeloupe",
-    "EST": {"official": "Guadeloupe’i ja sõltkondade departemang", "common": "Guadeloupe"},
+    "EST": {
+      "official": "Guadeloupe’i ja sõltkondade departemang",
+      "common": "Guadeloupe"
+    },
     "FIN": {"official": "Guadeloupen departmentti", "common": "Guadeloupe"},
     "FRA": "Guadeloupe",
     "NLD": "Guadeloupe",
@@ -3891,7 +4461,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "GW",
     "iso_3166_1_alpha3": "GNB",
-    "natives": {"official": "República da Guiné-Bissau", "common": "Guiné-Bissau"},
+    "natives": {
+      "official": "República da Guiné-Bissau",
+      "common": "Guiné-Bissau"
+    },
     "dialing_code": "+245",
     "default_number_length": 7,
     "default_number_format": "### ####",
@@ -3902,18 +4475,30 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "DEU": {"official": "Republik Guinea-Bissau", "common": "Guinea-Bissau"},
     "EST": {"official": "Guinea-Bissau Vabariik", "common": "Guinea-Bissau"},
     "FIN": {"official": "Guinea-Bissaun tasavalta", "common": "Guinea-Bissau"},
-    "FRA": {"official": "République de Guinée-Bissau", "common": "Guinée-Bissau"},
+    "FRA": {
+      "official": "République de Guinée-Bissau",
+      "common": "Guinée-Bissau"
+    },
     "NLD": {"official": "Republiek Guinee-Bissau", "common": "Guinee-Bissau"},
     "HRV": {"official": "Republika Gvineja Bisau", "common": "Gvineja Bisau"},
-    "HUN": {"official": "Repubblica di Guinea-Bissau", "common": "Guinea-Bissau"},
-    "ITA": {"official": "Repubblica di Guinea-Bissau", "common": "Guinea-Bissau"},
+    "HUN": {
+      "official": "Repubblica di Guinea-Bissau",
+      "common": "Guinea-Bissau"
+    },
+    "ITA": {
+      "official": "Repubblica di Guinea-Bissau",
+      "common": "Guinea-Bissau"
+    },
     "JPN": {"official": "ギニアビサウ共和国", "common": "ギニアビサウ"},
     "KOR": {"official": "기니비사우 공화국", "common": "기니비사우"},
     "PER": {"official": "جمهوری گینه بیسائو", "common": "گینه بیسائو"},
     "POL": {"official": "Republika Gwinei Bissau", "common": "Gwinea Bissau"},
     "POR": {"official": "República da Guiné-Bissau", "common": "Guiné-Bissau"},
     "RUS": {"official": "Республика Гвинея -Бисау", "common": "Гвинея-Бисау"},
-    "SLK": {"official": "Guinejsko-bissauská republika", "common": "Guinea-Bissau"},
+    "SLK": {
+      "official": "Guinejsko-bissauská republika",
+      "common": "Guinea-Bissau"
+    },
     "SPA": {"official": "República de Guinea-Bissau", "common": "Guinea-Bisáu"},
     "SWE": {"official": "Republiken Guinea-Bissau", "common": "Guinea-Bissau"},
     "URD": {"official": "جمہوریہ گنی بساؤ", "common": "گنی بساؤ"},
@@ -3934,34 +4519,88 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "GQ",
     "iso_3166_1_alpha3": "GNQ",
-    "natives": {"official": "République de la Guinée Équatoriale", "common": "Guinée équatoriale"},
+    "natives": {
+      "official": "République de la Guinée Équatoriale",
+      "common": "Guinée équatoriale"
+    },
     "dialing_code": "+240",
     "default_number_length": 9,
     "default_number_format": "### ### ###",
     "local_number_sample": "222 326 951",
     "International_number_sample": "+240 222 326 951",
-    "ENG": {"official": "Republic of Equatorial Guinea", "common": "Equatorial Guinea"},
-    "CES": {"official": "Republika Rovníková Guinea", "common": "Rovníková Guinea"},
-    "DEU": {"official": "Republik Äquatorialguinea", "common": "Äquatorialguinea"},
-    "EST": {"official": "Ekvatoriaal-Guinea Vabariik", "common": "Ekvatoriaal-Guinea"},
-    "FIN": {"official": "Päiväntasaajan Guinean tasavalta", "common": "Päiväntasaajan Guinea"},
-    "FRA": {"official": "République de Guinée équatoriale", "common": "Guinée équatoriale"},
-    "NLD": {"official": "Republiek Equatoriaal-Guinea", "common": "Equatoriaal-Guinea"},
-    "HRV": {"official": "Republika Ekvatorska Gvineja", "common": "Ekvatorijalna Gvineja"},
-    "HUN": {"official": "Repubblica della Guinea Equatoriale", "common": "Guinea Equatoriale"},
-    "ITA": {"official": "Repubblica della Guinea Equatoriale", "common": "Guinea Equatoriale"},
+    "ENG": {
+      "official": "Republic of Equatorial Guinea",
+      "common": "Equatorial Guinea"
+    },
+    "CES": {
+      "official": "Republika Rovníková Guinea",
+      "common": "Rovníková Guinea"
+    },
+    "DEU": {
+      "official": "Republik Äquatorialguinea",
+      "common": "Äquatorialguinea"
+    },
+    "EST": {
+      "official": "Ekvatoriaal-Guinea Vabariik",
+      "common": "Ekvatoriaal-Guinea"
+    },
+    "FIN": {
+      "official": "Päiväntasaajan Guinean tasavalta",
+      "common": "Päiväntasaajan Guinea"
+    },
+    "FRA": {
+      "official": "République de Guinée équatoriale",
+      "common": "Guinée équatoriale"
+    },
+    "NLD": {
+      "official": "Republiek Equatoriaal-Guinea",
+      "common": "Equatoriaal-Guinea"
+    },
+    "HRV": {
+      "official": "Republika Ekvatorska Gvineja",
+      "common": "Ekvatorijalna Gvineja"
+    },
+    "HUN": {
+      "official": "Repubblica della Guinea Equatoriale",
+      "common": "Guinea Equatoriale"
+    },
+    "ITA": {
+      "official": "Repubblica della Guinea Equatoriale",
+      "common": "Guinea Equatoriale"
+    },
     "JPN": {"official": "赤道ギニア共和国", "common": "赤道ギニア"},
     "KOR": {"official": "적도 기니 공화국", "common": "적도 기니"},
     "PER": {"official": "جمهوری گینه استوایی", "common": "گینه استوایی"},
-    "POL": {"official": "Republika Gwinei Równikowej", "common": "Gwinea Równikowa"},
-    "POR": {"official": "República da Guiné Equatorial", "common": "Guiné Equatorial"},
-    "RUS": {"official": "Республика Экваториальная Гвинея", "common": "Экваториальная Гвинея"},
-    "SLK": {"official": "Republika rovníkovej Guiney", "common": "Rovníková Guinea"},
-    "SPA": {"official": "República de Guinea Ecuatorial", "common": "Guinea Ecuatorial"},
-    "SWE": {"official": "Republiken Ekvatorialguinea", "common": "Ekvatorialguinea"},
+    "POL": {
+      "official": "Republika Gwinei Równikowej",
+      "common": "Gwinea Równikowa"
+    },
+    "POR": {
+      "official": "República da Guiné Equatorial",
+      "common": "Guiné Equatorial"
+    },
+    "RUS": {
+      "official": "Республика Экваториальная Гвинея",
+      "common": "Экваториальная Гвинея"
+    },
+    "SLK": {
+      "official": "Republika rovníkovej Guiney",
+      "common": "Rovníková Guinea"
+    },
+    "SPA": {
+      "official": "República de Guinea Ecuatorial",
+      "common": "Guinea Ecuatorial"
+    },
+    "SWE": {
+      "official": "Republiken Ekvatorialguinea",
+      "common": "Ekvatorialguinea"
+    },
     "URD": {"official": "جمہوریہ استوائی گنی", "common": "استوائی گنی"},
     "ZHO": {"official": "赤道几内亚共和国", "common": "赤道几内亚"},
-    "ARA": {"official": "جمهورية غينيا الاستوائية", "common": "غينيا الاستوائية"},
+    "ARA": {
+      "official": "جمهورية غينيا الاستوائية",
+      "common": "غينيا الاستوائية"
+    },
     "BUL": "Екваториална Гвинея",
     "DAN": "Ækvatorialguinea",
     "ELL": "Ισημερινή Γουινέα",
@@ -4235,7 +4874,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "GY",
     "iso_3166_1_alpha3": "GUY",
-    "natives": {"official": "Co-operative Republic of Guyana", "common": "Guyana"},
+    "natives": {
+      "official": "Co-operative Republic of Guyana",
+      "common": "Guyana"
+    },
     "dialing_code": "+592",
     "default_number_length": 7,
     "default_number_format": "### ####",
@@ -4245,7 +4887,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "CES": {"official": "Kooperativní republika Guyana", "common": "Guyana"},
     "DEU": {"official": "Kooperative Republik Guyana", "common": "Guyana"},
     "EST": {"official": "Guyana Vabariik", "common": "Guyana"},
-    "FIN": {"official": "Guayanan osuustoiminnallinen tasavalta", "common": "Guayana"},
+    "FIN": {
+      "official": "Guayanan osuustoiminnallinen tasavalta",
+      "common": "Guayana"
+    },
     "FRA": {"official": "République coopérative de Guyana", "common": "Guyana"},
     "NLD": {"official": "Coöperatieve Republiek Guyana", "common": "Guyana"},
     "HRV": {"official": "Zadruga Republika Gvajana", "common": "Gvajana"},
@@ -4255,7 +4900,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "KOR": {"official": "가이아나 협동 공화국", "common": "가이아나"},
     "PER": {"official": "جمهوری تعاونی گویان", "common": "گویان"},
     "POL": {"official": "Kooperacyjna Republika Gujany", "common": "Gujana"},
-    "POR": {"official": "Co -operative República da Guiana", "common": "Guiana"},
+    "POR": {
+      "official": "Co -operative República da Guiana",
+      "common": "Guiana"
+    },
     "RUS": {"official": "Кооперативная Республика Гайана", "common": "Гайана"},
     "SLK": {"official": "Guyanská kooperatívna republika", "common": "Guyana"},
     "SPA": {"official": "República Cooperativa de Guyana", "common": "Guyana"},
@@ -4279,7 +4927,8 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "iso_3166_1_alpha2": "HK",
     "iso_3166_1_alpha3": "HKG",
     "natives": {
-      "official": "Hong Kong Special Administrative Region of the People's Republic of China",
+      "official":
+          "Hong Kong Special Administrative Region of the People's Republic of China",
       "common": "Hong Kong"
     },
     "dialing_code": "+852",
@@ -4288,11 +4937,13 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "local_number_sample": "1286 5171",
     "International_number_sample": "+852 1286 5171",
     "ENG": {
-      "official": "Hong Kong Special Administrative Region of the People's Republic of China",
+      "official":
+          "Hong Kong Special Administrative Region of the People's Republic of China",
       "common": "Hong Kong"
     },
     "CES": {
-      "official": "Zvláštní administrativní oblast Čínské lidové republiky Hongkong",
+      "official":
+          "Zvláštní administrativní oblast Čínské lidové republiky Hongkong",
       "common": "Hongkong"
     },
     "DEU": {
@@ -4300,13 +4951,18 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "common": "Hongkong"
     },
     "EST": {"official": "Hongkongi erihalduspiirkond", "common": "Hongkong"},
-    "FIN": {"official": "Hong Kongin erityishallintoalue", "common": "Hongkong"},
+    "FIN": {
+      "official": "Hong Kongin erityishallintoalue",
+      "common": "Hongkong"
+    },
     "FRA": {
-      "official": "Région administrative spéciale de Hong Kong de la République populaire de Chine",
+      "official":
+          "Région administrative spéciale de Hong Kong de la République populaire de Chine",
       "common": "Hong Kong"
     },
     "NLD": {
-      "official": "Hong Kong Speciale Administratieve Regio van de Volksrepubliek China",
+      "official":
+          "Hong Kong Speciale Administratieve Regio van de Volksrepubliek China",
       "common": "Hongkong"
     },
     "HRV": {
@@ -4314,22 +4970,26 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "common": "Hong Kong"
     },
     "HUN": {
-      "official": "Hong Kong Regione amministrativa speciale della Repubblica Popolare Cinese",
+      "official":
+          "Hong Kong Regione amministrativa speciale della Repubblica Popolare Cinese",
       "common": "Hong Kong"
     },
     "ITA": {
-      "official": "Hong Kong Regione amministrativa speciale della Repubblica Popolare Cinese",
+      "official":
+          "Hong Kong Regione amministrativa speciale della Repubblica Popolare Cinese",
       "common": "Hong Kong"
     },
     "JPN": {"official": "中華人民共和国香港特別行政区", "common": "香港"},
     "KOR": {"official": "중화인민공화국 홍콩 특별행정구", "common": "홍콩"},
     "PER": "هُنگ کُنگ",
     "POL": {
-      "official": "Specjalny Region Administracyjny Chińskiej Republiki Ludowej Hongkong",
+      "official":
+          "Specjalny Region Administracyjny Chińskiej Republiki Ludowej Hongkong",
       "common": "Hongkong"
     },
     "POR": {
-      "official": "Hong Kong Região Administrativa Especial da República Popular da China",
+      "official":
+          "Hong Kong Região Administrativa Especial da República Popular da China",
       "common": "Hong Kong"
     },
     "RUS": {
@@ -4338,11 +4998,13 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "common": "Гонконг"
     },
     "SLK": {
-      "official": "Špeciálna administratívna oblasťČínskej ľudovej republiky Hongkong",
+      "official":
+          "Špeciálna administratívna oblasťČínskej ľudovej republiky Hongkong",
       "common": "Hongkong"
     },
     "SPA": {
-      "official": "Hong Kong Región Administrativa Especial de la República Popular China",
+      "official":
+          "Hong Kong Región Administrativa Especial de la República Popular China",
       "common": "Hong Kong"
     },
     "SWE": "Hongkong",
@@ -4351,7 +5013,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "common": "ہانگ کانگ"
     },
     "ZHO": {"official": "香港特别行政区", "common": "香港"},
-    "ARA": {"official": "مناطق جمهورية الصين الشعبية الإدارية الخاصة", "common": "هونغ كونغ"},
+    "ARA": {
+      "official": "مناطق جمهورية الصين الشعبية الإدارية الخاصة",
+      "common": "هونغ كونغ"
+    },
     "BUL": null,
     "DAN": null,
     "ELL": null,
@@ -4375,18 +5040,33 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "International_number_sample": null,
     "ENG": "Heard Island and McDonald Islands",
     "CES": "Heardův ostrov a McDonaldovy ostrovy",
-    "DEU": {"official": "Heard und McDonaldinseln", "common": "Heard und die McDonaldinseln"},
-    "EST": {"official": "Heardi ja McDonaldi saarte ala", "common": "Heard ja McDonald"},
+    "DEU": {
+      "official": "Heard und McDonaldinseln",
+      "common": "Heard und die McDonaldinseln"
+    },
+    "EST": {
+      "official": "Heardi ja McDonaldi saarte ala",
+      "common": "Heard ja McDonald"
+    },
     "FIN": "Heard ja McDonaldinsaaret",
-    "FRA": {"official": "Des îles Heard et McDonald", "common": "Îles Heard-et-MacDonald"},
-    "NLD": {"official": "Heard en McDonaldeilanden", "common": "Heard-en McDonaldeilanden"},
+    "FRA": {
+      "official": "Des îles Heard et McDonald",
+      "common": "Îles Heard-et-MacDonald"
+    },
+    "NLD": {
+      "official": "Heard en McDonaldeilanden",
+      "common": "Heard-en McDonaldeilanden"
+    },
     "HRV": "Otok Heard i otočje McDonald",
     "HUN": "Isole Heard e McDonald",
     "ITA": "Isole Heard e McDonald",
     "JPN": "ハード島とマクドナルド諸島",
     "KOR": "허드 맥도널드 제도",
     "PER": "جزیره هرد و جزایر مک‌دونالد",
-    "POL": {"official": "Terytorium Wysp Heard i McDonalda", "common": "Wyspy Heard i McDonalda"},
+    "POL": {
+      "official": "Terytorium Wysp Heard i McDonalda",
+      "common": "Wyspy Heard i McDonalda"
+    },
     "POR": "Ilha Heard e Ilhas McDonald",
     "RUS": "Остров Херд и острова Макдональд",
     "SLK": {
@@ -5129,24 +5809,51 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "local_number_sample": "7 102 5460",
     "International_number_sample": "+962 7 102 5460",
     "ENG": {"official": "Hashemite Kingdom of Jordan", "common": "Jordan"},
-    "CES": {"official": "Jordánské hášimovské království", "common": "Jordánsko"},
-    "DEU": {"official": "Haschemitisches Königreich Jordanien", "common": "Jordanien"},
-    "EST": {"official": "Jordaania Hašimiidi Kuningriik", "common": "Jordaania"},
-    "FIN": {"official": "Jordanian hašemiittinen kunigaskunta", "common": "Jordania"},
+    "CES": {
+      "official": "Jordánské hášimovské království",
+      "common": "Jordánsko"
+    },
+    "DEU": {
+      "official": "Haschemitisches Königreich Jordanien",
+      "common": "Jordanien"
+    },
+    "EST": {
+      "official": "Jordaania Hašimiidi Kuningriik",
+      "common": "Jordaania"
+    },
+    "FIN": {
+      "official": "Jordanian hašemiittinen kunigaskunta",
+      "common": "Jordania"
+    },
     "FRA": {"official": "Royaume hachémite de Jordanie", "common": "Jordanie"},
-    "NLD": {"official": "Hasjemitisch Koninkrijk Jordanië", "common": "Jordanië"},
+    "NLD": {
+      "official": "Hasjemitisch Koninkrijk Jordanië",
+      "common": "Jordanië"
+    },
     "HRV": {"official": "Hašemitske Kraljevine Jordan", "common": "Jordan"},
     "HUN": {"official": "Regno hascemita di Giordania", "common": "Giordania"},
     "ITA": {"official": "Regno hascemita di Giordania", "common": "Giordania"},
     "JPN": {"official": "ヨルダン·ハシミテ王国", "common": "ヨルダン"},
     "KOR": {"official": "요르단 하심 왕국", "common": "요르단"},
     "PER": {"official": "پادشاهی اُردُن هاشمی", "common": "اردن"},
-    "POL": {"official": "Jordańskie Królestwo Haszymidzkie", "common": "Jordania"},
+    "POL": {
+      "official": "Jordańskie Królestwo Haszymidzkie",
+      "common": "Jordania"
+    },
     "POR": {"official": "Reino Hachemita da Jordânia", "common": "Jordânia"},
-    "RUS": {"official": "Иорданского Хашимитского Королевства", "common": "Иордания"},
-    "SLK": {"official": "Jordánske hášimovské kráľovstvo", "common": "Jordánsko"},
+    "RUS": {
+      "official": "Иорданского Хашимитского Королевства",
+      "common": "Иордания"
+    },
+    "SLK": {
+      "official": "Jordánske hášimovské kráľovstvo",
+      "common": "Jordánsko"
+    },
     "SPA": {"official": "Reino Hachemita de Jordania", "common": "Jordania"},
-    "SWE": {"official": "Hashimitiska kungadömet Jordanien", "common": "Jordanien"},
+    "SWE": {
+      "official": "Hashimitiska kungadömet Jordanien",
+      "common": "Jordanien"
+    },
     "URD": {"official": "ھاشمی مملکتِ اردن", "common": "اردن"},
     "ZHO": {"official": "约旦哈希姆王国", "common": "约旦"},
     "ARA": {"official": "المملكة الأردنية الهاشمية", "common": "الأردن"},
@@ -5235,7 +5942,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "SWE": {"official": "Republiken Kazakstan", "common": "Kazakstan"},
     "URD": {"official": "جمہوریہ قازقستان", "common": "قازقستان"},
     "ZHO": {"official": "哈萨克斯坦共和国", "common": "哈萨克斯坦"},
-    "ARA": {"official": "جمهورية جمهورية كازاخستان", "common": "جمهورية كازاخستان"},
+    "ARA": {
+      "official": "جمهورية جمهورية كازاخستان",
+      "common": "جمهورية كازاخستان"
+    },
     "BUL": "Казахстан",
     "DAN": "Kasakhstan",
     "ELL": "Καζακστάν",
@@ -5380,7 +6090,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "KI",
     "iso_3166_1_alpha3": "KIR",
-    "natives": {"official": "Independent and Sovereign Republic of Kiribati", "common": "Kiribati"},
+    "natives": {
+      "official": "Independent and Sovereign Republic of Kiribati",
+      "common": "Kiribati"
+    },
     "dialing_code": "+686",
     "default_number_length": 8,
     "default_number_format": "########",
@@ -5392,18 +6105,39 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "EST": {"official": "Kiribati Vabariik", "common": "Kiribati"},
     "FIN": {"official": "Kiribatin tasavalta", "common": "Kiribati"},
     "FRA": {"official": "République de Kiribati", "common": "Kiribati"},
-    "NLD": {"official": "Onafhankelijke en soevereine republiek Kiribati", "common": "Kiribati"},
-    "HRV": {"official": "Samostalne i suverene Republike Kiribati", "common": "Kiribati"},
-    "HUN": {"official": "Repubblica indipendente e sovrano di Kiribati", "common": "Kiribati"},
-    "ITA": {"official": "Repubblica indipendente e sovrano di Kiribati", "common": "Kiribati"},
+    "NLD": {
+      "official": "Onafhankelijke en soevereine republiek Kiribati",
+      "common": "Kiribati"
+    },
+    "HRV": {
+      "official": "Samostalne i suverene Republike Kiribati",
+      "common": "Kiribati"
+    },
+    "HUN": {
+      "official": "Repubblica indipendente e sovrano di Kiribati",
+      "common": "Kiribati"
+    },
+    "ITA": {
+      "official": "Repubblica indipendente e sovrano di Kiribati",
+      "common": "Kiribati"
+    },
     "JPN": {"official": "キリバスの独立と主権共和国", "common": "キリバス"},
     "KOR": {"official": "키리바시 공화국", "common": "키리바시"},
     "PER": {"official": "جمهوری کیریباتی", "common": "کیریباتی"},
     "POL": {"official": "Republika Kiribati", "common": "Kiribati"},
-    "POR": {"official": "Independente e soberano República de Kiribati", "common": "Kiribati"},
-    "RUS": {"official": "Независимой и суверенной Республики Кирибати", "common": "Кирибати"},
+    "POR": {
+      "official": "Independente e soberano República de Kiribati",
+      "common": "Kiribati"
+    },
+    "RUS": {
+      "official": "Независимой и суверенной Республики Кирибати",
+      "common": "Кирибати"
+    },
     "SLK": {"official": "Kiribatská republika", "common": "Kiribati"},
-    "SPA": {"official": "República Independiente y Soberano de Kiribati", "common": "Kiribati"},
+    "SPA": {
+      "official": "República Independiente y Soberano de Kiribati",
+      "common": "Kiribati"
+    },
     "SWE": {"official": "Republiken Kiribati", "common": "Kiribati"},
     "URD": {"official": "سلطنت آزاد جمہوریہ کیریباتی", "common": "کیریباتی"},
     "ZHO": {"official": "基里巴斯共和国", "common": "基里巴斯"},
@@ -5436,9 +6170,18 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "official": "Federation of Saint Christopher and Nevis",
       "common": "Saint Kitts and Nevis"
     },
-    "CES": {"official": "Federace Sv. Kryštof a Nevis", "common": "Svatý Kryštof a Nevis"},
-    "DEU": {"official": "Föderation von St. Kitts und Nevis", "common": "St. Kitts und Nevis"},
-    "EST": {"official": "Saint Kittsi ja Nevise Föderatsioon", "common": "Saint Kitts ja Nevis"},
+    "CES": {
+      "official": "Federace Sv. Kryštof a Nevis",
+      "common": "Svatý Kryštof a Nevis"
+    },
+    "DEU": {
+      "official": "Föderation von St. Kitts und Nevis",
+      "common": "St. Kitts und Nevis"
+    },
+    "EST": {
+      "official": "Saint Kittsi ja Nevise Föderatsioon",
+      "common": "Saint Kitts ja Nevis"
+    },
     "FIN": {
       "official": "Saint Christopherin ja Nevisin federaatio",
       "common": "Saint Kitts ja Nevis"
@@ -5447,8 +6190,14 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "official": "Fédération de Saint-Christophe-et-Niévès",
       "common": "Saint-Christophe-et-Niévès"
     },
-    "NLD": {"official": "Federatie van Saint Kitts en Nevis", "common": "Saint Kitts en Nevis"},
-    "HRV": {"official": "Federacija Sv.Kristofora i Nevisa", "common": "Sveti Kristof i Nevis"},
+    "NLD": {
+      "official": "Federatie van Saint Kitts en Nevis",
+      "common": "Saint Kitts en Nevis"
+    },
+    "HRV": {
+      "official": "Federacija Sv.Kristofora i Nevisa",
+      "common": "Sveti Kristof i Nevis"
+    },
     "HUN": {
       "official": "Federazione di Saint Christopher e Nevis",
       "common": "Saint Kitts e Nevis"
@@ -5459,16 +6208,43 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     },
     "JPN": {"official": "セントクリストファーNevis連盟", "common": "セントクリストファー・ネイビス"},
     "KOR": {"official": "세인트키츠 네비스 연방", "common": "세인트키츠 네비스"},
-    "PER": {"official": "فدراسیون سنت کیتس و نویس", "common": "سنت کیتس و نویس"},
-    "POL": {"official": "Federacja Saint Kitts i Nevis", "common": "Saint Kitts i Nevis"},
-    "POR": {"official": "Federação de São Cristóvão e Nevis", "common": "São Cristóvão e Nevis"},
-    "RUS": {"official": "Федерация Сент-Кристофер и Н е в и с", "common": "Сент-Китс и Невис"},
-    "SLK": {"official": "Feder໡cia Svätého Krištofa a Nevisu", "common": "Svätý Krištof a Nevis"},
-    "SPA": {"official": "Federación de San Cristóbal y Nevis", "common": "San Cristóbal y Nieves"},
-    "SWE": {"official": "Federationen Saint Kitts och Nevis", "common": "Saint Kitts och Nevis"},
-    "URD": {"official": "وفاقِ سینٹ کیٹز و ناویس", "common": "سینٹ کیٹز و ناویس"},
+    "PER": {
+      "official": "فدراسیون سنت کیتس و نویس",
+      "common": "سنت کیتس و نویس"
+    },
+    "POL": {
+      "official": "Federacja Saint Kitts i Nevis",
+      "common": "Saint Kitts i Nevis"
+    },
+    "POR": {
+      "official": "Federação de São Cristóvão e Nevis",
+      "common": "São Cristóvão e Nevis"
+    },
+    "RUS": {
+      "official": "Федерация Сент-Кристофер и Н е в и с",
+      "common": "Сент-Китс и Невис"
+    },
+    "SLK": {
+      "official": "Feder໡cia Svätého Krištofa a Nevisu",
+      "common": "Svätý Krištof a Nevis"
+    },
+    "SPA": {
+      "official": "Federación de San Cristóbal y Nevis",
+      "common": "San Cristóbal y Nieves"
+    },
+    "SWE": {
+      "official": "Federationen Saint Kitts och Nevis",
+      "common": "Saint Kitts och Nevis"
+    },
+    "URD": {
+      "official": "وفاقِ سینٹ کیٹز و ناویس",
+      "common": "سینٹ کیٹز و ناویس"
+    },
     "ZHO": {"official": "圣克里斯托弗和尼维斯联邦", "common": "圣基茨和尼维斯"},
-    "ARA": {"official": "إتحاد سانت كريستوفر ونيفيس", "common": "سانت كيتس ونيفيس"},
+    "ARA": {
+      "official": "إتحاد سانت كريستوفر ونيفيس",
+      "common": "سانت كيتس ونيفيس"
+    },
     "BUL": "Сейнт Китс и Невис",
     "DAN": "Saint Kitts og Nevis",
     "ELL": "Άγιος Χριστόφορος και Νέβις",
@@ -5620,22 +6396,46 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "local_number_sample": "20 9012 9211",
     "International_number_sample": "+856 20 9012 9211",
     "ENG": {"official": "Lao People's Democratic Republic", "common": "Laos"},
-    "CES": {"official": "Laoská lidově demokratická republika", "common": "Laos"},
+    "CES": {
+      "official": "Laoská lidově demokratická republika",
+      "common": "Laos"
+    },
     "DEU": {"official": "Demokratische Volksrepublik Laos", "common": "Laos"},
     "EST": {"official": "Laose Demokraatlik Rahvavabariik", "common": "Laos"},
-    "FIN": {"official": "Laosin demokraattinen kansantasavalta", "common": "Laos"},
-    "FRA": {"official": "République démocratique populaire lao", "common": "Laos"},
+    "FIN": {
+      "official": "Laosin demokraattinen kansantasavalta",
+      "common": "Laos"
+    },
+    "FRA": {
+      "official": "République démocratique populaire lao",
+      "common": "Laos"
+    },
     "NLD": {"official": "Lao Democratische Volksrepubliek", "common": "Laos"},
     "HRV": {"official": "Narodna Demokratska Republika", "common": "Laos"},
-    "HUN": {"official": "Repubblica democratica popolare del Laos", "common": "Laos"},
-    "ITA": {"official": "Repubblica democratica popolare del Laos", "common": "Laos"},
+    "HUN": {
+      "official": "Repubblica democratica popolare del Laos",
+      "common": "Laos"
+    },
+    "ITA": {
+      "official": "Repubblica democratica popolare del Laos",
+      "common": "Laos"
+    },
     "JPN": "ラオス人民民主共和国",
     "KOR": {"official": "라오 인민 민주 공화국", "common": "라오스"},
     "PER": {"official": "جمهوری دموکراتیک خلق لائوس", "common": "لائوس"},
-    "POL": {"official": "Laotańska Republika Ludowo-Demokratyczna", "common": "Laos"},
+    "POL": {
+      "official": "Laotańska Republika Ludowo-Demokratyczna",
+      "common": "Laos"
+    },
     "POR": {"official": "Laos, República Democrática", "common": "Laos"},
-    "RUS": {"official": "Лаосская Народно-Демократическая Республика", "common": "Лаос"},
-    "SLK": {"official": "Laoská ľudovodemokratická republika", "common": "Laos"},
+    "RUS": {
+      "official": "Лаосская Народно-Демократическая Республика",
+      "common": "Лаос"
+    },
+    "SLK": {
+      "official": "Laoská ľudovodemokratická republika",
+      "common": "Laos"
+    },
     "SPA": {"official": "República Democrática Popular Lao", "common": "Laos"},
     "SWE": {"official": "Demokratiska folkrepubliken Laos", "common": "Laos"},
     "URD": {"official": "عوامی جمہوری جمہوریہ لاؤ", "common": "لاؤس"},
@@ -5831,31 +6631,64 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "LI",
     "iso_3166_1_alpha3": "LIE",
-    "natives": {"official": "Fürstentum Liechtenstein", "common": "Liechtenstein"},
+    "natives": {
+      "official": "Fürstentum Liechtenstein",
+      "common": "Liechtenstein"
+    },
     "dialing_code": "+423",
     "default_number_length": 7,
     "default_number_format": "### ####",
     "local_number_sample": "850 1193",
     "International_number_sample": "+423 850 1193",
-    "ENG": {"official": "Principality of Liechtenstein", "common": "Liechtenstein"},
-    "CES": {"official": "Knížectví Lichtenštejnské", "common": "Lichtenštejnsko"},
+    "ENG": {
+      "official": "Principality of Liechtenstein",
+      "common": "Liechtenstein"
+    },
+    "CES": {
+      "official": "Knížectví Lichtenštejnské",
+      "common": "Lichtenštejnsko"
+    },
     "DEU": {"official": "Fürstentum Liechtenstein", "common": "Liechtenstein"},
     "EST": {"official": "Liechtensteini Vürstiriik", "common": "Liechtenstein"},
-    "FIN": {"official": "Liechensteinin ruhtinaskunta", "common": "Liechenstein"},
-    "FRA": {"official": "Principauté du Liechtenstein", "common": "Liechtenstein"},
+    "FIN": {
+      "official": "Liechensteinin ruhtinaskunta",
+      "common": "Liechenstein"
+    },
+    "FRA": {
+      "official": "Principauté du Liechtenstein",
+      "common": "Liechtenstein"
+    },
     "NLD": {"official": "Vorstendom Liechtenstein", "common": "Liechtenstein"},
     "HRV": {"official": "Kneževina Lihtenštajn", "common": "Lihtenštajn"},
-    "HUN": {"official": "Principato del Liechtenstein", "common": "Liechtenstein"},
-    "ITA": {"official": "Principato del Liechtenstein", "common": "Liechtenstein"},
+    "HUN": {
+      "official": "Principato del Liechtenstein",
+      "common": "Liechtenstein"
+    },
+    "ITA": {
+      "official": "Principato del Liechtenstein",
+      "common": "Liechtenstein"
+    },
     "JPN": {"official": "リヒテンシュタイン公国", "common": "リヒテンシュタイン"},
     "KOR": {"official": "리히텐슈타인 공국", "common": "리히텐슈타인"},
     "PER": {"official": "شاهزاده‌نشین لیختن‌اشتاین", "common": "لیختن‌اشتاین"},
     "POL": {"official": "Księstwo Liechtenstein", "common": "Liechtenstein"},
-    "POR": {"official": "Principado de Liechtenstein", "common": "Liechtenstein"},
+    "POR": {
+      "official": "Principado de Liechtenstein",
+      "common": "Liechtenstein"
+    },
     "RUS": {"official": "Княжество Лихтенштейн", "common": "Лихтенштейн"},
-    "SLK": {"official": "Lichtenštajnské kniežatstvo", "common": "Lichtenštajnsko"},
-    "SPA": {"official": "Principado de Liechtenstein", "common": "Liechtenstein"},
-    "SWE": {"official": "Furstendömet Liechtenstein", "common": "Liechtenstein"},
+    "SLK": {
+      "official": "Lichtenštajnské kniežatstvo",
+      "common": "Lichtenštajnsko"
+    },
+    "SPA": {
+      "official": "Principado de Liechtenstein",
+      "common": "Liechtenstein"
+    },
+    "SWE": {
+      "official": "Furstendömet Liechtenstein",
+      "common": "Liechtenstein"
+    },
     "URD": {"official": "امارات لیختینستائن", "common": "لیختینستائن"},
     "ZHO": {"official": "列支敦士登公国", "common": "列支敦士登"},
     "ARA": {"official": "إمارة ليختنشتاين", "common": "ليختنشتاين"},
@@ -5874,37 +6707,94 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "LK",
     "iso_3166_1_alpha3": "LKA",
-    "natives": {"official": "ශ්‍රී ලංකා ප්‍රජාතාන්ත්‍රික සමාජවාදී ජනරජය", "common": "ශ්‍රී ලංකාව"},
+    "natives": {
+      "official": "ශ්‍රී ලංකා ප්‍රජාතාන්ත්‍රික සමාජවාදී ජනරජය",
+      "common": "ශ්‍රී ලංකාව"
+    },
     "dialing_code": "+94",
     "default_number_length": 9,
     "default_number_format": "## ### ####",
     "local_number_sample": "47 428 8183",
     "International_number_sample": "+94 47 428 8183",
-    "ENG": {"official": "Democratic Socialist Republic of Sri Lanka", "common": "Sri Lanka"},
-    "CES": {"official": "Srílanská demokratická socialistická republika", "common": "Srí Lanka"},
-    "DEU": {"official": "Demokratische Sozialistische Republik Sri Lanka", "common": "Sri Lanka"},
-    "EST": {"official": "Sri Lanka Demokraatlik Sotsialistlik Vabariik", "common": "Sri Lanka"},
-    "FIN": {"official": "Sri Lankan demokraattinen sosialistinen tasavalta", "common": "Sri Lanka"},
-    "FRA": {"official": "République démocratique socialiste du Sri Lanka", "common": "Sri Lanka"},
-    "NLD": {"official": "Democratische Socialistische Republiek Sri Lanka", "common": "Sri Lanka"},
-    "HRV": {"official": "Demokratska Socijalističke Republike Šri Lanke", "common": "Šri Lanka"},
-    "HUN": {"official": "Repubblica democratica socialista dello Sri Lanka", "common": "Sri Lanka"},
-    "ITA": {"official": "Repubblica democratica socialista dello Sri Lanka", "common": "Sri Lanka"},
+    "ENG": {
+      "official": "Democratic Socialist Republic of Sri Lanka",
+      "common": "Sri Lanka"
+    },
+    "CES": {
+      "official": "Srílanská demokratická socialistická republika",
+      "common": "Srí Lanka"
+    },
+    "DEU": {
+      "official": "Demokratische Sozialistische Republik Sri Lanka",
+      "common": "Sri Lanka"
+    },
+    "EST": {
+      "official": "Sri Lanka Demokraatlik Sotsialistlik Vabariik",
+      "common": "Sri Lanka"
+    },
+    "FIN": {
+      "official": "Sri Lankan demokraattinen sosialistinen tasavalta",
+      "common": "Sri Lanka"
+    },
+    "FRA": {
+      "official": "République démocratique socialiste du Sri Lanka",
+      "common": "Sri Lanka"
+    },
+    "NLD": {
+      "official": "Democratische Socialistische Republiek Sri Lanka",
+      "common": "Sri Lanka"
+    },
+    "HRV": {
+      "official": "Demokratska Socijalističke Republike Šri Lanke",
+      "common": "Šri Lanka"
+    },
+    "HUN": {
+      "official": "Repubblica democratica socialista dello Sri Lanka",
+      "common": "Sri Lanka"
+    },
+    "ITA": {
+      "official": "Repubblica democratica socialista dello Sri Lanka",
+      "common": "Sri Lanka"
+    },
     "JPN": {"official": "スリランカ民主社会主義共和国", "common": "スリランカ"},
     "KOR": {"official": "스리랑카 민주 사회주의 공화국", "common": "스리랑카"},
-    "PER": {"official": "جمهوری دموکراتیک سوسیالیستی سری‌لانکا", "common": "سری‌لانکا"},
-    "POL": {"official": "Demokratyczno-Socjalistyczna Republika Sri Lanki", "common": "Sri Lanka"},
-    "POR": {"official": "República Democrática Socialista do Sri Lanka", "common": "Sri Lanka"},
+    "PER": {
+      "official": "جمهوری دموکراتیک سوسیالیستی سری‌لانکا",
+      "common": "سری‌لانکا"
+    },
+    "POL": {
+      "official": "Demokratyczno-Socjalistyczna Republika Sri Lanki",
+      "common": "Sri Lanka"
+    },
+    "POR": {
+      "official": "República Democrática Socialista do Sri Lanka",
+      "common": "Sri Lanka"
+    },
     "RUS": {
       "official": "Демократическая Социалистическая Республика Шри-Ланка",
       "common": "Шри-Ланка"
     },
-    "SLK": {"official": "Srílanská demokratická socialistická republika", "common": "Srí Lanka"},
-    "SPA": {"official": "República Democrática Socialista de Sri Lanka", "common": "Sri Lanka"},
-    "SWE": {"official": "Demokratiska socialistiska republiken Sri Lanka", "common": "Sri Lanka"},
-    "URD": {"official": "جمہوری و اشتراکی جمہوریہ سری لنکا", "common": "سری لنکا"},
+    "SLK": {
+      "official": "Srílanská demokratická socialistická republika",
+      "common": "Srí Lanka"
+    },
+    "SPA": {
+      "official": "República Democrática Socialista de Sri Lanka",
+      "common": "Sri Lanka"
+    },
+    "SWE": {
+      "official": "Demokratiska socialistiska republiken Sri Lanka",
+      "common": "Sri Lanka"
+    },
+    "URD": {
+      "official": "جمہوری و اشتراکی جمہوریہ سری لنکا",
+      "common": "سری لنکا"
+    },
     "ZHO": {"official": "斯里兰卡民主社会主义共和国", "common": "斯里兰卡"},
-    "ARA": {"official": "جمهورية سريلانكا الديمقراطية الاشتراكية", "common": "سريلانكا"},
+    "ARA": {
+      "official": "جمهورية سريلانكا الديمقراطية الاشتراكية",
+      "common": "سريلانكا"
+    },
     "BUL": "Шри Ланка",
     "DAN": "Sri Lanka",
     "ELL": "Σρι Λάνκα",
@@ -6027,7 +6917,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "PER": {"official": "دوک‌نشین لوکزامبورگ", "common": "لوکزامبورگ"},
     "POL": {"official": "Wielkie Księstwo Luksemburga", "common": "Luksemburg"},
     "POR": {"official": "Grão-Ducado do Luxemburgo", "common": "Luxemburgo"},
-    "RUS": {"official": "Великое Герцогство Люксембург", "common": "Люксембург"},
+    "RUS": {
+      "official": "Великое Герцогство Люксембург",
+      "common": "Люксембург"
+    },
     "SLK": {"official": "Luxemburské veľkovojvodstvo", "common": "Luxembursko"},
     "SPA": {"official": "Gran Ducado de Luxemburgo", "common": "Luxemburgo"},
     "SWE": {"official": "Storhertigdömet Luxemburg", "common": "Luxemburg"},
@@ -6093,7 +6986,8 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "iso_3166_1_alpha2": "MO",
     "iso_3166_1_alpha3": "MAC",
     "natives": {
-      "official": "Região Administrativa Especial de Macau da República Popular da China",
+      "official":
+          "Região Administrativa Especial de Macau da República Popular da China",
       "common": "Macau"
     },
     "dialing_code": "+853",
@@ -6102,19 +6996,31 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "local_number_sample": "3930 9919",
     "International_number_sample": "+853 3930 9919",
     "ENG": {
-      "official": "Macao Special Administrative Region of the People's Republic of China",
+      "official":
+          "Macao Special Administrative Region of the People's Republic of China",
       "common": "Macao"
     },
-    "CES": {"official": "Zvláštní správní oblast Čínské lidové republiky Macao", "common": "Macao"},
-    "DEU": {"official": "Sonderverwaltungsregion Macau der Volksrepublik China", "common": "Macao"},
+    "CES": {
+      "official": "Zvláštní správní oblast Čínské lidové republiky Macao",
+      "common": "Macao"
+    },
+    "DEU": {
+      "official": "Sonderverwaltungsregion Macau der Volksrepublik China",
+      "common": "Macao"
+    },
     "EST": {"official": "Macau erihalduspiirkond", "common": "Macau"},
-    "FIN": {"official": "Macaon Kiinan kansantasavallan erityishallintoalue", "common": "Macao"},
+    "FIN": {
+      "official": "Macaon Kiinan kansantasavallan erityishallintoalue",
+      "common": "Macao"
+    },
     "FRA": {
-      "official": "Région administrative spéciale de Macao de la République populaire de Chine",
+      "official":
+          "Région administrative spéciale de Macao de la République populaire de Chine",
       "common": "Macao"
     },
     "NLD": {
-      "official": "Speciale Administratieve Regio Macau van de Volksrepubliek China",
+      "official":
+          "Speciale Administratieve Regio Macau van de Volksrepubliek China",
       "common": "Macao"
     },
     "HRV": {
@@ -6122,35 +7028,47 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "common": "Makao"
     },
     "HUN": {
-      "official": "Macao Regione amministrativa speciale della Repubblica Popolare Cinese",
+      "official":
+          "Macao Regione amministrativa speciale della Repubblica Popolare Cinese",
       "common": "Macao"
     },
     "ITA": {
-      "official": "Macao Regione amministrativa speciale della Repubblica Popolare Cinese",
+      "official":
+          "Macao Regione amministrativa speciale della Repubblica Popolare Cinese",
       "common": "Macao"
     },
     "JPN": {"official": "中華人民共和国マカオ特別行政区", "common": "マカオ"},
     "KOR": {"official": "중화인민공화국 마카오 특별행정구", "common": "마카오"},
     "PER": "ماکائو",
     "POL": {
-      "official": "Specjalny Region Administracyjny Chińskiej Republiki Ludowej Makau",
+      "official":
+          "Specjalny Region Administracyjny Chińskiej Republiki Ludowej Makau",
       "common": "Makau"
     },
     "POR": {
-      "official": "Macau Região Administrativa Especial da República Popular da China",
+      "official":
+          "Macau Região Administrativa Especial da República Popular da China",
       "common": "Macau"
     },
     "RUS": {
-      "official": "Специальный административный район Макао Китайской Народной Республики Китай",
+      "official":
+          "Специальный административный район Макао Китайской Народной Республики Китай",
       "common": "Макао"
     },
-    "SLK": {"official": "Macao, Špeciàlna administratívna oblasŦ", "common": "Macao"},
+    "SLK": {
+      "official": "Macao, Špeciàlna administratívna oblasŦ",
+      "common": "Macao"
+    },
     "SPA": {
-      "official": "Macao, Región Administrativa Especial de la República Popular China",
+      "official":
+          "Macao, Región Administrativa Especial de la República Popular China",
       "common": "Macao"
     },
     "SWE": "Macao",
-    "URD": {"official": "مکاؤ عوامی جمہوریہ چین کا خصوصی انتظامی علاقہ", "common": "مکاؤ"},
+    "URD": {
+      "official": "مکاؤ عوامی جمہوریہ چین کا خصوصی انتظامی علاقہ",
+      "common": "مکاؤ"
+    },
     "ZHO": {"official": "澳门特别行政区", "common": "澳门"},
     "ARA": {"official": "منطقة ماكاو الإدارية الخاصة", "common": "ماكاو"},
     "BUL": null,
@@ -6192,7 +7110,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "RUS": "Сен Мартен",
     "SLK": "Saint Martin",
     "SPA": "Saint Martin",
-    "SWE": {"official": "Förvaltningsområdet Saint Martin", "common": "Saint Martin"},
+    "SWE": {
+      "official": "Förvaltningsområdet Saint Martin",
+      "common": "Saint Martin"
+    },
     "URD": "سینٹ مارٹن",
     "ZHO": "圣马丁",
     "ARA": "سانت مارتن",
@@ -6383,7 +7304,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "MV",
     "iso_3166_1_alpha3": "MDV",
-    "natives": {"official": "ދިވެހިރާއްޖޭގެ ޖުމްހޫރިއްޔާ", "common": "ދިވެހިރާއްޖޭގެ"},
+    "natives": {
+      "official": "ދިވެހިރާއްޖޭގެ ޖުމްހޫރިއްޔާ",
+      "common": "ދިވެހިރާއްޖޭގެ"
+    },
     "dialing_code": "+960",
     "default_number_length": 7,
     "default_number_format": "### ####",
@@ -6469,30 +7393,75 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "MH",
     "iso_3166_1_alpha3": "MHL",
-    "natives": {"official": "Republic of the Marshall Islands", "common": "Marshall Islands"},
+    "natives": {
+      "official": "Republic of the Marshall Islands",
+      "common": "Marshall Islands"
+    },
     "dialing_code": "+692",
     "default_number_length": 7,
     "default_number_format": "### ####",
     "local_number_sample": "522 6960",
     "International_number_sample": "+692 522 6960",
-    "ENG": {"official": "Republic of the Marshall Islands", "common": "Marshall Islands"},
-    "CES": {"official": "Republika Marshallovy ostrovy", "common": "Marshallovy ostrovy"},
+    "ENG": {
+      "official": "Republic of the Marshall Islands",
+      "common": "Marshall Islands"
+    },
+    "CES": {
+      "official": "Republika Marshallovy ostrovy",
+      "common": "Marshallovy ostrovy"
+    },
     "DEU": {"official": "Republik Marshallinseln", "common": "Marshallinseln"},
-    "EST": {"official": "Marshalli Saarte Vabariik", "common": "Marshalli Saared"},
-    "FIN": {"official": "Marshallinsaarten tasavalta", "common": "Marshallinsaaret"},
-    "FRA": {"official": "République des Îles Marshall", "common": "Îles Marshall"},
-    "NLD": {"official": "Republiek van de Marshall-eilanden", "common": "Marshalleilanden"},
-    "HRV": {"official": "Republika Maršalovi Otoci", "common": "Maršalovi Otoci"},
-    "HUN": {"official": "Repubblica delle Isole Marshall", "common": "Isole Marshall"},
-    "ITA": {"official": "Repubblica delle Isole Marshall", "common": "Isole Marshall"},
+    "EST": {
+      "official": "Marshalli Saarte Vabariik",
+      "common": "Marshalli Saared"
+    },
+    "FIN": {
+      "official": "Marshallinsaarten tasavalta",
+      "common": "Marshallinsaaret"
+    },
+    "FRA": {
+      "official": "République des Îles Marshall",
+      "common": "Îles Marshall"
+    },
+    "NLD": {
+      "official": "Republiek van de Marshall-eilanden",
+      "common": "Marshalleilanden"
+    },
+    "HRV": {
+      "official": "Republika Maršalovi Otoci",
+      "common": "Maršalovi Otoci"
+    },
+    "HUN": {
+      "official": "Repubblica delle Isole Marshall",
+      "common": "Isole Marshall"
+    },
+    "ITA": {
+      "official": "Repubblica delle Isole Marshall",
+      "common": "Isole Marshall"
+    },
     "JPN": {"official": "マーシャル諸島共和国", "common": "マーシャル諸島"},
     "KOR": {"official": "마셜 제도 공화국", "common": "마셜 제도"},
     "PER": {"official": "جمهوری جزایر مارشال", "common": "جزایر مارشال"},
-    "POL": {"official": "Republika Wysp Marshalla", "common": "Wyspy Marshalla"},
-    "POR": {"official": "República das Ilhas Marshall", "common": "Ilhas Marshall"},
-    "RUS": {"official": "Республика Маршалловы острова", "common": "Маршалловы Острова"},
-    "SLK": {"official": "Republika Marshallových ostrovov", "common": "Marshallove ostrovy"},
-    "SPA": {"official": "República de las Islas Marshall", "common": "Islas Marshall"},
+    "POL": {
+      "official": "Republika Wysp Marshalla",
+      "common": "Wyspy Marshalla"
+    },
+    "POR": {
+      "official": "República das Ilhas Marshall",
+      "common": "Ilhas Marshall"
+    },
+    "RUS": {
+      "official": "Республика Маршалловы острова",
+      "common": "Маршалловы Острова"
+    },
+    "SLK": {
+      "official": "Republika Marshallových ostrovov",
+      "common": "Marshallove ostrovy"
+    },
+    "SPA": {
+      "official": "República de las Islas Marshall",
+      "common": "Islas Marshall"
+    },
     "SWE": {"official": "Republiken Marshallöarna", "common": "Marshallöarna"},
     "URD": {"official": "جمہوریہ جزائر مارشل", "common": "جزائر مارشل"},
     "ZHO": {"official": "马绍尔群岛共和国", "common": "马绍尔群岛"},
@@ -6512,31 +7481,79 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "MK",
     "iso_3166_1_alpha3": "MKD",
-    "natives": {"official": "Република Северна Македонија", "common": "Македонија"},
+    "natives": {
+      "official": "Република Северна Македонија",
+      "common": "Македонија"
+    },
     "dialing_code": "+389",
     "default_number_length": 8,
     "default_number_format": "## ### ###",
     "local_number_sample": "73 555 883",
     "International_number_sample": "+389 73 555 883",
-    "ENG": {"official": "Republic of North Macedonia", "common": "North Macedonia"},
-    "CES": {"official": "Republika Severní Makedonie", "common": "Severní Makedonie"},
+    "ENG": {
+      "official": "Republic of North Macedonia",
+      "common": "North Macedonia"
+    },
+    "CES": {
+      "official": "Republika Severní Makedonie",
+      "common": "Severní Makedonie"
+    },
     "DEU": {"official": "Republik Nordmazedonien", "common": "Nordmazedonien"},
-    "EST": {"official": "Põhja-Makedoonia Vabariik", "common": "Põhja-Makedoonia"},
-    "FIN": {"official": "Pohjois-Makedonian tasavalta", "common": "Pohjois-Makedonia"},
-    "FRA": {"official": "République de Macédoine du Nord", "common": "Macédoine du Nord"},
-    "NLD": {"official": "Republiek Noord-Macedonië", "common": "Noord-Macedonië"},
-    "HRV": {"official": "Republika Sjeverna Makedonija", "common": "Sjeverna Makedonija"},
-    "HUN": {"official": "Repubblica di Macedonia del Nord", "common": "Macedonia del Nord"},
-    "ITA": {"official": "Repubblica di Macedonia del Nord", "common": "Macedonia del Nord"},
+    "EST": {
+      "official": "Põhja-Makedoonia Vabariik",
+      "common": "Põhja-Makedoonia"
+    },
+    "FIN": {
+      "official": "Pohjois-Makedonian tasavalta",
+      "common": "Pohjois-Makedonia"
+    },
+    "FRA": {
+      "official": "République de Macédoine du Nord",
+      "common": "Macédoine du Nord"
+    },
+    "NLD": {
+      "official": "Republiek Noord-Macedonië",
+      "common": "Noord-Macedonië"
+    },
+    "HRV": {
+      "official": "Republika Sjeverna Makedonija",
+      "common": "Sjeverna Makedonija"
+    },
+    "HUN": {
+      "official": "Repubblica di Macedonia del Nord",
+      "common": "Macedonia del Nord"
+    },
+    "ITA": {
+      "official": "Repubblica di Macedonia del Nord",
+      "common": "Macedonia del Nord"
+    },
     "JPN": {"official": "北マケドニア共和国", "common": "北マケドニア"},
     "KOR": {"official": "북마케도니아 공화국", "common": "북마케도니아"},
     "PER": {"official": "جمهوری مقدونیه شمالی", "common": "مقدونیه شمالی"},
-    "POL": {"official": "Republika Macedonii Północnej", "common": "Macedonia Północna"},
-    "POR": {"official": "República da Macedônia do Norte", "common": "Macedónia do Norte"},
-    "RUS": {"official": "Республика Северная Македония", "common": "Северная Македония"},
-    "SLK": {"official": "Severomacedónska republika", "common": "Severné Macedónsko"},
-    "SPA": {"official": "República de Macedonia del Norte", "common": "Macedonia del Norte"},
-    "SWE": {"official": "Republiken Nordmakedonien", "common": "Nordmakedonien"},
+    "POL": {
+      "official": "Republika Macedonii Północnej",
+      "common": "Macedonia Północna"
+    },
+    "POR": {
+      "official": "República da Macedônia do Norte",
+      "common": "Macedónia do Norte"
+    },
+    "RUS": {
+      "official": "Республика Северная Македония",
+      "common": "Северная Македония"
+    },
+    "SLK": {
+      "official": "Severomacedónska republika",
+      "common": "Severné Macedónsko"
+    },
+    "SPA": {
+      "official": "República de Macedonia del Norte",
+      "common": "Macedonia del Norte"
+    },
+    "SWE": {
+      "official": "Republiken Nordmakedonien",
+      "common": "Nordmakedonien"
+    },
     "URD": {"official": "جمہوریہ مقدونیہ", "common": "شمالی مقدونیہ"},
     "ZHO": {"official": "北馬其頓共和國", "common": "北馬其頓"},
     "ARA": {"official": "جمهورية مقدونيا الشمالية", "common": "مقدونيا"},
@@ -6641,22 +7658,40 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "MM",
     "iso_3166_1_alpha3": "MMR",
-    "natives": {"official": "ပြည်ထောင်စု သမ္မတ မြန်မာနိုင်ငံတော်", "common": "မြန်မာ"},
+    "natives": {
+      "official": "ပြည်ထောင်စု သမ္မတ မြန်မာနိုင်ငံတော်",
+      "common": "မြန်မာ"
+    },
     "dialing_code": "+95",
     "default_number_length": 7,
     "default_number_format": "## #####",
     "local_number_sample": "99 94190",
     "International_number_sample": "+95 99 94190",
-    "ENG": {"official": "Republic of the Union of Myanmar", "common": "Myanmar"},
+    "ENG": {
+      "official": "Republic of the Union of Myanmar",
+      "common": "Myanmar"
+    },
     "CES": {"official": "Republika Myanmarský svaz", "common": "Myanmar"},
     "DEU": {"official": "Republik der Union Myanmar", "common": "Myanmar"},
     "EST": {"official": "Myanmari Liidu Vabariik", "common": "Myanmar"},
     "FIN": {"official": "Myanmarin liiton tasavalta", "common": "Myanmar"},
-    "FRA": {"official": "République de l'Union du Myanmar", "common": "Birmanie"},
-    "NLD": {"official": "Republiek van de Unie van Myanmar", "common": "Myanmar"},
+    "FRA": {
+      "official": "République de l'Union du Myanmar",
+      "common": "Birmanie"
+    },
+    "NLD": {
+      "official": "Republiek van de Unie van Myanmar",
+      "common": "Myanmar"
+    },
     "HRV": {"official": "Republika Unije Mijanmar", "common": "Mijanmar"},
-    "HUN": {"official": "Repubblica dell'Unione di Myanmar", "common": "Birmania"},
-    "ITA": {"official": "Repubblica dell'Unione di Myanmar", "common": "Birmania"},
+    "HUN": {
+      "official": "Repubblica dell'Unione di Myanmar",
+      "common": "Birmania"
+    },
+    "ITA": {
+      "official": "Repubblica dell'Unione di Myanmar",
+      "common": "Birmania"
+    },
     "JPN": {"official": "ミャンマー連邦共和国", "common": "ミャンマー"},
     "KOR": {"official": "미얀마 연방 공화국", "common": "미얀마"},
     "PER": {"official": "إتحادیه جمهوری میانمار", "common": "میانمار"},
@@ -6664,7 +7699,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "POR": {"official": "República da União de Myanmar", "common": "Myanmar"},
     "RUS": {"official": "Республика Союза Мьянма", "common": "Мьянма"},
     "SLK": {"official": "Mjanmarská zväzová republika", "common": "Mjanmarsko"},
-    "SPA": {"official": "República de la Unión de Myanmar", "common": "Myanmar"},
+    "SPA": {
+      "official": "República de la Unión de Myanmar",
+      "common": "Myanmar"
+    },
     "SWE": {"official": "Republiken Unionen Myanmar", "common": "Myanmar"},
     "URD": {"official": "متحدہ جمہوریہ میانمار", "common": "میانمار"},
     "ZHO": {"official": "缅甸联邦共和国", "common": "缅甸"},
@@ -6783,8 +7821,14 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "official": "Commonwealth of the Northern Mariana Islands",
       "common": "Northern Mariana Islands"
     },
-    "CES": {"official": "Společenství Severních Marian", "common": "Severní Mariany"},
-    "DEU": {"official": "Commonwealth der Nördlichen Marianen", "common": "Nördliche Marianen"},
+    "CES": {
+      "official": "Společenství Severních Marian",
+      "common": "Severní Mariany"
+    },
+    "DEU": {
+      "official": "Commonwealth der Nördlichen Marianen",
+      "common": "Nördliche Marianen"
+    },
     "EST": {"official": "Põhja-Mariaani Ühendus", "common": "Põhja-Mariaanid"},
     "FIN": "Pohjois-Mariaanit",
     "FRA": {
@@ -6810,7 +7854,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "JPN": "北マリアナ諸島",
     "KOR": "북마리아나 제도",
     "PER": "جزایر ماریانای شمالی",
-    "POL": {"official": "Wspólnota Marianów Północnych", "common": "Mariany Północne"},
+    "POL": {
+      "official": "Wspólnota Marianów Północnych",
+      "common": "Mariany Północne"
+    },
     "POR": {
       "official": "Comunidade das Ilhas Marianas do Norte",
       "common": "Marianas Setentrionais"
@@ -6819,15 +7866,24 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "official": "Содружество Северных Марианских островов",
       "common": "Северные Марианские острова"
     },
-    "SLK": {"official": "Spoločenstvo ostrovov Severné Mariány", "common": "Severné Mariány"},
+    "SLK": {
+      "official": "Spoločenstvo ostrovov Severné Mariány",
+      "common": "Severné Mariány"
+    },
     "SPA": {
       "official": "Mancomunidad de las Islas Marianas del Norte",
       "common": "Islas Marianas del Norte"
     },
     "SWE": "Nordmarianerna",
-    "URD": {"official": "دولتِ مشترکہ جزائر شمالی ماریانا", "common": "جزائر شمالی ماریانا"},
+    "URD": {
+      "official": "دولتِ مشترکہ جزائر شمالی ماریانا",
+      "common": "جزائر شمالی ماریانا"
+    },
     "ZHO": "北马里亚纳群岛",
-    "ARA": {"official": "كومنولث جزر ماريانا الشمالية", "common": "جزر ماريانا الشمالية"},
+    "ARA": {
+      "official": "كومنولث جزر ماريانا الشمالية",
+      "common": "جزر ماريانا الشمالية"
+    },
     "BUL": null,
     "DAN": null,
     "ELL": null,
@@ -6886,34 +7942,85 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "MR",
     "iso_3166_1_alpha3": "MRT",
-    "natives": {"official": "الجمهورية الإسلامية الموريتانية", "common": "موريتانيا"},
+    "natives": {
+      "official": "الجمهورية الإسلامية الموريتانية",
+      "common": "موريتانيا"
+    },
     "dialing_code": "+222",
     "default_number_length": 7,
     "default_number_format": "### ####",
     "local_number_sample": "825 8543",
     "International_number_sample": "+222 825 8543",
-    "ENG": {"official": "Islamic Republic of Mauritania", "common": "Mauritania"},
-    "CES": {"official": "Mauritánská islámská republika", "common": "Mauritánie"},
-    "DEU": {"official": "Islamische Republik Mauretanien", "common": "Mauretanien"},
+    "ENG": {
+      "official": "Islamic Republic of Mauritania",
+      "common": "Mauritania"
+    },
+    "CES": {
+      "official": "Mauritánská islámská republika",
+      "common": "Mauritánie"
+    },
+    "DEU": {
+      "official": "Islamische Republik Mauretanien",
+      "common": "Mauretanien"
+    },
     "EST": {"official": "Mauritaania Islamivabariik", "common": "Mauritaania"},
-    "FIN": {"official": "Mauritanian islamilainen tasavalta", "common": "Mauritania"},
-    "FRA": {"official": "République islamique de Mauritanie", "common": "Mauritanie"},
-    "NLD": {"official": "Islamitische Republiek Mauritanië", "common": "Mauritanië"},
-    "HRV": {"official": "Islamska Republika Mauritanija", "common": "Mauritanija"},
-    "HUN": {"official": "Repubblica islamica di Mauritania", "common": "Mauritania"},
-    "ITA": {"official": "Repubblica islamica di Mauritania", "common": "Mauritania"},
+    "FIN": {
+      "official": "Mauritanian islamilainen tasavalta",
+      "common": "Mauritania"
+    },
+    "FRA": {
+      "official": "République islamique de Mauritanie",
+      "common": "Mauritanie"
+    },
+    "NLD": {
+      "official": "Islamitische Republiek Mauritanië",
+      "common": "Mauritanië"
+    },
+    "HRV": {
+      "official": "Islamska Republika Mauritanija",
+      "common": "Mauritanija"
+    },
+    "HUN": {
+      "official": "Repubblica islamica di Mauritania",
+      "common": "Mauritania"
+    },
+    "ITA": {
+      "official": "Repubblica islamica di Mauritania",
+      "common": "Mauritania"
+    },
     "JPN": {"official": "モーリタニア·イスラム共和国", "common": "モーリタニア"},
     "KOR": {"official": "모리타니 이슬람 공화국", "common": "모리타니"},
     "PER": {"official": "جمهوری اسلامی موریتانی", "common": "موریتانی"},
-    "POL": {"official": "Islamska Republika Mauretańska", "common": "Mauretania"},
-    "POR": {"official": "República Islâmica da Mauritânia", "common": "Mauritânia"},
-    "RUS": {"official": "Исламская Республика Мавритания", "common": "Мавритания"},
-    "SLK": {"official": "Mauritánska islamská republika", "common": "Mauritánia"},
-    "SPA": {"official": "República Islámica de Mauritania", "common": "Mauritania"},
-    "SWE": {"official": "Islamiska republiken Mauretanien", "common": "Mauretanien"},
+    "POL": {
+      "official": "Islamska Republika Mauretańska",
+      "common": "Mauretania"
+    },
+    "POR": {
+      "official": "República Islâmica da Mauritânia",
+      "common": "Mauritânia"
+    },
+    "RUS": {
+      "official": "Исламская Республика Мавритания",
+      "common": "Мавритания"
+    },
+    "SLK": {
+      "official": "Mauritánska islamská republika",
+      "common": "Mauritánia"
+    },
+    "SPA": {
+      "official": "República Islámica de Mauritania",
+      "common": "Mauritania"
+    },
+    "SWE": {
+      "official": "Islamiska republiken Mauretanien",
+      "common": "Mauretanien"
+    },
     "URD": {"official": "اسلامی جمہوریہ موریتانیہ", "common": "موریتانیہ"},
     "ZHO": {"official": "毛里塔尼亚伊斯兰共和国", "common": "毛里塔尼亚"},
-    "ARA": {"official": " الجمهورية الإسلامية الموريتانية", "common": "موريتانيا"},
+    "ARA": {
+      "official": " الجمهورية الإسلامية الموريتانية",
+      "common": "موريتانيا"
+    },
     "BUL": "Мавритания",
     "DAN": "Mauretanien",
     "ELL": "Μαυριτανία",
@@ -7316,22 +8423,40 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "NF",
     "iso_3166_1_alpha3": "NFK",
-    "natives": {"official": "Territory of Norfolk Island", "common": "Norfolk Island"},
+    "natives": {
+      "official": "Territory of Norfolk Island",
+      "common": "Norfolk Island"
+    },
     "dialing_code": "+672",
     "default_number_length": 6,
     "default_number_format": "# #####",
     "local_number_sample": "1 42219",
     "International_number_sample": "+672 1 42219",
-    "ENG": {"official": "Territory of Norfolk Island", "common": "Norfolk Island"},
+    "ENG": {
+      "official": "Territory of Norfolk Island",
+      "common": "Norfolk Island"
+    },
     "CES": {"official": "Teritorium ostrova Norfolk", "common": "Norfolk"},
     "DEU": {"official": "Gebiet der Norfolkinsel", "common": "Norfolkinsel"},
     "EST": {"official": "Norfolki saare ala", "common": "Norfolk"},
-    "FIN": {"official": "Norfolkinsaaren territorio", "common": "Norfolkinsaari"},
+    "FIN": {
+      "official": "Norfolkinsaaren territorio",
+      "common": "Norfolkinsaari"
+    },
     "FRA": {"official": "Territoire de l'île Norfolk", "common": "Île Norfolk"},
-    "NLD": {"official": "Grondgebied van Norfolk Island", "common": "Norfolkeiland"},
+    "NLD": {
+      "official": "Grondgebied van Norfolk Island",
+      "common": "Norfolkeiland"
+    },
     "HRV": {"official": "Teritorij Norfolk Island", "common": "Otok Norfolk"},
-    "HUN": {"official": "Territorio di Norfolk Island", "common": "Isola Norfolk"},
-    "ITA": {"official": "Territorio di Norfolk Island", "common": "Isola Norfolk"},
+    "HUN": {
+      "official": "Territorio di Norfolk Island",
+      "common": "Isola Norfolk"
+    },
+    "ITA": {
+      "official": "Territorio di Norfolk Island",
+      "common": "Isola Norfolk"
+    },
     "JPN": {"official": "ノーフォーク島の領土", "common": "ノーフォーク島"},
     "KOR": "노퍽 섬",
     "PER": {"official": "قلمرو جزایر نورفک", "common": "جزیره نورفک"},
@@ -7339,7 +8464,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "POR": {"official": "Território da Ilha Norfolk", "common": "Ilha Norfolk"},
     "RUS": {"official": "Территория острова Норфолк", "common": "Норфолк"},
     "SLK": {"official": "Teritórium ostrova Norfolk", "common": "Norfolk"},
-    "SPA": {"official": "Territorio de la Isla Norfolk", "common": "Isla de Norfolk"},
+    "SPA": {
+      "official": "Territorio de la Isla Norfolk",
+      "common": "Isla de Norfolk"
+    },
     "SWE": "Norfolkön",
     "URD": {"official": "جزیرہ نورفک خطہ", "common": "جزیرہ نورفک"},
     "ZHO": "诺福克岛",
@@ -7366,7 +8494,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "local_number_sample": "706 558 4064",
     "International_number_sample": "+234 706 558 4064",
     "ENG": {"official": "Federal Republic of Nigeria", "common": "Nigeria"},
-    "CES": {"official": "Nigerijská federativní republika", "common": "Nigérie"},
+    "CES": {
+      "official": "Nigerijská federativní republika",
+      "common": "Nigérie"
+    },
     "DEU": {"official": "Bundesrepublik Nigeria", "common": "Nigeria"},
     "EST": {"official": "Nigeeria Liitvabariik", "common": "Nigeeria"},
     "FIN": {"official": "Nigerian liittotasavalta", "common": "Nigeria"},
@@ -7381,7 +8512,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "POL": {"official": "Federalna Republika Nigerii", "common": "Nigeria"},
     "POR": {"official": "República Federal da Nigéria", "common": "Nigéria"},
     "RUS": {"official": "Федеративная Республика Нигерия", "common": "Нигерия"},
-    "SLK": {"official": "Nigérijská federatívna republika", "common": "Nigéria"},
+    "SLK": {
+      "official": "Nigérijská federatívna republika",
+      "common": "Nigéria"
+    },
     "SPA": {"official": "República Federal de Nigeria", "common": "Nigeria"},
     "SWE": {"official": "Förbundsrepubliken Nigeria", "common": "Nigeria"},
     "URD": {"official": "وفاقی جمہوریہ نائجیریا", "common": "نائجیریا"},
@@ -7488,7 +8622,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "NL",
     "iso_3166_1_alpha3": "NLD",
-    "natives": {"official": "Koninkrijk der Nederlanden", "common": "Nederland"},
+    "natives": {
+      "official": "Koninkrijk der Nederlanden",
+      "common": "Nederland"
+    },
     "dialing_code": "+31",
     "default_number_length": 9,
     "default_number_format": "## ### ####",
@@ -7574,34 +8711,82 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "NP",
     "iso_3166_1_alpha3": "NPL",
-    "natives": {"official": "नेपाल संघीय लोकतान्त्रिक गणतन्त्र", "common": "नेपाल"},
+    "natives": {
+      "official": "नेपाल संघीय लोकतान्त्रिक गणतन्त्र",
+      "common": "नेपाल"
+    },
     "dialing_code": "+977",
     "default_number_length": 10,
     "default_number_format": "### ### ####",
     "local_number_sample": "985 365 9858",
     "International_number_sample": "+977 985 365 9858",
-    "ENG": {"official": "Federal Democratic Republic of Nepal", "common": "Nepal"},
-    "CES": {"official": "Federativní demokratická republika Nepál", "common": "Nepál"},
-    "DEU": {"official": "Demokratische Bundesrepublik Nepal", "common": "Nepal"},
+    "ENG": {
+      "official": "Federal Democratic Republic of Nepal",
+      "common": "Nepal"
+    },
+    "CES": {
+      "official": "Federativní demokratická republika Nepál",
+      "common": "Nepál"
+    },
+    "DEU": {
+      "official": "Demokratische Bundesrepublik Nepal",
+      "common": "Nepal"
+    },
     "EST": {"official": "Nepali Demokraatlik Liitvabariik", "common": "Nepal"},
-    "FIN": {"official": "Nepalin demokraattinen liittotasavalta", "common": "Nepal"},
+    "FIN": {
+      "official": "Nepalin demokraattinen liittotasavalta",
+      "common": "Nepal"
+    },
     "FRA": {"official": "République du Népal", "common": "Népal"},
-    "NLD": {"official": "Federale Democratische Republiek Nepal", "common": "Nepal"},
-    "HRV": {"official": "Savezna Demokratska Republika Nepal", "common": "Nepal"},
-    "HUN": {"official": "Repubblica federale democratica del Nepal", "common": "Nepal"},
-    "ITA": {"official": "Repubblica federale democratica del Nepal", "common": "Nepal"},
+    "NLD": {
+      "official": "Federale Democratische Republiek Nepal",
+      "common": "Nepal"
+    },
+    "HRV": {
+      "official": "Savezna Demokratska Republika Nepal",
+      "common": "Nepal"
+    },
+    "HUN": {
+      "official": "Repubblica federale democratica del Nepal",
+      "common": "Nepal"
+    },
+    "ITA": {
+      "official": "Repubblica federale democratica del Nepal",
+      "common": "Nepal"
+    },
     "JPN": {"official": "ネパール連邦民主共和国", "common": "ネパール"},
     "KOR": {"official": "네팔 연방 민주 공화국", "common": "네팔"},
     "PER": {"official": "جمهوری فدرال دموکراتیک نپال", "common": "نپال"},
-    "POL": {"official": "Federalna Demokratyczna Republika Nepalu", "common": "Nepal"},
-    "POR": {"official": "República Democrática Federal do Nepal", "common": "Nepal"},
-    "RUS": {"official": "Федеративная Демократическая Республика Непал", "common": "Непал"},
-    "SLK": {"official": "Nepálska federatívna demokratická republika", "common": "Nepál"},
-    "SPA": {"official": "República Democrática Federal de Nepal", "common": "Nepal"},
-    "SWE": {"official": "Demokratiska förbundsrepubliken Nepal", "common": "Nepal"},
+    "POL": {
+      "official": "Federalna Demokratyczna Republika Nepalu",
+      "common": "Nepal"
+    },
+    "POR": {
+      "official": "República Democrática Federal do Nepal",
+      "common": "Nepal"
+    },
+    "RUS": {
+      "official": "Федеративная Демократическая Республика Непал",
+      "common": "Непал"
+    },
+    "SLK": {
+      "official": "Nepálska federatívna demokratická republika",
+      "common": "Nepál"
+    },
+    "SPA": {
+      "official": "República Democrática Federal de Nepal",
+      "common": "Nepal"
+    },
+    "SWE": {
+      "official": "Demokratiska förbundsrepubliken Nepal",
+      "common": "Nepal"
+    },
     "URD": {"official": "وفاقی جمہوری جمہوریہ نیپال", "common": "نیپال"},
     "ZHO": {"official": "尼泊尔联邦民主共和国", "common": "尼泊尔"},
-    "ARA": {"official": "جمهورية نيبال الديمقراطية الإتحادية", "common": "نيبال"},
+    "ARA": {
+      "official": "جمهورية نيبال الديمقراطية الإتحادية",
+      "common": "نيبال"
+    },
     "BUL": "Непал",
     "DAN": "Nepal",
     "ELL": "Νεπάλ",
@@ -7746,7 +8931,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "PK",
     "iso_3166_1_alpha3": "PAK",
-    "natives": {"official": "Islamic Republic of Pakistan", "common": "Pakistan"},
+    "natives": {
+      "official": "Islamic Republic of Pakistan",
+      "common": "Pakistan"
+    },
     "dialing_code": "+92",
     "default_number_length": 7,
     "default_number_format": "### ####",
@@ -7756,17 +8944,35 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "CES": {"official": "Pákistánská islámská republika", "common": "Pákistán"},
     "DEU": {"official": "Islamische Republik Pakistan", "common": "Pakistan"},
     "EST": {"official": "Pakistani Islamivabariik", "common": "Pakistan"},
-    "FIN": {"official": "Pakistanin islamilainen tasavalta", "common": "Pakistan"},
-    "FRA": {"official": "République islamique du Pakistan", "common": "Pakistan"},
-    "NLD": {"official": "Islamitische Republiek Pakistan", "common": "Pakistan"},
+    "FIN": {
+      "official": "Pakistanin islamilainen tasavalta",
+      "common": "Pakistan"
+    },
+    "FRA": {
+      "official": "République islamique du Pakistan",
+      "common": "Pakistan"
+    },
+    "NLD": {
+      "official": "Islamitische Republiek Pakistan",
+      "common": "Pakistan"
+    },
     "HRV": {"official": "Islamska Republika Pakistan", "common": "Pakistan"},
-    "HUN": {"official": "Repubblica islamica del Pakistan", "common": "Pakistan"},
-    "ITA": {"official": "Repubblica islamica del Pakistan", "common": "Pakistan"},
+    "HUN": {
+      "official": "Repubblica islamica del Pakistan",
+      "common": "Pakistan"
+    },
+    "ITA": {
+      "official": "Repubblica islamica del Pakistan",
+      "common": "Pakistan"
+    },
     "JPN": "パキスタン",
     "KOR": {"official": "파키스탄 이슬람 공화국", "common": "파키스탄"},
     "PER": {"official": "جمهوری اسلامی پاکستان", "common": "پاکستان"},
     "POL": {"official": "Islamska Republika Pakistanu", "common": "Pakistan"},
-    "POR": {"official": "República Islâmica do Paquistão", "common": "Paquistão"},
+    "POR": {
+      "official": "República Islâmica do Paquistão",
+      "common": "Paquistão"
+    },
     "RUS": {"official": "Исламская Республика Пакистан", "common": "Пакистан"},
     "SLK": {"official": "Pakistanská islamská republika", "common": "Pakistan"},
     "SPA": {"official": "República Islámica de Pakistán", "common": "Pakistán"},
@@ -7832,26 +9038,44 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "PN",
     "iso_3166_1_alpha3": "PCN",
-    "natives": {"official": "Pitcairn Group of Islands", "common": "Pitcairn Islands"},
+    "natives": {
+      "official": "Pitcairn Group of Islands",
+      "common": "Pitcairn Islands"
+    },
     "dialing_code": "+64",
     "default_number_length": 8,
     "default_number_format": "########",
     "local_number_sample": "12345678",
     "International_number_sample": "+64 12345678",
-    "ENG": {"official": "Pitcairn Group of Islands", "common": "Pitcairn Islands"},
+    "ENG": {
+      "official": "Pitcairn Group of Islands",
+      "common": "Pitcairn Islands"
+    },
     "CES": "Pitcairnovy ostrovy",
     "DEU": "Pitcairninseln",
-    "EST": {"official": "Pitcairni, Hendersoni, Ducie ja Oeno saar", "common": "Pitcairn"},
+    "EST": {
+      "official": "Pitcairni, Hendersoni, Ducie ja Oeno saar",
+      "common": "Pitcairn"
+    },
     "FIN": "Pitcairn",
     "FRA": {"official": "Groupe d'îles Pitcairn", "common": "Îles Pitcairn"},
-    "NLD": {"official": "Pitcairn groep eilanden", "common": "Pitcairneilanden"},
-    "HRV": {"official": "Pitcairn skupine otoka", "common": "Pitcairnovo otočje"},
+    "NLD": {
+      "official": "Pitcairn groep eilanden",
+      "common": "Pitcairneilanden"
+    },
+    "HRV": {
+      "official": "Pitcairn skupine otoka",
+      "common": "Pitcairnovo otočje"
+    },
     "HUN": {"official": "Pitcairn gruppo di isole", "common": "Isole Pitcairn"},
     "ITA": {"official": "Pitcairn gruppo di isole", "common": "Isole Pitcairn"},
     "JPN": {"official": "島のピトケアングループ", "common": "ピトケアン"},
     "KOR": "핏케언 제도",
     "PER": "جزایر پیت‌کرن",
-    "POL": {"official": "Wyspy Pitcairn, Henderson, Ducie i Oeno", "common": "Pitcairn"},
+    "POL": {
+      "official": "Wyspy Pitcairn, Henderson, Ducie i Oeno",
+      "common": "Pitcairn"
+    },
     "POR": {"official": "Pitcairn grupo de ilhas", "common": "Ilhas Pitcairn"},
     "RUS": {"official": "Питкэрн группа островов", "common": "Острова Питкэрн"},
     "SLK": "Pitcairnove ostrovy",
@@ -7918,7 +9142,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "PH",
     "iso_3166_1_alpha3": "PHL",
-    "natives": {"official": "Republic of the Philippines", "common": "Philippines"},
+    "natives": {
+      "official": "Republic of the Philippines",
+      "common": "Philippines"
+    },
     "dialing_code": "+63",
     "default_number_length": 9,
     "default_number_format": "## ### ####",
@@ -8004,17 +9231,35 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "PG",
     "iso_3166_1_alpha3": "PNG",
-    "natives": {"official": "Independent State of Papua New Guinea", "common": "Papua New Guinea"},
+    "natives": {
+      "official": "Independent State of Papua New Guinea",
+      "common": "Papua New Guinea"
+    },
     "dialing_code": "+675",
     "default_number_length": 7,
     "default_number_format": "### ####",
     "local_number_sample": "547 6848",
     "International_number_sample": "+675 547 6848",
-    "ENG": {"official": "Independent State of Papua New Guinea", "common": "Papua New Guinea"},
-    "CES": {"official": "Nezávislý stát Papua Nová Guinea", "common": "Papua-Nová Guinea"},
-    "DEU": {"official": "Unabhängiger Staat Papua-Neuguinea", "common": "Papua-Neuguinea"},
-    "EST": {"official": "Paapua Uus-Guinea Iseseisvusriik", "common": "Paapua Uus-Guinea"},
-    "FIN": {"official": "Papua-Uuden-Guinean Itsenäinen valtio", "common": "Papua-Uusi-Guinea"},
+    "ENG": {
+      "official": "Independent State of Papua New Guinea",
+      "common": "Papua New Guinea"
+    },
+    "CES": {
+      "official": "Nezávislý stát Papua Nová Guinea",
+      "common": "Papua-Nová Guinea"
+    },
+    "DEU": {
+      "official": "Unabhängiger Staat Papua-Neuguinea",
+      "common": "Papua-Neuguinea"
+    },
+    "EST": {
+      "official": "Paapua Uus-Guinea Iseseisvusriik",
+      "common": "Paapua Uus-Guinea"
+    },
+    "FIN": {
+      "official": "Papua-Uuden-Guinean Itsenäinen valtio",
+      "common": "Papua-Uusi-Guinea"
+    },
     "FRA": {
       "official": "État indépendant de Papouasie-Nouvelle-Guinée",
       "common": "Papouasie-Nouvelle-Guinée"
@@ -8023,27 +9268,54 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "official": "Onafhankelijke Staat Papoea -Nieuw-Guinea",
       "common": "Papoea-Nieuw-Guinea"
     },
-    "HRV": {"official": "Nezavisna Država Papui Novoj Gvineji", "common": "Papua Nova Gvineja"},
-    "HUN": {"official": "Stato indipendente di Papua Nuova Guinea", "common": "Papua Nuova Guinea"},
-    "ITA": {"official": "Stato indipendente di Papua Nuova Guinea", "common": "Papua Nuova Guinea"},
+    "HRV": {
+      "official": "Nezavisna Država Papui Novoj Gvineji",
+      "common": "Papua Nova Gvineja"
+    },
+    "HUN": {
+      "official": "Stato indipendente di Papua Nuova Guinea",
+      "common": "Papua Nuova Guinea"
+    },
+    "ITA": {
+      "official": "Stato indipendente di Papua Nuova Guinea",
+      "common": "Papua Nuova Guinea"
+    },
     "JPN": {"official": "パプアニューギニア独立国", "common": "パプアニューギニア"},
     "KOR": {"official": "파푸아뉴기니 독립국", "common": "파푸아뉴기니"},
-    "PER": {"official": "مملکت مستقل پاپوآ گینهٔ نو", "common": "پاپوآ گینه نو"},
-    "POL": {"official": "Niezależne Państwo Papui-Nowej Gwinei", "common": "Papua-Nowa Gwinea"},
-    "POR": {"official": "Estado Independente da Papua Nova Guiné", "common": "Papua Nova Guiné"},
+    "PER": {
+      "official": "مملکت مستقل پاپوآ گینهٔ نو",
+      "common": "پاپوآ گینه نو"
+    },
+    "POL": {
+      "official": "Niezależne Państwo Papui-Nowej Gwinei",
+      "common": "Papua-Nowa Gwinea"
+    },
+    "POR": {
+      "official": "Estado Independente da Papua Nova Guiné",
+      "common": "Papua Nova Guiné"
+    },
     "RUS": {
       "official": "Независимое Государство Папуа-Новой Гвинеи",
       "common": "Папуа — Новая Гвинея"
     },
-    "SLK": {"official": "Nezávislý štát Papua-Nová Guinea", "common": "Papua-Nová Guinea"},
+    "SLK": {
+      "official": "Nezávislý štát Papua-Nová Guinea",
+      "common": "Papua-Nová Guinea"
+    },
     "SPA": {
       "official": "Estado Independiente de Papúa Nueva Guinea",
       "common": "Papúa Nueva Guinea"
     },
-    "SWE": {"official": "Den oberoende staten Papua Nya Guinea", "common": "Papua Nya Guinea"},
+    "SWE": {
+      "official": "Den oberoende staten Papua Nya Guinea",
+      "common": "Papua Nya Guinea"
+    },
     "URD": {"official": "آزاد ریاستِ پاپوا نیو گنی", "common": "پاپوا نیو گنی"},
     "ZHO": "巴布亚新几内亚",
-    "ARA": {"official": "بابوا غينيا الجديدة المستقلة", "common": "بابوا غينيا الجديدة"},
+    "ARA": {
+      "official": "بابوا غينيا الجديدة المستقلة",
+      "common": "بابوا غينيا الجديدة"
+    },
     "BUL": "Папуа Нова Гвинея",
     "DAN": "Papua Ny Guinea",
     "ELL": "Παπούα Νέα Γουινέα",
@@ -8102,7 +9374,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "PR",
     "iso_3166_1_alpha3": "PRI",
-    "natives": {"official": "Commonwealth of Puerto Rico", "common": "Puerto Rico"},
+    "natives": {
+      "official": "Commonwealth of Puerto Rico",
+      "common": "Puerto Rico"
+    },
     "dialing_code": "+1 787",
     "default_number_length": 7,
     "default_number_format": "### ####",
@@ -8121,7 +9396,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "JPN": {"official": "プエルトリコのコモンウェルス", "common": "プエルトリコ"},
     "KOR": "푸에르토리코",
     "PER": {"official": "قلمرو همسود پورتوریکو", "common": "پورتوریکو"},
-    "POL": {"official": "Wolne Stowarzyszone Państwo Portoryko", "common": "Portoryko"},
+    "POL": {
+      "official": "Wolne Stowarzyszone Państwo Portoryko",
+      "common": "Portoryko"
+    },
     "POR": {"official": "Commonwealth of Puerto Rico", "common": "Porto Rico"},
     "RUS": {"official": "Содружество Пуэрто-Рико", "common": "Пуэрто-Рико"},
     "SLK": {"official": "Portorické spoločenstvo", "common": "Portoriko"},
@@ -8151,31 +9429,79 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "default_number_format": "### ### ####",
     "local_number_sample": "191 079 1066",
     "International_number_sample": "+850 191 079 1066",
-    "ENG": {"official": "Democratic People's Republic of Korea", "common": "North Korea"},
-    "CES": {"official": "Korejská lidově demokratická republika", "common": "Severní Korea"},
-    "DEU": {"official": "Demokratische Volksrepublik Korea", "common": "Nordkorea"},
-    "EST": {"official": "Korea Rahvademokraatlik Vabariik", "common": "Põhja-Korea"},
-    "FIN": {"official": "Korean demokraattinen kansantasavalta", "common": "Pohjois-Korea"},
-    "FRA": {"official": "République populaire démocratique de Corée", "common": "Corée du Nord"},
-    "NLD": {"official": "Democratische Volksrepubliek Korea", "common": "Noord-Korea"},
-    "HRV": {"official": "Demokratska Narodna Republika Koreja", "common": "Sjeverna Koreja"},
-    "HUN": {"official": "Repubblica democratica popolare di Corea", "common": "Corea del Nord"},
-    "ITA": {"official": "Repubblica democratica popolare di Corea", "common": "Corea del Nord"},
+    "ENG": {
+      "official": "Democratic People's Republic of Korea",
+      "common": "North Korea"
+    },
+    "CES": {
+      "official": "Korejská lidově demokratická republika",
+      "common": "Severní Korea"
+    },
+    "DEU": {
+      "official": "Demokratische Volksrepublik Korea",
+      "common": "Nordkorea"
+    },
+    "EST": {
+      "official": "Korea Rahvademokraatlik Vabariik",
+      "common": "Põhja-Korea"
+    },
+    "FIN": {
+      "official": "Korean demokraattinen kansantasavalta",
+      "common": "Pohjois-Korea"
+    },
+    "FRA": {
+      "official": "République populaire démocratique de Corée",
+      "common": "Corée du Nord"
+    },
+    "NLD": {
+      "official": "Democratische Volksrepubliek Korea",
+      "common": "Noord-Korea"
+    },
+    "HRV": {
+      "official": "Demokratska Narodna Republika Koreja",
+      "common": "Sjeverna Koreja"
+    },
+    "HUN": {
+      "official": "Repubblica democratica popolare di Corea",
+      "common": "Corea del Nord"
+    },
+    "ITA": {
+      "official": "Repubblica democratica popolare di Corea",
+      "common": "Corea del Nord"
+    },
     "JPN": "朝鮮民主主義人民共和国",
     "KOR": {"official": "조선민주주의인민공화국", "common": "조선"},
     "PER": {"official": "جمهوری دموکراتیک خلق کره", "common": "کُره شمالی"},
-    "POL": {"official": "Koreańska Republika Ludowo-Demokratyczna", "common": "Korea Północna"},
-    "POR": {"official": "República Popular Democrática da Coreia", "common": "Coreia do Norte"},
+    "POL": {
+      "official": "Koreańska Republika Ludowo-Demokratyczna",
+      "common": "Korea Północna"
+    },
+    "POR": {
+      "official": "República Popular Democrática da Coreia",
+      "common": "Coreia do Norte"
+    },
     "RUS": {
       "official": "Корейская Народно-Демократическая Республика Корея",
       "common": "Северная Корея"
     },
-    "SLK": {"official": "Kórejská ľudovodemokratická republika", "common": "Severná Kórea"},
-    "SPA": {"official": "República Popular Democrática de Corea", "common": "Corea del Norte"},
-    "SWE": {"official": "Demokratiska Folkrepubliken Korea", "common": "Nordkorea"},
+    "SLK": {
+      "official": "Kórejská ľudovodemokratická republika",
+      "common": "Severná Kórea"
+    },
+    "SPA": {
+      "official": "República Popular Democrática de Corea",
+      "common": "Corea del Norte"
+    },
+    "SWE": {
+      "official": "Demokratiska Folkrepubliken Korea",
+      "common": "Nordkorea"
+    },
     "URD": {"official": "جمہوری عوامی جمہوریہ کوریا", "common": "شمالی کوریا"},
     "ZHO": {"official": "朝鲜人民民主共和国", "common": "朝鲜"},
-    "ARA": {"official": "جمهورية كوريا الديمقراطية الشعبية", "common": "كوريا الشمالية"},
+    "ARA": {
+      "official": "جمهورية كوريا الديمقراطية الشعبية",
+      "common": "كوريا الشمالية"
+    },
     "BUL": "Северна Корея",
     "DAN": "Nordkorea",
     "ELL": "Βόρεια Κορέα",
@@ -8578,29 +9904,56 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "SA",
     "iso_3166_1_alpha3": "SAU",
-    "natives": {"official": "المملكة العربية السعودية", "common": "العربية السعودية"},
+    "natives": {
+      "official": "المملكة العربية السعودية",
+      "common": "العربية السعودية"
+    },
     "dialing_code": "+966",
     "default_number_length": 9,
     "default_number_format": "## ### ####",
     "local_number_sample": "56 811 3229",
     "International_number_sample": "+966 56 811 3229",
     "ENG": {"official": "Kingdom of Saudi Arabia", "common": "Saudi Arabia"},
-    "CES": {"official": "Saúdskoarabské království", "common": "Saúdská Arábie"},
+    "CES": {
+      "official": "Saúdskoarabské království",
+      "common": "Saúdská Arábie"
+    },
     "DEU": {"official": "Königreich Saudi-Arabien", "common": "Saudi-Arabien"},
     "EST": {"official": "Saudi Araabia Kuningriik", "common": "Saudi Araabia"},
-    "FIN": {"official": "Saudi-Arabian kuningaskunta", "common": "Saudi-Arabia"},
-    "FRA": {"official": "Royaume d'Arabie Saoudite", "common": "Arabie Saoudite"},
-    "NLD": {"official": "Koninkrijk van Saoedi-Arabië", "common": "Saoedi-Arabië"},
-    "HRV": {"official": "Kraljevina Saudijska Arabija", "common": "Saudijska Arabija"},
+    "FIN": {
+      "official": "Saudi-Arabian kuningaskunta",
+      "common": "Saudi-Arabia"
+    },
+    "FRA": {
+      "official": "Royaume d'Arabie Saoudite",
+      "common": "Arabie Saoudite"
+    },
+    "NLD": {
+      "official": "Koninkrijk van Saoedi-Arabië",
+      "common": "Saoedi-Arabië"
+    },
+    "HRV": {
+      "official": "Kraljevina Saudijska Arabija",
+      "common": "Saudijska Arabija"
+    },
     "HUN": "Arabia Saudita",
     "ITA": "Arabia Saudita",
     "JPN": {"official": "サウジアラビア王国", "common": "サウジアラビア"},
     "KOR": {"official": "사우디아라비아 왕국", "common": "사우디아라비아"},
     "PER": {"official": "پادشاهی عربی سَعودی", "common": "عربستان سعودی"},
-    "POL": {"official": "Królestwo Arabii Saudyjskiej", "common": "Arabia Saudyjska"},
+    "POL": {
+      "official": "Królestwo Arabii Saudyjskiej",
+      "common": "Arabia Saudyjska"
+    },
     "POR": {"official": "Reino da Arábia Saudita", "common": "Arábia Saudita"},
-    "RUS": {"official": "Королевство Саудовская Аравия", "common": "Саудовская Аравия"},
-    "SLK": {"official": "Saudskoarabské kráľovstvo", "common": "Saudská Arábia"},
+    "RUS": {
+      "official": "Королевство Саудовская Аравия",
+      "common": "Саудовская Аравия"
+    },
+    "SLK": {
+      "official": "Saudskoarabské kráľovstvo",
+      "common": "Saudská Arábia"
+    },
     "SPA": {"official": "Reino de Arabia Saudita", "common": "Arabia Saudí"},
     "SWE": {"official": "Kungadömet Saudiarabien", "common": "Saudiarabien"},
     "URD": {"official": "مملکتِ سعودی عرب", "common": "سعودی عرب"},
@@ -8759,7 +10112,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "default_number_format": "#####",
     "local_number_sample": "45231",
     "International_number_sample": "+500 45231",
-    "ENG": {"official": "South Georgia and the South Sandwich Islands", "common": "South Georgia"},
+    "ENG": {
+      "official": "South Georgia and the South Sandwich Islands",
+      "common": "South Georgia"
+    },
     "CES": "Jižní Georgie a Jižní Sandwichovy ostrovy",
     "DEU": "Südgeorgien und die Südlichen Sandwichinseln",
     "EST": "Lõuna-Georgia ja Lõuna-Sandwichi saared",
@@ -8784,7 +10140,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "official": "Georgia del Sud e isole Sandwich del Sud",
       "common": "Georgia del Sud e Isole Sandwich Meridionali"
     },
-    "JPN": {"official": "サウスジョージア·サウスサンドウィッチ諸島", "common": "サウスジョージア・サウスサンドウィッチ諸島"},
+    "JPN": {
+      "official": "サウスジョージア·サウスサンドウィッチ諸島",
+      "common": "サウスジョージア・サウスサンドウィッチ諸島"
+    },
     "KOR": "조지아",
     "PER": "جزایر جورجیای جنوبی و ساندویچ جنوبی",
     "POL": "Georgia Południowa i Sandwich Południowy",
@@ -8799,7 +10158,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "common": "Islas Georgias del Sur y Sandwich del Sur"
     },
     "SWE": "Sydgeorgien",
-    "URD": {"official": "جنوبی جارجیا و جزائر جنوبی سینڈوچ", "common": "جنوبی جارجیا"},
+    "URD": {
+      "official": "جنوبی جارجیا و جزائر جنوبی سینڈوچ",
+      "common": "جنوبی جارجیا"
+    },
     "ZHO": {"official": "南乔治亚岛和南桑威奇群岛", "common": "南乔治亚"},
     "ARA": "جورجيا الجنوبية وجزر ساندويتش الجنوبية",
     "BUL": null,
@@ -8828,19 +10190,43 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "DEU": "Spitzbergen und Jan Mayen",
     "EST": "Svalbard",
     "FIN": "Huippuvuoret",
-    "FRA": {"official": "Jan Mayen Svalbard", "common": "Svalbard et Jan Mayen"},
-    "NLD": {"official": "Svalbard og Jan Mayen", "common": "Svalbard en Jan Mayen"},
-    "HRV": {"official": "Svalbard og Jan Mayen", "common": "Svalbard i Jan Mayen"},
-    "HUN": {"official": "Svalbard og Jan Mayen", "common": "Svalbard e Jan Mayen"},
-    "ITA": {"official": "Svalbard og Jan Mayen", "common": "Svalbard e Jan Mayen"},
+    "FRA": {
+      "official": "Jan Mayen Svalbard",
+      "common": "Svalbard et Jan Mayen"
+    },
+    "NLD": {
+      "official": "Svalbard og Jan Mayen",
+      "common": "Svalbard en Jan Mayen"
+    },
+    "HRV": {
+      "official": "Svalbard og Jan Mayen",
+      "common": "Svalbard i Jan Mayen"
+    },
+    "HUN": {
+      "official": "Svalbard og Jan Mayen",
+      "common": "Svalbard e Jan Mayen"
+    },
+    "ITA": {
+      "official": "Svalbard og Jan Mayen",
+      "common": "Svalbard e Jan Mayen"
+    },
     "JPN": {"official": "スバールバル諸島OGヤンマイエン", "common": "スヴァールバル諸島およびヤンマイエン島"},
     "KOR": "스발바르 얀마옌 제도",
     "PER": "سوالبارد و یان ماین",
     "POL": "Svalbard i Jan Mayen",
-    "POR": {"official": "Svalbard og Jan Mayen", "common": "Ilhas Svalbard e Jan Mayen"},
-    "RUS": {"official": "Свальбарда ог Ян-Майен", "common": "Шпицберген и Ян-Майен"},
+    "POR": {
+      "official": "Svalbard og Jan Mayen",
+      "common": "Ilhas Svalbard e Jan Mayen"
+    },
+    "RUS": {
+      "official": "Свальбарда ог Ян-Майен",
+      "common": "Шпицберген и Ян-Майен"
+    },
     "SLK": "Svalbard a Jan Mayen",
-    "SPA": {"official": "Svalbard og Jan Mayen", "common": "Islas Svalbard y Jan Mayen"},
+    "SPA": {
+      "official": "Svalbard og Jan Mayen",
+      "common": "Islas Svalbard y Jan Mayen"
+    },
     "SWE": "Svalbard och Jan Mayen",
     "URD": "سوالبارڈ اور جان میئن",
     "ZHO": "斯瓦尔巴特",
@@ -8903,7 +10289,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "SL",
     "iso_3166_1_alpha3": "SLE",
-    "natives": {"official": "Republic of Sierra Leone", "common": "Sierra Leone"},
+    "natives": {
+      "official": "Republic of Sierra Leone",
+      "common": "Sierra Leone"
+    },
     "dialing_code": "+232",
     "default_number_length": 8,
     "default_number_format": "## ######",
@@ -8917,8 +10306,14 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "FRA": {"official": "République de Sierra Leone", "common": "Sierra Leone"},
     "NLD": {"official": "Republiek Sierra Leone", "common": "Sierra Leone"},
     "HRV": {"official": "Republika Sijera Leone", "common": "Sijera Leone"},
-    "HUN": {"official": "Repubblica della Sierra Leone", "common": "Sierra Leone"},
-    "ITA": {"official": "Repubblica della Sierra Leone", "common": "Sierra Leone"},
+    "HUN": {
+      "official": "Repubblica della Sierra Leone",
+      "common": "Sierra Leone"
+    },
+    "ITA": {
+      "official": "Repubblica della Sierra Leone",
+      "common": "Sierra Leone"
+    },
     "JPN": {"official": "シエラレオネ共和国", "common": "シエラレオネ"},
     "KOR": {"official": "시에라리온 공화국", "common": "시에라리온"},
     "PER": {"official": "جمهوری سیرالئون", "common": "سیرالئون"},
@@ -8946,7 +10341,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "SV",
     "iso_3166_1_alpha3": "SLV",
-    "natives": {"official": "República de El Salvador", "common": "El Salvador"},
+    "natives": {
+      "official": "República de El Salvador",
+      "common": "El Salvador"
+    },
     "dialing_code": "+503",
     "default_number_length": 8,
     "default_number_format": "#### ####",
@@ -8989,30 +10387,60 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "SM",
     "iso_3166_1_alpha3": "SMR",
-    "natives": {"official": "Serenissima Repubblica di San Marino", "common": "San Marino"},
+    "natives": {
+      "official": "Serenissima Repubblica di San Marino",
+      "common": "San Marino"
+    },
     "dialing_code": "+378",
     "default_number_length": 8,
     "default_number_format": "#### ####",
     "local_number_sample": "0549 5337",
     "International_number_sample": "+378 0549 5337",
-    "ENG": {"official": "Most Serene Republic of San Marino", "common": "San Marino"},
+    "ENG": {
+      "official": "Most Serene Republic of San Marino",
+      "common": "San Marino"
+    },
     "CES": {"official": "Republika San Marino", "common": "San Marino"},
     "DEU": {"official": "Republik San Marino", "common": "San Marino"},
     "EST": {"official": "San Marino Vabariik", "common": "San Marino"},
-    "FIN": {"official": "San Marinon seesteinen tasavalta", "common": "San Marino"},
+    "FIN": {
+      "official": "San Marinon seesteinen tasavalta",
+      "common": "San Marino"
+    },
     "FRA": {"official": "République de Saint-Marin", "common": "Saint-Marin"},
-    "NLD": {"official": "Meest Serene Republiek San Marino", "common": "San Marino"},
-    "HRV": {"official": "Većina Serene Republika San Marino", "common": "San Marino"},
-    "HUN": {"official": "Serenissima Repubblica di San Marino", "common": "San Marino"},
-    "ITA": {"official": "Serenissima Repubblica di San Marino", "common": "San Marino"},
+    "NLD": {
+      "official": "Meest Serene Republiek San Marino",
+      "common": "San Marino"
+    },
+    "HRV": {
+      "official": "Većina Serene Republika San Marino",
+      "common": "San Marino"
+    },
+    "HUN": {
+      "official": "Serenissima Repubblica di San Marino",
+      "common": "San Marino"
+    },
+    "ITA": {
+      "official": "Serenissima Repubblica di San Marino",
+      "common": "San Marino"
+    },
     "JPN": {"official": "サンマリノのほとんどセリーヌ共和国", "common": "サンマリノ"},
     "KOR": {"official": "산마리노 공화국", "common": "산마리노"},
     "PER": {"official": "جمهوری سان مارینو", "common": "سان مارینو"},
     "POL": {"official": "Republika San Marino", "common": "San Marino"},
-    "POR": {"official": "Sereníssima República de San Marino", "common": "San Marino"},
-    "RUS": {"official": "Большинство Serene Республика Сан-Марино", "common": "Сан-Марино"},
+    "POR": {
+      "official": "Sereníssima República de San Marino",
+      "common": "San Marino"
+    },
+    "RUS": {
+      "official": "Большинство Serene Республика Сан-Марино",
+      "common": "Сан-Марино"
+    },
     "SLK": {"official": "Sanmarínska republika", "common": "San Maríno"},
-    "SPA": {"official": "Serenísima República de San Marino", "common": "San Marino"},
+    "SPA": {
+      "official": "Serenísima República de San Marino",
+      "common": "San Marino"
+    },
     "SWE": {"official": "Republiken San Marino", "common": "San Marino"},
     "URD": {"official": "جمہوریہ سان مارینو", "common": "سان مارینو"},
     "ZHO": {"official": "圣马力诺共和国", "common": "圣马力诺"},
@@ -9039,7 +10467,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "local_number_sample": "61 008 4810",
     "International_number_sample": "+252 61 008 4810",
     "ENG": {"official": "Federal Republic of Somalia", "common": "Somalia"},
-    "CES": {"official": "Somálská demokratická republika", "common": "Somálsko"},
+    "CES": {
+      "official": "Somálská demokratická republika",
+      "common": "Somálsko"
+    },
     "DEU": {"official": "Bundesrepublik Somalia", "common": "Somalia"},
     "EST": {"official": "Somaalia Liitvabariik", "common": "Somaalia"},
     "FIN": {"official": "Somalian liittotasavalta", "common": "Somalia"},
@@ -9093,17 +10524,35 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     },
     "FIN": "Saint-Pierre ja Miquelon",
     "FRA": "Saint-Pierre-et-Miquelon",
-    "NLD": {"official": "Saint-Pierre en Miquelon", "common": "Saint Pierre en Miquelon"},
-    "HRV": {"official": "Saint Pierre i Miquelon", "common": "Sveti Petar i Mikelon"},
-    "HUN": {"official": "Saint Pierre e Miquelon", "common": "Saint-Pierre e Miquelon"},
-    "ITA": {"official": "Saint Pierre e Miquelon", "common": "Saint-Pierre e Miquelon"},
+    "NLD": {
+      "official": "Saint-Pierre en Miquelon",
+      "common": "Saint Pierre en Miquelon"
+    },
+    "HRV": {
+      "official": "Saint Pierre i Miquelon",
+      "common": "Sveti Petar i Mikelon"
+    },
+    "HUN": {
+      "official": "Saint Pierre e Miquelon",
+      "common": "Saint-Pierre e Miquelon"
+    },
+    "ITA": {
+      "official": "Saint Pierre e Miquelon",
+      "common": "Saint-Pierre e Miquelon"
+    },
     "JPN": {"official": "サンピエール島·ミクロン島", "common": "サンピエール島・ミクロン島"},
     "KOR": "생피에르 미클롱",
     "PER": {"official": "سن-پیر-ا-میکلون", "common": "سن-پیِر و میکلُن"},
     "POL": "Saint-Pierre i Miquelon",
-    "POR": {"official": "Saint Pierre e Miquelon", "common": "Saint-Pierre e Miquelon"},
+    "POR": {
+      "official": "Saint Pierre e Miquelon",
+      "common": "Saint-Pierre e Miquelon"
+    },
     "RUS": "Сен-Пьер и Микелон",
-    "SLK": {"official": "Ostrovy Saint Pierre a Miquelon", "common": "Saint Pierre a Miquelon"},
+    "SLK": {
+      "official": "Ostrovy Saint Pierre a Miquelon",
+      "common": "Saint Pierre a Miquelon"
+    },
     "SPA": "San Pedro y Miquelón",
     "SWE": "Saint-Pierre och Miquelon",
     "URD": "سینٹ پیئر و میکیلون",
@@ -9178,19 +10627,34 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "DEU": {"official": "Republik Südsudan", "common": "Südsudan"},
     "EST": {"official": "Lõuna-Sudaani Vabariik", "common": "Lõuna-Sudaan"},
     "FIN": {"official": "Etelä-Sudanin tasavalta", "common": "Etelä-Sudan"},
-    "FRA": {"official": "République du Soudan du Sud", "common": "Soudan du Sud"},
+    "FRA": {
+      "official": "République du Soudan du Sud",
+      "common": "Soudan du Sud"
+    },
     "NLD": {"official": "Republiek Zuid-Soedan", "common": "Zuid-Soedan"},
     "HRV": {"official": "Republika Južni Sudan", "common": "Južni Sudan"},
-    "HUN": {"official": "Repubblica del Sudan del Sud", "common": "Sudan del Sud"},
-    "ITA": {"official": "Repubblica del Sudan del Sud", "common": "Sudan del Sud"},
+    "HUN": {
+      "official": "Repubblica del Sudan del Sud",
+      "common": "Sudan del Sud"
+    },
+    "ITA": {
+      "official": "Repubblica del Sudan del Sud",
+      "common": "Sudan del Sud"
+    },
     "JPN": {"official": "南スーダン共和国", "common": "南スーダン"},
     "KOR": {"official": "남수단 공화국", "common": "남수단"},
     "PER": {"official": "جمهوری سودان جنوبی", "common": "سودان جنوبی"},
-    "POL": {"official": "Republika Południowego Sudanu", "common": "Południowy Sudan"},
+    "POL": {
+      "official": "Republika Południowego Sudanu",
+      "common": "Południowy Sudan"
+    },
     "POR": {"official": "República do Sudão do Sul", "common": "Sudão do Sul"},
     "RUS": {"official": "Республика Южный Судан", "common": "Южный Судан"},
     "SLK": {"official": "Juhosudánska republika", "common": "Južný Sudán"},
-    "SPA": {"official": "República de Sudán del Sur", "common": "Sudán del Sur"},
+    "SPA": {
+      "official": "República de Sudán del Sur",
+      "common": "Sudán del Sur"
+    },
     "SWE": {"official": "Republiken Sydsudan", "common": "Sydsudan"},
     "URD": {"official": "جمہوریہ جنوبی سوڈان", "common": "جنوبی سوڈان"},
     "ZHO": {"official": "南苏丹共和国", "common": "南苏丹"},
@@ -9261,7 +10725,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     },
     "JPN": {"official": "サントメ·プリンシペ民主共和国", "common": "サントメ・プリンシペ"},
     "KOR": {"official": "상투메 프린시페 민주 공화국", "common": "상투메 프린시페"},
-    "PER": {"official": "جمهوری دموکراتیک سائوتومه و پرنسیپ", "common": "سائوتومه و پرنسیپ"},
+    "PER": {
+      "official": "جمهوری دموکراتیک سائوتومه و پرنسیپ",
+      "common": "سائوتومه و پرنسیپ"
+    },
     "POL": {
       "official": "Demokratyczna Republika Wysp Świętego Tomasza i Książęcej",
       "common": "Wyspy Świętego Tomasza i Książęca"
@@ -9286,9 +10753,15 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "official": "Demokratiska republiken São Tomé och Príncipe",
       "common": "São Tomé och Príncipe"
     },
-    "URD": {"official": "جمہوریہ ساؤ ٹومے و پرنسپے", "common": "ساؤ ٹومے و پرنسپے"},
+    "URD": {
+      "official": "جمہوریہ ساؤ ٹومے و پرنسپے",
+      "common": "ساؤ ٹومے و پرنسپے"
+    },
     "ZHO": {"official": "圣多美和普林西比民主共和国", "common": "圣多美和普林西比"},
-    "ARA": {"official": "جمهورية ساو تومي وبرينسيب", "common": "ساو تومي وبرينسيب"},
+    "ARA": {
+      "official": "جمهورية ساو تومي وبرينسيب",
+      "common": "ساو تومي وبرينسيب"
+    },
     "BUL": "Сао Томе и Принсипи",
     "DAN": "São Tomé og Príncipe",
     "ELL": "Σάο Τομέ και Πρίνσιπε",
@@ -9583,7 +11056,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "PER": {"official": "جمهوری سیشل", "common": "سیشل"},
     "POL": {"official": "Republika Seszeli", "common": "Seszele"},
     "POR": {"official": "República das Seychelles", "common": "Seicheles"},
-    "RUS": {"official": "Республика Сейшельские Острова", "common": "Сейшельские Острова"},
+    "RUS": {
+      "official": "Республика Сейшельские Острова",
+      "common": "Сейшельские Острова"
+    },
     "SLK": {"official": "Seychelská republika", "common": "Seychely"},
     "SPA": {"official": "República de las Seychelles", "common": "Seychelles"},
     "SWE": {"official": "Republiken Seychellerna", "common": "Seychellerna"},
@@ -9656,10 +11132,19 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "International_number_sample": "+1 649 754 2247",
     "ENG": "Turks and Caicos Islands",
     "CES": "Turks a Caicos",
-    "DEU": {"official": "Turks und Caicos Inseln", "common": "Turks-und Caicosinseln"},
-    "EST": {"official": "Turksi ja Caicose saared", "common": "Turks ja Caicos"},
+    "DEU": {
+      "official": "Turks und Caicos Inseln",
+      "common": "Turks-und Caicosinseln"
+    },
+    "EST": {
+      "official": "Turksi ja Caicose saared",
+      "common": "Turks ja Caicos"
+    },
     "FIN": "Turks-ja Caicossaaret",
-    "FRA": {"official": "Îles Turques et Caïques", "common": "Îles Turques-et-Caïques"},
+    "FRA": {
+      "official": "Îles Turques et Caïques",
+      "common": "Îles Turques-et-Caïques"
+    },
     "NLD": "Turks-en Caicoseilanden",
     "HRV": "Otoci Turks i Caicos",
     "HUN": {"official": "Turks e Caicos", "common": "Isole Turks e Caicos"},
@@ -9671,7 +11156,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "POR": "Ilhas Turks e Caicos",
     "RUS": {"official": "Теркс и Кайкос острова", "common": "Теркс и Кайкос"},
     "SLK": {"official": "Ostrovy Turks a Caicos", "common": "Turks a Caicos"},
-    "SPA": {"official": "Islas Turcas y Caicos", "common": "Islas Turks y Caicos"},
+    "SPA": {
+      "official": "Islas Turcas y Caicos",
+      "common": "Islas Turks y Caicos"
+    },
     "SWE": "Turks- och Caicosöarna",
     "URD": "جزائر کیکس و ترکیہ",
     "ZHO": "特克斯和凯科斯群岛",
@@ -9949,34 +11437,88 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "TL",
     "iso_3166_1_alpha3": "TLS",
-    "natives": {"official": "República Democrática de Timor-Leste", "common": "Timor-Leste"},
+    "natives": {
+      "official": "República Democrática de Timor-Leste",
+      "common": "Timor-Leste"
+    },
     "dialing_code": "+670",
     "default_number_length": 7,
     "default_number_format": "### ####",
     "local_number_sample": "258 8816",
     "International_number_sample": "+670 258 8816",
-    "ENG": {"official": "Democratic Republic of Timor-Leste", "common": "Timor-Leste"},
-    "CES": {"official": "Demokratická republika Východní Timor", "common": "Východní Timor"},
-    "DEU": {"official": "Demokratische Republik Timor-Leste", "common": "Osttimor"},
-    "EST": {"official": "Timor-Leste Demokraatlik Vabariik", "common": "Ida-Timor"},
-    "FIN": {"official": "Itä-Timorin demokraattinen tasavalta", "common": "Itä-Timor"},
-    "FRA": {"official": "République démocratique du Timor oriental", "common": "Timor oriental"},
-    "NLD": {"official": "Democratische Republiek Oost-Timor", "common": "Oost-Timor"},
-    "HRV": {"official": "Demokratska Republika Timor-Leste", "common": "Istočni Timor"},
-    "HUN": {"official": "Repubblica Democratica di Timor Est", "common": "Timor Est"},
-    "ITA": {"official": "Repubblica Democratica di Timor Est", "common": "Timor Est"},
+    "ENG": {
+      "official": "Democratic Republic of Timor-Leste",
+      "common": "Timor-Leste"
+    },
+    "CES": {
+      "official": "Demokratická republika Východní Timor",
+      "common": "Východní Timor"
+    },
+    "DEU": {
+      "official": "Demokratische Republik Timor-Leste",
+      "common": "Osttimor"
+    },
+    "EST": {
+      "official": "Timor-Leste Demokraatlik Vabariik",
+      "common": "Ida-Timor"
+    },
+    "FIN": {
+      "official": "Itä-Timorin demokraattinen tasavalta",
+      "common": "Itä-Timor"
+    },
+    "FRA": {
+      "official": "République démocratique du Timor oriental",
+      "common": "Timor oriental"
+    },
+    "NLD": {
+      "official": "Democratische Republiek Oost-Timor",
+      "common": "Oost-Timor"
+    },
+    "HRV": {
+      "official": "Demokratska Republika Timor-Leste",
+      "common": "Istočni Timor"
+    },
+    "HUN": {
+      "official": "Repubblica Democratica di Timor Est",
+      "common": "Timor Est"
+    },
+    "ITA": {
+      "official": "Repubblica Democratica di Timor Est",
+      "common": "Timor Est"
+    },
     "JPN": {"official": "東ティモール民主共和国", "common": "東ティモール"},
     "KOR": {"official": "동티모르 민주 공화국", "common": "동티모르"},
     "PER": {"official": "جمهوری دموکراتیک تیمور شرقی", "common": "تیمور شرقی"},
-    "POL": {"official": "Demokratyczna Republika Timoru Wschodniego", "common": "Timor Wschodni"},
-    "POR": {"official": "República Democrática de Timor-Leste", "common": "Timor-Leste"},
-    "RUS": {"official": "Демократическая Республика Тимор -Лешти", "common": "Восточный Тимор"},
-    "SLK": {"official": "Východotimorská demokratická republika", "common": "Východný Timor"},
-    "SPA": {"official": "República Democrática de Timor-Leste", "common": "Timor Oriental"},
-    "SWE": {"official": "Demokratiska republiken Östtimor", "common": "Östtimor"},
+    "POL": {
+      "official": "Demokratyczna Republika Timoru Wschodniego",
+      "common": "Timor Wschodni"
+    },
+    "POR": {
+      "official": "República Democrática de Timor-Leste",
+      "common": "Timor-Leste"
+    },
+    "RUS": {
+      "official": "Демократическая Республика Тимор -Лешти",
+      "common": "Восточный Тимор"
+    },
+    "SLK": {
+      "official": "Východotimorská demokratická republika",
+      "common": "Východný Timor"
+    },
+    "SPA": {
+      "official": "República Democrática de Timor-Leste",
+      "common": "Timor Oriental"
+    },
+    "SWE": {
+      "official": "Demokratiska republiken Östtimor",
+      "common": "Östtimor"
+    },
     "URD": {"official": "جمہوری جمہوریہ مشرقی تیمور", "common": "مشرقی تیمور"},
     "ZHO": {"official": "东帝汶民主共和国", "common": "东帝汶"},
-    "ARA": {"official": "جمهورية تيمور الشرقية الديمقراطية", "common": "تيمور الشرقية"},
+    "ARA": {
+      "official": "جمهورية تيمور الشرقية الديمقراطية",
+      "common": "تيمور الشرقية"
+    },
     "BUL": "Източен Тимор",
     "DAN": "Østtimor",
     "ELL": "Ανατολικό Τιμόρ",
@@ -10035,34 +11577,91 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "TT",
     "iso_3166_1_alpha3": "TTO",
-    "natives": {"official": "Republic of Trinidad and Tobago", "common": "Trinidad and Tobago"},
+    "natives": {
+      "official": "Republic of Trinidad and Tobago",
+      "common": "Trinidad and Tobago"
+    },
     "dialing_code": "+1 868",
     "default_number_length": 7,
     "default_number_format": "### ####",
     "local_number_sample": "994 2116",
     "International_number_sample": "+1 868 994 2116",
-    "ENG": {"official": "Republic of Trinidad and Tobago", "common": "Trinidad and Tobago"},
-    "CES": {"official": "Republika Trinidad a Tobago", "common": "Trinidad a Tobago"},
-    "DEU": {"official": "Republik Trinidad und Tobago", "common": "Trinidad und Tobago"},
-    "EST": {"official": "Trinidadi ja Tobago Vabariik", "common": "Trinidad ja Tobago"},
-    "FIN": {"official": "Trinidadin ja Tobagon tasavalta", "common": "Trinidad ja Tobago"},
-    "FRA": {"official": "République de Trinité-et-Tobago", "common": "Trinité-et-Tobago"},
-    "NLD": {"official": "Republiek Trinidad en Tobago", "common": "Trinidad en Tobago"},
-    "HRV": {"official": "Republika Trinidad i Tobago", "common": "Trinidad i Tobago"},
-    "HUN": {"official": "Repubblica di Trinidad e Tobago", "common": "Trinidad e Tobago"},
-    "ITA": {"official": "Repubblica di Trinidad e Tobago", "common": "Trinidad e Tobago"},
+    "ENG": {
+      "official": "Republic of Trinidad and Tobago",
+      "common": "Trinidad and Tobago"
+    },
+    "CES": {
+      "official": "Republika Trinidad a Tobago",
+      "common": "Trinidad a Tobago"
+    },
+    "DEU": {
+      "official": "Republik Trinidad und Tobago",
+      "common": "Trinidad und Tobago"
+    },
+    "EST": {
+      "official": "Trinidadi ja Tobago Vabariik",
+      "common": "Trinidad ja Tobago"
+    },
+    "FIN": {
+      "official": "Trinidadin ja Tobagon tasavalta",
+      "common": "Trinidad ja Tobago"
+    },
+    "FRA": {
+      "official": "République de Trinité-et-Tobago",
+      "common": "Trinité-et-Tobago"
+    },
+    "NLD": {
+      "official": "Republiek Trinidad en Tobago",
+      "common": "Trinidad en Tobago"
+    },
+    "HRV": {
+      "official": "Republika Trinidad i Tobago",
+      "common": "Trinidad i Tobago"
+    },
+    "HUN": {
+      "official": "Repubblica di Trinidad e Tobago",
+      "common": "Trinidad e Tobago"
+    },
+    "ITA": {
+      "official": "Repubblica di Trinidad e Tobago",
+      "common": "Trinidad e Tobago"
+    },
     "JPN": {"official": "トリニダード·トバゴ共和国", "common": "トリニダード・トバゴ"},
     "KOR": {"official": "트리니다드 토바고 공화국", "common": "트리니다드 토바고"},
-    "PER": {"official": "جمهوری ترینیداد و توباگو", "common": "ترینیداد و توباگو"},
+    "PER": {
+      "official": "جمهوری ترینیداد و توباگو",
+      "common": "ترینیداد و توباگو"
+    },
     "POL": "Trynidad i Tobago",
-    "POR": {"official": "República de Trinidad e Tobago", "common": "Trinidad e Tobago"},
-    "RUS": {"official": "Республика Тринидад и Тобаго", "common": "Тринидад и Тобаго"},
-    "SLK": {"official": "Republika Trinidad a Tobaga", "common": "Trinidad a Tobago"},
-    "SPA": {"official": "República de Trinidad y Tobago", "common": "Trinidad y Tobago"},
-    "SWE": {"official": "Republiken Trinidad och Tobago", "common": "Trinidad och Tobago"},
-    "URD": {"official": "جمہوریہ ٹرینیڈاڈ و ٹوباگو", "common": "ٹرینیڈاڈ و ٹوباگو"},
+    "POR": {
+      "official": "República de Trinidad e Tobago",
+      "common": "Trinidad e Tobago"
+    },
+    "RUS": {
+      "official": "Республика Тринидад и Тобаго",
+      "common": "Тринидад и Тобаго"
+    },
+    "SLK": {
+      "official": "Republika Trinidad a Tobaga",
+      "common": "Trinidad a Tobago"
+    },
+    "SPA": {
+      "official": "República de Trinidad y Tobago",
+      "common": "Trinidad y Tobago"
+    },
+    "SWE": {
+      "official": "Republiken Trinidad och Tobago",
+      "common": "Trinidad och Tobago"
+    },
+    "URD": {
+      "official": "جمہوریہ ٹرینیڈاڈ و ٹوباگو",
+      "common": "ٹرینیڈاڈ و ٹوباگو"
+    },
     "ZHO": {"official": "特立尼达和多巴哥共和国", "common": "特立尼达和多巴哥"},
-    "ARA": {"official": "جمهورية ترينيداد وتوباغو", "common": "ترينيداد وتوباغو"},
+    "ARA": {
+      "official": "جمهورية ترينيداد وتوباغو",
+      "common": "ترينيداد وتوباغو"
+    },
     "BUL": "Тринидад и Тобаго",
     "DAN": "Trinidad og Tobago",
     "ELL": "Τρινιντάντ και Τομπάγκο",
@@ -10250,7 +11849,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "TZ",
     "iso_3166_1_alpha3": "TZA",
-    "natives": {"official": "United Republic of Tanzania", "common": "Tanzania"},
+    "natives": {
+      "official": "United Republic of Tanzania",
+      "common": "Tanzania"
+    },
     "dialing_code": "+255",
     "default_number_length": 9,
     "default_number_format": "## ### ####",
@@ -10263,7 +11865,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "FIN": {"official": "Tansanian yhdistynyt tasavalta", "common": "Tansania"},
     "FRA": {"official": "République -Unie de Tanzanie", "common": "Tanzanie"},
     "NLD": {"official": "Verenigde Republiek Tanzania", "common": "Tanzania"},
-    "HRV": {"official": "Ujedinjena Republika Tanzanija", "common": "Tanzanija"},
+    "HRV": {
+      "official": "Ujedinjena Republika Tanzanija",
+      "common": "Tanzanija"
+    },
     "HUN": {"official": "Repubblica Unita di Tanzania", "common": "Tanzania"},
     "ITA": {"official": "Repubblica Unita di Tanzania", "common": "Tanzania"},
     "JPN": {"official": "タンザニア連合共和国", "common": "タンザニア"},
@@ -10271,8 +11876,14 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "PER": {"official": "جمهوری متحد تانزانیا", "common": "تانزانیا"},
     "POL": {"official": "Zjednoczona Republika Tanzanii", "common": "Tanzania"},
     "POR": {"official": "República Unida da Tanzânia", "common": "Tanzânia"},
-    "RUS": {"official": "Объединенная Республика Танзания", "common": "Танзания"},
-    "SLK": {"official": "Tanzánijská zjednotená republika", "common": "Tanzánia"},
+    "RUS": {
+      "official": "Объединенная Республика Танзания",
+      "common": "Танзания"
+    },
+    "SLK": {
+      "official": "Tanzánijská zjednotená republika",
+      "common": "Tanzánia"
+    },
     "SPA": {"official": "República Unida de Tanzania", "common": "Tanzania"},
     "SWE": {"official": "Förenade republiken Tanzania", "common": "Tanzania"},
     "URD": {"official": "متحدہ جمہوریہ تنزانیہ", "common": "تنزانیہ"},
@@ -10394,7 +12005,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "official": "USA, kleinere ausgelagerte Inseln",
       "common": "Kleinere Inselbesitzungen der Vereinigten Staaten"
     },
-    "EST": {"official": "Ühendriikide väikesed hajasaared", "common": "Ühendriikide hajasaared"},
+    "EST": {
+      "official": "Ühendriikide väikesed hajasaared",
+      "common": "Ühendriikide hajasaared"
+    },
     "FIN": "Yhdysvaltain asumattomat saaret",
     "FRA": "Îles mineures éloignées des États-Unis",
     "NLD": "Kleine afgelegen eilanden van de Verenigde Staten",
@@ -10443,7 +12057,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "UY",
     "iso_3166_1_alpha3": "URY",
-    "natives": {"official": "República Oriental del Uruguay", "common": "Uruguay"},
+    "natives": {
+      "official": "República Oriental del Uruguay",
+      "common": "Uruguay"
+    },
     "dialing_code": "+598",
     "default_number_length": 8,
     "default_number_format": "#### ####",
@@ -10454,11 +12071,20 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "DEU": {"official": "Republik Östlich des Uruguay", "common": "Uruguay"},
     "EST": {"official": "Uruguay Idavabariik", "common": "Uruguay"},
     "FIN": {"official": "Uruguayn itäinen tasavalta", "common": "Uruguay"},
-    "FRA": {"official": "République orientale de l'Uruguay", "common": "Uruguay"},
+    "FRA": {
+      "official": "République orientale de l'Uruguay",
+      "common": "Uruguay"
+    },
     "NLD": {"official": "Oosterse Republiek Uruguay", "common": "Uruguay"},
     "HRV": {"official": "Orijentalna Republika Urugvaj", "common": "Urugvaj"},
-    "HUN": {"official": "Repubblica Orientale dell'Uruguay", "common": "Uruguay"},
-    "ITA": {"official": "Repubblica Orientale dell'Uruguay", "common": "Uruguay"},
+    "HUN": {
+      "official": "Repubblica Orientale dell'Uruguay",
+      "common": "Uruguay"
+    },
+    "ITA": {
+      "official": "Repubblica Orientale dell'Uruguay",
+      "common": "Uruguay"
+    },
     "JPN": {"official": "ウルグアイ東方共和国", "common": "ウルグアイ"},
     "KOR": {"official": "우루과이 동방 공화국", "common": "우루과이"},
     "PER": {"official": "جمهوری اروگوئه", "common": "اروگوئه"},
@@ -10486,7 +12112,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "US",
     "iso_3166_1_alpha3": "USA",
-    "natives": {"official": "United States of America", "common": "United States"},
+    "natives": {
+      "official": "United States of America",
+      "common": "United States"
+    },
     "dialing_code": "+1",
     "default_number_length": 10,
     "default_number_format": "###-###-####",
@@ -10494,22 +12123,40 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "International_number_sample": "+1 202-555-0193",
     "ENG": {"official": "United States of America", "common": "United States"},
     "CES": {"official": "Spojené státy americké", "common": "Spojené státy"},
-    "DEU": {"official": "Vereinigte Staaten von Amerika", "common": "Vereinigte Staaten"},
+    "DEU": {
+      "official": "Vereinigte Staaten von Amerika",
+      "common": "Vereinigte Staaten"
+    },
     "EST": "Ameerika Ühendriigid",
     "FIN": {"official": "Amerikan yhdysvallat", "common": "Yhdysvallat"},
     "FRA": {"official": "Les états-unis d'Amérique", "common": "États-Unis"},
-    "NLD": {"official": "Verenigde Staten van Amerika", "common": "Verenigde Staten"},
-    "HRV": {"official": "Sjedinjene Države Amerike", "common": "Sjedinjene Američke Države"},
+    "NLD": {
+      "official": "Verenigde Staten van Amerika",
+      "common": "Verenigde Staten"
+    },
+    "HRV": {
+      "official": "Sjedinjene Države Amerike",
+      "common": "Sjedinjene Američke Države"
+    },
     "HUN": {"official": "Stati Uniti d'America", "common": "Stati Uniti"},
     "ITA": {"official": "Stati Uniti d'America", "common": "Stati Uniti"},
     "JPN": "アメリカ合衆国",
     "KOR": {"official": "아메리카 합중국", "common": "미국"},
     "PER": "ایالات متحده آمریکا",
-    "POL": {"official": "Stany Zjednoczone Ameryki", "common": "Stany Zjednoczone"},
-    "POR": {"official": "Estados Unidos da América", "common": "Estados Unidos"},
+    "POL": {
+      "official": "Stany Zjednoczone Ameryki",
+      "common": "Stany Zjednoczone"
+    },
+    "POR": {
+      "official": "Estados Unidos da América",
+      "common": "Estados Unidos"
+    },
     "RUS": {"official": "Соединенные Штаты Америки", "common": "США"},
     "SLK": {"official": "Spojené štáty Americké", "common": "Spojené štáty"},
-    "SPA": {"official": "Estados Unidos de América", "common": "Estados Unidos"},
+    "SPA": {
+      "official": "Estados Unidos de América",
+      "common": "Estados Unidos"
+    },
     "SWE": {"official": "Amerikas förenta stater", "common": "USA"},
     "URD": {"official": "ریاستہائے متحدہ امریکا", "common": "ریاستہائے متحدہ"},
     "ZHO": {"official": "美利坚合众国", "common": "美国"},
@@ -10572,7 +12219,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "VA",
     "iso_3166_1_alpha3": "VAT",
-    "natives": {"official": "Stato della Città del Vaticano", "common": "Vaticano"},
+    "natives": {
+      "official": "Stato della Città del Vaticano",
+      "common": "Vaticano"
+    },
     "dialing_code": "+379",
     "default_number_length": 10,
     "default_number_format": "##########",
@@ -10594,7 +12244,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "POL": {"official": "Państwo Watykańskie", "common": "Watykan"},
     "POR": "Cidade do Vaticano",
     "RUS": {"official": "Город-государство Ватикан", "common": "Ватикан"},
-    "SLK": {"official": "Svätá stolica (Vatikánsky mestský štát", "common": "Vatikán"},
+    "SLK": {
+      "official": "Svätá stolica (Vatikánsky mestský štát",
+      "common": "Vatikán"
+    },
     "SPA": "Ciudad del Vaticano",
     "SWE": "Vatikanstaten",
     "URD": "ویٹیکن سٹی",
@@ -10624,7 +12277,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "ENG": "Saint Vincent and the Grenadines",
     "CES": "Svatý Vincenc a Grenadiny",
     "DEU": "St. Vincent und die Grenadinen",
-    "EST": {"official": "Saint Vincent ja Grenadiinid", "common": "Saint Vincent"},
+    "EST": {
+      "official": "Saint Vincent ja Grenadiinid",
+      "common": "Saint Vincent"
+    },
     "FIN": "Saint Vincent ja Grenadiinit",
     "FRA": {
       "official": "Saint-Vincent-et-les Grenadines",
@@ -10641,7 +12297,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "POR": "São Vicente e Granadinas",
     "RUS": "Сент-Винсент и Гренадины",
     "SLK": "Svätý Vincent a Grenadíny",
-    "SPA": {"official": "San Vicente y las Granadinas", "common": "San Vicente y Granadinas"},
+    "SPA": {
+      "official": "San Vicente y las Granadinas",
+      "common": "San Vicente y Granadinas"
+    },
     "SWE": "Saint Vincent och Grenadinerna",
     "URD": "سینٹ وینسینٹ و گریناڈائنز",
     "ZHO": "圣文森特和格林纳丁斯",
@@ -10661,31 +12320,79 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "VE",
     "iso_3166_1_alpha3": "VEN",
-    "natives": {"official": "República Bolivariana de Venezuela", "common": "Venezuela"},
+    "natives": {
+      "official": "República Bolivariana de Venezuela",
+      "common": "Venezuela"
+    },
     "dialing_code": "+58",
     "default_number_length": 10,
     "default_number_format": "### ### ####",
     "local_number_sample": "212 920 0637",
     "International_number_sample": "+58 212 920 0637",
-    "ENG": {"official": "Bolivarian Republic of Venezuela", "common": "Venezuela"},
-    "CES": {"official": "Bolívarská republika Venezuela", "common": "Venezuela"},
-    "DEU": {"official": "Bolivarische Republik Venezuela", "common": "Venezuela"},
+    "ENG": {
+      "official": "Bolivarian Republic of Venezuela",
+      "common": "Venezuela"
+    },
+    "CES": {
+      "official": "Bolívarská republika Venezuela",
+      "common": "Venezuela"
+    },
+    "DEU": {
+      "official": "Bolivarische Republik Venezuela",
+      "common": "Venezuela"
+    },
     "EST": {"official": "Venezuela Bolívari Vabariik", "common": "Venezuela"},
-    "FIN": {"official": "Venezuelan bolivariaainen tasavalta", "common": "Venezuela"},
-    "FRA": {"official": "République bolivarienne du Venezuela", "common": "Venezuela"},
-    "NLD": {"official": "Bolivariaanse Republiek Venezuela", "common": "Venezuela"},
-    "HRV": {"official": "BOLIVARIJANSKA Republika Venezuela", "common": "Venezuela"},
-    "HUN": {"official": "Repubblica Bolivariana del Venezuela", "common": "Venezuela"},
-    "ITA": {"official": "Repubblica Bolivariana del Venezuela", "common": "Venezuela"},
+    "FIN": {
+      "official": "Venezuelan bolivariaainen tasavalta",
+      "common": "Venezuela"
+    },
+    "FRA": {
+      "official": "République bolivarienne du Venezuela",
+      "common": "Venezuela"
+    },
+    "NLD": {
+      "official": "Bolivariaanse Republiek Venezuela",
+      "common": "Venezuela"
+    },
+    "HRV": {
+      "official": "BOLIVARIJANSKA Republika Venezuela",
+      "common": "Venezuela"
+    },
+    "HUN": {
+      "official": "Repubblica Bolivariana del Venezuela",
+      "common": "Venezuela"
+    },
+    "ITA": {
+      "official": "Repubblica Bolivariana del Venezuela",
+      "common": "Venezuela"
+    },
     "JPN": {"official": "ベネズエラ·ボリバル共和国", "common": "ベネズエラ・ボリバル共和国"},
     "KOR": {"official": "베네수엘라 볼리바르 공화국", "common": "베네수엘라"},
     "PER": {"official": "جمهوری بولیواری ونزوئلا", "common": "ونزوئلا"},
-    "POL": {"official": "Boliwariańska Republika Wenezueli", "common": "Wenezuela"},
-    "POR": {"official": "República Bolivariana da Venezuela", "common": "Venezuela"},
-    "RUS": {"official": "Боливарианская Республика Венесуэла", "common": "Венесуэла"},
-    "SLK": {"official": "Venezuelská bolívarovská republika", "common": "Venezuela"},
-    "SPA": {"official": "República Bolivariana de Venezuela", "common": "Venezuela"},
-    "SWE": {"official": "Bolivarianska republiken Venezuela", "common": "Venezuela"},
+    "POL": {
+      "official": "Boliwariańska Republika Wenezueli",
+      "common": "Wenezuela"
+    },
+    "POR": {
+      "official": "República Bolivariana da Venezuela",
+      "common": "Venezuela"
+    },
+    "RUS": {
+      "official": "Боливарианская Республика Венесуэла",
+      "common": "Венесуэла"
+    },
+    "SLK": {
+      "official": "Venezuelská bolívarovská republika",
+      "common": "Venezuela"
+    },
+    "SPA": {
+      "official": "República Bolivariana de Venezuela",
+      "common": "Venezuela"
+    },
+    "SWE": {
+      "official": "Bolivarianska republiken Venezuela",
+      "common": "Venezuela"
+    },
     "URD": {"official": "جمہوریہ وینیزویلا", "common": "وینیزویلا"},
     "ZHO": {"official": "委内瑞拉玻利瓦尔共和国", "common": "委内瑞拉"},
     "ARA": {"official": "جمهورية فنزويلا البوليفارية", "common": "فنزويلا"},
@@ -10704,7 +12411,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "VG",
     "iso_3166_1_alpha3": "VGB",
-    "natives": {"official": "Virgin Islands", "common": "British Virgin Islands"},
+    "natives": {
+      "official": "Virgin Islands",
+      "common": "British Virgin Islands"
+    },
     "dialing_code": "+1 284",
     "default_number_length": 7,
     "default_number_format": "### ####",
@@ -10714,10 +12424,16 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "CES": "Britské Panenské ostrovy",
     "DEU": {"official": "Jungferninseln", "common": "Britische Jungferninseln"},
     "EST": {"official": "Neitsisaared", "common": "Briti Neitsisaared"},
-    "FIN": {"official": "Brittiläiset Neitsytsaaret", "common": "Neitsytsaaret"},
+    "FIN": {
+      "official": "Brittiläiset Neitsytsaaret",
+      "common": "Neitsytsaaret"
+    },
     "FRA": {"official": "îles Vierges", "common": "Îles Vierges britanniques"},
     "NLD": {"official": "Maagdeneilanden", "common": "Britse Maagdeneilanden"},
-    "HRV": {"official": "Djevičanski Otoci", "common": "Britanski Djevičanski Otoci"},
+    "HRV": {
+      "official": "Djevičanski Otoci",
+      "common": "Britanski Djevičanski Otoci"
+    },
     "HUN": {"official": "Isole Vergini", "common": "Isole Vergini Britanniche"},
     "ITA": {"official": "Isole Vergini", "common": "Isole Vergini Britanniche"},
     "JPN": {"official": "バージン諸島", "common": "イギリス領ヴァージン諸島"},
@@ -10725,9 +12441,15 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "PER": "جزایر ویرجین بریتانیا",
     "POL": "Brytyjskie Wyspy Dziewicze",
     "POR": "Ilhas Virgens",
-    "RUS": {"official": "Виргинские острова", "common": "Британские Виргинские острова"},
+    "RUS": {
+      "official": "Виргинские острова",
+      "common": "Британские Виргинские острова"
+    },
     "SLK": "Panenské ostrovy",
-    "SPA": {"official": "Islas Vírgenes", "common": "Islas Vírgenes del Reino Unido"},
+    "SPA": {
+      "official": "Islas Vírgenes",
+      "common": "Islas Vírgenes del Reino Unido"
+    },
     "SWE": "Brittiska Jungfruöarna",
     "URD": "برطانوی جزائر ورجن",
     "ZHO": "英属维尔京群岛",
@@ -10762,28 +12484,49 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     },
     "CES": "Americké Panenské ostrovy",
     "DEU": "Amerikanische Jungferninseln",
-    "EST": {"official": "Ühendriikide Neitsisaared", "common": "Neitsisaared, USA"},
-    "FIN": {"official": "Yhdysvaltain Neitsytsaaret", "common": "Neitsytsaaret"},
+    "EST": {
+      "official": "Ühendriikide Neitsisaared",
+      "common": "Neitsisaared, USA"
+    },
+    "FIN": {
+      "official": "Yhdysvaltain Neitsytsaaret",
+      "common": "Neitsytsaaret"
+    },
     "FRA": "Îles Vierges des États-Unis",
     "NLD": {
       "official": "Maagdeneilanden van de Verenigde Staten",
       "common": "Amerikaanse Maagdeneilanden"
     },
-    "HRV": {"official": "Djevičanski Otoci SAD", "common": "Američki Djevičanski Otoci"},
-    "HUN": {"official": "Isole Vergini degli Stati Uniti", "common": "Isole Vergini americane"},
-    "ITA": {"official": "Isole Vergini degli Stati Uniti", "common": "Isole Vergini americane"},
+    "HRV": {
+      "official": "Djevičanski Otoci SAD",
+      "common": "Američki Djevičanski Otoci"
+    },
+    "HUN": {
+      "official": "Isole Vergini degli Stati Uniti",
+      "common": "Isole Vergini americane"
+    },
+    "ITA": {
+      "official": "Isole Vergini degli Stati Uniti",
+      "common": "Isole Vergini americane"
+    },
     "JPN": {"official": "米国のバージン諸島", "common": "アメリカ領ヴァージン諸島"},
     "KOR": "미국령 버진아일랜드",
     "PER": "جزایر ویرجین ایالات متحده آمریکا",
     "POL": "Wyspy Dziewicze Stanów Zjednoczonych",
     "POR": "Ilhas Virgens dos Estados Unidos",
-    "RUS": {"official": "Виргинские острова Соединенных Штатов", "common": "Виргинские Острова"},
+    "RUS": {
+      "official": "Виргинские острова Соединенных Штатов",
+      "common": "Виргинские Острова"
+    },
     "SLK": "Americké Panenské ostrovy",
     "SPA": "Islas Vírgenes de los Estados Unidos",
     "SWE": "Amerikanska Jungfruöarna",
     "URD": "امریکی جزائر ورجن",
     "ZHO": "美属维尔京群岛",
-    "ARA": {"official": "جزر العذراء التابعة للولايات المتحدة", "common": "جزر العذراء الأمريكية"},
+    "ARA": {
+      "official": "جزر العذراء التابعة للولايات المتحدة",
+      "common": "جزر العذراء الأمريكية"
+    },
     "BUL": null,
     "DAN": null,
     "ELL": null,
@@ -10799,31 +12542,70 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "VN",
     "iso_3166_1_alpha3": "VNM",
-    "natives": {"official": "Cộng hòa xã hội chủ nghĩa Việt Nam", "common": "Việt Nam"},
+    "natives": {
+      "official": "Cộng hòa xã hội chủ nghĩa Việt Nam",
+      "common": "Việt Nam"
+    },
     "dialing_code": "+84",
     "default_number_length": 10,
     "default_number_format": "### ### ####",
     "local_number_sample": "121 182 8069",
     "International_number_sample": "+84 121 182 8069",
     "ENG": {"official": "Socialist Republic of Vietnam", "common": "Vietnam"},
-    "CES": {"official": "Vietnamská socialistická republika", "common": "Vietnam"},
+    "CES": {
+      "official": "Vietnamská socialistická republika",
+      "common": "Vietnam"
+    },
     "DEU": {"official": "Sozialistische Republik Vietnam", "common": "Vietnam"},
     "EST": {"official": "Vietnami Sotsialistlik Vabariik", "common": "Vietnam"},
-    "FIN": {"official": "Vietnamin sosialistinen tasavalta", "common": "Vietnam"},
-    "FRA": {"official": "République socialiste du Viêt Nam", "common": "Viêt Nam"},
-    "NLD": {"official": "Socialistische Republiek Vietnam", "common": "Vietnam"},
-    "HRV": {"official": "Socijalistička Republika Vijetnam", "common": "Vijetnam"},
-    "HUN": {"official": "Repubblica socialista del Vietnam", "common": "Vietnam"},
-    "ITA": {"official": "Repubblica socialista del Vietnam", "common": "Vietnam"},
+    "FIN": {
+      "official": "Vietnamin sosialistinen tasavalta",
+      "common": "Vietnam"
+    },
+    "FRA": {
+      "official": "République socialiste du Viêt Nam",
+      "common": "Viêt Nam"
+    },
+    "NLD": {
+      "official": "Socialistische Republiek Vietnam",
+      "common": "Vietnam"
+    },
+    "HRV": {
+      "official": "Socijalistička Republika Vijetnam",
+      "common": "Vijetnam"
+    },
+    "HUN": {
+      "official": "Repubblica socialista del Vietnam",
+      "common": "Vietnam"
+    },
+    "ITA": {
+      "official": "Repubblica socialista del Vietnam",
+      "common": "Vietnam"
+    },
     "JPN": {"official": "ベトナム社会主義共和国", "common": "ベトナム"},
     "KOR": {"official": "베트남 사회주의 공화국", "common": "베트남"},
     "PER": {"official": "جمهوری سوسیالیستی ویتنام", "common": "ویتنام"},
-    "POL": {"official": "Socjalistyczna Republika Wietnamu", "common": "Wietnam"},
-    "POR": {"official": "República Socialista do Vietname", "common": "Vietname"},
-    "RUS": {"official": "Социалистическая Республика Вьетнам", "common": "Вьетнам"},
-    "SLK": {"official": "Vietnamská socialistická republika", "common": "Vietnam"},
+    "POL": {
+      "official": "Socjalistyczna Republika Wietnamu",
+      "common": "Wietnam"
+    },
+    "POR": {
+      "official": "República Socialista do Vietname",
+      "common": "Vietname"
+    },
+    "RUS": {
+      "official": "Социалистическая Республика Вьетнам",
+      "common": "Вьетнам"
+    },
+    "SLK": {
+      "official": "Vietnamská socialistická republika",
+      "common": "Vietnam"
+    },
     "SPA": {"official": "República Socialista de Vietnam", "common": "Vietnam"},
-    "SWE": {"official": "Socialistiska republiken Vietnam", "common": "Vietnam"},
+    "SWE": {
+      "official": "Socialistiska republiken Vietnam",
+      "common": "Vietnam"
+    },
     "URD": {"official": "اشتراکی جمہوریہ ویتنام", "common": "ویتنام"},
     "ZHO": {"official": "越南社会主义共和国", "common": "越南"},
     "ARA": {"official": "جمهورية فيتنام الاشتراكية", "common": "فيتنام"},
@@ -10885,7 +12667,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "WF",
     "iso_3166_1_alpha3": "WLF",
-    "natives": {"official": "Territoire des îles Wallis et Futuna", "common": "Wallis et Futuna"},
+    "natives": {
+      "official": "Territoire des îles Wallis et Futuna",
+      "common": "Wallis et Futuna"
+    },
     "dialing_code": "+681",
     "default_number_length": 7,
     "default_number_format": "### ####",
@@ -10895,25 +12680,70 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
       "official": "Territory of the Wallis and Futuna Islands",
       "common": "Wallis and Futuna"
     },
-    "CES": {"official": "Teritorium ostrovů Wallis a Futuna", "common": "Wallis a Futuna"},
-    "DEU": {"official": "Gebiet der Wallis und Futuna", "common": "Wallis und Futuna"},
+    "CES": {
+      "official": "Teritorium ostrovů Wallis a Futuna",
+      "common": "Wallis a Futuna"
+    },
+    "DEU": {
+      "official": "Gebiet der Wallis und Futuna",
+      "common": "Wallis und Futuna"
+    },
     "EST": {"official": "Wallise ja Futuna ala", "common": "Wallis ja Futuna"},
-    "FIN": {"official": "Wallisin ja Futunan yhteisö", "common": "Wallis ja Futuna"},
-    "FRA": {"official": "Territoire des îles Wallis et Futuna", "common": "Wallis-et-Futuna"},
-    "NLD": {"official": "Grondgebied van de Wallis en Futuna", "common": "Wallis en Futuna"},
-    "HRV": {"official": "Teritoriju Wallis i Futuna", "common": "Wallis i Fortuna"},
-    "HUN": {"official": "Territorio delle Isole Wallis e Futuna", "common": "Wallis e Futuna"},
-    "ITA": {"official": "Territorio delle Isole Wallis e Futuna", "common": "Wallis e Futuna"},
+    "FIN": {
+      "official": "Wallisin ja Futunan yhteisö",
+      "common": "Wallis ja Futuna"
+    },
+    "FRA": {
+      "official": "Territoire des îles Wallis et Futuna",
+      "common": "Wallis-et-Futuna"
+    },
+    "NLD": {
+      "official": "Grondgebied van de Wallis en Futuna",
+      "common": "Wallis en Futuna"
+    },
+    "HRV": {
+      "official": "Teritoriju Wallis i Futuna",
+      "common": "Wallis i Fortuna"
+    },
+    "HUN": {
+      "official": "Territorio delle Isole Wallis e Futuna",
+      "common": "Wallis e Futuna"
+    },
+    "ITA": {
+      "official": "Territorio delle Isole Wallis e Futuna",
+      "common": "Wallis e Futuna"
+    },
     "JPN": {"official": "ウォリス·フツナ諸島の領土", "common": "ウォリス・フツナ"},
     "KOR": "왈리스 퓌튀나",
     "PER": {"official": "جزایر والیس و فوتونا", "common": "والیس و فوتونا"},
-    "POL": {"official": "Terytorium Wysp Wallis i Futuna", "common": "Wallis i Futuna"},
-    "POR": {"official": "Território das Ilhas Wallis e Futuna", "common": "Wallis e Futuna"},
-    "RUS": {"official": "Территория Уоллис и Футуна острова", "common": "Уоллис и Футуна"},
-    "SLK": {"official": "Teritórium ostrovov Wallis a Futuna", "common": "Wallis a Futuna"},
-    "SPA": {"official": "Territorio de las Islas Wallis y Futuna", "common": "Wallis y Futuna"},
-    "SWE": {"official": "Territoriet Wallis- och Futunaöarna", "common": "Wallis- och Futunaöarna"},
-    "URD": {"official": "سر زمینِ والس و فتونہ جزائر", "common": "والس و فتونہ"},
+    "POL": {
+      "official": "Terytorium Wysp Wallis i Futuna",
+      "common": "Wallis i Futuna"
+    },
+    "POR": {
+      "official": "Território das Ilhas Wallis e Futuna",
+      "common": "Wallis e Futuna"
+    },
+    "RUS": {
+      "official": "Территория Уоллис и Футуна острова",
+      "common": "Уоллис и Футуна"
+    },
+    "SLK": {
+      "official": "Teritórium ostrovov Wallis a Futuna",
+      "common": "Wallis a Futuna"
+    },
+    "SPA": {
+      "official": "Territorio de las Islas Wallis y Futuna",
+      "common": "Wallis y Futuna"
+    },
+    "SWE": {
+      "official": "Territoriet Wallis- och Futunaöarna",
+      "common": "Wallis- och Futunaöarna"
+    },
+    "URD": {
+      "official": "سر زمینِ والس و فتونہ جزائر",
+      "common": "والس و فتونہ"
+    },
     "ZHO": "瓦利斯和富图纳群岛",
     "ARA": {"official": "أقليم واليس وفوتونا", "common": "واليس وفوتونا"},
     "BUL": null,
@@ -11017,7 +12847,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
   {
     "iso_3166_1_alpha2": "ZA",
     "iso_3166_1_alpha3": "ZAF",
-    "natives": {"official": "Republiek van Suid-Afrika", "common": "South Africa"},
+    "natives": {
+      "official": "Republiek van Suid-Afrika",
+      "common": "South Africa"
+    },
     "dialing_code": "+27",
     "default_number_length": 9,
     "default_number_format": "## ### ####",
@@ -11028,7 +12861,10 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "DEU": {"official": "Republik Südafrika", "common": "Südafrika"},
     "EST": "Lõuna-Aafrika Vabariik",
     "FIN": {"official": "Etelä-Afrikan tasavalta", "common": "Etelä-Afrikka"},
-    "FRA": {"official": "République d'Afrique du Sud", "common": "Afrique du Sud"},
+    "FRA": {
+      "official": "République d'Afrique du Sud",
+      "common": "Afrique du Sud"
+    },
     "NLD": {"official": "Republiek Zuid-Afrika", "common": "Zuid-Afrika"},
     "HRV": "Južnoafrička Republika",
     "HUN": {"official": "Repubblica del Sudafrica", "common": "Sudafrica"},
@@ -11036,8 +12872,14 @@ List<Map<String, dynamic>> countriesMultiLanguagesList = [
     "JPN": {"official": "南アフリカ共和国", "common": "南アフリカ"},
     "KOR": {"official": "남아프리카 공화국", "common": "남아프리카"},
     "PER": {"official": "جمهوری آفریقای جنوبی", "common": "آفریقای جنوبی"},
-    "POL": {"official": "Republika Południowej Afryki", "common": "Południowa Afryka"},
-    "POR": {"official": "República da África do Sul", "common": "África do Sul"},
+    "POL": {
+      "official": "Republika Południowej Afryki",
+      "common": "Południowa Afryka"
+    },
+    "POR": {
+      "official": "República da África do Sul",
+      "common": "África do Sul"
+    },
     "RUS": {"official": "Южно-Африканская Республика", "common": "ЮАР"},
     "SLK": {"official": "Juhoafrická republika", "common": "Južná Afrika"},
     "SPA": {"official": "República de Sudáfrica", "common": "Sudáfrica"},

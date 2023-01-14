@@ -22,7 +22,8 @@ class PickerBorderArguments extends StatelessWidget {
             ),
             CustomListTile<Slider, double>(
               title: "Width",
-              enabled: picker.border != Borders.none && input.border == Borders.none,
+              enabled:
+                  picker.border != Borders.none && input.border == Borders.none,
               min: 1,
               max: 5,
               divisions: 4,

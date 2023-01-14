@@ -1,9 +1,6 @@
-import 'package:country_list_picker/country_list_picker.dart';
-import 'package:country_list_picker/model/languages.dart';
-import 'package:country_list_picker_example/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:country_list_picker/country_list_picker.dart';
 import '../controller/settings_provider.dart';
 import '../controller/dialog_provider.dart';
 import '../controller/input_provider.dart';
@@ -15,10 +12,12 @@ void main() {
   runApp(MultiProvider(
     providers: [
       // Settings Provider
-      ChangeNotifierProvider<SettingsProvider>(create: (_) => SettingsProvider()),
+      ChangeNotifierProvider<SettingsProvider>(
+          create: (_) => SettingsProvider()),
 
       // Onborading Provider
-      ChangeNotifierProvider<OnboardingProvider>(create: (_) => OnboardingProvider()),
+      ChangeNotifierProvider<OnboardingProvider>(
+          create: (_) => OnboardingProvider()),
 
       // Picker Provider
       ChangeNotifierProxyProvider<SettingsProvider, PickerProvider>(
@@ -27,7 +26,8 @@ void main() {
 
       // Input Provider
       ChangeNotifierProxyProvider<SettingsProvider, InputProvider>(
-          create: (_) => InputProvider(), update: (_, settings, input) => input!..update(settings)),
+          create: (_) => InputProvider(),
+          update: (_, settings, input) => input!..update(settings)),
 
       // dialog Provider
       ChangeNotifierProxyProvider<SettingsProvider, DialogProvider>(
@@ -50,7 +50,8 @@ class CountryListPickerExample extends StatelessWidget {
           themeMode: settings.isDarkMode ? ThemeMode.dark : ThemeMode.light,
           darkTheme: ThemeData(
             brightness: Brightness.dark,
-            fontFamily: (settings.language != Languages.Arabic) ? "Quicksand" : "Cairo",
+            fontFamily:
+                (settings.language != Languages.Arabic) ? "Quicksand" : "Cairo",
             primarySwatch: settings.darkprimarySwatch as MaterialColor,
             toggleableActiveColor: settings.darkprimarySwatch,
             bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -60,11 +61,13 @@ class CountryListPickerExample extends StatelessWidget {
           ),
           theme: ThemeData(
             brightness: Brightness.light,
-            fontFamily: (settings.language != Languages.Arabic) ? "Quicksand" : "Cairo",
+            fontFamily:
+                (settings.language != Languages.Arabic) ? "Quicksand" : "Cairo",
             primarySwatch: settings.lightprimarySwatch as MaterialColor,
             expansionTileTheme: ExpansionTileThemeData(
                 backgroundColor: settings.lightprimarySwatch.withOpacity(.1),
-                collapsedBackgroundColor: settings.lightprimarySwatch.withOpacity(.5)),
+                collapsedBackgroundColor:
+                    settings.lightprimarySwatch.withOpacity(.5)),
             bottomNavigationBarTheme: BottomNavigationBarThemeData(
               unselectedItemColor: Colors.black38,
               selectedItemColor: settings.lightprimarySwatch,
@@ -73,21 +76,6 @@ class CountryListPickerExample extends StatelessWidget {
           home: const OnBoardingPage(),
         );
       },
-    );
-  }
-}
-
-class testing extends StatelessWidget {
-  const testing({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          CountryListPicker(),
-        ],
-      ),
     );
   }
 }

@@ -22,7 +22,8 @@ class CurrentLocationTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Container(
-          color: dialogTheme.tilesTheme.backgroundColor ?? Theme.of(context).focusColor,
+          color: dialogTheme.tilesTheme.backgroundColor ??
+              Theme.of(context).focusColor,
           alignment: (Directionality.of(context) == TextDirection.ltr)
               ? Alignment.centerLeft
               : Alignment.centerRight,
@@ -33,7 +34,8 @@ class CurrentLocationTile extends StatelessWidget {
             dialogTheme.tilesTheme.currentLocationTileTitle,
             style: dialogTheme.tilesTheme.style.copyWith(
               fontSize: dialogTheme.tilesTheme.style.fontSize ?? 16,
-              fontWeight: dialogTheme.tilesTheme.style.fontWeight ?? FontWeight.bold,
+              fontWeight:
+                  dialogTheme.tilesTheme.style.fontWeight ?? FontWeight.bold,
             ),
           )),
       SizedBox(
@@ -47,11 +49,14 @@ class CurrentLocationTile extends StatelessWidget {
                   )
                 : null,
             title: Text(
-              displayName == Names.common ? country.name.common : country.name.official,
+              displayName == Names.common
+                  ? country.name.common
+                  : country.name.official,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
               softWrap: false,
-              style: dialogTheme.style.copyWith(fontSize: dialogTheme.style.fontSize ?? 16),
+              style: dialogTheme.style
+                  .copyWith(fontSize: dialogTheme.style.fontSize ?? 16),
             ),
             trailing: Padding(
               padding: EdgeInsets.symmetric(
@@ -65,7 +70,8 @@ class CurrentLocationTile extends StatelessWidget {
               child: (dialogTheme.isShowDialCode)
                   ? Text(country.dialing_code,
                       textDirection: TextDirection.ltr,
-                      style: dialogTheme.style.copyWith(fontSize: dialogTheme.style.fontSize ?? 16))
+                      style: dialogTheme.style
+                          .copyWith(fontSize: dialogTheme.style.fontSize ?? 16))
                   : null,
             ),
             onTap: () {

@@ -59,7 +59,8 @@ class _ColorPickerState extends State<ColorPicker> {
                 backgroundColor: widget.colors[index],
                 onPressed: () {
                   setState(() => selectedIndex = index);
-                  if (widget.onColorChanged != null) widget.onColorChanged!(widget.colors[index]);
+                  if (widget.onColorChanged != null)
+                    widget.onColorChanged!(widget.colors[index]);
                 },
                 child: (selectedIndex == index)
                     ? Center(

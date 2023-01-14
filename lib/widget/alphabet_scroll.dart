@@ -24,7 +24,8 @@ class AlphabetScroll extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int selectedint = selectedChar != null ? alphabet.indexOf(selectedChar!) : -1;
+    int selectedint =
+        selectedChar != null ? alphabet.indexOf(selectedChar!) : -1;
     String? oldtext;
     return Align(
       alignment: (Directionality.of(context) == TextDirection.ltr)
@@ -44,17 +45,22 @@ class AlphabetScroll extends StatelessWidget {
                         onTap: () {
                           if (alphabet[index] != oldtext) {
                             int pos = displayName == Names.common
-                                ? countries.indexWhere(
-                                    (c) => c.name.common.toUpperCase().startsWith(alphabet[index]))
-                                : countries.indexWhere((c) =>
-                                    c.name.official.toUpperCase().startsWith(alphabet[index]));
+                                ? countries.indexWhere((c) => c.name.common
+                                    .toUpperCase()
+                                    .startsWith(alphabet[index]))
+                                : countries.indexWhere((c) => c.name.official
+                                    .toUpperCase()
+                                    .startsWith(alphabet[index]));
 
-                            (dialogTheme.tileHeight * (pos + unitsCanceled) + 10 <=
+                            (dialogTheme.tileHeight * (pos + unitsCanceled) +
+                                        10 <=
                                     scrollController.position.maxScrollExtent)
-                                ? scrollController
-                                    .jumpTo(dialogTheme.tileHeight * (pos + unitsCanceled) + 10)
-                                : scrollController
-                                    .jumpTo(scrollController.position.maxScrollExtent);
+                                ? scrollController.jumpTo(
+                                    dialogTheme.tileHeight *
+                                            (pos + unitsCanceled) +
+                                        10)
+                                : scrollController.jumpTo(
+                                    scrollController.position.maxScrollExtent);
                             oldtext = alphabet[index];
                             selectedint = index;
                           }
@@ -64,7 +70,8 @@ class AlphabetScroll extends StatelessWidget {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: index == selectedint
-                                ? dialogTheme.alphabetsBarTheme.selectedBackgroundColor
+                                ? dialogTheme
+                                    .alphabetsBarTheme.selectedBackgroundColor
                                 : dialogTheme.alphabetsBarTheme.backgroundColor,
                             shape: BoxShape.circle,
                           ),
@@ -73,15 +80,19 @@ class AlphabetScroll extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: (index == selectedint)
                                 ? dialogTheme.alphabetsBarTheme.selectedStyle.copyWith(
-                                    fontSize:
-                                        dialogTheme.alphabetsBarTheme.selectedStyle.fontSize ?? 18,
-                                    fontWeight:
-                                        dialogTheme.alphabetsBarTheme.selectedStyle.fontWeight ??
-                                            FontWeight.bold,
-                                    color: dialogTheme.alphabetsBarTheme.selectedStyle.color ??
+                                    fontSize: dialogTheme.alphabetsBarTheme
+                                            .selectedStyle.fontSize ??
+                                        18,
+                                    fontWeight: dialogTheme.alphabetsBarTheme
+                                            .selectedStyle.fontWeight ??
+                                        FontWeight.bold,
+                                    color: dialogTheme.alphabetsBarTheme
+                                            .selectedStyle.color ??
                                         Theme.of(context).colorScheme.primary)
                                 : dialogTheme.alphabetsBarTheme.style.copyWith(
-                                    fontSize: (dialogTheme.alphabetsBarTheme.style.fontSize) ?? 12),
+                                    fontSize: (dialogTheme.alphabetsBarTheme
+                                            .style.fontSize) ??
+                                        12),
                           ),
                         ),
                       ),

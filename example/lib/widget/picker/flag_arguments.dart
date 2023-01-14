@@ -25,7 +25,8 @@ class FlagArguments extends StatelessWidget {
               divisions: 18,
               value: picker.flagSize.width,
               sliderLabel: picker.flagSize.width.toString(),
-              onChanged: (value) => picker.flagSize = Size(value, picker.flagSize.height),
+              onChanged: (value) =>
+                  picker.flagSize = Size(value, picker.flagSize.height),
             ),
             CustomListTile<Slider, double>(
               title: "Height",
@@ -35,7 +36,8 @@ class FlagArguments extends StatelessWidget {
               divisions: 4,
               value: picker.flagSize.height,
               sliderLabel: picker.flagSize.height.toString(),
-              onChanged: (value) => picker.flagSize = Size(picker.flagSize.width, value),
+              onChanged: (value) =>
+                  picker.flagSize = Size(picker.flagSize.width, value),
             ),
           ],
         );

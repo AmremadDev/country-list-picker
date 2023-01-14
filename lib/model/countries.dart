@@ -12,7 +12,8 @@ enum Countries {
   Armenia("AM", "ARM", "Armenia"),
   American_Samoa("AS", "ASM", "American Samoa"),
   Antarctica("AQ", "ATA", "Antarctica"),
-  French_Southern_and_Antarctic_Lands("TF", "ATF", "French Southern and Antarctic Lands"),
+  French_Southern_and_Antarctic_Lands(
+      "TF", "ATF", "French Southern and Antarctic Lands"),
   Antigua_and_Barbuda("AG", "ATG", "Antigua and Barbuda"),
   Australia("AU", "AUS", "Australia"),
   Austria("AT", "AUT", "Austria"),
@@ -98,7 +99,8 @@ enum Countries {
   Guam("GU", "GUM", "Guam"),
   Guyana("GY", "GUY", "Guyana"),
   Hong_Kong("HK", "HKG", "Hong Kong"),
-  Heard_Island_and_McDonald_Islands("HM", "HMD", "Heard Island and McDonald Islands"),
+  Heard_Island_and_McDonald_Islands(
+      "HM", "HMD", "Heard Island and McDonald Islands"),
   Honduras("HN", "HND", "Honduras"),
   Croatia("HR", "HRV", "Croatia"),
   Haiti("HT", "HTI", "Haiti"),
@@ -233,12 +235,14 @@ enum Countries {
   Tanzania("TZ", "TZA", "Tanzania"),
   Uganda("UG", "UGA", "Uganda"),
   Ukraine("UA", "UKR", "Ukraine"),
-  United_States_Minor_Outlying_Islands("UM", "UMI", "United States Minor Outlying Islands"),
+  United_States_Minor_Outlying_Islands(
+      "UM", "UMI", "United States Minor Outlying Islands"),
   Uruguay("UY", "URY", "Uruguay"),
   United_States("US", "USA", "United States"),
   Uzbekistan("UZ", "UZB", "Uzbekistan"),
   Vatican_City("VA", "VAT", "Vatican City"),
-  Saint_Vincent_and_the_Grenadines("VC", "VCT", "Saint Vincent and the Grenadines"),
+  Saint_Vincent_and_the_Grenadines(
+      "VC", "VCT", "Saint Vincent and the Grenadines"),
   Venezuela("VE", "VEN", "Venezuela"),
   British_Virgin_Islands("VG", "VGB", "British Virgin Islands"),
   United_States_Virgin_Islands("VI", "VIR", "United States Virgin Islands"),
