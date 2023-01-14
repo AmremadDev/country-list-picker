@@ -12,15 +12,17 @@ import '../model/country.dart';
 import '../model/countries.dart';
 import '../theme/dialog_theme.dart';
 import '../theme/input_theme.dart';
-import '../widget/input_filed.dart';
+import './widget/input_field.dart';
 import '../model/names.dart';
 
 // exports
+
 export '../theme/dialog_theme.dart';
 export '../theme/input_theme.dart';
 export '../model/country.dart';
 export '../model/countries.dart';
 export '../model/names.dart';
+export '../model/languages.dart';
 
 class CountryListPicker extends StatefulWidget {
   /// CountryListPicker is a customizable country picker for Flutter.
@@ -219,7 +221,7 @@ class _CountryListPickerState extends State<CountryListPicker> {
             : Name(
                 common: element[widget.language.iso_639_2_alpha3]['common'],
                 official: element[widget.language.iso_639_2_alpha3]['official']),
-        dialing_code: (element['dialing_code'] == null) ? "" : element['dialing_code'],
+        dialing_code: element['dialing_code'],
         default_number_length: element['default_number_length'],
         default_number_format: element['default_number_format'],
         local_number_sample: element['local_number_sample'],
