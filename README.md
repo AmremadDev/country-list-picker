@@ -85,12 +85,28 @@ void  main() {
 | `isShowDownIcon`       	| `bool`            	| `true`                                                 	| Determines whether the flag icon should be displayed or not.  If true, the flag icon will be displayed. If false, it will be hidden.                               	|
 | `isShowCountryTitle`   	| `bool`            	| `true`                                                 	| Determines whether the country title should be displayed or not.  If true, the country title will be displayed. If false, it will be hidden.                       	|
 | `isShowInputField`     	| `bool`            	| `true`                                                 	| Determines whether the phone number input field should be displayed or not.  If true, the phone number input field will be displayed. If false, it will be hidden. 	|
-| `iconDown`             	| `Icon`            	| `const Icon(Icons.keyboard_arrow_down, size: 24)`      	| Determines whether the dropdown arrow icon should be displayed or not.  If true, the dropdown arrow icon will be displayed. If false, it will be hidden.           	|
+| `iconDown`             	| `Icon`            	| `Icon(Icons.keyboard_arrow_down, size: 24)`      	| Determines whether the dropdown arrow icon should be displayed or not.  If true, the dropdown arrow icon will be displayed. If false, it will be hidden.           	|
 | `diallCodeStyle`       	| `TextStyle`       	| `TextStyle(fontSize: 16, fontWeight: FontWeight.bold)` 	| Text style for the dialling code display.                                                                                                                          	|
 | `border`               	| `InputBorder`     	| `UnderlineInputBorder()`                               	| border of the phone number input field.                                                                                                                            	|
-| `inputTheme`           	| `InputThemeData`  	| --                                                     	| theme data for the phone number input field.                                                                                                                       	|
-| `dialogTheme`          	| `DialogThemeData` 	| --                                                     	| theme data for the country selection dialog.                                                                                                                       	|
+| `inputTheme`           	| `InputThemeData`  	| [Input Paramters](#input_paramters)                       	| theme data for the phone number input field.                                                                                                                       	|
+| `dialogTheme`          	| `DialogThemeData` 	|[Dialog Paramters](#dialog_paramters)         	| theme data for the country selection dialog.                                                                                                                       	|
 
+```dart
+    CountryListPicker(
+        onCountryChanged: ((value) {
+            // do something
+        }),
+        onChanged: (value) {
+            // do something
+        },
+        initialCountry: Countries.Egypt,
+        language: Languages.Arabic,
+        isShowDownIcon: picker.isDownIcon,
+        isShowCountryTitle: false,
+    )
+```
+
+the above code 
 ### Input Paramters
 
 | Parameter            	| Type          	| Default                                             	| Description                                                  	|
@@ -103,6 +119,28 @@ void  main() {
 | `border`             	| `InputBorder` 	| `InputBorder.none`                                  	| The border style for the input field.                        	|
 | `mask`               	| `String`      	| "### #### ###"                                      	| The mask used to format the text input.                      	|
 
+
+you can set mask and hintString to default value of each country using onCountryChanged.
+```dart
+    String _hintString ="";
+    String _mask ="";
+    CountryListPicker(
+        onCountryChanged: ((value) {
+            _hintString = value.local_number_sample;
+            _mask = value.default_number_format;lue
+            // do something
+        }),
+        onChanged: (value) {
+            // do something
+        },
+        inputTheme: InputThemeData(
+            hintText: _hintString
+            hintStyle: input.hintTextStyle,
+            border:  InputBorder.UnderlineInputBorder
+            mask: _mask,
+          ),
+    )
+```
 ### Dialog Paramters
 
 | Parameter            	| Type                    	| Default 	| Description                                                                                                                                        	|
@@ -120,6 +158,23 @@ void  main() {
 | `alphabetsBarTheme`  	| `AlphabetsBarThemeData` 	|         	| theme data for the alphabets bar.                                                                                                                  	|
 | `tilesTheme`         	| `TilesThemeData`        	|         	| theme data for the tiles.                                                                                                                          	|
 
+```dart
+    CountryListPicker(
+        onCountryChanged: ((value) {
+            // do something
+        }),
+        onChanged: (value) {
+            // do something
+        },
+        dialogTheme: DialogThemeData(
+            isShowFlag: false,          // <- hide dialog flags 
+            isShowDialCode: false,      // <- hide dial code 
+            isShowFloatButton: false,   // <- hide float button 
+            isShowSearchTile: false,    // <- hide search tile 
+            isShowLastPickTile: false,  // <- hide last pick tile
+            isShowAlphabetsBar: false,  // <- hide alphabets bar 
+    )
+```
 
 ### Alphabets Paramters
 
@@ -130,6 +185,25 @@ void  main() {
 | `selectedBackgroundColor` 	| `Color`     	| `Colors.transparent`                                  	| The background color of alphabet item.             	|
 | `selectedStyle`           	| `TextStyle` 	| `TextStyl(fontSize: 18, fontWeight: FontWeight.bold)` 	| The text style of the selected alphabet item text. 	|
 
+Note that: the Country List Picker doesn't support alpabets bar with Chinese, Japanese and Korean languages.
+ 
+ ```dart
+    CountryListPicker(
+        onCountryChanged: ((value) {
+            // do something
+        }),
+        onChanged: (value) {
+            // do something
+        },
+        dialogTheme: DialogThemeData(
+            alphabetsBarTheme: AlphabetsBarThemeData(
+              backgroundColor: Colors.transparent,
+              selectedBackgroundColor: Colors.green,  //<- change background of selected item
+              // style: ,           // to change unselected alphabet items text style
+              // selectedStyle: ,   // to change selected alphabet items text style
+            ),
+    )
+```
 
 ### Dialog Tiles Paramters
 
@@ -143,3 +217,18 @@ void  main() {
 | `searchHint`               	| `String`    	| "name/dial code..."                                    	| The hint text for the search bar.           	|
 | `searchHintStyle`          	| `TextStyle` 	| `TextStyle(fontSize: 16, color: Color(0xFF9E9E9E)`     	| The text style of the search hint text.     	|
 | `searchTitle`              	| `String`    	| "Search"                                               	| The title of the search bar.                	|
+
+if you need to show CurrentLocationTile, you must set the localCountry value to country what you want.
+
+
+
+## Features and bugs
+Please file feature requests and bugs at the [issue tracker][tracker].
+[issue tracker](https://github.com/AmremadDev/country-list-picker/issues)
+
+
+## References.
+ 1. [**country_list_pick**](https://pub.dev/packages/country_list_pick)]
+ 2. [**getworld**](https://pub.dev/packages/getworld)]
+
+
