@@ -1,3 +1,4 @@
+import 'package:country_list_picker/model/names.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../model/country.dart';
@@ -20,6 +21,7 @@ class SelectionList extends StatelessWidget {
     this.dialogTheme = const DialogThemeData(),
     this.textDirection = TextDirection.ltr,
     required this.language,
+    this.displayName = Names.common,
   });
 
   final PreferredSizeWidget? appBar;
@@ -30,6 +32,7 @@ class SelectionList extends StatelessWidget {
   final Languages language;
   final DialogThemeData dialogTheme;
   final TextEditingController _controller = TextEditingController();
+  final Names displayName;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +47,9 @@ class SelectionList extends StatelessWidget {
       if (scrollPosition < boxes) {
         settings.selectedCharacter = null;
       } else if (scrollPosition >= boxes && scrollPosition <= elements.length) {
-        settings.selectedCharacter = elements.elementAt(scrollPosition - boxes).name.common[0];
+        settings.selectedCharacter = (displayName == Names.common)
+            ? elements.elementAt(scrollPosition - boxes).name.common[0]
+            : elements.elementAt(scrollPosition - boxes).name.official[0];
       }
     });
 
@@ -87,12 +92,14 @@ class SelectionList extends StatelessWidget {
                                 elements: elements),
                           if (localCountry != null)
                             CurrentLocationTile(
+                              displayName: displayName,
                               dialogTheme: dialogTheme,
                               country: localCountry!,
                               language: language,
                             ),
                           if (dialogTheme.isShowLastPickTile)
                             LastPickTile(
+                              displayName: displayName,
                               dialogTheme: dialogTheme,
                               country: selectedCountry,
                               language: language,
@@ -111,6 +118,7 @@ class SelectionList extends StatelessWidget {
                         builder: (_, countries, child) => SliverList(
                           delegate: SliverChildBuilderDelegate((context, index) {
                             return CountryListTile(
+                              displayName: displayName,
                               country: countries.elementAt(index),
                               language: language,
                               dialogTheme: dialogTheme,
@@ -127,10 +135,13 @@ class SelectionList extends StatelessWidget {
                       ? const SizedBox.shrink()
                       : Consumer<SettingsProvider>(builder: (context, settings, child) {
                           return AlphabetScroll(
+                            displayName: displayName,
                             scrollController: controllerScroll,
                             selectedChar: settings.selectedCharacter,
                             dialogTheme: dialogTheme,
-                            alphabet: elements.map((e) => e.name.common[0]).toSet().toList(),
+                            alphabet: (displayName == Names.common)
+                                ? elements.map((e) => e.name.common[0]).toSet().toList()
+                                : elements.map((e) => e.name.official[0]).toSet().toList(),
                             countries: elements,
                             unitsCanceled: boxes,
                           );

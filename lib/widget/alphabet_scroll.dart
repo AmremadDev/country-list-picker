@@ -1,3 +1,4 @@
+import 'package:country_list_picker/model/names.dart';
 import 'package:flutter/material.dart';
 import '../model/country.dart';
 import '../theme/dialog_theme.dart';
@@ -11,6 +12,7 @@ class AlphabetScroll extends StatelessWidget {
     required this.selectedChar,
     this.dialogTheme = const DialogThemeData(),
     this.unitsCanceled = 6,
+    this.displayName = Names.common,
   });
   final ScrollController scrollController;
   final DialogThemeData dialogTheme;
@@ -18,6 +20,7 @@ class AlphabetScroll extends StatelessWidget {
   final List<Country> countries;
   final String? selectedChar;
   final int unitsCanceled;
+  final Names displayName;
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +43,12 @@ class AlphabetScroll extends StatelessWidget {
                       child: InkWell(
                         onTap: () {
                           if (alphabet[index] != oldtext) {
-                            int pos = countries.indexWhere(
-                                (c) => c.name.common.toUpperCase().startsWith(alphabet[index]));
+                            int pos = displayName == Names.common
+                                ? countries.indexWhere(
+                                    (c) => c.name.common.toUpperCase().startsWith(alphabet[index]))
+                                : countries.indexWhere((c) =>
+                                    c.name.official.toUpperCase().startsWith(alphabet[index]));
+
                             (dialogTheme.tileHeight * (pos + unitsCanceled) + 10 <=
                                     scrollController.position.maxScrollExtent)
                                 ? scrollController

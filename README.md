@@ -66,30 +66,66 @@ void  main() {
           },
 }
 ```
+
+
 ## Getting started
+Supported 250 countries with common/offical name, iso_3166_1_alpha2, iso_3166_1_alpha3, dialing_code, default_number_length, default_number_format, local_number_sample.
 
+Supported languages:
+ - Arabic
+ - Chinese
+ - Croatian
+ - Czech
+ - English
+ - Estonian
+ - Finnish
+ - French
+ - German
+ - Hungarian
+ - Italian
+ - Japanese
+ - Korean
+ - Persian
+ - Polish
+ - Portuguese
+ - Russian
+ - Slovak
+ - Spanish
+ - Swedish
+ - Urdu
+ <!-- - Bulgarian
+ - Danish
+ - Greek
+ - Esperanto
+ - Basque
+ - Armenian
+ - Lithuanian
+ - Norwegian
+ - Romanian
+ - Thai
+ - Ukrainian -->
 ### Picker Paramters
-
 | Parameter              	| Type              	| Default                                                	| Description                                                                                                                                                        	|
 |------------------------	|-------------------	|--------------------------------------------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
 | `onCountryChanged`     	| `ValueChanged?`   	| `null`                                                 	| This is a callback function that is invoked when the selected country is changed,  which can be used to access the newly selected country.                         	|
-| `onChanged`            	| `ValueChanged?`   	| `null`                                                 	| cThis is a callback function that is invoked when the phone number in the input field changes,  which can be used to access the new phone number.                  	|
-| `initialCountry`       	| `Countries`       	| `Countries.Egypt`                                      	| This parameter sets the initial country that is selected when the widget is first rendered.                                                                        	|
-| `language`             	| `Languages`       	| `Languages.English`                                    	| This parameter sets the display language for the widget.                                                                                                           	|
-| `textDirection`        	| `TextDirection`   	| --                                                     	| This parameter sets the text direction for the widget depending on the language direction.                                                                         	|
+| `onChanged`            	| `ValueChanged?`   	| `null`                                                 	| This is a callback function that is invoked when the phone number in the input field changes,  which can be used to access the new phone number.                   	|
+| `initialCountry`       	| `Countries`       	| `Countries.Egypt`                                      	| Sets the initial country that is selected when the widget is first rendered.                                                                                       	|
+| `language`             	| `Languages`       	| `Languages.English`                                    	| Sets the display language for the widget.                                                                                                                          	|
+| `textDirection`        	| `TextDirection`   	| --                                                     	| Sets the text direction for the widget depending on the language direction.                                                                                        	|
+| `displayName`          	| `Names`           	| `Names.common`                                         	| Determines whether the country name displayed is common or official.                                                                                               	|
 | `localCountry`         	| `Countries`       	| `null`                                                 	| Refer to local device which will define by you.                                                                                                                    	|
 | `countryNameTextStyle` 	| `TextStyle`       	| `TextStyle(fontSize: 15, color: Colors.grey)`          	| Text style for the country name display.                                                                                                                           	|
 | `isShowFlag`           	| `bool`            	| `true`                                                 	| Determines the visibility of the flag icon.  A value of true will display the flag icon, while a value of false will hide it.                                      	|
 | `flagSize`             	| `Size`            	| `true`                                                 	| size of the flag icon. It has a default value Size (40,40)                                                                                                         	|
 | `isShowDiallingCode`   	| `bool`            	| `true`                                                 	| Determines whether the dialling code should be displayed or not.  If true, the dialling code will be displayed. If false, it will be hidden.                       	|
 | `isShowDownIcon`       	| `bool`            	| `true`                                                 	| Determines whether the flag icon should be displayed or not.  If true, the flag icon will be displayed. If false, it will be hidden.                               	|
-| `isShowCountryTitle`   	| `bool`            	| `true`                                                 	| Determines whether the country title should be displayed or not.  If true, the country title will be displayed. If false, it will be hidden.                       	|
+| `isShowCountryName`   	| `bool`            	| `true`                                                 	| Determines whether the country name should be displayed or not.  If true, the country name will be displayed. If false, it will be hidden.                       	|
 | `isShowInputField`     	| `bool`            	| `true`                                                 	| Determines whether the phone number input field should be displayed or not.  If true, the phone number input field will be displayed. If false, it will be hidden. 	|
-| `iconDown`             	| `Icon`            	| `Icon(Icons.keyboard_arrow_down, size: 24)`      	| Determines whether the dropdown arrow icon should be displayed or not.  If true, the dropdown arrow icon will be displayed. If false, it will be hidden.           	|
+| `iconDown`             	| `Icon`            	| `Icon(Icons.keyboard_arrow_down, size: 24)`            	| Determines whether the dropdown arrow icon should be displayed or not.  If true, the dropdown arrow icon will be displayed. If false, it will be hidden.           	|
 | `diallCodeStyle`       	| `TextStyle`       	| `TextStyle(fontSize: 16, fontWeight: FontWeight.bold)` 	| Text style for the dialling code display.                                                                                                                          	|
-| `border`               	| `InputBorder`     	| `UnderlineInputBorder()`                               	| border of the phone number input field.                                                                                                                            	|
-| `inputTheme`           	| `InputThemeData`  	| [Input Paramters](#input_paramters)                       	| theme data for the phone number input field.                                                                                                                       	|
-| `dialogTheme`          	| `DialogThemeData` 	|[Dialog Paramters](#dialog_paramters)         	| theme data for the country selection dialog.                                                                                                                       	|
+| `border`               	| `InputBorder`     	| `UnderlineInputBorder()`                               	| Border of the phone number input field.                                                                                                                            	|
+| `inputTheme`           	| `InputThemeData`  	| See Input Paramters section                            	| Theme data for the phone number input field.                                                                                                                       	|
+| `dialogTheme`          	| `DialogThemeData` 	| See Dialog Paramters section                           	| Theme data for the country selection dialog.                                                                                                                       	|
 
 ```dart
     CountryListPicker(
@@ -102,11 +138,10 @@ void  main() {
         initialCountry: Countries.Egypt,
         language: Languages.Arabic,
         isShowDownIcon: picker.isDownIcon,
-        isShowCountryTitle: false,
+        isShowCountryTitle: false,   // if you need to hide country title
+        displayName: Names.offical,  // if you need to display country offical name
     )
 ```
-
-the above code 
 ### Input Paramters
 
 | Parameter            	| Type          	| Default                                             	| Description                                                  	|
@@ -175,7 +210,6 @@ you can set mask and hintString to default value of each country using onCountry
             isShowAlphabetsBar: false,  // <- hide alphabets bar 
     )
 ```
-
 ### Alphabets Paramters
 
 | Parameter                 	| Type        	| Default                                               	| Description                                        	|
@@ -204,7 +238,6 @@ Note that: the Country List Picker doesn't support alpabets bar with Chinese, Ja
             ),
     )
 ```
-
 ### Dialog Tiles Paramters
 
 | Parameter                  	| Type        	| Default                                                	| Description                                 	|
@@ -219,16 +252,12 @@ Note that: the Country List Picker doesn't support alpabets bar with Chinese, Ja
 | `searchTitle`              	| `String`    	| "Search"                                               	| The title of the search bar.                	|
 
 if you need to show CurrentLocationTile, you must set the localCountry value to country what you want.
-
-
-
 ## Features and bugs
 Please file feature requests and bugs at the [issue tracker][tracker].
 [issue tracker](https://github.com/AmremadDev/country-list-picker/issues)
-
-
 ## References.
  1. [**country_list_pick**](https://pub.dev/packages/country_list_pick)]
  2. [**getworld**](https://pub.dev/packages/getworld)]
+ 3. [**mask_text_input_formatter**](https://pub.dev/packages/mask_text_input_formatter)]
 
 

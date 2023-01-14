@@ -1,5 +1,5 @@
 // ignore_for_file: non_constant_identifier_names, constant_identifier_names
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 enum Languages {
   // Language in this version

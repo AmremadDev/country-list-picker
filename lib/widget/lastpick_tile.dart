@@ -1,3 +1,4 @@
+import 'package:country_list_picker/model/names.dart';
 import 'package:flutter/material.dart';
 import '../model/country.dart';
 import '../theme/dialog_theme.dart';
@@ -7,11 +8,13 @@ class LastPickTile extends StatelessWidget {
   final DialogThemeData dialogTheme;
   final Country country;
   final Languages language;
+  final Names displayName;
   const LastPickTile({
     super.key,
     required this.dialogTheme,
     required this.country,
     required this.language,
+    this.displayName = Names.common,
   });
 
   @override
@@ -41,7 +44,7 @@ class LastPickTile extends StatelessWidget {
                   )
                 : null,
             title: Text(
-              country.name.common,
+              (displayName == Names.common) ? country.name.common : country.name.official,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
               softWrap: false,

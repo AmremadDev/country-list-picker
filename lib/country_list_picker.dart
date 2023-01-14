@@ -13,12 +13,14 @@ import '../model/countries.dart';
 import '../theme/dialog_theme.dart';
 import '../theme/input_theme.dart';
 import '../widget/input_filed.dart';
+import '../model/names.dart';
 
 // exports
 export '../theme/dialog_theme.dart';
 export '../theme/input_theme.dart';
 export '../model/country.dart';
 export '../model/countries.dart';
+export '../model/names.dart';
 
 class CountryListPicker extends StatefulWidget {
   /// CountryListPicker is a customizable country picker for Flutter.
@@ -44,8 +46,9 @@ class CountryListPicker extends StatefulWidget {
     this.localCountry,
     this.language = Languages.English,
     this.textDirection,
+    this.displayName = Names.common,
     // Main
-    this.isShowCountryTitle = true,
+    this.isShowCountryName = true,
     this.isShowFlag = true,
     this.flagSize = const Size(40.0, 40.0),
     this.isShowDiallingCode = true,
@@ -112,10 +115,10 @@ class CountryListPicker extends StatefulWidget {
   /// [flagSize] is a [Size] variable that stores the size of the flag to be displayed.
   final Size flagSize;
 
-  /// [isShowCountryTitle] is a [bool] variable that determines whether or not to display the title of the country.
+  /// [isShowCountryName] is a [bool] variable that determines whether or not to display the title of the country.
   /// If set to true, the title will be shown, and if set to false, the title will be hidden.
   /// This variable is declared as final, indicating that it can't be reassigned after being initialized.
-  final bool isShowCountryTitle;
+  final bool isShowCountryName;
 
   /// [isShowDiallingCode] is a [bool] variable that determines whether or not to display the dialling code of the country.
   /// If set to true, the dialling code will be shown, and if set to false, the dialling code will be hidden.
@@ -191,6 +194,7 @@ class CountryListPicker extends StatefulWidget {
   ///
   final GestureTapCallback? onTap;
 
+  final Names displayName;
   @override
   State<CountryListPicker> createState() => _CountryListPickerState();
 }
@@ -222,7 +226,9 @@ class _CountryListPickerState extends State<CountryListPicker> {
         flagUri: 'assets/flags/${element['iso_3166_1_alpha2'].toLowerCase()}.png',
       );
     }).toList();
-    countries.sort((a, b) => a.name.common.compareTo(b.name.common));
+    widget.displayName == Names.common
+        ? countries.sort((a, b) => a.name.common.compareTo(b.name.common))
+        : countries.sort((a, b) => a.name.official.compareTo(b.name.official));
 
     selectedCountry = selectedCountry == null
         ? countries.firstWhere(
@@ -299,17 +305,27 @@ class _CountryListPickerState extends State<CountryListPicker> {
                       ),
                   ]),
             ),
-            if (widget.isShowCountryTitle == true)
+            if (widget.isShowCountryName == true)
               Text(
                 selectedCountry != null
-                    ? selectedCountry!.name.common
-                    : countries
-                        .firstWhere(
-                            (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
-                                widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
-                            orElse: () => countries[0])
-                        .name
-                        .common,
+                    ? (widget.displayName == Names.common)
+                        ? selectedCountry!.name.common
+                        : selectedCountry!.name.official
+                    : (widget.displayName == Names.common)
+                        ? countries
+                            .firstWhere(
+                                (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
+                                    widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
+                                orElse: () => countries[0])
+                            .name
+                            .common
+                        : countries
+                            .firstWhere(
+                                (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
+                                    widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
+                                orElse: () => countries[0])
+                            .name
+                            .official,
                 style: widget.countryNameStyle.copyWith(
                     fontWeight: widget.countryNameStyle.fontWeight,
                     fontSize: widget.countryNameStyle.fontSize ?? 15,
@@ -331,6 +347,7 @@ class _CountryListPickerState extends State<CountryListPicker> {
                   builder: (_, child) {
                     return SelectionList(
                       countries,
+                      displayName: widget.displayName,
                       language: widget.language,
                       textDirection: widget.textDirection ?? Directionality.of(context),
                       selectedCountry: selectedCountry!,

@@ -46,6 +46,7 @@ class SearchTile extends StatelessWidget {
               hintStyle: dialogTheme.tilesTheme.searchHintStyle),
           onChanged: ((value) {
             String s = value.toUpperCase();
+
             context.read<SettingsProvider>().countries = elements
                 .where(
                     (e) => e.dialing_code.contains(s) || e.name.common.toUpperCase().startsWith(s))

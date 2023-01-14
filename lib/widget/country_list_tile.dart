@@ -1,3 +1,4 @@
+import 'package:country_list_picker/model/names.dart';
 import 'package:flutter/material.dart';
 import '../model/country.dart';
 import '../model/languages.dart';
@@ -9,11 +10,13 @@ class CountryListTile extends StatelessWidget {
     required this.country,
     required this.language,
     this.dialogTheme = const DialogThemeData(),
+    this.displayName = Names.common,
   });
 
   final Country country;
   final Languages language;
   final DialogThemeData dialogTheme;
+  final Names displayName;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -27,7 +30,7 @@ class CountryListTile extends StatelessWidget {
                 )
               : null,
           title: Text(
-            country.name.common,
+            displayName == Names.common ? country.name.common : country.name.official,
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
             style: dialogTheme.style.copyWith(fontSize: dialogTheme.style.fontSize ?? 16),

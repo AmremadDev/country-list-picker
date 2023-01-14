@@ -23,6 +23,7 @@ class TopPart extends StatelessWidget {
           onChanged: (value) {
             print(value);
           },
+          // displayName: Names.offical,
           initialCountry: Countries.Egypt,
           language: picker.separated == true ? picker.language : settings.language,
           textDirection:
@@ -33,7 +34,7 @@ class TopPart extends StatelessWidget {
           flagSize: picker.flagSize,
           isShowDiallingCode: picker.isShowDialCode,
           isShowDownIcon: picker.isDownIcon,
-          isShowCountryTitle: picker.isShowCountryName,
+          isShowCountryName: picker.isShowCountryName,
           isShowInputField: input.isShowTextField,
           iconDown:
               Icon(picker.downIcon.icon, size: picker.downIcon.size, color: picker.downIcon.color),

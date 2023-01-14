@@ -1,4 +1,5 @@
 import 'package:country_list_picker/model/languages.dart';
+import 'package:country_list_picker/model/names.dart';
 import 'package:flutter/material.dart';
 import '../model/country.dart';
 import '../theme/dialog_theme.dart';
@@ -9,11 +10,13 @@ class CurrentLocationTile extends StatelessWidget {
     required this.dialogTheme,
     required this.country,
     required this.language,
+    this.displayName = Names.common,
   });
 
   final DialogThemeData dialogTheme;
   final Country country;
   final Languages language;
+  final Names displayName;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +47,7 @@ class CurrentLocationTile extends StatelessWidget {
                   )
                 : null,
             title: Text(
-              country.name.common,
+              displayName == Names.common ? country.name.common : country.name.official,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
               softWrap: false,

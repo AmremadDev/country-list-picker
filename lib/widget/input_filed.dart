@@ -1,3 +1,4 @@
+import 'package:country_list_picker/model/names.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import '../theme/input_theme.dart';
@@ -28,7 +29,6 @@ class InputField extends StatelessWidget {
   final ValueChanged<String>? onFieldSubmitted;
   final GestureTapCallback? onTap;
   final String? initialValue;
-
   final bool? enabled;
   final bool readOnly;
 
