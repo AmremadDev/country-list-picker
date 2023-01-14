@@ -256,8 +256,8 @@ if you need to show CurrentLocationTile, you must set the localCountry value to 
 Please file feature requests and bugs at the [issue tracker][tracker].
 [issue tracker](https://github.com/AmremadDev/country-list-picker/issues)
 ## References.
- 1. [**country_list_pick**](https://pub.dev/packages/country_list_pick)]
+ 1. [**country_list_pick**](https://pub.dev/packages/country_list_pick)
  2. [**getworld**](https://pub.dev/packages/getworld)]
- 3. [**mask_text_input_formatter**](https://pub.dev/packages/mask_text_input_formatter)]
+ 3. [**mask_text_input_formatter**](https://pub.dev/packages/mask_text_input_formatter)
 
 
