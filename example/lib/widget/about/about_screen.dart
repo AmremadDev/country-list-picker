@@ -1,8 +1,8 @@
-import 'package:country_list_picker_example/controller/settings_provider.dart';
-import 'package:provider/provider.dart';
-
-import '../../translation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../controller/settings_provider.dart';
+import '../../translation.dart';
+
 import '../../model/screen.dart';
 
 class AboutScreen extends StatelessWidget {

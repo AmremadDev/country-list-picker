@@ -1,5 +1,3 @@
-import 'package:country_list_picker_example/widget/picker/general_arguments.dart';
-import 'package:country_list_picker_example/widget/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
 import '../model/screen.dart';
 import '../model/onboarding.dart';
@@ -10,10 +8,10 @@ import '../widget/picker/dial_code_arguments.dart';
 import '../widget/picker/country_name_arguments.dart';
 import '../widget/input/input_border.arguments.dart';
 import '../widget/picker/picker_border_arguments.dart';
-
+import '../widget/picker/general_arguments.dart';
+import '../widget/settings/settings_screen.dart';
 import '../widget/input/input_arguemnts.dart';
 import '../widget/input/hint_arguemnts.dart';
-
 import '../widget/dialog/general_arguments.dart';
 import '../widget/dialog/search_tile_arguments.dart';
 import '../widget/dialog/textstyle_argement.dart';
@@ -21,7 +19,6 @@ import '../widget/dialog/title_textstyle_argements.dart';
 import '../widget/dialog/alphabets_bar_arguments.dart';
 import '../widget/dialog/current_location_tile_arguments.dart';
 import '../widget/dialog/last_pick_tile_arguments.dart';
-
 import '../widget/about/about_screen.dart';
 
 export '../model/screen.dart';
@@ -33,10 +30,8 @@ export '../widget/picker/dial_code_arguments.dart';
 export '../widget/picker/country_name_arguments.dart';
 export '../widget/input/input_border.arguments.dart';
 export '../widget/picker/picker_border_arguments.dart';
-
 export '../widget/input/input_arguemnts.dart';
 export '../widget/input/hint_arguemnts.dart';
-
 export '../widget/dialog/general_arguments.dart';
 export '../widget/dialog/search_tile_arguments.dart';
 export '../widget/dialog/textstyle_argement.dart';
@@ -44,7 +39,6 @@ export '../widget/dialog/title_textstyle_argements.dart';
 export '../widget/dialog/alphabets_bar_arguments.dart';
 export '../widget/dialog/current_location_tile_arguments.dart';
 export '../widget/dialog/last_pick_tile_arguments.dart';
-
 export '../widget/about/about_screen.dart';
 
 const double titlesFontSize = 18;

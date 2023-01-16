@@ -1,9 +1,9 @@
-import 'package:country_list_picker_example/controller/input_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/picker_provider.dart';
 import '../../model/borders.dart';
 import '../../widget/custom_list_tile.dart';
+import '../../controller/input_provider.dart';
 
 class PickerBorderArguments extends StatelessWidget {
   const PickerBorderArguments({Key? key}) : super(key: key);

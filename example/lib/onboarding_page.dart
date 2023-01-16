@@ -1,12 +1,11 @@
-import 'package:country_list_picker/model/languages.dart';
-import 'package:country_list_picker_example/controller/settings_provider.dart';
-import 'package:country_list_picker_example/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:country_list_picker/country_list_picker.dart';
 import '../controller/onboarding_provider.dart';
+import '../controller/settings_provider.dart';
+import '../translation.dart';
 import '../home_page.dart';
 import '../app_data.dart';
-
 export '../controller/onboarding_provider.dart';
 
 class OnBoardingPage extends StatelessWidget {

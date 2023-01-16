@@ -1,15 +1,15 @@
-import 'package:country_list_picker/model/names.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../model/country.dart';
-import '../model/languages.dart';
-import '../provider/picker_provider.dart';
-import '../widget/lastpick_tile.dart';
-import '../widget/alphabet_scroll.dart';
-import '../widget/current_location_tile.dart';
-import '../widget/country_list_tile.dart';
-import '../widget/search_tile.dart';
-import '../theme/dialog_theme.dart';
+import '../src/model/country.dart';
+import '../src/model/languages.dart';
+import '../src/provider/picker_provider.dart';
+import '../src/widget/lastpick_tile.dart';
+import '../src/widget/alphabet_scroll.dart';
+import '../src/widget/current_location_tile.dart';
+import '../src/widget/country_list_tile.dart';
+import '../src/widget/search_tile.dart';
+import '../src/theme/dialog_theme.dart';
+import '../src/model/names.dart';
 
 class SelectionList extends StatelessWidget {
   SelectionList(

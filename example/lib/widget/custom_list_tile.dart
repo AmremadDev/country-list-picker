@@ -1,6 +1,5 @@
-import 'package:country_list_picker/model/countries.dart';
-import 'package:country_list_picker/model/languages.dart';
 import 'package:flutter/material.dart';
+import 'package:country_list_picker/country_list_picker.dart';
 import '../model/borders.dart';
 import '../translation.dart';
 import '../widget/color_picker.dart';

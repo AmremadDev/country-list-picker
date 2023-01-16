@@ -1,9 +1,8 @@
-import 'package:country_list_picker/model/languages.dart';
-import 'package:country_list_picker_example/controller/picker_provider.dart';
-import 'package:country_list_picker_example/controller/settings_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:country_list_picker/country_list_picker.dart';
+import '../../controller/picker_provider.dart';
+import '../../controller/settings_provider.dart';
 import '../custom_list_tile.dart';
 
 class GeneralPickerArguments extends StatelessWidget {

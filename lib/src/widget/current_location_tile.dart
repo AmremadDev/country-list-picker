@@ -1,21 +1,22 @@
-import 'package:country_list_picker/model/names.dart';
 import 'package:flutter/material.dart';
 import '../model/country.dart';
 import '../theme/dialog_theme.dart';
 import '../model/languages.dart';
+import '../model/names.dart';
 
-class LastPickTile extends StatelessWidget {
-  final DialogThemeData dialogTheme;
-  final Country country;
-  final Languages language;
-  final Names displayName;
-  const LastPickTile({
+class CurrentLocationTile extends StatelessWidget {
+  const CurrentLocationTile({
     super.key,
     required this.dialogTheme,
     required this.country,
     required this.language,
     this.displayName = Names.common,
   });
+
+  final DialogThemeData dialogTheme;
+  final Country country;
+  final Languages language;
+  final Names displayName;
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +31,12 @@ class LastPickTile extends StatelessWidget {
           width: double.infinity,
           height: dialogTheme.tileHeight,
           child: Text(
-            dialogTheme.tilesTheme.lastPickTitle,
+            dialogTheme.tilesTheme.currentLocationTileTitle,
             style: dialogTheme.tilesTheme.style.copyWith(
-                fontSize: dialogTheme.tilesTheme.style.fontSize ?? 16),
+              fontSize: dialogTheme.tilesTheme.style.fontSize ?? 16,
+              fontWeight:
+                  dialogTheme.tilesTheme.style.fontWeight ?? FontWeight.bold,
+            ),
           )),
       SizedBox(
         height: dialogTheme.tileHeight,
@@ -45,7 +49,7 @@ class LastPickTile extends StatelessWidget {
                   )
                 : null,
             title: Text(
-              (displayName == Names.common)
+              displayName == Names.common
                   ? country.name.common
                   : country.name.official,
               overflow: TextOverflow.ellipsis,
@@ -55,23 +59,25 @@ class LastPickTile extends StatelessWidget {
                   .copyWith(fontSize: dialogTheme.style.fontSize ?? 16),
             ),
             trailing: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: (dialogTheme.isShowAlphabetsBar == false ||
-                          language == Languages.Chinese ||
-                          language == Languages.Korean ||
-                          language == Languages.Japanese)
-                      ? 0.0
-                      : 20.0,
-                ),
-                child: Icon(
-                  dialogTheme.tilesTheme.lastPickIcon.icon,
-                  color: (dialogTheme.tilesTheme.lastPickIcon.color) ??
-                      Theme.of(context).colorScheme.primary,
-                  size: dialogTheme.tilesTheme.lastPickIcon.size ??
-                      dialogTheme.tileHeight * .6,
-                )),
-            onTap: null),
-      )
+              padding: EdgeInsets.symmetric(
+                horizontal: (dialogTheme.isShowAlphabetsBar == false ||
+                        language == Languages.Chinese ||
+                        language == Languages.Korean ||
+                        language == Languages.Japanese)
+                    ? 0.0
+                    : 20.0,
+              ),
+              child: (dialogTheme.isShowDialCode)
+                  ? Text(country.dialing_code,
+                      textDirection: TextDirection.ltr,
+                      style: dialogTheme.style
+                          .copyWith(fontSize: dialogTheme.style.fontSize ?? 16))
+                  : null,
+            ),
+            onTap: () {
+              Navigator.pop(context, country);
+            }),
+      ),
     ]);
   }
 }

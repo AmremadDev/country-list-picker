@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../translation.dart';
 import '../app_data.dart';
 import '../bottom_part.dart';

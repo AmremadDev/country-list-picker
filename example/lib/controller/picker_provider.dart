@@ -1,5 +1,5 @@
-import 'package:country_list_picker/model/languages.dart';
 import 'package:flutter/material.dart';
+import 'package:country_list_picker/country_list_picker.dart';
 import '../controller/settings_provider.dart';
 import '../model/borders.dart';
 

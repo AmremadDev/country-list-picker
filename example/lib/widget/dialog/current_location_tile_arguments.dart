@@ -1,6 +1,6 @@
-import 'package:country_list_picker/country_list_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:country_list_picker/country_list_picker.dart';
 import '../../controller/dialog_provider.dart';
 import '../../widget/custom_list_tile.dart';
 import '../../translation.dart';

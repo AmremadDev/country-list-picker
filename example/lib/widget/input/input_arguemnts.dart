@@ -1,9 +1,9 @@
-import 'package:country_list_picker_example/controller/settings_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/input_provider.dart';
 import '../../widget/custom_list_tile.dart';
 import '../../widget/color_picker.dart';
+import '../../controller/settings_provider.dart';
 
 class InputArguments extends StatelessWidget {
   const InputArguments({super.key});

@@ -1,8 +1,7 @@
-import 'package:country_list_picker_example/controller/settings_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:country_list_picker/country_list_picker.dart';
-
+import '../controller/settings_provider.dart';
 import '../controller/dialog_provider.dart';
 import '../controller/input_provider.dart';
 import '../controller/picker_provider.dart';

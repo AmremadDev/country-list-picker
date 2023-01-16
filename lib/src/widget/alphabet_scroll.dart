@@ -1,7 +1,7 @@
-import 'package:country_list_picker/model/names.dart';
 import 'package:flutter/material.dart';
 import '../model/country.dart';
 import '../theme/dialog_theme.dart';
+import '../model/names.dart';
 
 class AlphabetScroll extends StatelessWidget {
   const AlphabetScroll({

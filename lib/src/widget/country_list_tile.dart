@@ -1,8 +1,8 @@
-import 'package:country_list_picker/model/names.dart';
 import 'package:flutter/material.dart';
 import '../model/country.dart';
 import '../model/languages.dart';
 import '../theme/dialog_theme.dart';
+import '../model/names.dart';
 
 class CountryListTile extends StatelessWidget {
   const CountryListTile({

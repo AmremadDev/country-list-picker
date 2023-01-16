@@ -1,8 +1,8 @@
-import 'package:country_list_picker_example/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/dialog_provider.dart';
 import '../../widget/custom_list_tile.dart';
+import '../../translation.dart';
 
 class LastPickTileArguments extends StatelessWidget {
   const LastPickTileArguments({super.key});

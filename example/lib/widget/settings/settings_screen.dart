@@ -1,10 +1,9 @@
-import 'package:country_list_picker/model/languages.dart';
-import 'package:country_list_picker_example/controller/settings_provider.dart';
-import 'package:country_list_picker_example/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:country_list_picker/country_list_picker.dart';
 import '../color_picker.dart';
+import '../../controller/settings_provider.dart';
+import '../../translation.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
