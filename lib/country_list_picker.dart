@@ -1,5 +1,3 @@
-// exports
-
 library country_list_picker;
 
 export '../src/theme/dialog_theme.dart';
@@ -9,4 +7,4 @@ export '../src/model/countries.dart';
 export '../src/model/names.dart';
 export '../src/model/languages.dart';
 export '../src/model/countries.dart';
-export '../src/country_list_picker.dart/';
+export '../src/country_list_picker.dart';

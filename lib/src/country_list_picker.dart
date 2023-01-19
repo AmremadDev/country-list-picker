@@ -50,8 +50,7 @@ class CountryListPicker extends StatefulWidget {
     this.margin = const EdgeInsets.all(5.0),
     this.padding = const EdgeInsets.all(0.0),
     this.border = const UnderlineInputBorder(),
-    this.diallingCodeStyle =
-        const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+    this.diallingCodeStyle = const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
     this.countryNameStyle = const TextStyle(fontSize: 15, color: Colors.grey),
     this.dialogTheme = const DialogThemeData(),
     this.inputTheme = const InputThemeData(),
@@ -199,8 +198,7 @@ class _CountryListPickerState extends State<CountryListPicker> {
 
   @override
   Widget build(BuildContext context) {
-    countriesMultiLanguagesList
-        .removeWhere((element) => element['dialing_code'] == null);
+    countriesMultiLanguagesList.removeWhere((element) => element['dialing_code'] == null);
     countries = countriesMultiLanguagesList.map((element) {
       return Country(
         iso_3166_1_alpha2: element['iso_3166_1_alpha2'],
@@ -211,14 +209,12 @@ class _CountryListPickerState extends State<CountryListPicker> {
                 official: element[widget.language.iso_639_2_alpha3])
             : Name(
                 common: element[widget.language.iso_639_2_alpha3]['common'],
-                official: element[widget.language.iso_639_2_alpha3]
-                    ['official']),
+                official: element[widget.language.iso_639_2_alpha3]['official']),
         dialing_code: element['dialing_code'],
         default_number_length: element['default_number_length'],
         default_number_format: element['default_number_format'],
         local_number_sample: element['local_number_sample'],
-        flagUri:
-            'assets/flags/${element['iso_3166_1_alpha2'].toLowerCase()}.png',
+        flagUri: 'assets/flags/${element['iso_3166_1_alpha2'].toLowerCase()}.png',
       );
     }).toList();
     widget.displayName == Names.common
@@ -230,8 +226,8 @@ class _CountryListPickerState extends State<CountryListPicker> {
             (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
                 widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
             orElse: () => countries[0])
-        : countries.firstWhere((element) =>
-            element.iso_3166_1_alpha3 == selectedCountry!.iso_3166_1_alpha3);
+        : countries.firstWhere(
+            (element) => element.iso_3166_1_alpha3 == selectedCountry!.iso_3166_1_alpha3);
     return Directionality(
       textDirection: widget.textDirection ?? Directionality.of(context),
       child: Container(
@@ -247,30 +243,23 @@ class _CountryListPickerState extends State<CountryListPicker> {
                 left: (widget.padding as EdgeInsets).left + 5.0,
               ),
               decoration: BoxDecoration(
-                  borderRadius:
-                      widget.border.isOutline ? BorderRadius.circular(4) : null,
+                  borderRadius: widget.border.isOutline ? BorderRadius.circular(4) : null,
                   border: (widget.inputTheme.border == InputBorder.none ||
                               widget.isShowInputField == false) &&
                           widget.border != InputBorder.none
                       ? widget.border.isOutline
-                          ? inputOnFocus == true ||
-                                  widget.isShowInputField == false
+                          ? inputOnFocus == true || widget.isShowInputField == false
                               ? Border.all(
                                   color: Theme.of(context).colorScheme.primary,
                                   width: widget.border.borderSide.width)
-                              : Border.all(
-                                  color: Theme.of(context).hintColor, width: 1)
-                          : inputOnFocus == true ||
-                                  widget.isShowInputField == false
+                              : Border.all(color: Theme.of(context).hintColor, width: 1)
+                          : inputOnFocus == true || widget.isShowInputField == false
                               ? Border(
                                   bottom: BorderSide(
-                                      color:
-                                          Theme.of(context).colorScheme.primary,
+                                      color: Theme.of(context).colorScheme.primary,
                                       width: widget.border.borderSide.width))
                               : Border(
-                                  bottom: BorderSide(
-                                      color: Theme.of(context).hintColor,
-                                      width: 1))
+                                  bottom: BorderSide(color: Theme.of(context).hintColor, width: 1))
                       : null),
               child: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -285,16 +274,15 @@ class _CountryListPickerState extends State<CountryListPicker> {
                     if (widget.isShowInputField == true)
                       InputField(
                         inputTheme: widget.inputTheme,
+                        controller: widget.controller,
                         onChanged: (value) {
                           if (widget.onChanged != null) {
                             String unMaskedText = MaskTextInputFormatter(
-                                    mask: widget.inputTheme.mask,
-                                    initialText: value,
-                                    filter: {"#": RegExp(r'[0-9]')})
-                                .getUnmaskedText();
+                                mask: widget.inputTheme.mask,
+                                initialText: value,
+                                filter: {"#": RegExp(r'[0-9]')}).getUnmaskedText();
 
-                            widget.onChanged!(
-                                "${selectedCountry!.dialing_code}$unMaskedText");
+                            widget.onChanged!("${selectedCountry!.dialing_code}$unMaskedText");
                           }
                         },
                         onEditingComplete: widget.onEditingComplete,
@@ -318,19 +306,15 @@ class _CountryListPickerState extends State<CountryListPicker> {
                     : (widget.displayName == Names.common)
                         ? countries
                             .firstWhere(
-                                (Country e) =>
-                                    (e.iso_3166_1_alpha3.toUpperCase() ==
-                                        widget.initialCountry.iso_3166_1_alpha3
-                                            .toUpperCase()),
+                                (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
+                                    widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
                                 orElse: () => countries[0])
                             .name
                             .common
                         : countries
                             .firstWhere(
-                                (Country e) => (e.iso_3166_1_alpha3
-                                        .toUpperCase() ==
-                                    widget.initialCountry.iso_3166_1_alpha3
-                                        .toUpperCase()),
+                                (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
+                                    widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
                                 orElse: () => countries[0])
                             .name
                             .official,
@@ -357,16 +341,13 @@ class _CountryListPickerState extends State<CountryListPicker> {
                       countries,
                       displayName: widget.displayName,
                       language: widget.language,
-                      textDirection:
-                          widget.textDirection ?? Directionality.of(context),
+                      textDirection: widget.textDirection ?? Directionality.of(context),
                       selectedCountry: selectedCountry!,
                       localCountry: (widget.localCountry == null)
                           ? null
                           : countries.firstWhere(
-                              (Country e) =>
-                                  (e.iso_3166_1_alpha3.toUpperCase() ==
-                                      widget.localCountry!.iso_3166_1_alpha3
-                                          .toUpperCase()),
+                              (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
+                                  widget.localCountry!.iso_3166_1_alpha3.toUpperCase()),
                             ),
                       appBar: widget.dialogTheme.appBar ??
                           AppBar(
@@ -379,8 +360,9 @@ class _CountryListPickerState extends State<CountryListPicker> {
 
     if (result != null) {
       selectedCountry = result;
-      if (widget.onCountryChanged != null)
+      if (widget.onCountryChanged != null) {
         widget.onCountryChanged!(selectedCountry!);
+      }
       setState(() {});
     }
   }
@@ -393,8 +375,7 @@ class _CountryListPickerState extends State<CountryListPicker> {
           //flage
           if (widget.isShowFlag == true)
             Flexible(
-                child: Image.asset(
-                    "assets/flags/${country.iso_3166_1_alpha2.toLowerCase()}.png",
+                child: Image.asset("assets/flags/${country.iso_3166_1_alpha2.toLowerCase()}.png",
                     package: "country_list_picker",
                     fit: BoxFit.fill,
                     height: widget.flagSize.height,
@@ -410,8 +391,7 @@ class _CountryListPickerState extends State<CountryListPicker> {
                           color: widget.diallingCodeStyle.color ??
                               Theme.of(context).textTheme.titleLarge?.color,
                           fontSize: widget.diallingCodeStyle.fontSize ?? 16,
-                          fontWeight: widget.diallingCodeStyle.fontWeight ??
-                              FontWeight.bold)),
+                          fontWeight: widget.diallingCodeStyle.fontWeight ?? FontWeight.bold)),
                 )),
 
           //down icon
@@ -421,8 +401,7 @@ class _CountryListPickerState extends State<CountryListPicker> {
                 child: Icon(
                   widget.iconDown.icon,
                   size: widget.iconDown.size,
-                  color: (widget.iconDown.color) ??
-                      Theme.of(context).colorScheme.primary,
+                  color: (widget.iconDown.color) ?? Theme.of(context).colorScheme.primary,
                   semanticLabel: widget.iconDown.semanticLabel,
                   textDirection: widget.iconDown.textDirection,
                   shadows: widget.iconDown.shadows,
