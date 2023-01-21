@@ -5,20 +5,21 @@ import '../theme/input_theme.dart';
 export 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class InputField extends StatelessWidget {
-  const InputField({
-    super.key,
-    required this.inputTheme,
-    this.onChanged,
-    this.onSaved,
-    this.onEditingComplete,
-    this.onFieldSubmitted,
-    this.onTap,
-    this.controller,
-    this.initialValue,
-    this.enabled,
-    this.readOnly = false,
-    this.focusNode,
-  });
+  const InputField(
+      {super.key,
+      required this.inputTheme,
+      this.onChanged,
+      this.onSaved,
+      this.onEditingComplete,
+      this.onFieldSubmitted,
+      this.onTap,
+      this.controller,
+      this.initialValue,
+      this.enabled,
+      this.readOnly = false,
+      this.focusNode,
+      this.hint,
+      this.mask});
 
   final InputThemeData inputTheme;
   final ValueChanged<String>? onChanged;
@@ -30,8 +31,10 @@ class InputField extends StatelessWidget {
   final String? initialValue;
   final bool? enabled;
   final bool readOnly;
-
   final FocusNode? focusNode;
+
+  final String? hint;
+  final String? mask;
   @override
   Widget build(BuildContext context) {
     return Flexible(
@@ -49,32 +52,31 @@ class InputField extends StatelessWidget {
         onFieldSubmitted: onFieldSubmitted,
         onTap: onTap,
         keyboardType: TextInputType.phone,
-        textAlign: Directionality.of(context) == TextDirection.ltr
-            ? TextAlign.left
-            : TextAlign.right,
+        textAlign:
+            Directionality.of(context) == TextDirection.ltr ? TextAlign.left : TextAlign.right,
         textDirection: TextDirection.ltr,
         style: inputTheme.style.copyWith(
-          color: inputTheme.style.color ??
-              Theme.of(context).inputDecorationTheme.focusColor,
+          color: inputTheme.style.color ?? Theme.of(context).inputDecorationTheme.focusColor,
           fontSize: inputTheme.style.fontSize ?? 16,
         ),
         inputFormatters: [
           MaskTextInputFormatter(
-              mask: inputTheme.mask, filter: {"#": RegExp(r'[0-9]')})
+              mask:
+                  //inputTheme.mask
+                  mask,
+              filter: {"#": RegExp(r'[0-9]')})
         ],
         decoration: InputDecoration(
           contentPadding: inputTheme.contentPadding,
-          hintText: inputTheme.hintText,
+          hintText: hint,
           hintStyle: inputTheme.hintStyle.copyWith(
-            fontSize:
-                inputTheme.hintStyle.fontSize ?? inputTheme.style.fontSize,
+            fontSize: inputTheme.hintStyle.fontSize ?? inputTheme.style.fontSize,
             color: inputTheme.hintStyle.color ?? Theme.of(context).hintColor,
           ),
           border: inputTheme.border == InputBorder.none
               ? InputBorder.none
               : inputTheme.border.copyWith(
-                  borderSide:
-                      BorderSide(color: Theme.of(context).hintColor, width: 1),
+                  borderSide: BorderSide(color: Theme.of(context).hintColor, width: 1),
                 ),
           focusedBorder: inputTheme.border == InputBorder.none
               ? InputBorder.none

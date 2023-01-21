@@ -41,6 +41,9 @@ class InputThemeData {
   ///the entered character By default # match to the number.
   final String? mask;
 
+  final bool autoHint;
+  final bool autoMask;
+
   const InputThemeData({
     this.contentPadding = const EdgeInsets.only(left: 12),
     this.border = InputBorder.none,
@@ -50,5 +53,7 @@ class InputThemeData {
     this.mask = "### #### ###",
     this.obscuringCharacter = '•',
     this.obscureText = false,
+    this.autoHint = true,
+    this.autoMask = true,
   });
 }
