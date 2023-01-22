@@ -12,3 +12,4 @@
 - Fix margin and padding parameters.
 - Fix input field controller.
 - Add autoHint and autoMask parameters to InputThemeData.
+- Remove IconDown padding.

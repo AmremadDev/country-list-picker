@@ -406,17 +406,19 @@ class _CountryListPickerState extends State<CountryListPicker> {
 
           //down icon
           if (widget.isShowDownIcon == true)
-            Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 2.5),
-                child: Icon(
-                  widget.iconDown.icon,
-                  size: widget.iconDown.size,
-                  color: (widget.iconDown.color) ?? Theme.of(context).colorScheme.primary,
-                  semanticLabel: widget.iconDown.semanticLabel,
-                  textDirection: widget.iconDown.textDirection,
-                  shadows: widget.iconDown.shadows,
-                  key: widget.iconDown.key,
-                )),
+            // Padding(
+            //     padding: const EdgeInsets.symmetric(horizontal: 5.5),
+            // child:
+            Icon(
+              widget.iconDown.icon,
+              size: widget.iconDown.size,
+              color: (widget.iconDown.color) ?? Theme.of(context).colorScheme.primary,
+              semanticLabel: widget.iconDown.semanticLabel,
+              textDirection: widget.iconDown.textDirection,
+              shadows: widget.iconDown.shadows,
+              key: widget.iconDown.key,
+              // )
+            ),
         ]);
   }
 }
