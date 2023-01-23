@@ -231,111 +231,108 @@ class _CountryListPickerState extends State<CountryListPicker> {
             (element) => element.iso_3166_1_alpha3 == selectedCountry!.iso_3166_1_alpha3);
     return Directionality(
       textDirection: widget.textDirection ?? Directionality.of(context),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: widget.margin,
-            padding: widget.padding,
-            // padding: EdgeInsets.only(
-            //   top: (widget.padding as EdgeInsets).top,
-            //   right: (widget.padding as EdgeInsets).right + 5.0,
-            //   bottom: (widget.padding as EdgeInsets).bottom,
-            //   left: (widget.padding as EdgeInsets).left + 5.0,
-            // ),
-            decoration: BoxDecoration(
-                borderRadius: widget.border.isOutline ? BorderRadius.circular(4) : null,
-                border: (widget.inputTheme.border == InputBorder.none ||
-                            widget.isShowInputField == false) &&
-                        widget.border != InputBorder.none
-                    ? widget.border.isOutline
-                        ? inputOnFocus == true || widget.isShowInputField == false
-                            ? Border.all(
-                                color: Theme.of(context).colorScheme.primary,
-                                width: widget.border.borderSide.width)
-                            : Border.all(color: Theme.of(context).hintColor, width: 1)
-                        : inputOnFocus == true || widget.isShowInputField == false
-                            ? Border(
-                                bottom: BorderSide(
-                                    color: Theme.of(context).colorScheme.primary,
-                                    width: widget.border.borderSide.width))
-                            : Border(
-                                bottom: BorderSide(color: Theme.of(context).hintColor, width: 1))
-                    : null),
-            child: Row(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  InkWell(
-                    onTap: (widget.onCountryChanged == null)
-                        ? null
-                        : () async => await _onTapEvent(context),
-                    child: _buildMainPart(selectedCountry!),
-                  ),
-                  if (widget.isShowInputField == true)
-                    InputField(
-                      // here worning
-                      // need to take action when country changed, what can i do in the input value
-                      inputTheme: widget.inputTheme,
-                      controller: widget.controller,
-                      mask: widget.inputTheme.autoMask == false
-                          ? widget.inputTheme.mask
-                          : selectedCountry!.default_number_format,
-                      hint: widget.inputTheme.autoHint == false
-                          ? widget.inputTheme.hintText
-                          : selectedCountry!.local_number_sample,
-                      onChanged: (value) {
-                        if (widget.onChanged != null) {
-                          String unMaskedText = MaskTextInputFormatter(
-                              mask: widget.inputTheme.autoMask == false
-                                  ? widget.inputTheme.mask
-                                  : selectedCountry!.default_number_format,
-                              initialText: value,
-                              filter: {"#": RegExp(r'[0-9]')}).getUnmaskedText();
-
-                          widget.onChanged!("${selectedCountry!.dialing_code}$unMaskedText");
-                        }
-                      },
-                      onEditingComplete: widget.onEditingComplete,
-                      onFieldSubmitted: widget.onFieldSubmitted,
-                      onSaved: widget.onSaved,
-                      onTap: widget.onTap,
-                      focusNode: focusNode
-                        ..addListener(() {
-                          inputOnFocus = focusNode.hasFocus;
-                          setState(() {});
-                        }),
+      child: Container(
+        margin: widget.margin,
+        padding: widget.padding,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: widget.border.isOutline ? BorderRadius.circular(4) : null,
+                  border: (widget.inputTheme.border == InputBorder.none ||
+                              widget.isShowInputField == false) &&
+                          widget.border != InputBorder.none
+                      ? widget.border.isOutline
+                          ? inputOnFocus == true || widget.isShowInputField == false
+                              ? Border.all(
+                                  color: Theme.of(context).colorScheme.primary,
+                                  width: widget.border.borderSide.width)
+                              : Border.all(color: Theme.of(context).hintColor, width: 1)
+                          : inputOnFocus == true || widget.isShowInputField == false
+                              ? Border(
+                                  bottom: BorderSide(
+                                      color: Theme.of(context).colorScheme.primary,
+                                      width: widget.border.borderSide.width))
+                              : Border(
+                                  bottom: BorderSide(color: Theme.of(context).hintColor, width: 1))
+                      : null),
+              child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      onTap: (widget.onCountryChanged == null)
+                          ? null
+                          : () async => await _onTapEvent(context),
+                      child: _buildMainPart(selectedCountry!),
                     ),
-                ]),
-          ),
-          if (widget.isShowCountryName == true)
-            Text(
-              selectedCountry != null
-                  ? (widget.displayName == Names.common)
-                      ? selectedCountry!.name.common
-                      : selectedCountry!.name.official
-                  : (widget.displayName == Names.common)
-                      ? countries
-                          .firstWhere(
-                              (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
-                                  widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
-                              orElse: () => countries[0])
-                          .name
-                          .common
-                      : countries
-                          .firstWhere(
-                              (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
-                                  widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
-                              orElse: () => countries[0])
-                          .name
-                          .official,
-              style: widget.countryNameStyle.copyWith(
-                  fontWeight: widget.countryNameStyle.fontWeight,
-                  fontSize: widget.countryNameStyle.fontSize ?? 15,
-                  color: widget.countryNameStyle.color ?? Colors.grey,
-                  overflow: TextOverflow.ellipsis),
+                    if (widget.isShowInputField == true)
+                      InputField(
+                        // here worning
+                        // need to take action when country changed, what can i do if input field has a value.
+
+                        inputTheme: widget.inputTheme,
+                        controller: widget.controller,
+                        mask: widget.inputTheme.mask == null
+                            ? widget.inputTheme.mask
+                            : selectedCountry!.default_number_format,
+                        hint: widget.inputTheme.hintText == null
+                            ? widget.inputTheme.hintText
+                            : selectedCountry!.local_number_sample,
+                        onChanged: (value) {
+                          if (widget.onChanged != null) {
+                            String unMaskedText = MaskTextInputFormatter(
+                                mask: widget.inputTheme.mask == null
+                                    ? widget.inputTheme.mask
+                                    : selectedCountry!.default_number_format,
+                                initialText: value,
+                                filter: {"#": RegExp(r'[0-9]')}).getUnmaskedText();
+
+                            widget.onChanged!("${selectedCountry!.dialing_code}$unMaskedText");
+                          }
+                        },
+                        onEditingComplete: widget.onEditingComplete,
+                        onFieldSubmitted: widget.onFieldSubmitted,
+                        onSaved: widget.onSaved,
+                        onTap: widget.onTap,
+                        focusNode: focusNode
+                          ..addListener(() {
+                            inputOnFocus = focusNode.hasFocus;
+                            setState(() {});
+                          }),
+                      ),
+                  ]),
             ),
-        ],
+            if (widget.isShowCountryName == true)
+              Text(
+                selectedCountry != null
+                    ? (widget.displayName == Names.common)
+                        ? selectedCountry!.name.common
+                        : selectedCountry!.name.official
+                    : (widget.displayName == Names.common)
+                        ? countries
+                            .firstWhere(
+                                (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
+                                    widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
+                                orElse: () => countries[0])
+                            .name
+                            .common
+                        : countries
+                            .firstWhere(
+                                (Country e) => (e.iso_3166_1_alpha3.toUpperCase() ==
+                                    widget.initialCountry.iso_3166_1_alpha3.toUpperCase()),
+                                orElse: () => countries[0])
+                            .name
+                            .official,
+                style: widget.countryNameStyle.copyWith(
+                    fontWeight: widget.countryNameStyle.fontWeight,
+                    fontSize: widget.countryNameStyle.fontSize ?? 15,
+                    color: widget.countryNameStyle.color ?? Colors.grey,
+                    overflow: TextOverflow.ellipsis),
+              ),
+          ],
+        ),
       ),
     );
   }

@@ -41,19 +41,19 @@ class InputThemeData {
   ///the entered character By default # match to the number.
   final String? mask;
 
-  final bool autoHint;
-  final bool autoMask;
+  // final bool autoHint;
+  // final bool autoMask;
 
   const InputThemeData({
     this.contentPadding = const EdgeInsets.only(left: 12),
     this.border = InputBorder.none,
     this.hintStyle = const TextStyle(fontSize: 16, color: Color(0xFF9E9E9E)),
-    this.hintText = "Enter your phone number",
+    this.hintText, // = "Enter your phone number",
     this.style = const TextStyle(fontSize: 16),
-    this.mask = "### #### ###",
+    this.mask, // = "### #### ###",
     this.obscuringCharacter = '•',
     this.obscureText = false,
-    this.autoHint = true,
-    this.autoMask = true,
+    // this.autoHint = true,
+    // this.autoMask = true,
   });
 }
