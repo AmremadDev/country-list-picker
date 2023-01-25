@@ -18,24 +18,20 @@ class OnBoardingPage extends StatelessWidget {
               textDirection: settings.language.textDirection,
               child: SafeArea(
                 child: Scaffold(
-                  appBar: AppBar(
-                      elevation: 0,
-                      backgroundColor: Colors.transparent,
-                      actions: [
-                        IconButton(
-                          onPressed: () =>
-                              settings.isDarkMode = !settings.isDarkMode,
-                          icon: settings.isDarkMode
-                              ? Icon(
-                                  Icons.sunny,
-                                  color: settings.darkprimarySwatch,
-                                )
-                              : Icon(
-                                  Icons.dark_mode,
-                                  color: settings.lightprimarySwatch,
-                                ),
-                        )
-                      ]),
+                  appBar: AppBar(elevation: 0, backgroundColor: Colors.transparent, actions: [
+                    IconButton(
+                      onPressed: () => settings.isDarkMode = !settings.isDarkMode,
+                      icon: settings.isDarkMode
+                          ? Icon(
+                              Icons.sunny,
+                              color: settings.darkprimarySwatch,
+                            )
+                          : Icon(
+                              Icons.dark_mode,
+                              color: settings.lightprimarySwatch,
+                            ),
+                    )
+                  ]),
                   body: Column(
                     children: [
                       Expanded(
@@ -43,12 +39,10 @@ class OnBoardingPage extends StatelessWidget {
                         child: PageView.builder(
                             itemCount: listOnboarding.length,
                             controller: boarding.pageController,
-                            onPageChanged: (value) =>
-                                boarding.currentOnboard = value,
+                            onPageChanged: (value) => boarding.currentOnboard = value,
                             itemBuilder: (context, index) {
                               return Container(
-                                margin:
-                                    const EdgeInsets.symmetric(horizontal: 30),
+                                margin: const EdgeInsets.symmetric(horizontal: 30),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -61,10 +55,8 @@ class OnBoardingPage extends StatelessWidget {
                                     Text(listOnboarding[index].title.tr,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline5!
-                                            .copyWith(
-                                                fontSize: 21,
-                                                fontWeight: FontWeight.bold)),
+                                            .headlineSmall!
+                                            .copyWith(fontSize: 21, fontWeight: FontWeight.bold)),
                                     const SizedBox(height: 20),
                                     Text(
                                       textAlign: TextAlign.center,
@@ -88,71 +80,53 @@ class OnBoardingPage extends StatelessWidget {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    ...List.generate(listOnboarding.length,
-                                        (index) {
+                                    ...List.generate(listOnboarding.length, (index) {
                                       return AnimatedContainer(
-                                        duration:
-                                            const Duration(milliseconds: 900),
-                                        margin:
-                                            const EdgeInsets.only(right: 10),
-                                        width:
-                                            (boarding.currentOnboard == index)
-                                                ? 30
-                                                : 6,
+                                        duration: const Duration(milliseconds: 900),
+                                        margin: const EdgeInsets.only(right: 10),
+                                        width: (boarding.currentOnboard == index) ? 30 : 6,
                                         height: 5,
                                         decoration: BoxDecoration(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .primary,
-                                            borderRadius:
-                                                BorderRadius.circular(10)),
+                                            color: Theme.of(context).colorScheme.primary,
+                                            borderRadius: BorderRadius.circular(10)),
                                       );
                                     }),
                                   ],
                                 ),
                                 const SizedBox(height: 10),
                                 Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     TextButton(
                                       onPressed: () {
                                         Navigator.pushReplacement(
                                           context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const HomePage()),
+                                          MaterialPageRoute(builder: (context) => const HomePage()),
                                         );
                                       },
                                       child: Text("SKIP".tr,
                                           style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 15)),
+                                              fontWeight: FontWeight.bold, fontSize: 15)),
                                     ),
                                     TextButton(
                                       onPressed: () {
-                                        if (boarding.currentOnboard >=
-                                            listOnboarding.length - 1) {
+                                        if (boarding.currentOnboard >= listOnboarding.length - 1) {
                                           Navigator.pushReplacement(
                                             context,
                                             MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const HomePage()),
+                                                builder: (context) => const HomePage()),
                                           );
                                         } else {
                                           boarding.nextOnboarding();
                                         }
                                       },
-                                      child: boarding.currentOnboard <
-                                              listOnboarding.length - 1
+                                      child: boarding.currentOnboard < listOnboarding.length - 1
                                           ? Text("NEXT".tr,
                                               style: const TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 15))
+                                                  fontWeight: FontWeight.bold, fontSize: 15))
                                           : Text("FINISH".tr,
                                               style: const TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 15)),
+                                                  fontWeight: FontWeight.bold, fontSize: 15)),
                                     ),
                                   ],
                                 ),
@@ -167,8 +141,7 @@ class OnBoardingPage extends StatelessWidget {
                           child: DropdownButtonFormField<Languages>(
                             alignment: Alignment.center,
                             decoration: const InputDecoration(
-                              floatingLabelAlignment:
-                                  FloatingLabelAlignment.center,
+                              floatingLabelAlignment: FloatingLabelAlignment.center,
                               border: InputBorder.none,
                               prefixIcon: Icon(Icons.language),
                               hoverColor: Colors.transparent,
@@ -183,8 +156,7 @@ class OnBoardingPage extends StatelessWidget {
                                     child: Padding(
                                       padding: const EdgeInsets.all(0.0),
                                       child: Text(e.name,
-                                          style: const TextStyle(
-                                              fontFamily: "Quicksand"),
+                                          style: const TextStyle(fontFamily: "Quicksand"),
                                           overflow: TextOverflow.ellipsis),
                                     ),
                                   ),

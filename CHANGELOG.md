@@ -9,6 +9,7 @@
 
 ## 1.0.2
 - Fix dart analyzer issues, errors and remarks.
+- Updated to Flutter 3.7.0 and fix deprecated fields.
 - Fix margin and padding parameters.
 - Fix input field controller.
 - Fix automatic hint and mask.
