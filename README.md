@@ -1,7 +1,7 @@
 
-![version](https://img.shields.io/badge/version-1.0.1-purple.svg) ![version](https://img.shields.io/badge/NullSefety-True-brightgreen)
+![version](https://img.shields.io/badge/version-1.0.2-purple.svg) ![version](https://img.shields.io/badge/NullSefety-True-brightgreen)
 
-CountryListPicker for Flutter customizable country selection package with multi-languages support.
+CountryListPicker is flutter package for customizable country selection package with multi-languages support.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/62204927/212409609-eb9103ad-0c48-440c-a191-cc51f324db01.png" width="150">
@@ -42,7 +42,7 @@ With Flutter:
 This will add a line like this to your package's pubspec.yaml (and run an implicit  `flutter pub get`):
 ```yaml
 dependencies:
-  country_list_picker: ^1.0.1
+  country_list_picker: ^1.0.2
 ```
 Alternatively, your editor might support  `flutter pub get`. Check the docs for your editor to learn more.
 

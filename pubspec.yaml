@@ -1,6 +1,6 @@
 name: country_list_picker
-description: CountryListPicker for Flutter customizable country selection package with multi-languages support.
-version: 1.0.1
+description: CountryListPicker is flutter package for customizable country selection package with multi-languages support.
+version: 1.0.2
 homepage: https://github.com/AmremadDev/country-list-picker.git
 # publish_to: none
 
