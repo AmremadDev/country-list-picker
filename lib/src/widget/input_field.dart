@@ -52,11 +52,13 @@ class InputField extends StatelessWidget {
         onFieldSubmitted: onFieldSubmitted,
         onTap: onTap,
         keyboardType: TextInputType.phone,
-        textAlign:
-            Directionality.of(context) == TextDirection.ltr ? TextAlign.left : TextAlign.right,
+        textAlign: Directionality.of(context) == TextDirection.ltr
+            ? TextAlign.left
+            : TextAlign.right,
         textDirection: TextDirection.ltr,
         style: inputTheme.style.copyWith(
-          color: inputTheme.style.color ?? Theme.of(context).inputDecorationTheme.focusColor,
+          color: inputTheme.style.color ??
+              Theme.of(context).inputDecorationTheme.focusColor,
           fontSize: inputTheme.style.fontSize ?? 16,
         ),
         inputFormatters: [
@@ -70,13 +72,15 @@ class InputField extends StatelessWidget {
           contentPadding: inputTheme.contentPadding,
           hintText: hint,
           hintStyle: inputTheme.hintStyle.copyWith(
-            fontSize: inputTheme.hintStyle.fontSize ?? inputTheme.style.fontSize,
+            fontSize:
+                inputTheme.hintStyle.fontSize ?? inputTheme.style.fontSize,
             color: inputTheme.hintStyle.color ?? Theme.of(context).hintColor,
           ),
           border: inputTheme.border == InputBorder.none
               ? InputBorder.none
               : inputTheme.border.copyWith(
-                  borderSide: BorderSide(color: Theme.of(context).hintColor, width: 1),
+                  borderSide:
+                      BorderSide(color: Theme.of(context).hintColor, width: 1),
                 ),
           focusedBorder: inputTheme.border == InputBorder.none
               ? InputBorder.none
